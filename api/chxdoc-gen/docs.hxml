@@ -1,0 +1,19 @@
+-swf all.swf
+-swf-version 11
+
+-lib flixel
+-lib flixel-addons
+-lib openfl
+-lib spinehx
+-lib nape
+
+-debug
+-v
+-prompt
+--macro include('flixel')
+
+-D doc
+# -D desktop
+-xml all.xml
+
+-cmd ./chxdoc -o ../ --template=default -f all.xml --template=flixel --templatesDir="./" --title=HaxeFlixel --subtitle="http://www.haxeflixel.com"

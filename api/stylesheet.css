@@ -1,0 +1,351 @@
+/*Chxdoc theme from https://github.com/touch/Prime*/
+
+/* CSS reset */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, font, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	outline: 0;
+	font-weight: inherit;
+	font-style: inherit;
+	font-size: 100%;
+	font-family: inherit;
+	vertical-align: baseline;
+}
+/* remember to define focus styles! */
+:focus {
+	outline: 0;
+}
+body {
+	background: #fdfdfd;
+	color: #333;
+	-webkit-font-smoothing: antialiased;
+	font-family: "Droid Sans", sans-serif;
+	font-size: 14px;
+	line-height: 21px;
+}
+code {
+	font-family: Consolas, "Lucida Console", "Courier New", Courier, monospace;
+	color: #111;
+}
+ol, ul {
+	list-style: none;
+}
+/* tables still need 'cellspacing="0"' in the markup */
+table {
+	border-collapse: separate;
+	border-spacing: 0;
+}
+caption, th, td {
+	text-align: left;
+	font-weight: normal;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: "";
+}
+blockquote, q {
+	quotes: "" "";
+}
+
+a, a:active, a:visited {
+	color: #0000cc;
+}
+
+.type-frame {
+	margin: 10px;
+}
+
+#types-frame, #packages-frame {
+	margin: 0px;
+}
+
+#packages-frame, #types-frame {
+}
+
+ul.types, ul.packages, #packages-header ul{
+	margin: 5px 5px 10px 5px;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	color: #111;
+	font-weight: normal;
+}
+
+#types-frame h1, #packages-frame h1 {
+	padding: 2px;
+	color: #ffffff;
+	background-color: #666666;
+	text-align: center;
+}
+
+#packages-frame h2 {
+	padding: 2px;
+	border-bottom: 1px solid #666666;
+	text-align: center;
+	margin-bottom: 0.75em;
+}
+
+.type-frame h1 {
+	font-size: 240%;
+	margin-bottom: 0.75em;
+	padding-left: 20px;
+	background-repeat: no-repeat;
+	min-height: 16px;
+  	margin-top: 1.2em;
+}
+
+ul.types li {
+	background-repeat: no-repeat;
+	min-height: 16px;
+	padding-left: 18px;
+	background-position: 2px;
+}
+
+.class {
+	background-image: url(images/class.png);
+}
+
+h1.class {
+	text-shadow: 0px 1px 3px #aaa;
+}
+
+.interface {
+	background-image: url(images/interface.png);
+}
+
+.typedef {
+	background-image: url(images/typedef.png);
+}
+
+.alias {
+	background-image: url(images/alias.png);
+}
+
+.enum {
+	background-image: url(images/enum.png);
+}
+
+.overview {
+	background-image: url(images/overview.png);
+}
+
+.todo {
+	background-image: url(images/todo.png);
+}
+
+.alltypes {
+	background-image: url(images/alltypes.png);
+}
+
+dl {
+	margin: 8px 0;
+	font-size: 120%;
+}
+
+.doc {
+	padding: 0 0 0.75em 0;
+	margin: 0.75em 0;
+	white-space: pre;
+	font-size: 100%;
+	font-family: Consolas, "Lucida Console", "Courier New", Courier, monospace;
+	-moz-tab-size: 4;
+    -o-tab-size: 4;
+    -webkit-tab-size: 4;
+    tab-size: 4;
+}
+
+dt {
+	display: block;
+	float: left;
+	width: 7em;
+	font-weight: bold;
+	font-size: 75%;
+	min-height: 1.2em;
+	vertical-align: bottom;
+	padding: 2px 2px 2px 4px;
+	line-height: 1.2em;
+}
+
+dd {
+	display: block;
+	margin-left: 7.4em;
+	min-height: 1.2em;
+	padding: 2px 2px 2px 4px;
+	border-left: 1px solid #cccccc;
+	font-size: 85%;
+	background-color: #f9f9f9;
+	line-height: 1.2em;
+}
+
+pre {
+	border-top: 1px dashed #dddddd;
+	border-bottom: 1px dashed #dddddd;
+	background-color: #f9f9f9;
+	font-family: "Courier New", Courier, mono;
+	font-weight: normal;
+	padding: 0.75em 0 0 0;
+	margin: 0.75em 0;
+	font-size: 85%;
+}
+
+.members-panel {
+	margin: 0 0 0.75em 0;
+	font-size: 100%;
+}
+
+.members-panel h2 {
+	border-top: 1px solid #ffffff;
+	border-bottom: 1px solid #e3e3e3;
+	padding: 2px 4px;
+	font-weight: bold;
+	font-size: 110%;
+	margin-top: 3em;
+}
+
+.member .header {
+	padding: 8px 4px 0 4px;
+	background: #fff;
+	border-top: 1px solid #eee;
+	word-spacing: 0.15em;
+}
+
+.member .header .name {
+	color: #097B80;
+	font-size: 100%;
+	font-weight: 600;
+}
+
+.member .body {
+	padding: 0 0.3em;
+	margin-bottom: 1em;
+}
+
+.member .platforms {
+	padding: 4px 16px;
+}
+
+.member .platforms-list {
+	padding: 4px 16px;
+	font-weight: bold;
+}
+
+#packages-frame li, #types-frame li {
+	background-repeat: no-repeat;
+	min-height: 16px;
+	padding-left: 18px;
+	font-size: 120%;
+}
+
+a {
+    border-bottom: 1px dotted #999999;
+    color: #444444 !important;
+    text-decoration: none !important;
+}
+a:hover {
+    border-bottom: 1px solid #6D4100;
+    color: #6D4100 !important;
+    text-decoration: none !important;
+}
+
+#packages-frame ul.packages li {
+	background-image: url(images/package.png);
+	background-position: 2px;
+}
+
+#packages-header li {
+	font-weight: bold;
+	font-size: 95%;
+}
+
+div.inherited, div.overrides {
+	margin: 2px 0;
+}
+
+.deprecated {
+	color: #CC0000;
+}
+
+.keyword {
+	color: #2092CF;
+	font-weight: bold;
+}
+
+.hideInheritedVar {
+        display: none;
+}
+.showInheritedVar {
+        display: inline;
+}
+.hideInheritedMethod {
+        display: none;
+}
+.showInheritedMethod {
+        display: inline;
+}
+
+#todo h1, #overview h1 {
+	font-weight: bold;
+	padding: 2px;
+	color: #ffffff;
+	background-color: #666666;
+	text-align: center;
+}
+
+#todo h2, #overview h2 {
+	font-size: 100%;
+	padding: 2px;
+	border-bottom: 1px solid #666666;
+	text-align: center;
+	margin-bottom: 0.75em;
+}
+
+#main {
+	padding: 8px;
+}
+
+p {
+	margin-bottom: 0.5em;
+}
+
+ul.todolist {
+	margin: 0.5em 0;
+}
+
+ul.todolist li {
+	background-repeat: no-repeat;
+	min-height: 16px;
+	padding-left: 18px;
+	background-image: url(images/todobullet.png);
+}
+
+a.showHideLink {
+	margin-left: 8px;
+	font-size: 77%;
+	text-decoration: none;
+	border: 1px solid #cccccc;
+	background-color: #ffffff;
+	color: #666666;
+	padding: 1px 2px 0 13px;
+	background-repeat: no-repeat;
+	background-position: 2px 2px;
+}
+
+.hideInheritedVar a.showHideLink, .hideInheritedMethod a.showHideLink {
+	background-image: url(images/hide.png);
+}
+
+.showInheritedVar a.showHideLink, .showInheritedMethod a.showHideLink {
+	background-image: url(images/show.png);
+}
+
+.hideInheritedVar div.member, .hideInheritedMethod div.member {
+	background-image: url(images/bginherited.png);
+}

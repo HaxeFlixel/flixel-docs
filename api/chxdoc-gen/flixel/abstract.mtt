@@ -1,0 +1,48 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/tr/html4/loose.dtd">
+<html>
+<head>
+	::raw build.comment::
+	<title>::name:: (::config.title::)</title>
+	<meta name="date" content="::webmeta.date::" />
+	::foreach kw webmeta.keywords::
+	<meta name="keywords" content="::kw::" />
+	::end::
+	<link rel="stylesheet" type="text/css" href="::webmeta.stylesheet::" />
+<script type="text/javascript">
+function windowTitle()
+{
+    if (location.href.indexOf('is-external=true') == -1) {
+        parent.document.title="::name:: (::config.title::)";
+    }
+}
+</script>
+<noscript></noscript>
+</head>
+<body onload="windowTitle();">
+	<script language="javascript" type="text/javascript" src="::rootRelative::../chxdoc.js"></script>
+	<div id="class-frame" class="type-frame">
+	<!-- ======== START OF class DATA ======== -->
+	<h1 class="::type::">::nameDots::::params::</h1>
+	<dl>
+		<dt>type</dt>
+		<dd>abstract</dd>
+	::if platforms.length > 0::
+		<dt>available in</dt>
+		<dd>::foreach p platforms::::if !repeat.p.first::, ::end::::p::::end::</dd>
+	::end::
+	::if docs != null && docs.meta.length != 0::
+		<dt>metadata</dt>
+		<dd><dl>
+		::foreach i docs.meta::
+		<dt>::i.name::</dt><dd>::i.value::</dd>
+		::end::
+		</dl></dd>
+	::end::
+	</dl>
+
+	<div class="doc">$$typeDocs()</div>
+	</div>
+<!-- ========= END OF class DATA ========= -->
+	::if config.footerText != null::<div id="footer">::raw config.footerText::</div>::end::
+</body>
+</html>
