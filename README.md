@@ -1,29 +1,31 @@
 flixel-docs
 ===========
 
-The main location for HaxeFlixel documentation that is also hosted on [haxeflixel.com](haxeflixel.com).
+This is the main location for HaxeFlixel documentation. Pull requests from this location will be pushed to the live website periodically, so please help us improve the HaxeFlixel docs.
 
-This repo contains the api documentation inside the api folder and the main [haxeflixel.com/documentation](haxeflixel.com/documentation) in the documentation folder. 
+## Contents
 
-Pull requests from this location will be pushed to the live website periodically, so please help us improve the HaxeFlixel docs.
+* The "main" documentation available on [haxeflixel.com/documentation](http://www.haxeflixel.com/documentation).
+* The API documentation.
 
-### Main Documentation
+### Main documentation
 
 The main documentation is made up of `*.html.md` files with a numerical prefix specifying the order listed on the [docpad website](https://github.com/HaxeFlixel/haxeflixel.com). Additional pages can be added using the same extension and using a header specifying the title as seen in the other pages.
 
-The markdown syntax used in the docs is the  [github-flavored-markdown](https://help.github.com/articles/github-flavored-markdown).
+The markdown syntax used in the docs is the  [GitHub-Flavored-Markdown](https://help.github.com/articles/github-flavored-markdown), thus it's very convenient to directly edit the files via GitHub's web editor. 
 
-### How to Generate the API Docs
-
-#### Install chxdoc for Haxe 3
-
-	haxelib git chxdoc git@github.com:ibilon/chxdoc.git
-	//move your cwd to this relative path of the project
-	cd ./api/chxdoc-gen
-	haxelib run chxdoc install
-
-#### Run the docs.hxml
-
-	haxe docs.hxml
+### API documentation
+	
+* ####Install [chxdoc](https://github.com/ibilon/chxdoc) for Haxe 3
+	
+		haxelib git chxdoc https://github.com/ibilon/chxdoc
+	Move your cwd to this relative path of the project:
+		
+		cd ./api/chxdoc-gen
+		haxelib run chxdoc install
+	
+* ####Generate the API docs
+	
+		haxe docs.hxml
 
 The docs will now be generated in the `./docs` folder. 
