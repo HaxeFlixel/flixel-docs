@@ -25,8 +25,10 @@ The markdown syntax used in the docs is the  [GitHub-Flavored-Markdown](https://
 
 ### API documentation
 	
-Api documentation is provided in the `./api` folder, it is currently generated with [chxdoc](https://github.com/ibilon/chxdoc).
-	
+Api documentation is provided in the `./api` folder, they are currently generated with [chxdoc](https://github.com/ibilon/chxdoc). You can view the api docs offline by opening the index.html file in a browser. 
+
+To generate the API docs yourself use the following method:
+
 * #### Install [chxdoc](https://github.com/ibilon/chxdoc) for Haxe 3
 	
 		haxelib git chxdoc https://github.com/ibilon/chxdoc
@@ -38,5 +40,7 @@ Api documentation is provided in the `./api` folder, it is currently generated w
 * #### Generate the API docs
 	
 		haxe docs.hxml
+
+Note this will use your localy enabled haxelib flixel versions, eg if you have `haxelib git flixel` set to `dev` etc.
 
 The docs will now be generated in the `./docs` folder. 
