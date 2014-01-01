@@ -1,5 +1,5 @@
 ```
-Title: "Tips and Tricks"
+title: "Tips and Tricks"
 ```
 This is a collection of various tips and tricks for developing with HaxeFlixel.
 
