@@ -16,4 +16,4 @@
 # -D desktop
 -xml all.xml
 
--cmd ./chxdoc -o ../ --template=default -f all.xml --template=flixel --templatesDir="./" --title=HaxeFlixel --subtitle="http://www.haxeflixel.com"
+-cmd ./chxdoc -o ../ -f all.xml --config=config.xml

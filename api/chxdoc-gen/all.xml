@@ -35409,11 +35409,11 @@
 	</class>
 	<class path="flixel.system.debug.BmpLog" params="" file="/Users/omni/projects/repos/public/flixel/flixel/system/debug/BmpLog.hx">
 		<extends path="flixel.system.debug.Window"/>
-		<updateSize set="method" line="138" override="1">
+		<updateSize set="method" line="136" override="1">
 			<f a=""><x path="Void"/></f>
 			<haxe_doc>* Adjusts the width and height of the text field accordingly.</haxe_doc>
 		</updateSize>
-		<clear public="1" set="method" line="114"><f a=""><x path="Void"/></f></clear>
+		<clear public="1" set="method" line="112"><f a=""><x path="Void"/></f></clear>
 		<add public="1" set="method" line="72">
 			<f a="Data:?FireOnce">
 				<c path="flash.display.BitmapData"/>
