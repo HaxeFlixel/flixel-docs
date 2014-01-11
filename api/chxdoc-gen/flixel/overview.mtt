@@ -25,6 +25,19 @@ function windowTitle()
 				<p>There are no pending TODO tasks.</p>
 	::end::
 ::end::
+
+				<p>
+					These API docs are also available in the <a href="https://github.com/HaxeFlixel/flixel-docs/tree/master/api">api subdirectory of the flixel-docs repository.</a>
+					They cover both <a href="https://github.com/HaxeFlixel/flixel">flixel</a> and <a href="https://github.com/HaxeFlixel/flixel-addons">flixel-addons</a> (prefixed by flixel.addons). They are in sync with the latest haxelib releases of those libraries.
+					
+					<h3>Other relevant API docs:</h3>
+					
+					<ul>
+						<li><a href="http://api.haxe.org/">Haxe</a></li>
+						<li><a href="http://www.openfl.org/api/">OpenFL</a></li>
+						<li><a href="http://napephys.com/docs/">Nape</a></li>
+					</ul>
+				</p>
 			</div>
 		</div>
 	</body>
