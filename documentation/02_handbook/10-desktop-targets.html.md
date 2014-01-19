@@ -49,11 +49,11 @@ Sublime Text, Flash Develop and Intellij Idea support CPP desktop compilation th
 The basic command to compile and test a native desktop target:
 
 ```
-openfl test windows
+lime test windows
 
-openfl test mac
+lime test mac
 
-openfl test linux -64
+lime test linux -64
 ```
 
 Run this command from the root folder of your project, the default project.xml will be used automatically. Using the test command will automatically launch the application created.

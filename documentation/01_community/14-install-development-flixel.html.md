@@ -68,13 +68,13 @@ haxelib git flixel-addons https://github.com/HaxeFlixel/flixel-addons.git
 Everything is setup and just giddy to run those juicy 3.0 demos :) Let's not make 'em wait! Grab the flixel-demo repository and navigate to 'Demos/flixel-demos/Arcade Classics/Breakout'. Start the game by writing:
 
 ``` bash
-openfl test neko
+lime test neko
 ```
 
 or
 
 ``` bash
-openfl test flash
+lime test flash
 ```
 
 **Need more help?**
