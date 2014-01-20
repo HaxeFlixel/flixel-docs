@@ -35,7 +35,7 @@ to the codebase.
 
 #### HaxeFlixel documentation
 
-[Flixel Documentation](https://github.com/HaxeFlixel/haxeflixel.com/tree/master/src/documents/documentation)
+[Flixel Documentation](https://github.com/HaxeFlixel/flixel-docs)
 
 Documentation is an ever going process as a project continues to evolve and people start using the code in new interesting ways. These pages are open for the community to edit so that we can continue to host them on haxeflixel.com.
 
