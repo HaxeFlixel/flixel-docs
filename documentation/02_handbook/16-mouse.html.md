@@ -106,7 +106,7 @@ You can use `FlxG.mouse.load()` for native cursors as usual, but if you want mor
 
 ```haxe
 FlxG.mouse.setSimpleNativeCursorData("custom", BitmapData);
-FlxG.mouse.registerNativeCursor("custom", MouseCursorData, true);
+FlxG.mouse.registerNativeCursor("custom", MouseCursorData);
 ```
 
 You can find more information on the `MouseCursorData` object [here](http://help.adobe.com/en_US/FlashPlatform/reference/actionscript/3/flash/ui/MouseCursorData.html).
