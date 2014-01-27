@@ -5,7 +5,23 @@ title: "Contributing"
 We welcome new contributors to this project.
 Being open source and followed by people all over the world, you can help in many ways.
 
-HaxeFlixel is a an [open-source](http://en.wikipedia.org/wiki/Open-source_software) project with humble beginnings sparked from a passion for the technology and game development. Everyone working on the project has come together from a friendly and flexible approach to make this library and community an enjoyable and robust solution for cross platform 2D games.
+HaxeFlixel is a an [open-source](http://en.wikipedia.org/wiki/Open-source_software) project with humble beginnings sparked from a passion for the technology and game development. Everyone working on the project has come together to create a friendly and flexible approach to make this library and community enjoyable and a robust solution for cross platform 2D games.
+
+### Contribute Code
+
+Everything about the technology stack of HaxeFlixel is opensource and contributing to any of the following helps the project:
+- The language it uses [Haxe](https://github.com/Haxefoundation/haxe)
+- The framework it is built upon [OpenFL](https://github.com/openfl/openfl) and [Lime](https://github.com/openfl/lime)
+- The core engine [flixel](https://github.com/HaxeFlixel/flixel)
+- Addons/Plugins to the core engine [addons](https://github.com/HaxeFlixel/flixel-addons) | [ui](https://github.com/HaxeFlixel/flixel-ui)
+- The official [Demos](https://github.com/HaxeFlixel/flixel-demos)
+- The [Flixel Tools](https://github.com/HaxeFlixel/flixel-tools)
+- [Project Templates](https://github.com/HaxeFlixel/flixel-templates)
+- This [documentation](https://github.com/HaxeFlixel/flixel-docs)
+- The website [haxeflixel.com](https://github.com/HaxeFlixel/haxeflixel.com)
+
+If you are wanting to contribute code, please review the [code style](http://haxeflixel.com/documentation/code-style) and [code-contributions](http://haxeflixel.com/documentation/code-contributions) pages.
+
 
 ### Publicize HaxeFlixel
 
