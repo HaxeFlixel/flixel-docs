@@ -11,13 +11,13 @@ var player = new FlxSprite();
 add(player);
 ```
 
-#### loadImage()
+#### loadGraphic()
 
 This method is the easiest way to use a single image for your FlxSprite. Using the OpenFL asset system defined in the project xml file you simply have to define a path to your image and the compiler will do the rest.
 
 ```
 var player = new FlxSprite();
-player.loadImage("assets/player.png");
+player.loadGraphic("assets/player.png");
 add(player);
 ```
 
