@@ -37,3 +37,15 @@ This will let you get the first FlxBasic class that has exists == true, this is 
 #### kill();
 
 This will recursively kill() all objects so that they will be ready for use with getFirstAvailable.
+
+#### callAll(FunctionName:String, Args:Array&lt;Dynamic&gt; = null, Recurse:Bool = true);
+
+Call the specified function on all members of the group.
+
+#### sort(Index:String = "y", Order:Int = -1);
+
+Call this function to sort the group according to a particular value and order.
+By default, this will sort the game objects in Zelda-style overlaps, by using the "y" member variable of the objects.
+Use Order of -1 for ASCENDING sorting and 1 for DESCENDING sorting
+
+
