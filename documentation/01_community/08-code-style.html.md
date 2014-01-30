@@ -13,13 +13,13 @@ If you encounter code in the codebase that does not fall under these guidelines 
 Capitalized letters for function parameters:
 
 ``` haxe
-function translate( Words:String, Fish:BableFish ):Void
+function translate(Words:String, Fish:BableFish):Void
 ```
 
 Instead of:
 
 ``` haxe
-function translate( words:String, fish:BableFish ):Void
+function translate(words:String, fish:BableFish):Void
 ```
 
 ##### Simplify the function names:
@@ -41,7 +41,7 @@ function shootAtASpecificEnemyWithABulletTypeOf(Target:Enemy, Bullet:BulletType)
 Use line breaks in methods, operators etc where possible:
 
 ``` haxe
-function createAwesome( Boring:Stuff, Creative:Things ):Void
+function createAwesome(Boring:Stuff, Creative:Things):Void
 {
 	//code
 }
@@ -50,7 +50,7 @@ function createAwesome( Boring:Stuff, Creative:Things ):Void
 Instead of:
 
 ``` haxe
-function createAwesome( Boring:Stuff, Creative:Things ):Void {
+function createAwesome(Boring:Stuff, Creative:Things):Void {
 	//code
 }
 ```
@@ -116,3 +116,14 @@ if (this.animation.finished)
 //This is preferred
 if (animation.finished)
 ```
+
+#### Keyword Order
+
+The original AS3 Flixel codebase ordered keywords like `static public function`.
+HaxeFlixel has changed this convention to be more like every other Haxe library, the order of importance is as follows:
+
+1. public / private
+2. static
+3. inline
+
+So `static public function` is changed to `public static function`. This also applies to variables eg `public static var`.
