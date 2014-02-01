@@ -1,10 +1,153 @@
 ```
 title: "Upgrade Guide"
 ```
+## Upgrading from HaxeFlixel 3.0 to 3.1
+
+HaxeFlixel 3.1 is a continuization of our efforts of making the API cleaner and more intuitive, keeping the amount of bugs as low as possible and adding new useful features. It is one of the biggest releases so far.
+
+This page is a summary of all changes - for a more in-depth list including all the changes, please refer to the [changelog](https://github.com/HaxeFlixel/flixel/blob/dev/CHANGELOG.md).
+
+### `FlxTypedButton` / `FlxButton` refactor
+
+`FlxTypedButton` has been completely refactored, which includes the following breaking API changes:
+
+- A new `FlxButtonEvent` class was added for the onDown, onUp, onOver and onOut events. Instead of the `setCallback()`-functions. You now set callbacks like this:
+
+		button.onDown.callback = someFunction;
+
+	This class also contains a `sound` property:
+		
+		button.onDown.sound = FlxG.sound.load("pathToASound");
+
+	You might say: *"What happened to callback arguments? The `callback` has the type `Void->Void`!"*
+	While that's true, you can still *use* callback arguments by leveraging [function binding](http://haxe.org/manual/haxe3/migration#callback):
+
+		button.onDown.callback = someFunction.bind(1);
+
+	In that example, `someFunction` is of type `Int->Void` and will always be called with 1.
+
+- `labelOffset:FlxPoint` is now an array `labelOffsets:Array<FlxPoint>` which uses the button status constants as indices for more control over the button position.
+- The highlight frame of the button spritesheet is now ignored by default on mobile devices, since it does not make much sense there - you can't hover over a button on a touchscreen.
+- It is now also possible to "swipe-press" a button, which means you can press it if the input (mouse or touch) has been moved over the button and then relased. Previously, you could only press a button if the press happened while you were already hovering over the button. This especially makes `FlxVirtualPad` more usable.
+
+
+### FlxG.keys and FlxG.keyboard
+
+In 3.0, FlxG.keyboard has been introduced. However, we realized that this does not make for an intuitive API - you can't tell the difference between the two from their name alone. In fact, even if you have been using the two for a while, it still seems confusing.
+
+This is why me merged the two classes again. This required removing the following functions:
+
+- `FlxG.keyboard.pressed()`
+- `FlxG.keyboard.justPressed()`
+- `FlxG.keyboard.justReleased()`
+
+You should use the following functions instead:
+
+- `FlxG.keys.anyPressed()`
+- `FlxG.keys.anyJustPressed()`
+- `FlxG.keys.anyJustReleased()`
+
+Please note that those functions take an `Array<String>` instead of a variable amount of `String`s. So the following...
+
+```haxe
+if (FlxG.keyboard.pressed("LEFT", "RIGHT") {}
+```
+
+...becomes:
+
+```haxe
+if (FlxG.keys.anyPressed(["LEFT", "RIGHT"]) {}
+```
+
+### FlxMouse refactor
+
+The following breaking changes were made during the refactor of `FlxMouse`:
+
+
+| HaxeFlixel 3.0                          | HaxeFlixel 3.1                         |
+| --------------------------------------- | ---------------------------------------|
+| FlxG.mouse.show();                 	  | FlxG.mouse.visible = true;             |
+|                   	                  |	FlxG.mouse.load();             |
+| FlxG.mouse.hide();                      | FlxG.mouse.visible = false;            |                        
+| FlxState.useMouse                		  | *removed*              				   |
+
+Also, the mouse cursor is now visible by default on non-mobile devices.
+
+The middle and right click events of the mouse are now set up by default, which means `FLX_MOUSE_ADVANCED` has turned into `FLX_NO_MOUSE_ADVANCED`.
+
+### The recording system and `FlxRandom`
+
+To put it bluntly... `FlxRandom` was a bit of a mess in 3.0. Some of the functions were deterministic, others weren't, which as a result made it very difficult to create deterministic games suitable for the recording system.
+
+In 3.1, `FlxRandom` has been completely refactored to be completely deterministic. A new algorithm for pseudo-random-number-generation was implemented, **which makes old replays incompatible** / they will have unpredictable results.
+
+Additionally, the following functions have been added to `FlxRandom`:
+
+- `weightedPick()`
+- `weightedGetObject()`
+- `colorExt()`
+
+### FlxSprite renamings
+
+A noteworthy amount of fields inside of `FlxSprite` have been renamed to increase the consistency with other parts of the API:
+
+| HaxeFlixel 3.0                          | HaxeFlixel 3.1                         |
+| --------------------------------------- | ---------------------------------------|
+| loadfromSprite()                 	  | loadGraphicFromSprite()             |
+|  setGraphicDimensions()                 	                  |	setGraphicSize()            | bakedRotation								| bakedRotationAngle                   |
+| pixelsOverlapPoint()                      | overlapsPoint()           |                        
+| loadImageFromTexture()                		  | loadGraphicFromTexture()         |
+| loadRotatedImageFromTexture()                | loadRotatedGraphicFromTexture() |
+| setColorTransformation()                   | setColorTransform()               |
+
+### Scale Modes
+
+HaxeFlixel 3.1 introduces scale modes to simplify targetting multiple resolutions. Because of this, `FlxG.autoResize` has been removed. 
+`FlxG.scaleMode` can be an instance of the following classes:
+
+-  `RatioScaleMode` (default!)
+-  `FillScaleMode`
+-  `FixedScaleMode`
+-  `RelativeScaleMode`
+-  `StageSizeScaleMode`
+
+You can also write a custom scale mode that extends `BaseScaleMode`.
+
+Be sure to check out the [ScaleModes demo](http://haxeflixel.com/demos/ScaleModes/).
+
+### Other breaking changes
+
+| HaxeFlixel 3.0                          | HaxeFlixel 3.1                         |
+| --------------------------------------- | ---------------------------------------|
+| FlxTypedGroup.autoReviveMembers       | *removed*            |
+| FlxG.gameFramerate                 	|	FlxG.updateFramerate           | 			
+| FlxG.flashFramerate                    | FlxG.drawFramerate           |                        
+| FlxG.gamepads.get()              		  | FlxG.gamepads.getByID()          |
+| FlxG.debugger.visualDebug             | FlxG.debugger.drawDebug                |
+| FlxG.paused                           | *removed (didn't have any functionality)*  |
+| FlxArrayUtil.intToString()            | FlxStringUtil.toIntArray()                |
+| FlxArrayUtil.floatToString()            | FlxStringUtil.toFloatArray()               |
+| FlxMisc.openURL()                      | FlxG.openURL()                            |
+| FlxMisc                                | *removed*                               | 
+| FlxSoundUtil                           | *removed (use a FlxTimer instead)*        |
+
+The classes from `flixel.system.input` have been moved to `flixel.input`.
+
+`FlxPoint`s in `FlxObject` and `FlxSprite` are now read-only / `(default, null)`, which means you need to use .set() on them if you were previously creating new points. The following...
+
+```haxe
+sprite.velocity = new FlxPoint(100, 50);
+```
+
+...becomes:
+
+```haxe
+sprite.velocity.set(100, 50);
+```
 
 ## Upgrading from HaxeFlixel 2.x to 3.0
 
-HaxeFlixel 3.0 is an evolution of the original Flixel api and while most of the API is very similar and quickly learnt, it requires some renames and modifications to update your code.
+HaxeFlixel 3.0 is an evolution of the original Flixel API and while most of the API is very similar and quickly learnt, it requires some renames and modifications to update your code.
 
 ### Major changes from version 2.10
 
