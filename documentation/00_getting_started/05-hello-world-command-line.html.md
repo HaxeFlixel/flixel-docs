@@ -14,7 +14,7 @@ You first need to install and setup flixel-tools - please refer to [this guide](
 HaxeFlixel requires a basic structure of files for any project that you can automatically create with the `template` command (`tpl` for short).
 
 ``` bash
-flixel tpl -n "Hello World"
+flixel tpl -n "HelloWorld"
 ```
 
 You will now see a new Hello World folder with all the files for your project being created automatically.
