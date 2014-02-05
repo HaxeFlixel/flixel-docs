@@ -1,7 +1,7 @@
 ```
 title: "Upgrade Guide"
 ```
-## Upgrading from HaxeFlixel 3.0 to 3.1
+## Upgrading from HaxeFlixel 3.0.4 to 3.1.0
 
 HaxeFlixel 3.1 is a continuization of our efforts of making the API cleaner and more intuitive, keeping the amount of bugs as low as possible and adding new useful features. It is one of the biggest releases so far.
 
