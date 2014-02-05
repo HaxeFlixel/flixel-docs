@@ -50,13 +50,13 @@ You should use the following functions instead:
 Please note that those functions take an `Array<String>` instead of a variable amount of `String`s. So the following...
 
 ```haxe
-if (FlxG.keyboard.pressed("LEFT", "RIGHT") {}
+if (FlxG.keyboard.pressed("LEFT", "RIGHT")) {}
 ```
 
 ...becomes:
 
 ```haxe
-if (FlxG.keys.anyPressed(["LEFT", "RIGHT"]) {}
+if (FlxG.keys.anyPressed(["LEFT", "RIGHT"])) {}
 ```
 
 ### FlxMouse refactor
