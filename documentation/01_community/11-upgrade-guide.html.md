@@ -115,6 +115,34 @@ You can also write a custom scale mode that extends `BaseScaleMode`.
 
 Be sure to check out the [ScaleModes demo](http://haxeflixel.com/demos/ScaleModes/).
 
+### FlxTypedGroup.sort()
+
+The way `FlxTypedGroup.sort()` has been changed for a significant performance improvement. If you want to sort by y, you now have to use the following syntax:
+
+```haxe
+group.sort(FlxSort.byY, FlxSort.ASCENDING);
+```
+
+Instead of:
+
+```haxe
+group.sort("y", FlxSort.ASCENDING);
+// or
+group.sort();
+```
+
+If you want to sort by anything other than `y`, you'll have to write a custom sorting function, as can be seen in this example:
+
+```haxe
+function sortByAlpha(Order:Int, Sprite1:FlxSprite, Sprite2:FlxSprite):Int
+{
+	return FlxSort.byValues(Order, Sprite1.alpha, Sprite2.alpha);
+}
+
+// usage on a FlxTypedGroup<FlxSprite>:
+group.sort(sortByAlpha);
+```
+
 ### Other breaking changes
 
 | HaxeFlixel 3.0                          | HaxeFlixel 3.1                         |
