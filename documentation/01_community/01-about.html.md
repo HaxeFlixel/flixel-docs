@@ -89,7 +89,7 @@ Everyone is highly encouraged to contribute to HaxeFlixel itself and the resourc
 		<h4>Gama11</h4>
 	</a>
 	<img style="float:left; margin-right: 14px;" src="/images/developers/Gama11.png">
-	<p>Gama11 is a highly valued contributor who has taken great pride in making our codebase consistent and structured. Jens took the lead on the HaxeFlixel 3.x API refactor and improvements to the codebase structure general.</p>
+	<p>Gama11 is a highly valued contributor who has taken great pride in making our codebase consistent and structured. He took the lead on the HaxeFlixel 3.x API refactor and improvements to the codebase structure general.</p>
 </li>
     <li>
 	<a href="http://github.com/larsiusprime">

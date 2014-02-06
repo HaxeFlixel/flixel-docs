@@ -2,29 +2,33 @@
 title: "FlxGroup"
 ```
 
-FlxGroups are an invaluable method of grouping your game objects in Flixel. The use cases for this are vast for example, pooling to reuse objects, collision detection and setting up easy ways to access particular collections of objects. A great feature of FlxGroups are their ability to be nested when using collision detection.
+FlxGroups are an invaluable method of grouping your game objects in Flixel. In fact, there is no way around them, as `FlxState` itself extends `FlxGroup`. 
+The use cases for groups are vast: pooling to reuse objects, collision detection and setting up easy ways to access particular collections of objects. A great feature of FlxGroups are their ability to be nested when using collision detection. Doing collisions is also way more efficient than doing it for individual objects.
 
-The api for FlxGroups is similar to other places in Flixel you can see a basic example adding Bullets to a group.
+The API for FlxGroups is similar to other places in Flixel. Here is a basic example using a group to pool bullet objects, represented by a `Bullet` class, holding a maxium of 100 bullets:
 
 ``` haxe
-var bullets = new FlxGroup();
 var poolSize = 100;
-var i = 0;
-while (i < poolSize/2) {
-    bullets.add(new Bullet());
-    i++;
+var bullets = new FlxTypedGroup<Bullet>(poolSize);
+
+for (i in 0...poolSize)
+{
+	bullets.add(new Bullet().kill());
 }
 ```
+Not how we did not use a regular `FlxGroup`, but a `FlxTypedGroup<Bullet>()`. This means that this particular group can only store objects that are instances of the `Bullet` class or instances of `Bullet` subclasses. `FlxGroup` itself is nothing but a shortcut for `FlxTypedGroup<FlxBasic>`.
 
-To call a bullet to fire at something you can the pool from using getFirstAvailable;
+Now, say we want to retrieve bullet instance to use in a shoot method:
 
 ``` haxe
-var bullet = bullets.getFirstAvailable(Bullet);
+var bullet = bullets.recycle(Bullet);
 ```
+
+If we had used a regular group here, we would have had to `cast` the return value of `recycle()` to a `Bullet`. By using a `FlxTypedGroup<Bullet>`, we have the benefit of type-safety.
 
 #### add(Object:T):T;
 
-You can add any type of Object that extends the base FlxGroup Type, if you use FlxGroup this is FlxBasic.
+You can add any type of Object that extends the base FlxGroup type, if you use `FlxGroup` this is `FlxBasic`.
 
 #### remove(Object:T):T
 
@@ -42,10 +46,16 @@ This will recursively kill() all objects so that they will be ready for use with
 
 Call the specified function on all members of the group.
 
-#### sort(Index:String = "y", Order:Int = -1);
+#### sort(Function:Int->T->T->Int, Order:Int = FlxSort.ASCENDING);
 
-Call this function to sort the group according to a particular value and order.
-By default, this will sort the game objects in Zelda-style overlaps, by using the "y" member variable of the objects.
-Use Order of -1 for ASCENDING sorting and 1 for DESCENDING sorting
+Call this function to sort the group according to a particular value and order. You will need to specificy a sorting function to do so. If you want to sort by something other than y, you will have to write a custom sorting function.
+
+
+
+Otherwase, you can just use the pre-made `FlxSort.byY()` like so for Zelda-style-sorting:
+
+```haxe
+group.sort(FlxSort.byY);
+```
 
 

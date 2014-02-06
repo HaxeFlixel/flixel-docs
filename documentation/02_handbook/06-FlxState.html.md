@@ -36,22 +36,19 @@ This is a common method throughout Flixel that ensures that you remove objects f
 
 package;
 
-import org.flixel.FlxState;
+import flixel.FlxState;
 
 class FlxExampleState extends FlxState
 {
-
 	override public function create():Void
 	{
         //create your state objects here
-
 	}
 
 	override public function update():Void
 	{
         //call super to update the core state class
 		super.update();
-
 	}
 
     override public function destroy():Void
@@ -59,7 +56,6 @@ class FlxExampleState extends FlxState
         //call super to destroy the core state class objects
         super.destroy();
     }
-
 }
 ```
 
@@ -69,15 +65,14 @@ Here is an example of a simple game state;
 
 package;
 
-import org.flixel.FlxTilemap;
-import org.flixel.FlxObject;
-import org.flixel.FlxG;
-import org.flixel.FlxSprite;
-import org.flixel.FlxState;
+import flixel.tile.FlxTilemap;
+import flixel.FlxObject;
+import flixel.FlxG;
+import flixel.FlxSprite;
+import flixel.FlxState;
 
 class FlxExampleState extends FlxState
 {
-
     private var wizard:FlxSprite;
     private var level:FlxTilemap;
 
@@ -85,9 +80,8 @@ class FlxExampleState extends FlxState
     {
         //create a main player
         wizard = new FlxSprite(200,200,'assets/player.png');
-        wizard.maxVelocity.x = 80;
-        wizard.maxVelocity.y = 200;
-        wizard.acceleration.y = 200;
+        wizard.maxVelocity.set(80, 200);
+        wizard.acceleration.y = 200; // gravity
         wizard.drag.x = wizard.maxVelocity.x * 4;
         add(wizard);
 
@@ -95,13 +89,13 @@ class FlxExampleState extends FlxState
         level = new FlxTilemap();
         level.loadMap('assets/level.csv', FlxTilemap.imgAuto, 0, 0, FlxTilemap.AUTO);
         add(level);
-
     }
 
     override public function update():Void
     {
         //control the player with keyboard
         wizard.acceleration.x = 0;
+
         if (FlxG.keys.LEFT)
         {
             wizard.acceleration.x = -wizard.maxVelocity.x * 4;
@@ -128,7 +122,6 @@ class FlxExampleState extends FlxState
 
         super.destroy();
     }
-
 }
 ```
 

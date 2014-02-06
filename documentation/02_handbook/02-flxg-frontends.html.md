@@ -2,11 +2,11 @@
 title: "Flixel Frontends"
 ```
 
-Frontends in HaxeFlixel 3.x are a new structure to the core of Flixel and which tackles the often criticized bloated collection of static methods in FlxG.
+Frontends in HaxeFlixel 3.x are a new structure to the core of Flixel and which tackles the often criticized bloated collection of static methods in `FlxG`.
 
 Frontends are accessed in `FlxG.frontend` in a similar fashion to what Flixel devs are used to. Careful thought has been given to organise them into logical shortcuts. This way the API will be easier to browse, remember and maintain.
 
-For example in HaxeFlixel 2.x to add a `FlxCamera` you would use `FlxG.addCamera(camera:FlxCamera);`, this `addCamera` method has been moved into a `camera` frontend with all the other `camera` related shortcuts.
+For example in HaxeFlixel 2.x to add a `FlxCamera` you would use `FlxG.addCamera(camera:FlxCamera);`, this `addCamera()` method has been moved into a `cameras` frontend with all the other `FlxCamera`-related methods.
 So the code in HaxeFlixel 3.x to add a `FlxCamera` is now `FlxG.cameras.add(camera:FlxCamera)`.
 
 The Flixel FrontEnds are as follows:
@@ -25,10 +25,6 @@ or `add` new commands to the console window.
 
 A reference to the `LogFrontEnd` object. Use it to `add` messages to the log window. It is recommended
 to use `trace()` instead of the old `FlxG.log()`, since traces will be redirected by default.
-
-### FlxG.bmpLog
-
-A reference to the `BmpLogFrontEnd` object. Use it to `add` images to the bmplog window.
 
 ### FlxG.watch
 
@@ -52,7 +48,7 @@ for example regarding the bitmap cache and the cache itself.
 ### FlxG.cameras
 
 A reference to the `CameraFrontEnd` object. Contains things related to cameras,
-a `list` of all cameras and the `defaultCamera` amongst other things.
+a `list` of all cameras and camera effects like `flash()` or `shake()`.
 
 ### FlxG.plugins
 
@@ -63,3 +59,7 @@ plugins and the functions required to `add()`, `remove()` them etc.
 
 A reference to the `SoundFrontEnd` object. Contains a `list` of all
 sounds and other things to manage or `play()` sounds.
+
+### FlxG.html5
+
+Provides information on some HTML5-specific things like `browser`, `browserPosition` etc...

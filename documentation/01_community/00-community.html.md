@@ -3,7 +3,7 @@ title: "Community"
 rootDoc: true
 ```
 
-HaxeFlixel is a collaborative project where from contributors all over the world.
+HaxeFlixel is a collaborative project from contributors all over the world.
 
 ## Forums
 
@@ -28,7 +28,7 @@ Special thanks go to all other community contributors:
 - [raincoleB](https://github.com/raincoleB)
 - [VictorGrunn](https://github.com/VictorGrunn)
 
-If we have missed your name here, please add your self on github ;)
+If we have missed your name here, please add your self on GitHub ;)
 
 ### Core Flixel
 
