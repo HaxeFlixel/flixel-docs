@@ -93,12 +93,13 @@ A noteworthy amount of fields inside of `FlxSprite` have been renamed to increas
 
 | HaxeFlixel 3.0                          | HaxeFlixel 3.1                         |
 | --------------------------------------- | ---------------------------------------|
-| loadfromSprite()                 	  | loadGraphicFromSprite()             |
-|  setGraphicDimensions()                 	                  |	setGraphicSize()            | bakedRotation								| bakedRotationAngle                   |
-| pixelsOverlapPoint()                      | overlapsPoint()           |                        
-| loadImageFromTexture()                		  | loadGraphicFromTexture()         |
-| loadRotatedImageFromTexture()                | loadRotatedGraphicFromTexture() |
-| setColorTransformation()                   | setColorTransform()               |
+| loadfromSprite()                 	  | loadGraphicFromSprite()                |
+| setGraphicDimensions()                  | setGraphicSize()            	   |
+| bakedRotation				  | bakedRotationAngle                     |
+| pixelsOverlapPoint()                    | overlapsPoint()                        |                        
+| loadImageFromTexture()                  | loadGraphicFromTexture()               |
+| loadRotatedImageFromTexture()           | loadRotatedGraphicFromTexture()        |
+| setColorTransformation()                | setColorTransform()                    |
 
 ### Scale Modes
 
