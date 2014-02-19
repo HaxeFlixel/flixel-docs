@@ -29,6 +29,16 @@ However, function names should also not be too short - you should be able to rou
 
 An example for a bad / too simple name would be `shoot()` instead of `shootEnemy()` in this example.
 
+### Spacing
+
+The equals sign (`=`) and commas (`,`) in function headers / calls should always be seperated by a single space. Spaces should *not* be used after opening and before closing brackets.
+
+| Good                                   | Bad                                    |
+| ---------------------------------------| ---------------------------------------|
+| `FlxG.resizeGame(320, 240);`           | `FlxG.resizeGame(320,240);`            |
+| `function test(value:Int = "5") {}`    | `function test(value:Int="5") {}`      |
+| `FlxG.resizeGame(320, 240);`           | `FlxG.resizeGame( 320, 240 );`         |
+
 ### Parameter names
 
 Capitalized letters for function parameters:
@@ -51,7 +61,7 @@ function setPositionFromPoint(Point:FlxPoint):Void
 
 Naming the parameter `Point` in this case is problematic because of `flash.geom.Point`. So consistent parameter naming becomes impossible.
 
-## Curley Braces
+## Curly Brackets
 
 Use line breaks in methods, operators etc where possible:
 
