@@ -25,6 +25,15 @@ Alternatively, you can update all libraries at once with this command:
 haxelib upgrade
 ```	
 
+## Install flixel command
+
+Run the following command to be able to use [flixel commands](https://github.com/HaxeFlixel/flixel-docs/blob/master/documentation/01_community/13-flixel-tools.html.md#commands):
+	
+``` bash
+haxelib install flixel-tools
+haxelib run flixel-tools setup
+```
+
 ## Development version
 
 If you are interested in using bleeding edge code from the development branch [on GitHub](https://github.com/HaxeFlixel/flixel), see [instructions here](/documentation/install-development-flixel).
