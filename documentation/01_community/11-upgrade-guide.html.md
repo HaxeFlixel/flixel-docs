@@ -1,6 +1,19 @@
 ```
 title: "Upgrade Guide"
 ```
+
+## Upgrading from HaxeFlixel 3.1.0 to 3.2.0
+
+
+| HaxeFlixel 3.1.0                        | HaxeFlixel 3.2.0                      |
+| --------------------------------------- |---------------------------------------|
+| FlxTween.multiVar(object, vars, duration, { delay: 1}); | FlxTween.multiVar(object, vars, duration, { startDelay: 1}); | FlxG.camera.followAdjust(4, 5);         | FlxG.cameras.followLead.set(4, 5);    | 
+| FlxTilemap.arrayToCSV()                 | FlxStringUtil.arrayToCSV()            |                        
+| FlxTilemap.bitmapToCSV()                | FlxStringUtil.bitmapToCSV()           |
+| FlxTilemap.imageToCSV()                 | FlxStringUtil.imageToCSV()            |
+| FlxMath.computeVelocity()               | FlxVelocity.computeVelocity()         |
+| FlxState.setSubState()                  | FlxState.openSubState()               |
+
 ## Upgrading from HaxeFlixel 3.0.4 to 3.1.0
 
 HaxeFlixel 3.1 is a continuization of our efforts of making the API cleaner and more intuitive, keeping the amount of bugs as low as possible and adding new features. It is one of the biggest releases so far.
