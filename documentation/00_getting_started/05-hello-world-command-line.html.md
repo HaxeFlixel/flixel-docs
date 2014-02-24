@@ -45,13 +45,6 @@ class MenuState extends FlxState
 	 */
 	override public function create():Void
 	{
-		// Set a background color
-		FlxG.cameras.bgColor = 0xff131c1b;
-		// Show the mouse (in case it hasn't been disabled)
-		#if !FLX_NO_MOUSE
-		FlxG.mouse.show();
-		#end
-		
 		super.create();
 	}
 	
