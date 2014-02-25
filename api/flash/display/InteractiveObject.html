@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8"/><link href="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.3.1/css/bootstrap-combined.min.css" rel="stylesheet"/><script src="http://code.jquery.com/jquery-1.9.1.min.js"></script><script src="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.3.1/js/bootstrap.min.js"></script><link href="../../styles.css" rel="stylesheet"/><script type="text/javascript">var dox = {rootPath: "../../",platforms: ["flixel"]};</script><script type="text/javascript" src="../../nav.js"></script><script type="text/javascript" src="../../index.js"></script><link rel="icon" href="../../favicon.ico" type="image/x-icon"></link><title>InteractiveObject</title></head><body><div class="navbar navbar-inverse navbar-fixed-top"><div class="navbar-inner"><form class="navbar-search pull-left" id="searchForm"><input id="search" type="text" class="search-query" placeholder="Filter" autocomplete="off"/></form><ul class="nav"><li id="select-platform" class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Platform<b class="caret"></b></a><ul class="dropdown-menu"><li data="all"><a href="#">All Platforms</a></li><li data="flixel"><a href="#">flixel</a></li></ul></li></ul></div></div><div id="container"><div id="nav"></div><div id="content"><div class="header"><h1><code><span class="directive">class </span><span class="type">flash.display.InteractiveObject</span><span class="keyword"> extends</span> <a class="type" href="../../flash/display/DisplayObject.html">DisplayObject</a></code></h1></div><div class="body"><p class="availability">Available on all platforms</p><div><table class="related-types toggle" style="margin-top:16px;"><tbody><tr><td colspan="2"><strong>Sub classes</strong></td></tr><tr><td width="12" style="vertical-align:top;"><a href="#" onclick="toggleInherited(this)"><img style="padding-top:4px;" src="../../triangle-closed.png"></img></a></td><td class="toggle-hide"><a href="../../flash/display/DisplayObjectContainer.html">DisplayObjectContainer</a>, <a href="../../flash/text/TextField.html">TextField</a></td><td class="toggle-show"><table class="table table-condensed"><tbody><tr><td width="200"><a href="../../flash/display/DisplayObjectContainer.html">DisplayObjectContainer</a></td><td><p>The DisplayObjectContainer class is the base class for all objects that can
+serve as display object containers on the display list. The display list
+manages all objects displayed in the Flash runtimes. Use the
+DisplayObjectContainer class to arrange the display objects in the display
+list. Each DisplayObjectContainer object has its own child list for
+organizing the z-order of the objects. The z-order is the front-to-back
+order that determines which object is drawn in front, which is behind, and
+so on.</p></td></tr><tr><td width="200"><a href="../../flash/text/TextField.html">TextField</a></td><td><p>The TextField class is used to create display objects for text display and
+input. <ph outputclass="flexonly">You can use the TextField class to
+perform low-level text rendering. However, in Flex, you typically use the
+Label, Text, TextArea, and TextInput controls to process text. &lt;ph
+outputclass="flashonly">You can give a text field an instance name in the
+Property inspector and use the methods and properties of the TextField
+class to manipulate it with ActionScript. TextField instance names are
+displayed in the Movie Explorer and in the Insert Target Path dialog box in
+the Actions panel.</p></td></tr></tbody></table></td></tr></tbody></table></div><div class="doc"><p>The InteractiveObject class is the abstract base class for all display
+objects with which the user can interact, using the mouse, keyboard, or
+other user input device.</p><p>You cannot instantiate the InteractiveObject class directly. A call to
+the <code>new InteractiveObject()</code> constructor throws an
+<code>ArgumentError</code> exception.</p><p>The InteractiveObject class itself does not include any APIs for
+rendering content onscreen. To create a custom subclass of the
+InteractiveObject class, extend one of the subclasses that do have APIs for
+rendering content onscreen, such as the Sprite, SimpleButton, TextField, or
+MovieClip classes.</p></div><h2>Instance Fields</h2><div class="platform platform-flixel"><a name="accessibilityImplementation"></a><h3><p><code><span class="keyword">var</span> <a href="#accessibilityImplementation"><span class="identifier">accessibilityImplementation</span></a>:<a class="type" href="../../flash/accessibility/AccessibilityImplementation.html">AccessibilityImplementation</a></code></p></h3><div class="doc"><p>The current accessibility implementation(AccessibilityImplementation) for
+this InteractiveObject instance.</p></div></div><div class="platform platform-flixel"><a name="contextMenu"></a><h3><p><code><span class="keyword">var</span> <a href="#contextMenu"><span class="identifier">contextMenu</span></a>:<a class="type" href="../../flash/ui/ContextMenu.html">ContextMenu</a></code></p></h3><div class="doc"><p>Specifies the context menu associated with this object.</p><p>For content running in Flash Player, this property is a ContextMenu
+object. In the AIR runtime, the ContextMenu class extends the NativeMenu
+class, however Flash Player only supports the ContextMenu class, not the
+NativeMenu class. </p><p><b>Note:</b> TextField objects always include a clipboard menu in the
+context menu. The clipboard menu contains Cut, Copy, Paste, Clear, and
+Select All commands. You cannot remove these commands from the context
+menu for TextField objects. For TextField objects, selecting these
+commands(or their keyboard equivalents) does not generate
+<code>clear</code>, <code>copy</code>, <code>cut</code>,
+<code>paste</code>, or <code>selectAll</code> events.</p></div></div><div class="platform platform-flixel"><a name="doubleClickEnabled"></a><h3><p><code><span class="keyword">var</span> <a href="#doubleClickEnabled"><span class="identifier">doubleClickEnabled</span></a>:<a class="type" href="../../Bool.html">Bool</a></code></p></h3><div class="doc"><p>Specifies whether the object receives <code>doubleClick</code> events. The
+default value is <code>false</code>, which means that by default an
+InteractiveObject instance does not receive <code>doubleClick</code>
+events. If the <code>doubleClickEnabled</code> property is set to
+<code>true</code>, the instance receives <code>doubleClick</code> events
+within its bounds. The <code>mouseEnabled</code> property of the
+InteractiveObject instance must also be set to <code>true</code> for the
+object to receive <code>doubleClick</code> events.</p><p>No event is dispatched by setting this property. You must use the
+<code>addEventListener()</code> method to add an event listener for the
+<code>doubleClick</code> event.</p></div></div><div class="platform platform-flixel"><a name="focusRect"></a><h3><p><code><span class="keyword">var</span> <a href="#focusRect"><span class="identifier">focusRect</span></a>:<a class="type" href="../../Dynamic.html">Dynamic</a></code></p></h3><div class="doc"><p>Specifies whether this object displays a focus rectangle. It can take one
+of three values: <code>true</code>, <code>false</code>, or
+<code>null</code>. Values of <code>true</code> and <code>false</code> work
+as expected, specifying whether or not the focus rectangle appears. A
+value of <code>null</code> indicates that this object obeys the
+<code>stageFocusRect</code> property of the Stage.</p></div></div><div class="platform platform-flixel"><a name="mouseEnabled"></a><h3><p><code><span class="keyword">var</span> <a href="#mouseEnabled"><span class="identifier">mouseEnabled</span></a>:<a class="type" href="../../Bool.html">Bool</a></code></p></h3><div class="doc"><p>Specifies whether this object receives mouse, or other user input,
+messages. The default value is <code>true</code>, which means that by
+default any InteractiveObject instance that is on the display list
+receives mouse events or other user input events. If
+<code>mouseEnabled</code> is set to <code>false</code>, the instance does
+not receive any mouse events(or other user input events like keyboard
+events). Any children of this instance on the display list are not
+affected. To change the <code>mouseEnabled</code> behavior for all
+children of an object on the display list, use
+<code>flash.display.DisplayObjectContainer.mouseChildren</code>.</p><p> No event is dispatched by setting this property. You must use the
+<code>addEventListener()</code> method to create interactive
+functionality.</p></div></div><div class="platform platform-flixel"><a name="needsSoftKeyboard"></a><h3><p><code><span class="keyword">var</span> <a href="#needsSoftKeyboard"><span class="identifier">needsSoftKeyboard</span></a>:<a class="type" href="../../Bool.html">Bool</a></code></p></h3><div class="doc"><p>Specifies whether a virtual keyboard(an on-screen, software keyboard)
+should display when this InteractiveObject instance receives focus.</p><p>By default, the value is <code>false</code> and focusing an
+InteractiveObject instance does not raise a soft keyboard. If the
+<code>needsSoftKeyboard</code> property is set to <code>true</code>, the
+runtime raises a soft keyboard when the InteractiveObject instance is
+ready to accept user input. An InteractiveObject instance is ready to
+accept user input after a programmatic call to set the Stage
+<code>focus</code> property or a user interaction, such as a "tap." If the
+client system has a hardware keyboard available or does not support
+virtual keyboards, then the soft keyboard is not raised.</p><p>The InteractiveObject instance dispatches
+<code>softKeyboardActivating</code>, <code>softKeyboardActivate</code>,
+and <code>softKeyboardDeactivate</code> events when the soft keyboard
+raises and lowers.</p><p><b>Note:</b> This property is not supported in AIR applications on
+iOS.</p></div></div><div class="platform platform-flixel"><a name="softKeyboardInputAreaOfInterest"></a><h3><p><code><span class="keyword">var</span> <a href="#softKeyboardInputAreaOfInterest"><span class="identifier">softKeyboardInputAreaOfInterest</span></a>:<a class="type" href="../../flash/geom/Rectangle.html">Rectangle</a></code></p></h3><div class="doc"><p>Defines the area that should remain on-screen when a soft keyboard is
+displayed.</p><p>If the <code>needsSoftKeyboard</code> property of this
+InteractiveObject is <code>true</code>, then the runtime adjusts the
+display as needed to keep the object in view while the user types.
+Ordinarily, the runtime uses the object bounds obtained from the
+<code>DisplayObject.getBounds()</code> method. You can specify a different
+area using this <code>softKeyboardInputAreaOfInterest</code> property.</p><p>Specify the <code>softKeyboardInputAreaOfInterest</code> in stage
+coordinates.</p><p><b>Note:</b> On Android, the
+<code>softKeyboardInputAreaOfInterest</code> is not respected in landscape
+orientations.</p></div></div><div class="platform platform-flixel"><a name="tabEnabled"></a><h3><p><code><span class="keyword">var</span> <a href="#tabEnabled"><span class="identifier">tabEnabled</span></a>:<a class="type" href="../../Bool.html">Bool</a></code></p></h3><div class="doc"><p>Specifies whether this object is in the tab order. If this object is in
+the tab order, the value is <code>true</code>; otherwise, the value is
+<code>false</code>. By default, the value is <code>false</code>, except
+for the following:
+<ul>
+  <li>For a SimpleButton object, the value is <code>true</code>.</li>
+  <li>For a TextField object with <code>type = "input"</code>, the value
+is <code>true</code>.</li>
+  <li>For a Sprite object or MovieClip object with <code>buttonMode =
+true</code>, the value is <code>true</code>.</li>
+</ul></p></div></div><div class="platform platform-flixel"><a name="tabIndex"></a><h3><p><code><span class="keyword">var</span> <a href="#tabIndex"><span class="identifier">tabIndex</span></a>:<a class="type" href="../../Int.html">Int</a></code></p></h3><div class="doc"><p>Specifies the tab ordering of objects in a SWF file. The
+<code>tabIndex</code> property is -1 by default, meaning no tab index is
+set for the object.</p><p>If any currently displayed object in the SWF file contains a
+<code>tabIndex</code> property, automatic tab ordering is disabled, and
+the tab ordering is calculated from the <code>tabIndex</code> properties
+of objects in the SWF file. The custom tab ordering includes only objects
+that have <code>tabIndex</code> properties.</p><p>The <code>tabIndex</code> property can be a non-negative integer. The
+objects are ordered according to their <code>tabIndex</code> properties,
+in ascending order. An object with a <code>tabIndex</code> value of 1
+precedes an object with a <code>tabIndex</code> value of 2. Do not use the
+same <code>tabIndex</code> value for multiple objects.</p><p>The custom tab ordering that the <code>tabIndex</code> property defines
+is <i>flat</i>. This means that no attention is paid to the hierarchical
+relationships of objects in the SWF file. All objects in the SWF file with
+<code>tabIndex</code> properties are placed in the tab order, and the tab
+order is determined by the order of the <code>tabIndex</code> values. </p><p><b>Note:</b> To set the tab order for TLFTextField instances, cast the
+display object child of the TLFTextField as an InteractiveObject, then set
+the <code>tabIndex</code> property. For example: <pre
+xml:space="preserve">
+InteractiveObject(tlfInstance.getChildAt(1)).tabIndex = 3; </pre> To
+reverse the tab order from the default setting for three instances of a
+TLFTextField object(<code>tlfInstance1</code>, <code>tlfInstance2</code>
+and <code>tlfInstance3</code>), use: <pre xml:space="preserve">
+InteractiveObject(tlfInstance1.getChildAt(1)).tabIndex = 3;
+InteractiveObject(tlfInstance2.getChildAt(1)).tabIndex = 2;
+InteractiveObject(tlfInstance3.getChildAt(1)).tabIndex = 1; </pre> </p></div></div><div class="platform platform-flixel"><a name="new"></a><h3><p><code><span class="keyword">function</span> <a href="#new"><span class="identifier">new</span></a>():<a class="type" href="../../Void.html">Void</a></code></p></h3><div class="doc"><p>Calling the <code>new InteractiveObject()</code> constructor throws an
+<code>ArgumentError</code> exception. You can, however, call constructors
+for the following subclasses of InteractiveObject:
+<ul>
+  <li><code>new SimpleButton()</code></li>
+  <li><code>new TextField()</code></li>
+  <li><code>new Loader()</code></li>
+  <li><code>new Sprite()</code></li>
+  <li><code>new MovieClip()</code></li>
+</ul></p></div></div><div class="platform platform-flixel"><a name="requestSoftKeyboard"></a><h3><p><code><span class="keyword">function</span> <a href="#requestSoftKeyboard"><span class="identifier">requestSoftKeyboard</span></a>():<a class="type" href="../../Bool.html">Bool</a></code></p></h3><div class="doc"><p>Raises a virtual keyboard.</p><p>Calling this method focuses the InteractiveObject instance and raises
+the soft keyboard, if necessary. The <code>needsSoftKeyboard</code> must
+also be <code>true</code>. A keyboard is not raised if a hardware keyboard
+is available, or if the client system does not support virtual
+keyboards.</p><p><b>Note:</b> This method is not supported in AIR applications on
+iOS.</p><table class="table table-condensed"><tbody><tr><td>returns</td><td><p>A value of <code>true</code> means that the soft keyboard request
+was granted; <code>false</code> means that the soft keyboard was
+not raised.</p></td></tr></tbody></table></div></div></div></div></div></body></html>

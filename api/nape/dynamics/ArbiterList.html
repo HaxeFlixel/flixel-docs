@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8"/><link href="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.3.1/css/bootstrap-combined.min.css" rel="stylesheet"/><script src="http://code.jquery.com/jquery-1.9.1.min.js"></script><script src="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.3.1/js/bootstrap.min.js"></script><link href="../../styles.css" rel="stylesheet"/><script type="text/javascript">var dox = {rootPath: "../../",platforms: ["flixel"]};</script><script type="text/javascript" src="../../nav.js"></script><script type="text/javascript" src="../../index.js"></script><link rel="icon" href="../../favicon.ico" type="image/x-icon"></link><title>ArbiterList</title></head><body><div class="navbar navbar-inverse navbar-fixed-top"><div class="navbar-inner"><form class="navbar-search pull-left" id="searchForm"><input id="search" type="text" class="search-query" placeholder="Filter" autocomplete="off"/></form><ul class="nav"><li id="select-platform" class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Platform<b class="caret"></b></a><ul class="dropdown-menu"><li data="all"><a href="#">All Platforms</a></li><li data="flixel"><a href="#">flixel</a></li></ul></li></ul></div></div><div id="container"><div id="nav"></div><div id="content"><div class="header"><h1><code><span class="directive">class </span><span class="type">nape.dynamics.ArbiterList</span></code></h1></div><div class="body"><p class="availability">Available on all platforms</p><div><table class="related-types toggle" style="margin-top:16px;"><tbody><tr><td colspan="2"><strong>Sub classes</strong></td></tr><tr><td width="12" style="vertical-align:top;"><a href="#" onclick="toggleInherited(this)"><img style="padding-top:4px;" src="../../triangle-closed.png"></img></a></td><td class="toggle-hide"><a href="../../zpp_nape/dynamics/ZPP_SpaceArbiterList.html">ZPP_SpaceArbiterList</a></td><td class="toggle-show"><table class="table table-condensed"><tbody><tr><td width="200"><a href="../../zpp_nape/dynamics/ZPP_SpaceArbiterList.html">ZPP_SpaceArbiterList</a></td><td><p></p></td></tr></tbody></table></td></tr></tbody></table></div><div class="doc"><p>Nape list of Arbiter type objects
+<br/><br/>
+Internally this list is at present implemented as a linked list with
+object pooled nodes and iterators with various fast paths made for
+standard access patterns (For instance accessing successive elements
+runs in constant time when using random access functions)
+<br/><br/>
+Iteration of this list can be done in various ways, but the preferred
+way on all targets, is through use of the foreach function:
+<pre>
+list.foreach(function (obj) {
+});
+</pre>
+This method is inlined so that in haxe no closure will need to be created.
+<br/><br/>
+In AS3, a closure would need to be created in general, so for performance
+reasons you 'may' choose to use iteration as follows:
+<pre>
+for (var i:int = 0; i &lt; list.length; i++) {
+    var obj:Arbiter = list.at(i);
+}
+</pre>
+<br/>
+NOTE: It is 'not' safe to modify a list whilst iterating over it.
+If you wish to remove elements during an iteration you should use the
+filter method, for example:
+<pre>
+list.filter(function (obj) {
+    // operate on object.
+    // ...
+    return (false if you want object to be removed);
+});
+</pre>
+<br/><br/>
+In AS3, if you wish to avoid a closure generation, you can perform such
+an iteration in a safe manner as follows:
+<pre>
+var i:int = 0;
+while (i &lt; list.length) {
+    var obj:Arbiter = list.at(i);
+    // operate on object.
+    // ...
+    if (should remove obj) {
+        list.remove(obj);
+        continue;
+    }
+    else i++;
+}
+</pre>
+Or if you are always clearing the list entirely you could write:
+<pre>
+while (!list.empty()) {
+    var obj:Arbiter = list.pop();
+    // operate on object.
+    // ...
+}
+</pre></p></div><h2>Class Fields</h2><div class="platform platform-flixel"><a name="fromArray"></a><h3><p><code><span class="keyword">static </span><span class="keyword">function</span> <a href="#fromArray"><span class="identifier">fromArray</span></a>(array:<a class="type" href="../../Array.html">Array</a>&lt;<a class="type" href="../../nape/dynamics/Arbiter.html">Arbiter</a>&gt;):<a class="type" href="../../nape/dynamics/ArbiterList.html">ArbiterList</a></code></p></h3><div class="doc"><p>Convert standard Array to Nape list.</p><table class="table table-condensed"><tbody><tr><td>array</td><td><p>The array to be converted</p></td></tr><tr><td>returns</td><td><p>An equivalent Nape list.</p></td></tr></tbody></table></div></div><div class="platform platform-flixel"><a name="fromVector"></a><h3><p><code><span class="keyword">static </span><span class="keyword">function</span> <a href="#fromVector"><span class="identifier">fromVector</span></a>(vector:<a class="type" href="../../flash/Vector.html">Vector</a>&lt;<a class="type" href="../../nape/dynamics/Arbiter.html">Arbiter</a>&gt;):<a class="type" href="../../nape/dynamics/ArbiterList.html">ArbiterList</a></code></p></h3><div class="doc"><p>Convert flash.Vector to Nape list.</p><table class="table table-condensed"><tbody><tr><td>vector</td><td><p>The vector to be converted</p></td></tr><tr><td>returns</td><td><p>An equivalent Nape list.</p></td></tr></tbody></table></div></div><h2>Instance Fields</h2><div class="platform platform-flixel"><a name="length"></a><h3><p><code><span class="keyword">var</span> <a href="#length"><span class="identifier">length</span></a>:<a class="type" href="../../Int.html">Int</a></code></p></h3><div class="doc"><p>Length of list.</p></div></div><div class="platform platform-flixel"><a name="zpp_inner"></a><h3><p><code><span class="keyword">var</span> <a href="#zpp_inner"><span class="identifier">zpp_inner</span></a>:<a class="type" href="../../zpp_nape/util/ZPP_ArbiterList.html">ZPP_ArbiterList</a></code></p></h3><div class="doc"><p>@private</p></div></div><div class="platform platform-flixel"><a name="new"></a><h3><p><code><span class="keyword">function</span> <a href="#new"><span class="identifier">new</span></a>():<a class="type" href="../../Void.html">Void</a></code></p></h3><div class="doc"><p>Construct a new list.</p></div></div><div class="platform platform-flixel"><a name="add"></a><h3><p><code><span class="keyword">function</span> <a href="#add"><span class="identifier">add</span></a>(obj:<a class="type" href="../../nape/dynamics/Arbiter.html">Arbiter</a>):<a class="type" href="../../Bool.html">Bool</a></code></p></h3><div class="doc"><p>Insert element into list in most effecient way.
+<br/><br/>
+This method will defer to either the push or unshift function
+depending on which is most effecient in the context.
+<br/><br/>
+If order of elements is not important then you should always use
+this function to insert elements.</p><table class="table table-condensed"><tbody><tr><td>obj</td><td><p>The object to insert.</p></td></tr><tr><td>returns</td><td><p>True if object was successfuly inserted.</p></td></tr></tbody></table></div></div><div class="platform platform-flixel"><a name="at"></a><h3><p><code><span class="keyword">function</span> <a href="#at"><span class="identifier">at</span></a>(index:<a class="type" href="../../Int.html">Int</a>):<a class="type" href="../../nape/dynamics/Arbiter.html">Arbiter</a></code></p></h3><div class="doc"><p>Random access to elements of list by index.
+<br/><br/>
+Under normal circumstances, accessing succesive elements via this
+method will occur in constant time.</p><table class="table table-condensed"><tbody><tr><td>index</td><td><p>The index of the element in list to access.</p></td></tr><tr><td>returns</td><td><p>The element at the given index.</p></td></tr></tbody></table></div></div><div class="platform platform-flixel"><a name="clear"></a><h3><p><code><span class="keyword">function</span> <a href="#clear"><span class="identifier">clear</span></a>():<a class="type" href="../../Void.html">Void</a></code></p></h3><div class="doc"><p>Clear the list, removing all elements.</p></div></div><div class="platform platform-flixel"><a name="copy"></a><h3><p><code><span class="keyword">function</span> <a href="#copy"><span class="identifier">copy</span></a>(?deep:<a class="type" href="../../Bool.html">Bool</a>):<a class="type" href="../../nape/dynamics/ArbiterList.html">ArbiterList</a></code></p></h3><div class="doc"><p>Produce a possibly deep copy of list.</p><table class="table table-condensed"><tbody><tr><td>deep</td><td><p>If true, then each element will have its own copy
+function called instead of simply having its
+reference copied over.</p></td></tr><tr><td>returns</td><td><p>The copied list.</p></td></tr></tbody></table></div></div><div class="platform platform-flixel"><a name="empty"></a><h3><p><code><span class="keyword">function</span> <a href="#empty"><span class="identifier">empty</span></a>():<a class="type" href="../../Bool.html">Bool</a></code></p></h3><div class="doc"><p>Test if list is empty or not.</p><table class="table table-condensed"><tbody><tr><td>returns</td><td><p>True if list is empty.</p></td></tr></tbody></table></div></div><div class="platform platform-flixel"><a name="filter"></a><h3><p><code><span class="keyword">function</span> <a href="#filter"><span class="identifier">filter</span></a>(lambda:<a class="type" href="../../nape/dynamics/Arbiter.html">Arbiter</a> -&gt;<a class="type" href="../../Bool.html">Bool</a>):<a class="type" href="../../nape/dynamics/ArbiterList.html">ArbiterList</a></code></p></h3><div class="doc"><p>Iterate over list filtering elements.
+<br/><br/>
+The given function will be applied to each element, whenever the
+function returns false, the element will be removed from the list.
+<br/><br/>
+Any exception thrown by the supplied function will be treat as a
+signal to halt iteration acting as a 'break' statement.
+<br/><br/>
+This method is to be greatly preferred for filtering logic as
+it is otherwise unsafe to modify the list during an iteration.
+<br/><br/>
+An example of using this method to clean up a list whilst performing
+actions on the elements.
+<pre>
+list.filter(function (obj) {
+   // perform clean up with obj
+   return false; // remove from list.
+});
+</pre></p><table class="table table-condensed"><tbody><tr><td>lambda</td><td><p>The function to apply to each argument, deciding if
+element should be removed.</p></td></tr><tr><td>returns</td><td><p>A reference to 'this' list.</p></td></tr></tbody></table></div></div><div class="platform platform-flixel"><a name="foreach"></a><h3><p><code><span class="keyword">function</span> <a href="#foreach"><span class="identifier">foreach</span></a>(lambda:<a class="type" href="../../nape/dynamics/Arbiter.html">Arbiter</a> -&gt;<a class="type" href="../../Void.html">Void</a>):<a class="type" href="../../nape/dynamics/ArbiterList.html">ArbiterList</a></code></p></h3><div class="doc"><p>Iterate over list applying function.
+<br/><br/>
+Any exception thrown by the supplied function will be treat as a
+signal to halt iteration acting as a 'break' statement.
+<br/><br/>
+This method should be preferred to using standard haxe iteration
+as there will be no allocation of an iterator object.
+<pre>
+list.foreach(function (obj) {
+    if (ignore<em>object(obj)) return; //acts as a 'continue' statement
+    if (halt</em>iteration(obj)) throw "": //acts as a 'break' statement
+});
+</pre></p><table class="table table-condensed"><tbody><tr><td>lambda</td><td><p>The function to apply to each argument.</p></td></tr><tr><td>returns</td><td><p>A reference to 'this' list.</p></td></tr></tbody></table></div></div><div class="platform platform-flixel"><a name="has"></a><h3><p><code><span class="keyword">function</span> <a href="#has"><span class="identifier">has</span></a>(obj:<a class="type" href="../../nape/dynamics/Arbiter.html">Arbiter</a>):<a class="type" href="../../Bool.html">Bool</a></code></p></h3><div class="doc"><p>Check if element is already in the list</p><table class="table table-condensed"><tbody><tr><td>obj</td><td><p>The object to test.</p></td></tr><tr><td>returns</td><td><p>True if object is in the list.</p></td></tr></tbody></table></div></div><div class="platform platform-flixel"><a name="iterator"></a><h3><p><code><span class="keyword">function</span> <a href="#iterator"><span class="identifier">iterator</span></a>():<a class="type" href="../../nape/dynamics/ArbiterIterator.html">ArbiterIterator</a></code></p></h3><div class="doc"><p>Return Haxe iterator for list.
+<br/><br/>
+Use of this iterator, whilst stylistically better in Haxe should not
+be used, in preference for use of the foreach function which will
+not require allocation of an iterator object.
+<br/><br/>
+Equally in AS3, the foreach method should be the preferred way to iterate.</p></div></div><div class="platform platform-flixel"><a name="merge"></a><h3><p><code><span class="keyword">function</span> <a href="#merge"><span class="identifier">merge</span></a>(xs:<a class="type" href="../../nape/dynamics/ArbiterList.html">ArbiterList</a>):<a class="type" href="../../Void.html">Void</a></code></p></h3><div class="doc"><p>Merge given list into this one.
+<br/><br/>
+The result is that this list will have all objects from the argument
+that were not already in the list inserted. You should make no
+assumption about the order of these insertions.</p><table class="table table-condensed"><tbody><tr><td>xs</td><td><p>The list to merge.</p></td></tr></tbody></table></div></div><div class="platform platform-flixel"><a name="pop"></a><h3><p><code><span class="keyword">function</span> <a href="#pop"><span class="identifier">pop</span></a>():<a class="type" href="../../nape/dynamics/Arbiter.html">Arbiter</a></code></p></h3><div class="doc"><p>Pop element from back of list.
+<br/><br/>
+If you are wanting to clear a list, whilst operating on its elements,
+consider use of the filter method instead.</p><table class="table table-condensed"><tbody><tr><td>returns</td><td><p>The element removed from list.</p></td></tr></tbody></table></div></div><div class="platform platform-flixel"><a name="push"></a><h3><p><code><span class="keyword">function</span> <a href="#push"><span class="identifier">push</span></a>(obj:<a class="type" href="../../nape/dynamics/Arbiter.html">Arbiter</a>):<a class="type" href="../../Bool.html">Bool</a></code></p></h3><div class="doc"><p>Push element to back of list.
+<br/><br/>
+When the order of objects is not important, it is best to use the
+add() method instead.</p><table class="table table-condensed"><tbody><tr><td>obj</td><td><p>The object to insert.</p></td></tr><tr><td>returns</td><td><p>True if object was successively inserted.</p></td></tr></tbody></table></div></div><div class="platform platform-flixel"><a name="remove"></a><h3><p><code><span class="keyword">function</span> <a href="#remove"><span class="identifier">remove</span></a>(obj:<a class="type" href="../../nape/dynamics/Arbiter.html">Arbiter</a>):<a class="type" href="../../Bool.html">Bool</a></code></p></h3><div class="doc"><p>Remove element from list.
+<br/><br/>
+This is a linear time operation.</p><table class="table table-condensed"><tbody><tr><td>obj</td><td><p>The object to remove</p></td></tr><tr><td>returns</td><td><p>True if object was removed from list.</p></td></tr></tbody></table></div></div><div class="platform platform-flixel"><a name="shift"></a><h3><p><code><span class="keyword">function</span> <a href="#shift"><span class="identifier">shift</span></a>():<a class="type" href="../../nape/dynamics/Arbiter.html">Arbiter</a></code></p></h3><div class="doc"><p>Pop element from front of list.
+<br/><br/>
+If you are wanting to clear a list, whilst operating on its elements,
+consider use of the filter method instead.</p><table class="table table-condensed"><tbody><tr><td>returns</td><td><p>The element removed from list.</p></td></tr></tbody></table></div></div><div class="platform platform-flixel"><a name="toString"></a><h3><p><code><span class="keyword">function</span> <a href="#toString"><span class="identifier">toString</span></a>():<a class="type" href="../../String.html">String</a></code></p></h3><div class="doc"><p>@private</p></div></div><div class="platform platform-flixel"><a name="unshift"></a><h3><p><code><span class="keyword">function</span> <a href="#unshift"><span class="identifier">unshift</span></a>(obj:<a class="type" href="../../nape/dynamics/Arbiter.html">Arbiter</a>):<a class="type" href="../../Bool.html">Bool</a></code></p></h3><div class="doc"><p>Push element to front of list.
+<br/><br/>
+When the order of objects is not important, it is best to use the
+add() method instead.</p><table class="table table-condensed"><tbody><tr><td>obj</td><td><p>The object to insert.</p></td></tr><tr><td>returns</td><td><p>True if object was successively inserted.</p></td></tr></tbody></table></div></div><div class="platform platform-flixel"><a name="zpp_gl"></a><h3><p><code><span class="keyword">function</span> <a href="#zpp_gl"><span class="identifier">zpp_gl</span></a>():<a class="type" href="../../Int.html">Int</a></code></p></h3><div class="doc"><p>@private</p></div></div><div class="platform platform-flixel"><a name="zpp_vm"></a><h3><p><code><span class="keyword">function</span> <a href="#zpp_vm"><span class="identifier">zpp_vm</span></a>():<a class="type" href="../../Void.html">Void</a></code></p></h3><div class="doc"><p>@private</p></div></div></div></div></div></body></html>

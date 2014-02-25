@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8"/><link href="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.3.1/css/bootstrap-combined.min.css" rel="stylesheet"/><script src="http://code.jquery.com/jquery-1.9.1.min.js"></script><script src="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.3.1/js/bootstrap.min.js"></script><link href="../../styles.css" rel="stylesheet"/><script type="text/javascript">var dox = {rootPath: "../../",platforms: ["flixel"]};</script><script type="text/javascript" src="../../nav.js"></script><script type="text/javascript" src="../../index.js"></script><link rel="icon" href="../../favicon.ico" type="image/x-icon"></link><title>LineJoint</title></head><body><div class="navbar navbar-inverse navbar-fixed-top"><div class="navbar-inner"><form class="navbar-search pull-left" id="searchForm"><input id="search" type="text" class="search-query" placeholder="Filter" autocomplete="off"/></form><ul class="nav"><li id="select-platform" class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Platform<b class="caret"></b></a><ul class="dropdown-menu"><li data="all"><a href="#">All Platforms</a></li><li data="flixel"><a href="#">flixel</a></li></ul></li></ul></div></div><div id="container"><div id="nav"></div><div id="content"><div class="header"><h1><code><span class="directive">class </span><span class="type">nape.constraint.LineJoint</span><span class="keyword"> extends</span> <a class="type" href="../../nape/constraint/Constraint.html">Constraint</a></code></h1></div><div class="body"><p class="availability">Available on all platforms</p><div class="doc"><p>LineJoint constraining anchor of one body, to a line segment of the other.
+<br/><br/>
+The equation for this constraint could be written like:
+<pre>
+       0  = [dir.cross(delta)]  = 0
+jointMin &lt;= [dor.dot  (delta)] &lt;= jointMax
+</pre>
+where:
+<pre>
+dir   = body1.localVectorToWorld(direction).unit();
+delta = body2.localPointToWorld(anchor2).sub(body1.localPointToWorld(anchor1));
+</pre>
+This is a 2 dimensional constraint, and is (when at the limits) solved as a
+block constraint for better stability. This is however not the most stable
+of joint when chained and put under stress and is a rather rare case where
+using a non-stiff joint can actually be more stable than
+using a stiff one.
+<br/><br/>
+When <code> jointMin = jointMax </code>, it would be better to use a PivotJoint
+instead with suitable
+placed anchors.
+<br/><br/>
+The line segment is defined implicitly via the
+<code>anchor1, direction, jointMin and jointMax</code> properties with end
+points defined in local coordinate system of body1 like:
+<pre>
+start = anchor1.add(direction.unit().mul(jointMin))
+end   = anchor1.add(direction.unit().mul(jointMax))
+</pre>
+The reason for this more general description of a line segment is that one or
+both of jointMin, jointMax are permitted to be infinite and a line segment
+defined with a start and end point is not sufficient to describe such lines.</p></div><h2>Instance Fields</h2><div class="platform platform-flixel"><a name="anchor1"></a><h3><p><code><span class="keyword">var</span> <a href="#anchor1"><span class="identifier">anchor1</span></a>:<a class="type" href="../../nape/geom/Vec2.html">Vec2</a></code></p></h3><div class="doc"><p>Anchor point on first Body, defining position on line.
+<br/><br/>
+This anchor point is defined in the local coordinate system of body1.</p></div></div><div class="platform platform-flixel"><a name="anchor2"></a><h3><p><code><span class="keyword">var</span> <a href="#anchor2"><span class="identifier">anchor2</span></a>:<a class="type" href="../../nape/geom/Vec2.html">Vec2</a></code></p></h3><div class="doc"><p>Anchor point on second Body.
+<br/><br/>
+This anchor point is defined in the local coordinate system of body2.</p></div></div><div class="platform platform-flixel"><a name="body1"></a><h3><p><code><span class="keyword">var</span> <a href="#body1"><span class="identifier">body1</span></a>:<a class="type" href="../../Null.html">Null</a>&lt;<a class="type" href="../../nape/phys/Body.html">Body</a>&gt;</code></p></h3><div class="doc"><p>First Body in constraint, defining the line segment.
+<br/><br/>
+This value may be null, but trying to simulate the constraint whilst
+this body is null will result in an error.</p></div></div><div class="platform platform-flixel"><a name="body2"></a><h3><p><code><span class="keyword">var</span> <a href="#body2"><span class="identifier">body2</span></a>:<a class="type" href="../../Null.html">Null</a>&lt;<a class="type" href="../../nape/phys/Body.html">Body</a>&gt;</code></p></h3><div class="doc"><p>Second Body in constraint.
+<br/><br/>
+This value may be null, but trying to simulate the constraint whilst
+this body is null will result in an error.</p></div></div><div class="platform platform-flixel"><a name="direction"></a><h3><p><code><span class="keyword">var</span> <a href="#direction"><span class="identifier">direction</span></a>:<a class="type" href="../../nape/geom/Vec2.html">Vec2</a></code></p></h3><div class="doc"><p>Direction of line on first Body.
+<br/><br/>
+This direction is defined in the local coordinate system of body1 and
+need not be normalised.</p></div></div><div class="platform platform-flixel"><a name="jointMax"></a><h3><p><code><span class="keyword">var</span> <a href="#jointMax"><span class="identifier">jointMax</span></a>:<a class="type" href="../../Float.html">Float</a></code></p></h3><div class="doc"><p>Upper bound for constraint.
+<br/><br/>
+This value must be greater than or equal to jointMin.</p></div></div><div class="platform platform-flixel"><a name="jointMin"></a><h3><p><code><span class="keyword">var</span> <a href="#jointMin"><span class="identifier">jointMin</span></a>:<a class="type" href="../../Float.html">Float</a></code></p></h3><div class="doc"><p>Lower bound for constraint.
+<br/><br/>
+This value must be less than or equal to jointMax.</p></div></div><div class="platform platform-flixel"><a name="zpp_inner_zn"></a><h3><p><code><span class="keyword">var</span> <a href="#zpp_inner_zn"><span class="identifier">zpp_inner_zn</span></a>:<a class="type" href="../../zpp_nape/constraint/ZPP_LineJoint.html">ZPP_LineJoint</a></code></p></h3><div class="doc"><p>@private</p></div></div><div class="platform platform-flixel"><a name="new"></a><h3><p><code><span class="keyword">function</span> <a href="#new"><span class="identifier">new</span></a>(body1:<a class="type" href="../../Null.html">Null</a>&lt;<a class="type" href="../../nape/phys/Body.html">Body</a>&gt;, body2:<a class="type" href="../../Null.html">Null</a>&lt;<a class="type" href="../../nape/phys/Body.html">Body</a>&gt;, anchor1:<a class="type" href="../../nape/geom/Vec2.html">Vec2</a>, anchor2:<a class="type" href="../../nape/geom/Vec2.html">Vec2</a>, direction:<a class="type" href="../../nape/geom/Vec2.html">Vec2</a>, jointMin:<a class="type" href="../../Float.html">Float</a>, jointMax:<a class="type" href="../../Float.html">Float</a>):<a class="type" href="../../Void.html">Void</a></code></p></h3><div class="doc"><p>Construct a new LineJoint.</p><table class="table table-condensed"><tbody><tr><td>body1</td><td><p>The first body in LineJoint.</p></td></tr><tr><td>body2</td><td><p>The second body in LineJoint.</p></td></tr><tr><td>anchor1</td><td><p>The first local anchor for joint.</p></td></tr><tr><td>anchor2</td><td><p>The second local anchor for joint.</p></td></tr><tr><td>direction</td><td><p>The direction of local line for joint.</p></td></tr><tr><td>jointMin</td><td><p>The lower bound for constraint.</p></td></tr><tr><td>jointMax</td><td><p>The upper bound for constraint.</p></td></tr><tr><td>returns</td><td><p>The constructed LineJoint.</p></td></tr></tbody></table></div></div><div class="platform platform-flixel"><a name="bodyImpulse"></a><h3><p><code><span class="keyword">function</span> <a href="#bodyImpulse"><span class="identifier">bodyImpulse</span></a>(body:<a class="type" href="../../nape/phys/Body.html">Body</a>):<a class="type" href="../../nape/geom/Vec3.html">Vec3</a></code></p></h3><div class="doc"><p>@inheritDoc</p></div></div><div class="platform platform-flixel"><a name="impulse"></a><h3><p><code><span class="keyword">function</span> <a href="#impulse"><span class="identifier">impulse</span></a>():<a class="type" href="../../nape/geom/MatMN.html">MatMN</a></code></p></h3><div class="doc"><p>@inheritDoc
+<br/><br/>
+For this constraint, the MatMN will be 2x1.</p></div></div><div class="platform platform-flixel"><a name="visitBodies"></a><h3><p><code><span class="keyword">function</span> <a href="#visitBodies"><span class="identifier">visitBodies</span></a>(lambda:<a class="type" href="../../nape/phys/Body.html">Body</a> -&gt;<a class="type" href="../../Void.html">Void</a>):<a class="type" href="../../Void.html">Void</a></code></p></h3><div class="doc"><p>@inheritDoc</p></div></div></div></div></div></body></html>

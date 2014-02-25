@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8"/><link href="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.3.1/css/bootstrap-combined.min.css" rel="stylesheet"/><script src="http://code.jquery.com/jquery-1.9.1.min.js"></script><script src="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.3.1/js/bootstrap.min.js"></script><link href="../../styles.css" rel="stylesheet"/><script type="text/javascript">var dox = {rootPath: "../../",platforms: ["flixel"]};</script><script type="text/javascript" src="../../nav.js"></script><script type="text/javascript" src="../../index.js"></script><link rel="icon" href="../../favicon.ico" type="image/x-icon"></link><title>Geom</title></head><body><div class="navbar navbar-inverse navbar-fixed-top"><div class="navbar-inner"><form class="navbar-search pull-left" id="searchForm"><input id="search" type="text" class="search-query" placeholder="Filter" autocomplete="off"/></form><ul class="nav"><li id="select-platform" class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Platform<b class="caret"></b></a><ul class="dropdown-menu"><li data="all"><a href="#">All Platforms</a></li><li data="flixel"><a href="#">flixel</a></li></ul></li></ul></div></div><div id="container"><div id="nav"></div><div id="content"><div class="header"><h1><code><span class="directive">class </span><span class="type">nape.geom.Geom</span></code></h1></div><div class="body"><p class="availability">Available on all platforms</p><div class="doc"><p>Geom class provides interface to collision detection routines in nape.</p></div><h2>Class Fields</h2><div class="platform platform-flixel"><a name="contains"></a><h3><p><code><span class="keyword">static </span><span class="keyword">function</span> <a href="#contains"><span class="identifier">contains</span></a>(shape1:<a class="type" href="../../nape/shape/Shape.html">Shape</a>, shape2:<a class="type" href="../../nape/shape/Shape.html">Shape</a>):<a class="type" href="../../Bool.html">Bool</a></code></p></h3><div class="doc"><p>Determine if one Shape is entirely contained within another.
+<br/><br/>
+The input Shapes must belong to a Body so that their world positions
+and orientations are defined; these Bodies need not be different nor
+part of any Space.</p><table class="table table-condensed"><tbody><tr><td>shape1</td><td><p>this shape must belong to a Body.</p></td></tr><tr><td>shape2</td><td><p>this shape must belong to a Body.</p></td></tr><tr><td>returns</td><td><p>True if shape2 is completely contained within shape1.</p></td></tr></tbody></table></div></div><div class="platform platform-flixel"><a name="distance"></a><h3><p><code><span class="keyword">static </span><span class="keyword">function</span> <a href="#distance"><span class="identifier">distance</span></a>(shape1:<a class="type" href="../../nape/shape/Shape.html">Shape</a>, shape2:<a class="type" href="../../nape/shape/Shape.html">Shape</a>, out1:<a class="type" href="../../nape/geom/Vec2.html">Vec2</a>, out2:<a class="type" href="../../nape/geom/Vec2.html">Vec2</a>):<a class="type" href="../../Float.html">Float</a></code></p></h3><div class="doc"><p>Determine distance and closest points between two Shapes.
+<br/><br/>
+The input Shapes must belong to a Body so that their world positions
+and orientations are defined; these Bodies need not be different nor
+part of any Space.
+<br/><br/>
+If the shapes are intersecting, then a negative value is returned
+equal to the penetration of the shapes, and the out1/out2 vectors
+will still be meaningful with their difference being the minimum
+translational vector to seperate the Shapes.
+<br/><br/>
+As the out1/out2 vectors are used to return values from the function,
+this is one of the rare cases where should out1/out2 be weak Vec2's
+they will 'not' be sent to the global object pool on being passed to
+this function.
+<pre>
+var closest1 = Vec2.get();
+var closest2 = Vec2.get();
+var distance = Geom.distance(shape1, shape2, out1, out2);
+if (distance &lt; 0) {
+    trace("Shapes intersect and penetration distance is " +
+          (-distance) + " with witness points " + closest1.toString() +
+          " &lt;-> " + closest2.toString());
+}else {
+    trace("Shapes do not intersect and distance betweem them is " +
+          distance + " with closest points " + closest1.toString() +
+          " &lt;-> " + closest2.toString());
+}
+</pre></p><table class="table table-condensed"><tbody><tr><td>shape1</td><td><p>this shape must belong to a Body.</p></td></tr><tr><td>shape2</td><td><p>this shape must belong to a Body.</p></td></tr><tr><td>out1</td><td><p>This Vec2 object will be populated with coordinates of
+closest point on shape1.</p></td></tr><tr><td>out2</td><td><p>This Vec2 object will be populated with coordinates of
+closest point on shape2.</p></td></tr><tr><td>returns</td><td><p>The distance between the two shapes if seperated, or the
+penetration distance (negative) if intersecting.</p></td></tr></tbody></table></div></div><div class="platform platform-flixel"><a name="distanceBody"></a><h3><p><code><span class="keyword">static </span><span class="keyword">function</span> <a href="#distanceBody"><span class="identifier">distanceBody</span></a>(body1:<a class="type" href="../../nape/phys/Body.html">Body</a>, body2:<a class="type" href="../../nape/phys/Body.html">Body</a>, out1:<a class="type" href="../../nape/geom/Vec2.html">Vec2</a>, out2:<a class="type" href="../../nape/geom/Vec2.html">Vec2</a>):<a class="type" href="../../Float.html">Float</a></code></p></h3><div class="doc"><p>Determine distance and closest points between two Bodies.
+<br/><br/>
+If the bodies are intersecting, then a negative value is returned
+equal to the penetration of the bodies, and the out1/out2 vectors
+will still be meaningful with their difference being the minimum
+translational vector to seperate the intersecting shapes of the bodies.
+(This may not be a global seperation vector as it is considering only
+ one pair of shapes at a time).
+<br/><br/>
+As the out1/out2 vectors are used to return values from the function,
+this is one of the rare cases where should out1/out2 be weak Vec2's
+they will 'not' be sent to the global object pool on being passed to
+this function.
+<pre>
+var closest1 = Vec2.get();
+var closest2 = Vec2.get();
+var distance = Geom.distanceBody(body1, body2, out1, out2);
+if (distance &lt; 0) {
+    trace("Bodies intersect and penetration distance is " +
+          (-distance) + " with witness points " + closest1.toString() +
+          " &lt;-> " + closest2.toString());
+}else {
+    trace("Bodies do not intersect and distance betweem them is " +
+          distance + " with closest points " + closest1.toString() +
+          " &lt;-> " + closest2.toString());
+}
+</pre>
+This algorithm is able to take shortcuts in culling pair tests between Shapes
+based on the current state of the search, and will be more effecient than
+a custom implementation that uses Geom.distance(..) method.</p><table class="table table-condensed"><tbody><tr><td>body1</td><td><p>First input Body.</p></td></tr><tr><td>body2</td><td><p>Second input Body.</p></td></tr><tr><td>out1</td><td><p>This Vec2 object will be populated with coordinates of
+closest point on body1.</p></td></tr><tr><td>out2</td><td><p>This Vec2 object will be populated with coordinates of
+closest point on body2.</p></td></tr><tr><td>returns</td><td><p>The distance between the two bodies if seperated, or the
+penetration distance (negative) if intersecting.</p></td></tr></tbody></table></div></div><div class="platform platform-flixel"><a name="intersects"></a><h3><p><code><span class="keyword">static </span><span class="keyword">function</span> <a href="#intersects"><span class="identifier">intersects</span></a>(shape1:<a class="type" href="../../nape/shape/Shape.html">Shape</a>, shape2:<a class="type" href="../../nape/shape/Shape.html">Shape</a>):<a class="type" href="../../Bool.html">Bool</a></code></p></h3><div class="doc"><p>Determine if two Shapes intersect.
+<br/><br/>
+The input Shapes must belong to a Body so that their world positions
+and orientations are defined; these Bodies need not be different nor
+part of any Space.
+<br/><br/>
+If you do not need distance/penetration information,
+then using this method will be more effecient than testing for a negative
+value using the distance method.</p><table class="table table-condensed"><tbody><tr><td>shape1</td><td><p>this shape must belong to a Body.</p></td></tr><tr><td>shape2</td><td><p>this shape must belong to a Body.</p></td></tr><tr><td>returns</td><td><p>True if the shapes are intersecting in world space.</p></td></tr></tbody></table></div></div><div class="platform platform-flixel"><a name="intersectsBody"></a><h3><p><code><span class="keyword">static </span><span class="keyword">function</span> <a href="#intersectsBody"><span class="identifier">intersectsBody</span></a>(body1:<a class="type" href="../../nape/phys/Body.html">Body</a>, body2:<a class="type" href="../../nape/phys/Body.html">Body</a>):<a class="type" href="../../Bool.html">Bool</a></code></p></h3><div class="doc"><p>Determine if two Bodies intersect.
+<br/><br/>
+If you do not need distance/penetration information,
+then using this method will be more effecient than testing for a negative
+value using the distance method.</p><table class="table table-condensed"><tbody><tr><td>body1</td><td><p>First input Body .</p></td></tr><tr><td>body2</td><td><p>Second input Body.</p></td></tr><tr><td>returns</td><td><p>True if the Bodies are intersecting.</p></td></tr></tbody></table></div></div></div></div></div></body></html>

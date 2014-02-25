@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8"/><link href="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.3.1/css/bootstrap-combined.min.css" rel="stylesheet"/><script src="http://code.jquery.com/jquery-1.9.1.min.js"></script><script src="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.3.1/js/bootstrap.min.js"></script><link href="../../styles.css" rel="stylesheet"/><script type="text/javascript">var dox = {rootPath: "../../",platforms: ["flixel"]};</script><script type="text/javascript" src="../../nav.js"></script><script type="text/javascript" src="../../index.js"></script><link rel="icon" href="../../favicon.ico" type="image/x-icon"></link><title>package callbacks</title></head><body><div class="navbar navbar-inverse navbar-fixed-top"><div class="navbar-inner"><form class="navbar-search pull-left" id="searchForm"><input id="search" type="text" class="search-query" placeholder="Filter" autocomplete="off"/></form><ul class="nav"><li id="select-platform" class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Platform<b class="caret"></b></a><ul class="dropdown-menu"><li data="all"><a href="#">All Platforms</a></li><li data="flixel"><a href="#">flixel</a></li></ul></li></ul></div></div><div id="container"><div id="nav"></div><div id="content"><h1><span class="directive">package</span> nape.callbacks</h1><table class="table table-condensed"><tbody><tr><td width="200"><a href="../../nape/callbacks/BodyCallback.html">BodyCallback</a></td><td><p>Callback object for Body type events.
+<br/><br/>
+This, like all other callback objects are automatically reused
+and you should not keep any reference to them.</p></td></tr><tr><td width="200"><a href="../../nape/callbacks/BodyListener.html">BodyListener</a></td><td><p>Event listener for Body type events.
+<br/><br/>
+The events that can be caught are WAKE and SLEEP type events.
+Theses listeners will only operate on Bodys, not Interactors in general.</p></td></tr><tr><td width="200"><a href="../../nape/callbacks/Callback.html">Callback</a></td><td><p>Base type for Callback event objects.
+<br/><br/>
+Callback objects are automatically reused and you should not keep references
+to them.</p></td></tr><tr><td width="200"><a href="../../nape/callbacks/CbEvent.html">CbEvent</a></td><td><p>Enumeration of possible callback event types.</p></td></tr><tr><td width="200"><a href="../../nape/callbacks/CbType.html">CbType</a></td><td><p>Callback Type applied to Interactors and Constraints.
+<br/><br/>
+Callback types are ranged over by listeners.</p></td></tr><tr><td width="200"><a href="../../nape/callbacks/CbTypeIterator.html">CbTypeIterator</a></td><td><p>Haxe Iterator<T> compatible iterator over Nape list.</p></td></tr><tr><td width="200"><a href="../../nape/callbacks/CbTypeList.html">CbTypeList</a></td><td><p>Nape list of CbType type objects
+<br/><br/>
+Internally this list is at present implemented as a linked list with
+object pooled nodes and iterators with various fast paths made for
+standard access patterns (For instance accessing successive elements
+runs in constant time when using random access functions)
+<br/><br/>
+Iteration of this list can be done in various ways, but the preferred
+way on all targets, is through use of the foreach function:
+<pre>
+list.foreach(function (obj) {
+});
+</pre>
+This method is inlined so that in haxe no closure will need to be created.
+<br/><br/>
+In AS3, a closure would need to be created in general, so for performance
+reasons you 'may' choose to use iteration as follows:
+<pre>
+for (var i:int = 0; i &lt; list.length; i++) {
+    var obj:CbType = list.at(i);
+}
+</pre>
+<br/>
+NOTE: It is 'not' safe to modify a list whilst iterating over it.
+If you wish to remove elements during an iteration you should use the
+filter method, for example:
+<pre>
+list.filter(function (obj) {
+    // operate on object.
+    // ...
+    return (false if you want object to be removed);
+});
+</pre>
+<br/><br/>
+In AS3, if you wish to avoid a closure generation, you can perform such
+an iteration in a safe manner as follows:
+<pre>
+var i:int = 0;
+while (i &lt; list.length) {
+    var obj:CbType = list.at(i);
+    // operate on object.
+    // ...
+    if (should remove obj) {
+        list.remove(obj);
+        continue;
+    }
+    else i++;
+}
+</pre>
+Or if you are always clearing the list entirely you could write:
+<pre>
+while (!list.empty()) {
+    var obj:CbType = list.pop();
+    // operate on object.
+    // ...
+}
+</pre></p></td></tr><tr><td width="200"><a href="../../nape/callbacks/ConstraintCallback.html">ConstraintCallback</a></td><td><p>Callback object for Constraint type events.
+<br/><br/>
+This, like all other callback objects are automatically reused
+and you should not keep any reference to them.</p></td></tr><tr><td width="200"><a href="../../nape/callbacks/ConstraintListener.html">ConstraintListener</a></td><td><p>Event listener for Constraint type events.
+<br/><br/>
+The events that can be caught are WAKE, SLEEP and BREAK type events.
+Theses listeners will only operate on Constraints.</p></td></tr><tr><td width="200"><a href="../../nape/callbacks/InteractionCallback.html">InteractionCallback</a></td><td><p>Callback object for Interaction type events.
+<br/><br/>
+This, like all other callback objects are automatically reused
+and you should not keep any reference to them.</p></td></tr><tr><td width="200"><a href="../../nape/callbacks/InteractionListener.html">InteractionListener</a></td><td><p>Event listener for Interaction type events.
+<br/><br/>
+Interaction type events can occur between any two Interactors (whether they
+be Shapes, Bodys, Compounds or a mix thereof).
+<br/><br/>
+The events that can be caught are BEGIN, ONGOING, and END type events.
+Theses listeners will operate between pairs of Interactors.
+<pre>
+         _Space
+        /      \
+    Cmp1        Cmp3
+   /    \         |
+Body1  Cmp2     Body3
+  |      |        |
+Shp1   Body2    Shp3
+         |
+       Shp2
+</pre>
+The possible interactor pairs for callbacks are formed by finding the most
+recent common ancestor in the world for the given pair of shapes and taking all
+possible pairings. In the above situation we have:
+<pre>
+MRCA(Shp1, Shp2) = Cmp1  --> Possible pairings = [Shp1, Body1] x [Shp2, Body2, Cmp2]
+MRCA(Shp1, Shp3) = Space --> Possible pairings = [Shp1, Body1, Cmp1] x [Shp3, Body3, Cmp3]
+MRCA(Shp2, Shp3) = Space --> Possible pairings = [Shp2, Body2, Cmp2, Cmp1] x [Shp3, Body3, Cmp3]
+</pre>
+Of course, not all of these pairings will generate callbacks, only those for which
+a valid listener exists for the event type, and for the cbtypes of each interactor.
+<br/><br/>
+Furthermore, the listener specifies an interaction type which works even in mixed
+cases where many types of interaction between two objects is happening at once.</p></td></tr><tr><td width="200"><a href="../../nape/callbacks/InteractionType.html">InteractionType</a></td><td><p>Enumeration of Interaction types.</p></td></tr><tr><td width="200"><a href="../../nape/callbacks/Listener.html">Listener</a></td><td><p>Base type for all Nape callback listeners.</p></td></tr><tr><td width="200"><a href="../../nape/callbacks/ListenerIterator.html">ListenerIterator</a></td><td><p>Haxe Iterator<T> compatible iterator over Nape list.</p></td></tr><tr><td width="200"><a href="../../nape/callbacks/ListenerList.html">ListenerList</a></td><td><p>Nape list of Listener type objects
+<br/><br/>
+Internally this list is at present implemented as a linked list with
+object pooled nodes and iterators with various fast paths made for
+standard access patterns (For instance accessing successive elements
+runs in constant time when using random access functions)
+<br/><br/>
+Iteration of this list can be done in various ways, but the preferred
+way on all targets, is through use of the foreach function:
+<pre>
+list.foreach(function (obj) {
+});
+</pre>
+This method is inlined so that in haxe no closure will need to be created.
+<br/><br/>
+In AS3, a closure would need to be created in general, so for performance
+reasons you 'may' choose to use iteration as follows:
+<pre>
+for (var i:int = 0; i &lt; list.length; i++) {
+    var obj:Listener = list.at(i);
+}
+</pre>
+<br/>
+NOTE: It is 'not' safe to modify a list whilst iterating over it.
+If you wish to remove elements during an iteration you should use the
+filter method, for example:
+<pre>
+list.filter(function (obj) {
+    // operate on object.
+    // ...
+    return (false if you want object to be removed);
+});
+</pre>
+<br/><br/>
+In AS3, if you wish to avoid a closure generation, you can perform such
+an iteration in a safe manner as follows:
+<pre>
+var i:int = 0;
+while (i &lt; list.length) {
+    var obj:Listener = list.at(i);
+    // operate on object.
+    // ...
+    if (should remove obj) {
+        list.remove(obj);
+        continue;
+    }
+    else i++;
+}
+</pre>
+Or if you are always clearing the list entirely you could write:
+<pre>
+while (!list.empty()) {
+    var obj:Listener = list.pop();
+    // operate on object.
+    // ...
+}
+</pre></p></td></tr><tr><td width="200"><a href="../../nape/callbacks/ListenerType.html">ListenerType</a></td><td><p>Enumeration of Listener types.</p></td></tr><tr><td width="200"><a href="../../nape/callbacks/OptionType.html">OptionType</a></td><td><p>OptionType representing matching behaviour for Listeners.
+<br/><br/>
+An object's set of CbType's 'matches' against an OptionType iff.
+the OptionType's includes list intersects the object's set of CbTypes
+and the OptionType's excludes list 'does not' intersect the object's set
+of CbTypes.
+<pre>
+option = new OptionType([A, B], [C, D]);
+obj.cbTypes = [] // => does not match option.
+obj.cbTypes = [A] // => matches the option
+obj.cbTypes = [A, C] // => does not match option.
+</pre>
+The optionType's includes and excludes list are managed to be always
+disjoint: The action of including an already excluded type serves to
+remove it from the excludes list, equalliy excluding an already included
+type serves to remove it from the includes list.
+<pre>
+var option = new OptionType();
+option.including(A); // option = {[A]:[]}
+option.excluding(A); // option = {[]:[]}
+option.excluding(A); // option = {[]:[A]}
+option.including(A); // option = {[A]:[]}
+</pre></p></td></tr><tr><td width="200"><a href="../../nape/callbacks/PreCallback.html">PreCallback</a></td><td><p>Callback object for Pre-Interaction type events.
+<br/><br/>
+This, like all other callback objects are automatically reused
+and you should not keep any reference to them.</p></td></tr><tr><td width="200"><a href="../../nape/callbacks/PreFlag.html">PreFlag</a></td><td><p>Enumeration of interaction states for arbiters. These values are returned
+by PreListener callback handlers.</p></td></tr><tr><td width="200"><a href="../../nape/callbacks/PreListener.html">PreListener</a></td><td><p>Event listener for Pre-Interaction type events.
+<br/><br/>
+Pre-Interaction type events can occur between any two Interactors (whether they
+be Shapes, Bodys, Compounds or a mix thereof).</p></td></tr></tbody></table></div></div></body></html>

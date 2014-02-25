@@ -1,0 +1,18 @@
+-swf all.swf
+-swf-version 11
+
+-lib flixel
+-lib flixel-addons
+-lib flixel-ui
+-lib openfl
+-lib spinehx
+-lib nape
+
+-debug
+-v
+-prompt
+--macro include('flixel')
+
+-D doc
+-xml flixel.xml
+--no-output
