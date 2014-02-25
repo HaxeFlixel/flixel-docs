@@ -7,7 +7,8 @@ title: "Upgrade Guide"
 
 | HaxeFlixel 3.1.0                        | HaxeFlixel 3.2.0                      |
 | --------------------------------------- |---------------------------------------|
-| FlxTween.multiVar(object, vars, duration, { delay: 1}); | FlxTween.multiVar(object, vars, duration, { startDelay: 1}); | FlxG.camera.followAdjust(4, 5);         | FlxG.cameras.followLead.set(4, 5);    | 
+| FlxTween.multiVar(object, vars, duration, { delay: 1}); | FlxTween.multiVar(object, vars, duration, { startDelay: 1});| 
+| FlxG.camera.followAdjust(4, 5);         | FlxG.cameras.followLead.set(4, 5);    | 
 | FlxTilemap.arrayToCSV()                 | FlxStringUtil.arrayToCSV()            |                        
 | FlxTilemap.bitmapToCSV()                | FlxStringUtil.bitmapToCSV()           |
 | FlxTilemap.imageToCSV()                 | FlxStringUtil.imageToCSV()            |
