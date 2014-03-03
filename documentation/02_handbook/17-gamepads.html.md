@@ -25,7 +25,7 @@ class PlayState extends FlxState
 	{
 		super.update();
 
-		_gamePad = FlxG.gamepads.lastActive;
+		_gamePad = FlxG.gamepads.get(0); //get the first gamepad
 
 		if (_gamePad.pressed(XboxButtonID.A))
 		{
