@@ -22,7 +22,11 @@ Please make sure you are running the latest version with the self update command
 
 ``` bash
 haxelib selfupdate
+
+# if you're using haxe  < 3.1
 haxe upgrade.hxml
+#if you're using haxe >= 3.1
+haxe update.hxml
 ```
 
 You can see more of how to use haxelib [here](http://haxe.org/doc/haxelib/using_haxelib) and browse Haxe community libraries on the [official site](http://lib.haxe.org/).
