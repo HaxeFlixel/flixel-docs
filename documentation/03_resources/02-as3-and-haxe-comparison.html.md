@@ -364,7 +364,7 @@ delete table["key"];
 <h4>Haxe</h4>
 
 <pre class="highlighted">
-var table = new Hash&lt;Int&gt; ();
+var table = new Map&lt;String, Int&gt; ();
 table.set ("key", 100);
 
 trace (table.exists ("key"));
@@ -499,15 +499,15 @@ function set x (value:Number):void {
 <h4>Haxe</h4>
 
 <pre class="highlighted">
-public var x (getX, setX):Float;
+public var x (get, set):Float;
 
-function getX ():Float {
+function get_x():Float {
 
    return _x;
 
 }
 
-function setX (value:Float):Float {
+function set_x(value:Float):Float {
 
    return _x = value;
 
