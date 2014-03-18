@@ -177,11 +177,11 @@ Even though this is widely regarded as bad style, it still makes sense to follow
 
 This convention does not come without its advantages, for example you can easily tell which classes belong to the engine and which ones don't when writing a game.
 
-## Intendation and Formatting / Tabs and spaces
+## Indentation and Formatting / Tabs and spaces
 
-Tabs should be used for intendation *everywhere*.
+Tabs should be used for indentation *everywhere*.
 
-However, it is considered preferable to use spaces for formatting since it will look consistent, no matter how your editor is configured. For example, code that looks nice with tab intendation and FlashDevelop's default settings will be a mess on GitHub.
+However, it is considered preferable to use spaces for formatting since it will look consistent, no matter how your editor is configured. For example, code that looks nice with tab indentation and FlashDevelop's default settings will be a mess on GitHub.
 
 The most common example where formatting is needed are the comment sections for functions:
 
