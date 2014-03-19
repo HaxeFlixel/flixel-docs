@@ -14,23 +14,23 @@ In each FlxState all the FlxSprites are added to be rendered.
 
 #### create()
 
-This is where you setup and create all your state's objects, for example your level tilemaps, your player sprites, spawn your initial enemies. Flixel runs this method before it starts to render your state so its the perfect place.
+This is where you setup and create all your state's objects; for example your level tilemaps, your player sprites, spawn your initial enemies. Flixel runs this method before it starts to render your state so its the perfect place.
 
 #### add(object:FlxSprite)
 
-This is the place that you add your sprites, tilemaps etc to your state to be rendered. It works similar to the NME display list api addChild().
+This is the place where you add your sprites, tilemaps etc to your state to be rendered. It works similar to the NME display list api addChild().
 
 #### remove(object:FlxSprite)
 
-This is the place that you remove sprites etc you have added to your state. Everything you remove still exists so you can add it back later so if your not going to use it again you might want to consider removing it from memory by setting it as null for example.
+This is the place where you remove sprites etc you have added to your state. Everything you remove still exists so you can add it back later. If you're not going to use the removed object again you might want to consider removing it from memory by setting it as null for example.
 
 #### update()
 
-This is the place that you can run code on every frame of your game. Its where you setup your input controls, trigger movement and almost all of your gameplay logic.
+This is the place where you can run code on every frame of your game. It's where you setup your input controls, trigger movement and almost all of your gameplay logic.
 
 #### destroy()
 
-This is a common method throughout Flixel that ensures that you remove objects from the memory. If you don't properly destroy your objects in your states, the objects may not be cleaned up by the garbage collection and consume memory over time.
+This is a common method throughout Flixel that ensures that you remove objects from the memory. If you don't properly destroy your objects in your states the objects may not be cleaned up by the garbage collection and consume memory over time.
 
 ``` haxe
 
