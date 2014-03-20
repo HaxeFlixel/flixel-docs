@@ -40,7 +40,7 @@ whiteSquare.y = 300;
 
 ####Size: width, height
 
-Automatically set in `loadGraphic()` or `createGraphic()`, changing this will only affect the hitbox of this sprite, use `scale` to change the graphics' size.
+Automatically set in `loadGraphic()` or `makeGraphic()`, changing this will only affect the hitbox of this sprite, use `scale` to change the graphic's size.
 ```haxe
 // get
 var getWidth = whiteSquare.width;
@@ -51,35 +51,31 @@ whiteSquare.height = 100;
 ```
 
 ####Scale
-**(x, y)**
-Change the size of your sprite's graphic. *NOTE: The hitbox is not automatically adjusted, use `updateHitbox()` for that (or `setGraphicSize()`.*
+**(FlxPoint)**
+Change the size of your sprite's graphic. *NOTE: The hitbox is not automatically adjusted, use `updateHitbox()` for that (or `setGraphicSize()`).*
 ```haxe
 // twice as big
-whiteSquare.scale.x = 2;
-whiteSquare.scale.y = 2;
+whiteSquare.scale.set(2, 2);
 
 // 50%
-whiteSquare.scale.x = 0.5;
-whiteSquare.scale.y = 0.5;
+whiteSquare.scale.set(0.5, 0.5);
 ```
 
 ####Offset
-**(x, y)**
+**(FlxPoint)**
 Controls the position of the sprite's hitbox. Likely needs to be adjusted after changing a sprite's width, height or scale.
 ```haxe
-whiteSquare.offset.x = 50;
-whiteSquare.offset.y = 50;
+whiteSquare.offset.set(50, 50);
 ```
 
 ####Origin
-**(x, y)**
+**(FlxPoint)**
 Rotation axis. **Default: center.**
 
 *WARNING: If you change this, the visuals and the collisions will likely be pretty out-of-sync if you do any rotation.*
 ```haxe
 // rotate from top-left corner instead of center
-whiteSquare.origin.x = 0;
-whiteSquare.origin.y = 0;
+whiteSquare.origin.set(0, 0);
 ```
 
 #### ​kill()
