@@ -2,6 +2,10 @@
 title: "FlxSprite"
 ```
 
+```haxe
+import flixel.FlxSprite;
+```
+
 FlxSprites are the core building blocks of all Flixel games. They offer a friendly API to add animation, movement and features for the needs of most games.
 
 It is pretty common place to extend `FlxSprite` for your own game's needs; for example a `SpaceShip` class may extend `FlxSprite` but could have additional variables for the game like `shieldStrength` or `shieldPower`. When you extend `FlxSprite` it is important to remember to use `super.update()` if you override the `update` method, as you would do for any other `FlxBasic`.
@@ -26,11 +30,56 @@ whiteSquare.makeGraphic(200, 200, FlxColor.WHITE);
 add(whiteSquare);
 ```
 
-#### Position
+### Properties
 
+####Position: x, y
 ```haxe
-whiteSquare.x = 200;
+whiteSquare.x = 100;
 whiteSquare.y = 300;
+```
+
+####Size: width, height
+
+Automatically set in `loadGraphic()` or `createGraphic()`, changing this will only affect the hitbox of this sprite, use `scale` to change the graphics' size.
+```haxe
+// get
+var getWidth = whiteSquare.width;
+
+// set
+whiteSquare.width = 100;
+whiteSquare.height = 100;
+```
+
+####Scale
+**(x, y)**
+Change the size of your sprite's graphic. *NOTE: The hitbox is not automatically adjusted, use `updateHitbox()` for that (or `setGraphicSize()`.*
+```haxe
+// twice as big
+whiteSquare.scale.x = 2;
+whiteSquare.scale.y = 2;
+
+// 50%
+whiteSquare.scale.x = 0.5;
+whiteSquare.scale.y = 0.5;
+```
+
+####Offset
+**(x, y)**
+Controls the position of the sprite's hitbox. Likely needs to be adjusted after changing a sprite's width, height or scale.
+```haxe
+whiteSquare.offset.x = 50;
+whiteSquare.offset.y = 50;
+```
+
+####Origin
+**(x, y)**
+Rotation axis. **Default: center.**
+
+*WARNING: If you change this, the visuals and the collisions will likely be pretty out-of-sync if you do any rotation.*
+```haxe
+// rotate from top-left corner instead of center
+whiteSquare.origin.x = 0;
+whiteSquare.origin.y = 0;
 ```
 
 #### ​kill()
