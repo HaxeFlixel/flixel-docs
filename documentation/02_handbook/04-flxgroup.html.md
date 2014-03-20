@@ -52,7 +52,7 @@ Call this function to sort the group according to a particular value and order. 
 
 
 
-Otherwase, you can just use the pre-made `FlxSort.byY()` like so for Zelda-style-sorting:
+Otherwise, you can just use the pre-made `FlxSort.byY()` like so for Zelda-style-sorting:
 
 ```haxe
 group.sort(FlxSort.byY);
