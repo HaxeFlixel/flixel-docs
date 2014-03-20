@@ -14,7 +14,7 @@ In each FlxState all the FlxSprites are added to be rendered.
 
 #### create()
 
-This is where you setup and create all your state's objects, for example your level tilemaps, your player sprites, spawn your initial enemies. Flixel runs this method before it starts to render your state so its the perfect place.
+This is where you setup and create all your state's objects, for example your level tilemaps, your player sprites, spawn your initial enemies. Flixel runs this method before it starts to render your state so it's the perfect place.
 
 #### add(object:FlxSprite)
 
