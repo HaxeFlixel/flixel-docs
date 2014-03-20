@@ -2,6 +2,10 @@
 title: "FlxGroup"
 ```
 
+```haxe
+import flixel.group.FlxGroup;
+```
+
 FlxGroups are an invaluable method of grouping your game objects in Flixel. In fact, there is no way around them, as `FlxState` itself extends `FlxGroup`. 
 The use cases for groups are vast: pooling to reuse objects, collision detection and setting up easy ways to access particular collections of objects. A great feature of FlxGroups are their ability to be nested when using collision detection. Doing collisions is also way more efficient than doing it for individual objects.
 
