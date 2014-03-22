@@ -2,6 +2,10 @@
 title: "FlxSave"
 ```
 
+```haxe
+import flixel.util.FlxSave;
+```
+
 HaxeFlixel gives you the FlxSave class to manage saving and loading your game's data. You might use it to save and load a high score table, or the position and status of the player and enemies, or custom settings the player has selected. Like most of HaxeFlixel, FlxSave is cross-platform in functionality.
 
 To use FlxSave you need a variable typed to that class. You can create your own variable (perhaps in your registry class, in your gameplay FlxState, or as a local variable in your save/load functions). You may also use the one that HaxeFlixel itself uses (FlxG.save).
@@ -28,6 +32,9 @@ _gameSave.data.boxPositions = new Array();
 _gameSave.data.boxPositions.push(new FlxPoint(box.x, box.y));
 
 _gameSave.data.enemy = myEnemy;
+
+// Writes the local shared object to disk immediately
+_gameSave.flush();
 ```
 
 In certain cases you may need to [serialize and unserialize](http://haxe.org/manual/serialization) your data (fancy words for "take my data and turn it into a specially formatted string, or back into data") to avoid errors, but you may want to try it without serialization unless you experience problems.
