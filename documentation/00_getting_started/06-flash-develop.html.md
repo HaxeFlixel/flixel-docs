@@ -22,4 +22,4 @@ Flash Develop is Windows only but works fine under virtualization. Installing Fl
 *   TortoiseSVN or TortoiseGit (required if using the source control) Download: [TortoiseSVN](http://tortoisesvn.net/downloads.html), [TortoiseGit](http://code.google.com/p/tortoisegit/downloads/list)
 *   Java 1.6+ 32-bit runtime (JRE)&nbsp;(required if using the Flex SDK)&nbsp;[Flex SDK Download](http://opensource.adobe.com/wiki/display/flexsdk/Downloads)
 
-You can contribute to FlashDevelop through their [Github repository](https://github.com/fdorg/flashdevelop).
+You can contribute to FlashDevelop through their [GitHub repository](https://github.com/fdorg/flashdevelop).

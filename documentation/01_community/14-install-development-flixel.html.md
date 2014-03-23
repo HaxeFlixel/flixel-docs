@@ -4,7 +4,7 @@ title: "Install development Flixel"
 
 Developers may want to contribute and or stay updated with the bleeding edge code of Haxeflixel. Like any development code we caution the use of it as it may not have the same amount of testing as the stable version.
 
-All new development is done on the [dev branch](https://github.com/HaxeFlixel/flixel/tree/dev) of the [main github repository](https://github.com/HaxeFlixel/flixel.git).
+All new development is done on the [dev branch](https://github.com/HaxeFlixel/flixel/tree/dev) of the [main GitHub repository](https://github.com/HaxeFlixel/flixel.git).
 
 **Prerequisites**
 

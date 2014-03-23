@@ -5,7 +5,7 @@ title: "Flixel Addons"
 The HaxeFlixel codebase is large and HaxeFlixel developers have worked to organise the core Flixel repository into the most important features.
 Community contributions and plugins that not every game needs are being maintained in the flixel-addons repository.
 
-[Flixel Addons Github repository](https://github.com/HaxeFlixel/flixel-addons)
+[Flixel Addons GitHub repository](https://github.com/HaxeFlixel/flixel-addons)
 
 Flixel Addons is designed to be used with haxelib and hosted on the main HaxeFlixel GitHub account.
 Addons can be easily used in your project by adding the following xml node to your project.xml file.

@@ -9,7 +9,7 @@ HaxeFlixel is a collaborative project from contributors all over the world.
 
 [Our community Forum](http://forum.haxeflixel.com)
 
-## Github
+## GitHub
 
 All our code is on GitHub under the [HaxeFlixel](http://github.com/haxeflixel) account.
 This account is shared by a [core team](https://github.com/HaxeFlixel?tab=members) which ensures this project has great longevity.

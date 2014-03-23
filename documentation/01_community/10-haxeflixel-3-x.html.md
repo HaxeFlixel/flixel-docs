@@ -10,7 +10,7 @@ The strongest criticism we have seen for Flixel has been a the idea that the cod
 
 #### What happened to HaxeFlixel 2.0?
 
-3.x is an evolution and improvement of the original Flixel API. It has a focus on being more logically named and structured for users to remember and expect consistency. While doing this we see the latest code as something more easier to maintain and extend. The entire process was undertaken openly on our [Github pages](http://www.github.com/haxeflixel). 
+3.x is an evolution and improvement of the original Flixel API. It has a focus on being more logically named and structured for users to remember and expect consistency. While doing this we see the latest code as something more easier to maintain and extend. The entire process was undertaken openly on our [GitHub pages](http://www.github.com/haxeflixel). 
 
 The API changes of HaxeFlixel 3.x have pushed this to a point release. Users who were developing with 2.x will need to update their code to the new and improved [API](http://api.haxeflixel.com/). We have collected the most important parts in our [upgrade guide](http://haxeflixel.com/documentation/upgrade-guide/).
 

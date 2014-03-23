@@ -2,7 +2,7 @@
 title: "Flixel Tools"
 ```
 
-To make HaxeFlixel development easier a set of command line tools has been developed with [Haxe](http://haxe.org) and [Neko](http://nekovm.org). With it you can easily create our demo projects, templates and more. Just like HaxeFlixel it is an open-source tool and additions/improvements from the community are welcome at the [Flixel Tools Github repository](https://github.com/HaxeFlixel/flixel-tools).
+To make HaxeFlixel development easier a set of command line tools has been developed with [Haxe](http://haxe.org) and [Neko](http://nekovm.org). With it you can easily create our demo projects, templates and more. Just like HaxeFlixel it is an open-source tool and additions/improvements from the community are welcome at the [Flixel Tools GitHub repository](https://github.com/HaxeFlixel/flixel-tools).
 
 ### Installation:
 

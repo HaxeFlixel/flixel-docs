@@ -23,7 +23,7 @@ Additional pages can be added using the same extension and using a header specif
 	title: "Documentation Page"
 	```
 	
-	Use Regular github flavoured markdown for the page.
+	Use Regular GitHub flavoured markdown for the page.
 	Note `title:` above is case sensitive.
 
 The markdown syntax used in the docs is the  [GitHub-Flavored-Markdown](https://help.github.com/articles/github-flavored-markdown), thus it's very convenient to directly edit the files via GitHub's web editor. 
