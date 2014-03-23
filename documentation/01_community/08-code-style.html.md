@@ -31,7 +31,7 @@ An example for a bad / too simple name would be `shoot()` instead of `shootEnemy
 
 ### Spacing
 
-The equals sign (`=`) and commas (`,`) in function headers / calls should always be seperated by a single space. Spaces should *not* be used after opening and before closing brackets.
+The equals sign (`=`) and commas (`,`) in function headers / calls should always be separated by a single space. Spaces should *not* be used after opening and before closing brackets.
 
 | Good                                   | Bad                                    |
 | ---------------------------------------| ---------------------------------------|
