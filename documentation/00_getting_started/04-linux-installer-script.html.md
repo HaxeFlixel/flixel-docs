@@ -2,7 +2,7 @@
 title: "Install on Linux"
 ```
 
-Please review this script for a custom install or run this as a usual bash script on your system. It has been used successfully on x64 Ubuntu distributions. Note that it will compile haxe and neko on your system.
+Please review this script for a custom install or run this as a usual bash script on your system. It has been used successfully on x64 Ubuntu distributions. Note that it will compile Haxe and Neko on your system.
 
 ```
 #!/bin/bash
