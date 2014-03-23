@@ -53,4 +53,4 @@ If you want to support a controller that HaxeFlixel doesn't provide the IDs for,
 FLX_NO_GAMEPAD
 ```
 
-HaxeFlixel includes a [conditional](http://haxeflixel.com/haxeflixel-conditionals) to omit using Gamepads for optimization purposes if you are developing for a platform such as mobile or your game just isn't designed for them.
+HaxeFlixel includes a [conditional](http://haxeflixel.com/documentation/haxeflixel-conditionals/) to omit using Gamepads for optimization purposes if you are developing for a platform such as mobile or your game just isn't designed for them.
