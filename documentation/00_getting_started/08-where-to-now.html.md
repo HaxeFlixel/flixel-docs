@@ -2,7 +2,7 @@
 title: "Where to now?"
 ```
 
-If you have successfully compiled a Hello World the best place we recommend is to jump to our large collection of demos to learn by example, try improving a game and pulling one apart to see how it works;
+If you have successfully compiled a Hello World sample, the best place we recommend is to jump to our large collection of demos to learn by example, try improving a game and pulling one apart to see how it works:
 
 *	[Demos](http://haxeflixel.com/demos)
 *   [Source for the demos](https://github.com/HaxeFlixel/flixel-demos)
@@ -11,7 +11,7 @@ If you are totally new to Flixel, please review our Handbook here:
 
 *   [Handbook](http://haxeflixel.com/documentation/handbook/)
 
-We also strongly recomend reading about the systems behind HaxeFlixel by reading our community documentation:
+We also strongly recommend reading about the systems behind HaxeFlixel by reading our community documentation:
 
 *   [Community](http://haxeflixel.com/documentation/community/)
 
