@@ -18,7 +18,7 @@ The basic steps to get started on Windows and Mac are:
 3. [Install HaxeFlixel](/documentation/install-haxeflixel)
 4. [Compile Hello World](/documentation/hello-world-command-line)
 
-If you are planning to use linux:
+If you are planning to use Linux:
 
 - [Review or use our installer script](/documentation/linux-installer-script)
 
@@ -26,6 +26,6 @@ If you are planning to use linux:
 
 Time to complete this installation is close to 20 minutes (depending on the speed of your Internet connection), mostly due to downloading the components.
 
-If you require some help, ask a question in the [community forums](http://www.forum.haxeflixel.com) also worth checking out [#haxeflixel on IRC](irc://chat.freenode.net/#haxeflixel).
+If you require some help, please ask a question in the [community forums](http://www.forum.haxeflixel.com); also worth checking out is [#haxeflixel on IRC](irc://chat.freenode.net/#haxeflixel).
 
-If you can think of a way to improve this guide in any way, please help us by submitting a pull request [on GitHub](https://github.com/HaxeFlixel/haxeflixel.com) (a direct link to edit pages can be found in the upper right corner) or starting a discussion in the [forums](/forum/).
+If you can think of a way to improve this guide, please help us by submitting a pull request [on GitHub](https://github.com/HaxeFlixel/haxeflixel.com) (a direct link to edit pages can be found in the upper right corner) or starting a discussion in the [forums](/forum/).
