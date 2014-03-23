@@ -11,12 +11,12 @@ HaxeFlixel is a collaborative project from contributors all over the world.
 
 ## Github
 
-All our code is on github under the [HaxeFlixel](http://github.com/haxeflixel) account.
+All our code is on Github under the [HaxeFlixel](http://github.com/haxeflixel) account.
 This account is shared by a [core team](https://github.com/HaxeFlixel?tab=members) which ensures this project has great longevity.
 
 ### Sponsor a project on:
 
-bountysource.com
+[bountysource.com](http://www.bountysource.com)
 
 ### Contributors
 
