@@ -255,9 +255,9 @@ More detail on the FrontEnds can be read on the [FrontEnd docs page](/documentat
 
 ### Core Assets
 
-HaxeFlixel has system Assets for its debugger buttons, system sounds etc these assets were previously stored in every project in the assets/data folder. HaxeFlixel 3.x uses the OpenFL include.xml in core HaxeFlixel to omit the need to include them in every project. 
+HaxeFlixel has system Assets for its debugger buttons, system sounds, etc. These assets were previously stored in every project in the assets/data folder. HaxeFlixel 3.x uses the OpenFL include.xml in core HaxeFlixel to omit the need to include them in every project. 
 
-So you dont need to have system assets anymore, everything in your project's `./assets/*` folder should only be the assets you create.
+So you do not need to have system assets anymore, everything in your project's `./assets/*` folder should only be the assets you create.
 
 ### New Debugger and Interactive Console
 
@@ -288,7 +288,7 @@ flixel tpl -n "CustomProject"
 
 #### Automatic find and replace
 
-A collection of most of the api name changes were collected for the [flixel-tools command line tool](/documentation/community/flixel-tools).
+A collection of most of the API name changes were collected for the [flixel-tools command line tool](/documentation/community/flixel-tools).
 You can see what it [replaces here](https://github.com/HaxeFlixel/flixel-tools/blob/dev/src/legacy/FindAndReplace.hx).
 
 To run the find and replace the command is simple:
@@ -299,7 +299,7 @@ flixel convert
 
 ### FlxG Changes
 
-The main changes that developer's will notice is as follows:
+The main changes that developers will notice are as follows:
 
 | HaxeFlixel 2.x                          | HaxeFlixel 3.x                             |
 | --------------------------------------- | ------------------------------------------ |
