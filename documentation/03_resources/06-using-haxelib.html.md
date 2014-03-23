@@ -38,7 +38,7 @@ haxelib remove <project>
 
 ### Update Haxelib itself:
 
-To make sure you are using the latest version of Haxelib you can run the update command. This will update Haxelib itself by automatically downloading the latest version.
+To make sure you are using the latest version of Haxelib you can run the selfupdate command. This will update Haxelib itself by automatically downloading the latest version.
 
 ```
 haxelib selfupdate
