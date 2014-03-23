@@ -2,20 +2,17 @@
 title: "Native Extensions"
 ```
 
-//todo
 
 
+Native Extensions provide interfaces for your Haxe code in order to interact with system APIs that OpenFL does not provide. This is similar to the Native Extensions created with Adobe Air and much like Extensions made with Adobe Air. Those Native Extensions are often created and shared by independent developers.
 
-
-Native Extensions provide interfaces for you Haxe code to interact with system api's that OpenFL does not provide. This is similar to the Native Extensions created with Adobe Air and much like Extensions made with Adobe Air they are often created and shared by independant developers.
-
-If you want to created your own Laurent Bédubourg has written some tutorials to help get you started.
+If you want to create your own Native Extensions, you can fin some tutorials to help get you started at Laurent Bédubourg's blog:
 
 http://labe.me/en/blog/posts/2013-06-19-OpenFL%20simple%20extension.html
 
 http://labe.me/en/blog/posts/2013-06-24-OpenFL-extension-2.html
 
-Here we are listing some links to known extensions if you find useful ones please add them to the page;
+Here is a listing of more links to known extensions. If you know other useful ones, please add them to this page.
 
 #### ExtensionsPack
 
@@ -36,8 +33,8 @@ https://github.com/hyperfiction
 
 #### [HypFacebook](https://github.com/hyperfiction/HypFacebook)
 
-HypFacebook : Facebook native extension for Haxe NME
+HypFacebook : Facebook native extension for Haxe NME.
 
 #### [HypPusher](https://github.com/hyperfiction/HypPusher)
 
-A native extension to add Pusher to your NME application
+A native extension to add Pusher to your NME application.
