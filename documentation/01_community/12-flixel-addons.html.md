@@ -3,11 +3,11 @@ title: "Flixel Addons"
 ```
 
 The HaxeFlixel codebase is large and HaxeFlixel developers have worked to organise the core Flixel repository into the most important features.
-Community contributions and plugins that every game wont need is being maintained in the flixel-addons repository.
+Community contributions and plugins that not every game needs are being maintained in the flixel-addons repository.
 
 [Flixel Addons Github repository](https://github.com/HaxeFlixel/flixel-addons)
 
-Flixel Addons is designed to be used with haxelib and hosted on the main HaxeFlixel github account.
+Flixel Addons is designed to be used with haxelib and hosted on the main HaxeFlixel GitHub account.
 Addons can be easily used in your project by adding the following xml node to your project.xml file.
 
 ### Install Flixel Addons
@@ -31,10 +31,10 @@ To use the addons in a project simply add the following xml node to your OpenFL 
 <haxelib name="flixel-addons" />
 ```
 
-### Whats in the Addons
+### What's in the Addons
 
 - Ports of Photonstorm's Flixel Power Tools
 - Nape Physics
 - Tiled editor support
 - Bitmap Font
-- and more
+- and more!
