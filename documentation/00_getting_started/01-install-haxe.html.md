@@ -18,7 +18,7 @@ Haxe Compiler 3.0.1 - (C)2005-2013 Haxe Foundation
 
 Haxe comes with its own library manager called [haxelib](http://lib.haxe.org/), which greatly simplifies installing and updating libraries.
 
-Please make sure you are running the latest version with the self update command:
+Please make sure you are running the latest version with the selfupdate command:
 
 ``` bash
 haxelib selfupdate
@@ -33,4 +33,4 @@ You can see more of how to use haxelib [here](http://haxe.org/doc/haxelib/using_
 
 ## Upgrading Haxe
 
-If you're upgrading from a Haxe 2.x install, you need to uninstall Haxe as well as remove the haxelib folders, in windows you will find them in ```(C:\MotionTwin\...)```.
+If you're upgrading from a Haxe 2.x install, you need to uninstall Haxe as well as remove the haxelib folders, in Windows you will find them in ```(C:\MotionTwin\...)```.
