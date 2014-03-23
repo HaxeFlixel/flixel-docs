@@ -1,7 +1,7 @@
 ```
 title: "Hello World Command Line"
 ```
-Hello world is a [common example](http://en.wikipedia.org/wiki/Hello_world_program) of getting started with programming, here we will show you how to add Hello World with HaxeFlixel's `FlxText`. You can compile this test for any supported target platform.
+Hello World is a [common example](http://en.wikipedia.org/wiki/Hello_world_program) of getting started with programming, here we will show you how to add Hello World with HaxeFlixel's `FlxText`. You can compile this test for any supported target platform.
 
 Using the command line with HaxeFlixel is made easier with our custom built flixel-tools utility, also made with Haxe.
 
@@ -17,7 +17,7 @@ HaxeFlixel requires a basic structure of files for any project that you can auto
 flixel tpl -n "HelloWorld"
 ```
 
-You will now see a new Hello World folder with all the files for your project being created automatically.
+You will now see a new HelloWorld folder with all the files for your project being created automatically.
 
 ## Add the Hello World FlxText
 
