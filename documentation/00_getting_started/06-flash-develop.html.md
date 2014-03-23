@@ -12,7 +12,7 @@ title: "Flash Develop"
 *   Open plug-in based architecture
 *   [and much more](http://www.flashdevelop.org/wikidocs/index.php?title=Features:Interface#Overview "Features:Interface#Overview")
 
-Flash Develop is windows only but works fine under virtualization. Installing Flash Develop is done through a simple installer where it can automatically setup what you need and find your Haxe Installation.
+Flash Develop is Windows only but works fine under virtualization. Installing Flash Develop is done through a simple installer where it can automatically setup what you need and find your Haxe Installation.
 
 **It's encouraged you [install the latest development version](http://www.flashdevelop.org/community/viewtopic.php?f=9&amp;t=3529) and [report any bugs](https://github.com/fdorg/flashdevelop/issues) you encounter. New features are added constantly to improve Haxe programming with FlashDevelop.**
 
