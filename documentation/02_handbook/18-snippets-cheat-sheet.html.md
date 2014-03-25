@@ -1,9 +1,9 @@
 ```
-title: "Snippets Cheat Sheet"
+title: "Cheat Sheet"
 ```
 
 
-## [Game Object](http://haxeflixel.com/documentation/FlxSprite) (Base)
+## [FlxSprite](http://haxeflixel.com/documentation/FlxSprite) (Base)
 
 ```haxe
 package;
@@ -11,7 +11,7 @@ package;
 import flixel.FlxSprite;
 import flixel.FlxG;
 
-class MyObject extends FlxSprite
+class MySprite extends FlxSprite
 {
 	public function new()
 	{
@@ -30,7 +30,7 @@ class MyObject extends FlxSprite
 }
 ```
 
-## [State](http://haxeflixel.com/documentation/FlxState) (Base)
+## [FlxState](http://haxeflixel.com/documentation/FlxState) (Base)
 
 ```haxe
 package;
@@ -42,7 +42,7 @@ class MyState extends FlxState
 {
     override public function create():Void
     {
-
+    	super.create();
     }
 
     override public function update():Void
@@ -57,38 +57,37 @@ class MyState extends FlxState
 }
 ```
 
-## Switch [State](http://haxeflixel.com/documentation/FlxState)
+## Switch [FlxState](http://haxeflixel.com/documentation/FlxState)
 
 ```haxe
-FlxG.switchState( new MyState() );
+FlxG.switchState(new MyState());
 ```
 
-## Load [Sprite](http://haxeflixel.com/documentation/FlxSprite)
+## Load [FlxSprite](http://haxeflixel.com/documentation/FlxSprite)
 
 ```haxe
 loadGraphic("assets/my_sprite.png");
 ```
 
-## Texts
+## FlxText
+
+* **setFormat**(Font, Size, Color, Alignment)
+* **setBorderStyle**(Style, Color, Size)
 
 ```haxe
 import flixel.text.FlxText;
+import flixel.util.FlxColor;
 ```
 
 ```haxe
 myText = new FlxText(0, 0, 500); // x, y, width
 myText.text = "Hello World";
-myText.size = 20;
-myText.font = "assets/font.ttf";
-myText.alignment = "center"; // or "left", "right"
-myText.color = 0xFFFFFF;
-myText.borderColor = 0x000000;
-myText.borderSize = 1;
-myText.borderStyle = FlxText.BORDER_OUTLINE;
+myText.setFormat("assets/font.ttf", 20, FlxColor.WHITE, "center");
+myText.setBorderStyle(FlxText.BORDER_OUTLINE, FlxColor.RED, 1);
 add(myText);
 ```
 
-## Buttons
+## FlxButton
 
 ```haxe
 import flixel.ui.FlxButton;
@@ -96,7 +95,6 @@ import flixel.ui.FlxButton;
 
 ```haxe
 myButton = new FlxButton(0, 0, "Label", myCallback);
-
 ```
 
 ## Sounds and Music
@@ -104,8 +102,8 @@ Declare each file on `Project.xml`, with an unique `id`.
 
 ```xml
 <assets path="assets">
-	<music path="music_1.mp3" id="music_1" />
-	<sound path="sound_1.wav" id="sound_1" />
+	<music path="music_1.ogg" id="music_1" />
+	<sound path="sound_1.ogg" id="sound_1" />
 </assets>
 ```
 Play on your code:
@@ -114,10 +112,8 @@ Play on your code:
 FlxG.sound.play("sound_1");
 
 // Loop music
-FlxG.sound.music.play("music_1");
+FlxG.sound.playMusic("music_1");
 ```
-
-(Recommended: `OGG` or `MP3` for music files, and `WAV` for sounds effects).
 
 ## Keyboard Input
 
@@ -135,6 +131,7 @@ if (FlxG.keys.justReleased.A)
 {
 }
 ```
+
 #### Keys
 `A`...`Z`
 
@@ -194,7 +191,7 @@ FlxG.mouse.screenX;
 FlxG.mouse.screenY;
 ```
 
-## Timers
+## FlxTimer
 
 ```haxe
 import flixel.util.FlxTimer;
@@ -209,9 +206,9 @@ private function myCallback(Timer:FlxTimer):Void
 {
 }
 ```
-Setting `loops` to `0` results on endless loop.
+Setting `loops` to `0` results in an endless loop.
 
-## Random Numbers
+## FlxRandom
 
 ```haxe
 import flixel.util.FlxRandom;
@@ -229,7 +226,9 @@ FlxRandom.chanceRoll(50); // 50% chance to return 'true'
 FlxRandom.chanceRoll(10); // 10% chance to return 'true'
 ```
 
-## Tweens
+## FlxTween
+
+* **tween**(Object, Values, Duration, ?Options)
 
 ```haxe
 import flixel.tweens.FlxTween;
@@ -237,10 +236,8 @@ import flixel.tweens.FlxEase;
 ```
 
 ```haxe
-// Single variable
-// (object, property, to, duration (seconds), options)
-
-FlxTween.singleVar(sprite, "alpha", 0.0, 1.0, { ease: FlxEase.quadInOut, complete: myCallback });
+// Moves sprite to position (100, 200) in 3 seconds
+FlxTween.tween(sprite, { x:100, y:200 }, 3.0, { ease: FlxEase.quadInOut, complete: myCallback });
 
 // Callback
 private function myCallback(Tween:FlxTween):Void
@@ -259,6 +256,7 @@ private function myCallback(Tween:FlxTween):Void
 ```haxe
 { complete: callbackFunction }
 ```
+
 ```haxe
 private function callbackFunction(Tween:FlxTween):Void
 {
@@ -275,11 +273,11 @@ private function callbackFunction(Tween:FlxTween):Void
 * **FlxTween.PERSIST:** stops when it finishes.
 * **FlxTween.PINGPONG:** plays tween hither and thither
 
-
 #### loopDelay
 ```haxe
 { loopDelay: 1.0 } // 1 second
 ```
+
 #### startDelay
 ```haxe
 { startDelay: 2.0 } // 2 seconds
@@ -316,33 +314,32 @@ private function callbackFunction(Tween:FlxTween):Void
 
 * `sineIn`, `sineInOut`, `sineOut`
 
-
 ## Iterate Over [FlxGroup](http://haxeflixel.com/documentation/flxgroup)
 
 ```haxe
 for (member in myGroup)
 {
 	member.x += 10;
-    
-    // Use FlxTypedGroup if you need to call non-FlxObject functions or variables:
-    member.customFunction();
 }
 ```
 
 ## Collision
 
-#### FlxG.overlap()
-
 ```haxe
-FlxG.overlap(object1, object2, myOverlapCallback);
+FlxG.overlap(ObjectOrGroup1, ObjectOrGroup2, myCallback);
 ```
 
 ```haxe
-myOverlapCallback(Object1:FlxObject,Object2:FlxObject):Void
+myCallback(Object1:FlxObject, Object2:FlxObject):Void
 {
 }
 ```
-`FlxG.overlap()` only checks for collision, use `FlxG.collide()` to keep objects apart.
+
+`FlxG.collide()` calls `FlxG.overlap()` and presets the ProcessCallback parameter to `FlxObject.separate()`.
+
+## Pixel Perfect Collision
+
+**FlxG.pixelPerfectOverlap**(Sprite, Sprite2)
 
 ## Casting
 
@@ -356,14 +353,7 @@ var mySprite = cast(myFlxObject, FlxSprite);
 scrollFactor.set(0, 0);
 ```
 
-## Adding Gravity
-
-```haxe
-acceleration.y = 600;
-```
-
-## Debug Console
-Press `~ key` during runtime to open it.
+## Debugger
 
 ```haxe
 // Log
@@ -376,6 +366,12 @@ FlxG.watch.add(object, "property");
 ## Hiding Cursor
 
 ```haxe
-FlxG.mouse.hide();
-FlxG.mouse.show(); // show again
+FlxG.mouse.visible = false;
+FlxG.mouse.visible = true // to show back
+```
+
+## Adding Gravity
+
+```haxe
+acceleration.y = 600;
 ```
