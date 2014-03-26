@@ -133,11 +133,13 @@ if (FlxG.keys.justReleased.A)
 ```
 
 #### Keys
+`ANY`
+
 `A`...`Z`
 
 `UP` `DOWN` `LEFT` `RIGHT`
 
-`SPACE` `ENTER` `ESCAPE` `ANY`
+`SPACE` `ENTER` `ESCAPE`
 
 `ZERO` `ONE` `TWO` `THREE`...`NINE`
 
@@ -227,7 +229,7 @@ FlxRandom.chanceRoll(10); // 10% chance to return 'true'
 ```
 
 ## FlxTween
-
+Check [demo's source code](https://github.com/HaxeFlixel/flixel-demos/tree/dev/Effects/FlxTween) for more info.
 * **tween**(Object, Values, Duration, ?Options)
 
 ```haxe
@@ -330,7 +332,7 @@ FlxG.overlap(ObjectOrGroup1, ObjectOrGroup2, myCallback);
 ```
 
 ```haxe
-myCallback(Object1:FlxObject, Object2:FlxObject):Void
+private function myCallback(Object1:FlxObject, Object2:FlxObject):Void
 {
 }
 ```
@@ -341,15 +343,10 @@ myCallback(Object1:FlxObject, Object2:FlxObject):Void
 
 **FlxG.pixelPerfectOverlap**(Sprite, Sprite2)
 
-## Casting
-
-```haxe
-var mySprite = cast(myFlxObject, FlxSprite);
-```
-
 ## HUD
 
 ```haxe
+// does not move with the camera
 scrollFactor.set(0, 0);
 ```
 
