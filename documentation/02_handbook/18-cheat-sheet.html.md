@@ -202,8 +202,9 @@ import flixel.util.FlxTimer;
 ```haxe
 // time (seconds), callback, loops
 FlxTimer.start(10.0, myCallback, 3);
+```
 
-// Callback
+```haxe
 private function myCallback(Timer:FlxTimer):Void
 {
 }
@@ -229,7 +230,7 @@ FlxRandom.chanceRoll(10); // 10% chance to return 'true'
 ```
 
 ## FlxTween
-Check [demo's source code](https://github.com/HaxeFlixel/flixel-demos/tree/dev/Effects/FlxTween) for more info.
+Check [FlxTween Demo source code](https://github.com/HaxeFlixel/flixel-demos/tree/dev/Effects/FlxTween) for more info.
 * **tween**(Object, Values, Duration, ?Options)
 
 ```haxe
@@ -240,8 +241,9 @@ import flixel.tweens.FlxEase;
 ```haxe
 // Moves sprite to position (100, 200) in 3 seconds
 FlxTween.tween(sprite, { x:100, y:200 }, 3.0, { ease: FlxEase.quadInOut, complete: myCallback });
+```
 
-// Callback
+```haxe
 private function myCallback(Tween:FlxTween):Void
 {
 }
@@ -337,7 +339,7 @@ private function myCallback(Object1:FlxObject, Object2:FlxObject):Void
 }
 ```
 
-`FlxG.collide()` calls `FlxG.overlap()` and presets the ProcessCallback parameter to `FlxObject.separate()`.
+Or use `FlxG.collide()` which calls `FlxG.overlap()` and presets the `ProcessCallback` parameter to `FlxObject.separate()`.
 
 ## Pixel Perfect Collision
 
@@ -346,7 +348,7 @@ private function myCallback(Object1:FlxObject, Object2:FlxObject):Void
 ## HUD
 
 ```haxe
-// does not move with the camera
+// prevents the sprite to scroll with the camera
 scrollFactor.set(0, 0);
 ```
 
@@ -364,7 +366,6 @@ FlxG.watch.add(object, "property");
 
 ```haxe
 FlxG.mouse.visible = false;
-FlxG.mouse.visible = true // to show back
 ```
 
 ## Adding Gravity
