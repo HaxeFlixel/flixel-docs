@@ -84,7 +84,6 @@ myText = new FlxText(0, 0, 500); // x, y, width
 myText.text = "Hello World";
 myText.setFormat("assets/font.ttf", 20, FlxColor.WHITE, "center");
 myText.setBorderStyle(FlxText.BORDER_OUTLINE, FlxColor.RED, 1);
-add(myText);
 ```
 
 ## FlxButton
@@ -353,6 +352,8 @@ scrollFactor.set(0, 0);
 ```
 
 ## Debugger
+
+Press `~ key` to open it during runtime, or open by code with `FlxG.debugger.visible = true`.
 
 ```haxe
 // Log
