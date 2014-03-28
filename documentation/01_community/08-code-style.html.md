@@ -193,4 +193,20 @@ The most common example where formatting is needed are the comment sections for 
  * @param   Y   The y coordinate.
  */ 
 public function setPosition(X:Int, Y:Int):Void
-``` 
+```
+ 
+## Position of metadata
+
+Metadata should always be placed in a new line for increased readability:
+
+```haxe
+@:isVar 
+@:allow(flixel.tweens.FlxTween)
+private static var _pool(get, null):FlxPool<MultiVarTween>;
+```
+
+as opposed to:
+
+```haxe
+@:isVar @:allow(flixel.tweens.FlxTween) private static var _pool(get, null):FlxPool<MultiVarTween>;
+```
