@@ -21,3 +21,9 @@ lime setup blackberry
 ```
 
 For more information on OpenFL, head on over to [OpenFL.org](http://www.openfl.org/developer/documentation/).
+
+## Mac OS Troubleshooting
+
+* Make sure you have `Command Line Tools for Xcode` installed and **updated** to your OSX version. You can download it here: [Download For Apple Developers](https://developer.apple.com/downloads/).
+
+* Lime setup requires root permission: `sudo lime setup android`.
