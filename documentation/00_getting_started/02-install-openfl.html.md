@@ -20,7 +20,7 @@ lime setup android
 lime setup blackberry
 ```
 
-For more information on OpenFL, head on over to [OpenFL.org](http://www.openfl.org/).
+For more information on OpenFL, head on over to [openfl.org](http://www.openfl.org/).
 
 ## Mac OS X Troubleshooting
 
