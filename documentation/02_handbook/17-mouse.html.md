@@ -116,7 +116,7 @@ Use `FlxG.mouse.setNativeCursor()` to switch to an already registered native cur
 
 ## Conditionals
 
-For general information on conditionals, please refer to [this page]().
+For general information on conditionals, please refer to [this page](http://haxeflixel.com/documentation/compiler-conditionals/).
 
 * ### `FLX_NO_MOUSE_ADVANCED`
 	
