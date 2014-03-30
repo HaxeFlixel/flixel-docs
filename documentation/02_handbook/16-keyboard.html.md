@@ -39,7 +39,7 @@ override public function update():Void
 
 ## Checking multiple keys
 
-You can check multiple keys at once using the `anyPressed`, `anyJustPressed` and `anyJustReleased` methods of `FlxKeyboard`. This allows to bind multiple keys to one action easily, for example controlling the player with either WASD or the arrow keys. These methods take an `Array` of key names (as `String`s) and return true if any of the given keys has the desired property.
+You can check multiple keys at once using the `anyPressed()`, `anyJustPressed()` and `anyJustReleased()` methods of `FlxKeyboard`. This allows to bind multiple keys to one action easily, for example controlling the player with either WASD or the arrow keys. These methods take an `Array` of key names (as `String`s) and return true if any of the given keys has the desired property.
 
 ``` haxe
 override public function update():Void
@@ -49,7 +49,7 @@ override public function update():Void
 		// Move left
 	}
 	
-	if(FlxG.keys.anyPressed(["RIGHT", "D"]))
+	if (FlxG.keys.anyPressed(["RIGHT", "D"]))
 	{
 		// Move right
 	}
