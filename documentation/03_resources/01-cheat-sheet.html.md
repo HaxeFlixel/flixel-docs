@@ -30,6 +30,7 @@ class MySprite extends FlxSprite
 }
 ```
 
+
 ## [FlxState](http://haxeflixel.com/documentation/FlxState) (Base)
 
 ```haxe
@@ -57,17 +58,20 @@ class MyState extends FlxState
 }
 ```
 
+
 ## Switch [FlxState](http://haxeflixel.com/documentation/FlxState)
 
 ```haxe
 FlxG.switchState(new MyState());
 ```
 
+
 ## Load [FlxSprite](http://haxeflixel.com/documentation/FlxSprite)
 
 ```haxe
 loadGraphic("assets/my_sprite.png");
 ```
+
 
 ## FlxText
 
@@ -85,6 +89,7 @@ myText.text = "Hello World";
 myText.setFormat("assets/font.ttf", 20, FlxColor.WHITE, "center");
 myText.setBorderStyle(FlxText.BORDER_OUTLINE, FlxColor.RED, 1);
 ```
+
 
 ## FlxButton
 
@@ -113,6 +118,7 @@ FlxG.sound.play("sound_1");
 // Loop music
 FlxG.sound.playMusic("music_1");
 ```
+
 
 ## Keyboard Input
 
@@ -166,6 +172,7 @@ if (FlxG.keys.justReleased.A)
 
 `NUMPADZERO` `NUMPADONE` `NUMPADTWO`...`NUMPADNINE`
 
+
 ## [Mouse](http://haxeflixel.com/documentation/mouse) Input
 
 ```haxe
@@ -191,6 +198,7 @@ FlxG.mouse.y;
 FlxG.mouse.screenX;
 FlxG.mouse.screenY;
 ```
+
 
 ## FlxTimer
 
@@ -228,8 +236,10 @@ FlxRandom.chanceRoll(50); // 50% chance to return 'true'
 FlxRandom.chanceRoll(10); // 10% chance to return 'true'
 ```
 
+
 ## FlxTween
-Check [FlxTween Demo source code](https://github.com/HaxeFlixel/flixel-demos/tree/dev/Effects/FlxTween) for more info.
+
+[Check the demo](http://haxeflixel.com/demos/FlxTween/) to visualize all `FlxTween` types.
 * **tween**(Object, Values, Duration, ?Options)
 
 ```haxe
@@ -247,6 +257,7 @@ private function myCallback(Tween:FlxTween):Void
 {
 }
 ```
+
 
 ## FlxTween Options
 
@@ -286,7 +297,10 @@ private function callbackFunction(Tween:FlxTween):Void
 { startDelay: 2.0 } // 2 seconds
 ```
 
+
 ## FlxEase List
+
+[Check the demo](http://haxeflixel.com/demos/FlxTween/) to visualize all `FlxEase` types.
 
 * `backIn`, `backInOut`, `backOut`
 
@@ -317,14 +331,20 @@ private function callbackFunction(Tween:FlxTween):Void
 
 * `sineIn`, `sineInOut`, `sineOut`
 
-## Iterate Over [FlxGroup](http://haxeflixel.com/documentation/flxgroup)
 
+## Containers ([FlxGroup](http://haxeflixel.com/documentation/flxgroup))
+
+`FlxGroup` is a shortcut for `FlxTypedGroup<FlxBasic>`. Use `FlxTypedGroup<MyOwnClass>` if you need to access your own variables and functions when iterating over the container.
+
+### Iteration
 ```haxe
 for (member in myGroup)
 {
 	member.x += 10;
+	member.mySpecificFunction(); // myGroup = FlxTypedGroup<MyOwnClass>
 }
 ```
+
 
 ## Collision
 
@@ -344,12 +364,14 @@ Or use `FlxG.collide()` which calls `FlxG.overlap()` and presets the `ProcessCal
 
 **FlxG.pixelPerfectOverlap**(Sprite, Sprite2)
 
+
 ## HUD
 
 ```haxe
 // prevents the sprite to scroll with the camera
 scrollFactor.set(0, 0);
 ```
+
 
 ## Debugger
 
