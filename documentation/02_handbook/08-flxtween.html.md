@@ -44,15 +44,19 @@ override public function update() {
 The `tween()` method takes an optional fourth parameter which is a map of options. Possible values are:
 
 - `type`: choose one of these:
+
 	- **FlxTween.ONESHOT**: Stops and removes itself from its core container when it finishes.
 	- **FlxTween.PERSIST**: Stops when it finishes. Unlike **ONESHOT** this type of tween stays attached to the core container when it finishes. This means you can keep a reference to this tween and call `start()` whenever you need it. This does not work with **ONESHOT**.
+
 	- **FlxTween.LOOPING**: Restarts immediately when it finishes.
 	- **FlxTween.PINGPONG**: Plays tween "hither and thither". This is like **LOOPING**, but every second execution is in reverse direction.
+	
 	- **FlxTween.BACKWARD**: Plays tween in reverse direction.
 
 - `complete`: a callback function, which is called once the tween has finished. For repeating tweens (**LOOPING** and **PINGPONG**) this is called every time the tween has finished one execution. The method should take a `FlxTween` and return nothing.
 
 - `ease`: An optional easer function. This can be used to make the beginning and end of a tween smoother. The [`FlxEase`](http://api.haxeflixel.com/types/flixel/tweens/FlxEase.html) class provides many static methods for this which should cover most cases. The following list shows all functions from `FlxEase`. In all of these `In` can be replaced by `Out` or `InOut`, depending on where you want to apply the easing effect: at the beginning of the animation, at the end or at both sides.
+
 	- `backIn`
 	- `bounceIn`
 	- `circIn`
@@ -68,7 +72,7 @@ The `tween()` method takes an optional fourth parameter which is a map of option
 
 - `loopDelay`: Time to wait before this tween is repeated, in seconds. This only applies to **LOOPING** and **PINGPONG**.
 
-Example
+For example:
 
 ```haxe
 override public function new() {
