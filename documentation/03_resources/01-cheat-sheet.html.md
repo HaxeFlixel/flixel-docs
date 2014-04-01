@@ -206,7 +206,7 @@ import flixel.util.FlxSignal;
 ```
 
 ```haxe
-// pass true if you want signal to persist across state changes.
+// pass true if you want signal to persist across state changes
 var mySignal= FlxSignal.get(false);
 ```
 
@@ -216,7 +216,7 @@ mySignal.add(signalCallback);
 ```
 
 ```haxe
-// dispatch mySignal, data is accessible via userData variable.
+// dispatch mySignal, data is accessible via userData variable
 mySignal.dispatch("Hello World");
 ```
 
