@@ -17,7 +17,7 @@ The first two lines specify the start position of the sprite, because the `tween
 
 The first two paramters are the object you want to animate and a map which contains the properties you want to animate and their desired target values. Here, we want to move the sprite to x position 600 and y position 800. The last parameter specifies the duration of the animation in seconds.
 
-## Canceling Animations
+## Cancelling Animations
 
 If you start a tween using the code above, you have no control over it. But the `tween()` method returns an object of type `FlxTween` and keeping this object in a variable allows you to access the tween later on.
 
@@ -26,14 +26,17 @@ For example, this code stops the motion of the sprite if the player presses the 
 ```haxe
 private var tween:FlxTween;
 
-override public function new() {
+override public function new()
+{
 	super();
 	// set up sprite
 	tween = FlxTween.tween(sprite, { x:600, y:800 }, 2);
 }
 
-override public function update() {
-	if (FlxG.keys.justPressed.SPACE) {
+override public function update()
+{
+	if (FlxG.keys.justPressed.SPACE)
+	{
 		tween.cancel();
 	}
 }
@@ -75,7 +78,8 @@ The `tween()` method takes an optional fourth parameter which is a map of option
 For example:
 
 ```haxe
-override public function new() {
+override public function new()
+{
 	super();
 	// set up sprite
 	sprite.x = 200;
@@ -83,7 +87,8 @@ override public function new() {
 	FlxTween.tween(sprite, { x:600, y:800 }, 2, { type:FlxTween.PINGPONG, ease:FlxEase.quadInOut, complete:changeColor, startDelay:1, loopDelay:2 });
 }
 
-private function changeColor(tween:FlxTween):Void {
+private function changeColor(tween:FlxTween):Void
+{
 	// change the color of the sprite here
 }
 ```
@@ -120,4 +125,4 @@ The `FlxTween` class also contains the methods `linearMotion()`, `quadMotion()`,
 
 The methods `linearPath()` and `quadPath()` can be used for longer paths defined through an array of points, instead of a fixed number of points.
 
-If you want to use these methods please refer to the [`FlxTween` api](http://api.haxeflixel.com/types/flixel/tweens/FlxTween.html). 
+If you want to use these methods please refer to the [`FlxTween` API](http://api.haxeflixel.com/types/flixel/tweens/FlxTween.html). 
