@@ -199,6 +199,36 @@ FlxG.mouse.screenX;
 FlxG.mouse.screenY;
 ```
 
+## FlxSignal
+
+```haxe
+import flixel.util.FlxSignal;
+```
+
+```haxe
+// pass true if you want signal to persist across state changes.
+var mySignal= FlxSignal.get(false);
+```
+
+```haxe
+// listen to mySignal
+mySignal.add(signalCallback);
+```
+
+```haxe
+// dispatch mySignal, data is accessible via userData variable.
+mySignal.dispatch("Hello World");
+```
+
+```haxe
+function signalCallback(signal:FlxSignal)
+{
+	FlxG.log.add(signal.userData);
+}
+```
+Signal callbacks are of type ```FlxSignal->Void```. Dispatched data is accessible via ```signal.userdata```.
+
+Don't forget to destroy the signal when your object is destroyed: ``` mySignal.destroy(); ```
 
 ## FlxTimer
 
