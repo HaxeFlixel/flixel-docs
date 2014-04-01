@@ -10,11 +10,11 @@ All new development is done on the [dev branch](https://github.com/HaxeFlixel/fl
 
 You must have completed the following Getting Started tutorials:
 
-1.  [Installing Haxe](http://www.haxeflixel.com/wiki/installing-haxe)
+1.  [Installing Haxe](http://haxeflixel.com/documentation/install-haxe)
 
 If you are wanting to use the latest Haxe toolkit you can see instructions to [build Haxe from source here](http://haxe.org/download/manual_install#building-from-source).
 
-2.  [Installing OpenFl](http://www.haxeflixel.com/wiki/installing-openfl)
+2.  [Installing OpenFl](http://haxeflixel.com/documentation/install-openfl/)
 
 If you are wanting to use the latest OpenFL code, depending on your target there are instructions for building on [OpenFl's main repositories](https://github.com/openfl/openfl#development-build).
 
