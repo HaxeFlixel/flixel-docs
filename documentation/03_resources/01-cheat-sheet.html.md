@@ -228,9 +228,11 @@ function signalCallback(signal:FlxSignal)
 ```
 Signal callbacks are of type ```FlxSignal->Void```. Dispatched data is accessible via ```signal.userdata```.
 
-Don't forget to destroy the signal when your object is destroyed:
+Don't forget to clean up the signal when your object is destroyed:
 ```haxe
-mySignal.destroy();
+// FlxSignals are pooled, we must put them back
+// FlxDestroyUtil.put() checks if mySignal is not null before restoring it to the pool
+mySignal = FlxDestroyUtil.put();
 ```
 
 ## FlxTimer
