@@ -2,7 +2,7 @@
 title: "FlxTween"
 ```
 
-A `FlxTween` allows you to create smooth interpolations and animations, easily. Tweening is short for [inbetweening](http://en.wikipedia.org/wiki/Inbetweening): you only have to specify start and end values and the `FlxTween` class will generate all values between those two. If you want to see a `FlxTween` in action, this [tween demo](http://haxeflixel.com/demos/FlxTween/) is available.
+A `FlxTween` allows you to create smooth interpolations and animations easily. Tweening is short for [inbetweening](http://en.wikipedia.org/wiki/Inbetweening): you only have to specify start and end values and the `FlxTween` class will generate all values between those two. If you want to see a `FlxTween` in action, this [tween demo](http://haxeflixel.com/demos/FlxTween/) is available.
 
 For example, if you want to move a `FlxSprite` across the screen, this code snippet would do it:
 
@@ -15,9 +15,9 @@ FlxTween.tween(sprite, { x:600, y:800 }, 2);
 
 The first two lines specify the start position of the sprite, because the `tween()` method assumes the current position is the starting position.
 
-The first parameter is the object you want to act upon; the second parameter is the map which contains the properties you want to interpolate, and their desired target values. Here, we want to translate the sprite in x to position 600 and in y to position 800. The third parameter specifies the duration of the interpolation in seconds, which in this case is 2 seconds.
+The first parameter is the object you want to act upon; the second parameter is the map which contains the properties you want to interpolate, and their desired target values. Here, we want to translate the sprite in x to position 600 and in y to position 800. The third parameter specifies the duration of the tween in seconds, which in this case is 2 seconds.
 
-## Cancelling Interpolations
+## Cancelling a Tween
 
 If you start a tween using the code above, it will run until the desired values are reached, then stop. As the `tween()` method returns an object of type `FlxTween`, keeping this object in a variable allows you to access the current tween running if you wish to control it.
 
@@ -58,7 +58,7 @@ Possible values are:
 	
 	- **FlxTween.BACKWARD**: plays tween in reverse direction.
 
-- `complete`: a callback function, which is called once the tween has finished. This is called every time the tween has finished one execution and comes handy for repeating tweens (**LOOPING** and **PINGPONG**). The method must take a `FlxTween` and return nothing.
+- `complete`: a callback function, which is called once the tween has finished. This is called every time the tween has finished one execution and comes in handy for repeating tweens (**LOOPING** and **PINGPONG**). The method must take a `FlxTween` and return nothing.
 
 - `ease`: an optional easer function. This can be used to make the beginning and end of a tween smoother. The [`FlxEase`](http://api.haxeflixel.com/types/flixel/tweens/FlxEase.html) class provides many static methods for this which should cover most cases. The following list shows all functions from `FlxEase`. In all of these, `In` can be replaced by `Out` or `InOut`, depending on where you want to apply the easing effect: at the beginning of the animation, at the end or at both sides.
 
