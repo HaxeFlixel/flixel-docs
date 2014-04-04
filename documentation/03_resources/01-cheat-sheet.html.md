@@ -199,6 +199,13 @@ FlxG.mouse.screenX;
 FlxG.mouse.screenY;
 ```
 
+#### Wheel (mouse scroll)
+Current "delta" value of mouse wheel. If the wheel was just scrolled up, it will have a positive value. If it was just scrolled down, it will have a negative value. If it wasn't just scroll this frame, it will be 0.
+
+```haxe
+FlxG.mouse.wheel;
+```
+
 ## FlxSignal
 
 ```haxe
