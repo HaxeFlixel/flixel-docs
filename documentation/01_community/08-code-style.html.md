@@ -39,6 +39,15 @@ The equals sign (`=`) and commas (`,`) in function headers / calls should always
 | `function test(value:Int = "5") {}`    | `function test(value:Int="5") {}`      |
 | `FlxG.resizeGame(320, 240);`           | `FlxG.resizeGame( 320, 240 );`         |
 
+Spaces *should* be used before the opening brackets of `if`, `for`, `while` and `switch`:
+
+| Good                                   | Bad                                    |
+| ---------------------------------------| ---------------------------------------|
+| `if (true)`                            | `if(true)`                             |
+| `for (element in array)`               | `for(element in array)`                |
+| `while (i > 0)`                        | `while(i >0)`                          |
+| `switch (variable)`                    | `switch(variable)`                     |
+
 ### Parameter names
 
 Capitalized letters for function parameters:
@@ -142,10 +151,10 @@ So `static public function` is changed to `public static function`. This also ap
 
 The following rules apply, sorted by priority:
 
-1. `static` before regular fields
-2. `public` before `private` fields
+1. `static` fields before instance fields
+2. `public` fields before `private` fields
 3. regular variables before properties
-4. getter and setter functions are the very end of a class (as they should always be private)
+4. getters and setters are the very end of a class (as they should always be private)
 
 
 ## Comments
