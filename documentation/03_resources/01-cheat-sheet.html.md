@@ -199,6 +199,50 @@ FlxG.mouse.screenX;
 FlxG.mouse.screenY;
 ```
 
+#### Wheel (mouse scroll)
+
+Current "delta" value of mouse wheel.
+
+```haxe
+FlxG.mouse.wheel; // 0 = idle, 1.0 = scrolling up, -1.0 = scrolling down
+```
+
+
+## FlxSignal
+
+```haxe
+import flixel.util.FlxSignal;
+```
+
+```haxe
+// pass true if you want signal to persist across state changes
+var mySignal= FlxSignal.get(false);
+```
+
+```haxe
+// listen to mySignal
+mySignal.add(signalCallback);
+```
+
+```haxe
+// dispatch mySignal, data is accessible via userData variable
+mySignal.dispatch("Hello World");
+```
+
+```haxe
+function signalCallback(signal:FlxSignal)
+{
+	FlxG.log.add(signal.userData);
+}
+```
+Signal callbacks are of type ```FlxSignal->Void```. Dispatched data is accessible via ```signal.userdata```.
+
+Don't forget to clean up the signal when your object is destroyed:
+```haxe
+// FlxSignals are pooled, we must put them back
+// FlxDestroyUtil.put() checks if mySignal is not null before restoring it to the pool
+mySignal = FlxDestroyUtil.put();
+```
 
 ## FlxTimer
 
