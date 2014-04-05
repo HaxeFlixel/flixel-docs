@@ -2,14 +2,14 @@
 title: "Install Haxe"
 ```
 
-The Haxe Toolkit is available from [haxe.org/download](http://haxe.org/download) for Windows, Linux and Mac.
+The Haxe Toolkit is available for [Windows](http://haxe.org/file/haxe-3.1.1-win.exe), [Linux](http://www.openfl.org/haxe-3.1.1-linux-installer.tar.gz) and [Mac](http://haxe.org/file/haxe-3.1.1-osx-installer.pkg).
 
 ## Test Haxe installation
 
 For a simple test to see if Haxe is now working on your system, open a new command prompt / terminal window and type ```haxe```. You should see something like this:
 
 ```bash
-Haxe Compiler 3.0.1 - (C)2005-2013 Haxe Foundation
+Haxe Compiler 3.1.1 - (C)2005-2013 Haxe Foundation
  Usage : haxe.exe -main <class> [-swf|-js|-neko|-php|-cpp|-as3] <output> [options]
  [...]
 ```
