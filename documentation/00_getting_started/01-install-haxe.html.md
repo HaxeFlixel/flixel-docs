@@ -4,12 +4,14 @@ title: "Install Haxe"
 
 The Haxe Toolkit is available from [haxe.org/download](http://haxe.org/download) for Windows, Linux and Mac.
 
+*Note:* The latest version of the Haxe Toolkit is not compatible with the latest version of OpenFL. To avoid this issue until the bug is fixed, download the previous version of Haxe here: http://haxe.org/download?version=20019
+
 ## Test Haxe installation
 
 For a simple test to see if Haxe is now working on your system, open a new command prompt / terminal window and type ```haxe```. You should see something like this:
 
 ```bash
-Haxe Compiler 3.0.1 - (C)2005-2013 Haxe Foundation
+Haxe Compiler 3.1.1 - (C)2005-2013 Haxe Foundation
  Usage : haxe.exe -main <class> [-swf|-js|-neko|-php|-cpp|-as3] <output> [options]
  [...]
 ```
