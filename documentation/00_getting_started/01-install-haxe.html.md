@@ -4,6 +4,8 @@ title: "Install Haxe"
 
 The Haxe Toolkit is available for [Windows](http://haxe.org/file/haxe-3.1.1-win.exe), [Linux](http://www.openfl.org/haxe-3.1.1-linux-installer.tar.gz) and [Mac](http://haxe.org/file/haxe-3.1.1-osx-installer.pkg).
 
+*Note:* The latest version of the Haxe Toolkit is not compatible with the latest version of OpenFL. To avoid this issue until the bug is fixed, download the previous version of Haxe here: http://haxe.org/download?version=20019
+
 ## Test Haxe installation
 
 For a simple test to see if Haxe is now working on your system, open a new command prompt / terminal window and type ```haxe```. You should see something like this:
