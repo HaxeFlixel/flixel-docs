@@ -39,10 +39,21 @@ Mobile platforms can use a window width and height of 0, which is a special valu
 OpenFL also exposes the following specific settings for the Android target:
 
 ```
+<android target-sdk-version="17" />
 <window hardware="true" allow-shaders="true" require-shaders="true" if="cpp"/>
 <window vsync="true" antialiasing="4" if="cpp" />
 <window orientation="portrait" /> || <window orientation="landscape" if="cpp"/>
 ```
+
+Custom PNG icons:
+
+```
+<icon path="36.png" size="36" if="android"></icon>
+<icon path="48.png" size="48" if="android"></icon>
+<icon path="72.png" size="72" if="android"></icon>
+<icon path="96.png" size="96" if="android"></icon>
+```
+
 
 ### Compile Commands
 ----
