@@ -39,7 +39,7 @@ Mobile platforms can use a window width and height of 0, which is a special valu
 <window width="0" height="0" background="#FFFFFF" fps="60" />
 ```
 
-OpenFL also exposes the following specific settings for the Android target:
+OpenFL also exposes the following specific settings for the iOS target:
 
 ```
 <window hardware="true" allow-shaders="true" require-shaders="true" if="cpp"/>
@@ -50,7 +50,7 @@ OpenFL also exposes the following specific settings for the Android target:
 ### Compile Commands
 ----
 
-Sublime Text, Flash Develop and Intellij Idea support Android compilation through their GUI.
+Sublime Text, Flash Develop and Intellij Idea support iOS compilation through their GUI.
 
 #### Command line
 ----
@@ -65,7 +65,7 @@ Run this command from the root folder of your project, the default project.xml w
 
 ----
 
-If you want to use the IOS emulator, add “-simulator when running/testing.
+If you want to use the iOS simulator, add “-simulator when running/testing.
 
 ```
 lime test ios -simulator
