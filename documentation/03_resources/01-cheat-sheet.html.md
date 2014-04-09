@@ -212,6 +212,8 @@ var signal = new FlxSignal();
 var stringSignal = new FlxTypedSignal<String->Void>();
 ```
 
+Note: `FlxSignal` is nothing but a convenient shortcut for `FlxTypedSignal<Void->Void>`
+
 ```haxe
 signal.add(voidCallback); // type must be Void->Void
 stringSignal.add(stringCallback); // type must be String->Void
@@ -220,11 +222,11 @@ stringSignal.add(stringCallback); // type must be String->Void
 ```haxe
 function voidCallback()
 {
-	FlxG.log.add("Hello");
+	trace("Hello");
 }
 function stringCallback(text:String)
 {
-	FlxG.log.add(text);
+	trace(text);
 }
 ```
 
