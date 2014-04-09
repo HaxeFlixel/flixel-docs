@@ -199,40 +199,53 @@ FlxG.mouse.screenX;
 FlxG.mouse.screenY;
 ```
 
-## FlxSignal
+## [FlxSignal](https://github.com/HaxeFlixel/flixel/blob/dev/flixel/util/FlxSignal.hx)
 
 ```haxe
 import flixel.util.FlxSignal;
 ```
 
 ```haxe
-// pass true if you want signal to persist across state changes
-var mySignal= FlxSignal.get(false);
+// for signals that don't need data, use FlxSignal
+var signal = new FlxSignal();
+// for signals that need data, use FlxTypedSignal with the correct function type
+var stringSignal = new FlxTypedSignal<String->Void>();
 ```
 
 ```haxe
-// listen to mySignal
-mySignal.add(signalCallback);
+signal.add(voidCallback); // type must be Void->Void
+stringSignal.add(stringCallback); // type must be String->Void
 ```
 
 ```haxe
-// dispatch mySignal, data is accessible via userData variable
-mySignal.dispatch("Hello World");
-```
-
-```haxe
-function signalCallback(signal:FlxSignal)
+function voidCallback()
 {
-	FlxG.log.add(signal.userData);
+	FlxG.log.add("Hello");
+}
+function stringCallback(text:String)
+{
+	FlxG.log.add(text);
 }
 ```
-Signal callbacks are of type ```FlxSignal->Void```. Dispatched data is accessible via ```signal.userdata```.
 
-Don't forget to clean up the signal when your object is destroyed:
 ```haxe
-// FlxSignals are pooled, we must put them back
-// FlxDestroyUtil.put() checks if mySignal is not null before restoring it to the pool
-mySignal = FlxDestroyUtil.put();
+// this will print "Hello World"
+signal.dispatch();
+stringSignal.dispatch("World");
+```
+
+You can have up to 4 parameters in your signal:
+```
+var collisionNotify = new FlxTypedSignal<FlxObject->FlxObject->Bool->Bool->Void>();
+collisionNotify.add(collisionCallback);
+
+function collisionCallback(source:FlxObject, target:FlxObject, shouldKillSource:Bool, shouldKillTarget:Bool):Void (...)
+```
+
+__Don't forget to clean up the signal when your object is destroyed:__
+```haxe
+signal = FlxDestroyUtil.destroy(signal);
+stringSignal = FlxDestroyUtil.destroy(stringSignal);
 ```
 
 ## FlxTimer
