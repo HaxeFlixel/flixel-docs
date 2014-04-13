@@ -17,7 +17,7 @@ After Haxelib has completed you can compile games to Flash and Neko out of the b
 
 To compile to desktop and mobile targets, you have to make sure you have run their respective `lime setup` 
 commands are completed, each are specified in the 
-[openfl docs platform docs]([official install guide](http://www.openfl.org/documentation/setup/platforms/).
+[openfl platform docs](http://www.openfl.org/documentation/setup/platforms/).
 
 ## Updating HaxeFlixel
 
