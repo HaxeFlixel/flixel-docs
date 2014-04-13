@@ -2,14 +2,22 @@
 title: "Install HaxeFlixel"
 ```
 
-You can install the latest stable version from haxelib with the following command:
+HaxeFlixel requires a system with a working installation of OpenFL and Haxe. 
+If you havent set this up previously please follow the 
+[official install guide](http://www.openfl.org/documentation/setup/) and return here.
+
+To install the latest stable version of HaxeFlixel you can use [haxelib](http://lib.haxe.org/) 
+from the following command:
 
 ``` bash
 haxelib install flixel
 ```
 
-After this, you can compile to Flash and Neko out of the box. 
-To compile to desktop and mobile targets, you have to make sure you have run their respective `lime setup` command (see previous step).
+After Haxelib has completed you can compile games to Flash and Neko out of the box. 
+
+To compile to desktop and mobile targets, you have to make sure you have run their respective `lime setup` 
+commands are completed, each are specified in the 
+[openfl docs platform docs]([official install guide](http://www.openfl.org/documentation/setup/platforms/).
 
 ## Updating HaxeFlixel
 
@@ -19,7 +27,7 @@ You can use the following command to just update flixel:
 haxelib update flixel
 ```
 
-Alternatively, you can update all libraries at once with this command:
+Alternatively, you can update all your haxelib libraries at once with this command:
 	
 ``` bash
 haxelib upgrade
