@@ -1,18 +1,18 @@
 ```
-title: "Flash Develop"
+title: "FlashDevelop"
 ```
 
-[Flash Develop](http://www.flashdevelop.org/) is an [open source IDE](https://github.com/fdorg/flashdevelop) with in-built Haxe integration and is one of the most popular Haxe IDE's. FlashDevelop offers first class support for Haxe development.
+[FlashDevelop](http://www.flashdevelop.org/) is an [open source IDE](https://github.com/fdorg/flashdevelop) with in-built Haxe integration and is one of the most popular Haxe IDE's. It offers first class support for Haxe development.
 
 *   Great completion &amp; code generation
-*   Haxe /&nbsp;OpenFL Project&nbsp;compilation gui
+*   Haxe / OpenFL Project compilation GUI
 *   Flash debugging
 *   Advanced snippet completion (code templates) and integrated snippet editor.
 *   SWF/SWC exploration
 *   Open plug-in based architecture
 *   [and much more](http://www.flashdevelop.org/wikidocs/index.php?title=Features:Interface#Overview "Features:Interface#Overview")
 
-Flash Develop is Windows only but works fine under virtualization. Installing Flash Develop is done through a simple installer where it can automatically setup what you need and find your Haxe Installation.
+FlashDevelop is Windows-only but works fine under virtualization. Installation is done through a simple installer where it can automatically setup what you need and find your Haxe Installation.
 
 **It's encouraged you [install the latest development version](http://www.flashdevelop.org/community/viewtopic.php?f=9&amp;t=3529) and [report any bugs](https://github.com/fdorg/flashdevelop/issues) you encounter. New features are added constantly to improve Haxe programming with FlashDevelop.**
 
