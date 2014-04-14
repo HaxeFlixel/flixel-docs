@@ -45,7 +45,7 @@ OpenFL also exposes the following specific settings for the Android target:
 <window orientation="portrait" /> || <window orientation="landscape" if="cpp"/>
 ```
 
-Custom PNG icons:
+Custom PNG icons: (Check [Iconography / Android Developers](http://developer.android.com/design/style/iconography.html) for more info)
 
 ```
 <icon path="36.png" size="36" if="android"></icon>
