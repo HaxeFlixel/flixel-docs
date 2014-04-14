@@ -47,7 +47,7 @@ OpenFL also exposes the following specific settings for the iOS target:
 <window orientation="portrait" /> || <window orientation="landscape" if="cpp"/>
 ```
 
-Custom PNG icons and launch images:
+Custom PNG icons and launch images: (Check [iOS Icon and Image Sizes Guidelines](https://developer.apple.com/library/ios/documentation/userexperience/conceptual/mobilehig/IconMatrix.html) for more info)
 
 ```
 <set name="PRERENDERED_ICON" value="true" />
