@@ -48,10 +48,10 @@ OpenFL also exposes the following specific settings for the Android target:
 Custom PNG icons: (Check [Iconography / Android Developers](http://developer.android.com/design/style/iconography.html) for more info)
 
 ```
-<icon path="36.png" size="36" if="android"></icon>
-<icon path="48.png" size="48" if="android"></icon>
-<icon path="72.png" size="72" if="android"></icon>
-<icon path="96.png" size="96" if="android"></icon>
+<icon path="36.png" size="36" if="android" />
+<icon path="48.png" size="48" if="android" />
+<icon path="72.png" size="72" if="android" />
+<icon path="96.png" size="96" if="android" />
 ```
 
 

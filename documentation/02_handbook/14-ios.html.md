@@ -52,10 +52,10 @@ Custom PNG icons and launch images: (Check [iOS Icon and Image Sizes Guidelines]
 ```
 <set name="PRERENDERED_ICON" value="true" />
 
-<icon path="Icon.png" size="57" if="ios"></icon>
-<icon path="Icon@2x.png" size="114" if="ios"></icon>
-<icon path="Icon-72.png" size="72" if="ios"></icon>
-<icon path="Icon-72@2x.png" size="144" if="ios"></icon>
+<icon path="Icon.png" size="57" if="ios" />
+<icon path="Icon@2x.png" size="114" if="ios" />
+<icon path="Icon-72.png" size="72" if="ios" />
+<icon path="Icon-72@2x.png" size="144" if="ios" />
 
 <launchImage path="Default.png" width="320" height="480" if="ios" />
 <launchImage path="Default@2x.png" width="640" height="960" />
