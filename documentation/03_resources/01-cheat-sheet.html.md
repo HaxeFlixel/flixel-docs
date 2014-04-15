@@ -199,7 +199,14 @@ FlxG.mouse.screenX;
 FlxG.mouse.screenY;
 ```
 
-## [FlxSignal](https://github.com/HaxeFlixel/flixel/blob/dev/flixel/util/FlxSignal.hx)
+#### Wheel (mouse scroll)
+Current "delta" value of mouse wheel. If the wheel was just scrolled up, it will have a positive value. If it was just scrolled down, it will have a negative value. If it wasn't just scroll this frame, it will be 0.
+
+```haxe
+FlxG.mouse.wheel;
+```
+
+## FlxSignal
 
 ```haxe
 import flixel.util.FlxSignal;

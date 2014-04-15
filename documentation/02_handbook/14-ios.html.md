@@ -47,6 +47,25 @@ OpenFL also exposes the following specific settings for the iOS target:
 <window orientation="portrait" /> || <window orientation="landscape" if="cpp"/>
 ```
 
+Custom PNG icons and launch images: (Check [iOS Icon and Image Sizes Guidelines](https://developer.apple.com/library/ios/documentation/userexperience/conceptual/mobilehig/IconMatrix.html) for more info)
+
+```
+<set name="PRERENDERED_ICON" value="true" />
+
+<icon path="Icon.png" size="57" if="ios"></icon>
+<icon path="Icon@2x.png" size="114" if="ios"></icon>
+<icon path="Icon-72.png" size="72" if="ios"></icon>
+<icon path="Icon-72@2x.png" size="144" if="ios"></icon>
+
+<launchImage path="Default.png" width="320" height="480" if="ios" />
+<launchImage path="Default@2x.png" width="640" height="960" />
+<launchImage path="Default-Portrait~ipad.png" width="768" height="1024" if="ios" />
+<launchImage path="Default-Portrait@2x~ipad.png" width="1536" height="2048" if="ios" />
+<launchImage path="Default-Landscape~ipad.png" width="1024" height="768" if="ios" />
+<launchImage path="Default-Landscape@2x~ipad.png" width="2048" height="1536" if="ios" />
+<launchImage path="Default-568h@2x.png" width="640" height="1136" if="ios" />
+```
+
 ### Compile Commands
 ----
 
