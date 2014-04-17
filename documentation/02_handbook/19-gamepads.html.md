@@ -11,34 +11,48 @@ You can see an example of using buttons IDs for multiple gamepad types in the Ha
 HaxeFlixel has collected the following GamePad ID mappings:
 - [Xbox](https://github.com/HaxeFlixel/flixel/blob/dev/flixel/input/gamepad/XboxButtonID.hx)
 - [PS3](https://github.com/HaxeFlixel/flixel/blob/dev/flixel/input/gamepad/PS3ButtonID.hx)
+- [PS4](https://github.com/HaxeFlixel/flixel/blob/dev/flixel/input/gamepad/PS4ButtonID.hx)
 - [OUYA](https://github.com/HaxeFlixel/flixel/blob/dev/flixel/input/gamepad/OUYAButtonID.hx)
 - [Logitech](https://github.com/HaxeFlixel/flixel/blob/dev/flixel/input/gamepad/LogitechButtonID.hx)
 
 Here's some example logic for basic detection of Xbox 360 controller input:
 
 ``` haxe
+import flixel.FlxG;
+import flixel.FlxState;
+import flixel.input.gamepad.FlxGamepad;
+import flixel.input.gamepad.XboxButtonID;
+
 class PlayState extends FlxState
 {
-	private var _gamePad:FlxGamePad;
+    private var _gamePad:FlxGamepad;
 
-	override public function update():Void 
-	{
-		super.update();
+    override public function update():Void 
+    {
+        super.update();
 
-		_gamePad = FlxG.gamepads.lastActive;
+        // Important: can be null if there's no active gamepad yet!
+        _gamePad = FlxG.gamepads.lastActive;
 
-		if (_gamePad.pressed(XboxButtonID.A))
-		{
-			//do something when the A button of the Xbox 360 controller is pressed
-		}
+        if (_gamePad != null)
+        {
+            gamepadControls();
+        }
+    }
 
-		if (_gamePad.getAxis(XboxButtonID.LEFT_ANALOGUE_X) != 0)
-		{
-			//do something when the left analogue stick of the Xbox 360 controller has been moved
-		}
-	}
+    private function gamepadControls():Void
+    {
+        if (_gamePad.pressed(XboxButtonID.A))
+        {
+            trace("The A button of the Xbox 360 controller is pressed.");
+        }
+		
+        if (_gamePad.getAxis(XboxButtonID.LEFT_ANALOGUE_X) != 0)
+        {
+            trace("The x axis of the left analogue stick of the Xbox 360 controller has been moved.");
+        }
+    }
 }
-
 ```
 
 If you want to support a controller that HaxeFlixel doesn't provide the IDs for, the following methods of FlxGamePad should be helpful for working out what those IDs are:
