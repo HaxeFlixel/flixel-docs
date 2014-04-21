@@ -49,4 +49,8 @@ This website is [open-source](http://en.wikipedia.org/wiki/Open-source_software)
 
 ### Donations
 
+You can support the core developers monetarily by giving a monthly donation via [Patreon](http://www.patreon.com/haxeflixel) or by giving a one time bitcoin donation to the HaxeFlixel wallet (INSERT ADDRESS HERE).
 
+All proceeds from Patreon will be used to purchase bitcoins that will go into the HaxeFlixel wallet (INSERT ADDRESS HERE). Funds in this wallet will be divided on a monthly basis amongst the [owners team](https://github.com/orgs/HaxeFlixel/teams/owners), plus two additional wallets, one for website costs, and one for community contributions. The community contributions wallet will accummulate until the core developers decide there is a good use for it (whether to post a bounty for a necessary feature, or to reward a particularly significant contribution).
+
+[gamedevsam](https://github.com/gamedevsam) is the current HaxeFlixel treasurer.
