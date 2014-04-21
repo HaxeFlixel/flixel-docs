@@ -422,6 +422,61 @@ Or use `FlxG.collide()` which calls `FlxG.overlap()` and presets the `ProcessCal
 **FlxG.pixelPerfectOverlap**(Sprite, Sprite2)
 
 
+## Drawing Shapes
+
+**Dynamically draw:** circle, ellipse, line, polygon, triangle, rect, round rect and rect complex.
+
+```haxe
+using flixel.util.FlxSpriteUtil;
+import flixel.util.FlxColor;
+import flixel.util.FlxPoint;
+```
+
+```haxe
+var canvas = new FlxSprite();
+canvas.makeGraphic(FlxG.width, FlxG.height, FlxColor.TRANSPARENT);
+add(canvas);
+```
+
+```haxe
+var lineStyle:Dynamic = { color: FlxColor.RED, thickness: 1 };
+var fillStyle:Dynamic = { color: FlxColor.RED, alpha: 0.5 };
+```
+
+```haxe
+// Circle
+canvas.drawCircle(X, Y, Radius, Color, lineStyle, fillStyle);
+
+// Ellipse
+canvas.drawEllipse(X, Y, Width, Height, Color, lineStyle, fillStyle);
+
+// Line
+canvas.drawLine(StartX, StartY, EndX, EndY, lineStyle);
+
+// Polygon
+var vertices = new Array<FlxPoint>();
+vertices[0] = new FlxPoint(0, 0);
+vertices[1] = new FlxPoint(100, 0);
+vertices[2] = new FlxPoint(100, 300);
+vertices[3] = new FlxPoint(0, 100);
+canvas.drawPolygon(vertices, Color, lineStyle, fillStyle);
+
+// Triangle
+canvas.drawTriangle(X, Y, Height, Color, lineStyle, fillStyle);
+
+// Rect
+canvas.drawRect(X, Y, Width, Height, Color, lineStyle, fillStyle);
+
+// Round Rect
+canvas.drawRoundRect(X, Y, Width, Height, EllipseWidth, EllipseHeight, Color, lineStyle, fillStyle);
+
+// Rect Complex
+canvas.drawRoundRectComplex(X, Y, Width, Height, TopLeftRadius, TopRightRadius, BottomLeftRadius, BottomRightRadius, Color, lineStyle, fillStyle);
+```
+
+Use `canvas.fill(FlxColor.TRANSPARENT);` to clear the canvas.
+
+
 ## HUD
 
 ```haxe
