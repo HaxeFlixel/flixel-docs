@@ -46,3 +46,7 @@ Help spread the word of HaxeFlixel:
 ### Improve and add to this website
 
 This website is [open-source](http://en.wikipedia.org/wiki/Open-source_software) built with the [Docpad](https://github.com/bevry/docpad) system. We encourage anyone to edit and improve the site on the GitHub repository. Changes made will then be merged and pushed to our server. Please use the edit links on the site or read the website docs.
+
+### Donations
+
+
