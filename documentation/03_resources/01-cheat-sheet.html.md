@@ -428,19 +428,25 @@ Or use `FlxG.collide()` which calls `FlxG.overlap()` and presets the `ProcessCal
 
 ```haxe
 using flixel.util.FlxSpriteUtil;
+import flixel.util.LineStyle;
+import flixel.util.FillStyle;
 import flixel.util.FlxColor;
 import flixel.util.FlxPoint;
 ```
 
+Haxe docs about the `using` keyword: [haxe.org/manual/using](http://haxe.org/manual/using).
+
 ```haxe
 var canvas = new FlxSprite();
-canvas.makeGraphic(FlxG.width, FlxG.height, FlxColor.TRANSPARENT);
+canvas.makeGraphic(FlxG.width, FlxG.height, FlxColor.TRANSPARENT, true);
 add(canvas);
 ```
 
+The last argument of `makeGraphic()` is `Unique`, whether the graphic should be an unique instance in the graphics cache, if you create multiple graphics like this, set it to `true` to avoid conflicts.
+
 ```haxe
-var lineStyle:Dynamic = { color: FlxColor.RED, thickness: 1 };
-var fillStyle:Dynamic = { color: FlxColor.RED, alpha: 0.5 };
+var lineStyle:LineStyle = { color: FlxColor.RED, thickness: 1 };
+var fillStyle:FillStyle = { color: FlxColor.RED, alpha: 0.5 };
 ```
 
 ```haxe
