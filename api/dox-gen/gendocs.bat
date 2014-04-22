@@ -1,2 +1,1 @@
-haxe docs.hxml
-haxelib run dox -i flixel.xml -o .. -res resources
+haxelib run dox -i flash.xml -o .. -res resources
