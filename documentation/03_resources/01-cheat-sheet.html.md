@@ -191,6 +191,7 @@ if (FlxG.mouse.justReleased)
 
 #### Positional Data
 ```haxe
+// Relative to world space
 FlxG.mouse.x;
 FlxG.mouse.y;
 
@@ -205,6 +206,41 @@ Current "delta" value of mouse wheel. If the wheel was just scrolled up, it will
 ```haxe
 FlxG.mouse.wheel;
 ```
+
+## Touch Input
+
+```haxe
+for (touch in FlxG.touches.list)
+{
+	if (touch.justPressed)
+	{
+	}
+	        
+	if (touch.pressed)
+	{
+	}
+	        
+	if (touch.justReleased)
+	{
+	}
+}
+```
+
+#### Positional Data
+```haxe
+// Relative to world space
+touch.x;
+touch.y;
+        
+// Relative to screen
+touch.screenX;
+touch.screenY;
+```
+
+* `touchPointID`: The unique ID of this touch. Example: if there are 3 concurrently active touches (and the device supports that many), they will have the IDs 0, 1 and 2.
+
+* `overlaps(objectOrGroup)`: Checks for collision between this touch and another `FlxObject` or `FlxGroup`.
+
 
 ## FlxSignal
 
