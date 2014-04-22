@@ -237,9 +237,9 @@ touch.screenX;
 touch.screenY;
 ```
 
-* `touchPointID`: The unique ID of this touch. Example: if there are 3 concurrently active touches (and the device supports that many), they will have the IDs 0, 1 and 2.
+* `touchPointID`: The unique ID of this touch.
 
-* `overlaps(objectOrGroup)`: Checks for collision between this touch and another `FlxObject` or `FlxGroup`.
+* `overlaps(objectOrGroup)`: Checks for overlap between this touch and another `FlxObject` or `FlxGroup`.
 
 
 ## FlxSignal
