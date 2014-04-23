@@ -2,6 +2,60 @@
 title: "Upgrade Guide"
 ```
 
+## Upgrading from HaxeFlixel 3.2.x to 3.3.0
+
+
+On flash, gamepad support has been added. For your project to work, you have to modify your `Project.xml` so that either:
+ - `<set name="SWF_VERSION" value="11.8" />` is used (min. flash player version 11.8) or 
+ - `<haxedef name="FLX_NO_GAMEPAD" if="flash" />` is used.
+
+When compiling to HTML5, make sure to remove `<haxelib name="openfl" />` from your `Project.xml`. This is already being handled in flixel's own `include.xml`.
+
+| HaxeFlixel 3.2.x                        | HaxeFlixel 3.3.0                      |
+| --------------------------------------- |---------------------------------------|                    
+| FlxTween.multiVar()                     | FlxTween.tween()                      |
+| FlxTween.singleVar()                    | FlxTween.tween()                      |
+| FlxTween.fader(0, 5);                   | FlxTween.tween(FlxG.sound, {volume: 0}, 5); |
+| FlxSound.survive                        | FlxSound.persist                      |
+| MouseEventManager.addSprite()           | MouseEventManager.add()               |
+| FlxObject.forceComplexRender = true;    | FlxObject.pixelPerfectRender = false; |
+| FlxText.width                           | FlxText.fieldWidth                    |                        
+| FlxSprite.setOriginToCenter()           | FlxSprite.centerOrigin()              |
+| FlxG.safeDestroy()                      | FlxDestroyUtil.destroy()              |
+| FlxTilemap.scaleX                       | FlxTilemap.scale.x                    |
+| FlxTilemap.scaleY                       | FlxTilemap.scale.y                    |
+| sprite.animation.addByIndicies()        | sprite.animation.addByIndices()       |
+| sprite.animation.addByStringIndicies()  | sprite.animation.addByStringIndices() |
+| FlxTimer.userData                       | *removed*                             |
+| FlxTween.userData                       | *removed*                             |
+
+### FlxSprite flipping
+
+Flipping sprite graphics now works differently - the `flipped` variable has been removed, as well as the `Reverse` parameter of `loadGraphic()` and `loadGraphicFromTexture()`. You can now directly manipulate the new `flipX` and `flipY` variables (flipping vertically is now possible).
+
+If you want to continue to use `facing` to flip the graphic (e.g. in a platformer), you can use the following logic:
+
+```haxe
+sprite.setFacingFlip(FlxObject.RIGHT, false, false);
+sprite.setFacingFlip(FlxObject.LEFT, true, false);
+```
+
+### FlxTimer and FlxPath
+
+`FlxPath` and `FlxTimer` were being pooled internally, which could lead to buggy behaviour in certain use cases. Due to that, pooling has been removed from these classes.
+
+| HaxeFlixel 3.2.x                        | HaxeFlixel 3.3.0                      |
+| --------------------------------------- |---------------------------------------| 
+| start()                                 | new FlxTimer() / FlxPath()            |
+| run()                                   | start()                               |
+
+Also, the following API changes have been made for consistency:
+
+| HaxeFlixel 3.2.x                        | HaxeFlixel 3.3.0                      |
+| --------------------------------------- |---------------------------------------| 
+| paused                                  | active                                |
+| abort()                                 | cancel()                              |
+
 ## Upgrading from HaxeFlixel 3.1.0 to 3.2.0
 
 

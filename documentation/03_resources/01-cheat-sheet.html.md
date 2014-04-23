@@ -265,7 +265,7 @@ import flixel.util.FlxTimer;
 
 ```haxe
 // time (seconds), callback, loops
-FlxTimer.start(10.0, myCallback, 3);
+new FlxTimer(10.0, myCallback, 3);
 ```
 
 ```haxe
