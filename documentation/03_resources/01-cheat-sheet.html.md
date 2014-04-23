@@ -99,7 +99,19 @@ import flixel.ui.FlxButton;
 
 ```haxe
 myButton = new FlxButton(0, 0, "Label", myCallback);
+
+// Custom graphics
+myButton.loadGraphics("assets/custom.png");
 ```
+
+```haxe
+private function myCallback():Void
+{
+}
+```
+
+* **myButton.label** is a `FlxText`, use `setFormat()` and `setBorderStyle()` to customise.
+
 
 ## Sounds and Music
 Declare each file on `Project.xml`, with an unique `id`.
