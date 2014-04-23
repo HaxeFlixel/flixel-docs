@@ -14,18 +14,6 @@ for cross-platform 2D games.
 
 We are built on and welcome code contributions, see the [code contributions page.](/documentation/code-contributions)
 
-### Donations
-
-You can support the core developers by giving a monthly donation via [Patreon](http://www.patreon.com/haxeflixel) 
-or by giving a one time donation though PayPal by clicking here (INSERT PAYPAL BUTTON).
-
-All donations will be divided on a monthly basis amongst the [owners team](https://github.com/orgs/HaxeFlixel/members), 
-plus two additional recipients, one for website costs, and one for community contributions. 
-Funds for community contributions will accumulate until the core developers decide there is a good use for them 
-(whether to post a bounty for a necessary feature, or to reward a particularly significant contribution).
-
-Samuel Batista ([gamedevsam](https://github.com/gamedevsam)) is the current HaxeFlixel treasurer.
-
 ### Publicize HaxeFlixel
 
 Help spread the word of HaxeFlixel:
