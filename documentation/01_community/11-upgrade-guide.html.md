@@ -28,6 +28,7 @@ When compiling to HTML5, make sure to remove `<haxelib name="openfl" />` from yo
 | sprite.animation.addByStringIndicies()  | sprite.animation.addByStringIndices() |
 | FlxTimer.userData                       | *removed*                             |
 | FlxTween.userData                       | *removed*                             |
+| FlxG.sound.add()                        | FlxG.sound.cache()                    |
 
 ### FlxSprite flipping
 
