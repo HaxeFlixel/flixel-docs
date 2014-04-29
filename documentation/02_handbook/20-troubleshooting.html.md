@@ -24,4 +24,4 @@ If you created your [Project.XML](documentation/openfl-project-xml-format/) from
 
 ## Undesired stretching when window size varies
 
-Assigning a new instance of any of the classes that inherit from BaseScaleMode to FlxG.scalemode will set this to the desired scaling. However these settings may override the zoom value set when instancing a FlxGame.
+Assigning a new instance of any of the classes that inherit from [BaseScaleMode](http://api.haxeflixel.com/types/flixel/system/scaleModes/BaseScaleMode.html) to `FlxG.scalemode` will set this to the desired scaling. However these settings may override the zoom value set when instancing a `FlxGame`.
