@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8"/><link href="../../bootstrap-combined.min.css" rel="stylesheet" /><script type="text/javascript" src="../../jquery-1.9.1.min.js"></script><script type="text/javascript" src="../../bootstrap.min.js"></script><link href="../../styles.css" rel="stylesheet" /><link rel="icon" href="../../favicon.ico" type="image/x-icon"></link><script type="text/javascript" src="../../nav.js"></script><script type="text/javascript" src="../../index.js"></script><script type="text/javascript">var dox = {rootPath: "../../",platforms: ["flash"]};</script><title>FlxTween</title></head><body><div class="navbar navbar-inverse navbar-fixed-top"><div class="navbar-inner"><form class="navbar-search pull-left" id="searchForm"><input id="search" type="text" class="search-query" placeholder="Filter" autocomplete="off"/></form><ul class="nav"><li id="select-platform" class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Platform<b class="caret"></b></a><ul class="dropdown-menu"><li data="all"><a href="#">All Platforms</a></li><li data="flash"><a href="#">flash</a></li></ul></li></ul></div></div><div id="container"><div id="nav"></div><div id="content"><div class="header"><h1><code><span class="directive">class </span><span class="type">flixel.tweens.FlxTween</span><span class="keyword"> implements</span> <a class="type" href="../../flixel/interfaces/IFlxDestroyable.html">IFlxDestroyable</a></code></h1></div><div class="body"><p class="availability">Available on all platforms</p><div><table class="related-types toggle" style="margin-top:16px;"><tbody><tr><td colspan="2"><strong>Sub classes</strong></td></tr><tr><td width="12" style="vertical-align:top;"><a href="#" onclick="toggleInherited(this)"><img style="padding-top:4px;" src="../../triangle-closed.png"></img></a></td><td class="toggle-hide"><a href="../../flixel/tweens/misc/AngleTween.html">AngleTween</a>, <a href="../../flixel/tweens/misc/ColorTween.html">ColorTween</a>, <a href="../../flixel/tweens/misc/NumTween.html">NumTween</a>, <a href="../../flixel/tweens/misc/VarTween.html">VarTween</a>, <a href="../../flixel/tweens/motion/Motion.html">Motion</a></td><td class="toggle-show"><table class="table table-condensed"><tbody><tr><td width="200"><a href="../../flixel/tweens/misc/AngleTween.html">AngleTween</a></td><td><p>Tweens from one angle to another.</p></td></tr><tr><td width="200"><a href="../../flixel/tweens/misc/ColorTween.html">ColorTween</a></td><td><p>Tweens a color's red, green, and blue properties
+ * independently. Can also tween an alpha value.</p></td></tr><tr><td width="200"><a href="../../flixel/tweens/misc/NumTween.html">NumTween</a></td><td><p>Tweens a numeric value. See FlxTween.num()</p></td></tr><tr><td width="200"><a href="../../flixel/tweens/misc/VarTween.html">VarTween</a></td><td><p>Tweens multiple numeric public properties of an Object simultaneously.</p></td></tr><tr><td width="200"><a href="../../flixel/tweens/motion/Motion.html">Motion</a></td><td><p>Base class for motion Tweens.</p></td></tr></tbody></table></td></tr></tbody></table></div><div class="doc"><p></p></div><h2>Class Fields</h2><div class="platform platform-flash"><a name="BACKWARD"></a><h3><p><code><span class="keyword">static </span><span class="keyword">var</span> <a href="#BACKWARD"><span class="identifier">BACKWARD</span></a>:<a class="type" href="../../Int.html">Int</a></code></p></h3><div class="doc"><p>Backward Tween type, will play tween in reverse direction</p></div></div><div class="platform platform-flash"><a name="LOOPING"></a><h3><p><code><span class="keyword">static </span><span class="keyword">var</span> <a href="#LOOPING"><span class="identifier">LOOPING</span></a>:<a class="type" href="../../Int.html">Int</a></code></p></h3><div class="doc"><p>Looping Tween type, will restart immediately when it finishes.</p></div></div><div class="platform platform-flash"><a name="ONESHOT"></a><h3><p><code><span class="keyword">static </span><span class="keyword">var</span> <a href="#ONESHOT"><span class="identifier">ONESHOT</span></a>:<a class="type" href="../../Int.html">Int</a></code></p></h3><div class="doc"><p>Oneshot Tween type, will stop and remove itself from its core container when it finishes.</p></div></div><div class="platform platform-flash"><a name="PERSIST"></a><h3><p><code><span class="keyword">static </span><span class="keyword">var</span> <a href="#PERSIST"><span class="identifier">PERSIST</span></a>:<a class="type" href="../../Int.html">Int</a></code></p></h3><div class="doc"><p>Persistent Tween type, will stop when it finishes.</p></div></div><div class="platform platform-flash"><a name="PINGPONG"></a><h3><p><code><span class="keyword">static </span><span class="keyword">var</span> <a href="#PINGPONG"><span class="identifier">PINGPONG</span></a>:<a class="type" href="../../Int.html">Int</a></code></p></h3><div class="doc"><p>"To and from" Tween type, will play tween hither and thither</p></div></div><div class="platform platform-flash"><a name="manager"></a><h3><p><code><span class="keyword">static </span><span class="keyword">var</span> <a href="#manager"><span class="identifier">manager</span></a>:<a class="type" href="../../flixel/plugin/TweenManager.html">TweenManager</a></code></p></h3><div class="doc"><p>The tweening plugin that handles all the tweens.</p></div></div><div class="platform platform-flash"><a name="angle"></a><h3><p><code><span class="keyword">static </span><span class="keyword">function</span> <a href="#angle"><span class="identifier">angle</span></a>(?Sprite:<a class="type" href="../../flixel/FlxSprite.html">FlxSprite</a> = null, FromAngle:<a class="type" href="../../Float.html">Float</a>, ToAngle:<a class="type" href="../../Float.html">Float</a>, ?Duration:<a class="type" href="../../Float.html">Float</a> = 1, ?Options:<a class="type" href="../../flixel/tweens/TweenOptions.html">TweenOptions</a> = null):<a class="type" href="../../flixel/tweens/misc/AngleTween.html">AngleTween</a></code></p></h3><div class="doc"><p>Tweens numeric value which represents angle. Shorthand for creating a AngleTween object, starting it and adding it to the TweenManager.
+ * Example: FlxTween.angle(Sprite, -90, 90, 2.0, { ease: easeFunction, complete: onComplete, type: FlxTween.ONESHOT });
+ * 
+ * </p><table class="table table-condensed"><tbody><tr><td>Sprite</td><td><p>Optional Sprite whose angle should be tweened.
+ * </p></td></tr><tr><td>FromAngle</td><td><p>Start angle.
+ * </p></td></tr><tr><td>ToAngle</td><td><p>End angle.
+ * </p></td></tr><tr><td>Duration</td><td><p>Duration of the tween.
+ * </p></td></tr><tr><td>Options</td><td><p>An object containing key/value pairs of the following optional parameters:
+ * 						type		Tween type.
+ * 						complete	Optional completion callback function.
+ * 						ease		Optional easer function.
+ *  					startDelay	Seconds to wait until starting this tween, 0 by default.
+ * 						loopDelay	Seconds to wait between loops of this tween, 0 by default.
+ * </p></td></tr><tr><td>returns</td><td><p>The added AngleTween object.</p></td></tr></tbody></table></div></div><div class="platform platform-flash"><a name="circularMotion"></a><h3><p><code><span class="keyword">static </span><span class="keyword">function</span> <a href="#circularMotion"><span class="identifier">circularMotion</span></a>(Object:<a class="type" href="../../flixel/FlxObject.html">FlxObject</a>, CenterX:<a class="type" href="../../Float.html">Float</a>, CenterY:<a class="type" href="../../Float.html">Float</a>, Radius:<a class="type" href="../../Float.html">Float</a>, Angle:<a class="type" href="../../Float.html">Float</a>, Clockwise:<a class="type" href="../../Bool.html">Bool</a>, ?DurationOrSpeed:<a class="type" href="../../Float.html">Float</a> = 1, ?UseDuration:<a class="type" href="../../Bool.html">Bool</a> = true, ?Options:<a class="type" href="../../flixel/tweens/TweenOptions.html">TweenOptions</a> = null):<a class="type" href="../../flixel/tweens/motion/CircularMotion.html">CircularMotion</a></code></p></h3><div class="doc"><p>Create a new CircularMotion tween.
+ * Example: FlxTween.circularMotion(Object, 250, 250, 50, 0, true, 2, true { ease: easeFunction, complete: onComplete, type: FlxTween.ONESHOT });
+ * 
+ * </p><table class="table table-condensed"><tbody><tr><td>Object</td><td><p>The object to move (FlxObject or FlxSpriteGroup)
+ * </p></td></tr><tr><td>CenterX</td><td><p>X position of the circle's center.
+ * </p></td></tr><tr><td>CenterY</td><td><p>Y position of the circle's center.
+ * </p></td></tr><tr><td>Radius</td><td><p>Radius of the circle.
+ * </p></td></tr><tr><td>Angle</td><td><p>Starting position on the circle.
+ * </p></td></tr><tr><td>Clockwise</td><td><p>If the motion is clockwise.
+ * </p></td></tr><tr><td>DurationOrSpeed</td><td><p>Duration of the movement in seconds.
+ * </p></td></tr><tr><td>UseDuration</td><td><p>Duration of the movement.
+ * </p></td></tr><tr><td>Eease</td><td><p>Optional easer function.
+ * </p></td></tr><tr><td>Options</td><td><p>An object containing key/value pairs of the following optional parameters:
+ * 							type		Tween type.
+ * 							complete	Optional completion callback function.
+ * 							ease		Optional easer function.
+ *  						startDelay	Seconds to wait until starting this tween, 0 by default.
+ * 							loopDelay	Seconds to wait between loops of this tween, 0 by default.
+ * </p></td></tr><tr><td>returns</td><td><p>The CircularMotion object.</p></td></tr></tbody></table></div></div><div class="platform platform-flash"><a name="color"></a><h3><p><code><span class="keyword">static </span><span class="keyword">function</span> <a href="#color"><span class="identifier">color</span></a>(?Sprite:<a class="type" href="../../flixel/FlxSprite.html">FlxSprite</a> = null, ?Duration:<a class="type" href="../../Float.html">Float</a> = 1, FromColor:<a class="type" href="../../Int.html">Int</a>, ToColor:<a class="type" href="../../Int.html">Int</a>, ?FromAlpha:<a class="type" href="../../Float.html">Float</a> = 1, ?ToAlpha:<a class="type" href="../../Float.html">Float</a> = 1, ?Options:<a class="type" href="../../flixel/tweens/TweenOptions.html">TweenOptions</a> = null):<a class="type" href="../../flixel/tweens/misc/ColorTween.html">ColorTween</a></code></p></h3><div class="doc"><p>Tweens numeric value which represents color. Shorthand for creating a ColorTween object, starting it and adding it to a TweenPlugin.
+ * Example: FlxTween.color(Sprite, 2.0, 0x000000, 0xffffff, 0.0, 1.0, { ease: easeFunction, complete: onComplete, type: FlxTween.ONESHOT });
+ * 
+ * </p><table class="table table-condensed"><tbody><tr><td>Sprite</td><td><p>Optional Sprite whose color should be tweened.
+ * </p></td></tr><tr><td>Duration</td><td><p>Duration of the tween in seconds.
+ * </p></td></tr><tr><td>FromColor</td><td><p>Start color.
+ * </p></td></tr><tr><td>ToColor</td><td><p>End color.
+ * </p></td></tr><tr><td>FromAlpha</td><td><p>Start alpha.
+ * </p></td></tr><tr><td>ToAlpha</td><td><p>End alpha.
+ * </p></td></tr><tr><td>Options</td><td><p>An object containing key/value pairs of the following optional parameters:
+ * 						type		Tween type.
+ * 						complete	Optional completion callback function.
+ * 						ease		Optional easer function.
+ *  					startDelay	Seconds to wait until starting this tween, 0 by default.
+ * 						loopDelay	Seconds to wait between loops of this tween, 0 by default.
+ * </p></td></tr><tr><td>returns</td><td><p>The added ColorTween object.</p></td></tr></tbody></table></div></div><div class="platform platform-flash"><a name="cubicMotion"></a><h3><p><code><span class="keyword">static </span><span class="keyword">function</span> <a href="#cubicMotion"><span class="identifier">cubicMotion</span></a>(Object:<a class="type" href="../../flixel/FlxObject.html">FlxObject</a>, FromX:<a class="type" href="../../Float.html">Float</a>, FromY:<a class="type" href="../../Float.html">Float</a>, aX:<a class="type" href="../../Float.html">Float</a>, aY:<a class="type" href="../../Float.html">Float</a>, bX:<a class="type" href="../../Float.html">Float</a>, bY:<a class="type" href="../../Float.html">Float</a>, ToX:<a class="type" href="../../Float.html">Float</a>, ToY:<a class="type" href="../../Float.html">Float</a>, ?Duration:<a class="type" href="../../Float.html">Float</a> = 1, ?Options:<a class="type" href="../../flixel/tweens/TweenOptions.html">TweenOptions</a> = null):<a class="type" href="../../flixel/tweens/motion/CubicMotion.html">CubicMotion</a></code></p></h3><div class="doc"><p>Create a new CubicMotion tween.
+ * Example: FlxTween.cubicMotion(_sprite, 0, 0, 500, 100, 400, 200, 100, 100, 2, { ease: easeFunction, complete: onComplete, type: FlxTween.ONESHOT });
+ * 
+ * </p><table class="table table-condensed"><tbody><tr><td>Object</td><td><p>The object to move (FlxObject or FlxSpriteGroup)
+ * </p></td></tr><tr><td>FromX</td><td><p>X start.
+ * </p></td></tr><tr><td>FromY</td><td><p>Y start.
+ * </p></td></tr><tr><td>aX</td><td><p>First control x.
+ * </p></td></tr><tr><td>aY</td><td><p>First control y.
+ * </p></td></tr><tr><td>bX</td><td><p>Second control x.
+ * </p></td></tr><tr><td>bY</td><td><p>Second control y.
+ * </p></td></tr><tr><td>ToX</td><td><p>X finish.
+ * </p></td></tr><tr><td>ToY</td><td><p>Y finish.
+ * </p></td></tr><tr><td>Duration</td><td><p>Duration of the movement in seconds.
+ * </p></td></tr><tr><td>Options</td><td><p>An object containing key/value pairs of the following optional parameters:
+ * 						type		Tween type.
+ * 						complete	Optional completion callback function.
+ * 						ease		Optional easer function.
+ *  					startDelay	Seconds to wait until starting this tween, 0 by default.
+ * 						loopDelay	Seconds to wait between loops of this tween, 0 by default.
+ * </p></td></tr><tr><td>returns</td><td><p>The CubicMotion object.</p></td></tr></tbody></table></div></div><div class="platform platform-flash"><a name="linearMotion"></a><h3><p><code><span class="keyword">static </span><span class="keyword">function</span> <a href="#linearMotion"><span class="identifier">linearMotion</span></a>(Object:<a class="type" href="../../flixel/FlxObject.html">FlxObject</a>, FromX:<a class="type" href="../../Float.html">Float</a>, FromY:<a class="type" href="../../Float.html">Float</a>, ToX:<a class="type" href="../../Float.html">Float</a>, ToY:<a class="type" href="../../Float.html">Float</a>, ?DurationOrSpeed:<a class="type" href="../../Float.html">Float</a> = 1, ?UseDuration:<a class="type" href="../../Bool.html">Bool</a> = true, ?Options:<a class="type" href="../../flixel/tweens/TweenOptions.html">TweenOptions</a> = null):<a class="type" href="../../flixel/tweens/motion/LinearMotion.html">LinearMotion</a></code></p></h3><div class="doc"><p>Create a new LinearMotion tween.
+ * Example: FlxTween.linearMotion(Object, 0, 0, 500, 20, 5, false, { ease: easeFunction, complete: onComplete, type: FlxTween.ONESHOT });
+ * 
+ * </p><table class="table table-condensed"><tbody><tr><td>Object</td><td><p>The object to move (FlxObject or FlxSpriteGroup)
+ * </p></td></tr><tr><td>FromX</td><td><p>X start.
+ * </p></td></tr><tr><td>FromY</td><td><p>Y start.
+ * </p></td></tr><tr><td>ToX</td><td><p>X finish.
+ * </p></td></tr><tr><td>ToY</td><td><p>Y finish.
+ * </p></td></tr><tr><td>DurationOrSpeed</td><td><p>Duration (in seconds) or speed of the movement.
+ * </p></td></tr><tr><td>UseDuration</td><td><p>Whether to use the previous param as duration or speed.
+ * </p></td></tr><tr><td>Options</td><td><p>An object containing key/value pairs of the following optional parameters:
+ * 							type		Tween type.
+ * 							complete	Optional completion callback function.
+ * 							ease		Optional easer function.
+ *  						startDelay	Seconds to wait until starting this tween, 0 by default.
+ * 							loopDelay	Seconds to wait between loops of this tween, 0 by default.
+ * </p></td></tr><tr><td>returns</td><td><p>The LinearMotion object.</p></td></tr></tbody></table></div></div><div class="platform platform-flash"><a name="linearPath"></a><h3><p><code><span class="keyword">static </span><span class="keyword">function</span> <a href="#linearPath"><span class="identifier">linearPath</span></a>(Object:<a class="type" href="../../flixel/FlxObject.html">FlxObject</a>, Points:<a class="type" href="../../Array.html">Array</a>&lt;<a class="type" href="../../flixel/util/FlxPoint.html">FlxPoint</a>&gt;, ?DurationOrSpeed:<a class="type" href="../../Float.html">Float</a> = 1, ?UseDuration:<a class="type" href="../../Bool.html">Bool</a> = true, ?Options:<a class="type" href="../../flixel/tweens/TweenOptions.html">TweenOptions</a> = null):<a class="type" href="../../flixel/tweens/motion/LinearPath.html">LinearPath</a></code></p></h3><div class="doc"><p>Create a new LinearPath tween.
+ * Example: FlxTween.linearPath(Object, [FlxPoint.get(0, 0), FlxPoint.get(100, 100)], 2, true, { ease: easeFunction, complete: onComplete, type: FlxTween.ONESHOT });
+ * 
+ * </p><table class="table table-condensed"><tbody><tr><td>Object</td><td><p>The object to move (FlxObject or FlxSpriteGroup)
+ * </p></td></tr><tr><td>Points</td><td><p>An array of at least 2 FlxPoints defining the path
+ * </p></td></tr><tr><td>DurationOrSpeed</td><td><p>Duration (in seconds) or speed of the movement.
+ * </p></td></tr><tr><td>UseDuration</td><td><p>Whether to use the previous param as duration or speed.
+ * </p></td></tr><tr><td>Options</td><td><p>An object containing key/value pairs of the following optional parameters:
+ * 							type		Tween type.
+ * 							complete	Optional completion callback function.
+ * 							ease		Optional easer function.
+ * 							startDelay	Seconds to wait until starting this tween, 0 by default.
+ * 							loopDelay	Seconds to wait between loops of this tween, 0 by default.
+ * </p></td></tr><tr><td>returns</td><td><p>The LinearPath object.</p></td></tr></tbody></table></div></div><div class="platform platform-flash"><a name="num"></a><h3><p><code><span class="keyword">static </span><span class="keyword">function</span> <a href="#num"><span class="identifier">num</span></a>(FromValue:<a class="type" href="../../Float.html">Float</a>, ToValue:<a class="type" href="../../Float.html">Float</a>, ?Duration:<a class="type" href="../../Float.html">Float</a> = 1, ?Options:<a class="type" href="../../flixel/tweens/TweenOptions.html">TweenOptions</a> = null, ?TweenFunction:<a class="type" href="../../Float.html">Float</a> -&gt;<a class="type" href="../../Void.html">Void</a> = null):<a class="type" href="../../flixel/tweens/misc/NumTween.html">NumTween</a></code></p></h3><div class="doc"><p>Tweens some numeric value. Shorthand for creating a NumTween, starting it and adding it to the TweenManager. Using it in 
+ * conjunction with a TweenFunction requires more setup, but is faster than VarTween because it doesn't use Reflection.
+ * 
+ * Example: 
+ *    private function tweenFunction(s:FlxSprite, v:Float) { s.alpha = v; }
+ *    FlxTween.num(1, 0, 2.0, { ease: easeFunction, complete: onComplete, type: FlxTween.ONESHOT }, tweenFunction.bind(mySprite));
+ * 
+ * </p><table class="table table-condensed"><tbody><tr><td>FromValue</td><td><p>Start value.
+ * </p></td></tr><tr><td>ToValue</td><td><p>End value.
+ * </p></td></tr><tr><td>Duration</td><td><p>Duration of the tween.
+ * </p></td></tr><tr><td>Options</td><td><p>An object containing key/value pairs of the following optional parameters:
+ * 						type		Tween type.
+ * 						complete	Optional completion callback function.
+ * 						ease		Optional easer function.
+ *  					startDelay	Seconds to wait until starting this tween, 0 by default.
+ * 						loopDelay	Seconds to wait between loops of this tween, 0 by default.
+ * </p></td></tr><tr><td>TweenFunction</td><td><p>A function to be called when the tweened value updates.  It is recommended not to use an anonoymous 
+ *							function if you are maximizing performance, as those will be compiled to Dynamics on cpp.
+ * </p></td></tr><tr><td>returns</td><td><p>The added NumTween object.</p></td></tr></tbody></table></div></div><div class="platform platform-flash"><a name="quadMotion"></a><h3><p><code><span class="keyword">static </span><span class="keyword">function</span> <a href="#quadMotion"><span class="identifier">quadMotion</span></a>(Object:<a class="type" href="../../flixel/FlxObject.html">FlxObject</a>, FromX:<a class="type" href="../../Float.html">Float</a>, FromY:<a class="type" href="../../Float.html">Float</a>, ControlX:<a class="type" href="../../Float.html">Float</a>, ControlY:<a class="type" href="../../Float.html">Float</a>, ToX:<a class="type" href="../../Float.html">Float</a>, ToY:<a class="type" href="../../Float.html">Float</a>, ?DurationOrSpeed:<a class="type" href="../../Float.html">Float</a> = 1, ?UseDuration:<a class="type" href="../../Bool.html">Bool</a> = true, ?Options:<a class="type" href="../../flixel/tweens/TweenOptions.html">TweenOptions</a> = null):<a class="type" href="../../flixel/tweens/motion/QuadMotion.html">QuadMotion</a></code></p></h3><div class="doc"><p>Create a new QuadMotion tween.
+ * Example: FlxTween.quadMotion(Object, 0, 100, 300, 500, 100, 2, 5, false, { ease: easeFunction, complete: onComplete, type: FlxTween.ONESHOT });
+ * 
+ * </p><table class="table table-condensed"><tbody><tr><td>Object</td><td><p>The object to move (FlxObject or FlxSpriteGroup)
+ * </p></td></tr><tr><td>FromX</td><td><p>X start.
+ * </p></td></tr><tr><td>FromY</td><td><p>Y start.
+ * </p></td></tr><tr><td>ControlX</td><td><p>X control, used to determine the curve.
+ * </p></td></tr><tr><td>ControlY</td><td><p>Y control, used to determine the curve.
+ * </p></td></tr><tr><td>ToX</td><td><p>X finish.
+ * </p></td></tr><tr><td>ToY</td><td><p>Y finish.
+ * </p></td></tr><tr><td>DurationOrSpeed</td><td><p>Duration (in seconds) or speed of the movement.
+ * </p></td></tr><tr><td>UseDuration</td><td><p>Whether to use the previous param as duration or speed.
+ * </p></td></tr><tr><td>Options</td><td><p>An object containing key/value pairs of the following optional parameters:
+ * 							type		Tween type.
+ * 							complete	Optional completion callback function.
+ * 							ease		Optional easer function.
+ *  						startDelay	Seconds to wait until starting this tween, 0 by default.
+ * 							loopDelay	Seconds to wait between loops of this tween, 0 by default.
+ * </p></td></tr><tr><td>returns</td><td><p>The QuadMotion object.</p></td></tr></tbody></table></div></div><div class="platform platform-flash"><a name="quadPath"></a><h3><p><code><span class="keyword">static </span><span class="keyword">function</span> <a href="#quadPath"><span class="identifier">quadPath</span></a>(Object:<a class="type" href="../../flixel/FlxObject.html">FlxObject</a>, Points:<a class="type" href="../../Array.html">Array</a>&lt;<a class="type" href="../../flixel/util/FlxPoint.html">FlxPoint</a>&gt;, ?DurationOrSpeed:<a class="type" href="../../Float.html">Float</a> = 1, ?UseDuration:<a class="type" href="../../Bool.html">Bool</a> = true, ?Options:<a class="type" href="../../flixel/tweens/TweenOptions.html">TweenOptions</a> = null):<a class="type" href="../../flixel/tweens/motion/QuadPath.html">QuadPath</a></code></p></h3><div class="doc"><p>Create a new QuadPath tween.
+ * Example: FlxTween.quadPath(Object, [FlxPoint.get(0, 0), FlxPoint.get(200, 200), FlxPoint.get(400, 0)], 2, true, { ease: easeFunction, complete: onComplete, type: FlxTween.ONESHOT });
+ * 
+ * </p><table class="table table-condensed"><tbody><tr><td>Object</td><td><p>The object to move (FlxObject or FlxSpriteGroup)
+ * </p></td></tr><tr><td>Points</td><td><p>An array of at least 3 FlxPoints defining the path
+ * </p></td></tr><tr><td>DurationOrSpeed</td><td><p>Duration (in seconds) or speed of the movement.
+ * </p></td></tr><tr><td>UseDuration</td><td><p>Whether to use the previous param as duration or speed.
+ * </p></td></tr><tr><td>Options</td><td><p>An object containing key/value pairs of the following optional parameters:
+ * 							type		Tween type.
+ * 							complete	Optional completion callback function.
+ * 							ease		Optional easer function.
+ * 							startDelay	Seconds to wait until starting this tween, 0 by default.
+ * 							loopDelay	Seconds to wait between loops of this tween, 0 by default.
+ * </p></td></tr><tr><td>returns</td><td><p>The QuadPath object.</p></td></tr></tbody></table></div></div><div class="platform platform-flash"><a name="tween"></a><h3><p><code><span class="keyword">static </span><span class="keyword">function</span> <a href="#tween"><span class="identifier">tween</span></a>(Object:<a class="type" href="../../Dynamic.html">Dynamic</a>, Values:<a class="type" href="../../Dynamic.html">Dynamic</a>, ?Duration:<a class="type" href="../../Float.html">Float</a> = 1, ?Options:<a class="type" href="../../flixel/tweens/TweenOptions.html">TweenOptions</a> = null):<a class="type" href="../../flixel/tweens/misc/VarTween.html">VarTween</a></code></p></h3><div class="doc"><p>Tweens numeric public properties of an Object. Shorthand for creating a VarTween, starting it and adding it to the TweenManager.
+ * Example: FlxTween.tween(Object, { x: 500, y: 350 }, 2.0, { ease: easeFunction, complete: onComplete, type: FlxTween.ONESHOT });
+ * 
+ * </p><table class="table table-condensed"><tbody><tr><td>Object</td><td><p>The object containing the properties to tween.
+ * </p></td></tr><tr><td>Values</td><td><p>An object containing key/value pairs of properties and target values.
+ * </p></td></tr><tr><td>Duration</td><td><p>Duration of the tween in seconds.
+ * </p></td></tr><tr><td>Options</td><td><p>An object containing key/value pairs of the following optional parameters:
+ * 						type		Tween type.
+ * 						complete	Optional completion callback function.
+ * 						ease		Optional easer function.
+ *  					startDelay	Seconds to wait until starting this tween, 0 by default.
+ * 						loopDelay	Seconds to wait between loops of this tween, 0 by default.
+ * </p></td></tr><tr><td>returns</td><td><p>The added VarTween object.</p></td></tr></tbody></table></div></div><h2>Instance Fields</h2><div class="platform platform-flash"><a name="active"></a><h3><p><code><span class="keyword">var</span> <a href="#active"><span class="identifier">active</span></a>:<a class="type" href="../../Bool.html">Bool</a></code></p></h3><div class="doc"><p></p></div></div><div class="platform platform-flash"><a name="backward"></a><h3><p><code><span class="keyword">var</span> <a href="#backward"><span class="identifier">backward</span></a>:<a class="type" href="../../Bool.html">Bool</a></code></p></h3><div class="doc"><p></p></div></div><div class="platform platform-flash"><a name="complete"></a><h3><p><code><span class="keyword">var</span> <a href="#complete"><span class="identifier">complete</span></a>:<a class="type" href="../../flixel/tweens/CompleteCallback.html">CompleteCallback</a></code></p></h3><div class="doc"><p></p></div></div><div class="platform platform-flash"><a name="duration"></a><h3><p><code><span class="keyword">var</span> <a href="#duration"><span class="identifier">duration</span></a>:<a class="type" href="../../Float.html">Float</a></code></p></h3><div class="doc"><p></p></div></div><div class="platform platform-flash"><a name="ease"></a><h3><p><code><span class="keyword">var</span> <a href="#ease"><span class="identifier">ease</span></a>:<a class="type" href="../../flixel/tweens/EaseFunction.html">EaseFunction</a></code></p></h3><div class="doc"><p></p></div></div><div class="platform platform-flash"><a name="executions"></a><h3><p><code><span class="keyword">var</span> <a href="#executions"><span class="identifier">executions</span></a>:<a class="type" href="../../Int.html">Int</a></code></p></h3><div class="doc"><p>How many times this tween has been executed / has finished so far - useful to 
+ * stop the LOOPING and PINGPONG types after a certain amount of time</p></div></div><div class="platform platform-flash"><a name="finished"></a><h3><p><code><span class="keyword">var</span> <a href="#finished"><span class="identifier">finished</span></a>:<a class="type" href="../../Bool.html">Bool</a></code></p></h3><div class="doc"><p></p></div></div><div class="platform platform-flash"><a name="loopDelay"></a><h3><p><code><span class="keyword">var</span> <a href="#loopDelay"><span class="identifier">loopDelay</span></a>:<a class="type" href="../../Float.html">Float</a></code></p></h3><div class="doc"><p>Seconds to wait between loops of this tween, 0 by default</p></div></div><div class="platform platform-flash"><a name="percent"></a><h3><p><code><span class="keyword">var</span> <a href="#percent"><span class="identifier">percent</span></a>:<a class="type" href="../../Float.html">Float</a></code></p></h3><div class="doc"><p></p></div></div><div class="platform platform-flash"><a name="scale"></a><h3><p><code><span class="keyword">var</span> <a href="#scale"><span class="identifier">scale</span></a>:<a class="type" href="../../Float.html">Float</a></code></p></h3><div class="doc"><p></p></div></div><div class="platform platform-flash"><a name="startDelay"></a><h3><p><code><span class="keyword">var</span> <a href="#startDelay"><span class="identifier">startDelay</span></a>:<a class="type" href="../../Float.html">Float</a></code></p></h3><div class="doc"><p>Seconds to wait until starting this tween, 0 by default</p></div></div><div class="platform platform-flash"><a name="type"></a><h3><p><code><span class="keyword">var</span> <a href="#type"><span class="identifier">type</span></a>:<a class="type" href="../../Int.html">Int</a></code></p></h3><div class="doc"><p></p></div></div><div class="platform platform-flash"><a name="cancel"></a><h3><p><code><span class="keyword">function</span> <a href="#cancel"><span class="identifier">cancel</span></a>():<a class="type" href="../../Void.html">Void</a></code></p></h3><div class="doc"><p>Immediately stops the Tween and removes it from the 
+ * TweenManager without calling the complete callback.</p></div></div><div class="platform platform-flash"><a name="destroy"></a><h3><p><code><span class="keyword">function</span> <a href="#destroy"><span class="identifier">destroy</span></a>():<a class="type" href="../../Void.html">Void</a></code></p></h3><div class="doc"><p></p></div></div></div></div></div></body></html>

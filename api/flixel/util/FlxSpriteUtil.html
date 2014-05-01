@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8"/><link href="../../bootstrap-combined.min.css" rel="stylesheet" /><script type="text/javascript" src="../../jquery-1.9.1.min.js"></script><script type="text/javascript" src="../../bootstrap.min.js"></script><link href="../../styles.css" rel="stylesheet" /><link rel="icon" href="../../favicon.ico" type="image/x-icon"></link><script type="text/javascript" src="../../nav.js"></script><script type="text/javascript" src="../../index.js"></script><script type="text/javascript">var dox = {rootPath: "../../",platforms: ["flash"]};</script><title>FlxSpriteUtil</title></head><body><div class="navbar navbar-inverse navbar-fixed-top"><div class="navbar-inner"><form class="navbar-search pull-left" id="searchForm"><input id="search" type="text" class="search-query" placeholder="Filter" autocomplete="off"/></form><ul class="nav"><li id="select-platform" class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Platform<b class="caret"></b></a><ul class="dropdown-menu"><li data="all"><a href="#">All Platforms</a></li><li data="flash"><a href="#">flash</a></li></ul></li></ul></div></div><div id="container"><div id="nav"></div><div id="content"><div class="header"><h1><code><span class="directive">class </span><span class="type">flixel.util.FlxSpriteUtil</span></code></h1></div><div class="body"><p class="availability">Available on all platforms</p><div class="doc"><p>Some handy functions for FlxSprite manipulation, mostly drawing-related.
+ * Some of these work with FlxObject too.</p></div><h2>Class Fields</h2><div class="platform platform-flash"><a name="flashGfx"></a><h3><p><code><span class="keyword">static </span><span class="keyword">var</span> <a href="#flashGfx"><span class="identifier">flashGfx</span></a>:<a class="type" href="../../flash/display/Graphics.html">Graphics</a></code></p></h3><div class="doc"><p></p></div></div><div class="platform platform-flash"><a name="flashGfxSprite"></a><h3><p><code><span class="keyword">static </span><span class="keyword">var</span> <a href="#flashGfxSprite"><span class="identifier">flashGfxSprite</span></a>:<a class="type" href="../../flash/display/Sprite.html">Sprite</a></code></p></h3><div class="doc"><p>Useful helper objects for doing Flash-specific rendering.
+ * Primarily used for "debug visuals" like drawing bounding boxes directly to the screen buffer.</p></div></div><div class="platform platform-flash"><a name="alphaMask"></a><h3><p><code><span class="keyword">static </span><span class="keyword">function</span> <a href="#alphaMask"><span class="identifier">alphaMask</span></a>(output:<a class="type" href="../../flixel/FlxSprite.html">FlxSprite</a>, source:<a class="type" href="../../Dynamic.html">Dynamic</a>, mask:<a class="type" href="../../Dynamic.html">Dynamic</a>):<a class="type" href="../../flixel/FlxSprite.html">FlxSprite</a></code></p></h3><div class="doc"><p>Takes two source images (typically from Embedded bitmaps) and puts the resulting image into the output FlxSprite.
+ * Note: It assumes the source and mask are the same size. Different sizes may result in undesired results.
+ * It works by copying the source image (your picture) into the output sprite. Then it removes all areas of it that do not
+ * have an alpha color value in the mask image. So if you draw a big black circle in your mask with a transparent edge, you'll
+ * get a circular image appear. Look at the mask PNG files in the assets/pics folder for examples.
+ * 
+ * </p><table class="table table-condensed"><tbody><tr><td>output</td><td><p>The FlxSprite you wish the resulting image to be placed in (will adjust width/height of image)
+ * </p></td></tr><tr><td>source</td><td><p>The source image. Typically the one with the image / picture / texture in it.
+ * </p></td></tr><tr><td>mask</td><td><p>The mask to apply. Remember the non-alpha zero areas are the parts that will display.
+ * </p></td></tr><tr><td>returns</td><td><p>The FlxSprite for chaining</p></td></tr></tbody></table></div></div><div class="platform platform-flash"><a name="alphaMaskFlxSprite"></a><h3><p><code><span class="keyword">static </span><span class="keyword">function</span> <a href="#alphaMaskFlxSprite"><span class="identifier">alphaMaskFlxSprite</span></a>(sprite:<a class="type" href="../../flixel/FlxSprite.html">FlxSprite</a>, mask:<a class="type" href="../../flixel/FlxSprite.html">FlxSprite</a>, output:<a class="type" href="../../flixel/FlxSprite.html">FlxSprite</a>):<a class="type" href="../../flixel/FlxSprite.html">FlxSprite</a></code></p></h3><div class="doc"><p>Takes the image data from two FlxSprites and puts the resulting image into the output FlxSprite.
+ * Note: It assumes the source and mask are the same size. Different sizes may result in undesired results.
+ * It works by copying the source image (your picture) into the output sprite. Then it removes all areas of it that do not
+ * have an alpha color value in the mask image. So if you draw a big black circle in your mask with a transparent edge, you'll
+ * get a circular image appear.
+ * 
+ * </p><table class="table table-condensed"><tbody><tr><td>sprite</td><td><p>The source FlxSprite. Typically the one with the image / picture / texture in it.
+ * </p></td></tr><tr><td>mask</td><td><p>The FlxSprite containing the mask to apply. Remember the non-alpha zero areas are the parts that will display.
+ * </p></td></tr><tr><td>output</td><td><p>The FlxSprite you wish the resulting image to be placed in (will adjust width/height of image)
+ * </p></td></tr><tr><td>returns</td><td><p>The output FlxSprite for chaining</p></td></tr></tbody></table></div></div><div class="platform platform-flash"><a name="beginDraw"></a><h3><p><code><span class="keyword">static </span><span class="keyword">function</span> <a href="#beginDraw"><span class="identifier">beginDraw</span></a>(Color:<a class="type" href="../../Int.html">Int</a>, ?lineStyle:<a class="type" href="../../flixel/util/LineStyle.html">LineStyle</a> = null, ?fillStyle:<a class="type" href="../../flixel/util/FillStyle.html">FillStyle</a> = null):<a class="type" href="../../Void.html">Void</a></code></p></h3><div class="doc"><p>Helper function that the drawing functions use at the start to set the color and lineStyle.
+ * 
+ * </p><table class="table table-condensed"><tbody><tr><td>Color</td><td><p>The color to use for drawing
+ * </p></td></tr><tr><td>lineStyle</td><td><p>A LineStyle typedef containing the params of Graphics.lineStyle()
+ * </p></td></tr><tr><td>fillStyle</td><td><p>A FillStyle typedef containing the params of Graphics.fillStyle()</p></td></tr></tbody></table></div></div><div class="platform platform-flash"><a name="bound"></a><h3><p><code><span class="keyword">static </span><span class="keyword">function</span> <a href="#bound"><span class="identifier">bound</span></a>(sprite:<a class="type" href="../../flixel/FlxSprite.html">FlxSprite</a>, ?MinX:<a class="type" href="../../Float.html">Float</a> = 0, ?MaxX:<a class="type" href="../../Float.html">Float</a> = 0, ?MinY:<a class="type" href="../../Float.html">Float</a> = 0, ?MaxY:<a class="type" href="../../Float.html">Float</a> = 0):<a class="type" href="../../flixel/FlxSprite.html">FlxSprite</a></code></p></h3><div class="doc"><p>Makes sure a FlxSprite doesn't leave the specified area - most common use case is to call this every frame in update().
+ * If you call this without specifying an area, the game area (FlxG.width / height as max) will be used. Takes the graphic size into account.
+ * 
+ * </p><table class="table table-condensed"><tbody><tr><td>sprite</td><td><p>The FlxSprite to bound to an area
+ * </p></td></tr><tr><td>MinX</td><td><p>The minimum x position allowed
+ * </p></td></tr><tr><td>MaxX</td><td><p>The maximum x position allowed
+ * </p></td></tr><tr><td>MinY</td><td><p>The minimum y position allowed
+ * </p></td></tr><tr><td>MaxY</td><td><p>The minimum y position allowed
+ * </p></td></tr><tr><td>returns</td><td><p>The FlxSprite for chaining</p></td></tr></tbody></table></div></div><div class="platform platform-flash"><a name="drawCircle"></a><h3><p><code><span class="keyword">static </span><span class="keyword">function</span> <a href="#drawCircle"><span class="identifier">drawCircle</span></a>(sprite:<a class="type" href="../../flixel/FlxSprite.html">FlxSprite</a>, ?X:<a class="type" href="../../Float.html">Float</a> = -1, ?Y:<a class="type" href="../../Float.html">Float</a> = -1, ?Radius:<a class="type" href="../../Float.html">Float</a> = -1, ?Color:<a class="type" href="../../Int.html">Int</a> = -1, ?lineStyle:<a class="type" href="../../flixel/util/LineStyle.html">LineStyle</a> = null, ?fillStyle:<a class="type" href="../../flixel/util/FillStyle.html">FillStyle</a> = null, ?drawStyle:<a class="type" href="../../flixel/util/DrawStyle.html">DrawStyle</a> = null):<a class="type" href="../../flixel/FlxSprite.html">FlxSprite</a></code></p></h3><div class="doc"><p>This function draws a circle on a FlxSprite at position X,Y with the specified color.
+ * 
+ * </p><table class="table table-condensed"><tbody><tr><td>sprite</td><td><p>The FlxSprite to manipulate
+ * </p></td></tr><tr><td>X</td><td><p>X coordinate of the circle's center (automatically centered on the sprite if -1)
+ * </p></td></tr><tr><td>Y</td><td><p>Y coordinate of the circle's center (automatically centered on the sprite if -1)
+ * </p></td></tr><tr><td>Radius</td><td><p>Radius of the circle (makes sure the circle fully fits on the sprite's graphic if &lt; 1, assuming and and y are centered)
+ * </p></td></tr><tr><td>Color</td><td><p>Color of the circle
+ * </p></td></tr><tr><td>lineStyle</td><td><p>A LineStyle typedef containing the params of Graphics.lineStyle()
+ * </p></td></tr><tr><td>fillStyle</td><td><p>A FillStyle typedef containing the params of Graphics.fillStyle()
+ * </p></td></tr><tr><td>drawStyle</td><td><p>A DrawStyle typdef containing the params of BitmapData.draw()
+ * </p></td></tr><tr><td>returns</td><td><p>The FlxSprite for chaining</p></td></tr></tbody></table></div></div><div class="platform platform-flash"><a name="drawEllipse"></a><h3><p><code><span class="keyword">static </span><span class="keyword">function</span> <a href="#drawEllipse"><span class="identifier">drawEllipse</span></a>(sprite:<a class="type" href="../../flixel/FlxSprite.html">FlxSprite</a>, X:<a class="type" href="../../Float.html">Float</a>, Y:<a class="type" href="../../Float.html">Float</a>, Width:<a class="type" href="../../Float.html">Float</a>, Height:<a class="type" href="../../Float.html">Float</a>, Color:<a class="type" href="../../Int.html">Int</a>, ?lineStyle:<a class="type" href="../../flixel/util/LineStyle.html">LineStyle</a> = null, ?fillStyle:<a class="type" href="../../flixel/util/FillStyle.html">FillStyle</a> = null, ?drawStyle:<a class="type" href="../../flixel/util/DrawStyle.html">DrawStyle</a> = null):<a class="type" href="../../flixel/FlxSprite.html">FlxSprite</a></code></p></h3><div class="doc"><p>This function draws an ellipse on a FlxSprite.
+ * 
+ * </p><table class="table table-condensed"><tbody><tr><td>sprite</td><td><p>The FlxSprite to manipulate
+ * </p></td></tr><tr><td>X</td><td><p>X coordinate of the ellipse's start point.
+ * </p></td></tr><tr><td>Y</td><td><p>Y coordinate of the ellipse's start point.
+ * </p></td></tr><tr><td>Width</td><td><p>Width of the ellipse
+ * </p></td></tr><tr><td>Height</td><td><p>Height of the ellipse
+ * </p></td></tr><tr><td>Color</td><td><p>The ellipse's color.
+ * </p></td></tr><tr><td>lineStyle</td><td><p>A LineStyle typedef containing the params of Graphics.lineStyle()
+ * </p></td></tr><tr><td>fillStyle</td><td><p>A FillStyle typedef containing the params of Graphics.fillStyle()
+ * </p></td></tr><tr><td>drawStyle</td><td><p>A DrawStyle typdef containing the params of BitmapData.draw()
+ * </p></td></tr><tr><td>returns</td><td><p>The FlxSprite for chaining</p></td></tr></tbody></table></div></div><div class="platform platform-flash"><a name="drawLine"></a><h3><p><code><span class="keyword">static </span><span class="keyword">function</span> <a href="#drawLine"><span class="identifier">drawLine</span></a>(sprite:<a class="type" href="../../flixel/FlxSprite.html">FlxSprite</a>, StartX:<a class="type" href="../../Float.html">Float</a>, StartY:<a class="type" href="../../Float.html">Float</a>, EndX:<a class="type" href="../../Float.html">Float</a>, EndY:<a class="type" href="../../Float.html">Float</a>, ?lineStyle:<a class="type" href="../../flixel/util/LineStyle.html">LineStyle</a> = null, ?drawStyle:<a class="type" href="../../flixel/util/DrawStyle.html">DrawStyle</a> = null):<a class="type" href="../../flixel/FlxSprite.html">FlxSprite</a></code></p></h3><div class="doc"><p>This function draws a line on a FlxSprite from position X1,Y1
+ * to position X2,Y2 with the specified color.
+ * 
+ * </p><table class="table table-condensed"><tbody><tr><td>sprite</td><td><p>The FlxSprite to manipulate
+ * </p></td></tr><tr><td>StartX</td><td><p>X coordinate of the line's start point.
+ * </p></td></tr><tr><td>StartY</td><td><p>Y coordinate of the line's start point.
+ * </p></td></tr><tr><td>EndX</td><td><p>X coordinate of the line's end point.
+ * </p></td></tr><tr><td>EndY</td><td><p>Y coordinate of the line's end point.
+ * </p></td></tr><tr><td>Color</td><td><p>The line's color.
+ * </p></td></tr><tr><td>Thickness</td><td><p>How thick the line is in pixels (default value is 1).
+ * </p></td></tr><tr><td>lineStyle</td><td><p>A LineStyle typedef containing the params of Graphics.lineStyle()
+ * </p></td></tr><tr><td>drawStyle</td><td><p>A DrawStyle typdef containing the params of BitmapData.draw()
+ * </p></td></tr><tr><td>returns</td><td><p>The FlxSprite for chaining</p></td></tr></tbody></table></div></div><div class="platform platform-flash"><a name="drawPolygon"></a><h3><p><code><span class="keyword">static </span><span class="keyword">function</span> <a href="#drawPolygon"><span class="identifier">drawPolygon</span></a>(sprite:<a class="type" href="../../flixel/FlxSprite.html">FlxSprite</a>, Vertices:<a class="type" href="../../Array.html">Array</a>&lt;<a class="type" href="../../flixel/util/FlxPoint.html">FlxPoint</a>&gt;, Color:<a class="type" href="../../Int.html">Int</a>, ?lineStyle:<a class="type" href="../../flixel/util/LineStyle.html">LineStyle</a> = null, ?fillStyle:<a class="type" href="../../flixel/util/FillStyle.html">FillStyle</a> = null, ?drawStyle:<a class="type" href="../../flixel/util/DrawStyle.html">DrawStyle</a> = null):<a class="type" href="../../flixel/FlxSprite.html">FlxSprite</a></code></p></h3><div class="doc"><p>This function draws a polygon on a FlxSprite.
+ * 
+ * </p><table class="table table-condensed"><tbody><tr><td>sprite</td><td><p>The FlxSprite to manipulate
+ * </p></td></tr><tr><td>Vertices</td><td><p>Array of Vertices to use for drawing the polygon
+ * </p></td></tr><tr><td>Color</td><td><p>Color of the polygon
+ * </p></td></tr><tr><td>lineStyle</td><td><p>A LineStyle typedef containing the params of Graphics.lineStyle()
+ * </p></td></tr><tr><td>fillStyle</td><td><p>A FillStyle typedef containing the params of Graphics.fillStyle();
+ * </p></td></tr><tr><td>drawStyle</td><td><p>A DrawStyle typdef containing the params of BitmapData.draw()
+ * </p></td></tr><tr><td>returns</td><td><p>The FlxSprite for chaining</p></td></tr></tbody></table></div></div><div class="platform platform-flash"><a name="drawRect"></a><h3><p><code><span class="keyword">static </span><span class="keyword">function</span> <a href="#drawRect"><span class="identifier">drawRect</span></a>(sprite:<a class="type" href="../../flixel/FlxSprite.html">FlxSprite</a>, X:<a class="type" href="../../Float.html">Float</a>, Y:<a class="type" href="../../Float.html">Float</a>, Width:<a class="type" href="../../Float.html">Float</a>, Height:<a class="type" href="../../Float.html">Float</a>, Color:<a class="type" href="../../Int.html">Int</a>, ?lineStyle:<a class="type" href="../../flixel/util/LineStyle.html">LineStyle</a> = null, ?fillStyle:<a class="type" href="../../flixel/util/FillStyle.html">FillStyle</a> = null, ?drawStyle:<a class="type" href="../../flixel/util/DrawStyle.html">DrawStyle</a> = null):<a class="type" href="../../flixel/FlxSprite.html">FlxSprite</a></code></p></h3><div class="doc"><p>This function draws a rectangle on a FlxSprite.
+ * 
+ * </p><table class="table table-condensed"><tbody><tr><td>sprite</td><td><p>The FlxSprite to manipulate
+ * </p></td></tr><tr><td>X</td><td><p>X coordinate of the rectangle's start point.
+ * </p></td></tr><tr><td>Y</td><td><p>Y coordinate of the rectangle's start point.
+ * </p></td></tr><tr><td>Width</td><td><p>Width of the rectangle
+ * </p></td></tr><tr><td>Height</td><td><p>Height of the rectangle
+ * </p></td></tr><tr><td>Color</td><td><p>The rectangle's color.
+ * </p></td></tr><tr><td>lineStyle</td><td><p>A LineStyle typedef containing the params of Graphics.lineStyle()
+ * </p></td></tr><tr><td>fillStyle</td><td><p>A FillStyle typedef containing the params of Graphics.fillStyle()
+ * </p></td></tr><tr><td>drawStyle</td><td><p>A DrawStyle typdef containing the params of BitmapData.draw()
+ * </p></td></tr><tr><td>returns</td><td><p>The FlxSprite for chaining</p></td></tr></tbody></table></div></div><div class="platform platform-flash"><a name="drawRoundRect"></a><h3><p><code><span class="keyword">static </span><span class="keyword">function</span> <a href="#drawRoundRect"><span class="identifier">drawRoundRect</span></a>(sprite:<a class="type" href="../../flixel/FlxSprite.html">FlxSprite</a>, X:<a class="type" href="../../Float.html">Float</a>, Y:<a class="type" href="../../Float.html">Float</a>, Width:<a class="type" href="../../Float.html">Float</a>, Height:<a class="type" href="../../Float.html">Float</a>, EllipseWidth:<a class="type" href="../../Float.html">Float</a>, EllipseHeight:<a class="type" href="../../Float.html">Float</a>, Color:<a class="type" href="../../Int.html">Int</a>, ?lineStyle:<a class="type" href="../../flixel/util/LineStyle.html">LineStyle</a> = null, ?fillStyle:<a class="type" href="../../flixel/util/FillStyle.html">FillStyle</a> = null, ?drawStyle:<a class="type" href="../../flixel/util/DrawStyle.html">DrawStyle</a> = null):<a class="type" href="../../flixel/FlxSprite.html">FlxSprite</a></code></p></h3><div class="doc"><p>This function draws a rounded rectangle on a FlxSprite.
+ * 
+ * </p><table class="table table-condensed"><tbody><tr><td>sprite</td><td><p>The FlxSprite to manipulate
+ * </p></td></tr><tr><td>X</td><td><p>X coordinate of the rectangle's start point.
+ * </p></td></tr><tr><td>Y</td><td><p>Y coordinate of the rectangle's start point.
+ * </p></td></tr><tr><td>Width</td><td><p>Width of the rectangle
+ * </p></td></tr><tr><td>Height</td><td><p>Height of the rectangle
+ * </p></td></tr><tr><td>EllipseWidth</td><td><p>The width of the ellipse used to draw the rounded corners
+ * </p></td></tr><tr><td>EllipseHeight</td><td><p>The height of the ellipse used to draw the rounded corners
+ * </p></td></tr><tr><td>Color</td><td><p>The rectangle's color.
+ * </p></td></tr><tr><td>lineStyle</td><td><p>A LineStyle typedef containing the params of Graphics.lineStyle()
+ * </p></td></tr><tr><td>fillStyle</td><td><p>A FillStyle typedef containing the params of Graphics.fillStyle()
+ * </p></td></tr><tr><td>drawStyle</td><td><p>A DrawStyle typdef containing the params of BitmapData.draw()
+ * </p></td></tr><tr><td>returns</td><td><p>The FlxSprite for chaining</p></td></tr></tbody></table></div></div><div class="platform platform-flash"><a name="drawRoundRectComplex"></a><h3><p><code><span class="keyword">static </span><span class="keyword">function</span> <a href="#drawRoundRectComplex"><span class="identifier">drawRoundRectComplex</span></a>(sprite:<a class="type" href="../../flixel/FlxSprite.html">FlxSprite</a>, X:<a class="type" href="../../Float.html">Float</a>, Y:<a class="type" href="../../Float.html">Float</a>, Width:<a class="type" href="../../Float.html">Float</a>, Height:<a class="type" href="../../Float.html">Float</a>, TopLeftRadius:<a class="type" href="../../Float.html">Float</a>, TopRightRadius:<a class="type" href="../../Float.html">Float</a>, BottomLeftRadius:<a class="type" href="../../Float.html">Float</a>, BottomRightRadius:<a class="type" href="../../Float.html">Float</a>, Color:<a class="type" href="../../Int.html">Int</a>, ?lineStyle:<a class="type" href="../../flixel/util/LineStyle.html">LineStyle</a> = null, ?fillStyle:<a class="type" href="../../flixel/util/FillStyle.html">FillStyle</a> = null, ?drawStyle:<a class="type" href="../../flixel/util/DrawStyle.html">DrawStyle</a> = null):<a class="type" href="../../flixel/FlxSprite.html">FlxSprite</a></code></p></h3><div class="doc"><p>This function draws a rounded rectangle on a FlxSprite. Same as drawRoundRect,
+ * except it allows you to determine the radius of each corner individually.
+ * 
+ * </p><table class="table table-condensed"><tbody><tr><td>sprite</td><td><p>The FlxSprite to manipulate
+ * </p></td></tr><tr><td>X</td><td><p>X coordinate of the rectangle's start point.
+ * </p></td></tr><tr><td>Y</td><td><p>Y coordinate of the rectangle's start point.
+ * </p></td></tr><tr><td>Width</td><td><p>Width of the rectangle
+ * </p></td></tr><tr><td>Height</td><td><p>Height of the rectangle
+ * </p></td></tr><tr><td>TopLeftRadius</td><td><p>The radius of the top left corner of the rectangle
+ * </p></td></tr><tr><td>TopRightRadius</td><td><p>The radius of the top right corner of the rectangle
+ * </p></td></tr><tr><td>BottomLeftRadius</td><td><p>The radius of the bottom left corner of the rectangle
+ * </p></td></tr><tr><td>BottomRightRadius</td><td><p>The radius of the bottom right corner of the rectangle
+ * </p></td></tr><tr><td>Color</td><td><p>The rectangle's color.
+ * </p></td></tr><tr><td>lineStyle</td><td><p>A LineStyle typedef containing the params of Graphics.lineStyle()
+ * </p></td></tr><tr><td>fillStyle</td><td><p>A FillStyle typedef containing the params of Graphics.fillStyle()
+ * </p></td></tr><tr><td>drawStyle</td><td><p>A DrawStyle typdef containing the params of BitmapData.draw()
+ * </p></td></tr><tr><td>returns</td><td><p>The FlxSprite for chaining</p></td></tr></tbody></table></div></div><div class="platform platform-flash"><a name="drawTriangle"></a><h3><p><code><span class="keyword">static </span><span class="keyword">function</span> <a href="#drawTriangle"><span class="identifier">drawTriangle</span></a>(sprite:<a class="type" href="../../flixel/FlxSprite.html">FlxSprite</a>, X:<a class="type" href="../../Float.html">Float</a>, Y:<a class="type" href="../../Float.html">Float</a>, Height:<a class="type" href="../../Float.html">Float</a>, Color:<a class="type" href="../../Int.html">Int</a>, ?lineStyle:<a class="type" href="../../flixel/util/LineStyle.html">LineStyle</a> = null, ?fillStyle:<a class="type" href="../../flixel/util/FillStyle.html">FillStyle</a> = null, ?drawStyle:<a class="type" href="../../flixel/util/DrawStyle.html">DrawStyle</a> = null):<a class="type" href="../../flixel/FlxSprite.html">FlxSprite</a></code></p></h3><div class="doc"><p>This function draws a simple, equilateral triangle on a FlxSprite.
+ * 
+ * </p><table class="table table-condensed"><tbody><tr><td>sprite</td><td><p>The FlxSprite to manipulate
+ * </p></td></tr><tr><td>X</td><td><p>X position of the triangle
+ * </p></td></tr><tr><td>Y</td><td><p>Y position of the triangle
+ * </p></td></tr><tr><td>Height</td><td><p>Height of the triangle
+ * </p></td></tr><tr><td>Color</td><td><p>Color of the triangle
+ * </p></td></tr><tr><td>lineStyle</td><td><p>A LineStyle typedef containing the params of Graphics.lineStyle()
+ * </p></td></tr><tr><td>fillStyle</td><td><p>A FillStyle typedef containing the params of Graphics.fillStyle()
+ * </p></td></tr><tr><td>drawStyle</td><td><p>A DrawStyle typdef containing the params of BitmapData.draw()
+ * </p></td></tr><tr><td>returns</td><td><p>The FlxSprite for chaining</p></td></tr></tbody></table></div></div><div class="platform platform-flash"><a name="endDraw"></a><h3><p><code><span class="keyword">static </span><span class="keyword">function</span> <a href="#endDraw"><span class="identifier">endDraw</span></a>(sprite:<a class="type" href="../../flixel/FlxSprite.html">FlxSprite</a>, ?drawStyle:<a class="type" href="../../flixel/util/DrawStyle.html">DrawStyle</a> = null):<a class="type" href="../../flixel/FlxSprite.html">FlxSprite</a></code></p></h3><div class="doc"><p>Helper function that the drawing functions use at the end.
+ * 
+ * </p><table class="table table-condensed"><tbody><tr><td>sprite</td><td><p>The FlxSprite to draw to
+ * </p></td></tr><tr><td>drawStyle</td><td><p>A DrawStyle typdef containing the params of BitmapData.draw()
+ * </p></td></tr><tr><td>returns</td><td><p>The FlxSprite for chaining</p></td></tr></tbody></table></div></div><div class="platform platform-flash"><a name="fadeIn"></a><h3><p><code><span class="keyword">static </span><span class="keyword">function</span> <a href="#fadeIn"><span class="identifier">fadeIn</span></a>(sprite:<a class="type" href="../../flixel/FlxSprite.html">FlxSprite</a>, ?Duration:<a class="type" href="../../Float.html">Float</a> = 1, ?ResetAlpha:<a class="type" href="../../Bool.html">Bool</a> = null, ?OnComplete:<a class="type" href="../../flixel/tweens/CompleteCallback.html">CompleteCallback</a> = null):<a class="type" href="../../flixel/FlxSprite.html">FlxSprite</a></code></p></h3><div class="doc"><p>Fade in a sprite.
+ * 
+ * </p><table class="table table-condensed"><tbody><tr><td>sprite</td><td><p>The object to fade.
+ * </p></td></tr><tr><td>Duration</td><td><p>How long the fade will take (in seconds).
+* </p></td></tr><tr><td>returns</td><td><p>The FlxSprite for chaining</p></td></tr></tbody></table></div></div><div class="platform platform-flash"><a name="fadeOut"></a><h3><p><code><span class="keyword">static </span><span class="keyword">function</span> <a href="#fadeOut"><span class="identifier">fadeOut</span></a>(sprite:<a class="type" href="../../flixel/FlxSprite.html">FlxSprite</a>, ?Duration:<a class="type" href="../../Float.html">Float</a> = 1, ?FadeToBlack:<a class="type" href="../../Bool.html">Bool</a> = null, ?OnComplete:<a class="type" href="../../flixel/tweens/CompleteCallback.html">CompleteCallback</a> = null):<a class="type" href="../../flixel/FlxSprite.html">FlxSprite</a></code></p></h3><div class="doc"><p>Fade out a sprite.
+ * 
+ * </p><table class="table table-condensed"><tbody><tr><td>sprite</td><td><p>The object to fade.
+ * </p></td></tr><tr><td>Duration</td><td><p>How long the fade will take (in seconds).
+* </p></td></tr><tr><td>returns</td><td><p>The FlxSprite for chaining</p></td></tr></tbody></table></div></div><div class="platform platform-flash"><a name="fill"></a><h3><p><code><span class="keyword">static </span><span class="keyword">function</span> <a href="#fill"><span class="identifier">fill</span></a>(sprite:<a class="type" href="../../flixel/FlxSprite.html">FlxSprite</a>, Color:<a class="type" href="../../Int.html">Int</a>):<a class="type" href="../../flixel/FlxSprite.html">FlxSprite</a></code></p></h3><div class="doc"><p>Fills this sprite's graphic with a specific color.
+ * 
+ * </p><table class="table table-condensed"><tbody><tr><td>Sprite</td><td><p>The FlxSprite to manipulate
+ * </p></td></tr><tr><td>Color</td><td><p>The color with which to fill the graphic, format 0xAARRGGBB.
+ * </p></td></tr><tr><td>returns</td><td><p>The FlxSprite for chaining</p></td></tr></tbody></table></div></div><div class="platform platform-flash"><a name="flicker"></a><h3><p><code><span class="keyword">static </span><span class="keyword">function</span> <a href="#flicker"><span class="identifier">flicker</span></a>(Object:<a class="type" href="../../flixel/FlxObject.html">FlxObject</a>, ?Duration:<a class="type" href="../../Float.html">Float</a> = 1, ?Interval:<a class="type" href="../../Float.html">Float</a> = 0.04f, ?EndVisibility:<a class="type" href="../../Bool.html">Bool</a> = true, ?ForceRestart:<a class="type" href="../../Bool.html">Bool</a> = true, ?CompletionCallback:<a class="type" href="../../flixel/effects/FlxFlicker.html">FlxFlicker</a> -&gt;<a class="type" href="../../Void.html">Void</a> = null, ?ProgressCallback:<a class="type" href="../../flixel/effects/FlxFlicker.html">FlxFlicker</a> -&gt;<a class="type" href="../../Void.html">Void</a> = null):<a class="type" href="../../flixel/FlxObject.html">FlxObject</a></code></p></h3><div class="doc"><p>A simple flicker effect for sprites achieved by toggling visibility.
+ * 
+ * </p><table class="table table-condensed"><tbody><tr><td>Object</td><td><p>The sprite.
+ * </p></td></tr><tr><td>Duration</td><td><p>How long to flicker for. 0 means "forever".
+ * </p></td></tr><tr><td>Interval</td><td><p>In what interval to toggle visibility. Set to FlxG.elapsed if &lt;= 0!
+ * </p></td></tr><tr><td>EndVisibility</td><td><p>Force the visible value when the flicker completes, useful with fast repetitive use.
+ * </p></td></tr><tr><td>ForceRestart</td><td><p>Force the flicker to restart from beginnig, discarding the flickering effect already in progress if there is one.
+ * </p></td></tr><tr><td>CompletionCallback</td><td><p>An optional callback that will be triggered when a flickering has finished.
+ * </p></td></tr><tr><td>ProgressCallback</td><td><p>An optional callback that will be triggered when visibility is toggled.
+ * </p></td></tr><tr><td>returns</td><td><p>The FlxObject for chaining</p></td></tr></tbody></table></div></div><div class="platform platform-flash"><a name="isFlickering"></a><h3><p><code><span class="keyword">static </span><span class="keyword">function</span> <a href="#isFlickering"><span class="identifier">isFlickering</span></a>(Object:<a class="type" href="../../flixel/FlxObject.html">FlxObject</a>):<a class="type" href="../../Bool.html">Bool</a></code></p></h3><div class="doc"><p>Returns whether an object is flickering or not.
+ * 
+ * </p><table class="table table-condensed"><tbody><tr><td>Object</td><td><p>The object to check against.</p></td></tr></tbody></table></div></div><div class="platform platform-flash"><a name="screenCenter"></a><h3><p><code><span class="keyword">static </span><span class="keyword">function</span> <a href="#screenCenter"><span class="identifier">screenCenter</span></a>(object:<a class="type" href="../../flixel/FlxObject.html">FlxObject</a>, ?xAxis:<a class="type" href="../../Bool.html">Bool</a> = true, ?yAxis:<a class="type" href="../../Bool.html">Bool</a> = true):<a class="type" href="../../flixel/FlxObject.html">FlxObject</a></code></p></h3><div class="doc"><p>Centers the given FlxObject on the screen, either by the x axis, y axis, or both
+ * 
+ * </p><table class="table table-condensed"><tbody><tr><td>object</td><td><p>The FlxSprite to center
+ * </p></td></tr><tr><td>Horizontally</td><td><p>Boolean true if you want it centered horizontally
+ * </p></td></tr><tr><td>Vertically</td><td><p>Boolean	true if you want it centered vertically
+ * </p></td></tr><tr><td>returns</td><td><p>The FlxObject for chaining</p></td></tr></tbody></table></div></div><div class="platform platform-flash"><a name="screenWrap"></a><h3><p><code><span class="keyword">static </span><span class="keyword">function</span> <a href="#screenWrap"><span class="identifier">screenWrap</span></a>(sprite:<a class="type" href="../../flixel/FlxSprite.html">FlxSprite</a>, ?Left:<a class="type" href="../../Bool.html">Bool</a> = true, ?Right:<a class="type" href="../../Bool.html">Bool</a> = true, ?Top:<a class="type" href="../../Bool.html">Bool</a> = true, ?Bottom:<a class="type" href="../../Bool.html">Bool</a> = true):<a class="type" href="../../flixel/FlxSprite.html">FlxSprite</a></code></p></h3><div class="doc"><p>Checks the x/y coordinates of the FlxSprite and keeps them within the 
+ * area of 0, 0, FlxG.width, FlxG.height (i.e. wraps it around the screen)
+ * 
+ * </p><table class="table table-condensed"><tbody><tr><td>sprite</td><td><p>The FlxSprite to keep within the screen
+ * </p></td></tr><tr><td>Left</td><td><p>Whether to activate screen wrapping on the left side of the screen
+ * </p></td></tr><tr><td>Right</td><td><p>Whether to activate screen wrapping on the right side of the screen
+ * </p></td></tr><tr><td>Top</td><td><p>Whether to activate screen wrapping on the top of the screen
+ * </p></td></tr><tr><td>Bottom</td><td><p>Whether to activate screen wrapping on the bottom of the screen
+ * </p></td></tr><tr><td>returns</td><td><p>The FlxSprite for chaining</p></td></tr></tbody></table></div></div><div class="platform platform-flash"><a name="setLineStyle"></a><h3><p><code><span class="keyword">static </span><span class="keyword">function</span> <a href="#setLineStyle"><span class="identifier">setLineStyle</span></a>(lineStyle:<a class="type" href="../../flixel/util/LineStyle.html">LineStyle</a>):<a class="type" href="../../Void.html">Void</a></code></p></h3><div class="doc"><p>Just a helper function that is called in the draw functions
+ * to set the lineStyle via Graphics.lineStyle()
+ * 
+ * </p><table class="table table-condensed"><tbody><tr><td>lineStyle</td><td><p>The lineStyle typedef</p></td></tr></tbody></table></div></div><div class="platform platform-flash"><a name="space"></a><h3><p><code><span class="keyword">static </span><span class="keyword">function</span> <a href="#space"><span class="identifier">space</span></a>(objects:<a class="type" href="../../Array.html">Array</a>&lt;<a class="type" href="../../flixel/FlxObject.html">FlxObject</a>&gt;, startX:<a class="type" href="../../Int.html">Int</a>, startY:<a class="type" href="../../Int.html">Int</a>, ?horizontalSpacing:<a class="type" href="../../Int.html">Int</a> = 0, ?verticalSpacing:<a class="type" href="../../Int.html">Int</a> = 0, ?spaceFromBounds:<a class="type" href="../../Bool.html">Bool</a> = false):<a class="type" href="../../Void.html">Void</a></code></p></h3><div class="doc"><p>Aligns a set of FlxObjects so there is equal spacing between them
+ * 
+ * </p><table class="table table-condensed"><tbody><tr><td>objects</td><td><p>An Array of FlxObjects
+ * </p></td></tr><tr><td>startX</td><td><p>The base X coordinate to start the spacing from
+ * </p></td></tr><tr><td>startY</td><td><p>The base Y coordinate to start the spacing from
+ * </p></td></tr><tr><td>horizontalSpacing</td><td><p>The amount of pixels between each sprite horizontally (default 0)
+ * </p></td></tr><tr><td>verticalSpacing</td><td><p>The amount of pixels between each sprite vertically (default 0)
+ * </p></td></tr><tr><td>spaceFromBounds</td><td><p>If set to true the h/v spacing values will be added to the width/height of the sprite, if false it will ignore this</p></td></tr></tbody></table></div></div><div class="platform platform-flash"><a name="stopFlickering"></a><h3><p><code><span class="keyword">static </span><span class="keyword">function</span> <a href="#stopFlickering"><span class="identifier">stopFlickering</span></a>(Object:<a class="type" href="../../flixel/FlxObject.html">FlxObject</a>):<a class="type" href="../../flixel/FlxObject.html">FlxObject</a></code></p></h3><div class="doc"><p>Stops flickering of the object. Also it will make the object visible.
+ * 
+ * </p><table class="table table-condensed"><tbody><tr><td>Object</td><td><p>The object to stop flickering.
+ * </p></td></tr><tr><td>returns</td><td><p>The FlxObject for chaining</p></td></tr></tbody></table></div></div><div class="platform platform-flash"><a name="updateSpriteGraphic"></a><h3><p><code><span class="keyword">static </span><span class="keyword">function</span> <a href="#updateSpriteGraphic"><span class="identifier">updateSpriteGraphic</span></a>(sprite:<a class="type" href="../../flixel/FlxSprite.html">FlxSprite</a>, ?drawStyle:<a class="type" href="../../flixel/util/DrawStyle.html">DrawStyle</a> = null):<a class="type" href="../../flixel/FlxSprite.html">FlxSprite</a></code></p></h3><div class="doc"><p>Just a helper function that is called at the end of the draw functions
+ * to handle a few things related to updating a sprite's graphic.
+ * 
+ * </p><table class="table table-condensed"><tbody><tr><td>Sprite</td><td><p>The FlxSprite to manipulate
+ * </p></td></tr><tr><td>drawStyle</td><td><p>A DrawStyle typdef containing the params of BitmapData.draw()
+ * </p></td></tr><tr><td>returns</td><td><p>The FlxSprite for chaining</p></td></tr></tbody></table></div></div></div></div></div></body></html>

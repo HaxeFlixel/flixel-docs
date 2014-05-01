@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8"/><link href="../../bootstrap-combined.min.css" rel="stylesheet" /><script type="text/javascript" src="../../jquery-1.9.1.min.js"></script><script type="text/javascript" src="../../bootstrap.min.js"></script><link href="../../styles.css" rel="stylesheet" /><link rel="icon" href="../../favicon.ico" type="image/x-icon"></link><script type="text/javascript" src="../../nav.js"></script><script type="text/javascript" src="../../index.js"></script><script type="text/javascript">var dox = {rootPath: "../../",platforms: ["flash"]};</script><title>MatMN</title></head><body><div class="navbar navbar-inverse navbar-fixed-top"><div class="navbar-inner"><form class="navbar-search pull-left" id="searchForm"><input id="search" type="text" class="search-query" placeholder="Filter" autocomplete="off"/></form><ul class="nav"><li id="select-platform" class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Platform<b class="caret"></b></a><ul class="dropdown-menu"><li data="all"><a href="#">All Platforms</a></li><li data="flash"><a href="#">flash</a></li></ul></li></ul></div></div><div id="container"><div id="nav"></div><div id="content"><div class="header"><h1><code><span class="directive">class </span><span class="type">nape.geom.MatMN</span></code></h1></div><div class="body"><p class="availability">Available on all platforms</p><div class="doc"><p>A general MxN dimensional matrix.
+ * <br/><br/>
+ * This object is not often used in Nape :)</p></div><h2>Instance Fields</h2><div class="platform platform-flash"><a name="cols"></a><h3><p><code><span class="keyword">var</span> <a href="#cols"><span class="identifier">cols</span></a>:<a class="type" href="../../Int.html">Int</a></code></p></h3><div class="doc"><p>The number of columns in the matrix.</p></div></div><div class="platform platform-flash"><a name="rows"></a><h3><p><code><span class="keyword">var</span> <a href="#rows"><span class="identifier">rows</span></a>:<a class="type" href="../../Int.html">Int</a></code></p></h3><div class="doc"><p>The number of rows in the matrix.</p></div></div><div class="platform platform-flash"><a name="zpp_inner"></a><h3><p><code><span class="keyword">var</span> <a href="#zpp_inner"><span class="identifier">zpp_inner</span></a>:<a class="type" href="../../zpp_nape/geom/ZPP_MatMN.html">ZPP_MatMN</a></code></p></h3><div class="doc"><p>@private</p></div></div><div class="platform platform-flash"><a name="new"></a><h3><p><code><span class="keyword">function</span> <a href="#new"><span class="identifier">new</span></a>(rows:<a class="type" href="../../Int.html">Int</a>, cols:<a class="type" href="../../Int.html">Int</a>):<a class="type" href="../../Void.html">Void</a></code></p></h3><div class="doc"><p>Construct a new Matrix.
+     *
+     * </p><table class="table table-condensed"><tbody><tr><td>rows</td><td><p>The number of rows in matrix.
+    * </p></td></tr><tr><td>cols</td><td><p>The number of columns in matrix.
+    * </p></td></tr><tr><td>returns</td><td><p>The constructed Matrix.
+* </p></td></tr></tbody></table></div></div><div class="platform platform-flash"><a name="mul"></a><h3><p><code><span class="keyword">function</span> <a href="#mul"><span class="identifier">mul</span></a>(matrix:<a class="type" href="../../nape/geom/MatMN.html">MatMN</a>):<a class="type" href="../../nape/geom/MatMN.html">MatMN</a></code></p></h3><div class="doc"><p>Multiple this matrix with another.
+     * <br/><br/>
+     * This operation is only valid if the number of columns
+     * in this matrix, is equal to the number of rows in the input
+     * matrix.
+     * <br/>
+     * The result of the multiplication is returned as a new matrix.
+     *
+     * </p><table class="table table-condensed"><tbody><tr><td>matrix</td><td><p>The matrix to multiple with.
+    * </p></td></tr><tr><td>returns</td><td><p>The result of the multiplication
+* </p></td></tr></tbody></table></div></div><div class="platform platform-flash"><a name="setx"></a><h3><p><code><span class="keyword">function</span> <a href="#setx"><span class="identifier">setx</span></a>(row:<a class="type" href="../../Int.html">Int</a>, col:<a class="type" href="../../Int.html">Int</a>, x:<a class="type" href="../../Float.html">Float</a>):<a class="type" href="../../Float.html">Float</a></code></p></h3><div class="doc"><p>Set element at index.
+     *
+     * </p><table class="table table-condensed"><tbody><tr><td>row</td><td><p>The row of the matrix to set.
+    * </p></td></tr><tr><td>col</td><td><p>The column of the matrix to set.
+    * </p></td></tr><tr><td>x</td><td><p>The value to set at given (row,col) index.
+    * </p></td></tr><tr><td>returns</td><td><p>The value of matrix at given index after set. (Always
+<em>         equal to the x parameter)
+</em> </p></td></tr></tbody></table></div></div><div class="platform platform-flash"><a name="toString"></a><h3><p><code><span class="keyword">function</span> <a href="#toString"><span class="identifier">toString</span></a>():<a class="type" href="../../String.html">String</a></code></p></h3><div class="doc"><p>@private</p></div></div><div class="platform platform-flash"><a name="transpose"></a><h3><p><code><span class="keyword">function</span> <a href="#transpose"><span class="identifier">transpose</span></a>():<a class="type" href="../../nape/geom/MatMN.html">MatMN</a></code></p></h3><div class="doc"><p>Transpose matrix, returning a new Matrix.
+     *
+     * </p><table class="table table-condensed"><tbody><tr><td>returns</td><td><p>The transposed matrix.</p></td></tr></tbody></table></div></div><div class="platform platform-flash"><a name="x"></a><h3><p><code><span class="keyword">function</span> <a href="#x"><span class="identifier">x</span></a>(row:<a class="type" href="../../Int.html">Int</a>, col:<a class="type" href="../../Int.html">Int</a>):<a class="type" href="../../Float.html">Float</a></code></p></h3><div class="doc"><p>Access element at index.
+     *
+     * </p><table class="table table-condensed"><tbody><tr><td>row</td><td><p>The row of the matrix to access.
+    * </p></td></tr><tr><td>col</td><td><p>the column of the matrix to access.
+    * </p></td></tr><tr><td>returns</td><td><p>The element at given (row,col) index.
+* </p></td></tr></tbody></table></div></div></div></div></div></body></html>

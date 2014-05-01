@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8"/><link href="../../bootstrap-combined.min.css" rel="stylesheet" /><script type="text/javascript" src="../../jquery-1.9.1.min.js"></script><script type="text/javascript" src="../../bootstrap.min.js"></script><link href="../../styles.css" rel="stylesheet" /><link rel="icon" href="../../favicon.ico" type="image/x-icon"></link><script type="text/javascript" src="../../nav.js"></script><script type="text/javascript" src="../../index.js"></script><script type="text/javascript">var dox = {rootPath: "../../",platforms: ["flash"]};</script><title>PreListener</title></head><body><div class="navbar navbar-inverse navbar-fixed-top"><div class="navbar-inner"><form class="navbar-search pull-left" id="searchForm"><input id="search" type="text" class="search-query" placeholder="Filter" autocomplete="off"/></form><ul class="nav"><li id="select-platform" class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Platform<b class="caret"></b></a><ul class="dropdown-menu"><li data="all"><a href="#">All Platforms</a></li><li data="flash"><a href="#">flash</a></li></ul></li></ul></div></div><div id="container"><div id="nav"></div><div id="content"><div class="header"><h1><code><span class="directive">class </span><span class="type">nape.callbacks.PreListener</span><span class="keyword"> extends</span> <a class="type" href="../../nape/callbacks/Listener.html">Listener</a></code></h1></div><div class="body"><p class="availability">Available on all platforms</p><div class="doc"><p>Event listener for Pre-Interaction type events.
+ * <br/><br/>
+ * Pre-Interaction type events can occur between any two Interactors (whether they
+ * be Shapes, Bodys, Compounds or a mix thereof).</p></div><h2>Instance Fields</h2><div class="platform platform-flash"><a name="interactionType"></a><h3><p><code><span class="keyword">var</span> <a href="#interactionType"><span class="identifier">interactionType</span></a>:<a class="type" href="../../nape/callbacks/InteractionType.html">InteractionType</a></code></p></h3><div class="doc"><p>The specific type of interaction that is to be listened for.
+     * <br/><br/>
+     * If we specify that we only want to listen for a fluid type interaction, then
+     * this listener will operate so that any other interactions for the same pair
+     * of objects is ignored.</p></div></div><div class="platform platform-flash"><a name="options1"></a><h3><p><code><span class="keyword">var</span> <a href="#options1"><span class="identifier">options1</span></a>:<a class="type" href="../../nape/callbacks/OptionType.html">OptionType</a></code></p></h3><div class="doc"><p>The OptionType used to match against Interactors for the first object.</p></div></div><div class="platform platform-flash"><a name="options2"></a><h3><p><code><span class="keyword">var</span> <a href="#options2"><span class="identifier">options2</span></a>:<a class="type" href="../../nape/callbacks/OptionType.html">OptionType</a></code></p></h3><div class="doc"><p>The OptionType used to match against Interactors for the second object.</p></div></div><div class="platform platform-flash"><a name="pure"></a><h3><p><code><span class="keyword">var</span> <a href="#pure"><span class="identifier">pure</span></a>:<a class="type" href="../../Bool.html">Bool</a></code></p></h3><div class="doc"><p>Mark this listener as having a pure callback handler.
+     * <br/><br/>
+     * A pure callback handler is one which under no circumstances will change its behaviour.
+     * In such a (favourable) instance, marking the callback as pure will allow Nape to permit
+     * objects in interaction to go to sleep even if the handler returns an IGNORE<em>ONCE/ACCEPT</em>ONCE
+     * PreFlag.
+     *
+     * @default false</p></div></div><div class="platform platform-flash"><a name="zpp_inner_zn"></a><h3><p><code><span class="keyword">var</span> <a href="#zpp_inner_zn"><span class="identifier">zpp_inner_zn</span></a>:<a class="type" href="../../zpp_nape/callbacks/ZPP_InteractionListener.html">ZPP_InteractionListener</a></code></p></h3><div class="doc"><p>@private</p></div></div><div class="platform platform-flash"><a name="new"></a><h3><p><code><span class="keyword">function</span> <a href="#new"><span class="identifier">new</span></a>(interactionType:<a class="type" href="../../nape/callbacks/InteractionType.html">InteractionType</a>, options1:<a class="type" href="../../Null.html">Null</a>&lt;<a class="type" href="../../Dynamic.html">Dynamic</a>&gt;, options2:<a class="type" href="../../Null.html">Null</a>&lt;<a class="type" href="../../Dynamic.html">Dynamic</a>&gt;, handler:<a class="type" href="../../nape/callbacks/PreCallback.html">PreCallback</a> -&gt;<a class="type" href="../../Null.html">Null</a>&lt;<a class="type" href="../../nape/callbacks/PreFlag.html">PreFlag</a>&gt;, ?precedence:<a class="type" href="../../Int.html">Int</a> = 0, ?pure:<a class="type" href="../../Bool.html">Bool</a> = false):<a class="type" href="../../Void.html">Void</a></code></p></h3><div class="doc"><p>Construct a new PreListener.
+     * <br/><br/>
+     * The options arguments are typed Dynamic, and are permitted to be either an
+     * <code>OptionType</code> or one of:
+     * <code>CbType, CbTypeList, Array&lt;CbType&gt;, flash.Vector&lt;CbType&gt;</code>
+     * In which case the input CbType's will be used to construct an OptionType
+     * whose included types will be the set of CbTypes supplied.
+     *
+     * </p><table class="table table-condensed"><tbody><tr><td>interactionType</td><td><p>The interaction type to listen for.
+    * </p></td></tr><tr><td>options1</td><td><p>The OptionType to match first Interactor against, passing null
+    *                will equate to an empty OptionType.
+    * </p></td></tr><tr><td>options2</td><td><p>The OptionType to match second Interactor against, passing null
+    *                will equate to an empty OptionType.
+    * </p></td></tr><tr><td>handler</td><td><p>The callback handler for this listener.
+    * </p></td></tr><tr><td>precedence</td><td><p>The precedence of this listener used to sort
+    *                   the order of callbacks in the case of more than
+    *                   one suitable BodyListener existing for the same
+    *                   event on the same Body. (default 0)
+    * </p></td></tr><tr><td>pure</td><td><p>If true, then the listener will be marked as having a pure handler.
+    *             (default false)
+    * </p></td></tr><tr><td>returns</td><td><p>The newly constructed InteractionListener
+* </p></td></tr></tbody></table></div></div><div class="platform platform-flash"><a name="handler"></a><h3><p><code><span class="keyword">function</span> <a href="#handler"><span class="identifier">handler</span></a>(:<a class="type" href="../../nape/callbacks/PreCallback.html">PreCallback</a>):<a class="type" href="../../Null.html">Null</a>&lt;<a class="type" href="../../nape/callbacks/PreFlag.html">PreFlag</a>&gt;</code></p></h3><div class="doc"><p>Callback handler for this listener.
+     * <br/><br/>
+     * This callback handler returns a possibly null PreFlag object.
+     * <br/>
+     * Passing null is equivalent to telling nape 'ignore me' so that whatever existing
+     * decision has been made regarding the interaction is not modified.
+     * Otherwise returning a non-null PreFlag will change the current decision about what
+     * to do with the interaction.
+     * <br/><br/>
+     * Returning ACCEPT/IGNORE inform nape to take control over all subsequent interaction
+     * between the two objects until they seperate. Returning these will mean that the pre
+     * listener will not be invoked again until the objects seperate, and then begin to interact
+     * afresh.
+     * <br/><br/>
+     * Returning #<em>ONCE, the objects will only be effected for a single step, and the following
+     * step should they still be candidates for interaction, this handler will be invoked again.
+     * <br/>
+     * In the case of a #</em>ONCE, PreFlag; Nape will 'not' permit the two objects to go to sleep
+     * as Nape cannot know if this callback handler will suddenly changes its mind.
+     * <br/>
+     * If this handler is a 'pure' function, then you may mark it as such and Nape will keep you
+     * to your word and permit the objects to sleep.</p></div></div></div></div></div></body></html>

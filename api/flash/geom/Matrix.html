@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8"/><link href="../../bootstrap-combined.min.css" rel="stylesheet" /><script type="text/javascript" src="../../jquery-1.9.1.min.js"></script><script type="text/javascript" src="../../bootstrap.min.js"></script><link href="../../styles.css" rel="stylesheet" /><link rel="icon" href="../../favicon.ico" type="image/x-icon"></link><script type="text/javascript" src="../../nav.js"></script><script type="text/javascript" src="../../index.js"></script><script type="text/javascript">var dox = {rootPath: "../../",platforms: ["flash"]};</script><title>Matrix</title></head><body><div class="navbar navbar-inverse navbar-fixed-top"><div class="navbar-inner"><form class="navbar-search pull-left" id="searchForm"><input id="search" type="text" class="search-query" placeholder="Filter" autocomplete="off"/></form><ul class="nav"><li id="select-platform" class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Platform<b class="caret"></b></a><ul class="dropdown-menu"><li data="all"><a href="#">All Platforms</a></li><li data="flash"><a href="#">flash</a></li></ul></li></ul></div></div><div id="container"><div id="nav"></div><div id="content"><div class="header"><h1><code><span class="directive">class </span><span class="type">flash.geom.Matrix</span></code></h1></div><div class="body"><p class="availability">Available on all platforms</p><div class="doc"><p>The Matrix class represents a transformation matrix that determines how to
+ * map points from one coordinate space to another. You can perform various
+ * graphical transformations on a display object by setting the properties of
+ * a Matrix object, applying that Matrix object to the <code>matrix</code>
+ * property of a Transform object, and then applying that Transform object as
+ * the <code>transform</code> property of the display object. These
+ * transformation functions include translation(<i>x</i> and <i>y</i>
+ * repositioning), rotation, scaling, and skewing.
+ <em>
+ * <p>Together these types of transformations are known as <i>affine
+ * transformations</i>. Affine transformations preserve the straightness of
+ * lines while transforming, so that parallel lines stay parallel.</p>
+ </em>
+ * <p>To apply a transformation matrix to a display object, you create a
+ * Transform object, set its <code>matrix</code> property to the
+ * transformation matrix, and then set the <code>transform</code> property of
+ * the display object to the Transform object. Matrix objects are also used as
+ * parameters of some methods, such as the following:</p>
+ <em>
+ * <ul>
+ *   <li>The <code>draw()</code> method of a BitmapData object</li>
+ *   <li>The <code>beginBitmapFill()</code> method,
+ * <code>beginGradientFill()</code> method, or
+ * <code>lineGradientStyle()</code> method of a Graphics object</li>
+ * </ul>
+ </em>
+ * <p>A transformation matrix object is a 3 x 3 matrix with the following
+ * contents:</p>
+ <em>
+ * <p>In traditional transformation matrixes, the <code>u</code>,
+ * <code>v</code>, and <code>w</code> properties provide extra capabilities.
+ * The Matrix class can only operate in two-dimensional space, so it always
+ * assumes that the property values <code>u</code> and <code>v</code> are 0.0,
+ * and that the property value <code>w</code> is 1.0. The effective values of
+ * the matrix are as follows:</p>
+ </em>
+ * <p>You can get and set the values of all six of the other properties in a
+ * Matrix object: <code>a</code>, <code>b</code>, <code>c</code>,
+ * <code>d</code>, <code>tx</code>, and <code>ty</code>.</p>
+ <em>
+ * <p>The Matrix class supports the four major types of transformations:
+ * translation, scaling, rotation, and skewing. You can set three of these
+ * transformations by using specialized methods, as described in the following
+ * table: </p>
+ </em>
+ * <p>Each transformation function alters the current matrix properties so
+ * that you can effectively combine multiple transformations. To do this, you
+ * call more than one transformation function before applying the matrix to
+ * its display object target(by using the <code>transform</code> property of
+ * that display object).</p>
+ *
+ * <p>Use the <code>new Matrix()</code> constructor to create a Matrix object
+ * before you can call the methods of the Matrix object.</p></p></div><h2>Instance Fields</h2><div class="platform platform-flash"><a name="a"></a><h3><p><code><span class="keyword">var</span> <a href="#a"><span class="identifier">a</span></a>:<a class="type" href="../../Float.html">Float</a></code></p></h3><div class="doc"><p>The value that affects the positioning of pixels along the <i>x</i> axis
+ * when scaling or rotating an image.</p></div></div><div class="platform platform-flash"><a name="b"></a><h3><p><code><span class="keyword">var</span> <a href="#b"><span class="identifier">b</span></a>:<a class="type" href="../../Float.html">Float</a></code></p></h3><div class="doc"><p>The value that affects the positioning of pixels along the <i>y</i> axis
+ * when rotating or skewing an image.</p></div></div><div class="platform platform-flash"><a name="c"></a><h3><p><code><span class="keyword">var</span> <a href="#c"><span class="identifier">c</span></a>:<a class="type" href="../../Float.html">Float</a></code></p></h3><div class="doc"><p>The value that affects the positioning of pixels along the <i>x</i> axis
+ * when rotating or skewing an image.</p></div></div><div class="platform platform-flash"><a name="d"></a><h3><p><code><span class="keyword">var</span> <a href="#d"><span class="identifier">d</span></a>:<a class="type" href="../../Float.html">Float</a></code></p></h3><div class="doc"><p>The value that affects the positioning of pixels along the <i>y</i> axis
+ * when scaling or rotating an image.</p></div></div><div class="platform platform-flash"><a name="tx"></a><h3><p><code><span class="keyword">var</span> <a href="#tx"><span class="identifier">tx</span></a>:<a class="type" href="../../Float.html">Float</a></code></p></h3><div class="doc"><p>The distance by which to translate each point along the <i>x</i> axis.</p></div></div><div class="platform platform-flash"><a name="ty"></a><h3><p><code><span class="keyword">var</span> <a href="#ty"><span class="identifier">ty</span></a>:<a class="type" href="../../Float.html">Float</a></code></p></h3><div class="doc"><p>The distance by which to translate each point along the <i>y</i> axis.</p></div></div><div class="platform platform-flash"><a name="new"></a><h3><p><code><span class="keyword">function</span> <a href="#new"><span class="identifier">new</span></a>(?a:<a class="type" href="../../Float.html">Float</a>, ?b:<a class="type" href="../../Float.html">Float</a>, ?c:<a class="type" href="../../Float.html">Float</a>, ?d:<a class="type" href="../../Float.html">Float</a>, ?tx:<a class="type" href="../../Float.html">Float</a>, ?ty:<a class="type" href="../../Float.html">Float</a>):<a class="type" href="../../Void.html">Void</a></code></p></h3><div class="doc"><p>Creates a new Matrix object with the specified parameters. In matrix
+ * notation, the properties are organized like this:
+ <em>
+ * <p>If you do not provide any parameters to the <code>new Matrix()</code>
+ * constructor, it creates an <i>identity matrix</i> with the following
+ * values:</p>
+ </em>
+ * <p>In matrix notation, the identity matrix looks like this:</p>
+ * 
+ * </p><table class="table table-condensed"><tbody><tr><td>a</td><td><p>The value that affects the positioning of pixels along the
+ *           <i>x</i> axis when scaling or rotating an image.
+ * </p></td></tr><tr><td>b</td><td><p>The value that affects the positioning of pixels along the
+ *           <i>y</i> axis when rotating or skewing an image.
+ * </p></td></tr><tr><td>c</td><td><p>The value that affects the positioning of pixels along the
+ *           <i>x</i> axis when rotating or skewing an image.
+ * </p></td></tr><tr><td>d</td><td><p>The value that affects the positioning of pixels along the
+ *           <i>y</i> axis when scaling or rotating an image..
+ * </p></td></tr><tr><td>tx</td><td><p>The distance by which to translate each point along the <i>x</i>
+<em>           axis.
+</em> </p></td></tr><tr><td>ty</td><td><p>The distance by which to translate each point along the <i>y</i>
+*           axis.</p></td></tr></tbody></table></div></div><div class="platform platform-flash"><a name="clone"></a><h3><p><code><span class="keyword">function</span> <a href="#clone"><span class="identifier">clone</span></a>():<a class="type" href="../../flash/geom/Matrix.html">Matrix</a></code></p></h3><div class="doc"><p>Returns a new Matrix object that is a clone of this matrix, with an exact
+ * copy of the contained object.
+ * 
+ * </p><table class="table table-condensed"><tbody><tr><td>returns</td><td><p>A Matrix object.</p></td></tr></tbody></table></div></div><div class="platform platform-flash"><a name="concat"></a><h3><p><code><span class="keyword">function</span> <a href="#concat"><span class="identifier">concat</span></a>(m:<a class="type" href="../../flash/geom/Matrix.html">Matrix</a>):<a class="type" href="../../Void.html">Void</a></code></p></h3><div class="doc"><p>Concatenates a matrix with the current matrix, effectively combining the
+ * geometric effects of the two. In mathematical terms, concatenating two
+ * matrixes is the same as combining them using matrix multiplication.
+ <em>
+ * <p>For example, if matrix <code>m1</code> scales an object by a factor of
+ * four, and matrix <code>m2</code> rotates an object by 1.5707963267949
+ * radians(<code>Math.PI/2</code>), then <code>m1.concat(m2)</code>
+ * transforms <code>m1</code> into a matrix that scales an object by a factor
+ * of four and rotates the object by <code>Math.PI/2</code> radians. </p>
+ </em>
+ * <p>This method replaces the source matrix with the concatenated matrix. If
+ * you want to concatenate two matrixes without altering either of the two
+ * source matrixes, first copy the source matrix by using the
+ * <code>clone()</code> method, as shown in the Class Examples section.</p>
+ * 
+ * </p><table class="table table-condensed"><tbody><tr><td>m</td><td><p>The matrix to be concatenated to the source matrix.</p></td></tr></tbody></table></div></div><div class="platform platform-flash"><a name="copyColumnFrom"></a><h3><p><code><span class="keyword">function</span> <a href="#copyColumnFrom"><span class="identifier">copyColumnFrom</span></a>(column:<a class="type" href="../../UInt.html">UInt</a>, vector3D:<a class="type" href="../../flash/geom/Vector3D.html">Vector3D</a>):<a class="type" href="../../Void.html">Void</a></code></p></h3><div class="doc"><p></p></div></div><div class="platform platform-flash"><a name="copyColumnTo"></a><h3><p><code><span class="keyword">function</span> <a href="#copyColumnTo"><span class="identifier">copyColumnTo</span></a>(column:<a class="type" href="../../UInt.html">UInt</a>, vector3D:<a class="type" href="../../flash/geom/Vector3D.html">Vector3D</a>):<a class="type" href="../../Void.html">Void</a></code></p></h3><div class="doc"><p></p></div></div><div class="platform platform-flash"><a name="copyFrom"></a><h3><p><code><span class="keyword">function</span> <a href="#copyFrom"><span class="identifier">copyFrom</span></a>(sourceMatrix:<a class="type" href="../../flash/geom/Matrix.html">Matrix</a>):<a class="type" href="../../Void.html">Void</a></code></p></h3><div class="doc"><p></p></div></div><div class="platform platform-flash"><a name="copyRowFrom"></a><h3><p><code><span class="keyword">function</span> <a href="#copyRowFrom"><span class="identifier">copyRowFrom</span></a>(row:<a class="type" href="../../UInt.html">UInt</a>, vector3D:<a class="type" href="../../flash/geom/Vector3D.html">Vector3D</a>):<a class="type" href="../../Void.html">Void</a></code></p></h3><div class="doc"><p></p></div></div><div class="platform platform-flash"><a name="copyRowTo"></a><h3><p><code><span class="keyword">function</span> <a href="#copyRowTo"><span class="identifier">copyRowTo</span></a>(row:<a class="type" href="../../UInt.html">UInt</a>, vector3D:<a class="type" href="../../flash/geom/Vector3D.html">Vector3D</a>):<a class="type" href="../../Void.html">Void</a></code></p></h3><div class="doc"><p></p></div></div><div class="platform platform-flash"><a name="createBox"></a><h3><p><code><span class="keyword">function</span> <a href="#createBox"><span class="identifier">createBox</span></a>(scaleX:<a class="type" href="../../Float.html">Float</a>, scaleY:<a class="type" href="../../Float.html">Float</a>, ?rotation:<a class="type" href="../../Float.html">Float</a>, ?tx:<a class="type" href="../../Float.html">Float</a>, ?ty:<a class="type" href="../../Float.html">Float</a>):<a class="type" href="../../Void.html">Void</a></code></p></h3><div class="doc"><p>Includes parameters for scaling, rotation, and translation. When applied
+ * to a matrix it sets the matrix's values based on those parameters.
+ *
+ * <p>Using the <code>createBox()</code> method lets you obtain the same
+ * matrix as you would if you applied the <code>identity()</code>,
+ * <code>rotate()</code>, <code>scale()</code>, and <code>translate()</code>
+ * methods in succession. For example, <code>mat1.createBox(2,2,Math.PI/4,
+ * 100, 100)</code> has the same effect as the following:</p>
+ * 
+ * </p><table class="table table-condensed"><tbody><tr><td>scaleX</td><td><p>The factor by which to scale horizontally.
+ * </p></td></tr><tr><td>scaleY</td><td><p>The factor by which scale vertically.
+ * </p></td></tr><tr><td>rotation</td><td><p>The amount to rotate, in radians.
+* </p></td></tr><tr><td>tx</td><td><p>The number of pixels to translate(move) to the right
+ *                 along the <i>x</i> axis.
+ * </p></td></tr><tr><td>ty</td><td><p>The number of pixels to translate(move) down along the
+ *                 <i>y</i> axis.</p></td></tr></tbody></table></div></div><div class="platform platform-flash"><a name="createGradientBox"></a><h3><p><code><span class="keyword">function</span> <a href="#createGradientBox"><span class="identifier">createGradientBox</span></a>(width:<a class="type" href="../../Float.html">Float</a>, height:<a class="type" href="../../Float.html">Float</a>, ?rotation:<a class="type" href="../../Float.html">Float</a>, ?tx:<a class="type" href="../../Float.html">Float</a>, ?ty:<a class="type" href="../../Float.html">Float</a>):<a class="type" href="../../Void.html">Void</a></code></p></h3><div class="doc"><p>Creates the specific style of matrix expected by the
+ * <code>beginGradientFill()</code> and <code>lineGradientStyle()</code>
+ * methods of the Graphics class. Width and height are scaled to a
+ * <code>scaleX</code>/<code>scaleY</code> pair and the
+ * <code>tx</code>/<code>ty</code> values are offset by half the width and
+ * height.
+ <em>
+ * <p>For example, consider a gradient with the following
+ * characteristics:</p>
+ </em>
+ * <ul>
+ *   <li><code>GradientType.LINEAR</code></li>
+ *   <li>Two colors, green and blue, with the ratios array set to <code>[0,
+ * 255]</code></li>
+ *   <li><code>SpreadMethod.PAD</code></li>
+ *   <li><code>InterpolationMethod.LINEAR_RGB</code></li>
+ * </ul>
+ *
+ * <p>The following illustrations show gradients in which the matrix was
+ * defined using the <code>createGradientBox()</code> method with different
+ * parameter settings:</p>
+ * 
+ * </p><table class="table table-condensed"><tbody><tr><td>width</td><td><p>The width of the gradient box.
+ * </p></td></tr><tr><td>height</td><td><p>The height of the gradient box.
+ * </p></td></tr><tr><td>rotation</td><td><p>The amount to rotate, in radians.
+* </p></td></tr><tr><td>tx</td><td><p>The distance, in pixels, to translate to the right along
+ *                 the <i>x</i> axis. This value is offset by half of the
+ *                 <code>width</code> parameter.
+ * </p></td></tr><tr><td>ty</td><td><p>The distance, in pixels, to translate down along the
+ *                 <i>y</i> axis. This value is offset by half of the
+ *                 <code>height</code> parameter.</p></td></tr></tbody></table></div></div><div class="platform platform-flash"><a name="deltaTransformPoint"></a><h3><p><code><span class="keyword">function</span> <a href="#deltaTransformPoint"><span class="identifier">deltaTransformPoint</span></a>(point:<a class="type" href="../../flash/geom/Point.html">Point</a>):<a class="type" href="../../flash/geom/Point.html">Point</a></code></p></h3><div class="doc"><p>Given a point in the pretransform coordinate space, returns the
+ * coordinates of that point after the transformation occurs. Unlike the
+ * standard transformation applied using the <code>transformPoint()</code>
+ * method, the <code>deltaTransformPoint()</code> method's transformation
+ * does not consider the translation parameters <code>tx</code> and
+ * <code>ty</code>.
+ * 
+ * </p><table class="table table-condensed"><tbody><tr><td>point</td><td><p>The point for which you want to get the result of the matrix
+<em>              transformation.
+</em> </p></td></tr><tr><td>returns</td><td><p>The point resulting from applying the matrix transformation.</p></td></tr></tbody></table></div></div><div class="platform platform-flash"><a name="identity"></a><h3><p><code><span class="keyword">function</span> <a href="#identity"><span class="identifier">identity</span></a>():<a class="type" href="../../Void.html">Void</a></code></p></h3><div class="doc"><p>Sets each matrix property to a value that causes a null transformation. An
+ * object transformed by applying an identity matrix will be identical to the
+ * original.
+ <em>
+ * <p>After calling the <code>identity()</code> method, the resulting matrix
+ * has the following properties: <code>a</code>=1, <code>b</code>=0,
+ * <code>c</code>=0, <code>d</code>=1, <code>tx</code>=0,
+ * <code>ty</code>=0.</p>
+ </em>
+ * <p>In matrix notation, the identity matrix looks like this:</p></p></div></div><div class="platform platform-flash"><a name="invert"></a><h3><p><code><span class="keyword">function</span> <a href="#invert"><span class="identifier">invert</span></a>():<a class="type" href="../../Void.html">Void</a></code></p></h3><div class="doc"><p>Performs the opposite transformation of the original matrix. You can apply
+ * an inverted matrix to an object to undo the transformation performed when
+ * applying the original matrix.</p></div></div><div class="platform platform-flash"><a name="rotate"></a><h3><p><code><span class="keyword">function</span> <a href="#rotate"><span class="identifier">rotate</span></a>(angle:<a class="type" href="../../Float.html">Float</a>):<a class="type" href="../../Void.html">Void</a></code></p></h3><div class="doc"><p>Applies a rotation transformation to the Matrix object.
+ *
+ * <p>The <code>rotate()</code> method alters the <code>a</code>,
+ * <code>b</code>, <code>c</code>, and <code>d</code> properties of the
+ * Matrix object. In matrix notation, this is the same as concatenating the
+ * current matrix with the following:</p>
+ * 
+ * </p><table class="table table-condensed"><tbody><tr><td>angle</td><td><p>The rotation angle in radians.</p></td></tr></tbody></table></div></div><div class="platform platform-flash"><a name="scale"></a><h3><p><code><span class="keyword">function</span> <a href="#scale"><span class="identifier">scale</span></a>(sx:<a class="type" href="../../Float.html">Float</a>, sy:<a class="type" href="../../Float.html">Float</a>):<a class="type" href="../../Void.html">Void</a></code></p></h3><div class="doc"><p>Applies a scaling transformation to the matrix. The <i>x</i> axis is
+ * multiplied by <code>sx</code>, and the <i>y</i> axis it is multiplied by
+ * <code>sy</code>.
+ *
+ * <p>The <code>scale()</code> method alters the <code>a</code> and
+ * <code>d</code> properties of the Matrix object. In matrix notation, this
+ * is the same as concatenating the current matrix with the following
+ * matrix:</p>
+ * 
+ * </p><table class="table table-condensed"><tbody><tr><td>sx</td><td><p>A multiplier used to scale the object along the <i>x</i> axis.
+* </p></td></tr><tr><td>sy</td><td><p>A multiplier used to scale the object along the <i>y</i> axis.</p></td></tr></tbody></table></div></div><div class="platform platform-flash"><a name="setTo"></a><h3><p><code><span class="keyword">function</span> <a href="#setTo"><span class="identifier">setTo</span></a>(aa:<a class="type" href="../../Float.html">Float</a>, ba:<a class="type" href="../../Float.html">Float</a>, ca:<a class="type" href="../../Float.html">Float</a>, da:<a class="type" href="../../Float.html">Float</a>, txa:<a class="type" href="../../Float.html">Float</a>, tya:<a class="type" href="../../Float.html">Float</a>):<a class="type" href="../../Void.html">Void</a></code></p></h3><div class="doc"><p></p></div></div><div class="platform platform-flash"><a name="toString"></a><h3><p><code><span class="keyword">function</span> <a href="#toString"><span class="identifier">toString</span></a>():<a class="type" href="../../String.html">String</a></code></p></h3><div class="doc"><p>Returns a text value listing the properties of the Matrix object.
+ * 
+ * </p><table class="table table-condensed"><tbody><tr><td>returns</td><td><p>A string containing the values of the properties of the Matrix
+<em>         object: <code>a</code>, <code>b</code>, <code>c</code>,
+</em>         <code>d</code>, <code>tx</code>, and <code>ty</code>.</p></td></tr></tbody></table></div></div><div class="platform platform-flash"><a name="transformPoint"></a><h3><p><code><span class="keyword">function</span> <a href="#transformPoint"><span class="identifier">transformPoint</span></a>(point:<a class="type" href="../../flash/geom/Point.html">Point</a>):<a class="type" href="../../flash/geom/Point.html">Point</a></code></p></h3><div class="doc"><p>Returns the result of applying the geometric transformation represented by
+ * the Matrix object to the specified point.
+ * 
+ * </p><table class="table table-condensed"><tbody><tr><td>point</td><td><p>The point for which you want to get the result of the Matrix
+<em>              transformation.
+</em> </p></td></tr><tr><td>returns</td><td><p>The point resulting from applying the Matrix transformation.</p></td></tr></tbody></table></div></div><div class="platform platform-flash"><a name="translate"></a><h3><p><code><span class="keyword">function</span> <a href="#translate"><span class="identifier">translate</span></a>(dx:<a class="type" href="../../Float.html">Float</a>, dy:<a class="type" href="../../Float.html">Float</a>):<a class="type" href="../../Void.html">Void</a></code></p></h3><div class="doc"><p>Translates the matrix along the <i>x</i> and <i>y</i> axes, as specified
+ * by the <code>dx</code> and <code>dy</code> parameters.
+ * 
+ * </p><table class="table table-condensed"><tbody><tr><td>dx</td><td><p>The amount of movement along the <i>x</i> axis to the right, in
+<em>           pixels.
+</em> </p></td></tr><tr><td>dy</td><td><p>The amount of movement down along the <i>y</i> axis, in pixels.</p></td></tr></tbody></table></div></div></div></div></div></body></html>

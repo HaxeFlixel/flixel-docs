@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8"/><link href="../../bootstrap-combined.min.css" rel="stylesheet" /><script type="text/javascript" src="../../jquery-1.9.1.min.js"></script><script type="text/javascript" src="../../bootstrap.min.js"></script><link href="../../styles.css" rel="stylesheet" /><link rel="icon" href="../../favicon.ico" type="image/x-icon"></link><script type="text/javascript" src="../../nav.js"></script><script type="text/javascript" src="../../index.js"></script><script type="text/javascript">var dox = {rootPath: "../../",platforms: ["flash"]};</script><title>BlendMode</title></head><body><div class="navbar navbar-inverse navbar-fixed-top"><div class="navbar-inner"><form class="navbar-search pull-left" id="searchForm"><input id="search" type="text" class="search-query" placeholder="Filter" autocomplete="off"/></form><ul class="nav"><li id="select-platform" class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Platform<b class="caret"></b></a><ul class="dropdown-menu"><li data="all"><a href="#">All Platforms</a></li><li data="flash"><a href="#">flash</a></li></ul></li></ul></div></div><div id="container"><div id="nav"></div><div id="content"><div class="header"><h1><code><span class="directive">enum </span><span class="type">flash.display.BlendMode</span></code></h1></div><div class="body"><p class="availability">Available on all platforms</p><div class="doc"><p>A class that provides constant values for visual blend mode effects. These
+ * constants are used in the following:
+ * <ul>
+ *   <li> The <code>blendMode</code> property of the
+ * flash.display.DisplayObject class.</li>
+ *   <li> The <code>blendMode</code> parameter of the <code>draw()</code>
+ * method of the flash.display.BitmapData class</li>
+ * </ul></p></div><h2>Constructors</h2><h3><code><a name="ADD" href="#ADD"><span class="type">ADD</span></a></code></h3><div class="doc"><p>Adds the values of the constituent colors of the display object to the
+ * colors of its background, applying a ceiling of 0xFF. This setting is
+ * commonly used for animating a lightening dissolve between two objects.
+ *
+ * <p>For example, if the display object has a pixel with an RGB value of
+ * 0xAAA633, and the background pixel has an RGB value of 0xDD2200, the
+ * resulting RGB value for the displayed pixel is 0xFFC833(because 0xAA +
+ * 0xDD > 0xFF, 0xA6 + 0x22 = 0xC8, and 0x33 + 0x00 = 0x33).</p></p></div><h3><code><a name="ALPHA" href="#ALPHA"><span class="type">ALPHA</span></a></code></h3><div class="doc"><p>Applies the alpha value of each pixel of the display object to the
+ * background. This requires the <code>blendMode</code> property of the
+ * parent display object be set to
+ * <code>flash.display.BlendMode.LAYER</code>.
+ *
+ * <p>Not supported under GPU rendering.</p></p></div><h3><code><a name="DARKEN" href="#DARKEN"><span class="type">DARKEN</span></a></code></h3><div class="doc"><p>Selects the darker of the constituent colors of the display object and the
+ * colors of the background(the colors with the smaller values). This
+ * setting is commonly used for superimposing type.
+ <em>
+ * <p>For example, if the display object has a pixel with an RGB value of
+ * 0xFFCC33, and the background pixel has an RGB value of 0xDDF800, the
+ * resulting RGB value for the displayed pixel is 0xDDCC00(because 0xFF >
+ * 0xDD, 0xCC &lt; 0xF8, and 0x33 > 0x00 = 33).</p>
+ </em>
+ * <p>Not supported under GPU rendering.</p></p></div><h3><code><a name="DIFFERENCE" href="#DIFFERENCE"><span class="type">DIFFERENCE</span></a></code></h3><div class="doc"><p>Compares the constituent colors of the display object with the colors of
+ * its background, and subtracts the darker of the values of the two
+ * constituent colors from the lighter value. This setting is commonly used
+ * for more vibrant colors.
+ *
+ * <p>For example, if the display object has a pixel with an RGB value of
+ * 0xFFCC33, and the background pixel has an RGB value of 0xDDF800, the
+ * resulting RGB value for the displayed pixel is 0x222C33(because 0xFF -
+ * 0xDD = 0x22, 0xF8 - 0xCC = 0x2C, and 0x33 - 0x00 = 0x33).</p></p></div><h3><code><a name="ERASE" href="#ERASE"><span class="type">ERASE</span></a></code></h3><div class="doc"><p>Erases the background based on the alpha value of the display object. This
+ * process requires that the <code>blendMode</code> property of the parent
+ * display object be set to <code>flash.display.BlendMode.LAYER</code>.
+ *
+ * <p>Not supported under GPU rendering.</p></p></div><h3><code><a name="HARDLIGHT" href="#HARDLIGHT"><span class="type">HARDLIGHT</span></a></code></h3><div class="doc"><p>Adjusts the color of each pixel based on the darkness of the display
+ * object. If the display object is lighter than 50% gray, the display object
+ * and background colors are screened, which results in a lighter color. If
+ * the display object is darker than 50% gray, the colors are multiplied,
+ * which results in a darker color. This setting is commonly used for shading
+ * effects.
+ *
+ * <p>Not supported under GPU rendering.</p></p></div><h3><code><a name="INVERT" href="#INVERT"><span class="type">INVERT</span></a></code></h3><div class="doc"><p>Inverts the background.</p></div><h3><code><a name="LAYER" href="#LAYER"><span class="type">LAYER</span></a></code></h3><div class="doc"><p>Forces the creation of a transparency group for the display object. This
+ * means that the display object is precomposed in a temporary buffer before
+ * it is processed further. The precomposition is done automatically if the
+ * display object is precached by means of bitmap caching or if the display
+ * object is a display object container that has at least one child object
+ * with a <code>blendMode</code> setting other than <code>"normal"</code>.
+ *
+ * <p>Not supported under GPU rendering.</p></p></div><h3><code><a name="LIGHTEN" href="#LIGHTEN"><span class="type">LIGHTEN</span></a></code></h3><div class="doc"><p>Selects the lighter of the constituent colors of the display object and
+ * the colors of the background(the colors with the larger values). This
+ * setting is commonly used for superimposing type.
+ <em>
+ * <p>For example, if the display object has a pixel with an RGB value of
+ * 0xFFCC33, and the background pixel has an RGB value of 0xDDF800, the
+ * resulting RGB value for the displayed pixel is 0xFFF833(because 0xFF >
+ * 0xDD, 0xCC &lt; 0xF8, and 0x33 > 0x00 = 33).</p>
+ </em>
+ * <p>Not supported under GPU rendering.</p></p></div><h3><code><a name="MULTIPLY" href="#MULTIPLY"><span class="type">MULTIPLY</span></a></code></h3><div class="doc"><p>Multiplies the values of the display object constituent colors by the
+ * constituent colors of the background color, and normalizes by dividing by
+ * 0xFF, resulting in darker colors. This setting is commonly used for
+ * shadows and depth effects.
+ *
+ * <p>For example, if a constituent color(such as red) of one pixel in the
+ * display object and the corresponding color of the pixel in the background
+ * both have the value 0x88, the multiplied result is 0x4840. Dividing by
+ * 0xFF yields a value of 0x48 for that constituent color, which is a darker
+ * shade than the color of the display object or the color of the
+ * background.</p></p></div><h3><code><a name="NORMAL" href="#NORMAL"><span class="type">NORMAL</span></a></code></h3><div class="doc"><p>The display object appears in front of the background. Pixel values of the
+ * display object override the pixel values of the background. Where the
+ * display object is transparent, the background is visible.</p></div><h3><code><a name="OVERLAY" href="#OVERLAY"><span class="type">OVERLAY</span></a></code></h3><div class="doc"><p>Adjusts the color of each pixel based on the darkness of the background.
+ * If the background is lighter than 50% gray, the display object and
+ * background colors are screened, which results in a lighter color. If the
+ * background is darker than 50% gray, the colors are multiplied, which
+ * results in a darker color. This setting is commonly used for shading
+ * effects.
+ *
+ * <p>Not supported under GPU rendering.</p></p></div><h3><code><a name="SCREEN" href="#SCREEN"><span class="type">SCREEN</span></a></code></h3><div class="doc"><p>Multiplies the complement(inverse) of the display object color by the
+ * complement of the background color, resulting in a bleaching effect. This
+ * setting is commonly used for highlights or to remove black areas of the
+ * display object.</p></div><h3><code><a name="SHADER" href="#SHADER"><span class="type">SHADER</span></a></code></h3><div class="doc"><p>Uses a shader to define the blend between objects.
+ <em>
+ * <p>Setting the <code>blendShader</code> property to a Shader instance
+ * automatically sets the display object's <code>blendMode</code> property to
+ * <code>BlendMode.SHADER</code>. If the <code>blendMode</code> property is
+ * set to <code>BlendMode.SHADER</code> without first setting the
+ * <code>blendShader</code> property, the <code>blendMode</code> property is
+ * set to <code>BlendMode.NORMAL</code> instead. If the
+ * <code>blendShader</code> property is set(which sets the
+ * <code>blendMode</code> property to <code>BlendMode.SHADER</code>), then
+ * later the value of the <code>blendMode</code> property is changed, the
+ * blend mode can be reset to use the blend shader simply by setting the
+ * <code>blendMode</code> property to <code>BlendMode.SHADER</code>. The
+ * <code>blendShader</code> property does not need to be set again except to
+ * change the shader that's used to define the blend mode.</p>
+ </em>
+ * <p>Not supported under GPU rendering.</p></p></div><h3><code><a name="SUBTRACT" href="#SUBTRACT"><span class="type">SUBTRACT</span></a></code></h3><div class="doc"><p>Subtracts the values of the constituent colors in the display object from
+ * the values of the background color, applying a floor of 0. This setting is
+ * commonly used for animating a darkening dissolve between two objects.
+ *
+ * <p>For example, if the display object has a pixel with an RGB value of
+ * 0xAA2233, and the background pixel has an RGB value of 0xDDA600, the
+ * resulting RGB value for the displayed pixel is 0x338400(because 0xDD -
+ * 0xAA = 0x33, 0xA6 - 0x22 = 0x84, and 0x00 - 0x33 &lt; 0x00).</p></p></div></div></div></div></body></html>

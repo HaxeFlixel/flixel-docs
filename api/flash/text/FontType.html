@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8"/><link href="../../bootstrap-combined.min.css" rel="stylesheet" /><script type="text/javascript" src="../../jquery-1.9.1.min.js"></script><script type="text/javascript" src="../../bootstrap.min.js"></script><link href="../../styles.css" rel="stylesheet" /><link rel="icon" href="../../favicon.ico" type="image/x-icon"></link><script type="text/javascript" src="../../nav.js"></script><script type="text/javascript" src="../../index.js"></script><script type="text/javascript">var dox = {rootPath: "../../",platforms: ["flash"]};</script><title>FontType</title></head><body><div class="navbar navbar-inverse navbar-fixed-top"><div class="navbar-inner"><form class="navbar-search pull-left" id="searchForm"><input id="search" type="text" class="search-query" placeholder="Filter" autocomplete="off"/></form><ul class="nav"><li id="select-platform" class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Platform<b class="caret"></b></a><ul class="dropdown-menu"><li data="all"><a href="#">All Platforms</a></li><li data="flash"><a href="#">flash</a></li></ul></li></ul></div></div><div id="container"><div id="nav"></div><div id="content"><div class="header"><h1><code><span class="directive">enum </span><span class="type">flash.text.FontType</span></code></h1></div><div class="body"><p class="availability">Available on all platforms</p><div class="doc"><p>The FontType class contains the enumerated constants
+ * <code>"embedded"</code> and <code>"device"</code> for the
+ * <code>fontType</code> property of the Font class.</p></div><h2>Constructors</h2><h3><code><a name="DEVICE" href="#DEVICE"><span class="type">DEVICE</span></a></code></h3><div class="doc"><p>Indicates that this is a device font. The SWF file renders fonts with
+ * those installed on the system.
+ <em>
+ * <p>Using device fonts results in a smaller movie size, because font data
+ * is not included in the file. Device fonts are often a good choice for
+ * displaying text at small point sizes, because anti-aliased text can be
+ * blurry at small sizes. Device fonts are also a good choice for large
+ * blocks of text, such as scrolling text.</p>
+ </em>
+ * <p>Text fields that use device fonts may not be displayed the same across
+ * different systems and platforms, because they are rendered with fonts
+ * installed on the system. For the same reason, device fonts are not
+ * anti-aliased and may appear jagged at large point sizes.</p></p></div><h3><code><a name="EMBEDDED" href="#EMBEDDED"><span class="type">EMBEDDED</span></a></code></h3><div class="doc"><p>Indicates that this is an embedded font. Font outlines are embedded in the
+ * published SWF file.
+ <em>
+ * <p>Text fields that use embedded fonts are always displayed in the chosen
+ * font, whether or not that font is installed on the playback system. Also,
+ * text fields that use embedded fonts are always anti-aliased(smoothed).
+ * You can select the amount of anti-aliasing you want by using the
+ * <code>TextField.antiAliasType property</code>.</p>
+ </em>
+ * <p>One drawback to embedded fonts is that they increase the size of the
+ * SWF file.</p>
+ *
+ * <p>Fonts of type <code>EMBEDDED</code> can only be used by TextField. If
+ * flash.text.engine classes are directed to use such a font they will fall
+ * back to device fonts.</p></p></div><h3><code><a name="EMBEDDED_CFF" href="#EMBEDDED_CFF"><span class="type">EMBEDDED_CFF</span></a></code></h3><div class="doc"><p></p></div></div></div></div></body></html>

@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8"/><link href="./bootstrap-combined.min.css" rel="stylesheet" /><script type="text/javascript" src="./jquery-1.9.1.min.js"></script><script type="text/javascript" src="./bootstrap.min.js"></script><link href="./styles.css" rel="stylesheet" /><link rel="icon" href="./favicon.ico" type="image/x-icon"></link><script type="text/javascript" src="./nav.js"></script><script type="text/javascript" src="./index.js"></script><script type="text/javascript">var dox = {rootPath: "./",platforms: ["flash"]};</script><title>Array</title></head><body><div class="navbar navbar-inverse navbar-fixed-top"><div class="navbar-inner"><form class="navbar-search pull-left" id="searchForm"><input id="search" type="text" class="search-query" placeholder="Filter" autocomplete="off"/></form><ul class="nav"><li id="select-platform" class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Platform<b class="caret"></b></a><ul class="dropdown-menu"><li data="all"><a href="#">All Platforms</a></li><li data="flash"><a href="#">flash</a></li></ul></li></ul></div></div><div id="container"><div id="nav"></div><div id="content"><div class="header"><h1><code><span class="directive">class </span><span class="type">Array</span>&lt;<span class="type">T</span>&gt;</code></h1></div><div class="body"><p class="availability">Available on all platforms</p><div class="doc"><p>An Array is a storage for values. You can access it using indexes or
+with its API.</p></div><h2>Instance Fields</h2><div class="platform platform-flash"><a name="length"></a><h3><p><code><span class="keyword">var</span> <a href="#length"><span class="identifier">length</span></a>:<a class="type" href="./Int.html">Int</a></code></p></h3><div class="doc"><p>The length of <code>this</code> Array.</p></div></div><div class="platform platform-flash"><a name="new"></a><h3><p><code><span class="keyword">function</span> <a href="#new"><span class="identifier">new</span></a>():<a class="type" href="./Void.html">Void</a></code></p></h3><div class="doc"><p>Creates a new Array.</p></div></div><div class="platform platform-flash"><a name="concat"></a><h3><p><code><span class="keyword">function</span> <a href="#concat"><span class="identifier">concat</span></a>(a:<a class="type" href="./Array.html">Array</a>&lt;<span class="type">T</span>&gt;):<a class="type" href="./Array.html">Array</a>&lt;<span class="type">T</span>&gt;</code></p></h3><div class="doc"><p>Returns a new Array by appending the elements of <code>a</code> to the elements of</p>
+<pre><code>`this` Array.
+
+This operation does not modify `this` Array.
+
+If `a` is the empty Array `[]`, a copy of `this` Array is returned.
+
+The length of the returned Array is equal to the sum of `this.length`
+and `a.length`.
+
+If `a` is `null`, the result is unspecified.
+</code></pre></div></div><div class="platform platform-flash"><a name="copy"></a><h3><p><code><span class="keyword">function</span> <a href="#copy"><span class="identifier">copy</span></a>():<a class="type" href="./Array.html">Array</a>&lt;<span class="type">T</span>&gt;</code></p></h3><div class="doc"><p>Returns a shallow copy of <code>this</code> Array.</p>
+<pre><code>The elements are not copied and retain their identity, so
+`a[i] == a.copy()[i]` is true for any valid `i`. However,
+`a == a.copy()` is always false.
+</code></pre></div></div><div class="platform platform-flash"><a name="filter"></a><h3><p><code><span class="keyword">function</span> <a href="#filter"><span class="identifier">filter</span></a>(f:<span class="type">T</span> -&gt;<a class="type" href="./Bool.html">Bool</a>):<a class="type" href="./Array.html">Array</a>&lt;<span class="type">T</span>&gt;</code></p></h3><div class="doc"><p>Returns an Array containing those elements of <code>this</code> for which <code>f</code></p>
+<pre><code>returned true.
+
+The individual elements are not duplicated and retain their identity.
+
+If `f` is null, the result is unspecified.
+</code></pre></div></div><div class="platform platform-flash"><a name="indexOf"></a><h3><p><code><span class="keyword">function</span> <a href="#indexOf"><span class="identifier">indexOf</span></a>(x:<span class="type">T</span>, ?fromIndex:<a class="type" href="./Int.html">Int</a>):<a class="type" href="./Int.html">Int</a></code></p></h3><div class="doc"><p>Returns position of the first occurense of <code>x</code> in <code>this</code> Array, searching front to back.</p>
+<pre><code>If `x` is found by checking standard equality, the function returns its index.
+
+If `x` is not found, the function returns -1.
+
+If `fromIndex` is specified, it will be used as the starting index to search from,
+otherwise search starts with zero index. If it is negative, it will be taken as the
+offset from the end of `this` Array to compute the starting index. If given or computed
+starting index is less than 0, the whole array will be searched, if it is greater than
+or equal to the length of `this` Array, the function returns -1.
+</code></pre></div></div><div class="platform platform-flash"><a name="insert"></a><h3><p><code><span class="keyword">function</span> <a href="#insert"><span class="identifier">insert</span></a>(pos:<a class="type" href="./Int.html">Int</a>, x:<span class="type">T</span>):<a class="type" href="./Void.html">Void</a></code></p></h3><div class="doc"><p>Inserts the element <code>x</code> at the position <code>pos</code>.</p>
+<pre><code>This operation modifies `this` Array in place.
+
+The offset is calculated like so:
+
+- If `pos` exceeds `this.length`, the offset is `this.length`.
+- If `pos` is negative, the offset is calculated from the end of `this`
+  Array, i.e. `this.length + pos`. If this yields a negative value, the
+  offset is 0.
+- Otherwise, the offset is `pos`.
+
+If the resulting offset does not exceed `this.length`, all elements from
+and including that offset to the end of `this` Array are moved one index
+ahead.
+</code></pre></div></div><div class="platform platform-flash"><a name="iterator"></a><h3><p><code><span class="keyword">function</span> <a href="#iterator"><span class="identifier">iterator</span></a>():<a class="type" href="./Iterator.html">Iterator</a>&lt;<span class="type">T</span>&gt;</code></p></h3><div class="doc"><p>Returns an iterator of the Array values.</p></div></div><div class="platform platform-flash"><a name="join"></a><h3><p><code><span class="keyword">function</span> <a href="#join"><span class="identifier">join</span></a>(sep:<a class="type" href="./String.html">String</a>):<a class="type" href="./String.html">String</a></code></p></h3><div class="doc"><p>Returns a string representation of <code>this</code> Array, with <code>sep</code> separating</p>
+<pre><code>each element.
+
+The result of this operation is equal to `Std.string(this[0]) + sep +
+Std.string(this[1]) + sep + ... + sep + Std.string(this[this.length-1])`
+
+If `this` is the empty Array `[]`, the result is the empty String `""`.
+If `this` has exactly one element, the result is equal to a call to
+`Std.string(this[0])`.
+
+If `sep` is null, the result is unspecified.
+</code></pre></div></div><div class="platform platform-flash"><a name="lastIndexOf"></a><h3><p><code><span class="keyword">function</span> <a href="#lastIndexOf"><span class="identifier">lastIndexOf</span></a>(x:<span class="type">T</span>, ?fromIndex:<a class="type" href="./Int.html">Int</a>):<a class="type" href="./Int.html">Int</a></code></p></h3><div class="doc"><p>Returns position of the last occurense of <code>x</code> in <code>this</code> Array, searching back to front.</p>
+<pre><code>If `x` is found by checking standard equality, the function returns its index.
+
+If `x` is not found, the function returns -1.
+
+If `fromIndex` is specified, it will be used as the starting index to search from,
+otherwise search starts with the last element index. If it is negative, it will be
+taken as the offset from the end of `this` Array to compute the starting index. If
+given or computed starting index is greater than or equal to the length of `this` Array,
+the whole array will be searched, if it is less than 0, the function returns -1.
+</code></pre></div></div><div class="platform platform-flash"><a name="map"></a><h3><p><code><span class="keyword">function</span> <a href="#map"><span class="identifier">map</span></a>&lt;<span class="type">S</span>&gt;(f:<span class="type">T</span> -&gt;<span class="type">S</span>):<a class="type" href="./Array.html">Array</a>&lt;<span class="type">S</span>&gt;</code></p></h3><div class="doc"><p>Creates a new Array by applying function <code>f</code> to all elements of <code>this</code>.</p>
+<pre><code>The order of elements is preserved.
+
+If `f` is null, the result is unspecified.
+</code></pre></div></div><div class="platform platform-flash"><a name="pop"></a><h3><p><code><span class="keyword">function</span> <a href="#pop"><span class="identifier">pop</span></a>():<a class="type" href="./Null.html">Null</a>&lt;<span class="type">T</span>&gt;</code></p></h3><div class="doc"><p>Removes the last element of <code>this</code> Array and returns it.</p>
+<pre><code>This operation modifies `this` Array in place.
+
+If `this` has at least one element, `this.length` will decrease by 1.
+
+If `this` is the empty Array `[]`, null is returned and the length
+remains 0.
+</code></pre></div></div><div class="platform platform-flash"><a name="push"></a><h3><p><code><span class="keyword">function</span> <a href="#push"><span class="identifier">push</span></a>(x:<span class="type">T</span>):<a class="type" href="./Int.html">Int</a></code></p></h3><div class="doc"><p>Adds the element <code>x</code> at the end of <code>this</code> Array and returns the new</p>
+<pre><code>length of `this` Array.
+
+This operation modifies `this` Array in place.
+
+`this.length` increases by 1.
+</code></pre></div></div><div class="platform platform-flash"><a name="remove"></a><h3><p><code><span class="keyword">function</span> <a href="#remove"><span class="identifier">remove</span></a>(x:<span class="type">T</span>):<a class="type" href="./Bool.html">Bool</a></code></p></h3><div class="doc"><p>Removes the first occurence of <code>x</code> in <code>this</code> Array.</p>
+<pre><code>This operation modifies `this` Array in place.
+
+If `x` is found by checking standard equality, it is removed from `this`
+Array and all following elements are reindexed acoordingly. The function
+then returns true.
+
+If `x` is not found, `this` Array is not changed and the function
+returns false.
+</code></pre></div></div><div class="platform platform-flash"><a name="reverse"></a><h3><p><code><span class="keyword">function</span> <a href="#reverse"><span class="identifier">reverse</span></a>():<a class="type" href="./Void.html">Void</a></code></p></h3><div class="doc"><p>Reverse the order of elements of <code>this</code> Array.</p>
+<pre><code>This operation modifies `this` Array in place.
+
+If `this.length &lt; 2`, `this` remains unchanged.
+</code></pre></div></div><div class="platform platform-flash"><a name="shift"></a><h3><p><code><span class="keyword">function</span> <a href="#shift"><span class="identifier">shift</span></a>():<a class="type" href="./Null.html">Null</a>&lt;<span class="type">T</span>&gt;</code></p></h3><div class="doc"><p>Removes the first element of <code>this</code> Array and returns it.</p>
+<pre><code>This operation modifies `this` Array in place.
+
+If `this` has at least one element, `this`.length and the index of each
+remaining element is decreased by 1.
+
+If `this` is the empty Array `[]`, `null` is returned and the length
+remains 0.
+</code></pre></div></div><div class="platform platform-flash"><a name="slice"></a><h3><p><code><span class="keyword">function</span> <a href="#slice"><span class="identifier">slice</span></a>(pos:<a class="type" href="./Int.html">Int</a>, ?end:<a class="type" href="./Int.html">Int</a>):<a class="type" href="./Array.html">Array</a>&lt;<span class="type">T</span>&gt;</code></p></h3><div class="doc"><p>Creates a shallow copy of the range of <code>this</code> Array, starting at and</p>
+<pre><code>including `pos`, up to but not including `end`.
+
+This operation does not modify `this` Array.
+
+The elements are not copied and retain their identity.
+
+If `end` is omitted or exceeds `this.length`, it defaults to the end of
+`this` Array.
+
+If `pos` or `end` are negative, their offsets are calculated from the
+end	of `this` Array by `this.length + pos` and `this.length + end`
+respectively. If this yields a negative value, 0 is used instead.
+
+If `pos` exceeds `this.length` or if `end` exceeds or equals `pos`,
+the result is `[]`.
+</code></pre></div></div><div class="platform platform-flash"><a name="sort"></a><h3><p><code><span class="keyword">function</span> <a href="#sort"><span class="identifier">sort</span></a>(f:<span class="type">T</span> -&gt;<span class="type">T</span> -&gt;<a class="type" href="./Int.html">Int</a>):<a class="type" href="./Void.html">Void</a></code></p></h3><div class="doc"><p>Sorts <code>this</code> Array according to the comparison function <code>f</code>, where</p>
+<pre><code>`f(x,y)` returns 0 if x == y, a positive Int if x &gt; y and a
+negative Int if x &lt; y.
+
+This operation modifies `this` Array in place.
+
+The sort operation is not guaranteed to be stable, which means that the
+order of equal elements may not be retained. For a stable Array sorting
+algorithm, `haxe.ds.sort.MergeSort.sort()` can be used instead.
+
+If `f` is null, the result is unspecified.
+</code></pre></div></div><div class="platform platform-flash"><a name="splice"></a><h3><p><code><span class="keyword">function</span> <a href="#splice"><span class="identifier">splice</span></a>(pos:<a class="type" href="./Int.html">Int</a>, len:<a class="type" href="./Int.html">Int</a>):<a class="type" href="./Array.html">Array</a>&lt;<span class="type">T</span>&gt;</code></p></h3><div class="doc"><p>Removes <code>len</code> elements from <code>this</code> Array, starting at and including</p>
+<pre><code>`pos`, an returns them.
+
+This operation modifies `this` Array in place.
+
+If `len` is &lt; 0 or `pos` exceeds `this`.length, the result is the empty
+Array [].
+
+If `pos` is negative, its value is calculated from the end	of `this`
+Array by `this.length + pos`. If this yields a negative value, 0 is
+used instead.
+
+If the sum of the resulting values for `len` and `pos` exceed
+`this.length`, this operation will affect the elements from `pos` to the
+end of `this` Array.
+
+The length of the returned Array is equal to the new length of `this`
+Array subtracted from the original length of `this` Array. In other
+words, each element of the original `this` Array either remains in
+`this` Array or becomes an element of the returned Array.
+</code></pre></div></div><div class="platform platform-flash"><a name="toString"></a><h3><p><code><span class="keyword">function</span> <a href="#toString"><span class="identifier">toString</span></a>():<a class="type" href="./String.html">String</a></code></p></h3><div class="doc"><p>Returns a string representation of <code>this</code> Array.</p>
+<pre><code>The result will include the individual elements' String representations
+separated by comma. The enclosing [ ] may be missing on some platforms,
+use Std.string() to get a String representation that is consistent
+across platforms.
+</code></pre></div></div><div class="platform platform-flash"><a name="unshift"></a><h3><p><code><span class="keyword">function</span> <a href="#unshift"><span class="identifier">unshift</span></a>(x:<span class="type">T</span>):<a class="type" href="./Void.html">Void</a></code></p></h3><div class="doc"><p>Adds the element <code>x</code> at the start of <code>this</code> Array.</p>
+<pre><code>This operation modifies `this` Array in place.
+
+`this.length` and the index of each Array element increases by 1.
+</code></pre></div></div></div></div></div></body></html>

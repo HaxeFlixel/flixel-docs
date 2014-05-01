@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8"/><link href="../../bootstrap-combined.min.css" rel="stylesheet" /><script type="text/javascript" src="../../jquery-1.9.1.min.js"></script><script type="text/javascript" src="../../bootstrap.min.js"></script><link href="../../styles.css" rel="stylesheet" /><link rel="icon" href="../../favicon.ico" type="image/x-icon"></link><script type="text/javascript" src="../../nav.js"></script><script type="text/javascript" src="../../index.js"></script><script type="text/javascript">var dox = {rootPath: "../../",platforms: ["flash"]};</script><title>TextEvent</title></head><body><div class="navbar navbar-inverse navbar-fixed-top"><div class="navbar-inner"><form class="navbar-search pull-left" id="searchForm"><input id="search" type="text" class="search-query" placeholder="Filter" autocomplete="off"/></form><ul class="nav"><li id="select-platform" class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Platform<b class="caret"></b></a><ul class="dropdown-menu"><li data="all"><a href="#">All Platforms</a></li><li data="flash"><a href="#">flash</a></li></ul></li></ul></div></div><div id="container"><div id="nav"></div><div id="content"><div class="header"><h1><code><span class="directive">class </span><span class="type">flash.events.TextEvent</span><span class="keyword"> extends</span> <a class="type" href="../../flash/events/Event.html">Event</a></code></h1></div><div class="body"><p class="availability">Available on all platforms</p><div><table class="related-types toggle" style="margin-top:16px;"><tbody><tr><td colspan="2"><strong>Sub classes</strong></td></tr><tr><td width="12" style="vertical-align:top;"><a href="#" onclick="toggleInherited(this)"><img style="padding-top:4px;" src="../../triangle-closed.png"></img></a></td><td class="toggle-hide"><a href="../../flash/events/ErrorEvent.html">ErrorEvent</a></td><td class="toggle-show"><table class="table table-condensed"><tbody><tr><td width="200"><a href="../../flash/events/ErrorEvent.html">ErrorEvent</a></td><td><p>An object dispatches an ErrorEvent object when an error causes an
+ * asynchronous operation to fail.
+ <em>
+ * <p>The ErrorEvent class defines only one type of <code>error</code> event:
+ * <code>ErrorEvent.ERROR</code>. The ErrorEvent class also serves as the base
+ * class for several other error event classes, including the AsyncErrorEvent,
+ * IOErrorEvent, SecurityErrorEvent, SQLErrorEvent, and UncaughtErrorEvent
+ * classes.</p></td></tr></tbody></table></td></tr></tbody></table></div><div class="doc"><p>An object dispatches a TextEvent object when a user enters text in a text
+ * field or clicks a hyperlink in an HTML-enabled text field. There are two
+ * types of text events: <code>TextEvent.LINK</code> and
+ * <code>TextEvent.TEXT_INPUT</code>.</p></div><h2>Class Fields</h2><div class="platform platform-flash"><a name="LINK"></a><h3><p><code><span class="keyword">static </span><span class="keyword">var</span> <a href="#LINK"><span class="identifier">LINK</span></a>:<a class="type" href="../../String.html">String</a></code></p></h3><div class="doc"><p>Defines the value of the <code>type</code> property of a <code>link</code>
+ * event object.
+ *
+ * <p>This event has the following properties:</p></p></div></div><div class="platform platform-flash"><a name="TEXT_INPUT"></a><h3><p><code><span class="keyword">static </span><span class="keyword">var</span> <a href="#TEXT_INPUT"><span class="identifier">TEXT_INPUT</span></a>:<a class="type" href="../../String.html">String</a></code></p></h3><div class="doc"><p>Defines the value of the <code>type</code> property of a
+ * <code>textInput</code> event object.
+ <em>
+ * <p><b>Note:</b> This event is not dispatched for the Delete or Backspace
+ * keys.</p>
+ </em>
+ * <p>This event has the following properties:</p></p></div></div><h2>Instance Fields</h2><div class="platform platform-flash"><a name="text"></a><h3><p><code><span class="keyword">var</span> <a href="#text"><span class="identifier">text</span></a>:<a class="type" href="../../String.html">String</a></code></p></h3><div class="doc"><p>For a <code>textInput</code> event, the character or sequence of
+ * characters entered by the user. For a <code>link</code> event, the text of
+ * the <code>event</code> attribute of the <code>href</code> attribute of the
+ * <code><a></code> tag.</p></div></div><div class="platform platform-flash"><a name="new"></a><h3><p><code><span class="keyword">function</span> <a href="#new"><span class="identifier">new</span></a>(type:<a class="type" href="../../String.html">String</a>, ?bubbles:<a class="type" href="../../Bool.html">Bool</a>, ?cancelable:<a class="type" href="../../Bool.html">Bool</a>, ?text:<a class="type" href="../../String.html">String</a>):<a class="type" href="../../Void.html">Void</a></code></p></h3><div class="doc"><p>Creates an Event object that contains information about text events. Event
+ * objects are passed as parameters to event listeners.
+ * 
+ * </p><table class="table table-condensed"><tbody><tr><td>type</td><td><p>The type of the event. Event listeners can access this
+ *                   information through the inherited <code>type</code>
+ *                   property. Possible values are:
+ *                   <code>TextEvent.LINK</code> and
+ *                   <code>TextEvent.TEXT_INPUT</code>.
+ * </p></td></tr><tr><td>bubbles</td><td><p>Determines whether the Event object participates in the
+ *                   bubbling phase of the event flow. Event listeners can
+ *                   access this information through the inherited
+ *                   <code>bubbles</code> property.
+ * </p></td></tr><tr><td>cancelable</td><td><p>Determines whether the Event object can be canceled.
+<em>                   Event listeners can access this information through the
+</em>                   inherited <code>cancelable</code> property.
+* </p></td></tr><tr><td>text</td><td><p>One or more characters of text entered by the user.
+ *                   Event listeners can access this information through the
+ *                   <code>text</code> property.</p></td></tr></tbody></table></div></div></div></div></div></body></html>

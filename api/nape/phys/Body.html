@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8"/><link href="../../bootstrap-combined.min.css" rel="stylesheet" /><script type="text/javascript" src="../../jquery-1.9.1.min.js"></script><script type="text/javascript" src="../../bootstrap.min.js"></script><link href="../../styles.css" rel="stylesheet" /><link rel="icon" href="../../favicon.ico" type="image/x-icon"></link><script type="text/javascript" src="../../nav.js"></script><script type="text/javascript" src="../../index.js"></script><script type="text/javascript">var dox = {rootPath: "../../",platforms: ["flash"]};</script><title>Body</title></head><body><div class="navbar navbar-inverse navbar-fixed-top"><div class="navbar-inner"><form class="navbar-search pull-left" id="searchForm"><input id="search" type="text" class="search-query" placeholder="Filter" autocomplete="off"/></form><ul class="nav"><li id="select-platform" class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Platform<b class="caret"></b></a><ul class="dropdown-menu"><li data="all"><a href="#">All Platforms</a></li><li data="flash"><a href="#">flash</a></li></ul></li></ul></div></div><div id="container"><div id="nav"></div><div id="content"><div class="header"><h1><code><span class="directive">class </span><span class="type">nape.phys.Body</span><span class="keyword"> extends</span> <a class="type" href="../../nape/phys/Interactor.html">Interactor</a></code></h1></div><div class="body"><p class="availability">Available on all platforms</p><div class="doc"><p>Class representing a physics Rigid Body.</p></div><h2>Instance Fields</h2><div class="platform platform-flash"><a name="allowMovement"></a><h3><p><code><span class="keyword">var</span> <a href="#allowMovement"><span class="identifier">allowMovement</span></a>:<a class="type" href="../../Bool.html">Bool</a></code></p></h3><div class="doc"><p>Whether dynamic Body is permitted to be moved by physics linearly.
+     * <br/><br/>
+     * When this field is false, no physics will be able to cause a change in the
+     * bodies linear velocity (It can still move, but only if you tell it to like
+     * a kinematic body).
+     *
+     * @default true</p></div></div><div class="platform platform-flash"><a name="allowRotation"></a><h3><p><code><span class="keyword">var</span> <a href="#allowRotation"><span class="identifier">allowRotation</span></a>:<a class="type" href="../../Bool.html">Bool</a></code></p></h3><div class="doc"><p>Whether dynamic Body is permitted to be rotated by physics.
+     * <br/><br/>
+     * When this field is false, no physics will be able to cause a change in the
+     * bodies angular velocity (It can still rotate, but only if you tell it to like
+     * a kinematic body).
+     *
+     * @default true</p></div></div><div class="platform platform-flash"><a name="angularVel"></a><h3><p><code><span class="keyword">var</span> <a href="#angularVel"><span class="identifier">angularVel</span></a>:<a class="type" href="../../Float.html">Float</a></code></p></h3><div class="doc"><p>Angular velocity of Body in clockwise rad/s
+     * <br/><br/>
+     * A static body cannot have its angular velocity set.
+     *
+     * @default 0</p></div></div><div class="platform platform-flash"><a name="arbiters"></a><h3><p><code><span class="keyword">var</span> <a href="#arbiters"><span class="identifier">arbiters</span></a>:<a class="type" href="../../nape/dynamics/ArbiterList.html">ArbiterList</a></code></p></h3><div class="doc"><p>Set of active arbiters related to this Body.
+     * <br/><br/>
+     * This list is immutable.</p></div></div><div class="platform platform-flash"><a name="bounds"></a><h3><p><code><span class="keyword">var</span> <a href="#bounds"><span class="identifier">bounds</span></a>:<a class="type" href="../../nape/geom/AABB.html">AABB</a></code></p></h3><div class="doc"><p>Bounding box of Body in world space.
+     * <br/><br/>
+     * This value can be accessed even if there are no Shapes in the Body, but
+     * attempting to query its values whilst there are no Shapes will result
+     * in a debug build error.
+     * <br/><br/>
+     * This AABB is immutable.</p></div></div><div class="platform platform-flash"><a name="compound"></a><h3><p><code><span class="keyword">var</span> <a href="#compound"><span class="identifier">compound</span></a>:<a class="type" href="../../Null.html">Null</a>&lt;<a class="type" href="../../nape/phys/Compound.html">Compound</a>&gt;</code></p></h3><div class="doc"><p>Compound this Body belongs to.
+     * <br/><br/>
+     * If this Body belongs to a Compound, then the Compound 'owns' this Body and
+     * it is the Compound which would be added/removed from a Space rather than
+     * this Body.
+     *
+     * @default null</p></div></div><div class="platform platform-flash"><a name="constraintInertia"></a><h3><p><code><span class="keyword">var</span> <a href="#constraintInertia"><span class="identifier">constraintInertia</span></a>:<a class="type" href="../../Float.html">Float</a></code></p></h3><div class="doc"><p>Moment of inertia to be used in user defined Constraints.
+     * <br/><br/>
+     * This value is equal to the inverse inertia of the Body taking into account
+     * Body type (Static and Kinematic bodies will have constraintInertia of 0).
+     * As well as properties like allowRotation.</p></div></div><div class="platform platform-flash"><a name="constraintMass"></a><h3><p><code><span class="keyword">var</span> <a href="#constraintMass"><span class="identifier">constraintMass</span></a>:<a class="type" href="../../Float.html">Float</a></code></p></h3><div class="doc"><p>Mass to be used for a Body in User built constraints.
+     * <br/><br/>
+     * This value is given as the inverse mass of the Body taking into account
+     * Body type (Static and Kinematic Bodies will have constraintMass of 0)
+     * as well as properties like allowMovement.</p></div></div><div class="platform platform-flash"><a name="constraintVelocity"></a><h3><p><code><span class="keyword">var</span> <a href="#constraintVelocity"><span class="identifier">constraintVelocity</span></a>:<a class="type" href="../../nape/geom/Vec3.html">Vec3</a></code></p></h3><div class="doc"><p>This property represents the velocity seen by constraint physics.
+     * <br/><br/>
+     * You should not need to use this property unless writing your own
+     * constraints using the UserConstraint API.</p></div></div><div class="platform platform-flash"><a name="constraints"></a><h3><p><code><span class="keyword">var</span> <a href="#constraints"><span class="identifier">constraints</span></a>:<a class="type" href="../../nape/constraint/ConstraintList.html">ConstraintList</a></code></p></h3><div class="doc"><p>Set of constraints using this Body.
+     * <br/><br/>
+     * This list contains those constraints that are inside of a Space only.
+     * <br/><br/>
+     * This list is immutable.</p></div></div><div class="platform platform-flash"><a name="debugDraw"></a><h3><p><code><span class="keyword">var</span> <a href="#debugDraw"><span class="identifier">debugDraw</span></a>:<a class="type" href="../../Bool.html">Bool</a></code></p></h3><div class="doc"><p>Set to disable debug drawing/
+     * <br/><br/>
+     * When true, this Body will not be drawn during debug draw operations
+     * unless specifically given as argument to Debug draw() method.
+     * @default true</p></div></div><div class="platform platform-flash"><a name="disableCCD"></a><h3><p><code><span class="keyword">var</span> <a href="#disableCCD"><span class="identifier">disableCCD</span></a>:<a class="type" href="../../Bool.html">Bool</a></code></p></h3><div class="doc"><p>Declare object should never be collided continuously
+     * <br/><br/>
+     * When performing continuous collisions, Nape will check both Bodies to see
+     * if either has opted-out of CCD. If either Body has this flag true, then
+     * no CCD will be performed for that pair.
+     * @default false</p></div></div><div class="platform platform-flash"><a name="force"></a><h3><p><code><span class="keyword">var</span> <a href="#force"><span class="identifier">force</span></a>:<a class="type" href="../../nape/geom/Vec2.html">Vec2</a></code></p></h3><div class="doc"><p>Accumulated force acting on body in px.kg/s/s
+     * <br/><br/>
+     * This value is not used internally for any physics computations.
+     * <br/><br/>
+     * You may set this property only on dynamic bodies.
+     *
+     * @default (0,0)</p></div></div><div class="platform platform-flash"><a name="gravMass"></a><h3><p><code><span class="keyword">var</span> <a href="#gravMass"><span class="identifier">gravMass</span></a>:<a class="type" href="../../Float.html">Float</a></code></p></h3><div class="doc"><p>Mass used in gravity computations in a Space.
+     * <br/><br/>
+     * Setting this value will implicitly change the gravMassMode to FIXED.
+     * <br/>
+     * Set to 0 to disable gravity for this Body.</p></div></div><div class="platform platform-flash"><a name="gravMassMode"></a><h3><p><code><span class="keyword">var</span> <a href="#gravMassMode"><span class="identifier">gravMassMode</span></a>:<a class="type" href="../../nape/phys/GravMassMode.html">GravMassMode</a></code></p></h3><div class="doc"><p>Method of computing mass as seen by gravity.
+     * <br/><br/>
+     * This value will be implicitly set by modifying gravMass or gravMassScale properties.
+     *
+     * @default GravMassMode.DEFAULT</p></div></div><div class="platform platform-flash"><a name="gravMassScale"></a><h3><p><code><span class="keyword">var</span> <a href="#gravMassScale"><span class="identifier">gravMassScale</span></a>:<a class="type" href="../../Float.html">Float</a></code></p></h3><div class="doc"><p>Mass scale used in computation of gravity for Body in Space.
+     * <br/><br/>
+     * Setting this value will implicitly change the gravMassMode to SCALED.
+     * <br/>
+     * When set, the gravMass of Body will be computed as this scaling factor
+     * multiplied with the Body's mass.</p></div></div><div class="platform platform-flash"><a name="inertia"></a><h3><p><code><span class="keyword">var</span> <a href="#inertia"><span class="identifier">inertia</span></a>:<a class="type" href="../../Float.html">Float</a></code></p></h3><div class="doc"><p>Moment of inertia of this Body.
+     * <br/><br/>
+     * Setting this value will implicitly change the inertiaMode to FIXED.</p></div></div><div class="platform platform-flash"><a name="inertiaMode"></a><h3><p><code><span class="keyword">var</span> <a href="#inertiaMode"><span class="identifier">inertiaMode</span></a>:<a class="type" href="../../nape/phys/InertiaMode.html">InertiaMode</a></code></p></h3><div class="doc"><p>Method of computing Body moment of inertia.
+     * <br/><br/>
+     * This value will be set implicitly by modifying Body inertia property.
+     *
+     * @default InertiaMode.DEFAULT</p></div></div><div class="platform platform-flash"><a name="isBullet"></a><h3><p><code><span class="keyword">var</span> <a href="#isBullet"><span class="identifier">isBullet</span></a>:<a class="type" href="../../Bool.html">Bool</a></code></p></h3><div class="doc"><p>Mark object for continuous collisions against other dynamic Bodies
+     * <br/><br/>
+     * If true, then this Body will undergo continuous collisions with other
+     * dynamic Bodies. This flag has no effect for non-dynamic Bodies.
+     * <br/><br/>
+     * This flag should only be set for very fast, small moving dynamic bodies,
+     * and due to the way continuous collisions are resolved it is not wise to
+     * enable this for a large group of bodies that interact together as it
+     * will lead to visual stalling.
+     * <br/>
+     * Bullets also do not play well when existing in a group with respect to
+     * continuous collisions against kinematic objects and may cause
+     * tunnelling against the kinematic.
+     * @default false</p></div></div><div class="platform platform-flash"><a name="isSleeping"></a><h3><p><code><span class="keyword">var</span> <a href="#isSleeping"><span class="identifier">isSleeping</span></a>:<a class="type" href="../../Bool.html">Bool</a></code></p></h3><div class="doc"><p>Whether this body is sleeping.
+     * <br/><br/>
+     * This value is immutable, In Nape you do not ever need to manually wake up a Body.
+     * It will always be done automatically without error.
+     * <br/><br/>
+     * To manually put a Body to sleep is against the very nature of Nape API
+     * and so is excluded from the core of Nape. If you really want to do this
+     * then you should make use of the nape-hacks module.</p></div></div><div class="platform platform-flash"><a name="kinAngVel"></a><h3><p><code><span class="keyword">var</span> <a href="#kinAngVel"><span class="identifier">kinAngVel</span></a>:<a class="type" href="../../Float.html">Float</a></code></p></h3><div class="doc"><p>Additional kinematic angular velocity of Body in rad/s.
+     * <br/><br/>
+     * A bodies 'kinematic' velocity is an added velocity bias used in all physics
+     * computations but that will not effect how the Body moves directly.
+     * <br/><br/>
+     * Even a static body can be given a kinematic velocity, and can be used for
+     * such things as giving a body of water a fluid-velocity for fluid drag
+     * computations.
+     *
+     * @default 0</p></div></div><div class="platform platform-flash"><a name="kinematicVel"></a><h3><p><code><span class="keyword">var</span> <a href="#kinematicVel"><span class="identifier">kinematicVel</span></a>:<a class="type" href="../../nape/geom/Vec2.html">Vec2</a></code></p></h3><div class="doc"><p>Additional kinematic velocity of Body in px/s.
+     * <br/><br/>
+     * A bodies 'kinematic' velocity is an added velocity bias used in all physics
+     * computations but that will not effect how the Body moves directly.
+     * <br/><br/>
+     * Even a static body can be given a kinematic velocity, and can be used for
+     * such things as giving a body of water a fluid-velocity for fluid drag
+     * computations.
+     *
+     * @default (0,0)</p></div></div><div class="platform platform-flash"><a name="localCOM"></a><h3><p><code><span class="keyword">var</span> <a href="#localCOM"><span class="identifier">localCOM</span></a>:<a class="type" href="../../nape/geom/Vec2.html">Vec2</a></code></p></h3><div class="doc"><p>Local centre of mass of Body.
+     * <br/><br/>
+     * This value can be accessed even if Body has no shapes, but attempting
+     * to query its values will result in a debug build error.
+     * <br/><br/>
+     * This Vec2 is immutable.</p></div></div><div class="platform platform-flash"><a name="mass"></a><h3><p><code><span class="keyword">var</span> <a href="#mass"><span class="identifier">mass</span></a>:<a class="type" href="../../Float.html">Float</a></code></p></h3><div class="doc"><p>Mass of the Body.
+     * <br/><br/>
+     * This value is computed by default based on the Body's Shape's areas and
+     * Material densities.
+     * <br/>
+     * When massMode is DEFAULT, accessing this value for an empty Body will thus
+     * give an error as the value is undefined.
+     * <br/><br/>
+     * Setting this value will permit you to give a fixed mass to the Body
+     * implicitly changing the massMode to MassMode.FIXED</p></div></div><div class="platform platform-flash"><a name="massMode"></a><h3><p><code><span class="keyword">var</span> <a href="#massMode"><span class="identifier">massMode</span></a>:<a class="type" href="../../nape/phys/MassMode.html">MassMode</a></code></p></h3><div class="doc"><p>Method of mass computation for Body.
+     * <br/><br/>
+     * This value will be set implicitly to FIXED when mass property is set.
+     * <br/>Setting back to DEFAULT will then set mass implicitly back to the default
+     * computed mass.
+     *
+     * @default MassMode.DEFAULT</p></div></div><div class="platform platform-flash"><a name="position"></a><h3><p><code><span class="keyword">var</span> <a href="#position"><span class="identifier">position</span></a>:<a class="type" href="../../nape/geom/Vec2.html">Vec2</a></code></p></h3><div class="doc"><p>Position of Body's origin in px.
+     * <br/><br/>
+     * This value can be set and is equivalent to: <code>this.position.set(value)</code>
+     * <br/><br/>
+     * Attempting to set this value on a static Body that is in a Space will result
+     * in a debug build error.
+     * <br/><br/>
+     * Please note that for kinematic objects, setting this value is equiavalent
+     * to 'teleporting' the object, and for normal movement you should be using
+     * the kinematic body's velocity.
+     *
+     * @default (0,0)</p></div></div><div class="platform platform-flash"><a name="rotation"></a><h3><p><code><span class="keyword">var</span> <a href="#rotation"><span class="identifier">rotation</span></a>:<a class="type" href="../../Float.html">Float</a></code></p></h3><div class="doc"><p>Rotation of Body in clockwise rad.
+     * <br/><br/>
+     * Attempting to set this value on a static Body that is in a Space will result
+     * in a debug build error.
+     * <br/><br/>
+     * Please note that for kinematic objects, setting this value is equiavalent
+     * to 'teleporting' the object, and for normal movement you should be using
+     * the kinematic body's angularVel.
+     *
+     * @default 0</p></div></div><div class="platform platform-flash"><a name="shapes"></a><h3><p><code><span class="keyword">var</span> <a href="#shapes"><span class="identifier">shapes</span></a>:<a class="type" href="../../nape/shape/ShapeList.html">ShapeList</a></code></p></h3><div class="doc"><p>List of shapes owned by Body.
+     * <br/><br/>
+     * Appending a Shape to this list is equivalent to <code>shape.body = this</code>
+     *
+     * @default []</p></div></div><div class="platform platform-flash"><a name="space"></a><h3><p><code><span class="keyword">var</span> <a href="#space"><span class="identifier">space</span></a>:<a class="type" href="../../Null.html">Null</a>&lt;<a class="type" href="../../nape/space/Space.html">Space</a>&gt;</code></p></h3><div class="doc"><p>Space this Body is assigned to.
+     * <br/><br/>
+     * When this Body is part of a Compound, this value is immutable.
+     * <br/>
+     * When a Body is part of a Compound it is owned by that Compound and it
+     * is the Compound that is added/removed from a Space.</p></div></div><div class="platform platform-flash"><a name="surfaceVel"></a><h3><p><code><span class="keyword">var</span> <a href="#surfaceVel"><span class="identifier">surfaceVel</span></a>:<a class="type" href="../../nape/geom/Vec2.html">Vec2</a></code></p></h3><div class="doc"><p>Additional surface velocity for Body in px/s.
+     * <br/><br/>
+     * A bodies 'surface' velocity is an added velocity bias that is rotated to match
+     * the angle of the contact surface used in contact physics and will not
+     * effect how the Body moves directly.
+     * <br/><br/>
+     * Even a static body can be given a surface velocity, and can be used for
+     * such things as conveyor belts (By setting the x-component of surfaceVel).
+     *
+     * @default (0,0)</p></div></div><div class="platform platform-flash"><a name="torque"></a><h3><p><code><span class="keyword">var</span> <a href="#torque"><span class="identifier">torque</span></a>:<a class="type" href="../../Float.html">Float</a></code></p></h3><div class="doc"><p>Accumulated torque acting on body in px.px.kg/s/s
+     * <br/><br/>
+     * This value is not used internally for any physics computations.
+     * <br/><br/>
+     * You may set this property only on dynamic bodies.
+     *
+     * @default 0</p></div></div><div class="platform platform-flash"><a name="type"></a><h3><p><code><span class="keyword">var</span> <a href="#type"><span class="identifier">type</span></a>:<a class="type" href="../../nape/phys/BodyType.html">BodyType</a></code></p></h3><div class="doc"><p>Type of body.
+     * <br/><br/>
+     * This value can be changed even if Body is inside of a Space.</p></div></div><div class="platform platform-flash"><a name="velocity"></a><h3><p><code><span class="keyword">var</span> <a href="#velocity"><span class="identifier">velocity</span></a>:<a class="type" href="../../nape/geom/Vec2.html">Vec2</a></code></p></h3><div class="doc"><p>Linear velocity of Body's origin in px/s.
+     * <br/><br/>
+     * This value can be set and is equivalent to: <code>this.velocity.set(value)</code>
+     * <br/><br/>
+     * A static body cannot have its velocity set.
+     *
+     * @default (0,0)</p></div></div><div class="platform platform-flash"><a name="worldCOM"></a><h3><p><code><span class="keyword">var</span> <a href="#worldCOM"><span class="identifier">worldCOM</span></a>:<a class="type" href="../../nape/geom/Vec2.html">Vec2</a></code></p></h3><div class="doc"><p>World centre of mass of Body.
+     * <br/><br/>
+     * This value can be accessed even if Body has no shapes, but attempting
+     * to query its values will result in a debug build error.
+     * <br/><br/>
+     * This Vec2 is immutable.</p></div></div><div class="platform platform-flash"><a name="zpp_inner"></a><h3><p><code><span class="keyword">var</span> <a href="#zpp_inner"><span class="identifier">zpp_inner</span></a>:<a class="type" href="../../zpp_nape/phys/ZPP_Body.html">ZPP_Body</a></code></p></h3><div class="doc"><p>@private</p></div></div><div class="platform platform-flash"><a name="new"></a><h3><p><code><span class="keyword">function</span> <a href="#new"><span class="identifier">new</span></a>(?type:<a class="type" href="../../nape/phys/BodyType.html">BodyType</a> = null, ?position:<a class="type" href="../../nape/geom/Vec2.html">Vec2</a> = null):<a class="type" href="../../Void.html">Void</a></code></p></h3><div class="doc"><p>Construct a new Body.
+     * <br/><br/>
+     * </p><table class="table table-condensed"><tbody><tr><td>type</td><td><p>The type of Body to create. (default DYNAMIC)
+    * </p></td></tr><tr><td>position</td><td><p>The initial position for object. (default &#40;0,0&#41;)
+    * </p></td></tr><tr><td>returns</td><td><p>The newly constructed Body.
+* </p></td></tr></tbody></table></div></div><div class="platform platform-flash"><a name="align"></a><h3><p><code><span class="keyword">function</span> <a href="#align"><span class="identifier">align</span></a>():<a class="type" href="../../nape/phys/Body.html">Body</a></code></p></h3><div class="doc"><p>Align rigid body so that its origin is also its centre of mass.
+     * <br/><br/>
+     * This operation will both translate the Shapes inside of the Body,
+     * as well as translating the Body itself so that its 'apparent' position
+     * has not been modified.
+     * <br/><br/>
+     * Alignment of Rigid bodies is necessary for dynamic bodies so that
+     * they will interact and rotate as expected.
+     * <br/><br/>
+     * Simple Body's created with a single Polygon.box() or basic Circle
+     * will already be aligned.
+     *
+     * </p><table class="table table-condensed"><tbody><tr><td>returns</td><td><p>A reference to this Body.</p></td></tr></tbody></table></div></div><div class="platform platform-flash"><a name="applyAngularImpulse"></a><h3><p><code><span class="keyword">function</span> <a href="#applyAngularImpulse"><span class="identifier">applyAngularImpulse</span></a>(impulse:<a class="type" href="../../Float.html">Float</a>, ?sleepable:<a class="type" href="../../Bool.html">Bool</a> = false):<a class="type" href="../../nape/phys/Body.html">Body</a></code></p></h3><div class="doc"><p>Apply a pure angular impulse to Body.
+     *
+     * </p><table class="table table-condensed"><tbody><tr><td>impulse</td><td><p>The angular impulse to apply.
+    * </p></td></tr><tr><td>sleepable</td><td><p>This parameter can be set to true, in the case that you
+    *                  are constantly applying an impulse which is dependent only
+    *                  on the position/velocity of the body meaning that application
+    *                  of this impulse does not need to prevent the object from sleeping.
+    *                  When true, and the body is sleeping, this method call will not
+    *                  apply any impulse.
+    *                  (default false).
+    * </p></td></tr><tr><td>returns</td><td><p>A reference to 'this' Body.</p></td></tr></tbody></table></div></div><div class="platform platform-flash"><a name="applyImpulse"></a><h3><p><code><span class="keyword">function</span> <a href="#applyImpulse"><span class="identifier">applyImpulse</span></a>(impulse:<a class="type" href="../../nape/geom/Vec2.html">Vec2</a>, ?pos:<a class="type" href="../../nape/geom/Vec2.html">Vec2</a> = null, ?sleepable:<a class="type" href="../../Bool.html">Bool</a> = false):<a class="type" href="../../nape/phys/Body.html">Body</a></code></p></h3><div class="doc"><p>Apply impulse to a point on Body.
+     * <br/><br/>
+     * If position argument is not given, then body.position is assumed so that impulse
+     * is applied at centre of Body.
+     *
+     * </p><table class="table table-condensed"><tbody><tr><td>impulse</td><td><p>The impulse to apply given in world coordinates.
+    * </p></td></tr><tr><td>pos</td><td><p>The position to apply impulse given in world coordinates.
+    *            (default body.position)
+    * </p></td></tr><tr><td>sleepable</td><td><p>This parameter can be set to true, in the case that you
+    *                  are constantly applying an impulse which is dependent only
+    *                  on the position/velocity of the body meaning that application
+    *                  of this impulse does not need to prevent the object from sleeping.
+    *                  When true, and the body is sleeping, this method call will not
+    *                  apply any impulse.
+    *                  (default false).
+    * </p></td></tr><tr><td>returns</td><td><p>A reference to 'this' Body.</p></td></tr></tbody></table></div></div><div class="platform platform-flash"><a name="buoyancyImpulse"></a><h3><p><code><span class="keyword">function</span> <a href="#buoyancyImpulse"><span class="identifier">buoyancyImpulse</span></a>(?body:<a class="type" href="../../nape/phys/Body.html">Body</a> = null):<a class="type" href="../../nape/geom/Vec3.html">Vec3</a></code></p></h3><div class="doc"><p>Evaluate sum effect of all buoyancy impulses acting on Body.
+     * <br/>&lt;br/
+     * If the body argument is non-null, then only impulses between 'this' and
+     * the given Body will be considered.
+     *
+     * </p><table class="table table-condensed"><tbody><tr><td>body</td><td><p>The Body to restrict consideration of impulses with.
+    *             (default null)
+    * </p></td></tr><tr><td>returns</td><td><p>The summed effect of impulses acting on Body.</p></td></tr></tbody></table></div></div><div class="platform platform-flash"><a name="connectedBodies"></a><h3><p><code><span class="keyword">function</span> <a href="#connectedBodies"><span class="identifier">connectedBodies</span></a>(?depth:<a class="type" href="../../Int.html">Int</a> = -1, ?output:<a class="type" href="../../nape/phys/BodyList.html">BodyList</a> = null):<a class="type" href="../../nape/phys/BodyList.html">BodyList</a></code></p></h3><div class="doc"><p>Compute set of bodies connected via constraints.
+     * <br/><br/>
+     * Only constraints that are inside of a Space will be considered the
+     * same way that the body's constraints list only tracks constraints
+     * that are part of a simulation.
+     *
+     * </p><table class="table table-condensed"><tbody><tr><td>depth</td><td><p>Control the depth limit of the graph search. Negative
+    *              values indicate an unlimited search. A depth value of
+    *              0 would cause only the current Body to be returned.
+    *              (default -1)
+    * </p></td></tr><tr><td>output</td><td><p>An optional list to append results to, if left as null
+    *               then a new list is created.
+    * </p></td></tr><tr><td>returns</td><td><p>A list of the connected bodies up to
+*         the given graph depth.</p></td></tr></tbody></table></div></div><div class="platform platform-flash"><a name="constraintsImpulse"></a><h3><p><code><span class="keyword">function</span> <a href="#constraintsImpulse"><span class="identifier">constraintsImpulse</span></a>():<a class="type" href="../../nape/geom/Vec3.html">Vec3</a></code></p></h3><div class="doc"><p>Evaluate sum effect of all constraint impulses on this Body.
+     *
+     * </p><table class="table table-condensed"><tbody><tr><td>returns</td><td><p>The summed effect of constraint impulses acting on Body.</p></td></tr></tbody></table></div></div><div class="platform platform-flash"><a name="contains"></a><h3><p><code><span class="keyword">function</span> <a href="#contains"><span class="identifier">contains</span></a>(point:<a class="type" href="../../nape/geom/Vec2.html">Vec2</a>):<a class="type" href="../../Bool.html">Bool</a></code></p></h3><div class="doc"><p>Determine if point is contained in Body.
+     *
+     * </p><table class="table table-condensed"><tbody><tr><td>point</td><td><p>The point to test containment for in world coordinates.
+    * </p></td></tr><tr><td>returns</td><td><p>True if point is contained.
+* </p></td></tr></tbody></table></div></div><div class="platform platform-flash"><a name="copy"></a><h3><p><code><span class="keyword">function</span> <a href="#copy"><span class="identifier">copy</span></a>():<a class="type" href="../../nape/phys/Body.html">Body</a></code></p></h3><div class="doc"><p>Construct an exact copy of this Body.
+     * <br/><br/>
+     * All properties will be exactly copied, with Shapes also
+     * being copied with the copied Body's and Shape's userData
+     * objects being assigned the same fields as the existing ones with
+     * values copied over by reference for object types.
+     *
+     * </p><table class="table table-condensed"><tbody><tr><td>returns</td><td><p>A copy of this Body.</p></td></tr></tbody></table></div></div><div class="platform platform-flash"><a name="crushFactor"></a><h3><p><code><span class="keyword">function</span> <a href="#crushFactor"><span class="identifier">crushFactor</span></a>():<a class="type" href="../../Float.html">Float</a></code></p></h3><div class="doc"><p>Determine how much this body is being crushed.
+     * <br/><br/>
+     * This is an approximate value, computed as:
+     * <code>crushFactor = (sum(magnitude(impulse)) - magnitude(sum(impulse))) / mass</code>
+     * <br/><br/>
+     * In this way, it is a mass and time step invariant value which is 0 when all impulses
+     * are acting on body in the same direction, and has maximum value when impulses
+     * act in opposing directions 'crushing' the Body.
+     *
+     * </p><table class="table table-condensed"><tbody><tr><td>returns</td><td><p>A positive value representing an approximation to how much the
+<em>         body is being crushed.
+</em> </p></td></tr></tbody></table></div></div><div class="platform platform-flash"><a name="dragImpulse"></a><h3><p><code><span class="keyword">function</span> <a href="#dragImpulse"><span class="identifier">dragImpulse</span></a>(?body:<a class="type" href="../../nape/phys/Body.html">Body</a> = null):<a class="type" href="../../nape/geom/Vec3.html">Vec3</a></code></p></h3><div class="doc"><p>Evaluate sum effect of all fluid drag impulses acting on Body.
+     * <br/>&lt;br/
+     * If the body argument is non-null, then only impulses between 'this' and
+     * the given Body will be considered.
+     *
+     * </p><table class="table table-condensed"><tbody><tr><td>body</td><td><p>The Body to restrict consideration of impulses with.
+    *             (default null)
+    * </p></td></tr><tr><td>returns</td><td><p>The summed effect of impulses acting on Body.</p></td></tr></tbody></table></div></div><div class="platform platform-flash"><a name="integrate"></a><h3><p><code><span class="keyword">function</span> <a href="#integrate"><span class="identifier">integrate</span></a>(deltaTime:<a class="type" href="../../Float.html">Float</a>):<a class="type" href="../../nape/phys/Body.html">Body</a></code></p></h3><div class="doc"><p>Integrate body forward in time, taking only velocities into account.
+     *
+     * </p><table class="table table-condensed"><tbody><tr><td>deltaTime</td><td><p>The time to integrate body by. This value may be negative to
+    *                  integrate back in time.
+    * </p></td></tr><tr><td>returns</td><td><p>A refernce to 'this' Body</p></td></tr></tbody></table></div></div><div class="platform platform-flash"><a name="interactingBodies"></a><h3><p><code><span class="keyword">function</span> <a href="#interactingBodies"><span class="identifier">interactingBodies</span></a>(?type:<a class="type" href="../../nape/callbacks/InteractionType.html">InteractionType</a> = null, ?depth:<a class="type" href="../../Int.html">Int</a> = -1, ?output:<a class="type" href="../../nape/phys/BodyList.html">BodyList</a> = null):<a class="type" href="../../nape/phys/BodyList.html">BodyList</a></code></p></h3><div class="doc"><p>Compute set of bodies interacting with this body.
+     *
+     * </p><table class="table table-condensed"><tbody><tr><td>type</td><td><p>When not equal to null, this parameter controls what sort
+    *             of interaction we permit in the search.
+    * </p></td></tr><tr><td>depth</td><td><p>Control the depth limit of the graph search. Negative
+    *              values indicate an unlimited search. A depth value of
+    *              0 would cause only the current Body to be returned.
+    *              (default -1)
+    * </p></td></tr><tr><td>output</td><td><p>An optional list to append results to, if left as null
+    *               then a new list is created.
+    * </p></td></tr><tr><td>returns</td><td><p>A list of the interacting bodies up to
+*         the given graph depth.</p></td></tr></tbody></table></div></div><div class="platform platform-flash"><a name="isDynamic"></a><h3><p><code><span class="keyword">function</span> <a href="#isDynamic"><span class="identifier">isDynamic</span></a>():<a class="type" href="../../Bool.html">Bool</a></code></p></h3><div class="doc"><p>Fast equivalent to <code>body.type == BodyType.DYNAMIC</code>
+     * </p><table class="table table-condensed"><tbody><tr><td>returns</td><td><p>True if body is Dynamic.</p></td></tr></tbody></table></div></div><div class="platform platform-flash"><a name="isKinematic"></a><h3><p><code><span class="keyword">function</span> <a href="#isKinematic"><span class="identifier">isKinematic</span></a>():<a class="type" href="../../Bool.html">Bool</a></code></p></h3><div class="doc"><p>Fast equivalent to <code>body.type == BodyType.KINEMATIC</code>
+     * </p><table class="table table-condensed"><tbody><tr><td>returns</td><td><p>True if body is Kinematic.</p></td></tr></tbody></table></div></div><div class="platform platform-flash"><a name="isStatic"></a><h3><p><code><span class="keyword">function</span> <a href="#isStatic"><span class="identifier">isStatic</span></a>():<a class="type" href="../../Bool.html">Bool</a></code></p></h3><div class="doc"><p>Fast equivalent to <code>body.type == BodyType.STATIC</code>
+     * </p><table class="table table-condensed"><tbody><tr><td>returns</td><td><p>True if body is Static.</p></td></tr></tbody></table></div></div><div class="platform platform-flash"><a name="localPointToWorld"></a><h3><p><code><span class="keyword">function</span> <a href="#localPointToWorld"><span class="identifier">localPointToWorld</span></a>(point:<a class="type" href="../../nape/geom/Vec2.html">Vec2</a>, ?weak:<a class="type" href="../../Bool.html">Bool</a> = false):<a class="type" href="../../nape/geom/Vec2.html">Vec2</a></code></p></h3><div class="doc"><p>Transform a point from Body's local coordinates to world coordinates.
+     *
+     * </p><table class="table table-condensed"><tbody><tr><td>point</td><td><p>The point to transform.
+    * </p></td></tr><tr><td>weak</td><td><p>If true the returned Vec2 will be automatically released
+    *             back to object pool when used as an argument to a Nape function.
+    *             (default false)
+    * </p></td></tr><tr><td>returns</td><td><p>The result of the transformation.
+* </p></td></tr></tbody></table></div></div><div class="platform platform-flash"><a name="localVectorToWorld"></a><h3><p><code><span class="keyword">function</span> <a href="#localVectorToWorld"><span class="identifier">localVectorToWorld</span></a>(vector:<a class="type" href="../../nape/geom/Vec2.html">Vec2</a>, ?weak:<a class="type" href="../../Bool.html">Bool</a> = false):<a class="type" href="../../nape/geom/Vec2.html">Vec2</a></code></p></h3><div class="doc"><p>Transform vector from Body's local coordinates into world coordinates.
+     * <br/><br/>
+     *
+     * </p><table class="table table-condensed"><tbody><tr><td>vector</td><td><p>The vector to transform.
+    * </p></td></tr><tr><td>weak</td><td><p>If true the returned Vec2 will be automatically released
+    *             back to object pool when used as an argument to a Nape function.
+    *             (default false)
+    * </p></td></tr><tr><td>returns</td><td><p>The result of the transformation.
+* </p></td></tr></tbody></table></div></div><div class="platform platform-flash"><a name="normalImpulse"></a><h3><p><code><span class="keyword">function</span> <a href="#normalImpulse"><span class="identifier">normalImpulse</span></a>(?body:<a class="type" href="../../nape/phys/Body.html">Body</a> = null, ?freshOnly:<a class="type" href="../../Bool.html">Bool</a> = false):<a class="type" href="../../nape/geom/Vec3.html">Vec3</a></code></p></h3><div class="doc"><p>Evaluate sum effect of all normal contact impulses on Body.
+     * <br/><br/>
+     * If the body argument is non-null, then only impulses between 'this' and
+     * the given Body will be considered.
+     *
+     * </p><table class="table table-condensed"><tbody><tr><td>body</td><td><p>The Body to restrict consideration of impulses with.
+    *             (default null)
+    * </p></td></tr><tr><td>freshOnly</td><td><p>If true, then only 'new' contact points will be considered.
+    *             (default false)
+    * </p></td></tr><tr><td>returns</td><td><p>The summed effect of impulses acting on Body.</p></td></tr></tbody></table></div></div><div class="platform platform-flash"><a name="rollingImpulse"></a><h3><p><code><span class="keyword">function</span> <a href="#rollingImpulse"><span class="identifier">rollingImpulse</span></a>(?body:<a class="type" href="../../nape/phys/Body.html">Body</a> = null, ?freshOnly:<a class="type" href="../../Bool.html">Bool</a> = false):<a class="type" href="../../Float.html">Float</a></code></p></h3><div class="doc"><p>Evaluate sum effect of all rolling friction contact impulses on Body.
+     * <br/>&lt;br/
+     * If the body argument is non-null, then only impulses between 'this' and
+     * the given Body will be considered.
+     *
+     * </p><table class="table table-condensed"><tbody><tr><td>body</td><td><p>The Body to restrict consideration of impulses with.
+    *             (default null)
+    * </p></td></tr><tr><td>freshOnly</td><td><p>If true, then only 'new' contact points will be considered.
+    *             (default false)
+    * </p></td></tr><tr><td>returns</td><td><p>The summed effect of impulses acting on Body.</p></td></tr></tbody></table></div></div><div class="platform platform-flash"><a name="rotate"></a><h3><p><code><span class="keyword">function</span> <a href="#rotate"><span class="identifier">rotate</span></a>(centre:<a class="type" href="../../nape/geom/Vec2.html">Vec2</a>, angle:<a class="type" href="../../Float.html">Float</a>):<a class="type" href="../../nape/phys/Body.html">Body</a></code></p></h3><div class="doc"><p>Rotate body about about given point.
+     * <br/><br/>
+     * Please note that this method is equivalent to teleporting the body,
+     * the same way direct manipulation of position and rotation is.
+     *
+     * </p><table class="table table-condensed"><tbody><tr><td>centre</td><td><p>The centre of rotation in world coordinates.
+    * </p></td></tr><tr><td>angle</td><td><p>The angle to rotate body by in clockwise radians.
+    * </p></td></tr><tr><td>returns</td><td><p>A reference to this Body.
+* </p></td></tr></tbody></table></div></div><div class="platform platform-flash"><a name="rotateShapes"></a><h3><p><code><span class="keyword">function</span> <a href="#rotateShapes"><span class="identifier">rotateShapes</span></a>(angle:<a class="type" href="../../Float.html">Float</a>):<a class="type" href="../../nape/phys/Body.html">Body</a></code></p></h3><div class="doc"><p>Rotate each shape in local coordinates.
+     * <br/><br/>
+     * This operation does not effect the Body's rotation, but rotates
+     * each of the shapes 'inside' of the Body.
+     *
+     * </p><table class="table table-condensed"><tbody><tr><td>angle</td><td><p>The angle to rotate shapes by in clockwise radians.
+    * </p></td></tr><tr><td>returns</td><td><p>A reference to this Body.
+* </p></td></tr></tbody></table></div></div><div class="platform platform-flash"><a name="scaleShapes"></a><h3><p><code><span class="keyword">function</span> <a href="#scaleShapes"><span class="identifier">scaleShapes</span></a>(scaleX:<a class="type" href="../../Float.html">Float</a>, scaleY:<a class="type" href="../../Float.html">Float</a>):<a class="type" href="../../nape/phys/Body.html">Body</a></code></p></h3><div class="doc"><p>Scale each shape in local coordinates.
+     * <br/><br/>
+     * This operation does not affect the Body itself, but affects each
+     * Shape 'inside' of the Body instead.
+     *
+     * </p><table class="table table-condensed"><tbody><tr><td>scaleX</td><td><p>The x-coordinate factor of scaling.
+    * </p></td></tr><tr><td>scaleY</td><td><p>The y-coordinate factor of scaling.
+    * </p></td></tr><tr><td>returns</td><td><p>A reference to this Body.
+* </p></td></tr></tbody></table></div></div><div class="platform platform-flash"><a name="setShapeFilters"></a><h3><p><code><span class="keyword">function</span> <a href="#setShapeFilters"><span class="identifier">setShapeFilters</span></a>(filter:<a class="type" href="../../nape/dynamics/InteractionFilter.html">InteractionFilter</a>):<a class="type" href="../../nape/phys/Body.html">Body</a></code></p></h3><div class="doc"><p>Set interaction filter of all shapes.
+     * <br/><br/>
+     * Equivalent to: <code>body.shapes.foreach(function (shape) shape.filter = filter)</code>
+     *
+     * </p><table class="table table-condensed"><tbody><tr><td>filter</td><td><p>The filter to set Shape's filter to.
+    * </p></td></tr><tr><td>returns</td><td><p>A reference to this Body.</p></td></tr></tbody></table></div></div><div class="platform platform-flash"><a name="setShapeFluidProperties"></a><h3><p><code><span class="keyword">function</span> <a href="#setShapeFluidProperties"><span class="identifier">setShapeFluidProperties</span></a>(fluidProperties:<a class="type" href="../../nape/phys/FluidProperties.html">FluidProperties</a>):<a class="type" href="../../nape/phys/Body.html">Body</a></code></p></h3><div class="doc"><p>Set fluidProperties of all shapes.
+     * <br/><br/>
+     * Equivalent to: <code>body.shapes.foreach(function (shape) shape.fluidProperties = fluidProperties)</code>
+     *
+     * </p><table class="table table-condensed"><tbody><tr><td>fluidProperties</td><td><p>The fluidProperties to set Shape's fluidProperties to.
+    * </p></td></tr><tr><td>returns</td><td><p>A reference to this Body.</p></td></tr></tbody></table></div></div><div class="platform platform-flash"><a name="setShapeMaterials"></a><h3><p><code><span class="keyword">function</span> <a href="#setShapeMaterials"><span class="identifier">setShapeMaterials</span></a>(material:<a class="type" href="../../nape/phys/Material.html">Material</a>):<a class="type" href="../../nape/phys/Body.html">Body</a></code></p></h3><div class="doc"><p>Set material of all shapes.
+     * <br/><br/>
+     * Equivalent to: <code>body.shapes.foreach(function (shape) shape.material = material)</code>
+     *
+     * </p><table class="table table-condensed"><tbody><tr><td>material</td><td><p>The material to set Shape's material to.
+    * </p></td></tr><tr><td>returns</td><td><p>A reference to this Body.</p></td></tr></tbody></table></div></div><div class="platform platform-flash"><a name="setVelocityFromTarget"></a><h3><p><code><span class="keyword">function</span> <a href="#setVelocityFromTarget"><span class="identifier">setVelocityFromTarget</span></a>(targetPosition:<a class="type" href="../../nape/geom/Vec2.html">Vec2</a>, targetRotation:<a class="type" href="../../Float.html">Float</a>, deltaTime:<a class="type" href="../../Float.html">Float</a>):<a class="type" href="../../nape/phys/Body.html">Body</a></code></p></h3><div class="doc"><p>Set velocities to achieve desired position at end of time step.
+     * <br/><br/>
+     * This function is a utility to help with animating kinematic bodies.
+     * Kinematic bodies should be moved through velocity, but it is often
+     * easier to think in terms of position.
+     * <br/><br/>
+     * This method will set linear and angular velocities so that the target
+     * position/rotation is achieved at end of time step.
+     *
+     * </p><table class="table table-condensed"><tbody><tr><td>targetPosition</td><td><p>The target position for Body.
+    * </p></td></tr><tr><td>targetRotation</td><td><p>The target rotation for Body.
+    * </p></td></tr><tr><td>deltaTime</td><td><p>The time step for next call to space.step().
+    * </p></td></tr><tr><td>returns</td><td><p>A reference to 'this' Body.</p></td></tr></tbody></table></div></div><div class="platform platform-flash"><a name="tangentImpulse"></a><h3><p><code><span class="keyword">function</span> <a href="#tangentImpulse"><span class="identifier">tangentImpulse</span></a>(?body:<a class="type" href="../../nape/phys/Body.html">Body</a> = null, ?freshOnly:<a class="type" href="../../Bool.html">Bool</a> = false):<a class="type" href="../../nape/geom/Vec3.html">Vec3</a></code></p></h3><div class="doc"><p>Evaluate sum effect of all tangent contact impulses on Body.
+     * <br/><br/>
+     * If the body argument is non-null, then only impulses between 'this' and
+     * the given Body will be considered.
+     *
+     * </p><table class="table table-condensed"><tbody><tr><td>body</td><td><p>The Body to restrict consideration of impulses with.
+    *             (default null)
+    * </p></td></tr><tr><td>freshOnly</td><td><p>If true, then only 'new' contact points will be considered.
+    *             (default false)
+    * </p></td></tr><tr><td>returns</td><td><p>The summed effect of impulses acting on Body.</p></td></tr></tbody></table></div></div><div class="platform platform-flash"><a name="toString"></a><h3><p><code><span class="keyword">function</span> <a href="#toString"><span class="identifier">toString</span></a>():<a class="type" href="../../String.html">String</a></code></p></h3><div class="doc"><p>@private</p></div></div><div class="platform platform-flash"><a name="totalContactsImpulse"></a><h3><p><code><span class="keyword">function</span> <a href="#totalContactsImpulse"><span class="identifier">totalContactsImpulse</span></a>(?body:<a class="type" href="../../nape/phys/Body.html">Body</a> = null, ?freshOnly:<a class="type" href="../../Bool.html">Bool</a> = false):<a class="type" href="../../nape/geom/Vec3.html">Vec3</a></code></p></h3><div class="doc"><p>Evaluate sum effect of all contact impulses on Body.
+     * <br/><br/>
+     * If the body argument is non-null, then only impulses between 'this' and
+     * the given Body will be considered.
+     *
+     * </p><table class="table table-condensed"><tbody><tr><td>body</td><td><p>The Body to restrict consideration of impulses with.
+    *             (default null)
+    * </p></td></tr><tr><td>freshOnly</td><td><p>If true, then only 'new' contact points will be considered.
+    *             (default false)
+    * </p></td></tr><tr><td>returns</td><td><p>The summed effect of impulses acting on Body.</p></td></tr></tbody></table></div></div><div class="platform platform-flash"><a name="totalFluidImpulse"></a><h3><p><code><span class="keyword">function</span> <a href="#totalFluidImpulse"><span class="identifier">totalFluidImpulse</span></a>(?body:<a class="type" href="../../nape/phys/Body.html">Body</a> = null):<a class="type" href="../../nape/geom/Vec3.html">Vec3</a></code></p></h3><div class="doc"><p>Evaluate sum effect of all fluid impulses acting on Body.
+     * <br/>&lt;br/
+     * If the body argument is non-null, then only impulses between 'this' and
+     * the given Body will be considered.
+     *
+     * </p><table class="table table-condensed"><tbody><tr><td>body</td><td><p>The Body to restrict consideration of impulses with.
+    *             (default null)
+    * </p></td></tr><tr><td>returns</td><td><p>The summed effect of impulses acting on Body.</p></td></tr></tbody></table></div></div><div class="platform platform-flash"><a name="totalImpulse"></a><h3><p><code><span class="keyword">function</span> <a href="#totalImpulse"><span class="identifier">totalImpulse</span></a>(?body:<a class="type" href="../../nape/phys/Body.html">Body</a> = null, ?freshOnly:<a class="type" href="../../Bool.html">Bool</a> = false):<a class="type" href="../../nape/geom/Vec3.html">Vec3</a></code></p></h3><div class="doc"><p>Evaluate sum effect of all impulses on Body.
+     * <br/>&lt;br/
+     * If the body argument is non-null, then only impulses between 'this' and
+     * the given Body will be considered when evaluating interaction impulses.
+     * <br/>
+     * Constraint impulses are not effected by the body argument.
+     *
+     * </p><table class="table table-condensed"><tbody><tr><td>body</td><td><p>The Body to restrict consideration of impulses with.
+    *             (default null)
+    * </p></td></tr><tr><td>freshOnly</td><td><p>If true, then only 'new' contact points will be considered
+    *             when evaluating contact impulses.
+    *             (default false)
+    * </p></td></tr><tr><td>returns</td><td><p>The summed effect of impulses acting on Body.</p></td></tr></tbody></table></div></div><div class="platform platform-flash"><a name="transformShapes"></a><h3><p><code><span class="keyword">function</span> <a href="#transformShapes"><span class="identifier">transformShapes</span></a>(matrix:<a class="type" href="../../nape/geom/Mat23.html">Mat23</a>):<a class="type" href="../../nape/phys/Body.html">Body</a></code></p></h3><div class="doc"><p>Transform each shape in local coordiantes.
+     * <br/><br/>
+     * This operation does not affect the Body itself, but affects each
+     * Shape 'inside' of the Body instead.
+     *
+     * </p><table class="table table-condensed"><tbody><tr><td>matrix</td><td><p>The transformation matrix to apply to each Shape.
+    * </p></td></tr><tr><td>returns</td><td><p>A reference to this Body.
+* </p></td></tr></tbody></table></div></div><div class="platform platform-flash"><a name="translateShapes"></a><h3><p><code><span class="keyword">function</span> <a href="#translateShapes"><span class="identifier">translateShapes</span></a>(translation:<a class="type" href="../../nape/geom/Vec2.html">Vec2</a>):<a class="type" href="../../nape/phys/Body.html">Body</a></code></p></h3><div class="doc"><p>Translate each shape in local coordinates.
+     * <br/><br/>
+     * This operation does not effect the Body's position, but the position
+     * of the shapes 'inside' of the Body.
+     *
+     * </p><table class="table table-condensed"><tbody><tr><td>translation</td><td><p>The local translation to apply to Shapes.
+    * </p></td></tr><tr><td>returns</td><td><p>A reference to this Body.
+* </p></td></tr></tbody></table></div></div><div class="platform platform-flash"><a name="worldPointToLocal"></a><h3><p><code><span class="keyword">function</span> <a href="#worldPointToLocal"><span class="identifier">worldPointToLocal</span></a>(point:<a class="type" href="../../nape/geom/Vec2.html">Vec2</a>, ?weak:<a class="type" href="../../Bool.html">Bool</a> = false):<a class="type" href="../../nape/geom/Vec2.html">Vec2</a></code></p></h3><div class="doc"><p>Transform a point from world coordinates to Body's local coordinates.
+     *
+     * </p><table class="table table-condensed"><tbody><tr><td>point</td><td><p>The point to transform.
+    * </p></td></tr><tr><td>weak</td><td><p>If true the returned Vec2 will be automatically released
+    *             back to object pool when used as an argument to a Nape function.
+    *             (default false)
+    * </p></td></tr><tr><td>returns</td><td><p>The result of the transformation.
+* </p></td></tr></tbody></table></div></div><div class="platform platform-flash"><a name="worldVectorToLocal"></a><h3><p><code><span class="keyword">function</span> <a href="#worldVectorToLocal"><span class="identifier">worldVectorToLocal</span></a>(vector:<a class="type" href="../../nape/geom/Vec2.html">Vec2</a>, ?weak:<a class="type" href="../../Bool.html">Bool</a> = false):<a class="type" href="../../nape/geom/Vec2.html">Vec2</a></code></p></h3><div class="doc"><p>Transform vector from world coordinates to Body's local coordinates
+     * <br/><br/>
+     *
+     * </p><table class="table table-condensed"><tbody><tr><td>vector</td><td><p>The vector to transform.
+    * </p></td></tr><tr><td>weak</td><td><p>If true the returned Vec2 will be automatically released
+    *             back to object pool when used as an argument to a Nape function.
+    *             (default false)
+    * </p></td></tr><tr><td>returns</td><td><p>The result of the transformation.
+* </p></td></tr></tbody></table></div></div></div></div></div></body></html>

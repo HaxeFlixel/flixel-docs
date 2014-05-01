@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8"/><link href="../../bootstrap-combined.min.css" rel="stylesheet" /><script type="text/javascript" src="../../jquery-1.9.1.min.js"></script><script type="text/javascript" src="../../bootstrap.min.js"></script><link href="../../styles.css" rel="stylesheet" /><link rel="icon" href="../../favicon.ico" type="image/x-icon"></link><script type="text/javascript" src="../../nav.js"></script><script type="text/javascript" src="../../index.js"></script><script type="text/javascript">var dox = {rootPath: "../../",platforms: ["flash"]};</script><title>Shape</title></head><body><div class="navbar navbar-inverse navbar-fixed-top"><div class="navbar-inner"><form class="navbar-search pull-left" id="searchForm"><input id="search" type="text" class="search-query" placeholder="Filter" autocomplete="off"/></form><ul class="nav"><li id="select-platform" class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Platform<b class="caret"></b></a><ul class="dropdown-menu"><li data="all"><a href="#">All Platforms</a></li><li data="flash"><a href="#">flash</a></li></ul></li></ul></div></div><div id="container"><div id="nav"></div><div id="content"><div class="header"><h1><code><span class="directive">class </span><span class="type">nape.shape.Shape</span><span class="keyword"> extends</span> <a class="type" href="../../nape/phys/Interactor.html">Interactor</a></code></h1></div><div class="body"><p class="availability">Available on all platforms</p><div><table class="related-types toggle" style="margin-top:16px;"><tbody><tr><td colspan="2"><strong>Sub classes</strong></td></tr><tr><td width="12" style="vertical-align:top;"><a href="#" onclick="toggleInherited(this)"><img style="padding-top:4px;" src="../../triangle-closed.png"></img></a></td><td class="toggle-hide"><a href="../../nape/shape/Circle.html">Circle</a>, <a href="../../nape/shape/Polygon.html">Polygon</a></td><td class="toggle-show"><table class="table table-condensed"><tbody><tr><td width="200"><a href="../../nape/shape/Circle.html">Circle</a></td><td><p>Shape subtype representing a Circle</p></td></tr><tr><td width="200"><a href="../../nape/shape/Polygon.html">Polygon</a></td><td><p>Polygon subtype of Shape.
+ * <br/><br/>
+ * Can be used to simulate any convex polygon.</p></td></tr></tbody></table></td></tr></tbody></table></div><div class="doc"><p>Base type for Nape Shape's</p></div><h2>Instance Fields</h2><div class="platform platform-flash"><a name="angDrag"></a><h3><p><code><span class="keyword">var</span> <a href="#angDrag"><span class="identifier">angDrag</span></a>:<a class="type" href="../../Float.html">Float</a></code></p></h3><div class="doc"><p>Coeffecient of angular fluid drag for this Shape.</p></div></div><div class="platform platform-flash"><a name="area"></a><h3><p><code><span class="keyword">var</span> <a href="#area"><span class="identifier">area</span></a>:<a class="type" href="../../Float.html">Float</a></code></p></h3><div class="doc"><p>Area of the Hhape.</p></div></div><div class="platform platform-flash"><a name="body"></a><h3><p><code><span class="keyword">var</span> <a href="#body"><span class="identifier">body</span></a>:<a class="type" href="../../Null.html">Null</a>&lt;<a class="type" href="../../nape/phys/Body.html">Body</a>&gt;</code></p></h3><div class="doc"><p>Body this Shape is assigned to.
+     * <br/><br/>
+     * This value can be set to add Shape to the given Body, and set to null
+     * to remove it from its present Body.
+     *
+     * @default null</p></div></div><div class="platform platform-flash"><a name="bounds"></a><h3><p><code><span class="keyword">var</span> <a href="#bounds"><span class="identifier">bounds</span></a>:<a class="type" href="../../nape/geom/AABB.html">AABB</a></code></p></h3><div class="doc"><p>World space bounding box for this shape.
+     * <br/><br/>
+     * This value can be accessed even if the Shape is not part of a Body,
+     * however attempting to query its values would result in an error in
+     * debug builds.
+     * <br/><br/>
+     * This AABB is immutable.</p></div></div><div class="platform platform-flash"><a name="castCircle"></a><h3><p><code><span class="keyword">var</span> <a href="#castCircle"><span class="identifier">castCircle</span></a>:<a class="type" href="../../Null.html">Null</a>&lt;<a class="type" href="../../nape/shape/Circle.html">Circle</a>&gt;</code></p></h3><div class="doc"><p>Faster equivalent to casting this to Circle type</p></div></div><div class="platform platform-flash"><a name="castPolygon"></a><h3><p><code><span class="keyword">var</span> <a href="#castPolygon"><span class="identifier">castPolygon</span></a>:<a class="type" href="../../Null.html">Null</a>&lt;<a class="type" href="../../nape/shape/Polygon.html">Polygon</a>&gt;</code></p></h3><div class="doc"><p>Faster equivalent to casting this to Polygon type</p></div></div><div class="platform platform-flash"><a name="filter"></a><h3><p><code><span class="keyword">var</span> <a href="#filter"><span class="identifier">filter</span></a>:<a class="type" href="../../nape/dynamics/InteractionFilter.html">InteractionFilter</a></code></p></h3><div class="doc"><p>InteractionFilter used by this shape.
+     *
+     * @default new InteractionFilter()</p></div></div><div class="platform platform-flash"><a name="fluidEnabled"></a><h3><p><code><span class="keyword">var</span> <a href="#fluidEnabled"><span class="identifier">fluidEnabled</span></a>:<a class="type" href="../../Bool.html">Bool</a></code></p></h3><div class="doc"><p>Whether this shape is able to interact as a fluid.
+     * <br/><br/>
+     * Unless this field is true, this Shape can never interact as a fluid.
+     * <br/><br/>
+     * Just because this field is true however, does not mean this shape will always
+     * interact as a fluid, the final result is down to the combination of
+     * InteractionFilters on the pairing of shapes and sensory interaction
+     * takes higher priority.
+     *
+     * @default false</p></div></div><div class="platform platform-flash"><a name="fluidProperties"></a><h3><p><code><span class="keyword">var</span> <a href="#fluidProperties"><span class="identifier">fluidProperties</span></a>:<a class="type" href="../../nape/phys/FluidProperties.html">FluidProperties</a></code></p></h3><div class="doc"><p>FluidProperties used by this shape.
+     * <br/><br/>
+     * This object provides information for buoyancy and fluid drag computations
+     * when this shape is interacting as a fluid.
+     *
+     * @default new FluidProperties();</p></div></div><div class="platform platform-flash"><a name="inertia"></a><h3><p><code><span class="keyword">var</span> <a href="#inertia"><span class="identifier">inertia</span></a>:<a class="type" href="../../Float.html">Float</a></code></p></h3><div class="doc"><p>Non-mass weighted moment of inertia for Shape.</p></div></div><div class="platform platform-flash"><a name="localCOM"></a><h3><p><code><span class="keyword">var</span> <a href="#localCOM"><span class="identifier">localCOM</span></a>:<a class="type" href="../../nape/geom/Vec2.html">Vec2</a></code></p></h3><div class="doc"><p>Local space centre of mass of this Shape.
+     * <br/><br/>
+     * This Vec2 can be set and is equivalent to performing the necessary
+     * translation of the Shape in local coordinates, and also equivalent
+     * to <code>this.localCOM.set(value)</code>.
+     * <br/>
+     * Setting this value whilst this shape is part of a static Body that
+     * is part of a Space is not permitted.</p></div></div><div class="platform platform-flash"><a name="material"></a><h3><p><code><span class="keyword">var</span> <a href="#material"><span class="identifier">material</span></a>:<a class="type" href="../../nape/phys/Material.html">Material</a></code></p></h3><div class="doc"><p>Material used by this shape.
+     *
+     * @default new Material()</p></div></div><div class="platform platform-flash"><a name="sensorEnabled"></a><h3><p><code><span class="keyword">var</span> <a href="#sensorEnabled"><span class="identifier">sensorEnabled</span></a>:<a class="type" href="../../Bool.html">Bool</a></code></p></h3><div class="doc"><p>Whether this shape is able to interact as sensor.
+     * <br/><br/>
+     * Unless this field is true, this Shape can never interact as a sensor.
+     * <br/><br/>
+     * Just because this field is true however, does not mean this shape will always
+     * interact as a sensor, the final result is down to the combination of
+     * InteractionFilters on the pairing of shapes. Sensor interaction has highest priority.
+     *
+     * @default false</p></div></div><div class="platform platform-flash"><a name="type"></a><h3><p><code><span class="keyword">var</span> <a href="#type"><span class="identifier">type</span></a>:<a class="type" href="../../nape/shape/ShapeType.html">ShapeType</a></code></p></h3><div class="doc"><p>Type of shape.</p></div></div><div class="platform platform-flash"><a name="worldCOM"></a><h3><p><code><span class="keyword">var</span> <a href="#worldCOM"><span class="identifier">worldCOM</span></a>:<a class="type" href="../../nape/geom/Vec2.html">Vec2</a></code></p></h3><div class="doc"><p>World space centre of mass of this Shape.
+     * <br/><br/>
+     * This value can be accessed even if Shape is not in a Body, but
+     * attempting to query the values of it will return an error in debug
+     * builds unless the Shape is in a Body.
+     * <br/><br/>
+     * This Vec2 is immutable.</p></div></div><div class="platform platform-flash"><a name="zpp_inner"></a><h3><p><code><span class="keyword">var</span> <a href="#zpp_inner"><span class="identifier">zpp_inner</span></a>:<a class="type" href="../../zpp_nape/shape/ZPP_Shape.html">ZPP_Shape</a></code></p></h3><div class="doc"><p>@private</p></div></div><div class="platform platform-flash"><a name="contains"></a><h3><p><code><span class="keyword">function</span> <a href="#contains"><span class="identifier">contains</span></a>(point:<a class="type" href="../../nape/geom/Vec2.html">Vec2</a>):<a class="type" href="../../Bool.html">Bool</a></code></p></h3><div class="doc"><p>Test containment of world-space coordinate in Shape.
+     * <br/><br/>
+     * This Shape must be part of a Body so that world coordinates are
+     * defined.
+     *
+     * </p><table class="table table-condensed"><tbody><tr><td>point</td><td><p>The point to check for containment.
+    * </p></td></tr><tr><td>returns</td><td><p>True if point is contained within the Shape.
+* </p></td></tr></tbody></table></div></div><div class="platform platform-flash"><a name="copy"></a><h3><p><code><span class="keyword">function</span> <a href="#copy"><span class="identifier">copy</span></a>():<a class="type" href="../../nape/shape/Shape.html">Shape</a></code></p></h3><div class="doc"><p>Produce an exact copy of this Shape.
+     * <br/><br/>
+     * The copied shape will be identical with the copied Shape's userData
+     * object being assigned the same fields as 'this' Shape with the same
+     * values copied over by reference for object types.
+     *
+     * </p><table class="table table-condensed"><tbody><tr><td>returns</td><td><p>A copy of this shape.</p></td></tr></tbody></table></div></div><div class="platform platform-flash"><a name="isCircle"></a><h3><p><code><span class="keyword">function</span> <a href="#isCircle"><span class="identifier">isCircle</span></a>():<a class="type" href="../../Bool.html">Bool</a></code></p></h3><div class="doc"><p>Faster equivalent to <code>type == ShapeType.CIRCLE</code>
+     *
+     * </p><table class="table table-condensed"><tbody><tr><td>returns</td><td><p>True if shape is a Circle type.</p></td></tr></tbody></table></div></div><div class="platform platform-flash"><a name="isPolygon"></a><h3><p><code><span class="keyword">function</span> <a href="#isPolygon"><span class="identifier">isPolygon</span></a>():<a class="type" href="../../Bool.html">Bool</a></code></p></h3><div class="doc"><p>Faster equivalent to <code>type == ShapeType.POLYGON</code>
+     *
+     * </p><table class="table table-condensed"><tbody><tr><td>returns</td><td><p>True if shape is a Polygon type.</p></td></tr></tbody></table></div></div><div class="platform platform-flash"><a name="rotate"></a><h3><p><code><span class="keyword">function</span> <a href="#rotate"><span class="identifier">rotate</span></a>(angle:<a class="type" href="../../Float.html">Float</a>):<a class="type" href="../../nape/shape/Shape.html">Shape</a></code></p></h3><div class="doc"><p>Rotate this shape in its local coordinate system.
+     *
+     * </p><table class="table table-condensed"><tbody><tr><td>angle</td><td><p>The number of radians to rotate this Shape by in a clockwise
+    *              direction.
+    * </p></td></tr><tr><td>returns</td><td><p>A reference to 'this' Shape.
+* </p></td></tr></tbody></table></div></div><div class="platform platform-flash"><a name="scale"></a><h3><p><code><span class="keyword">function</span> <a href="#scale"><span class="identifier">scale</span></a>(scalex:<a class="type" href="../../Float.html">Float</a>, scaley:<a class="type" href="../../Float.html">Float</a>):<a class="type" href="../../nape/shape/Shape.html">Shape</a></code></p></h3><div class="doc"><p>Scale this shape in its local coordinate system.
+     * <br/><br/>
+     * For Circle shapes, scalex and scaley must be exactly equal.
+     *
+     * </p><table class="table table-condensed"><tbody><tr><td>scalex</td><td><p>The x-coordinate scaling to apply to Shape.
+    * </p></td></tr><tr><td>scaley</td><td><p>The y-coordinate scaling to apply to Shape.
+    * </p></td></tr><tr><td>returns</td><td><p>A reference to 'this' Shape.
+* </p></td></tr></tbody></table></div></div><div class="platform platform-flash"><a name="toString"></a><h3><p><code><span class="keyword">function</span> <a href="#toString"><span class="identifier">toString</span></a>():<a class="type" href="../../String.html">String</a></code></p></h3><div class="doc"><p>@private</p></div></div><div class="platform platform-flash"><a name="transform"></a><h3><p><code><span class="keyword">function</span> <a href="#transform"><span class="identifier">transform</span></a>(matrix:<a class="type" href="../../nape/geom/Mat23.html">Mat23</a>):<a class="type" href="../../nape/shape/Shape.html">Shape</a></code></p></h3><div class="doc"><p>Apply local transformation matrix to Shape.
+     * <br/><br/>
+     * For Circle shapes, the matrix must be equiorthogonal.
+     *
+     * </p><table class="table table-condensed"><tbody><tr><td>matrix</td><td><p>The matrix to transform Shape by.
+    * </p></td></tr><tr><td>returns</td><td><p>A reference to 'this' Shape.
+* </p></td></tr></tbody></table></div></div><div class="platform platform-flash"><a name="translate"></a><h3><p><code><span class="keyword">function</span> <a href="#translate"><span class="identifier">translate</span></a>(translation:<a class="type" href="../../nape/geom/Vec2.html">Vec2</a>):<a class="type" href="../../nape/shape/Shape.html">Shape</a></code></p></h3><div class="doc"><p>Translate this shape in its local coordinate system.
+     * <br/><br/>
+     * This is equivalent to: <code>shape.localCOM.addeq(displacement)</code>
+     *
+     * </p><table class="table table-condensed"><tbody><tr><td>translation</td><td><p>The local translation to apply to Shape.
+    * </p></td></tr><tr><td>returns</td><td><p>A reference to 'this' Shape.
+* </p></td></tr></tbody></table></div></div></div></div></div></body></html>

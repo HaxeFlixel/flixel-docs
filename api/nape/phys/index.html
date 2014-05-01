@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8"/><link href="../../bootstrap-combined.min.css" rel="stylesheet" /><script type="text/javascript" src="../../jquery-1.9.1.min.js"></script><script type="text/javascript" src="../../bootstrap.min.js"></script><link href="../../styles.css" rel="stylesheet" /><link rel="icon" href="../../favicon.ico" type="image/x-icon"></link><script type="text/javascript" src="../../nav.js"></script><script type="text/javascript" src="../../index.js"></script><script type="text/javascript">var dox = {rootPath: "../../",platforms: ["flash"]};</script><title>package phys</title></head><body><div class="navbar navbar-inverse navbar-fixed-top"><div class="navbar-inner"><form class="navbar-search pull-left" id="searchForm"><input id="search" type="text" class="search-query" placeholder="Filter" autocomplete="off"/></form><ul class="nav"><li id="select-platform" class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Platform<b class="caret"></b></a><ul class="dropdown-menu"><li data="all"><a href="#">All Platforms</a></li><li data="flash"><a href="#">flash</a></li></ul></li></ul></div></div><div id="container"><div id="nav"></div><div id="content"><h1><span class="directive">package</span> nape.phys</h1><table class="table table-condensed"><tbody><tr><td width="200"><a href="../../nape/phys/Body.html">Body</a></td><td><p>Class representing a physics Rigid Body.</p></td></tr><tr><td width="200"><a href="../../nape/phys/BodyIterator.html">BodyIterator</a></td><td><p>Haxe Iterator<T> compatible iterator over Nape list.</p></td></tr><tr><td width="200"><a href="../../nape/phys/BodyList.html">BodyList</a></td><td><p>Nape list of Body type objects
+ * <br/><br/>
+ * Internally this list is at present implemented as a linked list with
+ * object pooled nodes and iterators with various fast paths made for
+ * standard access patterns (For instance accessing successive elements
+ * runs in constant time when using random access functions)
+ * <br/><br/>
+ * Iteration of this list can be done in various ways, but the preferred
+ * way on all targets, is through use of the foreach function:
+ * <pre>
+ * list.foreach(function (obj) {
+ * });
+ * </pre>
+ * This method is inlined so that in haxe no closure will need to be created.
+ * <br/><br/>
+ * In AS3, a closure would need to be created in general, so for performance
+ * reasons you 'may' choose to use iteration as follows:
+ * <pre>
+ * for (var i:int = 0; i &lt; list.length; i++) {
+ *     var obj:Body = list.at(i);
+ * }
+ * </pre>
+ * <br/>
+ * NOTE: It is 'not' safe to modify a list whilst iterating over it.
+ * If you wish to remove elements during an iteration you should use the
+ * filter method, for example:
+ * <pre>
+ * list.filter(function (obj) {
+ *     // operate on object.
+ *     // ...
+ *     return (false if you want object to be removed);
+ * });
+ * </pre>
+ * <br/><br/>
+ * In AS3, if you wish to avoid a closure generation, you can perform such
+ * an iteration in a safe manner as follows:
+ * <pre>
+ * var i:int = 0;
+ * while (i &lt; list.length) {
+ *     var obj:Body = list.at(i);
+ *     // operate on object.
+ *     // ...
+ *     if (should remove obj) {
+ *         list.remove(obj);
+ *         continue;
+ *     }
+ *     else i++;
+ * }
+ * </pre>
+ * Or if you are always clearing the list entirely you could write:
+ * <pre>
+ * while (!list.empty()) {
+ *     var obj:Body = list.pop();
+ *     // operate on object.
+ *     // ...
+ * }
+ * </pre></p></td></tr><tr><td width="200"><a href="../../nape/phys/BodyType.html">BodyType</a></td><td><p>Enumeration of rigid body types.</p></td></tr><tr><td width="200"><a href="../../nape/phys/Compound.html">Compound</a></td><td><p>Compound represents a grouping of physics objects into a single object.
+ * <br/><br/>
+ * This compound owns its constituents and works in the callback system and with
+ * respect to adding/removing from a Space as a single object.
+ * <pre>
+ *       <strong></strong>Cmp1<strong></strong>_
+ *      /    /    &#92;   &#92;
+ * Body1 Body2--Joint Cmp2
+ *   |     |        &#92;  |
+ * Shp1  Shp2        Body3
+ *                     |
+ *                    Shp3
+ * </pre>
+ * For example if you have a complex car built with several bodies and
+ * constraints you might store this in a Compound providing an easy way
+ * of removing/adding/copying the Car as well as being able to get a single
+ * callback for when the car collides with something.
+ * <br/><br/>
+ * When you add a compound to a Space, all of it's constituents get added
+ * and furthermore, those constituents cannot be added seperately.</p></td></tr><tr><td width="200"><a href="../../nape/phys/CompoundIterator.html">CompoundIterator</a></td><td><p>Haxe Iterator<T> compatible iterator over Nape list.</p></td></tr><tr><td width="200"><a href="../../nape/phys/CompoundList.html">CompoundList</a></td><td><p>Nape list of Compound type objects
+ * <br/><br/>
+ * Internally this list is at present implemented as a linked list with
+ * object pooled nodes and iterators with various fast paths made for
+ * standard access patterns (For instance accessing successive elements
+ * runs in constant time when using random access functions)
+ * <br/><br/>
+ * Iteration of this list can be done in various ways, but the preferred
+ * way on all targets, is through use of the foreach function:
+ * <pre>
+ * list.foreach(function (obj) {
+ * });
+ * </pre>
+ * This method is inlined so that in haxe no closure will need to be created.
+ * <br/><br/>
+ * In AS3, a closure would need to be created in general, so for performance
+ * reasons you 'may' choose to use iteration as follows:
+ * <pre>
+ * for (var i:int = 0; i &lt; list.length; i++) {
+ *     var obj:Compound = list.at(i);
+ * }
+ * </pre>
+ * <br/>
+ * NOTE: It is 'not' safe to modify a list whilst iterating over it.
+ * If you wish to remove elements during an iteration you should use the
+ * filter method, for example:
+ * <pre>
+ * list.filter(function (obj) {
+ *     // operate on object.
+ *     // ...
+ *     return (false if you want object to be removed);
+ * });
+ * </pre>
+ * <br/><br/>
+ * In AS3, if you wish to avoid a closure generation, you can perform such
+ * an iteration in a safe manner as follows:
+ * <pre>
+ * var i:int = 0;
+ * while (i &lt; list.length) {
+ *     var obj:Compound = list.at(i);
+ *     // operate on object.
+ *     // ...
+ *     if (should remove obj) {
+ *         list.remove(obj);
+ *         continue;
+ *     }
+ *     else i++;
+ * }
+ * </pre>
+ * Or if you are always clearing the list entirely you could write:
+ * <pre>
+ * while (!list.empty()) {
+ *     var obj:Compound = list.pop();
+ *     // operate on object.
+ *     // ...
+ * }
+ * </pre></p></td></tr><tr><td width="200"><a href="../../nape/phys/FluidProperties.html">FluidProperties</a></td><td><p>FluidProperties providing shared parameters for fluid interaction.</p></td></tr><tr><td width="200"><a href="../../nape/phys/GravMassMode.html">GravMassMode</a></td><td><p>Enumeration of GravMassMode values for a Body.</p></td></tr><tr><td width="200"><a href="../../nape/phys/InertiaMode.html">InertiaMode</a></td><td><p>Enumeration of InertiaMode values for a Body.</p></td></tr><tr><td width="200"><a href="../../nape/phys/Interactor.html">Interactor</a></td><td><p></p></td></tr><tr><td width="200"><a href="../../nape/phys/InteractorIterator.html">InteractorIterator</a></td><td><p>Haxe Iterator<T> compatible iterator over Nape list.</p></td></tr><tr><td width="200"><a href="../../nape/phys/InteractorList.html">InteractorList</a></td><td><p>Nape list of Interactor type objects
+ * <br/><br/>
+ * Internally this list is at present implemented as a linked list with
+ * object pooled nodes and iterators with various fast paths made for
+ * standard access patterns (For instance accessing successive elements
+ * runs in constant time when using random access functions)
+ * <br/><br/>
+ * Iteration of this list can be done in various ways, but the preferred
+ * way on all targets, is through use of the foreach function:
+ * <pre>
+ * list.foreach(function (obj) {
+ * });
+ * </pre>
+ * This method is inlined so that in haxe no closure will need to be created.
+ * <br/><br/>
+ * In AS3, a closure would need to be created in general, so for performance
+ * reasons you 'may' choose to use iteration as follows:
+ * <pre>
+ * for (var i:int = 0; i &lt; list.length; i++) {
+ *     var obj:Interactor = list.at(i);
+ * }
+ * </pre>
+ * <br/>
+ * NOTE: It is 'not' safe to modify a list whilst iterating over it.
+ * If you wish to remove elements during an iteration you should use the
+ * filter method, for example:
+ * <pre>
+ * list.filter(function (obj) {
+ *     // operate on object.
+ *     // ...
+ *     return (false if you want object to be removed);
+ * });
+ * </pre>
+ * <br/><br/>
+ * In AS3, if you wish to avoid a closure generation, you can perform such
+ * an iteration in a safe manner as follows:
+ * <pre>
+ * var i:int = 0;
+ * while (i &lt; list.length) {
+ *     var obj:Interactor = list.at(i);
+ *     // operate on object.
+ *     // ...
+ *     if (should remove obj) {
+ *         list.remove(obj);
+ *         continue;
+ *     }
+ *     else i++;
+ * }
+ * </pre>
+ * Or if you are always clearing the list entirely you could write:
+ * <pre>
+ * while (!list.empty()) {
+ *     var obj:Interactor = list.pop();
+ *     // operate on object.
+ *     // ...
+ * }
+ * </pre></p></td></tr><tr><td width="200"><a href="../../nape/phys/MassMode.html">MassMode</a></td><td><p>Enumeration of MassMode values for a Body.</p></td></tr><tr><td width="200"><a href="../../nape/phys/Material.html">Material</a></td><td><p>Material property providing physical attributes to a Shape.</p></td></tr></tbody></table></div></div></body></html>

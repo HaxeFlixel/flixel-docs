@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8"/><link href="../../bootstrap-combined.min.css" rel="stylesheet" /><script type="text/javascript" src="../../jquery-1.9.1.min.js"></script><script type="text/javascript" src="../../bootstrap.min.js"></script><link href="../../styles.css" rel="stylesheet" /><link rel="icon" href="../../favicon.ico" type="image/x-icon"></link><script type="text/javascript" src="../../nav.js"></script><script type="text/javascript" src="../../index.js"></script><script type="text/javascript">var dox = {rootPath: "../../",platforms: ["flash"]};</script><title>FlxPlugin</title></head><body><div class="navbar navbar-inverse navbar-fixed-top"><div class="navbar-inner"><form class="navbar-search pull-left" id="searchForm"><input id="search" type="text" class="search-query" placeholder="Filter" autocomplete="off"/></form><ul class="nav"><li id="select-platform" class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Platform<b class="caret"></b></a><ul class="dropdown-menu"><li data="all"><a href="#">All Platforms</a></li><li data="flash"><a href="#">flash</a></li></ul></li></ul></div></div><div id="container"><div id="nav"></div><div id="content"><div class="header"><h1><code><span class="directive">class </span><span class="type">flixel.plugin.FlxPlugin</span><span class="keyword"> extends</span> <a class="type" href="../../flixel/FlxBasic.html">FlxBasic</a></code></h1></div><div class="body"><p class="availability">Available on all platforms</p><div><table class="related-types toggle" style="margin-top:16px;"><tbody><tr><td colspan="2"><strong>Sub classes</strong></td></tr><tr><td width="12" style="vertical-align:top;"><a href="#" onclick="toggleInherited(this)"><img style="padding-top:4px;" src="../../triangle-closed.png"></img></a></td><td class="toggle-hide"><a href="../../flixel/addons/plugin/control/FlxControl.html">FlxControl</a>, <a href="../../flixel/addons/plugin/screengrab/FlxScreenGrab.html">FlxScreenGrab</a>, <a href="../../flixel/addons/plugin/FlxMouseControl.html">FlxMouseControl</a>, <a href="../../flixel/addons/plugin/FlxScrollingText.html">FlxScrollingText</a>, <a href="../../flixel/plugin/MouseEventManager.html">MouseEventManager</a>, <a href="../../flixel/plugin/PathManager.html">PathManager</a>, <a href="../../flixel/plugin/TimerManager.html">TimerManager</a>, <a href="../../flixel/plugin/TweenManager.html">TweenManager</a></td><td class="toggle-show"><table class="table table-condensed"><tbody><tr><td width="200"><a href="../../flixel/addons/plugin/control/FlxControl.html">FlxControl</a></td><td><p>FlxControl
+ *
+ * @link http://www.photonstorm.com
+ * @author Richard Davey / Photon Storm</p></td></tr><tr><td width="200"><a href="../../flixel/addons/plugin/screengrab/FlxScreenGrab.html">FlxScreenGrab</a></td><td><p>Captures a screen grab of the game and stores it locally, optionally saving as a PNG.
+ * 
+ * @link http://www.photonstorm.com
+ * @author Richard Davey / Photon Storm</p></td></tr><tr><td width="200"><a href="../../flixel/addons/plugin/FlxMouseControl.html">FlxMouseControl</a></td><td><p>FlxMouseControl
+ * 
+ * @link http://www.photonstorm.com
+ * @author Richard Davey / Photon Storm</p></td></tr><tr><td width="200"><a href="../../flixel/addons/plugin/FlxScrollingText.html">FlxScrollingText</a></td><td><p>FlxScrollingText
+ * -- Part of the Flixel Power Tools set
+ * 
+ * v1.0 First version released
+ * 
+ * @version 1.0 - May 5th 2011
+ * @link http://www.photonstorm.com
+ * @author Richard Davey / Photon Storm
+ * @co-author Ungar Djordje / ArtBIT (HaXe port)</p></td></tr><tr><td width="200"><a href="../../flixel/plugin/MouseEventManager.html">MouseEventManager</a></td><td><p>Provides mouse event detection for FlxObjects and FlxSprites (pixel-perfect for those).
+ * To use it, initialize the manager and register objects / sprites. 
+ * 
+ * 		FlxG.plugins.add(new MouseEventManager());
+ * 		var object = new FlxObject();
+ * 		MouseEventManager.add(object, onMouseDown, onMouseUp, onMouseOver, onMouseOut);
+ * 
+ * Or simply add a new object and this plugin will initialize itself: 
+ * 
+ *      MouseEventManager.add(object, onMouseDown, onMouseUp, onMouseOver, onMouseOut);
+ * 
+ * Also implement the callbacks with the object's type as parameters:
+ * 
+ * 		function onMouseDown(object:FlxObject) {}
+ * 		function onMouseUp(object:FlxObject) {}
+ * 		function onMouseOver(object:FlxObject) {}
+ * 		function onMouseOut(object:FlxObject) {} 
+ * 
+ * @author TiagoLr (~~~ ProG4mr ~~~)</p></td></tr><tr><td width="200"><a href="../../flixel/plugin/PathManager.html">PathManager</a></td><td><p></p></td></tr><tr><td width="200"><a href="../../flixel/plugin/TimerManager.html">TimerManager</a></td><td><p>A simple manager for tracking and updating game timer objects.</p></td></tr><tr><td width="200"><a href="../../flixel/plugin/TweenManager.html">TweenManager</a></td><td><p>A manager for FlxTweens.</p></td></tr></tbody></table></td></tr></tbody></table></div><div class="doc"><p>A base class for all flixel plugins that use the flixel plugin system (see FlxG.plugins).
+ * Plugins are basically FlxBasics, but they provide some additional features, like 
+ * notifications for certain events like switchting the state or resizing the window.</p></div><h2>Instance Fields</h2><div class="platform platform-flash"><a name="new"></a><h3><p><code><span class="keyword">function</span> <a href="#new"><span class="identifier">new</span></a>():<a class="type" href="../../Void.html">Void</a></code></p></h3><div class="doc"><p></p></div></div><div class="platform platform-flash"><a name="onResize"></a><h3><p><code><span class="keyword">function</span> <a href="#onResize"><span class="identifier">onResize</span></a>(Width:<a class="type" href="../../Int.html">Int</a>, Height:<a class="type" href="../../Int.html">Int</a>):<a class="type" href="../../Void.html">Void</a></code></p></h3><div class="doc"><p>This function is called whenever the window size has been changed.
+ * </p><table class="table table-condensed"><tbody><tr><td>Width</td><td><p>The new window width
+ * </p></td></tr><tr><td>Height</td><td><p>The new window Height</p></td></tr></tbody></table></div></div><div class="platform platform-flash"><a name="onStateSwitch"></a><h3><p><code><span class="keyword">function</span> <a href="#onStateSwitch"><span class="identifier">onStateSwitch</span></a>():<a class="type" href="../../Void.html">Void</a></code></p></h3><div class="doc"><p>This function is called whenever the state is switched or reset 
+ * (FlxG.switchState() and FlxG.resetState()).</p></div></div></div></div></div></body></html>
