@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8"/><link href="../../bootstrap-combined.min.css" rel="stylesheet" /><script type="text/javascript" src="../../jquery-1.9.1.min.js"></script><script type="text/javascript" src="../../bootstrap.min.js"></script><link href="../../styles.css" rel="stylesheet" /><link rel="icon" href="../../favicon.ico" type="image/x-icon"></link><script type="text/javascript" src="../../nav.js"></script><script type="text/javascript" src="../../index.js"></script><script type="text/javascript">var dox = {rootPath: "../../",platforms: ["flash"]};</script><title>Ray</title></head><body><div class="navbar navbar-inverse navbar-fixed-top"><div class="navbar-inner"><form class="navbar-search pull-left" id="searchForm"><input id="search" type="text" class="search-query" placeholder="Filter" autocomplete="off"/></form><ul class="nav"><li id="select-platform" class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Platform<b class="caret"></b></a><ul class="dropdown-menu"><li data="all"><a href="#">All Platforms</a></li><li data="flash"><a href="#">flash</a></li></ul></li></ul></div></div><div id="container"><div id="nav"></div><div id="content"><div class="header"><h1><code><span class="directive">class </span><span class="type">nape.geom.Ray</span></code></h1></div><div class="body"><p class="availability">Available on all platforms</p><div class="doc"><p>Parametrically defined ray used in ray casting functions.</p></div><h2>Class Fields</h2><div class="platform platform-flash"><a name="fromSegment"></a><h3><p><code><span class="keyword">static </span><span class="keyword">function</span> <a href="#fromSegment"><span class="identifier">fromSegment</span></a>(start:<a class="type" href="../../nape/geom/Vec2.html">Vec2</a>, end:<a class="type" href="../../nape/geom/Vec2.html">Vec2</a>):<a class="type" href="../../nape/geom/Ray.html">Ray</a></code></p></h3><div class="doc"><p>Create ray representing a line segment.
+     * <br/><br/>
+     * This function will a ray who's origin is the start point
+     * and who's direction is towards the end point with the
+     * maxDistance property appropriately set to not extend
+     * beyond the end point.
+     *
+     * </p><table class="table table-condensed"><tbody><tr><td>start</td><td><p>Start point of line segment
+    * </p></td></tr><tr><td>end</td><td><p>End point of line segment
+    * </p></td></tr><tr><td>returns</td><td><p>A Ray representing this line segment.
+* </p></td></tr></tbody></table></div></div><h2>Instance Fields</h2><div class="platform platform-flash"><a name="direction"></a><h3><p><code><span class="keyword">var</span> <a href="#direction"><span class="identifier">direction</span></a>:<a class="type" href="../../nape/geom/Vec2.html">Vec2</a></code></p></h3><div class="doc"><p>Direction of ray.
+     * <br/><br/>
+     * This property can be set, and is equivalent to performing:
+     * <code>ray.direction.set(newDirection)</code> with the additional
+     * constraint that the input direction must not be degenerate.
+     * <br/><br/>
+     * This direction vector need not be normalised.</p></div></div><div class="platform platform-flash"><a name="maxDistance"></a><h3><p><code><span class="keyword">var</span> <a href="#maxDistance"><span class="identifier">maxDistance</span></a>:<a class="type" href="../../Float.html">Float</a></code></p></h3><div class="doc"><p>The maximum distance for ray to be queried.
+     * <br/><br/>
+     * When used in ray test functions, no search will extend beyond this
+     * distance.
+     * <br/><br/>
+     * This value represents a true distance, even if direction vector is
+     * not normalised. This value may be equal to infinity.
+     *
+     * @default infinity</p></div></div><div class="platform platform-flash"><a name="origin"></a><h3><p><code><span class="keyword">var</span> <a href="#origin"><span class="identifier">origin</span></a>:<a class="type" href="../../nape/geom/Vec2.html">Vec2</a></code></p></h3><div class="doc"><p>Origin of ray.
+     * <br/><br/>
+     * This property can be set, and is equivalent to performing:
+     * <code>ray.origin.set(newOrigin)</code></p></div></div><div class="platform platform-flash"><a name="userData"></a><h3><p><code><span class="keyword">var</span> <a href="#userData"><span class="identifier">userData</span></a>:<a class="type" href="../../Dynamic.html">Dynamic</a><a class="type" href="../../Dynamic.html">Dynamic</a></code></p></h3><div class="doc"><p>Dynamic object for user to store additional data.
+     * <br/><br/>
+     * This object cannot be set, only its dynamically created
+     * properties may be set. In AS3 the type of this property is &amp;#42
+     * <br/><br/>
+     * This object will be lazily constructed so that until accessed
+     * for the first time, will be null internally.
+     *
+     * @default {}</p></div></div><div class="platform platform-flash"><a name="zpp_inner"></a><h3><p><code><span class="keyword">var</span> <a href="#zpp_inner"><span class="identifier">zpp_inner</span></a>:<a class="type" href="../../zpp_nape/geom/ZPP_Ray.html">ZPP_Ray</a></code></p></h3><div class="doc"><p>@private</p></div></div><div class="platform platform-flash"><a name="new"></a><h3><p><code><span class="keyword">function</span> <a href="#new"><span class="identifier">new</span></a>(origin:<a class="type" href="../../nape/geom/Vec2.html">Vec2</a>, direction:<a class="type" href="../../nape/geom/Vec2.html">Vec2</a>):<a class="type" href="../../Void.html">Void</a></code></p></h3><div class="doc"><p>Construct new Ray.
+     *
+     * </p><table class="table table-condensed"><tbody><tr><td>origin</td><td><p>Origin of ray.
+    * </p></td></tr><tr><td>direction</td><td><p>Direction of ray.
+    * </p></td></tr></tbody></table></div></div><div class="platform platform-flash"><a name="aabb"></a><h3><p><code><span class="keyword">function</span> <a href="#aabb"><span class="identifier">aabb</span></a>():<a class="type" href="../../nape/geom/AABB.html">AABB</a></code></p></h3><div class="doc"><p>Compute bounding box of ray.
+     * <br/><br/>
+     * This function will take into account the maxDistance property of this ray.
+     * <br/>
+     * The return AABB may have in the general case infinite values :)
+     *
+     * </p><table class="table table-condensed"><tbody><tr><td>returns</td><td><p>An AABB representing bounding box of ray.</p></td></tr></tbody></table></div></div><div class="platform platform-flash"><a name="at"></a><h3><p><code><span class="keyword">function</span> <a href="#at"><span class="identifier">at</span></a>(distance:<a class="type" href="../../Float.html">Float</a>, ?weak:<a class="type" href="../../Bool.html">Bool</a> = false):<a class="type" href="../../nape/geom/Vec2.html">Vec2</a></code></p></h3><div class="doc"><p>Compute point along ray at given distance.
+     * <br/><br/>
+     * Even if ray direction is not normalised, this value still repersents
+     * a true distance. The distance may also be negative.
+     * <br/><br/>
+     * The Vec2 returned will be allocated from the global object pool.
+     *
+     * </p><table class="table table-condensed"><tbody><tr><td>distance</td><td><p>The distance along ray to compute point for.
+    * </p></td></tr><tr><td>weak</td><td><p>If true then a weakly allocated Vec2 will be returned
+    *             which will be automatically released to global object
+    *             pool when used as argument to another Nape function.
+    *             (default false)
+    * </p></td></tr><tr><td>returns</td><td><p>Vec2 representing point at given distance along ray.</p></td></tr></tbody></table></div></div><div class="platform platform-flash"><a name="copy"></a><h3><p><code><span class="keyword">function</span> <a href="#copy"><span class="identifier">copy</span></a>():<a class="type" href="../../nape/geom/Ray.html">Ray</a></code></p></h3><div class="doc"><p>Produce a copy of this ray.
+     * <br/><br/>
+     * All ray properties will be copied including maxDistance.
+     *
+     * </p><table class="table table-condensed"><tbody><tr><td>returns</td><td><p>The copy of this Ray.</p></td></tr></tbody></table></div></div></div></div></div></body></html>

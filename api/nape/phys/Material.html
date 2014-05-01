@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8"/><link href="../../bootstrap-combined.min.css" rel="stylesheet" /><script type="text/javascript" src="../../jquery-1.9.1.min.js"></script><script type="text/javascript" src="../../bootstrap.min.js"></script><link href="../../styles.css" rel="stylesheet" /><link rel="icon" href="../../favicon.ico" type="image/x-icon"></link><script type="text/javascript" src="../../nav.js"></script><script type="text/javascript" src="../../index.js"></script><script type="text/javascript">var dox = {rootPath: "../../",platforms: ["flash"]};</script><title>Material</title></head><body><div class="navbar navbar-inverse navbar-fixed-top"><div class="navbar-inner"><form class="navbar-search pull-left" id="searchForm"><input id="search" type="text" class="search-query" placeholder="Filter" autocomplete="off"/></form><ul class="nav"><li id="select-platform" class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Platform<b class="caret"></b></a><ul class="dropdown-menu"><li data="all"><a href="#">All Platforms</a></li><li data="flash"><a href="#">flash</a></li></ul></li></ul></div></div><div id="container"><div id="nav"></div><div id="content"><div class="header"><h1><code><span class="directive">class </span><span class="type">nape.phys.Material</span></code></h1></div><div class="body"><p class="availability">Available on all platforms</p><div class="doc"><p>Material property providing physical attributes to a Shape.</p></div><h2>Class Fields</h2><div class="platform platform-flash"><a name="glass"></a><h3><p><code><span class="keyword">static </span><span class="keyword">function</span> <a href="#glass"><span class="identifier">glass</span></a>():<a class="type" href="../../nape/phys/Material.html">Material</a></code></p></h3><div class="doc"><p>Predefined constructor for a glass style Material.
+     *
+     * </p><table class="table table-condensed"><tbody><tr><td>returns</td><td><code>new Material(0.4,0.4,0.94,2.6,0.002)</code></td></tr></tbody></table></div></div><div class="platform platform-flash"><a name="ice"></a><h3><p><code><span class="keyword">static </span><span class="keyword">function</span> <a href="#ice"><span class="identifier">ice</span></a>():<a class="type" href="../../nape/phys/Material.html">Material</a></code></p></h3><div class="doc"><p>Predefined constructor for a ice style Material.
+     *
+     * </p><table class="table table-condensed"><tbody><tr><td>returns</td><td><code>new Material(0.3,0.03,0.1,0.9,0.0001)</code></td></tr></tbody></table></div></div><div class="platform platform-flash"><a name="rubber"></a><h3><p><code><span class="keyword">static </span><span class="keyword">function</span> <a href="#rubber"><span class="identifier">rubber</span></a>():<a class="type" href="../../nape/phys/Material.html">Material</a></code></p></h3><div class="doc"><p>Predefined constructor for a rubber style Material.
+     *
+     * </p><table class="table table-condensed"><tbody><tr><td>returns</td><td><code>new Material(0.8,1.0,1.4,1.5,0.01)</code></td></tr></tbody></table></div></div><div class="platform platform-flash"><a name="sand"></a><h3><p><code><span class="keyword">static </span><span class="keyword">function</span> <a href="#sand"><span class="identifier">sand</span></a>():<a class="type" href="../../nape/phys/Material.html">Material</a></code></p></h3><div class="doc"><p>Predefined constructor for a sand style Material.
+     *
+     * </p><table class="table table-condensed"><tbody><tr><td>returns</td><td><code>new Material(-1.0,0.45,0.6,1.6,16.0)</code></td></tr></tbody></table></div></div><div class="platform platform-flash"><a name="steel"></a><h3><p><code><span class="keyword">static </span><span class="keyword">function</span> <a href="#steel"><span class="identifier">steel</span></a>():<a class="type" href="../../nape/phys/Material.html">Material</a></code></p></h3><div class="doc"><p>Predefined constructor for a steel style Material.
+     *
+     * </p><table class="table table-condensed"><tbody><tr><td>returns</td><td><code>new Material(0.2,0.57,0.74,7.8,0.001)</code></td></tr></tbody></table></div></div><div class="platform platform-flash"><a name="wood"></a><h3><p><code><span class="keyword">static </span><span class="keyword">function</span> <a href="#wood"><span class="identifier">wood</span></a>():<a class="type" href="../../nape/phys/Material.html">Material</a></code></p></h3><div class="doc"><p>Predefined constructor for a wood style Material.
+     *
+     * </p><table class="table table-condensed"><tbody><tr><td>returns</td><td><code>new Material(0.4,0.2,0.38,0.7,0.005)</code></td></tr></tbody></table></div></div><h2>Instance Fields</h2><div class="platform platform-flash"><a name="density"></a><h3><p><code><span class="keyword">var</span> <a href="#density"><span class="identifier">density</span></a>:<a class="type" href="../../Float.html">Float</a></code></p></h3><div class="doc"><p>Density of Shape's using this Material.
+     * <br/><br/>
+     * This property has units of g/pixel/pixel, not Kg/pixel/pixel for the
+     * simple reason that we get more reasonable values like 1 instead of 0.001
+     * to attain reasonable mass values for Bodys.
+     *
+     * @default 1</p></div></div><div class="platform platform-flash"><a name="dynamicFriction"></a><h3><p><code><span class="keyword">var</span> <a href="#dynamicFriction"><span class="identifier">dynamicFriction</span></a>:<a class="type" href="../../Float.html">Float</a></code></p></h3><div class="doc"><p>Coeffecient of dynamic friction for material.
+     * <br/><br/>
+     * This property may take any zero or positive value. Coeffecients of
+     * dynamicFriction are combined by taking the square root of their product.
+     * <br/><br/>
+     * The higher this value the more quickly objects will slow down from speed
+     * when sliding.
+     *
+     * @default 1</p></div></div><div class="platform platform-flash"><a name="elasticity"></a><h3><p><code><span class="keyword">var</span> <a href="#elasticity"><span class="identifier">elasticity</span></a>:<a class="type" href="../../Float.html">Float</a></code></p></h3><div class="doc"><p>Elasticity of material.
+     * <br/><br/>
+     * This property may take any value. Coeffecients of elasticity are combined
+     * by taking their average, and then clamping to the range [0,1]. In this way
+     * you may give very large values (even infinites) to this property to bias
+     * the result of combining elasticities.
+     * <br/><br/>
+     * A combined, clamped value of 0 results in no bouncing whatsoever.
+     * <br/>
+     * A combine, clamped value of 1 results in complete elasticity where if
+     * possible, the objects will not lose any energy at all.
+     *
+     * @default 0.0</p></div></div><div class="platform platform-flash"><a name="rollingFriction"></a><h3><p><code><span class="keyword">var</span> <a href="#rollingFriction"><span class="identifier">rollingFriction</span></a>:<a class="type" href="../../Float.html">Float</a></code></p></h3><div class="doc"><p>Coeffecient of rolling friction for circle interactions.
+     * <br/><br/>
+     * This property may take any zero or positive value. Coeffecients of
+     * staticFriction are combined by taking the square root of their product.
+     * <br/><br/>
+     * The higher this value, the more quickly a rolling circle - which would
+     * otherwise roll forever ignoring drag and numerical issues - will come to
+     * rest.
+     *
+     * @default 0.01</p></div></div><div class="platform platform-flash"><a name="shapes"></a><h3><p><code><span class="keyword">var</span> <a href="#shapes"><span class="identifier">shapes</span></a>:<a class="type" href="../../nape/shape/ShapeList.html">ShapeList</a></code></p></h3><div class="doc"><p>Set of all active shapes using this object.
+     * <br/><br/>
+     * Activeness of a shape in the sense that the Shape's Body is inside of a Space.
+     * <br/><br/>
+     * This list is immutable.</p></div></div><div class="platform platform-flash"><a name="staticFriction"></a><h3><p><code><span class="keyword">var</span> <a href="#staticFriction"><span class="identifier">staticFriction</span></a>:<a class="type" href="../../Float.html">Float</a></code></p></h3><div class="doc"><p>Coeffecient of static friction for material.
+     * <br/><br/>
+     * This property may take any zero or positive value. Coeffecients of
+     * staticFriction are combined by taking the square root of their product.
+     * <br/><br/>
+     * The higher this value the more quickly objects will come to rest once moving
+     * very slowly, and the harder it will be to cause the objcet to begin to slide.
+     *
+     * @default 2</p></div></div><div class="platform platform-flash"><a name="userData"></a><h3><p><code><span class="keyword">var</span> <a href="#userData"><span class="identifier">userData</span></a>:<a class="type" href="../../Dynamic.html">Dynamic</a><a class="type" href="../../Dynamic.html">Dynamic</a></code></p></h3><div class="doc"><p>Dynamic object for user to store additional data.
+     * <br/><br/>
+     * This object cannot be set, only its dynamically created
+     * properties may be set. In AS3 the type of this property is &amp;#42
+     * <br/><br/>
+     * This object will be lazily constructed so that until accessed
+     * for the first time, will be null internally.
+     *
+     * @default {}</p></div></div><div class="platform platform-flash"><a name="zpp_inner"></a><h3><p><code><span class="keyword">var</span> <a href="#zpp_inner"><span class="identifier">zpp_inner</span></a>:<a class="type" href="../../zpp_nape/phys/ZPP_Material.html">ZPP_Material</a></code></p></h3><div class="doc"><p>@private</p></div></div><div class="platform platform-flash"><a name="new"></a><h3><p><code><span class="keyword">function</span> <a href="#new"><span class="identifier">new</span></a>(?elasticity:<a class="type" href="../../Float.html">Float</a> = 0.0f, ?dynamicFriction:<a class="type" href="../../Float.html">Float</a> = 1.0f, ?staticFriction:<a class="type" href="../../Float.html">Float</a> = 2.0f, ?density:<a class="type" href="../../Float.html">Float</a> = 1, ?rollingFriction:<a class="type" href="../../Float.html">Float</a> = 0.001f):<a class="type" href="../../Void.html">Void</a></code></p></h3><div class="doc"><p>Construct a new Material object.
+     *
+     * </p><table class="table table-condensed"><tbody><tr><td>elasticity</td><td><p>The coeffecient of elasticity for material.
+    *                   (default 0.0)
+    * </p></td></tr><tr><td>dynamicFriction</td><td><p>The coeffecient of dynamic friction for
+    *                        material. (default 1.0)
+    * </p></td></tr><tr><td>staticFriction</td><td><p>The coeffecient of static friction for
+    *                       material. (default 2.0)
+    * </p></td></tr><tr><td>density</td><td><p>The density of the shape using this material in units
+    *                of g/pixel/pixel. (default 1.0)
+    * </p></td></tr><tr><td>rollingFriction</td><td><p>The coeffecient of rolling friction for material
+    *                        used in circle friction computations. (default 0.001)
+    * </p></td></tr><tr><td>returns</td><td><p>The constructed Material object.</p></td></tr></tbody></table></div></div><div class="platform platform-flash"><a name="copy"></a><h3><p><code><span class="keyword">function</span> <a href="#copy"><span class="identifier">copy</span></a>():<a class="type" href="../../nape/phys/Material.html">Material</a></code></p></h3><div class="doc"><p>Produce a copy of this Material object.
+     * <br/><br/>
+     * The copied object will be identical in all properties with the the
+     * copied userData being assigned the same fields as 'this' Shape with the
+     * same values copied over by reference for object types.
+     *
+     * </p><table class="table table-condensed"><tbody><tr><td>returns</td><td><p>The copied Material.</p></td></tr></tbody></table></div></div><div class="platform platform-flash"><a name="toString"></a><h3><p><code><span class="keyword">function</span> <a href="#toString"><span class="identifier">toString</span></a>():<a class="type" href="../../String.html">String</a></code></p></h3><div class="doc"><p>@private</p></div></div></div></div></div></body></html>

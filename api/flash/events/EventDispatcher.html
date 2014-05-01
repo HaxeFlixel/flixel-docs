@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8"/><link href="../../bootstrap-combined.min.css" rel="stylesheet" /><script type="text/javascript" src="../../jquery-1.9.1.min.js"></script><script type="text/javascript" src="../../bootstrap.min.js"></script><link href="../../styles.css" rel="stylesheet" /><link rel="icon" href="../../favicon.ico" type="image/x-icon"></link><script type="text/javascript" src="../../nav.js"></script><script type="text/javascript" src="../../index.js"></script><script type="text/javascript">var dox = {rootPath: "../../",platforms: ["flash"]};</script><title>EventDispatcher</title></head><body><div class="navbar navbar-inverse navbar-fixed-top"><div class="navbar-inner"><form class="navbar-search pull-left" id="searchForm"><input id="search" type="text" class="search-query" placeholder="Filter" autocomplete="off"/></form><ul class="nav"><li id="select-platform" class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Platform<b class="caret"></b></a><ul class="dropdown-menu"><li data="all"><a href="#">All Platforms</a></li><li data="flash"><a href="#">flash</a></li></ul></li></ul></div></div><div id="container"><div id="nav"></div><div id="content"><div class="header"><h1><code><span class="directive">class </span><span class="type">flash.events.EventDispatcher</span><span class="keyword"> implements</span> <a class="type" href="../../flash/events/IEventDispatcher.html">IEventDispatcher</a></code></h1></div><div class="body"><p class="availability">Available on all platforms</p><div><table class="related-types toggle" style="margin-top:16px;"><tbody><tr><td colspan="2"><strong>Sub classes</strong></td></tr><tr><td width="12" style="vertical-align:top;"><a href="#" onclick="toggleInherited(this)"><img style="padding-top:4px;" src="../../triangle-closed.png"></img></a></td><td class="toggle-hide"><a href="../../flash/display/DisplayObject.html">DisplayObject</a>, <a href="../../flash/display/FrameLabel.html">FrameLabel</a>, <a href="../../flash/display/LoaderInfo.html">LoaderInfo</a>, <a href="../../flash/display/NativeMenu.html">NativeMenu</a>, <a href="../../flash/display/Stage3D.html">Stage3D</a>, <a href="../../flash/display3D/textures/TextureBase.html">TextureBase</a>, <a href="../../flash/display3D/Context3D.html">Context3D</a>, <a href="../../flash/events/UncaughtErrorEvents.html">UncaughtErrorEvents</a>, <a href="../../flash/media/AVSource.html">AVSource</a>, <a href="../../flash/media/AVStream.html">AVStream</a>, <a href="../../flash/media/Camera.html">Camera</a>, <a href="../../flash/media/Microphone.html">Microphone</a>, <a href="../../flash/media/Sound.html">Sound</a>, <a href="../../flash/media/SoundChannel.html">SoundChannel</a>, <a href="../../flash/media/StageVideo.html">StageVideo</a>, <a href="../../flash/net/FileReference.html">FileReference</a>, <a href="../../flash/net/NetConnection.html">NetConnection</a>, <a href="../../flash/net/NetStream.html">NetStream</a>, <a href="../../flash/net/NetStreamPlayOptions.html">NetStreamPlayOptions</a>, <a href="../../flash/net/SharedObject.html">SharedObject</a>, <a href="../../flash/net/URLLoader.html">URLLoader</a>, <a href="../../flash/system/IME.html">IME</a>, <a href="../../flash/text/StyleSheet.html">StyleSheet</a>, <a href="../../flash/ui/GameInput.html">GameInput</a>, <a href="../../flash/ui/GameInputControl.html">GameInputControl</a></td><td class="toggle-show"><table class="table table-condensed"><tbody><tr><td width="200"><a href="../../flash/display/DisplayObject.html">DisplayObject</a></td><td><p>The DisplayObject class is the base class for all objects that can be
+ * placed on the display list. The display list manages all objects displayed
+ * in flash. Use the DisplayObjectContainer class to arrange the
+ * display objects in the display list. DisplayObjectContainer objects can
+ * have child display objects, while other display objects, such as Shape and
+ * TextField objects, are "leaf" nodes that have only parents and siblings, no
+ * children.
+ <em>
+ * <p>The DisplayObject class supports basic functionality like the <i>x</i>
+ * and <i>y</i> position of an object, as well as more advanced properties of
+ * the object such as its transformation matrix. </p></td></tr><tr><td width="200"><a href="../../flash/display/FrameLabel.html">FrameLabel</a></td><td><p></p></td></tr><tr><td width="200"><a href="../../flash/display/LoaderInfo.html">LoaderInfo</a></td><td><p>The LoaderInfo class provides information about a loaded SWF file or a
+ * loaded image file(JPEG, GIF, or PNG). LoaderInfo objects are available for
+ * any display object. The information provided includes load progress, the
+ * URLs of the loader and loaded content, the number of bytes total for the
+ * media, and the nominal height and width of the media.
+ <em>
+ * <p>You can access LoaderInfo objects in two ways: </p></td></tr><tr><td width="200"><a href="../../flash/display/NativeMenu.html">NativeMenu</a></td><td><p></p></td></tr><tr><td width="200"><a href="../../flash/display/Stage3D.html">Stage3D</a></td><td><p></p></td></tr><tr><td width="200"><a href="../../flash/display3D/textures/TextureBase.html">TextureBase</a></td><td><p></p></td></tr><tr><td width="200"><a href="../../flash/display3D/Context3D.html">Context3D</a></td><td><p></p></td></tr><tr><td width="200"><a href="../../flash/events/UncaughtErrorEvents.html">UncaughtErrorEvents</a></td><td><p></p></td></tr><tr><td width="200"><a href="../../flash/media/AVSource.html">AVSource</a></td><td><p></p></td></tr><tr><td width="200"><a href="../../flash/media/AVStream.html">AVStream</a></td><td><p></p></td></tr><tr><td width="200"><a href="../../flash/media/Camera.html">Camera</a></td><td><p></p></td></tr><tr><td width="200"><a href="../../flash/media/Microphone.html">Microphone</a></td><td><p></p></td></tr><tr><td width="200"><a href="../../flash/media/Sound.html">Sound</a></td><td><p>The Sound class lets you work with sound in an application. The Sound class
+ * lets you create a Sound object, load and play an external MP3 file into
+ * that object, close the sound stream, and access data about the sound, such
+ * as information about the number of bytes in the stream and ID3 metadata.
+ * More detailed control of the sound is performed through the sound source
+ *  -  the SoundChannel or Microphone object for the sound  -  and through the
+ * properties in the SoundTransform class that control the output of the sound
+ * to the computer's speakers.
+ <em>
+ * <p>In Flash Player 10 and later and AIR 1.5 and later, you can also use
+ * this class to work with sound that is generated dynamically. In this case,
+ * the Sound object uses the function you assign to a <code>sampleData</code>
+ * event handler to poll for sound data. The sound is played as it is
+ * retrieved from a ByteArray object that you populate with sound data. You
+ * can use <code>Sound.extract()</code> to extract sound data from a Sound
+ * object, after which you can manipulate it before writing it back to the
+ * stream for playback.</p></td></tr><tr><td width="200"><a href="../../flash/media/SoundChannel.html">SoundChannel</a></td><td><p>The SoundChannel class controls a sound in an application. Every sound is
+ * assigned to a sound channel, and the application can have multiple sound
+ * channels that are mixed together. The SoundChannel class contains a
+ * <code>stop()</code> method, properties for monitoring the amplitude
+ * (volume) of the channel, and a property for assigning a SoundTransform
+ * object to the channel.
+ * 
+ * @event soundComplete Dispatched when a sound has finished playing.</p></td></tr><tr><td width="200"><a href="../../flash/media/StageVideo.html">StageVideo</a></td><td><p></p></td></tr><tr><td width="200"><a href="../../flash/net/FileReference.html">FileReference</a></td><td><p></p></td></tr><tr><td width="200"><a href="../../flash/net/NetConnection.html">NetConnection</a></td><td><p></p></td></tr><tr><td width="200"><a href="../../flash/net/NetStream.html">NetStream</a></td><td><p></p></td></tr><tr><td width="200"><a href="../../flash/net/NetStreamPlayOptions.html">NetStreamPlayOptions</a></td><td><p></p></td></tr><tr><td width="200"><a href="../../flash/net/SharedObject.html">SharedObject</a></td><td><p>The SharedObject class is used to read and store limited amounts of data on
+ * a user's computer or on a server. Shared objects offer real-time data
+ * sharing between multiple client SWF files and objects that are persistent
+ * on the local computer or remote server. Local shared objects are similar to
+ * browser cookies and remote shared objects are similar to real-time data
+ * transfer devices. To use remote shared objects, you need Adobe Flash Media
+ * Server.
+ <em>
+ * <p>Use shared objects to do the following:</p></td></tr><tr><td width="200"><a href="../../flash/net/URLLoader.html">URLLoader</a></td><td><p>The URLLoader class downloads data from a URL as text, binary data, or
+ * URL-encoded variables. It is useful for downloading text files, XML, or
+ * other information to be used in a dynamic, data-driven application.
+ <em>
+ * <p>A URLLoader object downloads all of the data from a URL before making it
+ * available to code in the applications. It sends out notifications about the
+ * progress of the download, which you can monitor through the
+ * <code>bytesLoaded</code> and <code>bytesTotal</code> properties, as well as
+ * through dispatched events.</p></td></tr><tr><td width="200"><a href="../../flash/system/IME.html">IME</a></td><td><p></p></td></tr><tr><td width="200"><a href="../../flash/text/StyleSheet.html">StyleSheet</a></td><td><p></p></td></tr><tr><td width="200"><a href="../../flash/ui/GameInput.html">GameInput</a></td><td><p></p></td></tr><tr><td width="200"><a href="../../flash/ui/GameInputControl.html">GameInputControl</a></td><td><p></p></td></tr></tbody></table></td></tr></tbody></table></div><div class="doc"><p>The EventDispatcher class is the base class for all classes that dispatch
+ * events. The EventDispatcher class implements the IEventDispatcher interface
+ * and is the base class for the DisplayObject class. The EventDispatcher
+ * class allows any object on the display list to be an event target and as
+ * such, to use the methods of the IEventDispatcher interface.
+ <em>
+ * <p>Event targets are an important part of the Flash<sup>®</sup> Player and
+ * Adobe<sup>®</sup> AIR<sup>®</sup> event model. The event target serves as
+ * the focal point for how events flow through the display list hierarchy.
+ * When an event such as a mouse click or a keypress occurs, Flash Player or
+ * the AIR application dispatches an event object into the event flow from the
+ * root of the display list. The event object then makes its way through the
+ * display list until it reaches the event target, at which point it begins
+ * its return trip through the display list. This round-trip journey to the
+ * event target is conceptually divided into three phases: the capture phase
+ * comprises the journey from the root to the last node before the event
+ * target's node, the target phase comprises only the event target node, and
+ * the bubbling phase comprises any subsequent nodes encountered on the return
+ * trip to the root of the display list.</p>
+ </em>
+ * <p>In general, the easiest way for a user-defined class to gain event
+ * dispatching capabilities is to extend EventDispatcher. If this is
+ * impossible(that is, if the class is already extending another class), you
+ * can instead implement the IEventDispatcher interface, create an
+ * EventDispatcher member, and write simple hooks to route calls into the
+ * aggregated EventDispatcher.</p>
+ * 
+ * @event activate   [broadcast event] Dispatched when the Flash Player or AIR
+ *                   application gains operating system focus and becomes
+ *                   active. This event is a broadcast event, which means that
+ *                   it is dispatched by all EventDispatcher objects with a
+ *                   listener registered for this event. For more information
+ *                   about broadcast events, see the DisplayObject class.
+ * @event deactivate [broadcast event] Dispatched when the Flash Player or AIR
+ *                   application operating loses system focus and is becoming
+ *                   inactive. This event is a broadcast event, which means
+ *                   that it is dispatched by all EventDispatcher objects with
+ *                   a listener registered for this event. For more
+ *                   information about broadcast events, see the DisplayObject
+ *                   class.</p></div><h2>Instance Fields</h2><div class="platform platform-flash"><a name="new"></a><h3><p><code><span class="keyword">function</span> <a href="#new"><span class="identifier">new</span></a>(?target:<a class="type" href="../../flash/events/IEventDispatcher.html">IEventDispatcher</a>):<a class="type" href="../../Void.html">Void</a></code></p></h3><div class="doc"><p>Aggregates an instance of the EventDispatcher class.
+ *
+ * <p>The EventDispatcher class is generally used as a base class, which
+ * means that most developers do not need to use this constructor function.
+ * However, advanced developers who are implementing the IEventDispatcher
+ * interface need to use this constructor. If you are unable to extend the
+ * EventDispatcher class and must instead implement the IEventDispatcher
+ * interface, use this constructor to aggregate an instance of the
+ * EventDispatcher class.</p>
+ * 
+ * </p><table class="table table-condensed"><tbody><tr><td>target</td><td><p>The target object for events dispatched to the
+<em>               EventDispatcher object. This parameter is used when the
+</em>               EventDispatcher instance is aggregated by a class that
+<em>               implements IEventDispatcher; it is necessary so that the
+</em>               containing object can be the target for events. Do not use
+<em>               this parameter in simple cases in which a class extends
+</em>               EventDispatcher.</p></td></tr></tbody></table></div></div><div class="platform platform-flash"><a name="addEventListener"></a><h3><p><code><span class="keyword">function</span> <a href="#addEventListener"><span class="identifier">addEventListener</span></a>(type:<a class="type" href="../../String.html">String</a>, listener:<a class="type" href="../../Dynamic.html">Dynamic</a> -&gt;<a class="type" href="../../Void.html">Void</a>, ?useCapture:<a class="type" href="../../Bool.html">Bool</a>, ?priority:<a class="type" href="../../Int.html">Int</a>, ?useWeakReference:<a class="type" href="../../Bool.html">Bool</a>):<a class="type" href="../../Void.html">Void</a></code></p></h3><div class="doc"><p>Registers an event listener object with an EventDispatcher object so that
+ * the listener receives notification of an event. You can register event
+ * listeners on all nodes in the display list for a specific type of event,
+ * phase, and priority.
+ <em>
+ * <p>After you successfully register an event listener, you cannot change
+ * its priority through additional calls to <code>addEventListener()</code>.
+ * To change a listener's priority, you must first call
+ * <code>removeListener()</code>. Then you can register the listener again
+ * with the new priority level. </p>
+ </em>
+ * <p>Keep in mind that after the listener is registered, subsequent calls to
+ * <code>addEventListener()</code> with a different <code>type</code> or
+ * <code>useCapture</code> value result in the creation of a separate
+ * listener registration. For example, if you first register a listener with
+ * <code>useCapture</code> set to <code>true</code>, it listens only during
+ * the capture phase. If you call <code>addEventListener()</code> again using
+ * the same listener object, but with <code>useCapture</code> set to
+ * <code>false</code>, you have two separate listeners: one that listens
+ * during the capture phase and another that listens during the target and
+ * bubbling phases. </p>
+ <em>
+ * <p>You cannot register an event listener for only the target phase or the
+ * bubbling phase. Those phases are coupled during registration because
+ * bubbling applies only to the ancestors of the target node.</p>
+ </em>
+ * <p>If you no longer need an event listener, remove it by calling
+ * <code>removeEventListener()</code>, or memory problems could result. Event
+ * listeners are not automatically removed from memory because the garbage
+ * collector does not remove the listener as long as the dispatching object
+ * exists(unless the <code>useWeakReference</code> parameter is set to
+ * <code>true</code>).</p>
+ <em>
+ * <p>Copying an EventDispatcher instance does not copy the event listeners
+ * attached to it.(If your newly created node needs an event listener, you
+ * must attach the listener after creating the node.) However, if you move an
+ * EventDispatcher instance, the event listeners attached to it move along
+ * with it.</p>
+ </em>
+ * <p>If the event listener is being registered on a node while an event is
+ * being processed on this node, the event listener is not triggered during
+ * the current phase but can be triggered during a later phase in the event
+ * flow, such as the bubbling phase.</p>
+ *
+ * <p>If an event listener is removed from a node while an event is being
+ * processed on the node, it is still triggered by the current actions. After
+ * it is removed, the event listener is never invoked again(unless
+ * registered again for future processing). </p>
+ * 
+ * </p><table class="table table-condensed"><tbody><tr><td>type</td><td><p>The type of event.
+ * </p></td></tr><tr><td>useCapture</td><td><p>Determines whether the listener works in the
+ *                         capture phase or the target and bubbling phases.
+ *                         If <code>useCapture</code> is set to
+ *                         <code>true</code>, the listener processes the
+ *                         event only during the capture phase and not in the
+ *                         target or bubbling phase. If
+ *                         <code>useCapture</code> is <code>false</code>, the
+ *                         listener processes the event only during the
+ *                         target or bubbling phase. To listen for the event
+ *                         in all three phases, call
+ *                         <code>addEventListener</code> twice, once with
+ *                         <code>useCapture</code> set to <code>true</code>,
+ *                         then again with <code>useCapture</code> set to
+ *                         <code>false</code>.
+ * </p></td></tr><tr><td>priority</td><td><p>The priority level of the event listener. The
+ *                         priority is designated by a signed 32-bit integer.
+ *                         The higher the number, the higher the priority.
+ *                         All listeners with priority <i>n</i> are processed
+ *                         before listeners of priority <i>n</i>-1. If two or
+ *                         more listeners share the same priority, they are
+ *                         processed in the order in which they were added.
+ *                         The default priority is 0.
+ * </p></td></tr><tr><td>useWeakReference</td><td><p>Determines whether the reference to the listener
+<em>                         is strong or weak. A strong reference(the
+</em>                         default) prevents your listener from being
+<em>                         garbage-collected. A weak reference does not.
+</em>
+<em>                         <p>Class-level member functions are not subject to
+</em>                         garbage collection, so you can set
+<em>                         <code>useWeakReference</code> to <code>true</code>
+</em>                         for class-level member functions without
+<em>                         subjecting them to garbage collection. If you set
+</em>                         <code>useWeakReference</code> to <code>true</code>
+<em>                         for a listener that is a nested inner function,
+</em>                         the function will be garbage-collected and no
+<em>                         longer persistent. If you create references to the
+</em>                         inner function(save it in another variable) then
+<em>                         it is not garbage-collected and stays
+</em>                         persistent.</p>
+* </p></td></tr></tbody></table></div></div><div class="platform platform-flash"><a name="dispatchEvent"></a><h3><p><code><span class="keyword">function</span> <a href="#dispatchEvent"><span class="identifier">dispatchEvent</span></a>(event:<a class="type" href="../../flash/events/Event.html">Event</a>):<a class="type" href="../../Bool.html">Bool</a></code></p></h3><div class="doc"><p>Dispatches an event into the event flow. The event target is the
+ * EventDispatcher object upon which the <code>dispatchEvent()</code> method
+ * is called.
+ * 
+ * </p><table class="table table-condensed"><tbody><tr><td>event</td><td><p>The Event object that is dispatched into the event flow. If
+<em>              the event is being redispatched, a clone of the event is
+</em>              created automatically. After an event is dispatched, its
+<em>              <code>target</code> property cannot be changed, so you must
+</em>              create a new copy of the event for redispatching to work.
+* </p></td></tr><tr><td>returns</td><td><p>A value of <code>true</code> if the event was successfully
+<em>         dispatched. A value of <code>false</code> indicates failure or
+</em>         that <code>preventDefault()</code> was called on the event.
+* </p></td></tr></tbody></table></div></div><div class="platform platform-flash"><a name="hasEventListener"></a><h3><p><code><span class="keyword">function</span> <a href="#hasEventListener"><span class="identifier">hasEventListener</span></a>(type:<a class="type" href="../../String.html">String</a>):<a class="type" href="../../Bool.html">Bool</a></code></p></h3><div class="doc"><p>Checks whether the EventDispatcher object has any listeners registered for
+ * a specific type of event. This allows you to determine where an
+ * EventDispatcher object has altered handling of an event type in the event
+ * flow hierarchy. To determine whether a specific event type actually
+ * triggers an event listener, use <code>willTrigger()</code>.
+ <em>
+ * <p>The difference between <code>hasEventListener()</code> and
+ * <code>willTrigger()</code> is that <code>hasEventListener()</code>
+ * examines only the object to which it belongs, whereas
+ * <code>willTrigger()</code> examines the entire event flow for the event
+ * specified by the <code>type</code> parameter. </p>
+ </em>
+ * <p>When <code>hasEventListener()</code> is called from a LoaderInfo
+ * object, only the listeners that the caller can access are considered.</p>
+ * 
+ * </p><table class="table table-condensed"><tbody><tr><td>type</td><td><p>The type of event.
+* </p></td></tr><tr><td>returns</td><td><p>A value of <code>true</code> if a listener of the specified type
+*         is registered; <code>false</code> otherwise.</p></td></tr></tbody></table></div></div><div class="platform platform-flash"><a name="removeEventListener"></a><h3><p><code><span class="keyword">function</span> <a href="#removeEventListener"><span class="identifier">removeEventListener</span></a>(type:<a class="type" href="../../String.html">String</a>, listener:<a class="type" href="../../Dynamic.html">Dynamic</a> -&gt;<a class="type" href="../../Void.html">Void</a>, ?useCapture:<a class="type" href="../../Bool.html">Bool</a>):<a class="type" href="../../Void.html">Void</a></code></p></h3><div class="doc"><p>Removes a listener from the EventDispatcher object. If there is no
+ * matching listener registered with the EventDispatcher object, a call to
+ * this method has no effect.
+ * 
+ * </p><table class="table table-condensed"><tbody><tr><td>type</td><td><p>The type of event.
+ * </p></td></tr><tr><td>useCapture</td><td><p>Specifies whether the listener was registered for the
+<em>                   capture phase or the target and bubbling phases. If the
+</em>                   listener was registered for both the capture phase and
+<em>                   the target and bubbling phases, two calls to
+</em>                   <code>removeEventListener()</code> are required to
+<em>                   remove both, one call with <code>useCapture()</code> set
+</em>                   to <code>true</code>, and another call with
+*                   <code>useCapture()</code> set to <code>false</code>.</p></td></tr></tbody></table></div></div><div class="platform platform-flash"><a name="toString"></a><h3><p><code><span class="keyword">function</span> <a href="#toString"><span class="identifier">toString</span></a>():<a class="type" href="../../String.html">String</a></code></p></h3><div class="doc"><p></p></div></div><div class="platform platform-flash"><a name="willTrigger"></a><h3><p><code><span class="keyword">function</span> <a href="#willTrigger"><span class="identifier">willTrigger</span></a>(type:<a class="type" href="../../String.html">String</a>):<a class="type" href="../../Bool.html">Bool</a></code></p></h3><div class="doc"><p>Checks whether an event listener is registered with this EventDispatcher
+ * object or any of its ancestors for the specified event type. This method
+ * returns <code>true</code> if an event listener is triggered during any
+ * phase of the event flow when an event of the specified type is dispatched
+ * to this EventDispatcher object or any of its descendants.
+ <em>
+ * <p>The difference between the <code>hasEventListener()</code> and the
+ * <code>willTrigger()</code> methods is that <code>hasEventListener()</code>
+ * examines only the object to which it belongs, whereas the
+ * <code>willTrigger()</code> method examines the entire event flow for the
+ * event specified by the <code>type</code> parameter. </p>
+ </em>
+ * <p>When <code>willTrigger()</code> is called from a LoaderInfo object,
+ * only the listeners that the caller can access are considered.</p>
+ * 
+ * </p><table class="table table-condensed"><tbody><tr><td>type</td><td><p>The type of event.
+* </p></td></tr><tr><td>returns</td><td><p>A value of <code>true</code> if a listener of the specified type
+*         will be triggered; <code>false</code> otherwise.</p></td></tr></tbody></table></div></div></div></div></div></body></html>

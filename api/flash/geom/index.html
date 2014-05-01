@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8"/><link href="../../bootstrap-combined.min.css" rel="stylesheet" /><script type="text/javascript" src="../../jquery-1.9.1.min.js"></script><script type="text/javascript" src="../../bootstrap.min.js"></script><link href="../../styles.css" rel="stylesheet" /><link rel="icon" href="../../favicon.ico" type="image/x-icon"></link><script type="text/javascript" src="../../nav.js"></script><script type="text/javascript" src="../../index.js"></script><script type="text/javascript">var dox = {rootPath: "../../",platforms: ["flash"]};</script><title>package geom</title></head><body><div class="navbar navbar-inverse navbar-fixed-top"><div class="navbar-inner"><form class="navbar-search pull-left" id="searchForm"><input id="search" type="text" class="search-query" placeholder="Filter" autocomplete="off"/></form><ul class="nav"><li id="select-platform" class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Platform<b class="caret"></b></a><ul class="dropdown-menu"><li data="all"><a href="#">All Platforms</a></li><li data="flash"><a href="#">flash</a></li></ul></li></ul></div></div><div id="container"><div id="nav"></div><div id="content"><h1><span class="directive">package</span> flash.geom</h1><table class="table table-condensed"><tbody><tr><td width="200"><a href="../../flash/geom/ColorTransform.html">ColorTransform</a></td><td><p>The ColorTransform class lets you adjust the color values in a display
+ * object. The color adjustment or <i>color transformation</i> can be applied
+ * to all four channels: red, green, blue, and alpha transparency.
+ <em>
+ * <p>When a ColorTransform object is applied to a display object, a new value
+ * for each color channel is calculated like this:</p></td></tr><tr><td width="200"><a href="../../flash/geom/Matrix.html">Matrix</a></td><td><p>The Matrix class represents a transformation matrix that determines how to
+ * map points from one coordinate space to another. You can perform various
+ * graphical transformations on a display object by setting the properties of
+ * a Matrix object, applying that Matrix object to the <code>matrix</code>
+ * property of a Transform object, and then applying that Transform object as
+ * the <code>transform</code> property of the display object. These
+ * transformation functions include translation(<i>x</i> and <i>y</i>
+ * repositioning), rotation, scaling, and skewing.
+ <em>
+ * <p>Together these types of transformations are known as <i>affine
+ * transformations</i>. Affine transformations preserve the straightness of
+ * lines while transforming, so that parallel lines stay parallel.</p></td></tr><tr><td width="200"><a href="../../flash/geom/Matrix3D.html">Matrix3D</a></td><td><p>The Matrix class represents a transformation matrix that determines how to
+ * map points from one coordinate space to another. You can perform various
+ * graphical transformations on a display object by setting the properties of
+ * a Matrix object, applying that Matrix object to the <code>matrix</code>
+ * property of a Transform object, and then applying that Transform object as
+ * the <code>transform</code> property of the display object. These
+ * transformation functions include translation(<i>x</i> and <i>y</i>
+ * repositioning), rotation, scaling, and skewing.
+ <em>
+ * <p>Together these types of transformations are known as <i>affine
+ * transformations</i>. Affine transformations preserve the straightness of
+ * lines while transforming, so that parallel lines stay parallel.</p></td></tr><tr><td width="200"><a href="../../flash/geom/Orientation3D.html">Orientation3D</a></td><td><p></p></td></tr><tr><td width="200"><a href="../../flash/geom/PerspectiveProjection.html">PerspectiveProjection</a></td><td><p></p></td></tr><tr><td width="200"><a href="../../flash/geom/Point.html">Point</a></td><td><p>The Point object represents a location in a two-dimensional coordinate
+ * system, where <i>x</i> represents the horizontal axis and <i>y</i>
+ * represents the vertical axis.
+ <em>
+ * <p>The following code creates a point at(0,0):</p></td></tr><tr><td width="200"><a href="../../flash/geom/Rectangle.html">Rectangle</a></td><td><p>A Rectangle object is an area defined by its position, as indicated by its
+ * top-left corner point(<i>x</i>, <i>y</i>) and by its width and its height.
+ <em>
+ </em>
+ * <p>The <code>x</code>, <code>y</code>, <code>width</code>, and
+ * <code>height</code> properties of the Rectangle class are independent of
+ * each other; changing the value of one property has no effect on the others.
+ * However, the <code>right</code> and <code>bottom</code> properties are
+ * integrally related to those four properties. For example, if you change the
+ * value of the <code>right</code> property, the value of the
+ * <code>width</code> property changes; if you change the <code>bottom</code>
+ * property, the value of the <code>height</code> property changes. </p></td></tr><tr><td width="200"><a href="../../flash/geom/Transform.html">Transform</a></td><td><p>The Transform class provides access to color adjustment properties and two-
+ * or three-dimensional transformation objects that can be applied to a
+ * display object. During the transformation, the color or the orientation and
+ * position of a display object is adjusted(offset) from the current values
+ * or coordinates to new values or coordinates. The Transform class also
+ * collects data about color and two-dimensional matrix transformations that
+ * are applied to a display object and all of its parent objects. You can
+ * access these combined transformations through the
+ * <code>concatenatedColorTransform</code> and <code>concatenatedMatrix</code>
+ * properties.
+ <em>
+ * <p>To apply color transformations: create a ColorTransform object, set the
+ * color adjustments using the object's methods and properties, and then
+ * assign the <code>colorTransformation</code> property of the
+ * <code>transform</code> property of the display object to the new
+ * ColorTransformation object.</p></td></tr><tr><td width="200"><a href="../../flash/geom/Vector3D.html">Vector3D</a></td><td><p></p></td></tr></tbody></table></div></div></body></html>

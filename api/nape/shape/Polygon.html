@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8"/><link href="../../bootstrap-combined.min.css" rel="stylesheet" /><script type="text/javascript" src="../../jquery-1.9.1.min.js"></script><script type="text/javascript" src="../../bootstrap.min.js"></script><link href="../../styles.css" rel="stylesheet" /><link rel="icon" href="../../favicon.ico" type="image/x-icon"></link><script type="text/javascript" src="../../nav.js"></script><script type="text/javascript" src="../../index.js"></script><script type="text/javascript">var dox = {rootPath: "../../",platforms: ["flash"]};</script><title>Polygon</title></head><body><div class="navbar navbar-inverse navbar-fixed-top"><div class="navbar-inner"><form class="navbar-search pull-left" id="searchForm"><input id="search" type="text" class="search-query" placeholder="Filter" autocomplete="off"/></form><ul class="nav"><li id="select-platform" class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Platform<b class="caret"></b></a><ul class="dropdown-menu"><li data="all"><a href="#">All Platforms</a></li><li data="flash"><a href="#">flash</a></li></ul></li></ul></div></div><div id="container"><div id="nav"></div><div id="content"><div class="header"><h1><code><span class="directive">class </span><span class="type">nape.shape.Polygon</span><span class="keyword"> extends</span> <a class="type" href="../../nape/shape/Shape.html">Shape</a></code></h1></div><div class="body"><p class="availability">Available on all platforms</p><div class="doc"><p>Polygon subtype of Shape.
+ * <br/><br/>
+ * Can be used to simulate any convex polygon.</p></div><h2>Class Fields</h2><div class="platform platform-flash"><a name="box"></a><h3><p><code><span class="keyword">static </span><span class="keyword">function</span> <a href="#box"><span class="identifier">box</span></a>(width:<a class="type" href="../../Float.html">Float</a>, height:<a class="type" href="../../Float.html">Float</a>, ?weak:<a class="type" href="../../Bool.html">Bool</a> = false):<a class="type" href="../../Array.html">Array</a>&lt;<a class="type" href="../../nape/geom/Vec2.html">Vec2</a>&gt;</code></p></h3><div class="doc"><p>Construct a polygon representing an origin centred box.
+     * <br/><br/>
+     * This method is equivalent to calling: <code>Polygon.rect(-width/2,-height/2,width,height)</code>
+     *
+     * </p><table class="table table-condensed"><tbody><tr><td>width</td><td><p>The width of the box (This value may be negative but will
+    *              make no difference).
+    * </p></td></tr><tr><td>height</td><td><p>The height of the box (This value may be negative but will
+    *              make no difference).
+    * </p></td></tr><tr><td>weak</td><td><p>If true, the generated list of vertices will be allocated as
+    *             weak Vec2s so that when this list is passed to a Nape function
+    *             these Vec2s will be automatically sent back to object pool.
+    *             (default false)
+    * </p></td></tr><tr><td>returns</td><td><p>An array of Vec2 representing the given box.</p></td></tr></tbody></table></div></div><div class="platform platform-flash"><a name="rect"></a><h3><p><code><span class="keyword">static </span><span class="keyword">function</span> <a href="#rect"><span class="identifier">rect</span></a>(x:<a class="type" href="../../Float.html">Float</a>, y:<a class="type" href="../../Float.html">Float</a>, width:<a class="type" href="../../Float.html">Float</a>, height:<a class="type" href="../../Float.html">Float</a>, ?weak:<a class="type" href="../../Bool.html">Bool</a> = false):<a class="type" href="../../Array.html">Array</a>&lt;<a class="type" href="../../nape/geom/Vec2.html">Vec2</a>&gt;</code></p></h3><div class="doc"><p>Construct a polygon representing a rectangle.
+     * <br/><br/>
+     * For a dynamic object, you may consider use of the box method instead
+     * as dynamic bodies will only respond as expected if their centre of mass
+     * is equal to the origin.
+     * <br/><br/>
+     * The generate polygon will have coordinates equal to:
+     * <pre>
+     * (x, y) -> (x + width, y + height)
+     * </pre>
+     * Negative values of width/height are permitted so that the given x/y values
+     * may not necessarigly be the top-left corner of rectangle.
+     *
+     * </p><table class="table table-condensed"><tbody><tr><td>x</td><td><p>The x coordinate of rectangle.
+    * </p></td></tr><tr><td>y</td><td><p>The y coordinate of rectangle.
+    * </p></td></tr><tr><td>width</td><td><p>The width of the ractangle. This value may be negative.
+    * </p></td></tr><tr><td>height</td><td><p>The height of the rectangle This value may be negative.
+    * </p></td></tr><tr><td>weak</td><td><p>If true, the generated list of vertices will be allocated as
+    *             weak Vec2s so that when this list is passed to a Nape function
+    *             these Vec2s will be automatically sent back to object pool.
+    *             (default false)
+    * </p></td></tr><tr><td>returns</td><td><p>An array of Vec2 representing the given rectangle.</p></td></tr></tbody></table></div></div><div class="platform platform-flash"><a name="regular"></a><h3><p><code><span class="keyword">static </span><span class="keyword">function</span> <a href="#regular"><span class="identifier">regular</span></a>(xRadius:<a class="type" href="../../Float.html">Float</a>, yRadius:<a class="type" href="../../Float.html">Float</a>, edgeCount:<a class="type" href="../../Int.html">Int</a>, ?angleOffset:<a class="type" href="../../Float.html">Float</a> = 0.0f, ?weak:<a class="type" href="../../Bool.html">Bool</a> = false):<a class="type" href="../../Array.html">Array</a>&lt;<a class="type" href="../../nape/geom/Vec2.html">Vec2</a>&gt;</code></p></h3><div class="doc"><p>Construct a regular polygon centred at origin.
+     * <br/><br/>
+     * Vertices are created at positions on the edge of an ellipsoid of given
+     * radii, when radii are not equal the vertices will not have an equal
+     * angle between them; it will be as though an actual regular polygon were
+     * created, and then squashed to conform to the input radii.
+     *
+     * </p><table class="table table-condensed"><tbody><tr><td>xRadius</td><td><p>The x radius of polygon before angleOffset rotation.
+    * </p></td></tr><tr><td>yRadius</td><td><p>The y radius of polygon before angleOffset rotation.
+    * </p></td></tr><tr><td>edgeCount</td><td><p>The number of edges/vertices in polygon.
+    * </p></td></tr><tr><td>angleOffset</td><td><p>The clockwise angular offset to generate vertices at
+    *                    in radians. (default 0.0)
+    * </p></td></tr><tr><td>weak</td><td><p>If true, the generated list of vertices will be allocated as
+    *             weak Vec2s so that when this list is passed to a Nape function
+    *             these Vec2s will be automatically sent back to object pool.
+    *             (default false)
+    * </p></td></tr><tr><td>returns</td><td><p>An array of Vec2 representing the polygon.</p></td></tr></tbody></table></div></div><h2>Instance Fields</h2><div class="platform platform-flash"><a name="edges"></a><h3><p><code><span class="keyword">var</span> <a href="#edges"><span class="identifier">edges</span></a>:<a class="type" href="../../nape/shape/EdgeList.html">EdgeList</a></code></p></h3><div class="doc"><p>Set of edges on polygon.
+     * <br/><br/>
+     * This list is immutable.</p></div></div><div class="platform platform-flash"><a name="localVerts"></a><h3><p><code><span class="keyword">var</span> <a href="#localVerts"><span class="identifier">localVerts</span></a>:<a class="type" href="../../nape/geom/Vec2List.html">Vec2List</a></code></p></h3><div class="doc"><p>Local coordinates of vertices.
+     * <br/><br/>
+     * This list can be modified, but modifications to a Polygon that is
+     * part of a static Body inside of a Space will given an error in
+     * debug builds.</p></div></div><div class="platform platform-flash"><a name="worldVerts"></a><h3><p><code><span class="keyword">var</span> <a href="#worldVerts"><span class="identifier">worldVerts</span></a>:<a class="type" href="../../nape/geom/Vec2List.html">Vec2List</a></code></p></h3><div class="doc"><p>World coordinates of vertices.
+     * <br/><br/>
+     * This list can be accessed, but any queries of values will result
+     * in an error in debug builds unless this Polygon is part of a Body.
+     * <br/><br/>
+     * This list is immutable.</p></div></div><div class="platform platform-flash"><a name="zpp_inner_zn"></a><h3><p><code><span class="keyword">var</span> <a href="#zpp_inner_zn"><span class="identifier">zpp_inner_zn</span></a>:<a class="type" href="../../zpp_nape/shape/ZPP_Polygon.html">ZPP_Polygon</a></code></p></h3><div class="doc"><p>@private</p></div></div><div class="platform platform-flash"><a name="new"></a><h3><p><code><span class="keyword">function</span> <a href="#new"><span class="identifier">new</span></a>(localVerts:<a class="type" href="../../Dynamic.html">Dynamic</a>, ?material:<a class="type" href="../../nape/phys/Material.html">Material</a> = null, ?filter:<a class="type" href="../../nape/dynamics/InteractionFilter.html">InteractionFilter</a> = null):<a class="type" href="../../Void.html">Void</a></code></p></h3><div class="doc"><p>Construct a new Polygon.
+     * <br/><br/>
+     * The localVerts parameter is typed Dynamic and may be one of:
+     * <code>Array&lt;Vec2&gt;, flash.Vector&lt;Vec2&gt;, Vec2List, GeomPoly</code>
+     *
+     * </p><table class="table table-condensed"><tbody><tr><td>localVerts</td><td><p>The local vertices of polygon.
+    * </p></td></tr><tr><td>material</td><td><p>The material for this polygon. (default new Material&#40;&#41;)
+    * </p></td></tr><tr><td>filter</td><td><p>The interaction filter for this polygon.
+    *               (default new InteractionFilter&#40;&#41;)
+    * </p></td></tr><tr><td>returns</td><td><p>The constructed Polygon.
+* </p></td></tr></tbody></table></div></div><div class="platform platform-flash"><a name="validity"></a><h3><p><code><span class="keyword">function</span> <a href="#validity"><span class="identifier">validity</span></a>():<a class="type" href="../../nape/shape/ValidationResult.html">ValidationResult</a></code></p></h3><div class="doc"><p>Determine validity of polygon for use in a Nape simulation.</p></div></div></div></div></div></body></html>

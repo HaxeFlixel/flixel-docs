@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8"/><link href="../../bootstrap-combined.min.css" rel="stylesheet" /><script type="text/javascript" src="../../jquery-1.9.1.min.js"></script><script type="text/javascript" src="../../bootstrap.min.js"></script><link href="../../styles.css" rel="stylesheet" /><link rel="icon" href="../../favicon.ico" type="image/x-icon"></link><script type="text/javascript" src="../../nav.js"></script><script type="text/javascript" src="../../index.js"></script><script type="text/javascript">var dox = {rootPath: "../../",platforms: ["flash"]};</script><title>package events</title></head><body><div class="navbar navbar-inverse navbar-fixed-top"><div class="navbar-inner"><form class="navbar-search pull-left" id="searchForm"><input id="search" type="text" class="search-query" placeholder="Filter" autocomplete="off"/></form><ul class="nav"><li id="select-platform" class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Platform<b class="caret"></b></a><ul class="dropdown-menu"><li data="all"><a href="#">All Platforms</a></li><li data="flash"><a href="#">flash</a></li></ul></li></ul></div></div><div id="container"><div id="nav"></div><div id="content"><h1><span class="directive">package</span> flash.events</h1><table class="table table-condensed"><tbody><tr><td width="200"><a href="../../flash/events/ErrorEvent.html">ErrorEvent</a></td><td><p>An object dispatches an ErrorEvent object when an error causes an
+ * asynchronous operation to fail.
+ <em>
+ * <p>The ErrorEvent class defines only one type of <code>error</code> event:
+ * <code>ErrorEvent.ERROR</code>. The ErrorEvent class also serves as the base
+ * class for several other error event classes, including the AsyncErrorEvent,
+ * IOErrorEvent, SecurityErrorEvent, SQLErrorEvent, and UncaughtErrorEvent
+ * classes.</p></td></tr><tr><td width="200"><a href="../../flash/events/Event.html">Event</a></td><td><p>The Event class is used as the base class for the creation of Event
+ * objects, which are passed as parameters to event listeners when an event
+ * occurs.
+ <em>
+ * <p>The properties of the Event class carry basic information about an
+ * event, such as the event's type or whether the event's default behavior can
+ * be canceled. For many events, such as the events represented by the Event
+ * class constants, this basic information is sufficient. Other events,
+ * however, may require more detailed information. Events associated with a
+ * mouse click, for example, need to include additional information about the
+ * location of the click event and whether any keys were pressed during the
+ * click event. You can pass such additional information to event listeners by
+ * extending the Event class, which is what the MouseEvent class does.
+ * ActionScript 3.0 API defines several Event subclasses for common events
+ * that require additional information. Events associated with each of the
+ * Event subclasses are described in the documentation for each class.</p></td></tr><tr><td width="200"><a href="../../flash/events/EventDispatcher.html">EventDispatcher</a></td><td><p>The EventDispatcher class is the base class for all classes that dispatch
+ * events. The EventDispatcher class implements the IEventDispatcher interface
+ * and is the base class for the DisplayObject class. The EventDispatcher
+ * class allows any object on the display list to be an event target and as
+ * such, to use the methods of the IEventDispatcher interface.
+ <em>
+ * <p>Event targets are an important part of the Flash<sup>®</sup> Player and
+ * Adobe<sup>®</sup> AIR<sup>®</sup> event model. The event target serves as
+ * the focal point for how events flow through the display list hierarchy.
+ * When an event such as a mouse click or a keypress occurs, Flash Player or
+ * the AIR application dispatches an event object into the event flow from the
+ * root of the display list. The event object then makes its way through the
+ * display list until it reaches the event target, at which point it begins
+ * its return trip through the display list. This round-trip journey to the
+ * event target is conceptually divided into three phases: the capture phase
+ * comprises the journey from the root to the last node before the event
+ * target's node, the target phase comprises only the event target node, and
+ * the bubbling phase comprises any subsequent nodes encountered on the return
+ * trip to the root of the display list.</p></td></tr><tr><td width="200"><a href="../../flash/events/EventPhase.html">EventPhase</a></td><td><p>The EventPhase class provides values for the <code>eventPhase</code>
+ * property of the Event class.</p></td></tr><tr><td width="200"><a href="../../flash/events/FocusEvent.html">FocusEvent</a></td><td><p>An object dispatches a FocusEvent object when the user changes the focus
+ * from one object in the display list to another. There are four types of
+ * focus events:
+ * <ul>
+ *   <li><code>FocusEvent.FOCUS<em>IN</code></li>
+ *   <li><code>FocusEvent.FOCUS</em>OUT</code></li>
+ *   <li><code>FocusEvent.KEY<em>FOCUS</em>CHANGE</code></li>
+ *   <li><code>FocusEvent.MOUSE<em>FOCUS</em>CHANGE</code></li>
+ * </ul></p></td></tr><tr><td width="200"><a href="../../flash/events/GameInputEvent.html">GameInputEvent</a></td><td><p></p></td></tr><tr><td width="200"><a href="../../flash/events/IEventDispatcher.html">IEventDispatcher</a></td><td><p></p></td></tr><tr><td width="200"><a href="../../flash/events/IOErrorEvent.html">IOErrorEvent</a></td><td><p>An IOErrorEvent object is dispatched when an error causes input or output
+ * operations to fail.
+ *
+ * <p>You can check for error events that do not have any listeners by using
+ * the debugger version of Flash Player or the AIR Debug Launcher(ADL). The
+ * string defined by the <code>text</code> parameter of the IOErrorEvent
+ * constructor is displayed.</p></td></tr><tr><td width="200"><a href="../../flash/events/KeyboardEvent.html">KeyboardEvent</a></td><td><p>A KeyboardEvent object id dispatched in response to user input through a
+ * keyboard. There are two types of keyboard events:
+ * <code>KeyboardEvent.KEY<em>DOWN</code> and <code>KeyboardEvent.KEY</em>UP</code>
+ <em>
+ * <p>Because mappings between keys and specific characters vary by device and
+ * operating system, use the TextEvent event type for processing character
+ * input.</p></td></tr><tr><td width="200"><a href="../../flash/events/MouseEvent.html">MouseEvent</a></td><td><p>A MouseEvent object is dispatched into the event flow whenever mouse events
+ * occur. A mouse event is usually generated by a user input device, such as a
+ * mouse or a trackball, that uses a pointer.
+ *
+ * <p>When nested nodes are involved, mouse events target the deepest possible
+ * nested node that is visible in the display list. This node is called the
+ * <i>target node</i>. To have a target node's ancestor receive notification
+ * of a mouse event, use <code>EventDispatcher.addEventListener()</code> on
+ * the ancestor node with the <code>type</code> parameter set to the specific
+ * mouse event you want to detect.</p></td></tr><tr><td width="200"><a href="../../flash/events/NetStatusEvent.html">NetStatusEvent</a></td><td><p></p></td></tr><tr><td width="200"><a href="../../flash/events/TextEvent.html">TextEvent</a></td><td><p>An object dispatches a TextEvent object when a user enters text in a text
+ * field or clicks a hyperlink in an HTML-enabled text field. There are two
+ * types of text events: <code>TextEvent.LINK</code> and
+ * <code>TextEvent.TEXT_INPUT</code>.</p></td></tr><tr><td width="200"><a href="../../flash/events/TouchEvent.html">TouchEvent</a></td><td><p>The TouchEvent class lets you handle events on devices that detect user
+ * contact with the device(such as a finger on a touch screen). When a user
+ * interacts with a device such as a mobile phone or tablet with a touch
+ * screen, the user typically touches the screen with his or her fingers or a
+ * pointing device. You can develop applications that respond to basic touch
+ * events(such as a single finger tap) with the TouchEvent class. Create
+ * event listeners using the event types defined in this class. For user
+ * interaction with multiple points of contact(such as several fingers moving
+ * across a touch screen at the same time) use the related GestureEvent,
+ * PressAndTapGestureEvent, and TransformGestureEvent classes. And, use the
+ * properties and methods of these classes to construct event handlers that
+ * respond to the user touching the device.
+ <em>
+ * <p>Use the Multitouch class to determine the current environment's support
+ * for touch interaction, and to manage the support of touch interaction if
+ * the current environment supports it.</p></td></tr><tr><td width="200"><a href="../../flash/events/UncaughtErrorEvents.html">UncaughtErrorEvents</a></td><td><p></p></td></tr></tbody></table></div></div></body></html>

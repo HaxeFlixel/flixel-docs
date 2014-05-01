@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8"/><link href="../../bootstrap-combined.min.css" rel="stylesheet" /><script type="text/javascript" src="../../jquery-1.9.1.min.js"></script><script type="text/javascript" src="../../bootstrap.min.js"></script><link href="../../styles.css" rel="stylesheet" /><link rel="icon" href="../../favicon.ico" type="image/x-icon"></link><script type="text/javascript" src="../../nav.js"></script><script type="text/javascript" src="../../index.js"></script><script type="text/javascript">var dox = {rootPath: "../../",platforms: ["flash"]};</script><title>Contact</title></head><body><div class="navbar navbar-inverse navbar-fixed-top"><div class="navbar-inner"><form class="navbar-search pull-left" id="searchForm"><input id="search" type="text" class="search-query" placeholder="Filter" autocomplete="off"/></form><ul class="nav"><li id="select-platform" class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Platform<b class="caret"></b></a><ul class="dropdown-menu"><li data="all"><a href="#">All Platforms</a></li><li data="flash"><a href="#">flash</a></li></ul></li></ul></div></div><div id="container"><div id="nav"></div><div id="content"><div class="header"><h1><code><span class="directive">class </span><span class="type">nape.dynamics.Contact</span></code></h1></div><div class="body"><p class="availability">Available on all platforms</p><div class="doc"><p>Contact point for collision interactions
+ * <br/><br/>
+ * These objects are automatically reused and you should not keep references to them.</p></div><h2>Instance Fields</h2><div class="platform platform-flash"><a name="arbiter"></a><h3><p><code><span class="keyword">var</span> <a href="#arbiter"><span class="identifier">arbiter</span></a>:<a class="type" href="../../nape/dynamics/CollisionArbiter.html">CollisionArbiter</a></code></p></h3><div class="doc"><p>Reference to the CollisionArbiter this contact belongs to</p></div></div><div class="platform platform-flash"><a name="fresh"></a><h3><p><code><span class="keyword">var</span> <a href="#fresh"><span class="identifier">fresh</span></a>:<a class="type" href="../../Bool.html">Bool</a></code></p></h3><div class="doc"><p>Whether this contact is newly generated, or persistant from previous step.</p></div></div><div class="platform platform-flash"><a name="friction"></a><h3><p><code><span class="keyword">var</span> <a href="#friction"><span class="identifier">friction</span></a>:<a class="type" href="../../Float.html">Float</a></code></p></h3><div class="doc"><p>The specific coeffecient of friction for this contact.
+     * <br/><br/>
+     * This value is equal either to the static or dynamic friction coeffecient of the arbiter
+     * based on the relative velocity at contact point.
+     * <br/><br/>
+     * This value cannot be set, though you may implicitly set it exactly by modifying
+     * the arbiter to have the same static and dynamic friction in the PreListener.</p></div></div><div class="platform platform-flash"><a name="penetration"></a><h3><p><code><span class="keyword">var</span> <a href="#penetration"><span class="identifier">penetration</span></a>:<a class="type" href="../../Float.html">Float</a></code></p></h3><div class="doc"><p>Penetration of bodies along normal for this contact.
+     * <br/><br/>
+     * This value may be negative and corresponds to the penetration (if at all)
+     * of the contact point before positional integration and error resolvement
+     * took place (correct at time of pre-listeners).</p></div></div><div class="platform platform-flash"><a name="position"></a><h3><p><code><span class="keyword">var</span> <a href="#position"><span class="identifier">position</span></a>:<a class="type" href="../../nape/geom/Vec2.html">Vec2</a></code></p></h3><div class="doc"><p>The world-space position of contact.
+     * <br/><br/>
+     * This value corresponds to the position
+     * of the contact point before positional integration and error resolvement
+     * took place (correct at time of pre-listeners).</p></div></div><div class="platform platform-flash"><a name="zpp_inner"></a><h3><p><code><span class="keyword">var</span> <a href="#zpp_inner"><span class="identifier">zpp_inner</span></a>:<a class="type" href="../../zpp_nape/dynamics/ZPP_Contact.html">ZPP_Contact</a></code></p></h3><div class="doc"><p>@private</p></div></div><div class="platform platform-flash"><a name="new"></a><h3><p><code><span class="keyword">function</span> <a href="#new"><span class="identifier">new</span></a>():<a class="type" href="../../Void.html">Void</a></code></p></h3><div class="doc"><p>@private</p></div></div><div class="platform platform-flash"><a name="normalImpulse"></a><h3><p><code><span class="keyword">function</span> <a href="#normalImpulse"><span class="identifier">normalImpulse</span></a>(?body:<a class="type" href="../../nape/phys/Body.html">Body</a> = null):<a class="type" href="../../nape/geom/Vec3.html">Vec3</a></code></p></h3><div class="doc"><p>Evaluate normal reactive impulses for this contact for a given body.
+     * <br/><br/>
+     * If body argument is null, then the contact normal impulses will be returned instead
+     * with no angular impulse derivable, the direction of this impulse will be the direction of the normal.
+     * <br/>
+     * If body argument is not null, then this will return the actual impulse applied to that specific body
+     * for this contact this will include angular impulses due to position of contact point and normal.
+     *
+     * </p><table class="table table-condensed"><tbody><tr><td>body</td><td><p>The Body to query normal impulse for. (default null)
+    * </p></td></tr><tr><td>returns</td><td><p>The impulse applied to the given body, considering normal reactive forces.
+* </p></td></tr></tbody></table></div></div><div class="platform platform-flash"><a name="rollingImpulse"></a><h3><p><code><span class="keyword">function</span> <a href="#rollingImpulse"><span class="identifier">rollingImpulse</span></a>(?body:<a class="type" href="../../nape/phys/Body.html">Body</a> = null):<a class="type" href="../../Float.html">Float</a></code></p></h3><div class="doc"><p>Evaluate rolling friction impulses for this contact for a given body.
+     * <br/><br/>
+     * If body argument is null, then the rolling impulse of this contact will be returned
+     * instead of the angular impulse applied to the specific body as a result of the rolling impulse.
+     *
+     * </p><table class="table table-condensed"><tbody><tr><td>body</td><td><p>The Body to query rolling impulse for. (default null)
+    * </p></td></tr><tr><td>returns</td><td><p>The angular impulse applied to the given body.
+* </p></td></tr></tbody></table></div></div><div class="platform platform-flash"><a name="tangentImpulse"></a><h3><p><code><span class="keyword">function</span> <a href="#tangentImpulse"><span class="identifier">tangentImpulse</span></a>(?body:<a class="type" href="../../nape/phys/Body.html">Body</a> = null):<a class="type" href="../../nape/geom/Vec3.html">Vec3</a></code></p></h3><div class="doc"><p>Evaluate tangent impulses for this contact for a given body.
+     * <br/><br/>
+     * If body argument is null, then the contact friction impulses is returned with
+     * no angular impulse derivable, the direction of this impulse will be against the relative
+     * velocity of the first body against the second.
+     * <br/>
+     * If the body argument is non-null, then the actual impulse applied to that body due to tangent
+     * frictino impulses will be returned, including angular effects due to contact position and normal.
+     * <br/><br/>
+     * These tangent impulses correspond to the forces of static and dynamic friction for this contact.
+     *
+     * </p><table class="table table-condensed"><tbody><tr><td>body</td><td><p>The Body to query tangent impulse for. (default null)
+    * </p></td></tr><tr><td>returns</td><td><p>The impulse applied to the given body, considering standard frictional forces.
+* </p></td></tr></tbody></table></div></div><div class="platform platform-flash"><a name="toString"></a><h3><p><code><span class="keyword">function</span> <a href="#toString"><span class="identifier">toString</span></a>():<a class="type" href="../../String.html">String</a></code></p></h3><div class="doc"><p>@private</p></div></div><div class="platform platform-flash"><a name="totalImpulse"></a><h3><p><code><span class="keyword">function</span> <a href="#totalImpulse"><span class="identifier">totalImpulse</span></a>(?body:<a class="type" href="../../nape/phys/Body.html">Body</a> = null):<a class="type" href="../../nape/geom/Vec3.html">Vec3</a></code></p></h3><div class="doc"><p>Evaluate total contact impulse for a given body.
+     * <br/><br/>
+     * If body argument is null, then this will return the sum of normal and tangent contact impulse, and the contact
+     * rolling impulse.
+     * <br/>
+     * When body argument is non-null, this impulse will be the actual change in (mass weighted)
+     * velocity that this contact caused to the Body in the previous time step.
+     *
+     * </p><table class="table table-condensed"><tbody><tr><td>body</td><td><p>The Body to query total impulse for. (default null)
+    * </p></td></tr><tr><td>returns</td><td><p>The impulse applied to the given body
+* </p></td></tr></tbody></table></div></div></div></div></div></body></html>

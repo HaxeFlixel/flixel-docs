@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8"/><link href="../../../../bootstrap-combined.min.css" rel="stylesheet" /><script type="text/javascript" src="../../../../jquery-1.9.1.min.js"></script><script type="text/javascript" src="../../../../bootstrap.min.js"></script><link href="../../../../styles.css" rel="stylesheet" /><link rel="icon" href="../../../../favicon.ico" type="image/x-icon"></link><script type="text/javascript" src="../../../../nav.js"></script><script type="text/javascript" src="../../../../index.js"></script><script type="text/javascript">var dox = {rootPath: "../../../../",platforms: ["flash"]};</script><title>FlxOgmoLoader</title></head><body><div class="navbar navbar-inverse navbar-fixed-top"><div class="navbar-inner"><form class="navbar-search pull-left" id="searchForm"><input id="search" type="text" class="search-query" placeholder="Filter" autocomplete="off"/></form><ul class="nav"><li id="select-platform" class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Platform<b class="caret"></b></a><ul class="dropdown-menu"><li data="all"><a href="#">All Platforms</a></li><li data="flash"><a href="#">flash</a></li></ul></li></ul></div></div><div id="container"><div id="nav"></div><div id="content"><div class="header"><h1><code><span class="directive">class </span><span class="type">flixel.addons.editors.ogmo.FlxOgmoLoader</span></code></h1></div><div class="body"><p class="availability">Available on all platforms</p><div class="doc"><p></p></div><h2>Instance Fields</h2><div class="platform platform-flash"><a name="height"></a><h3><p><code><span class="keyword">var</span> <a href="#height"><span class="identifier">height</span></a>:<a class="type" href="../../../../Int.html">Int</a></code></p></h3><div class="doc"><p></p></div></div><div class="platform platform-flash"><a name="width"></a><h3><p><code><span class="keyword">var</span> <a href="#width"><span class="identifier">width</span></a>:<a class="type" href="../../../../Int.html">Int</a></code></p></h3><div class="doc"><p></p></div></div><div class="platform platform-flash"><a name="new"></a><h3><p><code><span class="keyword">function</span> <a href="#new"><span class="identifier">new</span></a>(LevelData:<a class="type" href="../../../../Dynamic.html">Dynamic</a>):<a class="type" href="../../../../Void.html">Void</a></code></p></h3><div class="doc"><p>Creates a new instance of OgmoLevelLoader and prepares the XML level data to be loaded.
+ * This object can either be contained or ovewritten. 
+ * 
+ * IMPORTANT: -> Tile layers must have the Export Mode set to "CSV".
+ * 			  -> First tile in spritesheet must be blank or debug. It will never get drawn so don't place them in Ogmo! 
+ * 			  	 (This is needed to support many other editors that use index 0 as empty.)
+ * 
+ * </p><table class="table table-condensed"><tbody><tr><td>LevelData</td><td><p>A String or Class representing the location of xml level data.</p></td></tr></tbody></table></div></div><div class="platform platform-flash"><a name="loadEntities"></a><h3><p><code><span class="keyword">function</span> <a href="#loadEntities"><span class="identifier">loadEntities</span></a>(EntityLoadCallback:<a class="type" href="../../../../String.html">String</a> -&gt;<a class="type" href="../../../../Xml.html">Xml</a> -&gt;<a class="type" href="../../../../Void.html">Void</a>, ?EntityLayer:<a class="type" href="../../../../String.html">String</a> = 'entities'):<a class="type" href="../../../../Void.html">Void</a></code></p></h3><div class="doc">Parse every entity in the specified layer and call a function that will spawn game objects based on their name. 
+* Optional data can be read from the xml object, here's an example that reads the position of an object:
+* 
+	public function loadEntity( type:String, data:Xml ):Void
+	{
+		switch (type.toLowerCase())
+		{
+		case "player":
+			player.x = Std.parseFloat(data.get("x"));
+			player.y = Std.parseFloat(data.get("y"));
+		default:
+			throw "Unrecognized actor type '" + type + "' detected in level file.";
+		}
+	}
+* 
+* <table class="table table-condensed"><tbody><tr><td>EntityLoadCallback</td><td><p>A function that takes in the following parameters (name:String, data:Xml):Void (returns Void) that spawns entities based on their name.
+* </p></td></tr><tr><td>EntityLayer</td><td><p>The name of the layer the entities are stored in Ogmo editor. Usually "entities" or "actors"</p></td></tr></tbody></table></div></div><div class="platform platform-flash"><a name="loadRectangles"></a><h3><p><code><span class="keyword">function</span> <a href="#loadRectangles"><span class="identifier">loadRectangles</span></a>(RectLoadCallback:<a class="type" href="../../../../flixel/util/FlxRect.html">FlxRect</a> -&gt;<a class="type" href="../../../../Void.html">Void</a>, ?RectLayer:<a class="type" href="../../../../String.html">String</a> = 'rectangles'):<a class="type" href="../../../../Void.html">Void</a></code></p></h3><div class="doc"><p>Parse every 'rect' in the specified layer and call a function to do something based on each rectangle.
+ * Useful for setting up zones or regions in your game that can be filled in procedurally.
+ * 
+ * </p><table class="table table-condensed"><tbody><tr><td>RectLoadCallback</td><td><p>A function that takes in the Rectangle object and returns Void.
+ * </p></td></tr><tr><td>RectLayer</td><td><p>The name of the layer which contains 'rect' objects.</p></td></tr></tbody></table></div></div><div class="platform platform-flash"><a name="loadTilemap"></a><h3><p><code><span class="keyword">function</span> <a href="#loadTilemap"><span class="identifier">loadTilemap</span></a>(TileGraphic:<a class="type" href="../../../../Dynamic.html">Dynamic</a>, ?TileWidth:<a class="type" href="../../../../Int.html">Int</a> = 16, ?TileHeight:<a class="type" href="../../../../Int.html">Int</a> = 16, ?TileLayer:<a class="type" href="../../../../String.html">String</a> = 'tiles'):<a class="type" href="../../../../flixel/tile/FlxTilemap.html">FlxTilemap</a></code></p></h3><div class="doc">Load a Tilemap. Tile layers must have the Export Mode set to "CSV".
+* Collision with entities should be handled with the reference returned from this function. Here's a tip:
+* 
+	// IMPORTANT: Always collide the map with objects, not the other way around. 
+	//			  This prevents odd collision errors (collision separation code off by 1 px).
+	FlxG.collide(map, obj, notifyCallback);
+* 
+* <table class="table table-condensed"><tbody><tr><td>TileGraphic</td><td><p>A String or Class representing the location of the image asset for the tilemap.
+* </p></td></tr><tr><td>TileWidth</td><td><p>The width of each individual tile.
+* </p></td></tr><tr><td>TileHeight</td><td><p>The height of each individual tile.
+* </p></td></tr><tr><td>TileLayer</td><td><p>The name of the layer the tilemap data is stored in Ogmo editor, usually "tiles" or "stage".
+* </p></td></tr><tr><td>returns</td><td><p>A FlxTilemap, where you can collide your entities against.</p></td></tr></tbody></table></div></div></div></div></div></body></html>

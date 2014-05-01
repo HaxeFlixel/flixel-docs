@@ -1,0 +1,1 @@
+haxelib run dox -i flash.xml -o output -res resources

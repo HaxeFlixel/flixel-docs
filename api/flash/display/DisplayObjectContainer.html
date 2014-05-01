@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8"/><link href="../../bootstrap-combined.min.css" rel="stylesheet" /><script type="text/javascript" src="../../jquery-1.9.1.min.js"></script><script type="text/javascript" src="../../bootstrap.min.js"></script><link href="../../styles.css" rel="stylesheet" /><link rel="icon" href="../../favicon.ico" type="image/x-icon"></link><script type="text/javascript" src="../../nav.js"></script><script type="text/javascript" src="../../index.js"></script><script type="text/javascript">var dox = {rootPath: "../../",platforms: ["flash"]};</script><title>DisplayObjectContainer</title></head><body><div class="navbar navbar-inverse navbar-fixed-top"><div class="navbar-inner"><form class="navbar-search pull-left" id="searchForm"><input id="search" type="text" class="search-query" placeholder="Filter" autocomplete="off"/></form><ul class="nav"><li id="select-platform" class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Platform<b class="caret"></b></a><ul class="dropdown-menu"><li data="all"><a href="#">All Platforms</a></li><li data="flash"><a href="#">flash</a></li></ul></li></ul></div></div><div id="container"><div id="nav"></div><div id="content"><div class="header"><h1><code><span class="directive">class </span><span class="type">flash.display.DisplayObjectContainer</span><span class="keyword"> extends</span> <a class="type" href="../../flash/display/InteractiveObject.html">InteractiveObject</a></code></h1></div><div class="body"><p class="availability">Available on all platforms</p><div><table class="related-types toggle" style="margin-top:16px;"><tbody><tr><td colspan="2"><strong>Sub classes</strong></td></tr><tr><td width="12" style="vertical-align:top;"><a href="#" onclick="toggleInherited(this)"><img style="padding-top:4px;" src="../../triangle-closed.png"></img></a></td><td class="toggle-hide"><a href="../../flash/display/Loader.html">Loader</a>, <a href="../../flash/display/Sprite.html">Sprite</a>, <a href="../../flash/display/Stage.html">Stage</a></td><td class="toggle-show"><table class="table table-condensed"><tbody><tr><td width="200"><a href="../../flash/display/Loader.html">Loader</a></td><td><p>The Loader class is used to load SWF files or image(JPG, PNG, or GIF)
+ * files. Use the <code>load()</code> method to initiate loading. The loaded
+ * display object is added as a child of the Loader object.
+ <em>
+ * <p>Use the URLLoader class to load text or binary data.</p></td></tr><tr><td width="200"><a href="../../flash/display/Sprite.html">Sprite</a></td><td><p>The Sprite class is a basic display list building block: a display list
+ * node that can display graphics and can also contain children.
+ <em>
+ * <p>A Sprite object is similar to a movie clip, but does not have a
+ * timeline. Sprite is an appropriate base class for objects that do not
+ * require timelines. For example, Sprite would be a logical base class for
+ * user interface(UI) components that typically do not use the timeline.</p></td></tr><tr><td width="200"><a href="../../flash/display/Stage.html">Stage</a></td><td><p>The Stage class represents the main drawing area.
+ <em>
+ * <p>For SWF content running in the browser(in Flash<sup>®</sup> Player),
+ * the Stage represents the entire area where Flash content is shown. For
+ * content running in AIR on desktop operating systems, each NativeWindow
+ * object has a corresponding Stage object.</p></td></tr></tbody></table></td></tr></tbody></table></div><div class="doc"><p>The DisplayObjectContainer class is the base class for all objects that can
+ * serve as display object containers on the display list. The display list
+ * manages all objects displayed in the Flash runtimes. Use the
+ * DisplayObjectContainer class to arrange the display objects in the display
+ * list. Each DisplayObjectContainer object has its own child list for
+ * organizing the z-order of the objects. The z-order is the front-to-back
+ * order that determines which object is drawn in front, which is behind, and
+ * so on.
+ <em>
+ * <p>DisplayObject is an abstract base class; therefore, you cannot call
+ * DisplayObject directly. Invoking <code>new DisplayObject()</code> throws an
+ * <code>ArgumentError</code> exception.</p>
+ * The DisplayObjectContainer class is an abstract base class for all objects
+ * that can contain child objects. It cannot be instantiated directly; calling
+ * the <code>new DisplayObjectContainer()</code> constructor throws an
+ * <code>ArgumentError</code> exception.
+ </em>
+ * <p>For more information, see the "Display Programming" chapter of the
+ * <i>ActionScript 3.0 Developer's Guide</i>.</p></p></div><h2>Instance Fields</h2><div class="platform platform-flash"><a name="mouseChildren"></a><h3><p><code><span class="keyword">var</span> <a href="#mouseChildren"><span class="identifier">mouseChildren</span></a>:<a class="type" href="../../Bool.html">Bool</a></code></p></h3><div class="doc"><p>Determines whether or not the children of the object are mouse, or user
+ * input device, enabled. If an object is enabled, a user can interact with
+ * it by using a mouse or user input device. The default is
+ * <code>true</code>.
+ <em>
+ * <p>This property is useful when you create a button with an instance of
+ * the Sprite class(instead of using the SimpleButton class). When you use a
+ * Sprite instance to create a button, you can choose to decorate the button
+ * by using the <code>addChild()</code> method to add additional Sprite
+ * instances. This process can cause unexpected behavior with mouse events
+ * because the Sprite instances you add as children can become the target
+ * object of a mouse event when you expect the parent instance to be the
+ * target object. To ensure that the parent instance serves as the target
+ * objects for mouse events, you can set the <code>mouseChildren</code>
+ * property of the parent instance to <code>false</code>.</p>
+ </em>
+ * <p> No event is dispatched by setting this property. You must use the
+ * <code>addEventListener()</code> method to create interactive
+ * functionality.</p></p></div></div><div class="platform platform-flash"><a name="numChildren"></a><h3><p><code><span class="keyword">var</span> <a href="#numChildren"><span class="identifier">numChildren</span></a>:<a class="type" href="../../Int.html">Int</a></code></p></h3><div class="doc"><p>Returns the number of children of this object.</p></div></div><div class="platform platform-flash"><a name="tabChildren"></a><h3><p><code><span class="keyword">var</span> <a href="#tabChildren"><span class="identifier">tabChildren</span></a>:<a class="type" href="../../Bool.html">Bool</a></code></p></h3><div class="doc"><p>Determines whether the children of the object are tab enabled. Enables or
+ * disables tabbing for the children of the object. The default is
+ * <code>true</code>.
+ *
+ * <p><b>Note:</b> Do not use the <code>tabChildren</code> property with
+ * Flex. Instead, use the
+ * <code>mx.core.UIComponent.hasFocusableChildren</code> property.</p>
+ * 
+ * </p></div></div><div class="platform platform-flash"><a name="textSnapshot"></a><h3><p><code><span class="keyword">var</span> <a href="#textSnapshot"><span class="identifier">textSnapshot</span></a>:<a class="type" href="../../flash/text/TextSnapshot.html">TextSnapshot</a></code></p></h3><div class="doc"><p>Returns a TextSnapshot object for this DisplayObjectContainer instance.</p></div></div><div class="platform platform-flash"><a name="addChild"></a><h3><p><code><span class="keyword">function</span> <a href="#addChild"><span class="identifier">addChild</span></a>(child:<a class="type" href="../../flash/display/DisplayObject.html">DisplayObject</a>):<a class="type" href="../../flash/display/DisplayObject.html">DisplayObject</a></code></p></h3><div class="doc"><p>Adds a child DisplayObject instance to this DisplayObjectContainer
+ * instance. The child is added to the front(top) of all other children in
+ * this DisplayObjectContainer instance.(To add a child to a specific index
+ * position, use the <code>addChildAt()</code> method.)
+ <em>
+ * <p>If you add a child object that already has a different display object
+ * container as a parent, the object is removed from the child list of the
+ * other display object container. </p>
+ </em>
+ * <p><b>Note:</b> The command <code>stage.addChild()</code> can cause
+ * problems with a published SWF file, including security problems and
+ * conflicts with other loaded SWF files. There is only one Stage within a
+ * Flash runtime instance, no matter how many SWF files you load into the
+ * runtime. So, generally, objects should not be added to the Stage,
+ * directly, at all. The only object the Stage should contain is the root
+ * object. Create a DisplayObjectContainer to contain all of the items on the
+ * display list. Then, if necessary, add that DisplayObjectContainer instance
+ * to the Stage.</p>
+ * 
+ * @event added Dispatched when a display object is added to the display
+ *              list.</p><table class="table table-condensed"><tbody><tr><td>child</td><td><p>The DisplayObject instance to add as a child of this
+<em>              DisplayObjectContainer instance.
+</em> </p></td></tr><tr><td>returns</td><td><p>The DisplayObject instance that you pass in the <code>child</code>
+<em>         parameter.
+</em> </p></td></tr></tbody></table></div></div><div class="platform platform-flash"><a name="addChildAt"></a><h3><p><code><span class="keyword">function</span> <a href="#addChildAt"><span class="identifier">addChildAt</span></a>(child:<a class="type" href="../../flash/display/DisplayObject.html">DisplayObject</a>, index:<a class="type" href="../../Int.html">Int</a>):<a class="type" href="../../flash/display/DisplayObject.html">DisplayObject</a></code></p></h3><div class="doc"><p>Adds a child DisplayObject instance to this DisplayObjectContainer
+ * instance. The child is added at the index position specified. An index of
+ * 0 represents the back(bottom) of the display list for this
+ * DisplayObjectContainer object.
+ <em>
+ * <p>For example, the following example shows three display objects, labeled
+ * a, b, and c, at index positions 0, 2, and 1, respectively:</p>
+ </em>
+ * <p>If you add a child object that already has a different display object
+ * container as a parent, the object is removed from the child list of the
+ * other display object container. </p>
+ * 
+ * @event added Dispatched when a display object is added to the display
+ *              list.</p><table class="table table-condensed"><tbody><tr><td>child</td><td><p>The DisplayObject instance to add as a child of this
+<em>              DisplayObjectContainer instance.
+</em> </p></td></tr><tr><td>index</td><td><p>The index position to which the child is added. If you
+<em>              specify a currently occupied index position, the child object
+</em>              that exists at that position and all higher positions are
+<em>              moved up one position in the child list.
+</em> </p></td></tr><tr><td>returns</td><td><p>The DisplayObject instance that you pass in the <code>child</code>
+<em>         parameter.
+</em> </p></td></tr></tbody></table></div></div><div class="platform platform-flash"><a name="areInaccessibleObjectsUnderPoint"></a><h3><p><code><span class="keyword">function</span> <a href="#areInaccessibleObjectsUnderPoint"><span class="identifier">areInaccessibleObjectsUnderPoint</span></a>(point:<a class="type" href="../../flash/geom/Point.html">Point</a>):<a class="type" href="../../Bool.html">Bool</a></code></p></h3><div class="doc"><p>Indicates whether the security restrictions would cause any display
+ * objects to be omitted from the list returned by calling the
+ * <code>DisplayObjectContainer.getObjectsUnderPoint()</code> method with the
+ * specified <code>point</code> point. By default, content from one domain
+ * cannot access objects from another domain unless they are permitted to do
+ * so with a call to the <code>Security.allowDomain()</code> method. For more
+ * information, related to security, see the Flash Player Developer Center
+ * Topic: &lt;a href="http://www.adobe.com/go/devnet<em>security</em>en"
+ * scope="external">Security</a>.
+ *
+ * <p>The <code>point</code> parameter is in the coordinate space of the
+ * Stage, which may differ from the coordinate space of the display object
+ * container(unless the display object container is the Stage). You can use
+ * the <code>globalToLocal()</code> and the <code>localToGlobal()</code>
+ * methods to convert points between these coordinate spaces.</p>
+ * 
+ * </p><table class="table table-condensed"><tbody><tr><td>point</td><td><p>The point under which to look.
+* </p></td></tr><tr><td>returns</td><td><code>true</code> if the point contains child display objects with
+*         security restrictions.</td></tr></tbody></table></div></div><div class="platform platform-flash"><a name="contains"></a><h3><p><code><span class="keyword">function</span> <a href="#contains"><span class="identifier">contains</span></a>(child:<a class="type" href="../../flash/display/DisplayObject.html">DisplayObject</a>):<a class="type" href="../../Bool.html">Bool</a></code></p></h3><div class="doc"><p>Determines whether the specified display object is a child of the
+ * DisplayObjectContainer instance or the instance itself. The search
+ * includes the entire display list including this DisplayObjectContainer
+ * instance. Grandchildren, great-grandchildren, and so on each return
+ * <code>true</code>.
+ * 
+ * </p><table class="table table-condensed"><tbody><tr><td>child</td><td><p>The child object to test.
+* </p></td></tr><tr><td>returns</td><td><code>true</code> if the <code>child</code> object is a child of
+*         the DisplayObjectContainer or the container itself; otherwise
+*         <code>false</code>.</td></tr></tbody></table></div></div><div class="platform platform-flash"><a name="getChildAt"></a><h3><p><code><span class="keyword">function</span> <a href="#getChildAt"><span class="identifier">getChildAt</span></a>(index:<a class="type" href="../../Int.html">Int</a>):<a class="type" href="../../flash/display/DisplayObject.html">DisplayObject</a></code></p></h3><div class="doc"><p>Returns the child display object instance that exists at the specified
+ * index.
+ * 
+ * </p><table class="table table-condensed"><tbody><tr><td>index</td><td><p>The index position of the child object.
+* </p></td></tr><tr><td>returns</td><td><p>The child display object at the specified index position.
+* </p></td></tr></tbody></table></div></div><div class="platform platform-flash"><a name="getChildByName"></a><h3><p><code><span class="keyword">function</span> <a href="#getChildByName"><span class="identifier">getChildByName</span></a>(name:<a class="type" href="../../String.html">String</a>):<a class="type" href="../../flash/display/DisplayObject.html">DisplayObject</a></code></p></h3><div class="doc"><p>Returns the child display object that exists with the specified name. If
+ * more that one child display object has the specified name, the method
+ * returns the first object in the child list.
+ *
+ * <p>The <code>getChildAt()</code> method is faster than the
+ * <code>getChildByName()</code> method. The <code>getChildAt()</code> method
+ * accesses a child from a cached array, whereas the
+ * <code>getChildByName()</code> method has to traverse a linked list to
+ * access a child.</p>
+ * 
+ * </p><table class="table table-condensed"><tbody><tr><td>name</td><td><p>The name of the child to return.
+* </p></td></tr><tr><td>returns</td><td><p>The child display object with the specified name.
+* </p></td></tr></tbody></table></div></div><div class="platform platform-flash"><a name="getChildIndex"></a><h3><p><code><span class="keyword">function</span> <a href="#getChildIndex"><span class="identifier">getChildIndex</span></a>(child:<a class="type" href="../../flash/display/DisplayObject.html">DisplayObject</a>):<a class="type" href="../../Int.html">Int</a></code></p></h3><div class="doc"><p>Returns the index position of a <code>child</code> DisplayObject instance.
+ * 
+ * </p><table class="table table-condensed"><tbody><tr><td>child</td><td><p>The DisplayObject instance to identify.
+* </p></td></tr><tr><td>returns</td><td><p>The index position of the child display object to identify.
+* </p></td></tr></tbody></table></div></div><div class="platform platform-flash"><a name="getObjectsUnderPoint"></a><h3><p><code><span class="keyword">function</span> <a href="#getObjectsUnderPoint"><span class="identifier">getObjectsUnderPoint</span></a>(point:<a class="type" href="../../flash/geom/Point.html">Point</a>):<a class="type" href="../../Array.html">Array</a>&lt;<a class="type" href="../../flash/display/DisplayObject.html">DisplayObject</a>&gt;</code></p></h3><div class="doc"><p>Returns an array of objects that lie under the specified point and are
+ * children(or grandchildren, and so on) of this DisplayObjectContainer
+ * instance. Any child objects that are inaccessible for security reasons are
+ * omitted from the returned array. To determine whether this security
+ * restriction affects the returned array, call the
+ * <code>areInaccessibleObjectsUnderPoint()</code> method.
+ *
+ * <p>The <code>point</code> parameter is in the coordinate space of the
+ * Stage, which may differ from the coordinate space of the display object
+ * container(unless the display object container is the Stage). You can use
+ * the <code>globalToLocal()</code> and the <code>localToGlobal()</code>
+ * methods to convert points between these coordinate spaces.</p>
+ * 
+ * </p><table class="table table-condensed"><tbody><tr><td>point</td><td><p>The point under which to look.
+* </p></td></tr><tr><td>returns</td><td><p>An array of objects that lie under the specified point and are
+<em>         children(or grandchildren, and so on) of this
+</em>         DisplayObjectContainer instance.</p></td></tr></tbody></table></div></div><div class="platform platform-flash"><a name="removeChild"></a><h3><p><code><span class="keyword">function</span> <a href="#removeChild"><span class="identifier">removeChild</span></a>(child:<a class="type" href="../../flash/display/DisplayObject.html">DisplayObject</a>):<a class="type" href="../../flash/display/DisplayObject.html">DisplayObject</a></code></p></h3><div class="doc"><p>Removes the specified <code>child</code> DisplayObject instance from the
+ * child list of the DisplayObjectContainer instance. The <code>parent</code>
+ * property of the removed child is set to <code>null</code> , and the object
+ * is garbage collected if no other references to the child exist. The index
+ * positions of any display objects above the child in the
+ * DisplayObjectContainer are decreased by 1.
+ *
+ * <p>The garbage collector reallocates unused memory space. When a variable
+ * or object is no longer actively referenced or stored somewhere, the
+ * garbage collector sweeps through and wipes out the memory space it used to
+ * occupy if no other references to it exist.</p>
+ * 
+ * </p><table class="table table-condensed"><tbody><tr><td>child</td><td><p>The DisplayObject instance to remove.
+* </p></td></tr><tr><td>returns</td><td><p>The DisplayObject instance that you pass in the <code>child</code>
+<em>         parameter.
+</em> </p></td></tr></tbody></table></div></div><div class="platform platform-flash"><a name="removeChildAt"></a><h3><p><code><span class="keyword">function</span> <a href="#removeChildAt"><span class="identifier">removeChildAt</span></a>(index:<a class="type" href="../../Int.html">Int</a>):<a class="type" href="../../flash/display/DisplayObject.html">DisplayObject</a></code></p></h3><div class="doc"><p>Removes a child DisplayObject from the specified <code>index</code>
+ * position in the child list of the DisplayObjectContainer. The
+ * <code>parent</code> property of the removed child is set to
+ * <code>null</code>, and the object is garbage collected if no other
+ * references to the child exist. The index positions of any display objects
+ * above the child in the DisplayObjectContainer are decreased by 1.
+ *
+ * <p>The garbage collector reallocates unused memory space. When a variable
+ * or object is no longer actively referenced or stored somewhere, the
+ * garbage collector sweeps through and wipes out the memory space it used to
+ * occupy if no other references to it exist.</p>
+ * 
+ * </p><table class="table table-condensed"><tbody><tr><td>index</td><td><p>The child index of the DisplayObject to remove.
+* </p></td></tr><tr><td>returns</td><td><p>The DisplayObject instance that was removed.
+* </p></td></tr></tbody></table></div></div><div class="platform platform-flash"><a name="removeChildren"></a><h3><p><code><span class="keyword">function</span> <a href="#removeChildren"><span class="identifier">removeChildren</span></a>(?beginIndex:<a class="type" href="../../Int.html">Int</a>, ?endIndex:<a class="type" href="../../Int.html">Int</a>):<a class="type" href="../../Void.html">Void</a></code></p></h3><div class="doc"><p></p></div></div><div class="platform platform-flash"><a name="setChildIndex"></a><h3><p><code><span class="keyword">function</span> <a href="#setChildIndex"><span class="identifier">setChildIndex</span></a>(child:<a class="type" href="../../flash/display/DisplayObject.html">DisplayObject</a>, index:<a class="type" href="../../Int.html">Int</a>):<a class="type" href="../../Void.html">Void</a></code></p></h3><div class="doc"><p>Changes the position of an existing child in the display object container.
+ * This affects the layering of child objects. For example, the following
+ * example shows three display objects, labeled a, b, and c, at index
+ * positions 0, 1, and 2, respectively:
+ <em>
+ * <p>When you use the <code>setChildIndex()</code> method and specify an
+ * index position that is already occupied, the only positions that change
+ * are those in between the display object's former and new position. All
+ * others will stay the same. If a child is moved to an index LOWER than its
+ * current index, all children in between will INCREASE by 1 for their index
+ * reference. If a child is moved to an index HIGHER than its current index,
+ * all children in between will DECREASE by 1 for their index reference. For
+ * example, if the display object container in the previous example is named
+ * <code>container</code>, you can swap the position of the display objects
+ * labeled a and b by calling the following code:</p>
+ </em>
+ * <p>This code results in the following arrangement of objects:</p>
+ * 
+ * </p><table class="table table-condensed"><tbody><tr><td>child</td><td><p>The child DisplayObject instance for which you want to change
+<em>              the index number.
+</em> </p></td></tr><tr><td>index</td><td><p>The resulting index number for the <code>child</code> display
+<em>              object.
+</em> </p></td></tr></tbody></table></div></div><div class="platform platform-flash"><a name="swapChildren"></a><h3><p><code><span class="keyword">function</span> <a href="#swapChildren"><span class="identifier">swapChildren</span></a>(child1:<a class="type" href="../../flash/display/DisplayObject.html">DisplayObject</a>, child2:<a class="type" href="../../flash/display/DisplayObject.html">DisplayObject</a>):<a class="type" href="../../Void.html">Void</a></code></p></h3><div class="doc"><p>Swaps the z-order(front-to-back order) of the two specified child
+ * objects. All other child objects in the display object container remain in
+ * the same index positions.
+ * 
+ * </p><table class="table table-condensed"><tbody><tr><td>child1</td><td><p>The first child object.
+* </p></td></tr><tr><td>child2</td><td><p>The second child object.
+* </p></td></tr></tbody></table></div></div><div class="platform platform-flash"><a name="swapChildrenAt"></a><h3><p><code><span class="keyword">function</span> <a href="#swapChildrenAt"><span class="identifier">swapChildrenAt</span></a>(index1:<a class="type" href="../../Int.html">Int</a>, index2:<a class="type" href="../../Int.html">Int</a>):<a class="type" href="../../Void.html">Void</a></code></p></h3><div class="doc"><p>Swaps the z-order(front-to-back order) of the child objects at the two
+ * specified index positions in the child list. All other child objects in
+ * the display object container remain in the same index positions.
+ * 
+ * </p><table class="table table-condensed"><tbody><tr><td>index1</td><td><p>The index position of the first child object.
+* </p></td></tr><tr><td>index2</td><td><p>The index position of the second child object.
+* </p></td></tr></tbody></table></div></div></div></div></div></body></html>

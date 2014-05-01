@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8"/><link href="../../bootstrap-combined.min.css" rel="stylesheet" /><script type="text/javascript" src="../../jquery-1.9.1.min.js"></script><script type="text/javascript" src="../../bootstrap.min.js"></script><link href="../../styles.css" rel="stylesheet" /><link rel="icon" href="../../favicon.ico" type="image/x-icon"></link><script type="text/javascript" src="../../nav.js"></script><script type="text/javascript" src="../../index.js"></script><script type="text/javascript">var dox = {rootPath: "../../",platforms: ["flash"]};</script><title>FocusEvent</title></head><body><div class="navbar navbar-inverse navbar-fixed-top"><div class="navbar-inner"><form class="navbar-search pull-left" id="searchForm"><input id="search" type="text" class="search-query" placeholder="Filter" autocomplete="off"/></form><ul class="nav"><li id="select-platform" class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Platform<b class="caret"></b></a><ul class="dropdown-menu"><li data="all"><a href="#">All Platforms</a></li><li data="flash"><a href="#">flash</a></li></ul></li></ul></div></div><div id="container"><div id="nav"></div><div id="content"><div class="header"><h1><code><span class="directive">class </span><span class="type">flash.events.FocusEvent</span><span class="keyword"> extends</span> <a class="type" href="../../flash/events/Event.html">Event</a></code></h1></div><div class="body"><p class="availability">Available on all platforms</p><div class="doc"><p>An object dispatches a FocusEvent object when the user changes the focus
+ * from one object in the display list to another. There are four types of
+ * focus events:
+ * <ul>
+ *   <li><code>FocusEvent.FOCUS<em>IN</code></li>
+ *   <li><code>FocusEvent.FOCUS</em>OUT</code></li>
+ *   <li><code>FocusEvent.KEY<em>FOCUS</em>CHANGE</code></li>
+ *   <li><code>FocusEvent.MOUSE<em>FOCUS</em>CHANGE</code></li>
+ * </ul></p></div><h2>Class Fields</h2><div class="platform platform-flash"><a name="FOCUS_IN"></a><h3><p><code><span class="keyword">static </span><span class="keyword">var</span> <a href="#FOCUS_IN"><span class="identifier">FOCUS_IN</span></a>:<a class="type" href="../../String.html">String</a></code></p></h3><div class="doc"><p>Defines the value of the <code>type</code> property of a
+ * <code>focusIn</code> event object.
+ *
+ * <p>This event has the following properties:</p></p></div></div><div class="platform platform-flash"><a name="FOCUS_OUT"></a><h3><p><code><span class="keyword">static </span><span class="keyword">var</span> <a href="#FOCUS_OUT"><span class="identifier">FOCUS_OUT</span></a>:<a class="type" href="../../String.html">String</a></code></p></h3><div class="doc"><p>Defines the value of the <code>type</code> property of a
+ * <code>focusOut</code> event object.
+ *
+ * <p>This event has the following properties:</p></p></div></div><div class="platform platform-flash"><a name="KEY_FOCUS_CHANGE"></a><h3><p><code><span class="keyword">static </span><span class="keyword">var</span> <a href="#KEY_FOCUS_CHANGE"><span class="identifier">KEY_FOCUS_CHANGE</span></a>:<a class="type" href="../../String.html">String</a></code></p></h3><div class="doc"><p>Defines the value of the <code>type</code> property of a
+ * <code>keyFocusChange</code> event object.
+ *
+ * <p>This event has the following properties:</p></p></div></div><div class="platform platform-flash"><a name="MOUSE_FOCUS_CHANGE"></a><h3><p><code><span class="keyword">static </span><span class="keyword">var</span> <a href="#MOUSE_FOCUS_CHANGE"><span class="identifier">MOUSE_FOCUS_CHANGE</span></a>:<a class="type" href="../../String.html">String</a></code></p></h3><div class="doc"><p>Defines the value of the <code>type</code> property of a
+ * <code>mouseFocusChange</code> event object.
+ *
+ * <p>This event has the following properties:</p></p></div></div><h2>Instance Fields</h2><div class="platform platform-flash"><a name="isRelatedObjectInaccessible"></a><h3><p><code><span class="keyword">var</span> <a href="#isRelatedObjectInaccessible"><span class="identifier">isRelatedObjectInaccessible</span></a>:<a class="type" href="../../Bool.html">Bool</a></code></p></h3><div class="doc"><p>If <code>true</code>, the <code>relatedObject</code> property is set to
+ * <code>null</code> for reasons related to security sandboxes. If the
+ * nominal value of <code>relatedObject</code> is a reference to a
+ * DisplayObject in another sandbox, <code>relatedObject</code> is set to
+ * <code>null</code> unless there is permission in both directions across
+ * this sandbox boundary. Permission is established by calling
+ * <code>Security.allowDomain()</code> from a SWF file, or by providing a
+ * policy file from the server of an image file, and setting the
+ * <code>LoaderContext.checkPolicyFile</code> property when loading the
+ * image.</p></div></div><div class="platform platform-flash"><a name="keyCode"></a><h3><p><code><span class="keyword">var</span> <a href="#keyCode"><span class="identifier">keyCode</span></a>:<a class="type" href="../../UInt.html">UInt</a></code></p></h3><div class="doc"><p>The key code value of the key pressed to trigger a
+ * <code>keyFocusChange</code> event.</p></div></div><div class="platform platform-flash"><a name="relatedObject"></a><h3><p><code><span class="keyword">var</span> <a href="#relatedObject"><span class="identifier">relatedObject</span></a>:<a class="type" href="../../flash/display/InteractiveObject.html">InteractiveObject</a></code></p></h3><div class="doc"><p>A reference to the complementary InteractiveObject instance that is
+ * affected by the change in focus. For example, when a <code>focusOut</code>
+ * event occurs, the <code>relatedObject</code> represents the
+ * InteractiveObject instance that has gained focus.
+ *
+ * <p>The value of this property can be <code>null</code> in two
+ * circumstances: if there no related object, or there is a related object,
+ * but it is in a security sandbox to which you don't have access. Use the
+ * <code>isRelatedObjectInaccessible()</code> property to determine which of
+ * these reasons applies.</p></p></div></div><div class="platform platform-flash"><a name="shiftKey"></a><h3><p><code><span class="keyword">var</span> <a href="#shiftKey"><span class="identifier">shiftKey</span></a>:<a class="type" href="../../Bool.html">Bool</a></code></p></h3><div class="doc"><p>Indicates whether the Shift key modifier is activated, in which case the
+ * value is <code>true</code>. Otherwise, the value is <code>false</code>.
+ * This property is used only if the FocusEvent is of type
+ * <code>keyFocusChange</code>.</p></div></div><div class="platform platform-flash"><a name="new"></a><h3><p><code><span class="keyword">function</span> <a href="#new"><span class="identifier">new</span></a>(type:<a class="type" href="../../String.html">String</a>, ?bubbles:<a class="type" href="../../Bool.html">Bool</a>, ?cancelable:<a class="type" href="../../Bool.html">Bool</a>, ?relatedObject:<a class="type" href="../../flash/display/InteractiveObject.html">InteractiveObject</a>, ?shiftKey:<a class="type" href="../../Bool.html">Bool</a>, ?keyCode:<a class="type" href="../../UInt.html">UInt</a>):<a class="type" href="../../Void.html">Void</a></code></p></h3><div class="doc"><p>Creates an Event object with specific information relevant to focus
+ * events. Event objects are passed as parameters to event listeners.
+ * 
+ * </p><table class="table table-condensed"><tbody><tr><td>type</td><td><p>The type of the event. Possible values are:
+ *                      <code>FocusEvent.FOCUS<em>IN</code>,
+ *                      <code>FocusEvent.FOCUS</em>OUT</code>,
+ *                      <code>FocusEvent.KEY<em>FOCUS</em>CHANGE</code>, and
+ *                      <code>FocusEvent.MOUSE<em>FOCUS</em>CHANGE</code>.
+ * </p></td></tr><tr><td>bubbles</td><td><p>Determines whether the Event object participates in
+ *                      the bubbling stage of the event flow.
+ * </p></td></tr><tr><td>cancelable</td><td><p>Determines whether the Event object can be canceled.
+ * </p></td></tr><tr><td>relatedObject</td><td><p>Indicates the complementary InteractiveObject
+<em>                      instance that is affected by the change in focus. For
+</em>                      example, when a <code>focusIn</code> event occurs,
+<em>                      <code>relatedObject</code> represents the
+</em>                      InteractiveObject that has lost focus.
+* </p></td></tr><tr><td>shiftKey</td><td><p>Indicates whether the Shift key modifier is
+ *                      activated.
+ * </p></td></tr><tr><td>keyCode</td><td><p>Indicates the code of the key pressed to trigger a
+ *                      <code>keyFocusChange</code> event.</p></td></tr></tbody></table></div></div></div></div></div></body></html>

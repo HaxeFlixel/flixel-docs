@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8"/><link href="../../bootstrap-combined.min.css" rel="stylesheet" /><script type="text/javascript" src="../../jquery-1.9.1.min.js"></script><script type="text/javascript" src="../../bootstrap.min.js"></script><link href="../../styles.css" rel="stylesheet" /><link rel="icon" href="../../favicon.ico" type="image/x-icon"></link><script type="text/javascript" src="../../nav.js"></script><script type="text/javascript" src="../../index.js"></script><script type="text/javascript">var dox = {rootPath: "../../",platforms: ["flash"]};</script><title>Broadphase</title></head><body><div class="navbar navbar-inverse navbar-fixed-top"><div class="navbar-inner"><form class="navbar-search pull-left" id="searchForm"><input id="search" type="text" class="search-query" placeholder="Filter" autocomplete="off"/></form><ul class="nav"><li id="select-platform" class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Platform<b class="caret"></b></a><ul class="dropdown-menu"><li data="all"><a href="#">All Platforms</a></li><li data="flash"><a href="#">flash</a></li></ul></li></ul></div></div><div id="container"><div id="nav"></div><div id="content"><div class="header"><h1><code><span class="directive">class </span><span class="type">nape.space.Broadphase</span></code></h1></div><div class="body"><p class="availability">Available on all platforms</p><div class="doc"><p>Enumeration of available broadphase collision types that Spaces may use.</p></div><h2>Class Fields</h2><div class="platform platform-flash"><a name="DYNAMIC_AABB_TREE"></a><h3><p><code><span class="keyword">static </span><span class="keyword">var</span> <a href="#DYNAMIC_AABB_TREE"><span class="identifier">DYNAMIC_AABB_TREE</span></a>:<a class="type" href="../../nape/space/Broadphase.html">Broadphase</a></code></p></h3><div class="doc"><p>Dynamic AABB Tree broadphase.
+     * <br/><br/>
+     * This broadphase uses a pair of binary trees with objects inserted based
+     * on containment of their AABB.
+     * <br/><br/>
+     * This is a general purpose broadphase which does not suffer for objects
+     * of varying sizes, or objects moving very quickly and is well set for such
+     * acts as ray casting and spatial queries like objectsInAABB of the Space type.
+     * <br/><br/>
+     * This is the default broadphase nape will use.</p></div></div><div class="platform platform-flash"><a name="SWEEP_AND_PRUNE"></a><h3><p><code><span class="keyword">static </span><span class="keyword">var</span> <a href="#SWEEP_AND_PRUNE"><span class="identifier">SWEEP_AND_PRUNE</span></a>:<a class="type" href="../../nape/space/Broadphase.html">Broadphase</a></code></p></h3><div class="doc"><p>Sweep and prune broadphase.
+     * <br/><br/>
+     * This is a very simple broadphase using the x-axis to keep objects
+     * sorted by their minimum x coordinate.
+     * <br/><br/>
+     * Performance of this broadphase is generally good and in some circumstances
+     * superior to the DYNAMIC<em>AABB</em>TREE broadphase.
+     * <br/><br/>
+     * This broadphase will however be much slower for things such as ray casts and
+     * spatial queries like objectsInAABB on the Space type.
+     * Also in cases where lots of objects are moving very quickly or when there is a
+     * large variety in the size of objects.
+     * <br/><br/>
+     * Due to the simplicity of this broadphase, it serves as a good test should you
+     * ever feel there might be something going wrong with the DYNAMIC<em>AABB</em>TREE
+     * broadphase type.</p></div></div><h2>Instance Fields</h2><div class="platform platform-flash"><a name="new"></a><h3><p><code><span class="keyword">function</span> <a href="#new"><span class="identifier">new</span></a>():<a class="type" href="../../Void.html">Void</a></code></p></h3><div class="doc"><p>@private</p></div></div><div class="platform platform-flash"><a name="toString"></a><h3><p><code><span class="keyword">function</span> <a href="#toString"><span class="identifier">toString</span></a>():<a class="type" href="../../String.html">String</a></code></p></h3><div class="doc"><p>@private</p></div></div></div></div></div></body></html>

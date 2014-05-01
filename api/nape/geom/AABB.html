@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8"/><link href="../../bootstrap-combined.min.css" rel="stylesheet" /><script type="text/javascript" src="../../jquery-1.9.1.min.js"></script><script type="text/javascript" src="../../bootstrap.min.js"></script><link href="../../styles.css" rel="stylesheet" /><link rel="icon" href="../../favicon.ico" type="image/x-icon"></link><script type="text/javascript" src="../../nav.js"></script><script type="text/javascript" src="../../index.js"></script><script type="text/javascript">var dox = {rootPath: "../../",platforms: ["flash"]};</script><title>AABB</title></head><body><div class="navbar navbar-inverse navbar-fixed-top"><div class="navbar-inner"><form class="navbar-search pull-left" id="searchForm"><input id="search" type="text" class="search-query" placeholder="Filter" autocomplete="off"/></form><ul class="nav"><li id="select-platform" class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Platform<b class="caret"></b></a><ul class="dropdown-menu"><li data="all"><a href="#">All Platforms</a></li><li data="flash"><a href="#">flash</a></li></ul></li></ul></div></div><div id="container"><div id="nav"></div><div id="content"><div class="header"><h1><code><span class="directive">class </span><span class="type">nape.geom.AABB</span></code></h1></div><div class="body"><p class="availability">Available on all platforms</p><div class="doc"><p>Axis Aligned Bounding Box (AABB)
+ * <br/><br/>
+ * Note that in many cases of an AABB object being returned by a Nape function
+ * the AABB object will be marked internally as an 'immutable' AABB. This will
+ * always be documented and trying to mutate such an AABB will result in an
+ * error being thrown.</p></div><h2>Class Fields</h2><div class="platform platform-flash"><a name="fromRect"></a><h3><p><code><span class="keyword">static </span><span class="keyword">function</span> <a href="#fromRect"><span class="identifier">fromRect</span></a>(rect:<a class="type" href="../../flash/geom/Rectangle.html">Rectangle</a>):<a class="type" href="../../nape/geom/AABB.html">AABB</a></code></p></h3><div class="doc"><p>Construct an AABB from an AS3 Rectangle object.
+     * <br/><br/>
+     * This method is only available on <code>flash</code> and
+     * <code>openfl||nme</code> targets.
+     *
+     * </p><table class="table table-condensed"><tbody><tr><td>rect</td><td><p>The AS3 Rectangle to construct AABB from, this value
+    *             must not be null.
+    * </p></td></tr><tr><td>returns</td><td><p>The constructed AABB matching the input Rectangle.
+* </p></td></tr></tbody></table></div></div><h2>Instance Fields</h2><div class="platform platform-flash"><a name="height"></a><h3><p><code><span class="keyword">var</span> <a href="#height"><span class="identifier">height</span></a>:<a class="type" href="../../Float.html">Float</a></code></p></h3><div class="doc"><p>height of AABB.
+     * <br/><br/>
+     * This value is and must always be positive.
+     * @default 0</p></div></div><div class="platform platform-flash"><a name="max"></a><h3><p><code><span class="keyword">var</span> <a href="#max"><span class="identifier">max</span></a>:<a class="type" href="../../nape/geom/Vec2.html">Vec2</a></code></p></h3><div class="doc"><p>The maximum bounds for the AABB.
+     * <br/><br/>
+     * Euivalent to the bottom-right corner.
+     * <br/>
+     * This Vec2 is intrinsically linked to the AABB so that modifications
+     * to this object are reflected in changes to the AABB and vice-versa.
+     * <br/><br/>
+     * If the AABB is immutable, then this Vec2 will also be immutable.
+     * <br/><br/>
+     * This value can be set with the = operator, equivalent to performing
+     * <code>aabb.max.set(value)</code>.
+     * @default (0, 0)</p></div></div><div class="platform platform-flash"><a name="min"></a><h3><p><code><span class="keyword">var</span> <a href="#min"><span class="identifier">min</span></a>:<a class="type" href="../../nape/geom/Vec2.html">Vec2</a></code></p></h3><div class="doc"><p>The minimum bounds for the AABB.
+     * <br/><br/>
+     * Euivalent to the top-left corner.
+     * <br/>
+     * This Vec2 is intrinsically linked to the AABB so that modifications
+     * to this object are reflected in changes to the AABB and vice-versa.
+     * <br/><br/>
+     * If the AABB is immutable, then this Vec2 will also be immutable.
+     * <br/><br/>
+     * This value can be set with the = operator, equivalent to performing
+     * <code>aabb.min.set(value)</code>.
+     * @default (0, 0)</p></div></div><div class="platform platform-flash"><a name="width"></a><h3><p><code><span class="keyword">var</span> <a href="#width"><span class="identifier">width</span></a>:<a class="type" href="../../Float.html">Float</a></code></p></h3><div class="doc"><p>width of AABB.
+     * <br/><br/>
+     * This value is and must always be positive.
+     * @default 0</p></div></div><div class="platform platform-flash"><a name="x"></a><h3><p><code><span class="keyword">var</span> <a href="#x"><span class="identifier">x</span></a>:<a class="type" href="../../Float.html">Float</a></code></p></h3><div class="doc"><p>The x coordinate of the AABB's top-left corner.
+     * <br/><br/>
+     * Equivalent to accessing/mutating min.x.
+     * @default 0</p></div></div><div class="platform platform-flash"><a name="y"></a><h3><p><code><span class="keyword">var</span> <a href="#y"><span class="identifier">y</span></a>:<a class="type" href="../../Float.html">Float</a></code></p></h3><div class="doc"><p>The y coordinate of the AABB's top-left corner.
+     * <br/><br/>
+     * Equivalent to accessing/mutating min.y.
+     * @default 0</p></div></div><div class="platform platform-flash"><a name="zpp_inner"></a><h3><p><code><span class="keyword">var</span> <a href="#zpp_inner"><span class="identifier">zpp_inner</span></a>:<a class="type" href="../../zpp_nape/geom/ZPP_AABB.html">ZPP_AABB</a></code></p></h3><div class="doc"><p>@private</p></div></div><div class="platform platform-flash"><a name="new"></a><h3><p><code><span class="keyword">function</span> <a href="#new"><span class="identifier">new</span></a>(?x:<a class="type" href="../../Float.html">Float</a> = 0, ?y:<a class="type" href="../../Float.html">Float</a> = 0, ?width:<a class="type" href="../../Float.html">Float</a> = 0, ?height:<a class="type" href="../../Float.html">Float</a> = 0):<a class="type" href="../../Void.html">Void</a></code></p></h3><div class="doc"><p>Construct a new AABB.
+     * <br/><br/>
+     * As input width/height are permitted to be negative it is not guaranteed
+     * that the resultant AABB will have the same parameters as those
+     * specified as the AABB parameters are guaranteed to always have positive
+     * width/height, and for x/y to always be the top-left corner.
+     *
+     * </p><table class="table table-condensed"><tbody><tr><td>x</td><td><p>The x coordinate of the top-left corner of the AABB.
+     *               (default 0)
+     * </p></td></tr><tr><td>y</td><td><p>The y coordinate of the top-left corner of the AABB
+     *               (default 0)
+     * </p></td></tr><tr><td>width</td><td><p>The width of the AABB. This value may be negative.
+   *               (default 0)
+   * </p></td></tr><tr><td>height</td><td><p>The height of the AABB. This value may be negative.
+    *               (default 0)
+    * </p></td></tr><tr><td>returns</td><td><p>The newly constructed AABB object.</p></td></tr></tbody></table></div></div><div class="platform platform-flash"><a name="copy"></a><h3><p><code><span class="keyword">function</span> <a href="#copy"><span class="identifier">copy</span></a>():<a class="type" href="../../nape/geom/AABB.html">AABB</a></code></p></h3><div class="doc"><p>Produce a copy of this AABB.
+     * <br/><br/>
+     * As would be expected, if you produce a copy of an 'immutable' AABB then
+     * the copy will be 'mutable'.
+     *
+     * </p><table class="table table-condensed"><tbody><tr><td>returns</td><td><p>The copy of this AABB.</p></td></tr></tbody></table></div></div><div class="platform platform-flash"><a name="toRect"></a><h3><p><code><span class="keyword">function</span> <a href="#toRect"><span class="identifier">toRect</span></a>():<a class="type" href="../../flash/geom/Rectangle.html">Rectangle</a></code></p></h3><div class="doc"><p>Create an AS3 Rectangle object from AABB.
+     * <br/><br/>
+     * This method is available only on <code>flash</code> and
+     * <code>openfl||nme</code> targets.
+     *
+     * </p><table class="table table-condensed"><tbody><tr><td>returns</td><td><p>The AS3 Rectangle object representing AABB.</p></td></tr></tbody></table></div></div><div class="platform platform-flash"><a name="toString"></a><h3><p><code><span class="keyword">function</span> <a href="#toString"><span class="identifier">toString</span></a>():<a class="type" href="../../String.html">String</a></code></p></h3><div class="doc"><p>@private</p></div></div></div></div></div></body></html>

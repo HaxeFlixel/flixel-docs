@@ -1,0 +1,572 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8"/><link href="../../bootstrap-combined.min.css" rel="stylesheet" /><script type="text/javascript" src="../../jquery-1.9.1.min.js"></script><script type="text/javascript" src="../../bootstrap.min.js"></script><link href="../../styles.css" rel="stylesheet" /><link rel="icon" href="../../favicon.ico" type="image/x-icon"></link><script type="text/javascript" src="../../nav.js"></script><script type="text/javascript" src="../../index.js"></script><script type="text/javascript">var dox = {rootPath: "../../",platforms: ["flash"]};</script><title>Graphics</title></head><body><div class="navbar navbar-inverse navbar-fixed-top"><div class="navbar-inner"><form class="navbar-search pull-left" id="searchForm"><input id="search" type="text" class="search-query" placeholder="Filter" autocomplete="off"/></form><ul class="nav"><li id="select-platform" class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Platform<b class="caret"></b></a><ul class="dropdown-menu"><li data="all"><a href="#">All Platforms</a></li><li data="flash"><a href="#">flash</a></li></ul></li></ul></div></div><div id="container"><div id="nav"></div><div id="content"><div class="header"><h1><code><span class="directive">class </span><span class="type">flash.display.Graphics</span></code></h1></div><div class="body"><p class="availability">Available on all platforms</p><div class="doc"><p>The Graphics class contains a set of methods that you can use to create a
+ * vector shape. Display objects that support drawing include Sprite and Shape
+ * objects. Each of these classes includes a <code>graphics</code> property
+ * that is a Graphics object. The following are among those helper functions
+ * provided for ease of use: <code>drawRect()</code>,
+ * <code>drawRoundRect()</code>, <code>drawCircle()</code>, and
+ * <code>drawEllipse()</code>.
+ <em>
+ * <p>You cannot create a Graphics object directly from ActionScript code. If
+ * you call <code>new Graphics()</code>, an exception is thrown.</p>
+ </em>
+ * <p>The Graphics class is final; it cannot be subclassed.</p></p></div><h2>Instance Fields</h2><div class="platform platform-flash"><a name="new"></a><h3><p><code><span class="keyword">function</span> <a href="#new"><span class="identifier">new</span></a>():<a class="type" href="../../Void.html">Void</a></code></p></h3><div class="doc"><p></p></div></div><div class="platform platform-flash"><a name="beginBitmapFill"></a><h3><p><code><span class="keyword">function</span> <a href="#beginBitmapFill"><span class="identifier">beginBitmapFill</span></a>(bitmap:<a class="type" href="../../flash/display/BitmapData.html">BitmapData</a>, ?matrix:<a class="type" href="../../flash/geom/Matrix.html">Matrix</a>, ?repeat:<a class="type" href="../../Bool.html">Bool</a>, ?smooth:<a class="type" href="../../Bool.html">Bool</a>):<a class="type" href="../../Void.html">Void</a></code></p></h3><div class="doc"><p>Fills a drawing area with a bitmap image. The bitmap can be repeated or
+ * tiled to fill the area. The fill remains in effect until you call the
+ * <code>beginFill()</code>, <code>beginBitmapFill()</code>,
+ * <code>beginGradientFill()</code>, or <code>beginShaderFill()</code>
+ * method. Calling the <code>clear()</code> method clears the fill.
+ *
+ * <p>The application renders the fill whenever three or more points are
+ * drawn, or when the <code>endFill()</code> method is called. </p>
+ * 
+ * </p><table class="table table-condensed"><tbody><tr><td>bitmap</td><td><p>A transparent or opaque bitmap image that contains the bits
+<em>               to be displayed.
+</em> </p></td></tr><tr><td>matrix</td><td><p>A matrix object(of the flash.geom.Matrix class), which you
+<em>               can use to define transformations on the bitmap. For
+</em>               example, you can use the following matrix to rotate a bitmap
+<em>               by 45 degrees(pi/4 radians):
+</em> </p></td></tr><tr><td>repeat</td><td><p>If <code>true</code>, the bitmap image repeats in a tiled
+<em>               pattern. If <code>false</code>, the bitmap image does not
+</em>               repeat, and the edges of the bitmap are used for any fill
+<em>               area that extends beyond the bitmap.
+</em>
+<em>               <p>For example, consider the following bitmap(a 20 x
+</em>               20-pixel checkerboard pattern):</p>
+<em>
+</em>               <p>When <code>repeat</code> is set to <code>true</code>(as
+<em>               in the following example), the bitmap fill repeats the
+</em>               bitmap:</p>
+<em>
+</em>               <p>When <code>repeat</code> is set to <code>false</code>,
+<em>               the bitmap fill uses the edge pixels for the fill area
+</em>               outside the bitmap:</p>
+* </p></td></tr><tr><td>smooth</td><td><p>If <code>false</code>, upscaled bitmap images are rendered
+<em>               by using a nearest-neighbor algorithm and look pixelated. If
+</em>               <code>true</code>, upscaled bitmap images are rendered by
+<em>               using a bilinear algorithm. Rendering by using the nearest
+</em>               neighbor algorithm is faster.</p></td></tr></tbody></table></div></div><div class="platform platform-flash"><a name="beginFill"></a><h3><p><code><span class="keyword">function</span> <a href="#beginFill"><span class="identifier">beginFill</span></a>(color:<a class="type" href="../../UInt.html">UInt</a>, ?alpha:<a class="type" href="../../Float.html">Float</a>):<a class="type" href="../../Void.html">Void</a></code></p></h3><div class="doc"><p>Specifies a simple one-color fill that subsequent calls to other Graphics
+ * methods(such as <code>lineTo()</code> or <code>drawCircle()</code>) use
+ * when drawing. The fill remains in effect until you call the
+ * <code>beginFill()</code>, <code>beginBitmapFill()</code>,
+ * <code>beginGradientFill()</code>, or <code>beginShaderFill()</code>
+ * method. Calling the <code>clear()</code> method clears the fill.
+ *
+ * <p>The application renders the fill whenever three or more points are
+ * drawn, or when the <code>endFill()</code> method is called.</p>
+ * 
+ * </p><table class="table table-condensed"><tbody><tr><td>color</td><td><p>The color of the fill(0xRRGGBB).
+* </p></td></tr><tr><td>alpha</td><td><p>The alpha value of the fill(0.0 to 1.0).</p></td></tr></tbody></table></div></div><div class="platform platform-flash"><a name="beginGradientFill"></a><h3><p><code><span class="keyword">function</span> <a href="#beginGradientFill"><span class="identifier">beginGradientFill</span></a>(type:<a class="type" href="../../flash/display/GradientType.html">GradientType</a>, colors:<a class="type" href="../../Array.html">Array</a>&lt;<a class="type" href="../../UInt.html">UInt</a>&gt;, alphas:<a class="type" href="../../Array.html">Array</a>&lt;<a class="type" href="../../Dynamic.html">Dynamic</a>&gt;, ratios:<a class="type" href="../../Array.html">Array</a>&lt;<a class="type" href="../../Dynamic.html">Dynamic</a>&gt;, ?matrix:<a class="type" href="../../flash/geom/Matrix.html">Matrix</a>, ?spreadMethod:<a class="type" href="../../flash/display/SpreadMethod.html">SpreadMethod</a>, ?interpolationMethod:<a class="type" href="../../flash/display/InterpolationMethod.html">InterpolationMethod</a>, ?focalPointRatio:<a class="type" href="../../Float.html">Float</a>):<a class="type" href="../../Void.html">Void</a></code></p></h3><div class="doc"><p>Specifies a gradient fill used by subsequent calls to other Graphics
+ * methods(such as <code>lineTo()</code> or <code>drawCircle()</code>) for
+ * the object. The fill remains in effect until you call the
+ * <code>beginFill()</code>, <code>beginBitmapFill()</code>,
+ * <code>beginGradientFill()</code>, or <code>beginShaderFill()</code>
+ * method. Calling the <code>clear()</code> method clears the fill.
+ *
+ * <p>The application renders the fill whenever three or more points are
+ * drawn, or when the <code>endFill()</code> method is called. </p>
+ * 
+ * </p><table class="table table-condensed"><tbody><tr><td>type</td><td><p>A value from the GradientType class that
+ *                            specifies which gradient type to use:
+ *                            <code>GradientType.LINEAR</code> or
+ *                            <code>GradientType.RADIAL</code>.
+ * </p></td></tr><tr><td>matrix</td><td><p>A transformation matrix as defined by the
+ *                            flash.geom.Matrix class. The flash.geom.Matrix
+ *                            class includes a
+ *                            <code>createGradientBox()</code> method, which
+ *                            lets you conveniently set up the matrix for use
+ *                            with the <code>beginGradientFill()</code>
+ *                            method.
+ * </p></td></tr><tr><td>spreadMethod</td><td><p>A value from the SpreadMethod class that
+ *                            specifies which spread method to use, either:
+ *                            <code>SpreadMethod.PAD</code>,
+ *                            <code>SpreadMethod.REFLECT</code>, or
+ *                            <code>SpreadMethod.REPEAT</code>.
+ <em>
+ *                            <p>For example, consider a simple linear
+ *                            gradient between two colors:</p>
+ </em>
+ *                            <p>This example uses
+ *                            <code>SpreadMethod.PAD</code> for the spread
+ *                            method, and the gradient fill looks like the
+ *                            following:</p>
+ <em>
+ *                            <p>If you use <code>SpreadMethod.REFLECT</code>
+ *                            for the spread method, the gradient fill looks
+ *                            like the following:</p>
+ </em>
+ *                            <p>If you use <code>SpreadMethod.REPEAT</code>
+ *                            for the spread method, the gradient fill looks
+ *                            like the following:</p>
+ * </p></td></tr><tr><td>interpolationMethod</td><td><p>A value from the InterpolationMethod class that
+<em>                            specifies which value to use:
+</em>                            <code>InterpolationMethod.LINEAR_RGB</code> or
+<em>                            <code>InterpolationMethod.RGB</code>
+</em>
+<em>                            <p>For example, consider a simple linear
+</em>                            gradient between two colors(with the
+<em>                            <code>spreadMethod</code> parameter set to
+</em>                            <code>SpreadMethod.REFLECT</code>). The
+<em>                            different interpolation methods affect the
+</em>                            appearance as follows: </p>
+* </p></td></tr><tr><td>focalPointRatio</td><td><p>A number that controls the location of the
+ *                            focal point of the gradient. 0 means that the
+ *                            focal point is in the center. 1 means that the
+ *                            focal point is at one border of the gradient
+ *                            circle. -1 means that the focal point is at the
+ *                            other border of the gradient circle. A value
+ *                            less than -1 or greater than 1 is rounded to -1
+ *                            or 1. For example, the following example shows
+ *                            a <code>focalPointRatio</code> set to 0.75:
+ * </p></td></tr></tbody></table></div></div><div class="platform platform-flash"><a name="beginShaderFill"></a><h3><p><code><span class="keyword">function</span> <a href="#beginShaderFill"><span class="identifier">beginShaderFill</span></a>(shader:<a class="type" href="../../flash/display/Shader.html">Shader</a>, ?matrix:<a class="type" href="../../flash/geom/Matrix.html">Matrix</a>):<a class="type" href="../../Void.html">Void</a></code></p></h3><div class="doc"><p>Specifies a shader fill used by subsequent calls to other Graphics methods
+ * (such as <code>lineTo()</code> or <code>drawCircle()</code>) for the
+ * object. The fill remains in effect until you call the
+ * <code>beginFill()</code>, <code>beginBitmapFill()</code>,
+ * <code>beginGradientFill()</code>, or <code>beginShaderFill()</code>
+ * method. Calling the <code>clear()</code> method clears the fill.
+ <em>
+ * <p>The application renders the fill whenever three or more points are
+ * drawn, or when the <code>endFill()</code> method is called.</p>
+ </em>
+ * <p>Shader fills are not supported under GPU rendering; filled areas will
+ * be colored cyan.</p>
+ * 
+ * </p><table class="table table-condensed"><tbody><tr><td>shader</td><td><p>The shader to use for the fill. This Shader instance is not
+<em>               required to specify an image input. However, if an image
+</em>               input is specified in the shader, the input must be provided
+<em>               manually. To specify the input, set the <code>input</code>
+</em>               property of the corresponding ShaderInput property of the
+<em>               <code>Shader.data</code> property.
+</em>
+<em>               <p>When you pass a Shader instance as an argument the shader
+</em>               is copied internally. The drawing fill operation uses that
+<em>               internal copy, not a reference to the original shader. Any
+</em>               changes made to the shader, such as changing a parameter
+<em>               value, input, or bytecode, are not applied to the copied
+</em>               shader that's used for the fill.</p>
+* </p></td></tr><tr><td>matrix</td><td><p>A matrix object(of the flash.geom.Matrix class), which you
+<em>               can use to define transformations on the shader. For
+</em>               example, you can use the following matrix to rotate a shader
+<em>               by 45 degrees(pi/4 radians):
+</em>
+<em>               <p>The coordinates received in the shader are based on the
+</em>               matrix that is specified for the <code>matrix</code>
+<em>               parameter. For a default(<code>null</code>) matrix, the
+</em>               coordinates in the shader are local pixel coordinates which
+<em>               can be used to sample an input.</p>
+</em> </p></td></tr></tbody></table></div></div><div class="platform platform-flash"><a name="clear"></a><h3><p><code><span class="keyword">function</span> <a href="#clear"><span class="identifier">clear</span></a>():<a class="type" href="../../Void.html">Void</a></code></p></h3><div class="doc"><p>Clears the graphics that were drawn to this Graphics object, and resets
+ * fill and line style settings.</p></div></div><div class="platform platform-flash"><a name="copyFrom"></a><h3><p><code><span class="keyword">function</span> <a href="#copyFrom"><span class="identifier">copyFrom</span></a>(sourceGraphics:<a class="type" href="../../flash/display/Graphics.html">Graphics</a>):<a class="type" href="../../Void.html">Void</a></code></p></h3><div class="doc"><p>Copies all of drawing commands from the source Graphics object into the
+ * calling Graphics object.
+ * 
+ * </p><table class="table table-condensed"><tbody><tr><td>sourceGraphics</td><td><p>The Graphics object from which to copy the drawing
+*                       commands.</p></td></tr></tbody></table></div></div><div class="platform platform-flash"><a name="cubicCurveTo"></a><h3><p><code><span class="keyword">function</span> <a href="#cubicCurveTo"><span class="identifier">cubicCurveTo</span></a>(controlX1:<a class="type" href="../../Float.html">Float</a>, controlY1:<a class="type" href="../../Float.html">Float</a>, controlX2:<a class="type" href="../../Float.html">Float</a>, controlY2:<a class="type" href="../../Float.html">Float</a>, anchorX:<a class="type" href="../../Float.html">Float</a>, anchorY:<a class="type" href="../../Float.html">Float</a>):<a class="type" href="../../Void.html">Void</a></code></p></h3><div class="doc"><p></p></div></div><div class="platform platform-flash"><a name="curveTo"></a><h3><p><code><span class="keyword">function</span> <a href="#curveTo"><span class="identifier">curveTo</span></a>(controlX:<a class="type" href="../../Float.html">Float</a>, controlY:<a class="type" href="../../Float.html">Float</a>, anchorX:<a class="type" href="../../Float.html">Float</a>, anchorY:<a class="type" href="../../Float.html">Float</a>):<a class="type" href="../../Void.html">Void</a></code></p></h3><div class="doc"><p>Draws a curve using the current line style from the current drawing
+ * position to(anchorX, anchorY) and using the control point that
+ * (<code>controlX</code>, <code>controlY</code>) specifies. The current
+ * drawing position is then set to(<code>anchorX</code>,
+ * <code>anchorY</code>). If the movie clip in which you are drawing contains
+ * content created with the Flash drawing tools, calls to the
+ * <code>curveTo()</code> method are drawn underneath this content. If you
+ * call the <code>curveTo()</code> method before any calls to the
+ * <code>moveTo()</code> method, the default of the current drawing position
+ * is(0, 0). If any of the parameters are missing, this method fails and the
+ * current drawing position is not changed.
+ *
+ * <p>The curve drawn is a quadratic Bezier curve. Quadratic Bezier curves
+ * consist of two anchor points and one control point. The curve interpolates
+ * the two anchor points and curves toward the control point. </p>
+ * 
+ * </p><table class="table table-condensed"><tbody><tr><td>controlX</td><td><p>A number that specifies the horizontal position of the
+<em>                 control point relative to the registration point of the
+</em>                 parent display object.
+* </p></td></tr><tr><td>controlY</td><td><p>A number that specifies the vertical position of the
+<em>                 control point relative to the registration point of the
+</em>                 parent display object.
+* </p></td></tr><tr><td>anchorX</td><td><p>A number that specifies the horizontal position of the
+ *                 next anchor point relative to the registration point of
+ *                 the parent display object.
+ * </p></td></tr><tr><td>anchorY</td><td><p>A number that specifies the vertical position of the next
+ *                 anchor point relative to the registration point of the
+ *                 parent display object.</p></td></tr></tbody></table></div></div><div class="platform platform-flash"><a name="drawCircle"></a><h3><p><code><span class="keyword">function</span> <a href="#drawCircle"><span class="identifier">drawCircle</span></a>(x:<a class="type" href="../../Float.html">Float</a>, y:<a class="type" href="../../Float.html">Float</a>, radius:<a class="type" href="../../Float.html">Float</a>):<a class="type" href="../../Void.html">Void</a></code></p></h3><div class="doc"><p>Draws a circle. Set the line style, fill, or both before you call the
+ * <code>drawCircle()</code> method, by calling the <code>linestyle()</code>,
+ * <code>lineGradientStyle()</code>, <code>beginFill()</code>,
+ * <code>beginGradientFill()</code>, or <code>beginBitmapFill()</code>
+ * method.
+ * 
+ * </p><table class="table table-condensed"><tbody><tr><td>x</td><td><p>The <i>x</i> location of the center of the circle relative
+ *               to the registration point of the parent display object(in
+ *               pixels).
+ * </p></td></tr><tr><td>y</td><td><p>The <i>y</i> location of the center of the circle relative
+ *               to the registration point of the parent display object(in
+ *               pixels).
+ * </p></td></tr><tr><td>radius</td><td><p>The radius of the circle(in pixels).</p></td></tr></tbody></table></div></div><div class="platform platform-flash"><a name="drawEllipse"></a><h3><p><code><span class="keyword">function</span> <a href="#drawEllipse"><span class="identifier">drawEllipse</span></a>(x:<a class="type" href="../../Float.html">Float</a>, y:<a class="type" href="../../Float.html">Float</a>, width:<a class="type" href="../../Float.html">Float</a>, height:<a class="type" href="../../Float.html">Float</a>):<a class="type" href="../../Void.html">Void</a></code></p></h3><div class="doc"><p>Draws an ellipse. Set the line style, fill, or both before you call the
+ * <code>drawEllipse()</code> method, by calling the
+ * <code>linestyle()</code>, <code>lineGradientStyle()</code>,
+ * <code>beginFill()</code>, <code>beginGradientFill()</code>, or
+ * <code>beginBitmapFill()</code> method.
+ * 
+ * </p><table class="table table-condensed"><tbody><tr><td>x</td><td><p>The <i>x</i> location of the top-left of the bounding-box of
+ *               the ellipse relative to the registration point of the parent
+ *               display object(in pixels).
+ * </p></td></tr><tr><td>y</td><td><p>The <i>y</i> location of the top left of the bounding-box of
+ *               the ellipse relative to the registration point of the parent
+ *               display object(in pixels).
+ * </p></td></tr><tr><td>width</td><td><p>The width of the ellipse(in pixels).
+ * </p></td></tr><tr><td>height</td><td><p>The height of the ellipse(in pixels).</p></td></tr></tbody></table></div></div><div class="platform platform-flash"><a name="drawGraphicsData"></a><h3><p><code><span class="keyword">function</span> <a href="#drawGraphicsData"><span class="identifier">drawGraphicsData</span></a>(graphicsData:<a class="type" href="../../flash/Vector.html">Vector</a>&lt;<a class="type" href="../../flash/display/IGraphicsData.html">IGraphicsData</a>&gt;):<a class="type" href="../../Void.html">Void</a></code></p></h3><div class="doc"><p>Submits a series of IGraphicsData instances for drawing. This method
+ * accepts a Vector containing objects including paths, fills, and strokes
+ * that implement the IGraphicsData interface. A Vector of IGraphicsData
+ * instances can refer to a part of a shape, or a complex fully defined set
+ * of data for rendering a complete shape.
+ *
+ * <p> Graphics paths can contain other graphics paths. If the
+ * <code>graphicsData</code> Vector includes a path, that path and all its
+ * sub-paths are rendered during this operation. </p></p></div></div><div class="platform platform-flash"><a name="drawPath"></a><h3><p><code><span class="keyword">function</span> <a href="#drawPath"><span class="identifier">drawPath</span></a>(commands:<a class="type" href="../../flash/Vector.html">Vector</a>&lt;<a class="type" href="../../Int.html">Int</a>&gt;, data:<a class="type" href="../../flash/Vector.html">Vector</a>&lt;<a class="type" href="../../Float.html">Float</a>&gt;, ?winding:<a class="type" href="../../flash/display/GraphicsPathWinding.html">GraphicsPathWinding</a>):<a class="type" href="../../Void.html">Void</a></code></p></h3><div class="doc"><p>Submits a series of commands for drawing. The <code>drawPath()</code>
+ * method uses vector arrays to consolidate individual <code>moveTo()</code>,
+ * <code>lineTo()</code>, and <code>curveTo()</code> drawing commands into a
+ * single call. The <code>drawPath()</code> method parameters combine drawing
+ * commands with x- and y-coordinate value pairs and a drawing direction. The
+ * drawing commands are values from the GraphicsPathCommand class. The x- and
+ * y-coordinate value pairs are Numbers in an array where each pair defines a
+ * coordinate location. The drawing direction is a value from the
+ * GraphicsPathWinding class.
+ <em>
+ * <p> Generally, drawings render faster with <code>drawPath()</code> than
+ * with a series of individual <code>lineTo()</code> and
+ * <code>curveTo()</code> methods. </p>
+ </em>
+ * <p> The <code>drawPath()</code> method uses a uses a floating computation
+ * so rotation and scaling of shapes is more accurate and gives better
+ * results. However, curves submitted using the <code>drawPath()</code>
+ * method can have small sub-pixel alignment errors when used in conjunction
+ * with the <code>lineTo()</code> and <code>curveTo()</code> methods. </p>
+ <em>
+ * <p> The <code>drawPath()</code> method also uses slightly different rules
+ * for filling and drawing lines. They are: </p>
+ </em>
+ * <ul>
+ *   <li>When a fill is applied to rendering a path:
+ * <ul>
+ *   <li>A sub-path of less than 3 points is not rendered.(But note that the
+ * stroke rendering will still occur, consistent with the rules for strokes
+ * below.)</li>
+ *   <li>A sub-path that isn't closed(the end point is not equal to the
+ * begin point) is implicitly closed.</li>
+ * </ul>
+ * </li>
+ *   <li>When a stroke is applied to rendering a path:
+ * <ul>
+ *   <li>The sub-paths can be composed of any number of points.</li>
+ *   <li>The sub-path is never implicitly closed.</li>
+ * </ul>
+ * </li>
+ * </ul>
+ * 
+ * </p><table class="table table-condensed"><tbody><tr><td>winding</td><td><p>Specifies the winding rule using a value defined in the
+*                GraphicsPathWinding class.</p></td></tr></tbody></table></div></div><div class="platform platform-flash"><a name="drawRect"></a><h3><p><code><span class="keyword">function</span> <a href="#drawRect"><span class="identifier">drawRect</span></a>(x:<a class="type" href="../../Float.html">Float</a>, y:<a class="type" href="../../Float.html">Float</a>, width:<a class="type" href="../../Float.html">Float</a>, height:<a class="type" href="../../Float.html">Float</a>):<a class="type" href="../../Void.html">Void</a></code></p></h3><div class="doc"><p>Draws a rectangle. Set the line style, fill, or both before you call the
+ * <code>drawRect()</code> method, by calling the <code>linestyle()</code>,
+ * <code>lineGradientStyle()</code>, <code>beginFill()</code>,
+ * <code>beginGradientFill()</code>, or <code>beginBitmapFill()</code>
+ * method.
+ * 
+ * </p><table class="table table-condensed"><tbody><tr><td>x</td><td><p>A number indicating the horizontal position relative to the
+ *               registration point of the parent display object(in pixels).
+ * </p></td></tr><tr><td>y</td><td><p>A number indicating the vertical position relative to the
+ *               registration point of the parent display object(in pixels).
+ * </p></td></tr><tr><td>width</td><td><p>The width of the rectangle(in pixels).
+ * </p></td></tr><tr><td>height</td><td><p>The height of the rectangle(in pixels).
+* </p></td></tr></tbody></table></div></div><div class="platform platform-flash"><a name="drawRoundRect"></a><h3><p><code><span class="keyword">function</span> <a href="#drawRoundRect"><span class="identifier">drawRoundRect</span></a>(x:<a class="type" href="../../Float.html">Float</a>, y:<a class="type" href="../../Float.html">Float</a>, width:<a class="type" href="../../Float.html">Float</a>, height:<a class="type" href="../../Float.html">Float</a>, ellipseWidth:<a class="type" href="../../Float.html">Float</a>, ?ellipseHeight:<a class="type" href="../../Float.html">Float</a>):<a class="type" href="../../Void.html">Void</a></code></p></h3><div class="doc"><p>Draws a rounded rectangle. Set the line style, fill, or both before you
+ * call the <code>drawRoundRect()</code> method, by calling the
+ * <code>linestyle()</code>, <code>lineGradientStyle()</code>,
+ * <code>beginFill()</code>, <code>beginGradientFill()</code>, or
+ * <code>beginBitmapFill()</code> method.
+ * 
+ * </p><table class="table table-condensed"><tbody><tr><td>x</td><td><p>A number indicating the horizontal position relative
+ *                      to the registration point of the parent display
+ *                      object(in pixels).
+ * </p></td></tr><tr><td>y</td><td><p>A number indicating the vertical position relative to
+ *                      the registration point of the parent display object
+ *                     (in pixels).
+ * </p></td></tr><tr><td>width</td><td><p>The width of the round rectangle(in pixels).
+ * </p></td></tr><tr><td>height</td><td><p>The height of the round rectangle(in pixels).
+ * </p></td></tr><tr><td>ellipseWidth</td><td><p>The width of the ellipse used to draw the rounded
+ *                      corners(in pixels).
+ * </p></td></tr><tr><td>ellipseHeight</td><td><p>The height of the ellipse used to draw the rounded
+<em>                      corners(in pixels). Optional; if no value is
+</em>                      specified, the default value matches that provided
+<em>                      for the <code>ellipseWidth</code> parameter.
+</em> </p></td></tr></tbody></table></div></div><div class="platform platform-flash"><a name="drawRoundRectComplex"></a><h3><p><code><span class="keyword">function</span> <a href="#drawRoundRectComplex"><span class="identifier">drawRoundRectComplex</span></a>(x:<a class="type" href="../../Float.html">Float</a>, y:<a class="type" href="../../Float.html">Float</a>, width:<a class="type" href="../../Float.html">Float</a>, height:<a class="type" href="../../Float.html">Float</a>, topLeftRadius:<a class="type" href="../../Float.html">Float</a>, topRightRadius:<a class="type" href="../../Float.html">Float</a>, bottomLeftRadius:<a class="type" href="../../Float.html">Float</a>, bottomRightRadius:<a class="type" href="../../Float.html">Float</a>):<a class="type" href="../../Void.html">Void</a></code></p></h3><div class="doc"><p></p></div></div><div class="platform platform-flash"><a name="drawTriangles"></a><h3><p><code><span class="keyword">function</span> <a href="#drawTriangles"><span class="identifier">drawTriangles</span></a>(vertices:<a class="type" href="../../flash/Vector.html">Vector</a>&lt;<a class="type" href="../../Float.html">Float</a>&gt;, ?indices:<a class="type" href="../../flash/Vector.html">Vector</a>&lt;<a class="type" href="../../Int.html">Int</a>&gt;, ?uvtData:<a class="type" href="../../flash/Vector.html">Vector</a>&lt;<a class="type" href="../../Float.html">Float</a>&gt;, ?culling:<a class="type" href="../../flash/display/TriangleCulling.html">TriangleCulling</a>):<a class="type" href="../../Void.html">Void</a></code></p></h3><div class="doc"><p>Renders a set of triangles, typically to distort bitmaps and give them a
+ * three-dimensional appearance. The <code>drawTriangles()</code> method maps
+ * either the current fill, or a bitmap fill, to the triangle faces using a
+ * set of(u,v) coordinates.
+ <em>
+ * <p> Any type of fill can be used, but if the fill has a transform matrix
+ * that transform matrix is ignored. </p>
+ </em>
+ * <p> A <code>uvtData</code> parameter improves texture mapping when a
+ * bitmap fill is used. </p>
+ * 
+ * </p><table class="table table-condensed"><tbody><tr><td>culling</td><td><p>Specifies whether to render triangles that face in a
+<em>                specified direction. This parameter prevents the rendering
+</em>                of triangles that cannot be seen in the current view. This
+<em>                parameter can be set to any value defined by the
+</em>                TriangleCulling class.</p></td></tr></tbody></table></div></div><div class="platform platform-flash"><a name="endFill"></a><h3><p><code><span class="keyword">function</span> <a href="#endFill"><span class="identifier">endFill</span></a>():<a class="type" href="../../Void.html">Void</a></code></p></h3><div class="doc"><p>Applies a fill to the lines and curves that were added since the last call
+ * to the <code>beginFill()</code>, <code>beginGradientFill()</code>, or
+ * <code>beginBitmapFill()</code> method. Flash uses the fill that was
+ * specified in the previous call to the <code>beginFill()</code>,
+ * <code>beginGradientFill()</code>, or <code>beginBitmapFill()</code>
+ * method. If the current drawing position does not equal the previous
+ * position specified in a <code>moveTo()</code> method and a fill is
+ * defined, the path is closed with a line and then filled.</p></div></div><div class="platform platform-flash"><a name="lineBitmapStyle"></a><h3><p><code><span class="keyword">function</span> <a href="#lineBitmapStyle"><span class="identifier">lineBitmapStyle</span></a>(bitmap:<a class="type" href="../../flash/display/BitmapData.html">BitmapData</a>, ?matrix:<a class="type" href="../../flash/geom/Matrix.html">Matrix</a>, ?repeat:<a class="type" href="../../Bool.html">Bool</a>, ?smooth:<a class="type" href="../../Bool.html">Bool</a>):<a class="type" href="../../Void.html">Void</a></code></p></h3><div class="doc"><p>Specifies a bitmap to use for the line stroke when drawing lines.
+ <em>
+ * <p>The bitmap line style is used for subsequent calls to Graphics methods
+ * such as the <code>lineTo()</code> method or the <code>drawCircle()</code>
+ * method. The line style remains in effect until you call the
+ * <code>lineStyle()</code> or <code>lineGradientStyle()</code> methods, or
+ * the <code>lineBitmapStyle()</code> method again with different parameters.
+ * </p>
+ </em>
+ * <p>You can call the <code>lineBitmapStyle()</code> method in the middle of
+ * drawing a path to specify different styles for different line segments
+ * within a path. </p>
+ <em>
+ * <p>Call the <code>lineStyle()</code> method before you call the
+ * <code>lineBitmapStyle()</code> method to enable a stroke, or else the
+ * value of the line style is <code>undefined</code>.</p>
+ </em>
+ * <p>Calls to the <code>clear()</code> method set the line style back to
+ * <code>undefined</code>. </p>
+ * 
+ * </p><table class="table table-condensed"><tbody><tr><td>bitmap</td><td><p>The bitmap to use for the line stroke.
+* </p></td></tr><tr><td>matrix</td><td><p>An optional transformation matrix as defined by the
+<em>               flash.geom.Matrix class. The matrix can be used to scale or
+</em>               otherwise manipulate the bitmap before applying it to the
+<em>               line style.
+</em> </p></td></tr><tr><td>repeat</td><td><p>Whether to repeat the bitmap in a tiled fashion.
+* </p></td></tr><tr><td>smooth</td><td><p>Whether smoothing should be applied to the bitmap.</p></td></tr></tbody></table></div></div><div class="platform platform-flash"><a name="lineGradientStyle"></a><h3><p><code><span class="keyword">function</span> <a href="#lineGradientStyle"><span class="identifier">lineGradientStyle</span></a>(type:<a class="type" href="../../flash/display/GradientType.html">GradientType</a>, colors:<a class="type" href="../../Array.html">Array</a>&lt;<a class="type" href="../../UInt.html">UInt</a>&gt;, alphas:<a class="type" href="../../Array.html">Array</a>&lt;<a class="type" href="../../Dynamic.html">Dynamic</a>&gt;, ratios:<a class="type" href="../../Array.html">Array</a>&lt;<a class="type" href="../../Dynamic.html">Dynamic</a>&gt;, ?matrix:<a class="type" href="../../flash/geom/Matrix.html">Matrix</a>, ?spreadMethod:<a class="type" href="../../flash/display/SpreadMethod.html">SpreadMethod</a>, ?interpolationMethod:<a class="type" href="../../flash/display/InterpolationMethod.html">InterpolationMethod</a>, ?focalPointRatio:<a class="type" href="../../Float.html">Float</a>):<a class="type" href="../../Void.html">Void</a></code></p></h3><div class="doc"><p>Specifies a gradient to use for the stroke when drawing lines.
+ <em>
+ * <p>The gradient line style is used for subsequent calls to Graphics
+ * methods such as the <code>lineTo()</code> methods or the
+ * <code>drawCircle()</code> method. The line style remains in effect until
+ * you call the <code>lineStyle()</code> or <code>lineBitmapStyle()</code>
+ * methods, or the <code>lineGradientStyle()</code> method again with
+ * different parameters. </p>
+ </em>
+ * <p>You can call the <code>lineGradientStyle()</code> method in the middle
+ * of drawing a path to specify different styles for different line segments
+ * within a path. </p>
+ <em>
+ * <p>Call the <code>lineStyle()</code> method before you call the
+ * <code>lineGradientStyle()</code> method to enable a stroke, or else the
+ * value of the line style is <code>undefined</code>.</p>
+ </em>
+ * <p>Calls to the <code>clear()</code> method set the line style back to
+ * <code>undefined</code>. </p>
+ * 
+ * </p><table class="table table-condensed"><tbody><tr><td>type</td><td><p>A value from the GradientType class that
+ *                            specifies which gradient type to use, either
+ *                            GradientType.LINEAR or GradientType.RADIAL.
+ * </p></td></tr><tr><td>matrix</td><td><p>A transformation matrix as defined by the
+ *                            flash.geom.Matrix class. The flash.geom.Matrix
+ *                            class includes a
+ *                            <code>createGradientBox()</code> method, which
+ *                            lets you conveniently set up the matrix for use
+ *                            with the <code>lineGradientStyle()</code>
+ *                            method.
+ * </p></td></tr><tr><td>spreadMethod</td><td><p>A value from the SpreadMethod class that
+ *                            specifies which spread method to use:
+ * </p></td></tr><tr><td>interpolationMethod</td><td><p>A value from the InterpolationMethod class that
+<em>                            specifies which value to use. For example,
+</em>                            consider a simple linear gradient between two
+<em>                            colors(with the <code>spreadMethod</code>
+</em>                            parameter set to
+<em>                            <code>SpreadMethod.REFLECT</code>). The
+</em>                            different interpolation methods affect the
+<em>                            appearance as follows:
+</em> </p></td></tr><tr><td>focalPointRatio</td><td><p>A number that controls the location of the
+ *                            focal point of the gradient. The value 0 means
+ *                            the focal point is in the center. The value 1
+ *                            means the focal point is at one border of the
+ *                            gradient circle. The value -1 means that the
+ *                            focal point is at the other border of the
+ *                            gradient circle. Values less than -1 or greater
+ *                            than 1 are rounded to -1 or 1. The following
+ *                            image shows a gradient with a
+ *                            <code>focalPointRatio</code> of -0.75:</p></td></tr></tbody></table></div></div><div class="platform platform-flash"><a name="lineShaderStyle"></a><h3><p><code><span class="keyword">function</span> <a href="#lineShaderStyle"><span class="identifier">lineShaderStyle</span></a>(shader:<a class="type" href="../../flash/display/Shader.html">Shader</a>, ?matrix:<a class="type" href="../../flash/geom/Matrix.html">Matrix</a>):<a class="type" href="../../Void.html">Void</a></code></p></h3><div class="doc"><p>Specifies a shader to use for the line stroke when drawing lines.
+ <em>
+ * <p>The shader line style is used for subsequent calls to Graphics methods
+ * such as the <code>lineTo()</code> method or the <code>drawCircle()</code>
+ * method. The line style remains in effect until you call the
+ * <code>lineStyle()</code> or <code>lineGradientStyle()</code> methods, or
+ * the <code>lineBitmapStyle()</code> method again with different parameters.
+ * </p>
+ </em>
+ * <p>You can call the <code>lineShaderStyle()</code> method in the middle of
+ * drawing a path to specify different styles for different line segments
+ * within a path. </p>
+ <em>
+ * <p>Call the <code>lineStyle()</code> method before you call the
+ * <code>lineShaderStyle()</code> method to enable a stroke, or else the
+ * value of the line style is <code>undefined</code>.</p>
+ </em>
+ * <p>Calls to the <code>clear()</code> method set the line style back to
+ * <code>undefined</code>. </p>
+ * 
+ * </p><table class="table table-condensed"><tbody><tr><td>shader</td><td><p>The shader to use for the line stroke.
+* </p></td></tr><tr><td>matrix</td><td><p>An optional transformation matrix as defined by the
+<em>               flash.geom.Matrix class. The matrix can be used to scale or
+</em>               otherwise manipulate the bitmap before applying it to the
+*               line style.</p></td></tr></tbody></table></div></div><div class="platform platform-flash"><a name="lineStyle"></a><h3><p><code><span class="keyword">function</span> <a href="#lineStyle"><span class="identifier">lineStyle</span></a>(?thickness:<a class="type" href="../../Float.html">Float</a>, ?color:<a class="type" href="../../UInt.html">UInt</a>, ?alpha:<a class="type" href="../../Float.html">Float</a>, ?pixelHinting:<a class="type" href="../../Bool.html">Bool</a>, ?scaleMode:<a class="type" href="../../flash/display/LineScaleMode.html">LineScaleMode</a>, ?caps:<a class="type" href="../../flash/display/CapsStyle.html">CapsStyle</a>, ?joints:<a class="type" href="../../flash/display/JointStyle.html">JointStyle</a>, ?miterLimit:<a class="type" href="../../Float.html">Float</a>):<a class="type" href="../../Void.html">Void</a></code></p></h3><div class="doc"><p>Specifies a line style used for subsequent calls to Graphics methods such
+ * as the <code>lineTo()</code> method or the <code>drawCircle()</code>
+ * method. The line style remains in effect until you call the
+ * <code>lineGradientStyle()</code> method, the
+ * <code>lineBitmapStyle()</code> method, or the <code>lineStyle()</code>
+ * method with different parameters.
+ <em>
+ * <p>You can call the <code>lineStyle()</code> method in the middle of
+ * drawing a path to specify different styles for different line segments
+ * within the path.</p>
+ </em>
+ * <p><b>Note: </b>Calls to the <code>clear()</code> method set the line
+ * style back to <code>undefined</code>.</p>
+ *
+ * <p><b>Note: </b>Flash Lite 4 supports only the first three parameters
+ * (<code>thickness</code>, <code>color</code>, and <code>alpha</code>).</p>
+ * 
+ * </p><table class="table table-condensed"><tbody><tr><td>thickness</td><td><p>An integer that indicates the thickness of the line in
+ *                     points; valid values are 0-255. If a number is not
+ *                     specified, or if the parameter is undefined, a line is
+ *                     not drawn. If a value of less than 0 is passed, the
+ *                     default is 0. The value 0 indicates hairline
+ *                     thickness; the maximum thickness is 255. If a value
+ *                     greater than 255 is passed, the default is 255.
+ * </p></td></tr><tr><td>color</td><td><p>A hexadecimal color value of the line; for example,
+ *                     red is 0xFF0000, blue is 0x0000FF, and so on. If a
+ *                     value is not indicated, the default is 0x000000
+ *                    (black). Optional.
+ * </p></td></tr><tr><td>alpha</td><td><p>A number that indicates the alpha value of the color
+ *                     of the line; valid values are 0 to 1. If a value is
+ *                     not indicated, the default is 1(solid). If the value
+ *                     is less than 0, the default is 0. If the value is
+ *                     greater than 1, the default is 1.
+ * </p></td></tr><tr><td>pixelHinting(Not</td><td><p>supported in Flash Lite 4) A Boolean value that
+<em>                     specifies whether to hint strokes to full pixels. This
+</em>                     affects both the position of anchors of a curve and
+<em>                     the line stroke size itself. With
+</em>                     <code>pixelHinting</code> set to <code>true</code>,
+<em>                     line widths are adjusted to full pixel widths. With
+</em>                     <code>pixelHinting</code> set to <code>false</code>,
+<em>                     disjoints can appear for curves and straight lines.
+</em>                     For example, the following illustrations show how
+<em>                     Flash Player or Adobe AIR renders two rounded
+</em>                     rectangles that are identical, except that the
+<em>                     <code>pixelHinting</code> parameter used in the
+</em>                     <code>lineStyle()</code> method is set differently
+<em>                    (the images are scaled by 200%, to emphasize the
+</em>                     difference):
+<em>
+</em>                     <p>If a value is not supplied, the line does not use
+<em>                     pixel hinting.</p>
+</em> </p></td></tr><tr><td>scaleMode</td><td><p>(Not supported in Flash Lite 4) A value from the
+ *                     LineScaleMode class that specifies which scale mode to
+ *                     use:
+ *                     <ul>
+ *                       <li> <code>LineScaleMode.NORMAL</code> - Always
+ *                     scale the line thickness when the object is scaled
+ *                    (the default). </li>
+ *                       <li> <code>LineScaleMode.NONE</code> - Never scale
+ *                     the line thickness. </li>
+ *                       <li> <code>LineScaleMode.VERTICAL</code> - Do not
+ *                     scale the line thickness if the object is scaled
+ *                     vertically <i>only</i>. For example, consider the
+ *                     following circles, drawn with a one-pixel line, and
+ *                     each with the <code>scaleMode</code> parameter set to
+ *                     <code>LineScaleMode.VERTICAL</code>. The circle on the
+ *                     left is scaled vertically only, and the circle on the
+ *                     right is scaled both vertically and horizontally:
+ *                     </li>
+ *                       <li> <code>LineScaleMode.HORIZONTAL</code> - Do not
+ *                     scale the line thickness if the object is scaled
+ *                     horizontally <i>only</i>. For example, consider the
+ *                     following circles, drawn with a one-pixel line, and
+ *                     each with the <code>scaleMode</code> parameter set to
+ *                     <code>LineScaleMode.HORIZONTAL</code>. The circle on
+ *                     the left is scaled horizontally only, and the circle
+ *                     on the right is scaled both vertically and
+ *                     horizontally:   </li>
+ *                     </ul>
+ * </p></td></tr><tr><td>caps</td><td><p>(Not supported in Flash Lite 4) A value from the
+ *                     CapsStyle class that specifies the type of caps at the
+ *                     end of lines. Valid values are:
+ *                     <code>CapsStyle.NONE</code>,
+ *                     <code>CapsStyle.ROUND</code>, and
+ *                     <code>CapsStyle.SQUARE</code>. If a value is not
+ *                     indicated, Flash uses round caps.
+ *
+ *                     <p>For example, the following illustrations show the
+ *                     different <code>capsStyle</code> settings. For each
+ *                     setting, the illustration shows a blue line with a
+ *                     thickness of 30(for which the <code>capsStyle</code>
+ *                     applies), and a superimposed black line with a
+ *                     thickness of 1(for which no <code>capsStyle</code>
+ *                     applies): </p>
+ * </p></td></tr><tr><td>joints</td><td><p>(Not supported in Flash Lite 4) A value from the
+ *                     JointStyle class that specifies the type of joint
+ *                     appearance used at angles. Valid values are:
+ *                     <code>JointStyle.BEVEL</code>,
+ *                     <code>JointStyle.MITER</code>, and
+ *                     <code>JointStyle.ROUND</code>. If a value is not
+ *                     indicated, Flash uses round joints.
+ <em>
+ *                     <p>For example, the following illustrations show the
+ *                     different <code>joints</code> settings. For each
+ *                     setting, the illustration shows an angled blue line
+ *                     with a thickness of 30(for which the
+ *                     <code>jointStyle</code> applies), and a superimposed
+ *                     angled black line with a thickness of 1(for which no
+ *                     <code>jointStyle</code> applies): </p>
+ </em>
+ *                     <p><b>Note:</b> For <code>joints</code> set to
+ *                     <code>JointStyle.MITER</code>, you can use the
+ *                     <code>miterLimit</code> parameter to limit the length
+ *                     of the miter.</p>
+ * </p></td></tr><tr><td>miterLimit</td><td><p>(Not supported in Flash Lite 4) A number that
+ *                     indicates the limit at which a miter is cut off. Valid
+ *                     values range from 1 to 255(and values outside that
+ *                     range are rounded to 1 or 255). This value is only
+ *                     used if the <code>jointStyle</code> is set to
+ *                     <code>"miter"</code>. The <code>miterLimit</code>
+ *                     value represents the length that a miter can extend
+ *                     beyond the point at which the lines meet to form a
+ *                     joint. The value expresses a factor of the line
+ *                     <code>thickness</code>. For example, with a
+ *                     <code>miterLimit</code> factor of 2.5 and a
+ *                     <code>thickness</code> of 10 pixels, the miter is cut
+ *                     off at 25 pixels.
+ <em>
+ *                     <p>For example, consider the following angled lines,
+ *                     each drawn with a <code>thickness</code> of 20, but
+ *                     with <code>miterLimit</code> set to 1, 2, and 4.
+ *                     Superimposed are black reference lines showing the
+ *                     meeting points of the joints:</p>
+ </em>
+ *                     <p>Notice that a given <code>miterLimit</code> value
+ *                     has a specific maximum angle for which the miter is
+ *                     cut off. The following table lists some examples:</p></p></td></tr></tbody></table></div></div><div class="platform platform-flash"><a name="lineTo"></a><h3><p><code><span class="keyword">function</span> <a href="#lineTo"><span class="identifier">lineTo</span></a>(x:<a class="type" href="../../Float.html">Float</a>, y:<a class="type" href="../../Float.html">Float</a>):<a class="type" href="../../Void.html">Void</a></code></p></h3><div class="doc"><p>Draws a line using the current line style from the current drawing
+ * position to(<code>x</code>, <code>y</code>); the current drawing position
+ * is then set to(<code>x</code>, <code>y</code>). If the display object in
+ * which you are drawing contains content that was created with the Flash
+ * drawing tools, calls to the <code>lineTo()</code> method are drawn
+ * underneath the content. If you call <code>lineTo()</code> before any calls
+ * to the <code>moveTo()</code> method, the default position for the current
+ * drawing is(<i>0, 0</i>). If any of the parameters are missing, this
+ * method fails and the current drawing position is not changed.
+ * 
+ * </p><table class="table table-condensed"><tbody><tr><td>x</td><td><p>A number that indicates the horizontal position relative to the
+<em>          registration point of the parent display object(in pixels).
+</em> </p></td></tr><tr><td>y</td><td><p>A number that indicates the vertical position relative to the
+*          registration point of the parent display object(in pixels).</p></td></tr></tbody></table></div></div><div class="platform platform-flash"><a name="moveTo"></a><h3><p><code><span class="keyword">function</span> <a href="#moveTo"><span class="identifier">moveTo</span></a>(x:<a class="type" href="../../Float.html">Float</a>, y:<a class="type" href="../../Float.html">Float</a>):<a class="type" href="../../Void.html">Void</a></code></p></h3><div class="doc"><p>Moves the current drawing position to(<code>x</code>, <code>y</code>). If
+ * any of the parameters are missing, this method fails and the current
+ * drawing position is not changed.
+ * 
+ * </p><table class="table table-condensed"><tbody><tr><td>x</td><td><p>A number that indicates the horizontal position relative to the
+<em>          registration point of the parent display object(in pixels).
+</em> </p></td></tr><tr><td>y</td><td><p>A number that indicates the vertical position relative to the
+*          registration point of the parent display object(in pixels).</p></td></tr></tbody></table></div></div></div></div></div></body></html>
