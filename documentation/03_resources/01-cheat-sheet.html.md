@@ -476,10 +476,6 @@ Or use `FlxG.collide()` which calls `FlxG.overlap()` and presets the `ProcessCal
 
 ```haxe
 using flixel.util.FlxSpriteUtil;
-import flixel.util.LineStyle;
-import flixel.util.FillStyle;
-import flixel.util.FlxColor;
-import flixel.util.FlxPoint;
 ```
 
 Haxe docs about the `using` keyword: [haxe.org/manual/using](http://haxe.org/manual/using).
@@ -545,7 +541,10 @@ Press `~ key` to open it during runtime, or open by code with `FlxG.debugger.vis
 
 ```haxe
 // Log
-trace("My var: " + myVar);
+FlxG.log.add("My var: " + myVar);
+// or
+FlxG.log.redirectTraces = true;
+trace("My var: ", myVar);
 
 // Watch
 FlxG.watch.add(object, "property");
