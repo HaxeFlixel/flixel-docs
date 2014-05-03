@@ -260,7 +260,7 @@ touch.screenY;
 
 ## Swipes (Input)
 
-"Swipes" from both mouse and touch input that have just released:
+"Swipes" from both mouse and touch input that have just been released:
 
 ```haxe
 for (swipe in FlxG.swipes)
