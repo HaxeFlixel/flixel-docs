@@ -72,7 +72,7 @@ FlxG.switchState(new MyState());
 loadGraphic("assets/my_sprite.png");
 
 // OR dynamically create a rect
-makeGraphic(100, 100, 0xFFFFFF); // width, height, color
+makeGraphic(100, 100, 0xFFFFFFFF); // width, height, color (AARRGGBB hexadecimal)
 ```
 
 
