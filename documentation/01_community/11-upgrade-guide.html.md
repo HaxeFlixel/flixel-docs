@@ -4,6 +4,7 @@ title: "Upgrade Guide"
 
 ## Upgrading from HaxeFlixel 3.2.x to 3.3.0
 
+The minimum Haxe version for this release is 3.1.0.
 
 On flash, gamepad support has been added. For your project to work, you have to modify your `Project.xml` so that either:
  - `<set name="SWF_VERSION" value="11.8" />` is used (min. flash player version 11.8) or 
