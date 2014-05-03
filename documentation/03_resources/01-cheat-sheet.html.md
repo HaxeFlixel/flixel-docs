@@ -70,6 +70,9 @@ FlxG.switchState(new MyState());
 
 ```haxe
 loadGraphic("assets/my_sprite.png");
+
+// OR dynamically create a rect
+makeGraphic(100, 100, 0xFFFFFFFF); // width, height, color (AARRGGBB hexadecimal)
 ```
 
 
@@ -219,6 +222,7 @@ Current "delta" value of mouse wheel. If the wheel was just scrolled up, it will
 FlxG.mouse.wheel;
 ```
 
+
 ## Touch Input
 
 ```haxe
@@ -252,6 +256,25 @@ touch.screenY;
 * `touchPointID`: The unique ID of this touch.
 
 * `overlaps(objectOrGroup)`: Checks for overlap between this touch and another `FlxObject` or `FlxGroup`.
+
+
+## Swipes (Input)
+
+"Swipes" from both mouse and touch input that have just released:
+
+```haxe
+for (swipe in FlxG.swipes)
+{
+    // swipe.startPosition (FlxPoint)
+    // swipe.endPosition (FlxPoint)
+    
+    // swipe.id (Int)
+
+    // swipe.distance (Float)
+    // swipe.angle (Float)
+    // swipe.duration (Float)
+}
+```
 
 
 ## FlxSignal
@@ -305,6 +328,7 @@ signal = FlxDestroyUtil.destroy(signal);
 stringSignal = FlxDestroyUtil.destroy(stringSignal);
 ```
 
+
 ## FlxTimer
 
 ```haxe
@@ -321,7 +345,10 @@ private function myCallback(Timer:FlxTimer):Void
 {
 }
 ```
-Setting `loops` to `0` results in an endless loop.
+* Setting `loops` to `0` results in an endless loop.
+* `reset(?NewTime)` restarts the timer, optionally with a new duration.
+* `cancel()` stops the timer and removes it from the timer manager.
+
 
 ## FlxRandom
 
@@ -342,7 +369,7 @@ FlxRandom.chanceRoll(10); // 10% chance to return 'true'
 ```
 
 
-## FlxTween
+## [FlxTween](http://haxeflixel.com/documentation/flxtween/)
 
 [Check the demo](http://haxeflixel.com/demos/FlxTween/) to visualize all `FlxTween` types.
 * **tween**(Object, Values, Duration, ?Options)
@@ -550,11 +577,13 @@ trace("My var: ", myVar);
 FlxG.watch.add(object, "property");
 ```
 
+
 ## Hiding Cursor
 
 ```haxe
 FlxG.mouse.visible = false;
 ```
+
 
 ## Adding Gravity
 
