@@ -2,7 +2,7 @@
 title: "Upgrade Guide"
 ```
 
-## Upgrading from HaxeFlixel 3.2.x to 3.3.0
+## 3.3.0
 
 The minimum Haxe version for this release is 3.1.0.
 
@@ -31,6 +31,8 @@ When compiling to HTML5, make sure to remove `<haxelib name="openfl" />` from yo
 | FlxTween.userData                       | *removed*                             |
 | FlxG.sound.add()                        | FlxG.sound.cache()                    |
 
+There has also been a slight optimization for simple FlxSprites in `FLX_RENDER_BLIT` mode (flash and HTML5). This might require an additional `dirty = true;` for the change to show up if you manipulate the sprite's `BitmapData` directly.
+
 ### FlxSprite flipping
 
 Flipping sprite graphics now works differently - the `flipped` variable has been removed, as well as the `Reverse` parameter of `loadGraphic()` and `loadGraphicFromTexture()`. You can now directly manipulate the new `flipX` and `flipY` variables (flipping vertically is now possible).
@@ -58,7 +60,7 @@ Also, the following API changes have been made for consistency:
 | paused                                  | active                                |
 | abort()                                 | cancel()                              |
 
-## Upgrading from HaxeFlixel 3.1.0 to 3.2.0
+## 3.2.0
 
 
 | HaxeFlixel 3.1.0                        | HaxeFlixel 3.2.0                      |
@@ -71,7 +73,7 @@ Also, the following API changes have been made for consistency:
 | FlxMath.computeVelocity()               | FlxVelocity.computeVelocity()         |
 | FlxState.setSubState()                  | FlxState.openSubState()               |
 
-## Upgrading from HaxeFlixel 3.0.4 to 3.1.0
+## 3.1.0
 
 HaxeFlixel 3.1 is a continuization of our efforts of making the API cleaner and more intuitive, keeping the amount of bugs as low as possible and adding new features. It is one of the biggest releases so far.
 
@@ -245,7 +247,7 @@ sprite.velocity = new FlxPoint(100, 50);
 sprite.velocity.set(100, 50);
 ```
 
-## Upgrading from HaxeFlixel 2.x to 3.0
+## 3.0.0
 
 HaxeFlixel 3.0 is an evolution of the original Flixel API and while most of the API is very similar and quickly learnt, it requires some renames and modifications to update your code.
 
