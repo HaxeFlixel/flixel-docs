@@ -30,8 +30,21 @@ openfl setup android
 openfl setup blackberry
 ```
 
+
 ### Html5
 
-Html5 although entirely possible with OpenFL has not currently been the focus of the project.
-However basic rendering does work and BunnyMark has produced some encouraging results.
-Contributions to this target are encouraged, support for alternative Html5 backends are worth investigation such as [BitFive.](https://github.com/YellowAfterlife/openfl-bitfive)
+While Html5 support is still somewhat experimental, thanks to great work that has been placed towards advancing the target much further, it is now possible to achieve more than reasonable results with both available backends ([openfl-bitfive](https://github.com/YellowAfterlife/openfl-bitfive) and [openfl-html5](https://github.com/openfl/openfl-html5)) as long as you follow these simple guidelines:
+
+#### General HaxeFlixel's Html5 Guidelines
+- **Text**: For now, you might prefer using bitmap fonts to avoid text issues. With regular fonts, you may favor larger text size (>12) in order to avoid blurriness, and try some [manual adjustments](https://github.com/HaxeFlixel/flixel/issues/1024) if you have a scaling problem (or when you are trying to embed fonts, which is not supported).
+- **Audio**: You should use regular OGG files (see the backends sections for more details).
+- **Particles**: You should only use simple particles, and not expect much in terms of performance.
+
+#### openfl-bitfive Guidelines 
+- **Audio**: For now, you can only use WAV files on Firefox (OGG is not supported there), and you should keep in mind that music (i.e, OGG files) does not loop on Chrome.
+- **Scale**: Acting similar to Flash and very different than openfl-html5 backend, openfl-bitfive fills the entire browser window with your game.
+
+#### openfl-html5 Guidelines
+- **Graphics**: Graphics on this backend may be rendered "flat", i.e with a certain blur as compared with openfl-bitfive rendering.
+
+#### Please be advised that these are only the main issues with these backends
