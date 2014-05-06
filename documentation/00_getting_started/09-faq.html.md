@@ -24,7 +24,7 @@ Almost, it stills in development.
 Maybe. It's out of scope of HaxeFlixel, it all depends of OpenFL.
 
 ### My sounds are lagging!?
-On some platforms you need to preload each sound: FlxG.sound.cache("sound");
+On some platforms you need to preload each sound: `FlxG.sound.cache("sound");`
 
 ### Can I make 3D games with HaxeFlixel?
 No, the framework is limited to 2D graphics.
