@@ -16,8 +16,6 @@ If you are making changes to the codebase that could include breaking changes or
 
 Before a major feature is merged into core our general workflow is to get approval from a [core-contributor](https://github.com/orgs/HaxeFlixel/members) with push access.
 
-If it is hard to get consensus on a major change all developers involved agree the original author of this project (Beeblerox) has the more important vote.
-
 Developers do have limited time so keep in mind some simple steps to get your pull request accepted:
 
 - Clearly describe your use case or the problem/issue your code is developed for.
