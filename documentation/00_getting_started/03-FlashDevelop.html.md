@@ -2,7 +2,7 @@
 title: "FlashDevelop"
 ```
 
-[FlashDevelop](http://www.flashdevelop.org/) is an [open source IDE](https://github.com/fdorg/flashdevelop) with in-built Haxe integration and is one of the most popular Haxe IDE's. It offers first class support for Haxe development.
+[FlashDevelop](http://www.flashdevelop.org/) is an [open source IDE](https://github.com/fdorg/flashdevelop) with in-built Haxe integration and is one of the most popular Haxe IDEs. It offers first class support for Haxe development.
 
 *   Great completion &amp; code generation
 *   Haxe / OpenFL Project compilation GUI
