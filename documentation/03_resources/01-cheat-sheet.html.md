@@ -90,7 +90,7 @@ import flixel.util.FlxColor;
 myText = new FlxText(0, 0, 500); // x, y, width
 myText.text = "Hello World";
 myText.setFormat("assets/font.ttf", 20, FlxColor.WHITE, "center");
-myText.setBorderStyle(FlxTextBorderStyle.OUTLINE, FlxColor.RED, 1);
+myText.setBorderStyle(FlxText.BORDER_OUTLINE, FlxColor.RED, 1);
 ```
 
 
