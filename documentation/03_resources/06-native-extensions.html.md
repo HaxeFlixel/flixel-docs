@@ -6,7 +6,7 @@ title: "Native Extensions"
 
 Native Extensions provide interfaces for your Haxe code in order to interact with system APIs that OpenFL does not provide. This is similar to the Native Extensions created with Adobe Air and much like Extensions made with Adobe Air. Those Native Extensions are often created and shared by independent developers.
 
-If you want to create your own Native Extensions, you can fin some tutorials to help get you started at Laurent Bédubourg's blog:
+If you want to create your own Native Extensions, you can find some tutorials to help get you started at Laurent Bédubourg's blog:
 
 http://labe.me/en/blog/posts/2013-06-19-OpenFL%20simple%20extension.html
 
