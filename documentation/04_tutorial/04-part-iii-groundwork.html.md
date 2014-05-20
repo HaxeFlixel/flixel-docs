@@ -1,6 +1,7 @@
 ```
 title: "Part III: Groundwork"
 ```
+
 Now it's time to think about what we actually want our game to be, and how we're going to pull it off. Luckily, I've done all the hard work for you.
 
 The game I'm going to help you build will be a very simple top-down 'dungeon crawl' game, where the player controls a single character, moves around a map and fights enemies, and collects gold.
