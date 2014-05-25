@@ -74,10 +74,10 @@ Next, let's make a simple Player Sprite that you can move around on the screen.
 First, we need to make a new Player class. You can think of classes as sort of a functional template. You can use them as-is in a project, but you also have the ability to Extend them into new versions. You can kind of think of it as using tracing paper - when you extend a class, you put a new sheet of tracing paper on top - you can still see and use all the stuff in the original class (unless you draw over it), and you can add your own stuff.
 We're going to be extending the FlxSprite class to create our Player class.
 1. In the Project list on the right side of your screen, right-click on your `source' folder, and choose `Add', and then `New Class.'.
-![Screenshot 001](../../../images/tutorial/0004.png)
+![Screenshot 001](/images/tutorial/0004.png)
 2. In the New Haxe Class Dialog that pops up, enter "Player" for "Name", and next to "Base Class", click "Browse." and search for "flixel.FlxSprite" and choose it.
 3. Once your screen looks like this, hit "OK":
-![Screenshot 002](../../../images/tutorial/0005.png)
+![Screenshot 002](/images/tutorial/0005.png)
 4. You should now see a very basic class which extends FlxSprite:
 ``` haxe
 package ;
@@ -130,7 +130,7 @@ add(_player);
 ```
 This simply assigns a new instance of our Player sprite to our _player variable, telling it to be placed at 20, 20 on the screen, and adds it to our PlayState.
 8. If you run your project right now, you should see our blue player on the screen!
-![Screenshot 003](../../../images/tutorial/0006.png)
+![Screenshot 003](/images/tutorial/0006.png)
 Now let's get it to move around!
 
 So, how do we actually want our Player to move around on the screen? Well, I think it should be able to move using the Arrow keys and/or the WASD keys, in 8 directions: up, down, left, right, and diagonally. The player should move at a relatively fixed speed, but have a slight deceleration before stopping to give it just a little bit of 'feeling'.
