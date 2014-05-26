@@ -1,5 +1,6 @@
 ```
 title: "Mouse"
+apiPath: input/mouse/FlxMouse.html
 ```
 
 Mouse input for HaxeFlixel is provided through the `FlxMouse` class and is available through `FlxG.mouse`. It is worth noting that it extends `FlxPoint`.

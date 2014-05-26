@@ -1,5 +1,6 @@
 ```
 title: "FlxSprite"
+apiPath: FlxSprite.html
 ```
 
 ```haxe

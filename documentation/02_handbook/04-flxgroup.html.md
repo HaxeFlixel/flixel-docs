@@ -1,5 +1,6 @@
 ```
 title: "FlxGroup"
+apiPath: group/FlxTypedGroup.html
 ```
 
 ```haxe
