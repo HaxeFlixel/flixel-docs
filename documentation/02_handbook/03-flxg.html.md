@@ -1,5 +1,6 @@
 ```
 title: "FlxG"
+apiPath: FlxG.html
 ```
 
 ```haxe
