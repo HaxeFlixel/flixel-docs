@@ -5,10 +5,10 @@ title: "Part VIII: Enemies and Basic AI"
 What would a dungeon game be without enemies? Let's add some!
 
 1. This should be second nature by now - add a new entity type in your Ogmo project:
-![Screenshot 001](../../../images/tutorial/00017.png)
+![Screenshot 001](/images/tutorial/00017.png)
 Make sure you add the 'etype' value.
 2. Then scatter some enemies around the map. Make all but one of them have an etype value of '0', and the other one be '1'.
-![Screenshot 002](../../../images/tutorial/00018.png)
+![Screenshot 002](/images/tutorial/00018.png)
 3. So we want to have 2 different enemies in our game. We'll need spritesheets for both of them, with 16x16 pixel frames and the same animation frames as our player. Name them 'enemy-0.png' and 'enemy-1.png' and put them in the assets/images folder. You can use these, if you want: [EnemySprites]
 4. Let's add a new Enemy class. This class is going to look a lot like our Player class, with a few changes:
 ```haxe

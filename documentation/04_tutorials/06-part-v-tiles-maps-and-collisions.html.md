@@ -9,17 +9,17 @@ You can make your own, with 16x16 pixel tiles, or use this one ![Tiles](https://
 1. Go to http://www.ogmoeditor.com/ to download and install it, then launch the editor.
 2. Go to Project > New Project and name your project whatever you want. I would save it under assets/data.
 3. Next, you need to define your project's settings. Go through each tab, one-by-one, and set it up to look like the following:
-![Screenshot 001](../../../images/tutorial/0007.png)
-![Screenshot 002](../../../images/tutorial/0008.png)
-![Screenshot 003](../../../images/tutorial/0008b.png)
-![Screenshot 004](../../../images/tutorial/0009.png)
-![Screenshot 005](../../../images/tutorial/0010.png)
+![Screenshot 001](/images/tutorial/0007.png)
+![Screenshot 002](/images/tutorial/0008.png)
+![Screenshot 003](/images/tutorial/0008b.png)
+![Screenshot 004](/images/tutorial/0009.png)
+![Screenshot 005](/images/tutorial/0010.png)
 4. Hit Apply to save your changes. You should now see a screen that looks like this:
-![Screenshot 006](../../../images/tutorial/0011.png)
+![Screenshot 006](/images/tutorial/0011.png)
 5. Make sure you're on the 'walls' layer, and, using tools on the right, draw out a simple map. Make sure it's completely encircled by walls (so the player can't wander off the map), and make the insides filled with floor tiles. You should end up with something like this:
-![Screenshot 007](../../../images/tutorial/0012.png)
+![Screenshot 007](/images/tutorial/0012.png)
 6. Now, switch over to the 'entities' layer, and place your player entity somewhere in one of your rooms:
-![Screenshot 008](../../../images/tutorial/0013.png)
+![Screenshot 008](/images/tutorial/0013.png)
 7. Go up to Level > Save Level, and save this as "room-001.oel" in "assets/data".
 8. We're done with Ogmo for now, so save all your changes and exit
 

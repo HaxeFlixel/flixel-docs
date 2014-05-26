@@ -5,12 +5,12 @@ Now that we have our little guy running around our map, lets give him something 
 
 1. Open up your project in Ogmo again, and go to Project > Edit Project.
 2. On the Entities tab, add a new entity:
-![Screenshot 001](../../../images/tutorial/00014.png)
+![Screenshot 001](/images/tutorial/00014.png)
 3. Open up the level we used before, and, on the 'entities' layer, scatter a bunch of coins around:
-![Screenshot 002](../../../images/tutorial/00015.png)
+![Screenshot 002](/images/tutorial/00015.png)
 4. We're going to make our coins be 8x8 pixels. For the coin's graphic, you can use this image ![Coin Sprite](https://raw.githubusercontent.com/SeiferTim/HaxeFlixel-Tutorial/Part-VII/assets/images/coin.png), or make your own. Make sure you save this in "assets/images".
 5. Get back into FlashDevelop, and make a new class:
-![Screenshot 003](../../../images/tutorial/00016.png)
+![Screenshot 003](/images/tutorial/00016.png)
 6. For now, our coin is going to be really simple. Just change the constructor to look like this:
 ```haxe
 public function new(X:Float=0, Y:Float=0) 
