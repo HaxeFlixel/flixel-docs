@@ -3,57 +3,18 @@ title: "Community"
 rootDoc: true
 ```
 
-HaxeFlixel is a collaborative project from contributors all over the world.
+HaxeFlixel is a collaborative project from [contributors all over the world](https://github.com/HaxeFlixel/flixel/graphs/contributors).
 
-## Forums
+There is a multitude of channels to interact with the community:
 
-[Our community Forum](http://forum.haxeflixel.com)
+- Our [google groups forums](http://forum.haxeflixel.com)
+- [#haxeflixel](http://webchat.freenode.net/?channels=%23haxeflixel&uio=d4) on IRC (freenode.net)
+- [@HaxeFlixel](https://twitter.com/HaxeFlixel) on Twitter
+- The [HaxeFlixel organization](http://github.com/haxeflixel) on GitHub
+- The [HaxeFlixel page](http://www.indiedb.com/engines/haxeflixel) on IndieDB
+- Join our development chat on [Slack](https://haxeflixel.slack.com/)<sup>[1]</sup>
+- [HaxeFlixel group](http://steamcommunity.com/groups/haxeflixel) on Steam
 
-## GitHub
 
-All our code is on GitHub under the [HaxeFlixel](http://github.com/haxeflixel) account.
-This account is shared by a [core team](https://github.com/HaxeFlixel?tab=members) which ensures this project has great longevity.
 
-### Sponsor a project on:
-
-[bountysource.com](http://www.bountysource.com)
-
-### Contributors
-
-Special thanks go to all other community contributors:
-
-- [volvis](https://github.com/volvis)
-- [SeanHogan](https://github.com/SeanHogan)
-- [SergioB](https://github.com/SergioB)
-- [raincoleB](https://github.com/raincoleB)
-- [VictorGrunn](https://github.com/VictorGrunn)
-
-If we have missed your name here, please add your self on GitHub ;)
-
-### Core Flixel
-
-<iframe width="160px" scrolling="0" height="30px" frameborder="0"
-allowtransparency="true"
-src="http://ghbtns.com/github-btn.html?user=HaxeFlixel&amp;repo=flixel&amp;type=watch&amp;count=true&amp;size=large"></iframe>
-
-### Flixel Demos
-
-<iframe width="160px" scrolling="0" height="30px" frameborder="0"
-allowtransparency="true"
-src="http://ghbtns.com/github-btn.html?user=HaxeFlixel&amp;repo=flixel-demos&amp;type=watch&amp;count=true&amp;size=large"></iframe>
-
-----
-
-### On IRC chat
-
-[#haxeflixel on IRC](irc://chat.freenode.net/#haxeflixel)
-
-----
-
-### Twitter @haxeflixel
-
-<a href="https://twitter.com/haxeflixel" class="twitter-follow-button" data-show-count="true" data-lang="en" data-size="large">Follow @haxeflixel</a>
-
-<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
-
-<!-- <iframe src="//jrvis.com/red-dwarf/api/button?user=haxeflixel&repo=flixel&type=map&count=true" allowtransparency="true" frameborder="0" scrolling="0"></iframe> -->
+<sup>[1] requires an invite - just tweet your email address @HaxeFlixel to get one</sup>

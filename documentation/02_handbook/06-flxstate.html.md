@@ -1,5 +1,6 @@
 ```
 title: "FlxState"
+apiPath: FlxState.html
 ```
 
 This is the basis for your game's levels and menus each described in a "state" structure. The state is a way of organising your game objects for the state that the game is currently in. For example, when you create level 0 of your game its much more organized to only have the code for that level, not every level. Also it's good to use switching states to clear your memory, to avoid memory leaks. A typical Flixel game will have a separate FlxState class for every level and menu.

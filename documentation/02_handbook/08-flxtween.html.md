@@ -1,5 +1,6 @@
 ```
 title: "FlxTween"
+apiPath: tweens/FlxTween.html
 ```
 
 A `FlxTween` allows you to create smooth interpolations and animations easily. Tweening is short for [inbetweening](http://en.wikipedia.org/wiki/Inbetweening): you only have to specify start and end values and the `FlxTween` class will generate all values between those two. If you want to see a `FlxTween` in action, this [tween demo](http://haxeflixel.com/demos/FlxTween/) is available.

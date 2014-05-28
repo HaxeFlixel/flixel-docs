@@ -1,5 +1,6 @@
 ```
 title: "FlxSave"
+apiPath: util/FlxSave.html
 ```
 
 ```haxe

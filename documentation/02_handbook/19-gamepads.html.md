@@ -1,5 +1,6 @@
 ```
 title: "Gamepads"
+apiPath: input/gamepad/index.html
 ```
 
 Gamepad Input for HaxeFlixel is provided through the FlxGamepad class and is available through `FlxG.gamepads` and the `InputFrontEnd`. Gamepads are made available through the openfl `JoystickEvent` api.
