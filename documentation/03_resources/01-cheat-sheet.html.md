@@ -3,7 +3,7 @@ title: "Cheat Sheet"
 ```
 
 
-## [FlxSprite](http://haxeflixel.com/documentation/FlxSprite) (Base)
+## [FlxSprite](http://haxeflixel.com/documentation/flxsprite) (Base)
 
 ```haxe
 package;
@@ -31,7 +31,7 @@ class MySprite extends FlxSprite
 ```
 
 
-## [FlxState](http://haxeflixel.com/documentation/FlxState) (Base)
+## [FlxState](http://haxeflixel.com/documentation/flxstate) (Base)
 
 ```haxe
 package;
@@ -59,14 +59,14 @@ class MyState extends FlxState
 ```
 
 
-## Switch [FlxState](http://haxeflixel.com/documentation/FlxState)
+## Switch [FlxState](http://haxeflixel.com/documentation/flxstate)
 
 ```haxe
 FlxG.switchState(new MyState());
 ```
 
 
-## Load [FlxSprite](http://haxeflixel.com/documentation/FlxSprite)
+## Load [FlxSprite](http://haxeflixel.com/documentation/flxsprite)
 
 ```haxe
 loadGraphic("assets/my_sprite.png");
