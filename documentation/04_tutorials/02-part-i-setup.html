@@ -1,0 +1,37 @@
+```
+title: "Part I: Setup"
+```
+
+<p>The first things we need to do is install all of the components we need to work with HaxeFlixel. These are:
+  <ul>
+    <li>Haxe</li>
+    <li>Lime</li>
+    <li>OpenFL</li>
+    <li>HaxeFlixel</li>
+    <li>FlashDevelop</li>
+    <li>Flash Debug Player</li>
+  </ul>
+</p>
+
+<p>There is a more verbose explanation on installing many of these things <a href="http://www.openfl.org/documentation/setup/">here</a>(OpenFL), and <a href="http://haxeflixel.com/documentation/install-haxeflixel/">here</a>(HaxeFlixel), but I’ll walk you through it quickly. If anything goes wrong, check there for more information.</p>
+
+<ol>
+  <li><p>Go to <a href="http://haxe.org/download">http://haxe.org/download</a> and download the Automatic Installer for your platform (Windows, Mac, or Linux). Run it to install Haxe.</p></li>
+  <li><p>Next, open up a Command Prompt. In windows, you can go to Start>Run and type "cmd" and hit Enter.</p></li>
+  <li><p>At the Command Prompt, enter the following commands (one at a time):</p>
+    <ol>
+      <li><pre><code class="bash">haxelib install lime</code></pre></li>
+      <li><pre><code class="bash">haxelib run lime setup</code></pre></li>
+      <li><pre><code class="bash">lime install openfl</code></pre></li>
+      <li><pre><code class="bash">lime setup windows</code></pre></li>
+      <li><pre><code class="bash">lime setup android</code></pre></li>
+      <li><pre><code class="bash">haxelib install flixel</code></pre></li>
+      <li><pre><code class="bash">haxelib install flixel-tools</code></pre></li>
+      <li><pre><code class="bash">haxelib run flixel-tools setup</code></pre></li>
+    </ol>
+  </li>
+  <li><p>Next, download and install the latest version of FlashDevelop: <a href="http://www.flashdevelop.org/">http://www.flashdevelop.org/</a></p></li>
+  <li><p>Finally, head over here: <a href="http://www.adobe.com/support/flashplayer/downloads.html">http://www.adobe.com/support/flashplayer/downloads.html</a> and download and install the Flash Debug Player (scroll down and choose "Download the Windows Flash Player 13 Projector")</p></li>
+</ol>
+
+<p>Assuming everything went smoothly, you should be all set! Now we can actually get to the fun part and start coding!</p>
