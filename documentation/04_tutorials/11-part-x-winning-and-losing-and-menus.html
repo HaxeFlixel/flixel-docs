@@ -76,7 +76,7 @@ private var _won:Bool;</code></pre></p>
 		<p>Similarly, if the outcome was VICTORY, and the enemy that was just defeated was type 1 (the boss), we set our won flag to true, and also start fading out.</p>
 	</li>
 	<li>
-		<p>hen the camera is done fading to black, we call this function, which will switch the state to our GameOverState (which you'll make in a second), passing it if the player won or not, and how much money they have.</p>
+		<p>When the camera is done fading to black, we call this function, which will switch the state to our GameOverState (which you'll make in a second), passing it if the player won or not, and how much money they have.</p>
 		<p><pre><code class="haxe">private function doneFadeOut():Void 
 {
 	FlxG.switchState(new GameOverState(_won, _money));
@@ -100,6 +100,8 @@ _combatHud = FlxDestroyUtil.destroy(_combatHud);</code></pre></p>
 </ol>
 
 <p>If you test your game, you should be able to trigger the GameOverState by either dying in combat or defeating the boss, and then clicking on the button in the GameOverState will take you back to our MenuState so you can play again. If all of that works, you're on the right track! But… our MenuState is looking a little bland, now… let's fix that up!</p>
+
+<p><img src="/images/tutorial/0021.png" /></p>
 
 <ol>
 	<li>
@@ -156,5 +158,8 @@ _save.close();</code></pre></p>
 </ol>
 
 <p>Test everything out, make sure it's working, and that if you change your volume under options and then exit the game, it retains the value the next time to get into the options screen.</p>
+
+<p><img src="/images/tutorial/0022.png" /></p>
+
 <p>Looking good! Next time we'll give our volume something to do by adding sound and music!</p>
 <p>You can check out the current source for everything so far, <a href="https://github.com/SeiferTim/HaxeFlixel-Tutorial/tree/Part-X">here</a>!</p>

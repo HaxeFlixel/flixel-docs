@@ -61,7 +61,7 @@ add(_grpCoins);</code></pre></p>
 		<p>Let's add the playerTouchCoin callback now:</p>
 		<p><pre><code class="haxe">private function playerTouchCoin(P:Player, C:Coin):Void
 {
-	if (P.alive && P.exists && C.alive && C.exists)
+	if (P.alive &amp;&amp; P.exists &amp;&amp; C.alive &amp;&amp; C.exists)
 	{
 		C.kill();
 	}
@@ -89,5 +89,6 @@ private function finishKill(_):Void
 </ol>
 
 <p>Try out the game now, and you'll notice the difference when you pick up coins! We'll do some more of this later on when we start adding 'juice' to our game.</p>
+<p><img src="/images/tutorial/0016b.png" /></p>
 
 <p>Check out the <a href="https://github.com/SeiferTim/HaxeFlixel-Tutorial/tree/Part-VII">source code</a> for what we've done so far, and in the next part, we'll talk about enemies!</p>
