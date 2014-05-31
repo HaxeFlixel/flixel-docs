@@ -12,40 +12,13 @@
 -D xmldoc
 -D doc
 -D doc-gen
-
---no-output
-
---each
-
-
-
+-D FLX_RENDER_BLIT
 
 -swf all.swf
 -swf-version 11.8
+--no-output
 
+--macro openfl.Lib.includeBackend('flash')
 --macro include('flixel')
 
--D xmldoc
--D doc
--D FLX_RENDER_BLIT
 -xml flash.xml
-
---next
-
-
-
-
--cpp all_cpp
-
--lib openfl-native
--lib hxlibc
-
--D lime_native
--D desktop
--D HXCPP_MULTI_THREADED
--D FLX_RENDER_TILE
-
---macro allowPackage("flash")
---macro include("flixel")
-
--xml cpp.xml
