@@ -4,9 +4,9 @@ title: "Conclusion"
 
 <p>Now we have a pretty complete, working game! It's not too complex, but it should give you a full, well-rounded idea of how to make your own games in HaxeFlixel. I really hope you've enjoyed this tutorial, and take the time to play around with the code some more to try expanding the game even further. You could add more levels, add stairway objects to move between them, add more enemy types, and collectibles, and upgrades… the list goes on.</p>
 
-<p>You can grab the complete source code for the game <a href="https://github.com/SeiferTim/HaxeFlixel-Tutorial/tree/master">here</a>.
+<p>You can grab the complete source code for the game <a href="https://github.com/HaxeFlixel/flixel-tutorial">here</a>.
 
-<p>The power of HaxeFlixel comes from it's balance of simplicity and versatility. With only a few lines of code you can do most anything you can think of.</p>
+<p>The power of HaxeFlixel comes from it's balance of simplicity and versatility. With only a few lines of code you can do almost anything you can think of.</p>
 
 <p>If you want to learn more about using HaxeFlixel, take a look at the <a hred="http://haxeflixel.com/documentation/">documentation</a>, and <a href="http://api.haxeflixel.com/">API</a> for lots more in-depth information.</p>
 
