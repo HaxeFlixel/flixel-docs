@@ -9,7 +9,7 @@ If you have successfully compiled a Hello World sample, the best place we recomm
 
 If you are totally new to Flixel, please review our Handbook here:
 
-*   [Handbook](http://haxeflixel.com/documentation/handbook/)
+*   [Handbook](http://haxeflixel.com/documentation/haxeflixel-handbook/)
 
 We also strongly recommend reading about the systems behind HaxeFlixel by reading our community documentation:
 
