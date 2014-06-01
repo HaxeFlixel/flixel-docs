@@ -11,16 +11,14 @@ No, although previous experience will help.
 ### Do I have to learn OpenFL to use HaxeFlixel?
 No, HaxeFlixel abstracts it completely.
 
-### Are there any video tutorials?
+### Are there any tutorials?
 
-For starters:
+- [@SeiferTim's](https://twitter.com/SeiferTim) [Dungeon Crawler Tutorial](http://haxeflixel.com/documentation/tutorials/)
 
-- [@SeiferTim'](https://twitter.com/SeiferTim)(http://haxeflixel.com/documentation/tutorials/)
-
-- [Kasoki's](https://github.com/kasoki/GameMechanicExplorer-HaxeFlixel)[Game Mechanic Explorer port](http://gme.kasoki.de/)
+- [Kasoki's](https://github.com/kasoki/GameMechanicExplorer-HaxeFlixel) [Game Mechanic Explorer port](http://gme.kasoki.de/)
 
 - [Videos from Christopher Butler](https://www.youtube.com/watch?v=LpKvSPwHOP8&list=PLi0ypjD5PcV9xdjycW0hYi_HD297012tE)
-covers everything from installation to prototyping a platformer.
+(covering everything from installation to prototyping a platformer).
 
 ### I found I bug, where to report?
 On the [official GitHub repository](https://github.com/HaxeFlixel/flixel/issues).
