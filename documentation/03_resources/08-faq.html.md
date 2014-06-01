@@ -12,7 +12,15 @@ No, although previous experience will help.
 No, HaxeFlixel abstracts it completely.
 
 ### Are there any video tutorials?
-Yes. [This series](https://www.youtube.com/watch?v=LpKvSPwHOP8&list=PLi0ypjD5PcV9xdjycW0hYi_HD297012tE) covers everything from installation to prototyping a platformer.
+
+For starters:
+
+- [@SeiferTim'](https://twitter.com/SeiferTim)(http://haxeflixel.com/documentation/tutorials/)
+
+- [Kasoki's](https://github.com/kasoki/GameMechanicExplorer-HaxeFlixel)[Game Mechanic Explorer port](http://gme.kasoki.de/)
+
+- [Videos from Christopher Butler](https://www.youtube.com/watch?v=LpKvSPwHOP8&list=PLi0ypjD5PcV9xdjycW0hYi_HD297012tE)
+covers everything from installation to prototyping a platformer.
 
 ### I found I bug, where to report?
 On the [official GitHub repository](https://github.com/HaxeFlixel/flixel/issues).
