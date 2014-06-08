@@ -31,7 +31,7 @@ title: "Part VIII: Enemies and Basic AI"
 	{
 		super(X, Y);
 		etype = EType;
-		loadGraphic("assets/images/enemy-" + Std.string(etype) + ".png, true, 16, 16);
+		loadGraphic("assets/images/enemy-" + Std.string(etype) + ".png", true, 16, 16);
 		setFacingFlip(FlxObject.LEFT, false, false);
 		setFacingFlip(FlxObject.RIGHT, true, false);
 		animation.add("d", [0, 1, 0, 2], 6, false);
@@ -106,9 +106,9 @@ add(_grpEnemies);</code></pre></p>
 		<p>Shouldn't be that hard! First, we'll make our FSM class:</p>
 		<p><pre><code class="haxe">class FSM
 {
-	public var activeState:Void-&lt;Void;
+	public var activeState:Void-&gt;Void;
 	
-	public function new(?InitState:Void-&lt;Void):Void
+	public function new(?InitState:Void-&gt;Void):Void
 	{
 		activeState = InitState;
 	}
@@ -172,6 +172,12 @@ public function chase():Void
 	{
 		FlxVelocity.moveTowardsPoint(this, playerPos, Std.int(speed));
 	}
+}
+
+override public function update():Void 
+{
+    _brain.update();
+    super.update();
 }</code></pre></p>
 		<p>The way this is going to work is that each enemy will start in the Idle state. In the PlayState we will have each enemy check to see if it can see the player or not. If it can, it will switch to the Chase state, until it can't see the player anymore. While in the Idle state, every so often (in random intervals) it will choose a random direction to move in for a little while (with a small chance to just stand still). While in the Chase state, they will move directly towards the player.</p>
 	</li>
