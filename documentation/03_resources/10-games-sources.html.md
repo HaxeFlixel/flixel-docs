@@ -126,31 +126,3 @@ There are others trying to steal your food. Stop them. And certainly don't let t
 
 ## Strategy
 [Beneath the Mountain (JanGames)](http://www.ludumdare.com/compo/ludum-dare-29/?action=preview&uid=21764)(HaxeFlixel)(May 2014): At the start of the game you have 30 seconds before the first wave of dragons start (After that every new wave is after 10 seconds), you need to build units (Units Tab) to survive the dragons and build your city (Building Tab). If all your units are destroyed the dragons will attack the city (If your city life reaches 0 you loose). 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  
-
-
-
