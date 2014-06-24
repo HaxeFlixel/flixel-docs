@@ -28,9 +28,9 @@ setFacingFlip(FlxObject.RIGHT, true, false);</code></pre></p>
 	</li>
 	<li>
 		<p>Now, we need to define our animations. In our case, we want each animation to end with the player in their 'neutral' pose (legs together), that way each time we animate the player, it will return to the correct frame as soon as they stop animating. So, add:</p>
-		<p><pre><code class="haxe">animation.add("lr", [3,4,3,5], 6, false);
-animation.add("u", [6,7,6,8], 6, false);
-animation.add("d", [0,1,0,2], 6, false);</code></pre></p>
+		<p><pre><code class="haxe">animation.add("lr", [3, 4, 3, 5], 6, false);
+animation.add("u", [6, 7, 6, 8], 6, false);
+animation.add("d", [0, 1, 0, 2], 6, false);</code></pre></p>
 		<p>We're finished with the constructor changes, the final step is to change our updateMovement function to tell the player sprite which way to face. So, modify our section which deals with setting the player's angle to look something like this:</p>
 		<p><pre><code class="haxe">var mA:Float = 0; // our temporary angle
 if (_up)  // the player is pressing UP
