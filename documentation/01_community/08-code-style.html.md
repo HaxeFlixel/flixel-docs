@@ -10,19 +10,19 @@ If you encounter code in the codebase that does not fall under these guidelines,
 ### Function names
 
 ```haxe
-function shootEnemy(Target:Enemy, Bullet:BulletType):Void
+function shootEnemy(target:Enemy, bullet:BulletType):Void
 ```
 
 ...is easier to read than
 
 ```haxe
-function shootAtASpecificEnemyWithABulletTypeOf(Target:Enemy, Bullet:BulletType):Void
+function shootAtASpecificEnemyWithABulletTypeOf(target:Enemy, bullet:BulletType):Void
 ```
 
 ...but still gets the idea of what this function does across. The second example has a lot of "noise"-words that don't provide any additional value. The following function name would still be acceptable, more accurate than example 1 even:
 
 ```haxe
-function shootBulletAtEnemy(Target:Enemy, Bullet:BulletType):Void
+function shootBulletAtEnemy(target:Enemy, bullet:BulletType):Void
 ```
 
 However, function names should also not be too short - you should be able to roughly know what a function does simply by reading its name - reading its description, if existant, should ideally not be necessary. 
@@ -50,32 +50,34 @@ Spaces *should* be used before the opening brackets of `if`, `for`, `while` and 
 
 ### Parameter names
 
-Capitalized letters for function parameters:
+Use lowerCamelCases for function parameters 
+and use `this` to explicitly reference to class members (only when neccessary):
 
 ``` haxe
-function translate(Words:String, Fish:BableFish):Void
+function translate(words:String, bableFish:BableFish):Void
+{
+	this.words = words;
+}
 ```
 
 Instead of:
 
 ``` haxe
-function translate(words:String, fish:BableFish):Void
+function translate(Words:String, BableFish:BableFish):Void
+{
+	words = Words;
+}
 ```
 
-This is mostly legacy from the AS3 version's code style and hard to change at this point. It creates unique issues that could otherwise be resolved with the `this` keyword for lowercase parameter names:
-
-```haxe
-function setPositionFromPoint(Point:FlxPoint):Void
-```
-
-Naming the parameter `Point` in this case is problematic because of `flash.geom.Point`. So consistent parameter naming becomes impossible.
+In the core of HaxeFlixel, there are a lot of method parameters written in capitalized letters (not preferred in Haxe),
+this is mostly legacy from the AS3 Flixel's code style and hard to change them all. However, newly written functions should follow the lowerCamelCases style. Also, we encourge contributors to convert them when fixing bugs/updating existing codes.
 
 ## Curly Brackets
 
 Use line breaks in methods, operators etc where possible:
 
 ``` haxe
-function createAwesome(Boring:Stuff, Creative:Things):Void
+function createAwesome(boring:Stuff, creative:Things):Void
 {
 	
 }
@@ -84,7 +86,7 @@ function createAwesome(Boring:Stuff, Creative:Things):Void
 Instead of:
 
 ``` haxe
-function createAwesome(Boring:Stuff, Creative:Things):Void {
+function createAwesome(boring:Stuff, creative:Things):Void {
 	
 }
 ```
@@ -167,10 +169,10 @@ Take the following comment section for example, it does not provide *any* additi
 /**
  * Sets the position.
  * 
- * @param	X	The x coordinate.
- * @param	Y 	The y coordinate.
+ * @param	x	The x coordinate.
+ * @param	y 	The y coordinate.
  */ 
-public function setPosition(X:Int, Y:Int):Void
+public function setPosition(x:Int, y:Int):Void
 ``` 
 
 ## Class names
@@ -198,10 +200,10 @@ The most common example where formatting is needed are the comment sections for 
 /**
  * Sets the position.
  * 
- * @param   X   The x coordinate.
- * @param   Y   The y coordinate.
+ * @param   x   The x coordinate.
+ * @param   y   The y coordinate.
  */ 
-public function setPosition(X:Int, Y:Int):Void
+public function setPosition(x:Int, y:Int):Void
 ```
  
 ## Position of metadata
