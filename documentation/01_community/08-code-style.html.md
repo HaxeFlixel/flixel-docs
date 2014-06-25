@@ -50,25 +50,27 @@ Spaces *should* be used before the opening brackets of `if`, `for`, `while` and 
 
 ### Parameter names
 
-Capitalized letters for function parameters:
+Use lowerCamelCases for function parameters 
+and use `this` to explicitly reference to class members (only when neccessary):
 
 ``` haxe
-function translate(Words:String, Fish:BableFish):Void
+function translate(words:String, bableFish:BableFish):Void
+{
+	this.words = words;
+}
 ```
 
 Instead of:
 
 ``` haxe
-function translate(words:String, fish:BableFish):Void
+function translate(Words:String, BableFish:BableFish):Void
+{
+	words = Words;
+}
 ```
 
-This is mostly legacy from the AS3 version's code style and hard to change at this point. It creates unique issues that could otherwise be resolved with the `this` keyword for lowercase parameter names:
-
-```haxe
-function setPositionFromPoint(Point:FlxPoint):Void
-```
-
-Naming the parameter `Point` in this case is problematic because of `flash.geom.Point`. So consistent parameter naming becomes impossible.
+In the core of HaxeFlixel, there are a lot of method parameters written in capitalized letters (not preferred in Haxe),
+this is mostly legacy from the AS3 Flixel's code style and hard to change them all. However, newly written functions should follow the lowerCamelCases style. Also, we encourge contributors to convert them when fixing bugs/updating existing codes.
 
 ## Curly Brackets
 
