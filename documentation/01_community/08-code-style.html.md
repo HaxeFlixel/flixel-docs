@@ -10,19 +10,19 @@ If you encounter code in the codebase that does not fall under these guidelines,
 ### Function names
 
 ```haxe
-function shootEnemy(Target:Enemy, Bullet:BulletType):Void
+function shootEnemy(target:Enemy, bullet:BulletType):Void
 ```
 
 ...is easier to read than
 
 ```haxe
-function shootAtASpecificEnemyWithABulletTypeOf(Target:Enemy, Bullet:BulletType):Void
+function shootAtASpecificEnemyWithABulletTypeOf(target:Enemy, bullet:BulletType):Void
 ```
 
 ...but still gets the idea of what this function does across. The second example has a lot of "noise"-words that don't provide any additional value. The following function name would still be acceptable, more accurate than example 1 even:
 
 ```haxe
-function shootBulletAtEnemy(Target:Enemy, Bullet:BulletType):Void
+function shootBulletAtEnemy(target:Enemy, bullet:BulletType):Void
 ```
 
 However, function names should also not be too short - you should be able to roughly know what a function does simply by reading its name - reading its description, if existant, should ideally not be necessary. 
@@ -77,7 +77,7 @@ this is mostly legacy from the AS3 Flixel's code style and hard to change them a
 Use line breaks in methods, operators etc where possible:
 
 ``` haxe
-function createAwesome(Boring:Stuff, Creative:Things):Void
+function createAwesome(boring:Stuff, creative:Things):Void
 {
 	
 }
@@ -86,7 +86,7 @@ function createAwesome(Boring:Stuff, Creative:Things):Void
 Instead of:
 
 ``` haxe
-function createAwesome(Boring:Stuff, Creative:Things):Void {
+function createAwesome(boring:Stuff, creative:Things):Void {
 	
 }
 ```
@@ -169,10 +169,10 @@ Take the following comment section for example, it does not provide *any* additi
 /**
  * Sets the position.
  * 
- * @param	X	The x coordinate.
- * @param	Y 	The y coordinate.
+ * @param	x	The x coordinate.
+ * @param	y 	The y coordinate.
  */ 
-public function setPosition(X:Int, Y:Int):Void
+public function setPosition(x:Int, y:Int):Void
 ``` 
 
 ## Class names
@@ -200,10 +200,10 @@ The most common example where formatting is needed are the comment sections for 
 /**
  * Sets the position.
  * 
- * @param   X   The x coordinate.
- * @param   Y   The y coordinate.
+ * @param   x   The x coordinate.
+ * @param   y   The y coordinate.
  */ 
-public function setPosition(X:Int, Y:Int):Void
+public function setPosition(x:Int, y:Int):Void
 ```
  
 ## Position of metadata
