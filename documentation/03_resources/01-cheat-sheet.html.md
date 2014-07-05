@@ -104,7 +104,7 @@ import flixel.ui.FlxButton;
 myButton = new FlxButton(0, 0, "Label", myCallback);
 
 // Custom graphics
-myButton.loadGraphics("assets/custom.png");
+myButton.loadGraphic("assets/custom.png");
 ```
 
 ```haxe
