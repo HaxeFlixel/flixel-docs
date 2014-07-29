@@ -18,10 +18,12 @@ var bullets = new FlxTypedGroup<Bullet>(poolSize);
 
 for (i in 0...poolSize)
 {
-	bullets.add(new Bullet().kill());
+	var bullet = new Bullet();
+	bullet.kill();
+	bullets.add(bullet);
 }
 ```
-Note how we did not use a regular `FlxGroup`, but a `FlxTypedGroup<Bullet>()`. This means that this particular group can only store objects that are instances of the `Bullet` class or instances of `Bullet` subclasses. `FlxGroup` itself is nothing but a shortcut for `FlxTypedGroup<FlxBasic>`.
+Note how we did not use a regular `FlxGroup`, but a `FlxTypedGroup<Bullet>`. This means that this particular group can only store objects that are instances of the `Bullet` class or instances of `Bullet` subclasses. `FlxGroup` itself is nothing but a shortcut for `FlxTypedGroup<FlxBasic>`.
 
 Now, say we want to retrieve bullet instance to use in a shoot method:
 
