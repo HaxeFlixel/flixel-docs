@@ -160,7 +160,7 @@ add(_player);</code></pre></p>
 	</li>
 	<li>
 		<p>While there are plenty of ways to handle player movement, it can be simpler to add it to the Player class. We'll want to add a new function that will watch for player input and respond to it, so, make a new function:</p>
-		<p><pre><code class="haxe">private function updateMovement():Void
+		<p><pre><code class="haxe">private function movement():Void
 {
 }</code></pre></p>
 	</li>
@@ -227,12 +227,17 @@ else if (_right)
 	<li>
 		<p>Next, close the bracket from your 'if' statement from earlier:</p>
 		<p><pre><code class="haxe">}</code></pre></p>
-		<p>...and that's the end of our updateMovement function!</p>
+		<p>...and that's the end of our movement function!</p>
 	</li>
 	<li>
 		<p>The only thing left to do is to add a call to this function in our update() function, and we're good to go!</p>
-		<p>Just before the `super.update();`, add:</p>
-		<p><pre><code class="haxe">updateMovement();</code></pre></p>
+		<p>By default, update function is not overloaded in FlxSprite, so we have to add it.</p>
+		<p>In the end of our player class, just before '}', add:</p>
+		<p><pre><code class="haxe">override public function update():Void 
+	{
+		movement();
+		super.update();
+	}</code></pre></p>
 		<p>The update function, as you should remember, is called each 'frame' of the game. So, each time our PlayState gets its update called, when it calls update on all of its members, it will trigger the player's update which will check our updateMovement logic, adjust the player's velocity accordingly, and then call its super.update(), which will take the velocity that we've just changed into account and figures out where the player sprite should move.</p>
 	</li>
 </ol>
