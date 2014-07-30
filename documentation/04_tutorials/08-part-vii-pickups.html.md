@@ -28,7 +28,7 @@ title: "Part VII: Pickups"
 		<p><pre><code class="haxe">public function new(X:Float=0, Y:Float=0) 
 {
 	super(X, Y);
-	loadGraphic(AssetsPath.coin__png, false, 8, 8);
+	loadGraphic(AssetPaths.coin__png, false, 8, 8);
 }</code></pre></p>
 	</li>
 	<li>
@@ -41,7 +41,7 @@ title: "Part VII: Pickups"
 	</li>
 	<li>
 		<p>In the create function, after we add our walls, and before we initialize our player, we need to initialize and add our Coin group:</p>
-		<p><pre><code class="haxe">_grpCoins = new FlxTypedGroup&lt;Coin&gt;;
+		<p><pre><code class="haxe">_grpCoins = new FlxTypedGroup&lt;Coin&gt;();
 add(_grpCoins);</code></pre></p>
 	</li>
 	<li>
