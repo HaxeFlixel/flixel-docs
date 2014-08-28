@@ -125,18 +125,6 @@ In some contexts however, doing so improves the readability of the code, for exa
 var mystery:Answer = createAnAnswer();
 ```
 
-## Use of `this`
-
-Using the `this` keyword should never be necessary because function parameters should be capitalized.
-
-``` haxe
-//This is unnecessary
-if (this.animation.finished)
-
-//This is preferred
-if (animation.finished)
-```
-
 ## Keyword Order
 
 The original AS3 Flixel codebase ordered keywords like `static public function`.
