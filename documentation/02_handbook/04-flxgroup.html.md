@@ -43,7 +43,7 @@ Removes an object from a group, it will return the object you removed.
 
 #### getFirstAvailable(ObjectClass:Class&lt;T&gt; = null):T
 
-This will let you get the first FlxBasic class that has exists == true, this is typically used in object pooling when object may have used the kill() method. Note if you destory() objects they will be made null in the FlxGroup and you wont be able to reuse them.
+This will let you get the first FlxBasic object that has exists == false, this is typically used in object pooling when object may have used the kill() method. Note if you destory() objects they will be made null in the FlxGroup and you wont be able to reuse them.
 
 #### kill();
 
