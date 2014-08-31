@@ -8,4 +8,4 @@ If you are a Mac, Linux or Windows user, it is one of the most popular choices f
 The plugin is located on [GitHub](https://github.com/clemos/haxe-sublime-bundle).
 
 To install the Sublime Text plugin, follow the [official instructions](https://github.com/clemos/haxe-sublime-bundle/blob/master/README.markdown). 
-Alternatively, you might find [this unnofficial video guide](http://www.youtube.com/watch?v=ePO1Rjv7HNs) useful.
+Alternatively, you might find [this unofficial video guide](http://www.youtube.com/watch?v=ePO1Rjv7HNs) useful.
