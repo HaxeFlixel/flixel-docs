@@ -41,7 +41,7 @@ title: "Part VII: Pickups"
 	</li>
 	<li>
 		<p>In the create function, after we add our walls, and before we initialize our player, we need to initialize and add our Coin group:</p>
-		<p><pre><code class="haxe">_grpCoins = new FlxTypedGroup&lt;Coin&gt;;
+		<p><pre><code class="haxe">_grpCoins = new FlxTypedGroup&lt;Coin&gt;();
 add(_grpCoins);</code></pre></p>
 	</li>
 	<li>
