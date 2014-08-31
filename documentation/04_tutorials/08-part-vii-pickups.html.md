@@ -28,7 +28,7 @@ title: "Part VII: Pickups"
 		<p><pre><code class="haxe">public function new(X:Float=0, Y:Float=0) 
 {
 	super(X, Y);
-	loadGraphic(AssetsPath.coin__png, false, 8, 8);
+	loadGraphic(AssetPaths.coin__png, false, 8, 8);
 }</code></pre></p>
 	</li>
 	<li>
