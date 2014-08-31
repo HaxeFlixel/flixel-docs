@@ -6,7 +6,7 @@ title: "Part VI: Zoom and Cameras"
 
 <ol>
 	<li>
-		<p>Open the Main.hx file. This class initializes your game, and there are a few things here that you could play with, if you want. We just need to change a couple of the parameters.</p>
+		<p>Open the GameClass.hx file. This class initializes your game, and there are a few things here that you could play with, if you want. We just need to change a couple of the parameters.</p>
 	</li>
 	<li>
 		<p>Change gameWidth and gameHeight to 320 and 240 (half of their original values). You could also change zoom from -1 to 2 if you wanted, but since it's at  -1, it will auto-calculate the zoom based on the difference between your game's size and the window dimension (which is defined in Project.xml).</p>
