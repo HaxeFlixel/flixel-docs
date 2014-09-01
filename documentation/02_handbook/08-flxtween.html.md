@@ -128,4 +128,4 @@ The `FlxTween` class also contains the methods `linearMotion()`, `quadMotion()`,
 
 The methods `linearPath()` and `quadPath()` can be used for longer paths defined through an array of points, instead of a fixed number of points.
 
-If you want to use these methods please refer to the [`FlxTween` API](http://api.haxeflixel.com/types/flixel/tweens/FlxTween.html). 
+If you want to use these methods please refer to the [`FlxTween` API](http://api.haxeflixel.com/flixel/tweens/FlxTween.html). 
