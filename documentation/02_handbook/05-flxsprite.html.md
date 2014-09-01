@@ -94,7 +94,7 @@ Flixel supports spritesheet animation.
 ![](/images/sprite-animation-example.png)
 
 ```haxe
-player.loadGraphic("assets/player.png", true, true, 32, 36);
+player.loadGraphic("assets/player.png", true, 32, 36);
 player.animation.add("walk", [0, 1, 0, 2], 5, true);
 player.animation.play("walk");
 ```
