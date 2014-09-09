@@ -7,7 +7,7 @@ HaxeFlixel is a collaborative project from [contributors all over the world](htt
 
 There is a multitude of channels to interact with the community:
 
-- Our [google groups forums](http://forum.haxeflixel.com)
+- Our [google groups forums](http://haxeflixel.com/forum/)
 - [#haxeflixel](http://webchat.freenode.net/?channels=%23haxeflixel&uio=d4) on IRC (freenode.net)
 - [@HaxeFlixel](https://twitter.com/HaxeFlixel) on Twitter
 - The [HaxeFlixel organization](http://github.com/haxeflixel) on GitHub
