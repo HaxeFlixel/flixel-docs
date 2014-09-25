@@ -23,7 +23,7 @@ In addition to most of the features of Actionscript 3, Haxe includes support for
 
 ###Haxe & AS3 common syntax comparison
 
-This guide is based off from [OpenFL's guide](http://www.openfl.org/developer/documentation/actionscript-developers/).
+This guide is based off from [OpenFL's guide](http://www.openfl.org/archive/developer/documentation/actionscript-developers/).
 
 ###Basic Types
 
