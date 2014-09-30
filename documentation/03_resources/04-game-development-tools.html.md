@@ -2,8 +2,6 @@
 title: "Game Development Tools"
 ```
 
-Creating your Games is that much easier with the right tools.
-
 # Graphics Editors
 
 #### [Gimp](http://www.gimp.org/)
