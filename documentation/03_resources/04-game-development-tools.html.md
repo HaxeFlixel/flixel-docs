@@ -33,11 +33,11 @@ BFXR is an improved AS3 port of SFXR with more features. It has moved in the dir
 
 Tiled is a general purpose tile map editor. It is meant to be used for editing maps of any tile-based game, be it an RPG, a platformer or a Breakout clone. [This demo shows how to load a tiled map](http://haxeflixel.com/demos/TiledEditor/).
 
-### [OGMO Editor](http://www.ogmoeditor.com/)
+### [Ogmo Editor](http://www.ogmoeditor.com/)
 
-Ogmo Editor is a generic level editor for indie game developers who use Windows. It also happens to be free and open source. The editor is built to be reconfigurable, so you can set it up to work well for your game project. [This HaxeFlixel tutorial](http://haxeflixel.com/documentation/part-v-tiles-maps-and-collisions/) shows how to create levels with OGMO.
+Ogmo Editor is a generic level editor for indie game developers who use Windows. It also happens to be free and open source. The editor is built to be reconfigurable, so you can set it up to work well for your game project. [This HaxeFlixel tutorial](http://haxeflixel.com/documentation/part-v-tiles-maps-and-collisions/) shows how to create levels with Ogmo.
 
-### Asset Utilities
+# Asset Utilities
 
 ### [ShoeBox](http://renderhjs.net/shoebox/)
 
