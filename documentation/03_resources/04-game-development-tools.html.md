@@ -45,7 +45,7 @@ ShoeBox is a free Adobe Air based app for Windows and Mac OSX with game and ui r
 
 ### [Texture Packer](https://www.codeandweb.com/texturepacker)
 
-Texture Packer does one thing very well, pack several sprites into one image to reduce the number of image assets you game has to load (which helps reduce load times). It's easy to use and easy to integrate with HaxeFlixel. [This demo shows how to use a TexturePackerAtlas](http://haxeflixel.com/demos/TexturePackerAtlas/).
+Texture Packer does one thing very well, pack several sprites into one image to reduce the number of image assets your game has to load (which helps reduce load times). It's easy to use and easy to integrate with HaxeFlixel. [This demo shows how to use a TexturePackerAtlas](http://haxeflixel.com/demos/TexturePackerAtlas/).
 
 ## More Resources
 
