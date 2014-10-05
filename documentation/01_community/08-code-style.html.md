@@ -38,6 +38,7 @@ The equals sign (`=`) and commas (`,`) in function headers / calls should always
 | `FlxG.resizeGame(320, 240);`           | `FlxG.resizeGame(320,240);`            |
 | `function test(value:Int = "5") {}`    | `function test(value:Int="5") {}`      |
 | `FlxG.resizeGame(320, 240);`           | `FlxG.resizeGame( 320, 240 );`         |
+| `FlxG.resizeGame(320, 240);`           | `FlxG.resizeGame (320, 240);`          |
 
 Spaces *should* be used before the opening brackets of `if`, `for`, `while` and `switch`:
 
@@ -72,6 +73,15 @@ function translate(Words:String, BableFish:BableFish):Void
 In the core of HaxeFlixel, there are a lot of method parameters written in capitalized letters (not preferred in Haxe),
 this is mostly legacy from the AS3 Flixel's code style and hard to change them all. However, newly written functions should follow the lowerCamelCases style. Also, we encourge contributors to convert them when fixing bugs/updating existing codes.
 
+## Colon spacing
+
+No extra spaces should be used before and after colons:
+
+| Good                                   | Bad                                    |
+| ---------------------------------------| ---------------------------------------|
+| var i:Int;                             | var i : Int;                           |
+| function toString():String             | function toString() : String           |
+
 ## Curly Brackets
 
 Use line breaks in methods, operators etc where possible:
@@ -89,20 +99,6 @@ Instead of:
 function createAwesome(boring:Stuff, creative:Things):Void {
 	
 }
-```
-
-## Private and public variables
-
-An underscore prefix should be used for any private variable:
-
-``` haxe
-private var _awesome:Awesome;
-```
-
-Do not use a prefix for a public variable:
-
-``` haxe
-public var awesome:Awesome;
 ```
 
 ## Leveraging type inference
@@ -201,11 +197,11 @@ Metadata should always be placed in a new line for increased readability:
 ```haxe
 @:isVar 
 @:allow(flixel.tweens.FlxTween)
-private static var _pool(get, null):FlxPool<MultiVarTween>;
+private static var pool(get, null):FlxPool<MultiVarTween>;
 ```
 
 as opposed to:
 
 ```haxe
-@:isVar @:allow(flixel.tweens.FlxTween) private static var _pool(get, null):FlxPool<MultiVarTween>;
+@:isVar @:allow(flixel.tweens.FlxTween) private static var pool(get, null):FlxPool<MultiVarTween>;
 ```
