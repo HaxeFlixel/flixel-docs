@@ -58,7 +58,7 @@ add(_btnPlay);</code></pre></p>
 	<li>
 		<p>Back in the create function, add a new line somewhere after we create our FlxButton, and before <code>super.create();</code> (I like to add it before the button is added, but that's just my preference).</p>
 		<p>Type:</p>
-		<p><pre><code class="haxe">_btnPlay.screenCenter();</code></pre></p>
+		<p><pre><code class="haxe">FlxSpriteUtil.screenCenter(_btnPlay);</code></pre></p>
 		<p>screenCenter is a function in FlxSpriteUtil which takes an object and centers it on the screen either horizontally, vertically or (by default) both. By calling it on our button, the button will be placed in the center of the screen.</p>
 	</li>
 	<li>
