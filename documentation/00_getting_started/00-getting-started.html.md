@@ -18,7 +18,7 @@ Time to complete this installation is close to 20 minutes.
 
 If you require some help:
  
-- Ask a question in the [community forums](http://www.forum.haxeflixel.com);
+- Ask a question in the [community forums](/forum);
 - Join the irc channel [#haxeflixel](irc://chat.freenode.net/#haxeflixel) on freenode.
 
 ----
