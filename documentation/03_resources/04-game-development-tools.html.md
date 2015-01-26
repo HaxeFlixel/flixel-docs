@@ -13,6 +13,10 @@ Advanced bitmap based image editor that has many capabilities similar to commerc
 Advanced vector image editor with an advanced editing toolset. Inkscape has capabilities similar to commercial software such as Adobe Illustrator, CorelDraw, or Xara X. Inkscape leverages the W3C standard Scalable Vector Graphics (SVG) file format.
 Inkscape supports many advanced SVG features (markers, clones, alpha blending, etc.) and great care is taken in designing a streamlined interface. It is very easy to edit nodes, perform complex path operations, trace bitmaps and much more.
 
+#### [Krita](http://www.krita.org/)
+
+Krita is a free digital painting and illustration application. Krita offers CMYK support, HDR painting, perspective grids, dockers, filters, painting assistants, and many other features you would expect.
+
 ## Sound Editors
 
 #### [LMMS](http://lmms.sourceforge.net/)
