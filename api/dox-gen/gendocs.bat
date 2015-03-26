@@ -1,1 +1,1 @@
-haxelib run dox -i flash.xml -o .. -res resources
+haxelib run dox -i flash.xml -o .. -res resources --title "HaxeFlixel API docs" -D source-path https://github.com/HaxeFlixel/flixel/tree/master
