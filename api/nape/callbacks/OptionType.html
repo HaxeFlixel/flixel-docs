@@ -1,66 +1,49 @@
 <!DOCTYPE html>
-<html lang="en"><head><meta charset="utf-8"/><link href="../../bootstrap-combined.min.css" rel="stylesheet" /><script type="text/javascript" src="../../jquery-1.9.1.min.js"></script><script type="text/javascript" src="../../bootstrap.min.js"></script><link href="../../styles.css" rel="stylesheet" /><link rel="icon" href="../../favicon.ico" type="image/x-icon"></link><script type="text/javascript" src="../../nav.js"></script><script type="text/javascript" src="../../index.js"></script><script type="text/javascript">var dox = {rootPath: "../../",platforms: ["flash"]};</script><title>OptionType</title></head><body><div class="navbar navbar-inverse navbar-fixed-top"><div class="navbar-inner"><form class="navbar-search pull-left" id="searchForm"><input id="search" type="text" class="search-query" placeholder="Filter" autocomplete="off"/></form><ul class="nav"><li id="select-platform" class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Platform<b class="caret"></b></a><ul class="dropdown-menu"><li data="all"><a href="#">All Platforms</a></li><li data="flash"><a href="#">flash</a></li></ul></li></ul></div></div><div id="container"><div id="nav"></div><div id="content"><div class="header"><h1><code><span class="directive">class </span><span class="type">nape.callbacks.OptionType</span></code></h1></div><div class="body"><p class="availability">Available on all platforms</p><div class="doc"><p>OptionType representing matching behaviour for Listeners.
- * <br/><br/>
- * An object's set of CbType's 'matches' against an OptionType iff.
- * the OptionType's includes list intersects the object's set of CbTypes
- * and the OptionType's excludes list 'does not' intersect the object's set
- * of CbTypes.
- * <pre>
- * option = new OptionType([A, B], [C, D]);
- * obj.cbTypes = [] // => does not match option.
- * obj.cbTypes = [A] // => matches the option
- * obj.cbTypes = [A, C] // => does not match option.
- * </pre>
- * The optionType's includes and excludes list are managed to be always
- * disjoint: The action of including an already excluded type serves to
- * remove it from the excludes list, equalliy excluding an already included
- * type serves to remove it from the includes list.
- * <pre>
- * var option = new OptionType();
- * option.including(A); // option = {[A]:[]}
- * option.excluding(A); // option = {[]:[]}
- * option.excluding(A); // option = {[]:[A]}
- * option.including(A); // option = {[A]:[]}
- * </pre></p></div><h2>Instance Fields</h2><div class="platform platform-flash"><a name="excludes"></a><h3><p><code><span class="keyword">var</span> <a href="#excludes"><span class="identifier">excludes</span></a>:<a class="type" href="../../nape/callbacks/CbTypeList.html">CbTypeList</a></code></p></h3><div class="doc"><p>List of excluded CbTypes.
-     * <br/><br/>
-     * This list is both readonly, and immutable. To remove an element
-     * from this list you can use: <code>option.including(cbType)</code>
-     *
-     * @default []</p></div></div><div class="platform platform-flash"><a name="includes"></a><h3><p><code><span class="keyword">var</span> <a href="#includes"><span class="identifier">includes</span></a>:<a class="type" href="../../nape/callbacks/CbTypeList.html">CbTypeList</a></code></p></h3><div class="doc"><p>List of included CbTypes.
-     * <br/><br/>
-     * This list is both readonly, and immutable. To remove an element
-     * from this list you can use: <code>option.excluding(cbType)</code>
-     *
-     * @default []</p></div></div><div class="platform platform-flash"><a name="zpp_inner"></a><h3><p><code><span class="keyword">var</span> <a href="#zpp_inner"><span class="identifier">zpp_inner</span></a>:<a class="type" href="../../zpp_nape/callbacks/ZPP_OptionType.html">ZPP_OptionType</a></code></p></h3><div class="doc"><p>@private</p></div></div><div class="platform platform-flash"><a name="new"></a><h3><p><code><span class="keyword">function</span> <a href="#new"><span class="identifier">new</span></a>(?includes:<a class="type" href="../../Dynamic.html">Dynamic</a> = null, ?excludes:<a class="type" href="../../Dynamic.html">Dynamic</a> = null):<a class="type" href="../../Void.html">Void</a></code></p></h3><div class="doc"><p>Construct a new OptionType.
-     * <br/><br/>
-     * The type of the arguments is Dynamic, and is permitted to be one of:
-     * <code>CbType, CbTypeList, Array&lt;CbType&gt; flash.Vector&lt;CbType&gt;</code>
-     *
-     * </p><table class="table table-condensed"><tbody><tr><td>includes</td><td><p>The set of CbTypes to be included in the matching process.
-    *                 (default null)
-    * </p></td></tr><tr><td>excludes</td><td><p>The set of CbTypes to be excluded in the matching process.
-    *                 (default null)
-    * </p></td></tr><tr><td>returns</td><td><p>Return new OptionType with give sets of CbTypes.
-* </p></td></tr></tbody></table></div></div><div class="platform platform-flash"><a name="excluding"></a><h3><p><code><span class="keyword">function</span> <a href="#excluding"><span class="identifier">excluding</span></a>(?excludes:<a class="type" href="../../Dynamic.html">Dynamic</a> = null):<a class="type" href="../../nape/callbacks/OptionType.html">OptionType</a></code></p></h3><div class="doc"><p>Append set of types to excludes list.
-     * <br/><br/>
-     * This method was originally named the more appropriate 'exclude'
-     * but to match the necessary change for the include function, this was
-     * renamed as excluding.
-     * <br/><br/>
-     * The argument is typed Dynamic, and is permitted to be one of:
-     * <code>CbType, CbTypeList, Array&lt;CbType&gt; flash.Vector&lt;CbType&gt;</code>
-     *
-     * </p><table class="table table-condensed"><tbody><tr><td>excludes</td><td><p>The set of CbTypes to be excluded. (default null)
-    * </p></td></tr><tr><td>returns</td><td><p>A reference to this OptionType.
-* </p></td></tr></tbody></table></div></div><div class="platform platform-flash"><a name="including"></a><h3><p><code><span class="keyword">function</span> <a href="#including"><span class="identifier">including</span></a>(?includes:<a class="type" href="../../Dynamic.html">Dynamic</a> = null):<a class="type" href="../../nape/callbacks/OptionType.html">OptionType</a></code></p></h3><div class="doc"><p>Append set of types to includes list.
-     * <br/><br/>
-     * This method was originally named the more appropriate 'include'
-     * but this conflicted with the AS3 keyword include and had to be
-     * change.
-     * <br/><br/>
-     * The argument is typed Dynamic, and is permitted to be one of:
-     * <code>CbType, CbTypeList, Array&lt;CbType&gt; flash.Vector&lt;CbType&gt;</code>
-     *
-     * </p><table class="table table-condensed"><tbody><tr><td>includes</td><td><p>The set of CbTypes to be included. (default null)
-    * </p></td></tr><tr><td>returns</td><td><p>A reference to this OptionType.
-* </p></td></tr></tbody></table></div></div><div class="platform platform-flash"><a name="toString"></a><h3><p><code><span class="keyword">function</span> <a href="#toString"><span class="identifier">toString</span></a>():<a class="type" href="../../String.html">String</a></code></p></h3><div class="doc"><p>@private</p></div></div></div></div></div></body></html>
+<html lang="en"><head><meta charset="utf-8"/><link href="../../bootstrap-combined.min.css" rel="stylesheet" /><script type="text/javascript" src="../../jquery-1.9.1.min.js"></script><script type="text/javascript" src="../../bootstrap.min.js"></script><link href="../../styles.css" rel="stylesheet" /><link rel="icon" href="../../favicon.ico" type="image/x-icon"></link><script type="text/javascript" src="../../nav.js"></script><script type="text/javascript" src="../../index.js"></script><script type="text/javascript">var dox = {rootPath: "../../",platforms: ["flash"],showInheritedFields: false};</script><title>nape.callbacks.OptionType - HaxeFlixel API docs</title></head><body><div class="navbar navbar-inverse navbar-fixed-top"><div class="navbar-inner"><form class="navbar-search pull-left" id="searchForm"><input id="search" type="text" class="search-query" placeholder="Filter" autocomplete="off"/></form><ul class="nav"><li id="select-platform" class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Platform<b class="caret"></b></a><ul class="dropdown-menu"><li data="all"><a href="#">All Platforms</a></li><li data="flash"><a href="#">flash</a></li></ul></li></ul></div></div><div id="container"><div id="nav"></div><div id="content"><div class="header"><span class="viewsource"><a href="https://github.com/HaxeFlixel/flixel/tree/master/nape/callbacks/OptionType.hx">View source</a></span><h1><code><span class="directive">class </span><span class="type">nape.callbacks.OptionType</span></code></h1></div><div class="body"><p class="availability">Available on all platforms</p><div class="doc"><p>OptionType representing matching behaviour for Listeners.
+<br/><br/>
+An object's set of CbType's 'matches' against an OptionType iff.
+the OptionType's includes list intersects the object's set of CbTypes
+and the OptionType's excludes list 'does not' intersect the object's set
+of CbTypes.
+<pre>
+option = new OptionType([A, B], [C, D]);
+obj.cbTypes = [] // => does not match option.
+obj.cbTypes = [A] // => matches the option
+obj.cbTypes = [A, C] // => does not match option.
+</pre>
+The optionType's includes and excludes list are managed to be always
+disjoint: The action of including an already excluded type serves to
+remove it from the excludes list, equalliy excluding an already included
+type serves to remove it from the includes list.
+<pre>
+var option = new OptionType();
+option.including(A); // option = {[A]:[]}
+option.excluding(A); // option = {[]:[]}
+option.excluding(A); // option = {[]:[A]}
+option.including(A); // option = {[A]:[]}
+</pre></p></div><h2>Instance Fields</h2><a onclick="toggleInheritedFields()">Toggle inherited fields</a><div class="not-inherited"><div class="platform platform-flash"><a name="excludes"></a><h3><p><code><span class="keyword">var</span> <a href="#excludes"><span class="identifier">excludes</span></a>(get,null):<a class="type" href="../../nape/callbacks/CbTypeList.html">CbTypeList</a></code></p></h3><div class="doc"><p>List of excluded CbTypes.
+<br/><br/>
+This list is both readonly, and immutable. To remove an element
+from this list you can use: <code>option.including(cbType)</code></p><table class="table table-condensed"><tbody><col width="10%"/>  <col width="100%"/><tr><th>Default value:</th><td><p>[]</p></td></tr></tbody></table></div></div></div><div class="not-inherited"><div class="platform platform-flash"><a name="excluding"></a><h3><p><code><span class="keyword">function</span> <a href="#excluding"><span class="identifier">excluding</span></a>(excludes:<a class="type" href="../../Dynamic.html">Dynamic</a> = null):<a class="type" href="../../nape/callbacks/OptionType.html">OptionType</a></code></p></h3><div class="doc"><p>Append set of types to excludes list.
+<br/><br/>
+This method was originally named the more appropriate 'exclude'
+but to match the necessary change for the include function, this was
+renamed as excluding.
+<br/><br/>
+The argument is typed Dynamic, and is permitted to be one of:
+<code>CbType, CbTypeList, Array&lt;CbType&gt; flash.Vector&lt;CbType&gt;</code></p><table class="table table-condensed"><tbody><col width="10%"/>  <col width="100%"/><tr><th colspan="2">Parameters:</th></tr><tr><td>excludes</td><td><p>The set of CbTypes to be excluded. (default null)</p></td></tr><tr><th>Returns:</th><td><p>A reference to this OptionType.</p></td></tr><tr><th colspan="2">Throws:</th></tr><tr><td>#</td><td><p>If argument is not of the expected Type.</p></td></tr></tbody></table></div></div></div><div class="not-inherited"><div class="platform platform-flash"><a name="includes"></a><h3><p><code><span class="keyword">var</span> <a href="#includes"><span class="identifier">includes</span></a>(get,null):<a class="type" href="../../nape/callbacks/CbTypeList.html">CbTypeList</a></code></p></h3><div class="doc"><p>List of included CbTypes.
+<br/><br/>
+This list is both readonly, and immutable. To remove an element
+from this list you can use: <code>option.excluding(cbType)</code></p><table class="table table-condensed"><tbody><col width="10%"/>  <col width="100%"/><tr><th>Default value:</th><td><p>[]</p></td></tr></tbody></table></div></div></div><div class="not-inherited"><div class="platform platform-flash"><a name="including"></a><h3><p><code><span class="keyword">function</span> <a href="#including"><span class="identifier">including</span></a>(includes:<a class="type" href="../../Dynamic.html">Dynamic</a> = null):<a class="type" href="../../nape/callbacks/OptionType.html">OptionType</a></code></p></h3><div class="doc"><p>Append set of types to includes list.
+<br/><br/>
+This method was originally named the more appropriate 'include'
+but this conflicted with the AS3 keyword include and had to be
+change.
+<br/><br/>
+The argument is typed Dynamic, and is permitted to be one of:
+<code>CbType, CbTypeList, Array&lt;CbType&gt; flash.Vector&lt;CbType&gt;</code></p><table class="table table-condensed"><tbody><col width="10%"/>  <col width="100%"/><tr><th colspan="2">Parameters:</th></tr><tr><td>includes</td><td><p>The set of CbTypes to be included. (default null)</p></td></tr><tr><th>Returns:</th><td><p>A reference to this OptionType.</p></td></tr><tr><th colspan="2">Throws:</th></tr><tr><td>#</td><td><p>If argument is not of the expected Type.</p></td></tr></tbody></table></div></div></div><div class="not-inherited"><div class="platform platform-flash"><a name="new"></a><h3><p><code><span class="keyword">function</span> <a href="#new"><span class="identifier">new</span></a>(includes:<a class="type" href="../../Dynamic.html">Dynamic</a> = null, excludes:<a class="type" href="../../Dynamic.html">Dynamic</a> = null):<a class="type" href="../../Void.html">Void</a></code></p></h3><div class="doc"><p>Construct a new OptionType.
+<br/><br/>
+The type of the arguments is Dynamic, and is permitted to be one of:
+<code>CbType, CbTypeList, Array&lt;CbType&gt; flash.Vector&lt;CbType&gt;</code></p><table class="table table-condensed"><tbody><col width="10%"/>  <col width="100%"/><tr><th colspan="2">Parameters:</th></tr><tr><td>includes</td><td><p>The set of CbTypes to be included in the matching process.
+(default null)</p></td></tr><tr><td>excludes</td><td><p>The set of CbTypes to be excluded in the matching process.
+(default null)</p></td></tr><tr><th>Returns:</th><td><p>Return new OptionType with give sets of CbTypes.</p></td></tr><tr><th colspan="2">Throws:</th></tr><tr><td>#</td><td><p>If either argument is not of the expected Type.</p></td></tr></tbody></table></div></div></div><div class="not-inherited"><div class="platform platform-flash"><a name="toString"></a><h3><p><code><span class="keyword">function</span> <a href="#toString"><span class="identifier">toString</span></a>():<a class="type" href="../../String.html">String</a></code></p></h3><div class="doc"><p>@private</p></div></div></div><div class="not-inherited"><div class="platform platform-flash"><a name="zpp_inner"></a><h3><p><code><span class="keyword">var</span> <a href="#zpp_inner"><span class="identifier">zpp_inner</span></a>:<a class="type" href="../../zpp_nape/callbacks/ZPP_OptionType.html">ZPP_OptionType</a><span> = null</span></code></p></h3><div class="doc"><p>@private</p></div></div></div></div></div></div></body></html>

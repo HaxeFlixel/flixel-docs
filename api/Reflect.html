@@ -1,106 +1,33 @@
 <!DOCTYPE html>
-<html lang="en"><head><meta charset="utf-8"/><link href="./bootstrap-combined.min.css" rel="stylesheet" /><script type="text/javascript" src="./jquery-1.9.1.min.js"></script><script type="text/javascript" src="./bootstrap.min.js"></script><link href="./styles.css" rel="stylesheet" /><link rel="icon" href="./favicon.ico" type="image/x-icon"></link><script type="text/javascript" src="./nav.js"></script><script type="text/javascript" src="./index.js"></script><script type="text/javascript">var dox = {rootPath: "./",platforms: ["flash"]};</script><title>Reflect</title></head><body><div class="navbar navbar-inverse navbar-fixed-top"><div class="navbar-inner"><form class="navbar-search pull-left" id="searchForm"><input id="search" type="text" class="search-query" placeholder="Filter" autocomplete="off"/></form><ul class="nav"><li id="select-platform" class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Platform<b class="caret"></b></a><ul class="dropdown-menu"><li data="all"><a href="#">All Platforms</a></li><li data="flash"><a href="#">flash</a></li></ul></li></ul></div></div><div id="container"><div id="nav"></div><div id="content"><div class="header"><h1><code><span class="directive">class </span><span class="type">Reflect</span></code></h1></div><div class="body"><p class="availability">Available on all platforms</p><div class="doc"><p>The Reflect API is a way to manipulate values dynamicly through an
-abstract interface in an untyped manner. Use with care.</p></div><h2>Class Fields</h2><div class="platform platform-flash"><a name="callMethod"></a><h3><p><code><span class="keyword">static </span><span class="keyword">function</span> <a href="#callMethod"><span class="identifier">callMethod</span></a>(o:<a class="type" href="./Dynamic.html">Dynamic</a>, func:<a class="type" href="./Dynamic.html">Dynamic</a>, args:<a class="type" href="./Array.html">Array</a>&lt;<a class="type" href="./Dynamic.html">Dynamic</a>&gt;):<a class="type" href="./Dynamic.html">Dynamic</a></code></p></h3><div class="doc"><p>Call a method with the given object and arguments.</p></div></div><div class="platform platform-flash"><a name="compare"></a><h3><p><code><span class="keyword">static </span><span class="keyword">function</span> <a href="#compare"><span class="identifier">compare</span></a>&lt;<span class="type">T</span>&gt;(a:<span class="type">T</span>, b:<span class="type">T</span>):<a class="type" href="./Int.html">Int</a></code></p></h3><div class="doc"><p>Compares <code>a</code> and <code>b</code>.</p>
-<pre><code>
-If `a` is less than `b`, the result is negative. If `b` is less than
-`a`, the result is positive. If `a` and `b` are equal, the result is 0.
-
-This function is only defined if `a` and `b` are of the same type.
-
-If that type is a function, the result is unspecified and
-`Reflect.compareMethods` should be used instead.
-
-For all other types, the result is 0 if `a` and `b` are equal. If they
-are not equal, the result depends on the type and is negative if:
-
-- Numeric types: a is less than b
-- String: a is lexicographically less than b
-- Other: unspecified
-
-If `a` and `b` are null, the result is 0. If only one of them is null,
-the result is unspecified.
-</code></pre></div></div><div class="platform platform-flash"><a name="compareMethods"></a><h3><p><code><span class="keyword">static </span><span class="keyword">function</span> <a href="#compareMethods"><span class="identifier">compareMethods</span></a>(f1:<a class="type" href="./Dynamic.html">Dynamic</a>, f2:<a class="type" href="./Dynamic.html">Dynamic</a>):<a class="type" href="./Bool.html">Bool</a></code></p></h3><div class="doc"><p>Compares the functions <code>f1</code> and <code>f2</code>.</p>
-<pre><code>
-If `f1` or `f2` are not functions, the result is unspecified.
-
-Otherwise the result is true if `f1` and the `f2` are physically equal,
-false otherwise.
-</code></pre></div></div><div class="platform platform-flash"><a name="copy"></a><h3><p><code><span class="keyword">static </span><span class="keyword">function</span> <a href="#copy"><span class="identifier">copy</span></a>&lt;<span class="type">T</span>&gt;(o:<span class="type">T</span>):<span class="type">T</span></code></p></h3><div class="doc"><p>Copies the fields of structure <code>o</code>.</p>
-<pre><code>
-This is only guaranteed to work on anonymous structures.
-
-If `o` is null, the result is unspecified.
-</code></pre></div></div><div class="platform platform-flash"><a name="deleteField"></a><h3><p><code><span class="keyword">static </span><span class="keyword">function</span> <a href="#deleteField"><span class="identifier">deleteField</span></a>(o:<a class="type" href="./Dynamic.html">Dynamic</a>, field:<a class="type" href="./String.html">String</a>):<a class="type" href="./Bool.html">Bool</a></code></p></h3><div class="doc"><p>Removes the field named <code>field</code> from structure <code>o</code>.</p>
-<pre><code>
-This method is only guaranteed to work on anonymous structures.
-
-If `o` or `field` are null, the result is unspecified.
-</code></pre></div></div><div class="platform platform-flash"><a name="field"></a><h3><p><code><span class="keyword">static </span><span class="keyword">function</span> <a href="#field"><span class="identifier">field</span></a>(o:<a class="type" href="./Dynamic.html">Dynamic</a>, field:<a class="type" href="./String.html">String</a>):<a class="type" href="./Dynamic.html">Dynamic</a></code></p></h3><div class="doc"><p>Returns the value of the field named <code>field</code> on object <code>o</code>.</p>
-<pre><code>
-If `o` is not an object or has no field named `field`, the result is
-null.
-
-If the field is defined as a property, its accessors are ignored. Refer
-to `Reflect.getProperty` for a function supporting property accessors.
-
-If `field` is null, the result is unspecified.
-
-(As3) If used on a property field, the getter will be invoked. It is
-not possible to obtain the value directly.
-</code></pre></div></div><div class="platform platform-flash"><a name="fields"></a><h3><p><code><span class="keyword">static </span><span class="keyword">function</span> <a href="#fields"><span class="identifier">fields</span></a>(o:<a class="type" href="./Dynamic.html">Dynamic</a>):<a class="type" href="./Array.html">Array</a>&lt;<a class="type" href="./String.html">String</a>&gt;</code></p></h3><div class="doc"><p>Returns the fields of structure <code>o</code>.</p>
-<pre><code>
-This method is only guaranteed to work on anonymous structures. Refer to
-`Type.getInstanceFields` for a function supporting class instances.
-
-If `o` is null, the result is unspecified.
-</code></pre></div></div><div class="platform platform-flash"><a name="getProperty"></a><h3><p><code><span class="keyword">static </span><span class="keyword">function</span> <a href="#getProperty"><span class="identifier">getProperty</span></a>(o:<a class="type" href="./Dynamic.html">Dynamic</a>, field:<a class="type" href="./String.html">String</a>):<a class="type" href="./Dynamic.html">Dynamic</a></code></p></h3><div class="doc"><p>Returns the value of the field named <code>field</code> on object <code>o</code>, taking</p>
-<pre><code>property getter functions into account.
-
-If the field is not a property, this function behaves like
-`Reflect.field`, but might be slower.
-
-If `o` or `field` are null, the result is unspecified.
-</code></pre></div></div><div class="platform platform-flash"><a name="hasField"></a><h3><p><code><span class="keyword">static </span><span class="keyword">function</span> <a href="#hasField"><span class="identifier">hasField</span></a>(o:<a class="type" href="./Dynamic.html">Dynamic</a>, field:<a class="type" href="./String.html">String</a>):<a class="type" href="./Bool.html">Bool</a></code></p></h3><div class="doc"><p>Tells if structure <code>o</code> has a field named <code>field</code>.</p>
-<pre><code>
-This is only guaranteed to work for anonymous structures. Refer to
-`Type.getInstanceFields` for a function supporting class instances.
-
-If `o` or `field` are null, the result is unspecified.
-</code></pre></div></div><div class="platform platform-flash"><a name="isEnumValue"></a><h3><p><code><span class="keyword">static </span><span class="keyword">function</span> <a href="#isEnumValue"><span class="identifier">isEnumValue</span></a>(v:<a class="type" href="./Dynamic.html">Dynamic</a>):<a class="type" href="./Bool.html">Bool</a></code></p></h3><div class="doc"><p>Tells if <code>v</code> is an enum value.</p>
-<pre><code>
-The result is true if `v` is of type EnumValue, i.e. an enum
-constructor.
-
-Otherwise, including if `v` is null, the result is false.
-</code></pre></div></div><div class="platform platform-flash"><a name="isFunction"></a><h3><p><code><span class="keyword">static </span><span class="keyword">function</span> <a href="#isFunction"><span class="identifier">isFunction</span></a>(f:<a class="type" href="./Dynamic.html">Dynamic</a>):<a class="type" href="./Bool.html">Bool</a></code></p></h3><div class="doc"><p>Returns true if <code>f</code> is a function, false otherwise.</p>
-<pre><code>
-If `f` is null, the result is false.
-</code></pre></div></div><div class="platform platform-flash"><a name="isObject"></a><h3><p><code><span class="keyword">static </span><span class="keyword">function</span> <a href="#isObject"><span class="identifier">isObject</span></a>(v:<a class="type" href="./Dynamic.html">Dynamic</a>):<a class="type" href="./Bool.html">Bool</a></code></p></h3><div class="doc"><p>Tells if <code>v</code> is an object.</p>
-<pre><code>
-The result is true if `v` is one of the following:
-
-- class instance
-- structure
-- Class&lt;T&gt;
-- Enum&lt;T&gt;
-
-Otherwise, including if `v` is null, the result is false.
-</code></pre></div></div><div class="platform platform-flash"><a name="makeVarArgs"></a><h3><p><code><span class="keyword">static </span><span class="keyword">function</span> <a href="#makeVarArgs"><span class="identifier">makeVarArgs</span></a>(f:<a class="type" href="./Array.html">Array</a>&lt;<a class="type" href="./Dynamic.html">Dynamic</a>&gt; -&gt;<a class="type" href="./Dynamic.html">Dynamic</a>):<a class="type" href="./Dynamic.html">Dynamic</a></code></p><p><code><span class="keyword">static </span><span class="keyword">function</span> <a href="#makeVarArgs"><span class="identifier">makeVarArgs</span></a>(f:<a class="type" href="./Array.html">Array</a>&lt;<a class="type" href="./Dynamic.html">Dynamic</a>&gt; -&gt;<a class="type" href="./Void.html">Void</a>):<a class="type" href="./Dynamic.html">Dynamic</a></code></p></h3><div class="doc"><p>Transform a function taking an array of arguments into a function that can</p>
-<pre><code>be called with any number of arguments.
-</code></pre></div></div><div class="platform platform-flash"><a name="setField"></a><h3><p><code><span class="keyword">static </span><span class="keyword">function</span> <a href="#setField"><span class="identifier">setField</span></a>(o:<a class="type" href="./Dynamic.html">Dynamic</a>, field:<a class="type" href="./String.html">String</a>, value:<a class="type" href="./Dynamic.html">Dynamic</a>):<a class="type" href="./Void.html">Void</a></code></p></h3><div class="doc"><p>Sets the field named <code>field</code> of object <code>o</code> to value <code>value</code>.</p>
-<pre><code>
-If `o` has no field named `field`, this function is only guaranteed to
-work for anonymous structures.
-
-If `o` or `field` are null, the result is unspecified.
-
-(As3) If used on a property field, the setter will be invoked. It is
-not possible to set the value directly.
-</code></pre></div></div><div class="platform platform-flash"><a name="setProperty"></a><h3><p><code><span class="keyword">static </span><span class="keyword">function</span> <a href="#setProperty"><span class="identifier">setProperty</span></a>(o:<a class="type" href="./Dynamic.html">Dynamic</a>, field:<a class="type" href="./String.html">String</a>, value:<a class="type" href="./Dynamic.html">Dynamic</a>):<a class="type" href="./Void.html">Void</a></code></p></h3><div class="doc"><p>Sets the field named <code>field</code> of object <code>o</code> to value <code>value</code>, taking</p>
-<pre><code>property setter functions into account.
-
-If the field is not a property, this function behaves like
-`Reflect.setField`, but might be slower.
-
-If `field` is null, the result is unspecified.
-</code></pre></div></div></div></div></div></body></html>
+<html lang="en"><head><meta charset="utf-8"/><link href="./bootstrap-combined.min.css" rel="stylesheet" /><script type="text/javascript" src="./jquery-1.9.1.min.js"></script><script type="text/javascript" src="./bootstrap.min.js"></script><link href="./styles.css" rel="stylesheet" /><link rel="icon" href="./favicon.ico" type="image/x-icon"></link><script type="text/javascript" src="./nav.js"></script><script type="text/javascript" src="./index.js"></script><script type="text/javascript">var dox = {rootPath: "./",platforms: ["flash"],showInheritedFields: false};</script><title>Reflect - HaxeFlixel API docs</title></head><body><div class="navbar navbar-inverse navbar-fixed-top"><div class="navbar-inner"><form class="navbar-search pull-left" id="searchForm"><input id="search" type="text" class="search-query" placeholder="Filter" autocomplete="off"/></form><ul class="nav"><li id="select-platform" class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Platform<b class="caret"></b></a><ul class="dropdown-menu"><li data="all"><a href="#">All Platforms</a></li><li data="flash"><a href="#">flash</a></li></ul></li></ul></div></div><div id="container"><div id="nav"></div><div id="content"><div class="header"><span class="viewsource"><a href="https://github.com/HaxeFlixel/flixel/tree/master/Reflect.hx">View source</a></span><h1><code><span class="directive">class </span><span class="type">Reflect</span></code></h1></div><div class="body"><p class="availability">Available on all platforms</p><div class="doc"><p>The Reflect API is a way to manipulate values dynamically through an
+abstract interface in an untyped manner. Use with care.</p></div><h2>Class Fields</h2><div class="not-inherited"><div class="platform platform-flash"><a name="copy"></a><h3><p><code><span class="keyword">static </span><span class="keyword">function</span> <a href="#copy"><span class="identifier">copy</span></a>&lt;<span class="type">T</span>&gt;(o:<span class="type">T</span>):<span class="type">T</span></code></p></h3><div class="doc"><p>Copies the fields of structure <code>o</code>.</p>
+<p>This is only guaranteed to work on anonymous structures.</p>
+<p>If <code>o</code> is null, the result is unspecified.</p></div></div></div><div class="not-inherited"><div class="platform platform-flash"><a name="field"></a><h3><p><code><span class="keyword">static </span><span class="keyword">function</span> <a href="#field"><span class="identifier">field</span></a>(o:<a class="type" href="./Dynamic.html">Dynamic</a>, field:<a class="type" href="./String.html">String</a>):<a class="type" href="./Dynamic.html">Dynamic</a></code></p></h3><div class="doc"><p>Returns the value of the field named <code>field</code> on object <code>o</code>.</p>
+<p>If <code>o</code> is not an object or has no field named <code>field</code>, the result is
+null.</p>
+<p>If the field is defined as a property, its accessors are ignored. Refer
+to <code><a href="./Reflect.html#getProperty">Reflect.getProperty</a></code> for a function supporting property accessors.</p>
+<p>If <code>field</code> is null, the result is unspecified.</p>
+<p>(As3) If used on a property field, the getter will be invoked. It is
+not possible to obtain the value directly.</p></div></div></div><div class="not-inherited"><div class="platform platform-flash"><a name="fields"></a><h3><p><code><span class="keyword">static </span><span class="keyword">function</span> <a href="#fields"><span class="identifier">fields</span></a>(o:<a class="type" href="./Dynamic.html">Dynamic</a>):<a class="type" href="./Array.html">Array</a>&lt;<a class="type" href="./String.html">String</a>&gt;</code></p></h3><div class="doc"><p>Returns the fields of structure <code>o</code>.</p>
+<p>This method is only guaranteed to work on anonymous structures. Refer to
+<code><a href="./Type.html#getInstanceFields">Type.getInstanceFields</a></code> for a function supporting class instances.</p>
+<p>If <code>o</code> is null, the result is unspecified.</p></div></div></div><div class="not-inherited"><div class="platform platform-flash"><a name="getProperty"></a><h3><p><code><span class="keyword">static </span><span class="keyword">function</span> <a href="#getProperty"><span class="identifier">getProperty</span></a>(o:<a class="type" href="./Dynamic.html">Dynamic</a>, field:<a class="type" href="./String.html">String</a>):<a class="type" href="./Dynamic.html">Dynamic</a></code></p></h3><div class="doc"><p>Returns the value of the field named <code>field</code> on object <code>o</code>, taking
+property getter functions into account.</p>
+<p>If the field is not a property, this function behaves like
+<code><a href="./Reflect.html#field">Reflect.field</a></code>, but might be slower.</p>
+<p>If <code>o</code> or <code>field</code> are null, the result is unspecified.</p></div></div></div><div class="not-inherited"><div class="platform platform-flash"><a name="hasField"></a><h3><p><code><span class="keyword">static </span><span class="keyword">function</span> <a href="#hasField"><span class="identifier">hasField</span></a>(o:<a class="type" href="./Dynamic.html">Dynamic</a>, field:<a class="type" href="./String.html">String</a>):<a class="type" href="./Bool.html">Bool</a></code></p></h3><div class="doc"><p>Tells if structure <code>o</code> has a field named <code>field</code>.</p>
+<p>This is only guaranteed to work for anonymous structures. Refer to
+<code><a href="./Type.html#getInstanceFields">Type.getInstanceFields</a></code> for a function supporting class instances.</p>
+<p>If <code>o</code> or <code>field</code> are null, the result is unspecified.</p></div></div></div><div class="not-inherited"><div class="platform platform-flash"><a name="isEnumValue"></a><h3><p><code><span class="keyword">static </span><span class="keyword">function</span> <a href="#isEnumValue"><span class="identifier">isEnumValue</span></a>(v:<a class="type" href="./Dynamic.html">Dynamic</a>):<a class="type" href="./Bool.html">Bool</a></code></p></h3><div class="doc"><p>Tells if <code>v</code> is an enum value.</p>
+<p>The result is true if <code>v</code> is of type EnumValue, i.e. an enum
+constructor.</p>
+<p>Otherwise, including if <code>v</code> is null, the result is false.</p></div></div></div><div class="not-inherited"><div class="platform platform-flash"><a name="isFunction"></a><h3><p><code><span class="keyword">static </span><span class="keyword">function</span> <a href="#isFunction"><span class="identifier">isFunction</span></a>(f:<a class="type" href="./Dynamic.html">Dynamic</a>):<a class="type" href="./Bool.html">Bool</a></code></p></h3><div class="doc"><p>Returns true if <code>f</code> is a function, false otherwise.</p>
+<p>If <code>f</code> is null, the result is false.</p></div></div></div><div class="not-inherited"><div class="platform platform-flash"><a name="isObject"></a><h3><p><code><span class="keyword">static </span><span class="keyword">function</span> <a href="#isObject"><span class="identifier">isObject</span></a>(v:<a class="type" href="./Dynamic.html">Dynamic</a>):<a class="type" href="./Bool.html">Bool</a></code></p></h3><div class="doc"><p>Tells if <code>v</code> is an object.</p>
+<p>The result is true if <code>v</code> is one of the following:</p><ul><li>class instance</li><li>structure</li><li>Class<T></li><li>Enum<T></li></ul>
+<p>Otherwise, including if <code>v</code> is null, the result is false.</p></div></div></div><div class="not-inherited"><div class="platform platform-flash"><a name="makeVarArgs"></a><h3><p><code><span class="keyword">static </span><span class="keyword">function</span> <a href="#makeVarArgs"><span class="identifier">makeVarArgs</span></a>(f:<a class="type" href="./Array.html">Array</a>&lt;<a class="type" href="./Dynamic.html">Dynamic</a>&gt; -&gt;&nbsp;<a class="type" href="./Dynamic.html">Dynamic</a>):<a class="type" href="./Dynamic.html">Dynamic</a></code></p><p><code><span class="keyword">static </span><span class="keyword">function</span> <a href="#makeVarArgs"><span class="identifier">makeVarArgs</span></a>(f:<a class="type" href="./Array.html">Array</a>&lt;<a class="type" href="./Dynamic.html">Dynamic</a>&gt; -&gt;&nbsp;<a class="type" href="./Void.html">Void</a>):<a class="type" href="./Dynamic.html">Dynamic</a></code></p></h3><div class="doc"><p>Transform a function taking an array of arguments into a function that can
+be called with any number of arguments.</p></div></div></div><div class="not-inherited"><div class="platform platform-flash"><a name="setProperty"></a><h3><p><code><span class="keyword">static </span><span class="keyword">function</span> <a href="#setProperty"><span class="identifier">setProperty</span></a>(o:<a class="type" href="./Dynamic.html">Dynamic</a>, field:<a class="type" href="./String.html">String</a>, value:<a class="type" href="./Dynamic.html">Dynamic</a>):<a class="type" href="./Void.html">Void</a></code></p></h3><div class="doc"><p>Sets the field named <code>field</code> of object <code>o</code> to value <code>value</code>, taking
+property setter functions into account.</p>
+<p>If the field is not a property, this function behaves like
+<code><a href="./Reflect.html#setField">Reflect.setField</a></code>, but might be slower.</p>
+<p>If <code>field</code> is null, the result is unspecified.</p></div></div></div><a onclick="toggleInheritedFields()">Toggle inherited fields</a></div></div></div></body></html>

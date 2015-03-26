@@ -1,235 +1,167 @@
 <!DOCTYPE html>
-<html lang="en"><head><meta charset="utf-8"/><link href="../../bootstrap-combined.min.css" rel="stylesheet" /><script type="text/javascript" src="../../jquery-1.9.1.min.js"></script><script type="text/javascript" src="../../bootstrap.min.js"></script><link href="../../styles.css" rel="stylesheet" /><link rel="icon" href="../../favicon.ico" type="image/x-icon"></link><script type="text/javascript" src="../../nav.js"></script><script type="text/javascript" src="../../index.js"></script><script type="text/javascript">var dox = {rootPath: "../../",platforms: ["flash"]};</script><title>Constraint</title></head><body><div class="navbar navbar-inverse navbar-fixed-top"><div class="navbar-inner"><form class="navbar-search pull-left" id="searchForm"><input id="search" type="text" class="search-query" placeholder="Filter" autocomplete="off"/></form><ul class="nav"><li id="select-platform" class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Platform<b class="caret"></b></a><ul class="dropdown-menu"><li data="all"><a href="#">All Platforms</a></li><li data="flash"><a href="#">flash</a></li></ul></li></ul></div></div><div id="container"><div id="nav"></div><div id="content"><div class="header"><h1><code><span class="directive">class </span><span class="type">nape.constraint.Constraint</span></code></h1></div><div class="body"><p class="availability">Available on all platforms</p><div><table class="related-types toggle" style="margin-top:16px;"><tbody><tr><td colspan="2"><strong>Sub classes</strong></td></tr><tr><td width="12" style="vertical-align:top;"><a href="#" onclick="toggleInherited(this)"><img style="padding-top:4px;" src="../../triangle-closed.png"></img></a></td><td class="toggle-hide"><a href="../../nape/constraint/AngleJoint.html">AngleJoint</a>, <a href="../../nape/constraint/DistanceJoint.html">DistanceJoint</a>, <a href="../../nape/constraint/LineJoint.html">LineJoint</a>, <a href="../../nape/constraint/MotorJoint.html">MotorJoint</a>, <a href="../../nape/constraint/PivotJoint.html">PivotJoint</a>, <a href="../../nape/constraint/PulleyJoint.html">PulleyJoint</a>, <a href="../../nape/constraint/UserConstraint.html">UserConstraint</a>, <a href="../../nape/constraint/WeldJoint.html">WeldJoint</a></td><td class="toggle-show"><table class="table table-condensed"><tbody><tr><td width="200"><a href="../../nape/constraint/AngleJoint.html">AngleJoint</a></td><td><p>AngleJoint constraining the relative angles of two Bodies.
- * <br/><br/>
- * The equation for this constraint is:
- * <pre>
- * jointMin &lt;= ratio * body2.rotation - body1.rotation &lt;= jointMax
- * </pre></p></td></tr><tr><td width="200"><a href="../../nape/constraint/DistanceJoint.html">DistanceJoint</a></td><td><p>DistanceJoint limiting the distance between two local anchor points of Bodies.
- * <br/><br/>
- * The equation for this constraint could be written like:
- * <pre>
- * jointMin &lt;= distance(body2.localPointToWorld(anchor2), body1.localPointToWorld(anchor1)) &lt;= jointMax
- * </pre>
- * This joint is not designed to work when <code> jointMin = jointMax = 0 </code> and constraint is
- * stiff. In this instance you should use a PivotJoint instead.</p></td></tr><tr><td width="200"><a href="../../nape/constraint/LineJoint.html">LineJoint</a></td><td><p>LineJoint constraining anchor of one body, to a line segment of the other.
- * <br/><br/>
- * The equation for this constraint could be written like:
- * <pre>
- *        0  = [dir.cross(delta)]  = 0
- * jointMin &lt;= [dor.dot  (delta)] &lt;= jointMax
- * </pre>
- * where:
- * <pre>
- * dir   = body1.localVectorToWorld(direction).unit();
- * delta = body2.localPointToWorld(anchor2).sub(body1.localPointToWorld(anchor1));
- * </pre>
- * This is a 2 dimensional constraint, and is (when at the limits) solved as a
- * block constraint for better stability. This is however not the most stable
- * of joint when chained and put under stress and is a rather rare case where
- * using a non-stiff joint can actually be more stable than
- * using a stiff one.
- * <br/><br/>
- * When <code> jointMin = jointMax </code>, it would be better to use a PivotJoint
- *instead with suitable
- * placed anchors.
- * <br/><br/>
- * The line segment is defined implicitly via the
- * <code>anchor1, direction, jointMin and jointMax</code> properties with end
- * points defined in local coordinate system of body1 like:
- * <pre>
- * start = anchor1.add(direction.unit().mul(jointMin))
- * end   = anchor1.add(direction.unit().mul(jointMax))
- * </pre>
- * The reason for this more general description of a line segment is that one or
- * both of jointMin, jointMax are permitted to be infinite and a line segment
- * defined with a start and end point is not sufficient to describe such lines.</p></td></tr><tr><td width="200"><a href="../../nape/constraint/MotorJoint.html">MotorJoint</a></td><td><p>MotorJoint constraining the angular velocities of two bodies
- * <br/><br/>
- * The equation for this constraint is:
- * <pre>
- * (ratio * body2.angularVel) - body1.angularVel = rate
- * </pre>
- * This constraint operates only on the velocities of objects.</p></td></tr><tr><td width="200"><a href="../../nape/constraint/PivotJoint.html">PivotJoint</a></td><td><p>PivotJoint constraining two anchors points of bodies to be equal.
- * <br/><br/>
- * The equation for this constraint is:
- * <pre>
- * body2.localPointToWorld(anchor2) = body1.localPointToWorld(anchor1)
- * </pre>
- * You may view this constraint as being equal to the DistanceJoint constraint
- * when both its jointMin and jointMax are exactly 0 (In such a case a
- * DistanceJoint becomes degenerate). Compared to the DistanceJoint this is
- * a 2 dimensional constraint.</p></td></tr><tr><td width="200"><a href="../../nape/constraint/PulleyJoint.html">PulleyJoint</a></td><td><p>PulleyJoint limiting the weighted sum of distances between 2 pairs of 4 local anchor points of Bodies.
- * <br/><br/>
- * The equation for this constraint could be written like:
- * <pre>
- * jointMin &lt;= distance(body2.localPointToWorld(anchor2), body1.localPointToWorld(anchor1))
- *   + ratio * distance(body4.localPointToWorld(anchor4), body3.localPointToWorld(anchor3)) &lt;= jointMax
- * </pre>
- * This joint is not designed to work when either of these pairs achieves a distance of 0, it will still work
- * but may not be entirely ideal.
+<html lang="en"><head><meta charset="utf-8"/><link href="../../bootstrap-combined.min.css" rel="stylesheet" /><script type="text/javascript" src="../../jquery-1.9.1.min.js"></script><script type="text/javascript" src="../../bootstrap.min.js"></script><link href="../../styles.css" rel="stylesheet" /><link rel="icon" href="../../favicon.ico" type="image/x-icon"></link><script type="text/javascript" src="../../nav.js"></script><script type="text/javascript" src="../../index.js"></script><script type="text/javascript">var dox = {rootPath: "../../",platforms: ["flash"],showInheritedFields: false};</script><title>nape.constraint.Constraint - HaxeFlixel API docs</title></head><body><div class="navbar navbar-inverse navbar-fixed-top"><div class="navbar-inner"><form class="navbar-search pull-left" id="searchForm"><input id="search" type="text" class="search-query" placeholder="Filter" autocomplete="off"/></form><ul class="nav"><li id="select-platform" class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Platform<b class="caret"></b></a><ul class="dropdown-menu"><li data="all"><a href="#">All Platforms</a></li><li data="flash"><a href="#">flash</a></li></ul></li></ul></div></div><div id="container"><div id="nav"></div><div id="content"><div class="header"><span class="viewsource"><a href="https://github.com/HaxeFlixel/flixel/tree/master/nape/constraint/Constraint.hx">View source</a></span><h1><code><span class="directive">class </span><span class="type">nape.constraint.Constraint</span></code></h1></div><div class="body"><p class="availability">Available on all platforms</p><div><table class="related-types toggle" style="margin-top:16px;"><tbody><tr><td colspan="2"><strong>Sub classes</strong></td></tr><tr><td width="12" style="vertical-align:top;"><a href="#" onclick="toggleInherited(this)"><img style="padding-top:4px;" src="../../triangle-closed.png"></img></a></td><td class="toggle-hide"><a href="../../nape/constraint/AngleJoint.html">AngleJoint</a>, <a href="../../nape/constraint/DistanceJoint.html">DistanceJoint</a>, <a href="../../nape/constraint/LineJoint.html">LineJoint</a>, <a href="../../nape/constraint/MotorJoint.html">MotorJoint</a>, <a href="../../nape/constraint/PivotJoint.html">PivotJoint</a>, <a href="../../nape/constraint/PulleyJoint.html">PulleyJoint</a>, <a href="../../nape/constraint/UserConstraint.html">UserConstraint</a>, <a href="../../nape/constraint/WeldJoint.html">WeldJoint</a></td><td class="toggle-show"><table class="table table-condensed"><tbody><tr><td width="200"><a href="../../nape/constraint/AngleJoint.html">AngleJoint</a></td><td><p>AngleJoint constraining the relative angles of two Bodies.
+<br/><br/>
+The equation for this constraint is:
+<pre>
+jointMin &lt;= ratio * body2.rotation - body1.rotation &lt;= jointMax
+</pre></p></td></tr><tr><td width="200"><a href="../../nape/constraint/DistanceJoint.html">DistanceJoint</a></td><td><p>DistanceJoint limiting the distance between two local anchor points of Bodies.
+<br/><br/>
+The equation for this constraint could be written like:
+<pre>
+jointMin &lt;= distance(body2.localPointToWorld(anchor2), body1.localPointToWorld(anchor1)) &lt;= jointMax
+</pre>
+This joint is not designed to work when <code> jointMin = jointMax = 0 </code> and constraint is
+stiff. In this instance you should use a PivotJoint instead.</p></td></tr><tr><td width="200"><a href="../../nape/constraint/LineJoint.html">LineJoint</a></td><td><p>LineJoint constraining anchor of one body, to a line segment of the other.
+<br/><br/>
+The equation for this constraint could be written like:
+<pre></p></td></tr><tr><td width="200"><a href="../../nape/constraint/MotorJoint.html">MotorJoint</a></td><td><p>MotorJoint constraining the angular velocities of two bodies
+<br/><br/>
+The equation for this constraint is:
+<pre>
+(ratio * body2.angularVel) - body1.angularVel = rate
+</pre>
+This constraint operates only on the velocities of objects.</p></td></tr><tr><td width="200"><a href="../../nape/constraint/PivotJoint.html">PivotJoint</a></td><td><p>PivotJoint constraining two anchors points of bodies to be equal.
+<br/><br/>
+The equation for this constraint is:
+<pre>
+body2.localPointToWorld(anchor2) = body1.localPointToWorld(anchor1)
+</pre>
+You may view this constraint as being equal to the DistanceJoint constraint
+when both its jointMin and jointMax are exactly 0 (In such a case a
+DistanceJoint becomes degenerate). Compared to the DistanceJoint this is
+a 2 dimensional constraint.</p></td></tr><tr><td width="200"><a href="../../nape/constraint/PulleyJoint.html">PulleyJoint</a></td><td><p>PulleyJoint limiting the weighted sum of distances between 2 pairs of 4 local anchor points of Bodies.
+<br/><br/>
+The equation for this constraint could be written like:
+<pre>
+jointMin &lt;= distance(body2.localPointToWorld(anchor2), body1.localPointToWorld(anchor1))
++ ratio * distance(body4.localPointToWorld(anchor4), body3.localPointToWorld(anchor3)) &lt;= jointMax
+</pre>
+This joint is not designed to work when either of these pairs achieves a distance of 0, it will still work
+but may not be entirely ideal.
 !1*<br/><br/> * This constraint can be used in a full 4-body set up, or a 3-body set up or a 2-body set up permitting
- * any arrangement as long as body1 != body2 and body3 != body4</p></td></tr><tr><td width="200"><a href="../../nape/constraint/UserConstraint.html">UserConstraint</a></td><td><p>UserConstraint providing a low-level API for user-defined Constraints.
- * <br/><br/>
- * This API is intended to be powerful enough to model any constraint that
- * Nape can handle, but not so low level as to be completely prohibitive.
- * <br/>
- * For instance, things like soft-constraints are automatically provided
- * by this API.
- * <br/><br/>
- * Working with this API will require mathematical skills. A full manual
- * for this API is provided at: http://napephys.com/help/Constraints.pdf
- * <br/><br/>
- * You may also be interested in the nape-symbolic module that is available
- * on github/haxelib/nape downloads. Which provides a run-time compiled DSL
- * using this API to make prototyping (or creating non-performance critical)
- * user-defined constraints simple without the need for great mathematical
- * skills as well as being much quicker to work with.</p></td></tr><tr><td width="200"><a href="../../nape/constraint/WeldJoint.html">WeldJoint</a></td><td><p>WeldJoint constraining two bodies to be exactly locked together.
- * <br/><br/>
- * The equation for this constraint is:
- * <pre>
- * [ body2.localPointToWorld(anchor2) ] = [ body1.localPointToWorld(anchor1) ]
- * [          body2.rotation          ]   [      body1.rotation + phase      ]
- * </pre>
- * This constraint is equivalent to using a PivotJoint and AngleJoint
- * together except that it is solved as a single constraint and thus
- * will be more stable.
- * <br/><br/>
- * This constraint is 3 dimensional.
- * <br/><br/>
- * Although this constraint is very stable, if you chain bodies together
- * using this constraint, you should except to see a small amount of rotation
- * about the anchor points so you should chose them accordingly.</p></td></tr></tbody></table></td></tr></tbody></table></div><div class="doc"><p>Base type for all Nape joints and constraints</p></div><h2>Instance Fields</h2><div class="platform platform-flash"><a name="active"></a><h3><p><code><span class="keyword">var</span> <a href="#active"><span class="identifier">active</span></a>:<a class="type" href="../../Bool.html">Bool</a></code></p></h3><div class="doc"><p>Whether this constraint is active or not.
-     * <br/><br/>
-     * Setting a constraint to be no longer active is a useful way of
-     * temporarigly disabling a constraint without having to remove it
-     * from a Space.
-     *
-     * @default true</p></div></div><div class="platform platform-flash"><a name="breakUnderError"></a><h3><p><code><span class="keyword">var</span> <a href="#breakUnderError"><span class="identifier">breakUnderError</span></a>:<a class="type" href="../../Bool.html">Bool</a></code></p></h3><div class="doc"><p>Whether constraint will break once maxError is reached.
-     * <br/><br/>
-     * This property effects both stiff and non-stiff constraints.
-     *
-     * @default false</p></div></div><div class="platform platform-flash"><a name="breakUnderForce"></a><h3><p><code><span class="keyword">var</span> <a href="#breakUnderForce"><span class="identifier">breakUnderForce</span></a>:<a class="type" href="../../Bool.html">Bool</a></code></p></h3><div class="doc"><p>Whether constraint will break once maxForce is reached.
-     * <br/><br/>
-     * This property effects both stiff and non-stiff constraints, though
-     * for the same reasons as those of maxForce, does not make much sense
-     * to be used in stiff constraints.
-     *
-     * @default false</p></div></div><div class="platform platform-flash"><a name="cbTypes"></a><h3><p><code><span class="keyword">var</span> <a href="#cbTypes"><span class="identifier">cbTypes</span></a>:<a class="type" href="../../nape/callbacks/CbTypeList.html">CbTypeList</a></code></p></h3><div class="doc"><p>Set of CbTypes for this constraints for callbacks.
-     * <br/><br/>
-     * This value cannot at present be set, but can be modified.
-     *
-     * @default [CbType.ANY_CONSTRAINT]</p></div></div><div class="platform platform-flash"><a name="compound"></a><h3><p><code><span class="keyword">var</span> <a href="#compound"><span class="identifier">compound</span></a>:<a class="type" href="../../Null.html">Null</a>&lt;<a class="type" href="../../nape/phys/Compound.html">Compound</a>&gt;</code></p></h3><div class="doc"><p>Compound this Constraints belong to.
-     * <br/><br/>
-     * If this constraint is in a Space or another Compound and you change
-     * its compound, then it will be removed from that Space or Compound.
-     *
-     * @default null</p></div></div><div class="platform platform-flash"><a name="damping"></a><h3><p><code><span class="keyword">var</span> <a href="#damping"><span class="identifier">damping</span></a>:<a class="type" href="../../Float.html">Float</a></code></p></h3><div class="doc"><p>Damping ratio of elastic properties of constraint.
-     * <br/><br/>
-     * This property only has an effect when constraint is not stiff.
-     * <br/><br/>
-     * This value corresponds to in the ideal situation, the damping
-     * ratio of the constraints oscillations with 1 corresponding to
-     * a total dampening, and values greater than one being over-dampening.
-     * <br/><br/>
-     * This value must be zero or positive.
-     *
-     * @default 1</p></div></div><div class="platform platform-flash"><a name="debugDraw"></a><h3><p><code><span class="keyword">var</span> <a href="#debugDraw"><span class="identifier">debugDraw</span></a>:<a class="type" href="../../Bool.html">Bool</a></code></p></h3><div class="doc"><p>Set to disable debug drawing/
-     * <br/><br/>
-     * When true, this Constraint will not be drawn during debug draw operations
-     * unless specifically given as argument to Debug draw() method.
-     * @default true</p></div></div><div class="platform platform-flash"><a name="frequency"></a><h3><p><code><span class="keyword">var</span> <a href="#frequency"><span class="identifier">frequency</span></a>:<a class="type" href="../../Float.html">Float</a></code></p></h3><div class="doc"><p>Frequency of elastic properties of constraint.
-     * <br/><br/>
-     * This property only has an effect when constraint is not stiff.
-     * <br/><br/>
-     * This value corresponds to in an ideal situation, the number of
-     * spring like oscillations the constraint will make per second.
-     * <br/><br/>
-     * This value must be strictly positive (0 not allowed).
-     *
-     * @default 10</p></div></div><div class="platform platform-flash"><a name="ignore"></a><h3><p><code><span class="keyword">var</span> <a href="#ignore"><span class="identifier">ignore</span></a>:<a class="type" href="../../Bool.html">Bool</a></code></p></h3><div class="doc"><p>Whether interactions between related Bodys will be ignored.
-     * <br/><br/>
-     * If true, then the Bodys related to this constraint will not
-     * be permitted to interact in anyway, including callbacks.
-     *
-     * @default false</p></div></div><div class="platform platform-flash"><a name="isSleeping"></a><h3><p><code><span class="keyword">var</span> <a href="#isSleeping"><span class="identifier">isSleeping</span></a>:<a class="type" href="../../Bool.html">Bool</a></code></p></h3><div class="doc"><p>Whether this constraint is sleeping or not.
-     * <br/><br/>
-     * This property is only defined if the constraint is inside of a Space
-     * and is active, otherwise an error will be thrown should you access this
-     * property.
-     * <br/><br/>
-     * This value is immutable, In Nape you do not ever need to manually
-     * wake up a Constraint. It will always be done automatically without error.
-     * <br/><br/>
-     * To manually put a Constraint to sleep is against the very nature of Nape
-     * API and so is excluded from the core of Nape. If you really want to do this
-     * you should make use of the nape-hacks module.</p></div></div><div class="platform platform-flash"><a name="maxError"></a><h3><p><code><span class="keyword">var</span> <a href="#maxError"><span class="identifier">maxError</span></a>:<a class="type" href="../../Float.html">Float</a></code></p></h3><div class="doc"><p>The maximum amount of error this constraint is allowed to use.
-     * <br/><br/>
-     * For stiff constraints, this value only serves to work in conjunction
-     * with breakUnderError to permit breaking of the constraint.
-     * <br/><br/>
-     * For non-stiff constraints, this value will also effect how the constraint
-     * behaves when breakUnderError is false by restricting the amount of error
-     * that will be resolved; this will not work for stiff constraints.
-     *
-     * @default infinity</p></div></div><div class="platform platform-flash"><a name="maxForce"></a><h3><p><code><span class="keyword">var</span> <a href="#maxForce"><span class="identifier">maxForce</span></a>:<a class="type" href="../../Float.html">Float</a></code></p></h3><div class="doc"><p>The maximum amount of force this constraint is allowed to use.
-     * <br/><br/>
-     * This value, whilst still used in a stiff constraint will not work
-     * as you might hope for; since a stiff constraint resolves positional
-     * error without using impulses, the maxForce will not have any effect
-     * on how positional errors are resolved.
-     * <br/><br/>
-     * This value must be zero or positive.
-     *
-     * @default infinity</p></div></div><div class="platform platform-flash"><a name="removeOnBreak"></a><h3><p><code><span class="keyword">var</span> <a href="#removeOnBreak"><span class="identifier">removeOnBreak</span></a>:<a class="type" href="../../Bool.html">Bool</a></code></p></h3><div class="doc"><p>Whether constraint will be removed when it breaks.
-     * <br/><br/>
-     * If true, then when constraint is broken it will be removed from
-     * the Space. Otherwise it will simple be made inactive.
-     *
-     * @default true</p></div></div><div class="platform platform-flash"><a name="space"></a><h3><p><code><span class="keyword">var</span> <a href="#space"><span class="identifier">space</span></a>:<a class="type" href="../../Null.html">Null</a>&lt;<a class="type" href="../../nape/space/Space.html">Space</a>&gt;</code></p></h3><div class="doc"><p>Space this constraint is inside of.
-     * <br/><br/>
-     * Whether this constraint is directly in a Space, or part of a Compound
-     * which is inside of a space, this value will be equal to that Space.
-     * <br/><br/>
-     * If this constraint is inside of a Compound, then you cannot modify its
-     * Space as the constraint belongs to that Compound.
-     *
-     * @default null</p></div></div><div class="platform platform-flash"><a name="stiff"></a><h3><p><code><span class="keyword">var</span> <a href="#stiff"><span class="identifier">stiff</span></a>:<a class="type" href="../../Bool.html">Bool</a></code></p></h3><div class="doc"><p>Whether constraint is stiff, or elastic.
-     * <br/><br/>
-     * A stiff constraint has its positional error resolved directly
-     * as with contact penetrations. This is generally a more stable
-     * way of solving positional errors but has a side-effect that for example
-     * changing the pivot point on a constraint used for mouse control will not
-     * cause the objects to swing as the positional error is solved without
-     * effecting the velocity of the object which may not be wanted.
-     * <br/><br/>
-     * If false, then the positional error of the constraint will be
-     * resolved in an elastic way using changes in velocity.
-     *
-     * @default true</p></div></div><div class="platform platform-flash"><a name="userData"></a><h3><p><code><span class="keyword">var</span> <a href="#userData"><span class="identifier">userData</span></a>:<a class="type" href="../../Dynamic.html">Dynamic</a><a class="type" href="../../Dynamic.html">Dynamic</a></code></p></h3><div class="doc"><p>Dynamic object for user to store additional data.
-     * <br/><br/>
-     * This object cannot be set, only its dynamically created
-     * properties may be set. In AS3 the type of this property is &amp;#42
-     * <br/><br/>
-     * This object will be lazily constructed so that until accessed
-     * for the first time, will be null internally.
-     *
-     * @default {}</p></div></div><div class="platform platform-flash"><a name="zpp_inner"></a><h3><p><code><span class="keyword">var</span> <a href="#zpp_inner"><span class="identifier">zpp_inner</span></a>:<a class="type" href="../../zpp_nape/constraint/ZPP_Constraint.html">ZPP_Constraint</a></code></p></h3><div class="doc"><p>@private</p></div></div><div class="platform platform-flash"><a name="new"></a><h3><p><code><span class="keyword">function</span> <a href="#new"><span class="identifier">new</span></a>():<a class="type" href="../../Void.html">Void</a></code></p></h3><div class="doc"><p>@private</p></div></div><div class="platform platform-flash"><a name="bodyImpulse"></a><h3><p><code><span class="keyword">function</span> <a href="#bodyImpulse"><span class="identifier">bodyImpulse</span></a>(body:<a class="type" href="../../nape/phys/Body.html">Body</a>):<a class="type" href="../../nape/geom/Vec3.html">Vec3</a></code></p></h3><div class="doc"><p>Compute impulse that was applied to the given Body.
-     * <br/><br/>
-     * This impulse is the actual (mass weighted) change in velocity
-     * that occured due to this constraint.
-     *
-     * </p><table class="table table-condensed"><tbody><tr><td>body</td><td><p>The Body to compute impulse for.
-    * </p></td></tr><tr><td>returns</td><td><p>The impulse that was applied to the body in the previous step.
-* </p></td></tr></tbody></table></div></div><div class="platform platform-flash"><a name="copy"></a><h3><p><code><span class="keyword">function</span> <a href="#copy"><span class="identifier">copy</span></a>():<a class="type" href="../../nape/constraint/Constraint.html">Constraint</a></code></p></h3><div class="doc"><p>Produce copy of constraint.
-     * <br/><br/>
-     * All constraint properties except for internal impulse cache
-     * and userData field will be copied.
-     *
-     * </p><table class="table table-condensed"><tbody><tr><td>returns</td><td><p>The copied Constraint.</p></td></tr></tbody></table></div></div><div class="platform platform-flash"><a name="impulse"></a><h3><p><code><span class="keyword">function</span> <a href="#impulse"><span class="identifier">impulse</span></a>():<a class="type" href="../../nape/geom/MatMN.html">MatMN</a></code></p></h3><div class="doc"><p>Return the constraint-space impulse applied in previous step.
-     *
-     * </p><table class="table table-condensed"><tbody><tr><td>returns</td><td><p>A new MatMN representing the constraint space impulse.</p></td></tr></tbody></table></div></div><div class="platform platform-flash"><a name="toString"></a><h3><p><code><span class="keyword">function</span> <a href="#toString"><span class="identifier">toString</span></a>():<a class="type" href="../../String.html">String</a></code></p></h3><div class="doc"><p>@private</p></div></div><div class="platform platform-flash"><a name="visitBodies"></a><h3><p><code><span class="keyword">function</span> <a href="#visitBodies"><span class="identifier">visitBodies</span></a>(lambda:<a class="type" href="../../nape/phys/Body.html">Body</a> -&gt;<a class="type" href="../../Void.html">Void</a>):<a class="type" href="../../Void.html">Void</a></code></p></h3><div class="doc"><p>Apply given function to all Bodys linked to the constraint.
-     * <br/><br/>
-     * If a body is duplicated in a constraint then it will only
-     * be visited once.
-     *
-     * </p><table class="table table-condensed"><tbody><tr><td>lambda</td><td><p>The function to apply to each Body.
-    * </p></td></tr></tbody></table></div></div></div></div></div></body></html>
+any arrangement as long as body1 != body2 and body3 != body4</p></td></tr><tr><td width="200"><a href="../../nape/constraint/UserConstraint.html">UserConstraint</a></td><td><p>UserConstraint providing a low-level API for user-defined Constraints.
+<br/><br/>
+This API is intended to be powerful enough to model any constraint that
+Nape can handle, but not so low level as to be completely prohibitive.
+<br/>
+For instance, things like soft-constraints are automatically provided
+by this API.
+<br/><br/>
+Working with this API will require mathematical skills. A full manual
+for this API is provided at: http://napephys.com/help/Constraints.pdf
+<br/><br/>
+You may also be interested in the nape-symbolic module that is available
+on github/haxelib/nape downloads. Which provides a run-time compiled DSL
+using this API to make prototyping (or creating non-performance critical)
+user-defined constraints simple without the need for great mathematical
+skills as well as being much quicker to work with.</p></td></tr><tr><td width="200"><a href="../../nape/constraint/WeldJoint.html">WeldJoint</a></td><td><p>WeldJoint constraining two bodies to be exactly locked together.
+<br/><br/>
+The equation for this constraint is:
+<pre>
+[ body2.localPointToWorld(anchor2) ] = [ body1.localPointToWorld(anchor1) ]
+[          body2.rotation          ]   [      body1.rotation + phase      ]
+</pre>
+This constraint is equivalent to using a PivotJoint and AngleJoint
+together except that it is solved as a single constraint and thus
+will be more stable.
+<br/><br/>
+This constraint is 3 dimensional.
+<br/><br/>
+Although this constraint is very stable, if you chain bodies together
+using this constraint, you should except to see a small amount of rotation
+about the anchor points so you should chose them accordingly.</p></td></tr></tbody></table></td></tr></tbody></table></div><div class="doc"><p>Base type for all Nape joints and constraints</p></div><h2>Instance Fields</h2><a onclick="toggleInheritedFields()">Toggle inherited fields</a><div class="not-inherited"><div class="platform platform-flash"><a name="active"></a><h3><p><code><span class="keyword">var</span> <a href="#active"><span class="identifier">active</span></a>(get,set):<a class="type" href="../../Bool.html">Bool</a></code></p></h3><div class="doc"><p>Whether this constraint is active or not.
+<br/><br/>
+Setting a constraint to be no longer active is a useful way of
+temporarigly disabling a constraint without having to remove it
+from a Space.</p><table class="table table-condensed"><tbody><col width="10%"/>  <col width="100%"/><tr><th>Default value:</th><td><p>true</p></td></tr></tbody></table></div></div></div><div class="not-inherited"><div class="platform platform-flash"><a name="bodyImpulse"></a><h3><p><code><span class="keyword">function</span> <a href="#bodyImpulse"><span class="identifier">bodyImpulse</span></a>(body:<a class="type" href="../../nape/phys/Body.html">Body</a>):<a class="type" href="../../nape/geom/Vec3.html">Vec3</a></code></p></h3><div class="doc"><p>Compute impulse that was applied to the given Body.
+<br/><br/>
+This impulse is the actual (mass weighted) change in velocity
+that occured due to this constraint.</p><table class="table table-condensed"><tbody><col width="10%"/>  <col width="100%"/><tr><th colspan="2">Parameters:</th></tr><tr><td>body</td><td><p>The Body to compute impulse for.</p></td></tr><tr><th>Returns:</th><td><p>The impulse that was applied to the body in the previous step.</p></td></tr><tr><th colspan="2">Throws:</th></tr><tr><td>#</td><td><p>If Body is not related to the Constraint.</p></td></tr></tbody></table></div></div></div><div class="not-inherited"><div class="platform platform-flash"><a name="breakUnderError"></a><h3><p><code><span class="keyword">var</span> <a href="#breakUnderError"><span class="identifier">breakUnderError</span></a>(get,set):<a class="type" href="../../Bool.html">Bool</a></code></p></h3><div class="doc"><p>Whether constraint will break once maxError is reached.
+<br/><br/>
+This property effects both stiff and non-stiff constraints.</p><table class="table table-condensed"><tbody><col width="10%"/>  <col width="100%"/><tr><th>Default value:</th><td><p>false</p></td></tr></tbody></table></div></div></div><div class="not-inherited"><div class="platform platform-flash"><a name="breakUnderForce"></a><h3><p><code><span class="keyword">var</span> <a href="#breakUnderForce"><span class="identifier">breakUnderForce</span></a>(get,set):<a class="type" href="../../Bool.html">Bool</a></code></p></h3><div class="doc"><p>Whether constraint will break once maxForce is reached.
+<br/><br/>
+This property effects both stiff and non-stiff constraints, though
+for the same reasons as those of maxForce, does not make much sense
+to be used in stiff constraints.</p><table class="table table-condensed"><tbody><col width="10%"/>  <col width="100%"/><tr><th>Default value:</th><td><p>false</p></td></tr></tbody></table></div></div></div><div class="not-inherited"><div class="platform platform-flash"><a name="cbTypes"></a><h3><p><code><span class="keyword">var</span> <a href="#cbTypes"><span class="identifier">cbTypes</span></a>(get,null):<a class="type" href="../../nape/callbacks/CbTypeList.html">CbTypeList</a></code></p></h3><div class="doc"><p>Set of CbTypes for this constraints for callbacks.
+<br/><br/>
+This value cannot at present be set, but can be modified.</p><table class="table table-condensed"><tbody><col width="10%"/>  <col width="100%"/><tr><th>Default value:</th><td><p>[CbType.ANY_CONSTRAINT]</p></td></tr></tbody></table></div></div></div><div class="not-inherited"><div class="platform platform-flash"><a name="compound"></a><h3><p><code><span class="keyword">var</span> <a href="#compound"><span class="identifier">compound</span></a>(get,set):<a class="type" href="../../Null.html">Null</a>&lt;<a class="type" href="../../nape/phys/Compound.html">Compound</a>&gt;</code></p></h3><div class="doc"><p>Compound this Constraints belong to.
+<br/><br/>
+If this constraint is in a Space or another Compound and you change
+its compound, then it will be removed from that Space or Compound.</p><table class="table table-condensed"><tbody><col width="10%"/>  <col width="100%"/><tr><th>Default value:</th><td><p>null</p></td></tr></tbody></table></div></div></div><div class="not-inherited"><div class="platform platform-flash"><a name="copy"></a><h3><p><code><span class="keyword">function</span> <a href="#copy"><span class="identifier">copy</span></a>():<a class="type" href="../../nape/constraint/Constraint.html">Constraint</a></code></p></h3><div class="doc"><p>Produce copy of constraint.
+<br/><br/>
+All constraint properties except for internal impulse cache
+and userData field will be copied.</p><table class="table table-condensed"><tbody><col width="10%"/>  <col width="100%"/><tr><th>Returns:</th><td><p>The copied Constraint.</p></td></tr></tbody></table></div></div></div><div class="not-inherited"><div class="platform platform-flash"><a name="damping"></a><h3><p><code><span class="keyword">var</span> <a href="#damping"><span class="identifier">damping</span></a>(get,set):<a class="type" href="../../Float.html">Float</a></code></p></h3><div class="doc"><p>Damping ratio of elastic properties of constraint.
+<br/><br/>
+This property only has an effect when constraint is not stiff.
+<br/><br/>
+This value corresponds to in the ideal situation, the damping
+ratio of the constraints oscillations with 1 corresponding to
+a total dampening, and values greater than one being over-dampening.
+<br/><br/>
+This value must be zero or positive.</p><table class="table table-condensed"><tbody><col width="10%"/>  <col width="100%"/><tr><th>Default value:</th><td><p>1</p></td></tr></tbody></table></div></div></div><div class="not-inherited"><div class="platform platform-flash"><a name="debugDraw"></a><h3><p><code><span class="keyword">var</span> <a href="#debugDraw"><span class="identifier">debugDraw</span></a>:<a class="type" href="../../Bool.html">Bool</a><span> = true</span></code></p></h3><div class="doc"><p>Set to disable debug drawing/
+<br/><br/>
+When true, this Constraint will not be drawn during debug draw operations
+unless specifically given as argument to Debug draw() method.</p><table class="table table-condensed"><tbody><col width="10%"/>  <col width="100%"/><tr><th>Default value:</th><td><p>true</p></td></tr></tbody></table></div></div></div><div class="not-inherited"><div class="platform platform-flash"><a name="frequency"></a><h3><p><code><span class="keyword">var</span> <a href="#frequency"><span class="identifier">frequency</span></a>(get,set):<a class="type" href="../../Float.html">Float</a></code></p></h3><div class="doc"><p>Frequency of elastic properties of constraint.
+<br/><br/>
+This property only has an effect when constraint is not stiff.
+<br/><br/>
+This value corresponds to in an ideal situation, the number of
+spring like oscillations the constraint will make per second.
+<br/><br/>
+This value must be strictly positive (0 not allowed).</p><table class="table table-condensed"><tbody><col width="10%"/>  <col width="100%"/><tr><th>Default value:</th><td><p>10</p></td></tr></tbody></table></div></div></div><div class="not-inherited"><div class="platform platform-flash"><a name="ignore"></a><h3><p><code><span class="keyword">var</span> <a href="#ignore"><span class="identifier">ignore</span></a>(get,set):<a class="type" href="../../Bool.html">Bool</a></code></p></h3><div class="doc"><p>Whether interactions between related Bodys will be ignored.
+<br/><br/>
+If true, then the Bodys related to this constraint will not
+be permitted to interact in anyway, including callbacks.</p><table class="table table-condensed"><tbody><col width="10%"/>  <col width="100%"/><tr><th>Default value:</th><td><p>false</p></td></tr></tbody></table></div></div></div><div class="not-inherited"><div class="platform platform-flash"><a name="impulse"></a><h3><p><code><span class="keyword">function</span> <a href="#impulse"><span class="identifier">impulse</span></a>():<a class="type" href="../../nape/geom/MatMN.html">MatMN</a></code></p></h3><div class="doc"><p>Return the constraint-space impulse applied in previous step.</p><table class="table table-condensed"><tbody><col width="10%"/>  <col width="100%"/><tr><th>Returns:</th><td><p>A new MatMN representing the constraint space impulse.</p></td></tr></tbody></table></div></div></div><div class="not-inherited"><div class="platform platform-flash"><a name="isSleeping"></a><h3><p><code><span class="keyword">var</span> <a href="#isSleeping"><span class="identifier">isSleeping</span></a>(get,null):<a class="type" href="../../Bool.html">Bool</a></code></p></h3><div class="doc"><p>Whether this constraint is sleeping or not.
+<br/><br/>
+This property is only defined if the constraint is inside of a Space
+and is active, otherwise an error will be thrown should you access this
+property.
+<br/><br/>
+This value is immutable, In Nape you do not ever need to manually
+wake up a Constraint. It will always be done automatically without error.
+<br/><br/>
+To manually put a Constraint to sleep is against the very nature of Nape
+API and so is excluded from the core of Nape. If you really want to do this
+you should make use of the nape-hacks module.</p></div></div></div><div class="not-inherited"><div class="platform platform-flash"><a name="maxError"></a><h3><p><code><span class="keyword">var</span> <a href="#maxError"><span class="identifier">maxError</span></a>(get,set):<a class="type" href="../../Float.html">Float</a></code></p></h3><div class="doc"><p>The maximum amount of error this constraint is allowed to use.
+<br/><br/>
+For stiff constraints, this value only serves to work in conjunction
+with breakUnderError to permit breaking of the constraint.
+<br/><br/>
+For non-stiff constraints, this value will also effect how the constraint
+behaves when breakUnderError is false by restricting the amount of error
+that will be resolved; this will not work for stiff constraints.</p><table class="table table-condensed"><tbody><col width="10%"/>  <col width="100%"/><tr><th>Default value:</th><td><p>infinity</p></td></tr></tbody></table></div></div></div><div class="not-inherited"><div class="platform platform-flash"><a name="maxForce"></a><h3><p><code><span class="keyword">var</span> <a href="#maxForce"><span class="identifier">maxForce</span></a>(get,set):<a class="type" href="../../Float.html">Float</a></code></p></h3><div class="doc"><p>The maximum amount of force this constraint is allowed to use.
+<br/><br/>
+This value, whilst still used in a stiff constraint will not work
+as you might hope for; since a stiff constraint resolves positional
+error without using impulses, the maxForce will not have any effect
+on how positional errors are resolved.
+<br/><br/>
+This value must be zero or positive.</p><table class="table table-condensed"><tbody><col width="10%"/>  <col width="100%"/><tr><th>Default value:</th><td><p>infinity</p></td></tr></tbody></table></div></div></div><div class="not-inherited"><div class="platform platform-flash"><a name="new"></a><h3><p><code><span class="keyword">function</span> <a href="#new"><span class="identifier">new</span></a>():<a class="type" href="../../Void.html">Void</a></code></p></h3><div class="doc"><p>@private</p></div></div></div><div class="not-inherited"><div class="platform platform-flash"><a name="removeOnBreak"></a><h3><p><code><span class="keyword">var</span> <a href="#removeOnBreak"><span class="identifier">removeOnBreak</span></a>(get,set):<a class="type" href="../../Bool.html">Bool</a></code></p></h3><div class="doc"><p>Whether constraint will be removed when it breaks.
+<br/><br/>
+If true, then when constraint is broken it will be removed from
+the Space. Otherwise it will simple be made inactive.</p><table class="table table-condensed"><tbody><col width="10%"/>  <col width="100%"/><tr><th>Default value:</th><td><p>true</p></td></tr></tbody></table></div></div></div><div class="not-inherited"><div class="platform platform-flash"><a name="space"></a><h3><p><code><span class="keyword">var</span> <a href="#space"><span class="identifier">space</span></a>(get,set):<a class="type" href="../../Null.html">Null</a>&lt;<a class="type" href="../../nape/space/Space.html">Space</a>&gt;</code></p></h3><div class="doc"><p>Space this constraint is inside of.
+<br/><br/>
+Whether this constraint is directly in a Space, or part of a Compound
+which is inside of a space, this value will be equal to that Space.
+<br/><br/>
+If this constraint is inside of a Compound, then you cannot modify its
+Space as the constraint belongs to that Compound.</p><table class="table table-condensed"><tbody><col width="10%"/>  <col width="100%"/><tr><th>Default value:</th><td><p>null</p></td></tr></tbody></table></div></div></div><div class="not-inherited"><div class="platform platform-flash"><a name="stiff"></a><h3><p><code><span class="keyword">var</span> <a href="#stiff"><span class="identifier">stiff</span></a>(get,set):<a class="type" href="../../Bool.html">Bool</a></code></p></h3><div class="doc"><p>Whether constraint is stiff, or elastic.
+<br/><br/>
+A stiff constraint has its positional error resolved directly
+as with contact penetrations. This is generally a more stable
+way of solving positional errors but has a side-effect that for example
+changing the pivot point on a constraint used for mouse control will not
+cause the objects to swing as the positional error is solved without
+effecting the velocity of the object which may not be wanted.
+<br/><br/>
+If false, then the positional error of the constraint will be
+resolved in an elastic way using changes in velocity.</p><table class="table table-condensed"><tbody><col width="10%"/>  <col width="100%"/><tr><th>Default value:</th><td><p>true</p></td></tr></tbody></table></div></div></div><div class="not-inherited"><div class="platform platform-flash"><a name="toString"></a><h3><p><code><span class="keyword">function</span> <a href="#toString"><span class="identifier">toString</span></a>():<a class="type" href="../../String.html">String</a></code></p></h3><div class="doc"><p>@private</p></div></div></div><div class="not-inherited"><div class="platform platform-flash"><a name="userData"></a><h3><p><code><span class="keyword">var</span> <a href="#userData"><span class="identifier">userData</span></a>(get,null):<a class="type" href="../../Dynamic.html">Dynamic</a><a class="type" href="../../Dynamic.html">Dynamic</a></code></p></h3><div class="doc"><p>Dynamic object for user to store additional data.
+<br/><br/>
+This object cannot be set, only its dynamically created
+properties may be set. In AS3 the type of this property is &amp;#42
+<br/><br/>
+This object will be lazily constructed so that until accessed
+for the first time, will be null internally.</p><table class="table table-condensed"><tbody><col width="10%"/>  <col width="100%"/><tr><th>Default value:</th><td><p>{}</p></td></tr></tbody></table></div></div></div><div class="not-inherited"><div class="platform platform-flash"><a name="visitBodies"></a><h3><p><code><span class="keyword">function</span> <a href="#visitBodies"><span class="identifier">visitBodies</span></a>(lambda:<a class="type" href="../../nape/phys/Body.html">Body</a> -&gt;&nbsp;<a class="type" href="../../Void.html">Void</a>):<a class="type" href="../../Void.html">Void</a></code></p></h3><div class="doc"><p>Apply given function to all Bodys linked to the constraint.
+<br/><br/>
+If a body is duplicated in a constraint then it will only
+be visited once.</p><table class="table table-condensed"><tbody><col width="10%"/>  <col width="100%"/><tr><th colspan="2">Parameters:</th></tr><tr><td>lambda</td><td><p>The function to apply to each Body.</p></td></tr><tr><th colspan="2">Throws:</th></tr><tr><td>#</td><td><p>If lambda is null.</p></td></tr></tbody></table></div></div></div><div class="not-inherited"><div class="platform platform-flash"><a name="zpp_inner"></a><h3><p><code><span class="keyword">var</span> <a href="#zpp_inner"><span class="identifier">zpp_inner</span></a>:<a class="type" href="../../zpp_nape/constraint/ZPP_Constraint.html">ZPP_Constraint</a></code></p></h3><div class="doc"><p>@private</p></div></div></div></div></div></div></body></html>

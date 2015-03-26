@@ -1,175 +1,52 @@
 <!DOCTYPE html>
-<html lang="en"><head><meta charset="utf-8"/><link href="./bootstrap-combined.min.css" rel="stylesheet" /><script type="text/javascript" src="./jquery-1.9.1.min.js"></script><script type="text/javascript" src="./bootstrap.min.js"></script><link href="./styles.css" rel="stylesheet" /><link rel="icon" href="./favicon.ico" type="image/x-icon"></link><script type="text/javascript" src="./nav.js"></script><script type="text/javascript" src="./index.js"></script><script type="text/javascript">var dox = {rootPath: "./",platforms: ["flash"]};</script><title>Type</title></head><body><div class="navbar navbar-inverse navbar-fixed-top"><div class="navbar-inner"><form class="navbar-search pull-left" id="searchForm"><input id="search" type="text" class="search-query" placeholder="Filter" autocomplete="off"/></form><ul class="nav"><li id="select-platform" class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Platform<b class="caret"></b></a><ul class="dropdown-menu"><li data="all"><a href="#">All Platforms</a></li><li data="flash"><a href="#">flash</a></li></ul></li></ul></div></div><div id="container"><div id="nav"></div><div id="content"><div class="header"><h1><code><span class="directive">class </span><span class="type">Type</span></code></h1></div><div class="body"><p class="availability">Available on all platforms</p><div class="doc"><p>The haxe Reflection API allows retrieval of type information at runtime.</p>
+<html lang="en"><head><meta charset="utf-8"/><link href="./bootstrap-combined.min.css" rel="stylesheet" /><script type="text/javascript" src="./jquery-1.9.1.min.js"></script><script type="text/javascript" src="./bootstrap.min.js"></script><link href="./styles.css" rel="stylesheet" /><link rel="icon" href="./favicon.ico" type="image/x-icon"></link><script type="text/javascript" src="./nav.js"></script><script type="text/javascript" src="./index.js"></script><script type="text/javascript">var dox = {rootPath: "./",platforms: ["flash"],showInheritedFields: false};</script><title>Type - HaxeFlixel API docs</title></head><body><div class="navbar navbar-inverse navbar-fixed-top"><div class="navbar-inner"><form class="navbar-search pull-left" id="searchForm"><input id="search" type="text" class="search-query" placeholder="Filter" autocomplete="off"/></form><ul class="nav"><li id="select-platform" class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Platform<b class="caret"></b></a><ul class="dropdown-menu"><li data="all"><a href="#">All Platforms</a></li><li data="flash"><a href="#">flash</a></li></ul></li></ul></div></div><div id="container"><div id="nav"></div><div id="content"><div class="header"><span class="viewsource"><a href="https://github.com/HaxeFlixel/flixel/tree/master/Type.hx">View source</a></span><h1><code><span class="directive">class </span><span class="type">Type</span></code></h1></div><div class="body"><p class="availability">Available on all platforms</p><div class="doc"><p>The haxe Reflection API allows retrieval of type information at runtime.</p>
 <p>This class complements the more lightweight Reflect class, with a focus on
-class and enum instances.</p></div><h2>Class Fields</h2><div class="platform platform-flash"><a name="allEnums"></a><h3><p><code><span class="keyword">static </span><span class="keyword">function</span> <a href="#allEnums"><span class="identifier">allEnums</span></a>&lt;<span class="type">T</span>&gt;(e:<a class="type" href="./Enum.html">Enum</a>&lt;<span class="type">T</span>&gt;):<a class="type" href="./Array.html">Array</a>&lt;<span class="type">T</span>&gt;</code></p></h3><div class="doc"><p>Returns a list of all constructors of enum <code>e</code> that require no</p>
-<pre><code>arguments.
-
-This may return the empty Array [] if all constructors of `e` require
-arguments.
-
-Otherwise an instance of `e` constructed through each of its non-
-argument constructors is returned, in the order of the constructor
-declaration.
-
-If `e` is null, the result is unspecified.
-</code></pre></div></div><div class="platform platform-flash"><a name="createEmptyInstance"></a><h3><p><code><span class="keyword">static </span><span class="keyword">function</span> <a href="#createEmptyInstance"><span class="identifier">createEmptyInstance</span></a>&lt;<span class="type">T</span>&gt;(cl:<a class="type" href="./Class.html">Class</a>&lt;<span class="type">T</span>&gt;):<span class="type">T</span></code></p></h3><div class="doc"><p>Creates an instance of class <code>cl</code>.</p>
-<pre><code>
-This function guarantees that the class constructor is not called.
-
-If `cl` is null, the result is unspecified.
-</code></pre></div></div><div class="platform platform-flash"><a name="createEnum"></a><h3><p><code><span class="keyword">static </span><span class="keyword">function</span> <a href="#createEnum"><span class="identifier">createEnum</span></a>&lt;<span class="type">T</span>&gt;(e:<a class="type" href="./Enum.html">Enum</a>&lt;<span class="type">T</span>&gt;, constr:<a class="type" href="./String.html">String</a>, ?params:<a class="type" href="./Array.html">Array</a>&lt;<a class="type" href="./Dynamic.html">Dynamic</a>&gt; = null):<span class="type">T</span></code></p></h3><div class="doc"><p>Creates an instance of enum <code>e</code> by calling its constructor <code>constr</code> with</p>
-<pre><code>arguments `params`.
-
-If `e` or `constr` is null, or if enum `e` has no constructor named
-`constr`, or if the number of elements in `params` does not match the
-expected number of constructor arguments, or if any argument has an
-invalid type, the result is unspecified.
-</code></pre></div></div><div class="platform platform-flash"><a name="createEnumIndex"></a><h3><p><code><span class="keyword">static </span><span class="keyword">function</span> <a href="#createEnumIndex"><span class="identifier">createEnumIndex</span></a>&lt;<span class="type">T</span>&gt;(e:<a class="type" href="./Enum.html">Enum</a>&lt;<span class="type">T</span>&gt;, index:<a class="type" href="./Int.html">Int</a>, ?params:<a class="type" href="./Array.html">Array</a>&lt;<a class="type" href="./Dynamic.html">Dynamic</a>&gt; = null):<span class="type">T</span></code></p></h3><div class="doc"><p>Creates an instance of enum <code>e</code> by calling its constructor number</p>
-<pre><code>`index` with arguments `params`.
-
-The constructor indices are preserved from haxe syntax, so the first
-declared is index 0, the next index 1 etc.
-
-If `e` or `constr` is null, or if enum `e` has no constructor named
-`constr`, or if the number of elements in `params` does not match the
-expected number of constructor arguments, or if any argument has an
-invalid type, the result is unspecified.
-</code></pre></div></div><div class="platform platform-flash"><a name="createInstance"></a><h3><p><code><span class="keyword">static </span><span class="keyword">function</span> <a href="#createInstance"><span class="identifier">createInstance</span></a>&lt;<span class="type">T</span>&gt;(cl:<a class="type" href="./Class.html">Class</a>&lt;<span class="type">T</span>&gt;, args:<a class="type" href="./Array.html">Array</a>&lt;<a class="type" href="./Dynamic.html">Dynamic</a>&gt;):<span class="type">T</span></code></p></h3><div class="doc"><p>Creates an instance of class <code>cl</code>, using <code>args</code> as arguments to the</p>
-<pre><code>class constructor.
-
-This function guarantees that the class constructor is called.
-
-Default values of constructors arguments are not guaranteed to be
-taken into account.
-
-If `cl` or `args` are null, or if the number of elements in `args` does
+class and enum instances.</p></div><h2>Class Fields</h2><div class="not-inherited"><div class="platform platform-flash"><a name="createEmptyInstance"></a><h3><p><code><span class="keyword">static </span><span class="keyword">function</span> <a href="#createEmptyInstance"><span class="identifier">createEmptyInstance</span></a>&lt;<span class="type">T</span>&gt;(cl:<a class="type" href="./Class.html">Class</a>&lt;<span class="type">T</span>&gt;):<span class="type">T</span></code></p></h3><div class="doc"><p>Creates an instance of class <code>cl</code>.</p>
+<p>This function guarantees that the class constructor is not called.</p>
+<p>If <code>cl</code> is null, the result is unspecified.</p></div></div></div><div class="not-inherited"><div class="platform platform-flash"><a name="createInstance"></a><h3><p><code><span class="keyword">static </span><span class="keyword">function</span> <a href="#createInstance"><span class="identifier">createInstance</span></a>&lt;<span class="type">T</span>&gt;(cl:<a class="type" href="./Class.html">Class</a>&lt;<span class="type">T</span>&gt;, args:<a class="type" href="./Array.html">Array</a>&lt;<a class="type" href="./Dynamic.html">Dynamic</a>&gt;):<span class="type">T</span></code></p></h3><div class="doc"><p>Creates an instance of class <code>cl</code>, using <code>args</code> as arguments to the
+class constructor.</p>
+<p>This function guarantees that the class constructor is called.</p>
+<p>Default values of constructors arguments are not guaranteed to be
+taken into account.</p>
+<p>If <code>cl</code> or <code>args</code> are null, or if the number of elements in <code>args</code> does
 not match the expected number of constructor arguments, or if any
-argument has an invalid type,  or if `cl` has no own constructor, the
-result is unspecified.
-
-In particular, default values of constructor arguments are not
-guaranteed to be taken into account.
-</code></pre></div></div><div class="platform platform-flash"><a name="enumConstructor"></a><h3><p><code><span class="keyword">static </span><span class="keyword">function</span> <a href="#enumConstructor"><span class="identifier">enumConstructor</span></a>(e:<a class="type" href="./EnumValue.html">EnumValue</a>):<a class="type" href="./String.html">String</a></code></p></h3><div class="doc"><p>Returns the constructor name of enum instance <code>e</code>.</p>
-<pre><code>
-The result String does not contain any constructor arguments.
-
-If `e` is null, the result is unspecified.
-</code></pre></div></div><div class="platform platform-flash"><a name="enumEq"></a><h3><p><code><span class="keyword">static </span><span class="keyword">function</span> <a href="#enumEq"><span class="identifier">enumEq</span></a>&lt;<span class="type">T</span>&gt;(a:<span class="type">T</span>, b:<span class="type">T</span>):<a class="type" href="./Bool.html">Bool</a></code></p></h3><div class="doc"><p>Recursively compares two enum instances <code>a</code> and <code>b</code> by value.</p>
-<pre><code>
-Unlike `a == b`, this function performs a deep equality check on the
-arguments of the constructors, if exists.
-
-If `a` or `b` are null, the result is unspecified.
-</code></pre></div></div><div class="platform platform-flash"><a name="enumIndex"></a><h3><p><code><span class="keyword">static </span><span class="keyword">function</span> <a href="#enumIndex"><span class="identifier">enumIndex</span></a>(e:<a class="type" href="./EnumValue.html">EnumValue</a>):<a class="type" href="./Int.html">Int</a></code></p></h3><div class="doc"><p>Returns the index of enum instance <code>e</code>.</p>
-<pre><code>
-This corresponds to the original syntactic position of `e`. The index of
-the first declared constructor is 0, the next one is 1 etc.
-
-If `e` is null, the result is unspecified.
-</code></pre></div></div><div class="platform platform-flash"><a name="enumParameters"></a><h3><p><code><span class="keyword">static </span><span class="keyword">function</span> <a href="#enumParameters"><span class="identifier">enumParameters</span></a>(e:<a class="type" href="./EnumValue.html">EnumValue</a>):<a class="type" href="./Array.html">Array</a>&lt;<a class="type" href="./Dynamic.html">Dynamic</a>&gt;</code></p></h3><div class="doc"><p>Returns a list of the constructor arguments of enum instance <code>e</code>.</p>
-<pre><code>
-If `e` has no arguments, the result is [].
-
-Otherwise the result are the values that were used as arguments to `e`,
-in the order of their declaration.
-
-If `e` is null, the result is unspecified.
-</code></pre></div></div><div class="platform platform-flash"><a name="getClass"></a><h3><p><code><span class="keyword">static </span><span class="keyword">function</span> <a href="#getClass"><span class="identifier">getClass</span></a>&lt;<span class="type">T</span>&gt;(o:<span class="type">T</span>):<a class="type" href="./Class.html">Class</a>&lt;<span class="type">T</span>&gt;</code></p></h3><div class="doc"><p>Returns the class of <code>o</code>, if <code>o</code> is a class instance.</p>
-<pre><code>
-If `o` is null or of a different type, null is returned.
-
-In general, type parameter information cannot be obtained at runtime.
-</code></pre></div></div><div class="platform platform-flash"><a name="getClassFields"></a><h3><p><code><span class="keyword">static </span><span class="keyword">function</span> <a href="#getClassFields"><span class="identifier">getClassFields</span></a>(c:<a class="type" href="./Class.html">Class</a>&lt;<a class="type" href="./Dynamic.html">Dynamic</a>&gt;):<a class="type" href="./Array.html">Array</a>&lt;<a class="type" href="./String.html">String</a>&gt;</code></p></h3><div class="doc"><p>Returns a list of static fields of class <code>c</code>.</p>
-<pre><code>
-This does not include static fields of parent classes.
-
-The order of the fields in the returned Array is unspecified.
-
-If `c` is null, the result is unspecified.
-
-(As3) This method only returns class fields that are public.
-</code></pre></div></div><div class="platform platform-flash"><a name="getClassName"></a><h3><p><code><span class="keyword">static </span><span class="keyword">function</span> <a href="#getClassName"><span class="identifier">getClassName</span></a>(c:<a class="type" href="./Class.html">Class</a>&lt;<a class="type" href="./Dynamic.html">Dynamic</a>&gt;):<a class="type" href="./String.html">String</a></code></p></h3><div class="doc"><p>Returns the name of class <code>c</code>, including its path.</p>
-<pre><code>
-If `c` is inside a package, the package structure is returned dot-
+argument has an invalid type,  or if <code>cl</code> has no own constructor, the
+result is unspecified.</p>
+<p>In particular, default values of constructor arguments are not
+guaranteed to be taken into account.</p></div></div></div><div class="not-inherited"><div class="platform platform-flash"><a name="getClass"></a><h3><p><code><span class="keyword">static </span><span class="keyword">function</span> <a href="#getClass"><span class="identifier">getClass</span></a>&lt;<span class="type">T</span>&gt;(o:<span class="type">T</span>):<a class="type" href="./Class.html">Class</a>&lt;<span class="type">T</span>&gt;</code></p></h3><div class="doc"><p>Returns the class of <code>o</code>, if <code>o</code> is a class instance.</p>
+<p>If <code>o</code> is null or of a different type, null is returned.</p>
+<p>In general, type parameter information cannot be obtained at runtime.</p></div></div></div><div class="not-inherited"><div class="platform platform-flash"><a name="getClassFields"></a><h3><p><code><span class="keyword">static </span><span class="keyword">function</span> <a href="#getClassFields"><span class="identifier">getClassFields</span></a>(c:<a class="type" href="./Class.html">Class</a>&lt;<a class="type" href="./Dynamic.html">Dynamic</a>&gt;):<a class="type" href="./Array.html">Array</a>&lt;<a class="type" href="./String.html">String</a>&gt;</code></p></h3><div class="doc"><p>Returns a list of static fields of class <code>c</code>.</p>
+<p>This does not include static fields of parent classes.</p>
+<p>The order of the fields in the returned Array is unspecified.</p>
+<p>If <code>c</code> is null, the result is unspecified.</p>
+<p>(As3) This method only returns class fields that are public.</p></div></div></div><div class="not-inherited"><div class="platform platform-flash"><a name="getClassName"></a><h3><p><code><span class="keyword">static </span><span class="keyword">function</span> <a href="#getClassName"><span class="identifier">getClassName</span></a>(c:<a class="type" href="./Class.html">Class</a>&lt;<a class="type" href="./Dynamic.html">Dynamic</a>&gt;):<a class="type" href="./String.html">String</a></code></p></h3><div class="doc"><p>Returns the name of class <code>c</code>, including its path.</p>
+<p>If <code>c</code> is inside a package, the package structure is returned dot-
 separated, with another dot separating the class name:
-`pack1.pack2.(...).packN.ClassName`
-If `c` is a sub-type of a haxe module, that module is not part of the
-package structure.
-
-If `c` has no package, the class name is returned.
-
-If `c` is null, the result is unspecified.
-
-The class name does not include any type parameters.
-</code></pre></div></div><div class="platform platform-flash"><a name="getEnum"></a><h3><p><code><span class="keyword">static </span><span class="keyword">function</span> <a href="#getEnum"><span class="identifier">getEnum</span></a>(o:<a class="type" href="./EnumValue.html">EnumValue</a>):<a class="type" href="./Enum.html">Enum</a>&lt;<a class="type" href="./Dynamic.html">Dynamic</a>&gt;</code></p></h3><div class="doc"><p>Returns the enum of enum instance <code>o</code>.</p>
-<pre><code>
-An enum instance is the result of using an enum constructor. Given an
-`enum Color { Red; }`, `getEnum(Red)` returns `Enum&lt;Color&gt;`.
-
-If `o` is null, null is returned.
-
-In general, type parameter information cannot be obtained at runtime.
-</code></pre></div></div><div class="platform platform-flash"><a name="getEnumConstructs"></a><h3><p><code><span class="keyword">static </span><span class="keyword">function</span> <a href="#getEnumConstructs"><span class="identifier">getEnumConstructs</span></a>(e:<a class="type" href="./Enum.html">Enum</a>&lt;<a class="type" href="./Dynamic.html">Dynamic</a>&gt;):<a class="type" href="./Array.html">Array</a>&lt;<a class="type" href="./String.html">String</a>&gt;</code></p></h3><div class="doc"><p>Returns a list of the names of all constructors of enum <code>e</code>.</p>
-<pre><code>
-The order of the constructor names in the returned Array is preserved
-from the original syntax.
-
-If `c` is null, the result is unspecified.
-</code></pre></div></div><div class="platform platform-flash"><a name="getEnumName"></a><h3><p><code><span class="keyword">static </span><span class="keyword">function</span> <a href="#getEnumName"><span class="identifier">getEnumName</span></a>(e:<a class="type" href="./Enum.html">Enum</a>&lt;<a class="type" href="./Dynamic.html">Dynamic</a>&gt;):<a class="type" href="./String.html">String</a></code></p></h3><div class="doc"><p>Returns the name of enum <code>e</code>, including its path.</p>
-<pre><code>
-If `e` is inside a package, the package structure is returned dot-
-separated, with another dot separating the enum name:
-`pack1.pack2.(...).packN.EnumName`
-If `e` is a sub-type of a haxe module, that module is not part of the
-package structure.
-
-If `e` has no package, the enum name is returned.
-
-If `e` is null, the result is unspecified.
-
-The enum name does not include any type parameters.
-</code></pre></div></div><div class="platform platform-flash"><a name="getInstanceFields"></a><h3><p><code><span class="keyword">static </span><span class="keyword">function</span> <a href="#getInstanceFields"><span class="identifier">getInstanceFields</span></a>(c:<a class="type" href="./Class.html">Class</a>&lt;<a class="type" href="./Dynamic.html">Dynamic</a>&gt;):<a class="type" href="./Array.html">Array</a>&lt;<a class="type" href="./String.html">String</a>&gt;</code></p></h3><div class="doc"><p>Returns a list of the instance fields of class <code>c</code>.</p>
-<pre><code>
-This only includes fields which are known at compile-time. In
+<code>pack1.pack2.(...).packN.ClassName</code>
+If <code>c</code> is a sub-type of a haxe module, that module is not part of the
+package structure.</p>
+<p>If <code>c</code> has no package, the class name is returned.</p>
+<p>If <code>c</code> is null, the result is unspecified.</p>
+<p>The class name does not include any type parameters.</p></div></div></div><div class="not-inherited"><div class="platform platform-flash"><a name="getInstanceFields"></a><h3><p><code><span class="keyword">static </span><span class="keyword">function</span> <a href="#getInstanceFields"><span class="identifier">getInstanceFields</span></a>(c:<a class="type" href="./Class.html">Class</a>&lt;<a class="type" href="./Dynamic.html">Dynamic</a>&gt;):<a class="type" href="./Array.html">Array</a>&lt;<a class="type" href="./String.html">String</a>&gt;</code></p></h3><div class="doc"><p>Returns a list of the instance fields of class <code>c</code>.</p>
+<p>This only includes fields which are known at compile-time. In
 particular, using getInstanceFields(getClass(obj)) will not include
-any fields which were added to obj at runtime.
-
-The order of the fields in the returned Array is unspecified.
-
-If `c` is null, the result is unspecified.
-
-(As3) This method only returns instance fields that are public.
-</code></pre></div></div><div class="platform platform-flash"><a name="getSuperClass"></a><h3><p><code><span class="keyword">static </span><span class="keyword">function</span> <a href="#getSuperClass"><span class="identifier">getSuperClass</span></a>(c:<a class="type" href="./Class.html">Class</a>&lt;<a class="type" href="./Dynamic.html">Dynamic</a>&gt;):<a class="type" href="./Class.html">Class</a>&lt;<a class="type" href="./Dynamic.html">Dynamic</a>&gt;</code></p></h3><div class="doc"><p>Returns the super-class of class <code>c</code>.</p>
-<pre><code>
-If `c` has no super class, null is returned.
-
-If `c` is null, the result is unspecified.
-
-In general, type parameter information cannot be obtained at runtime.
-</code></pre></div></div><div class="platform platform-flash"><a name="resolveClass"></a><h3><p><code><span class="keyword">static </span><span class="keyword">function</span> <a href="#resolveClass"><span class="identifier">resolveClass</span></a>(name:<a class="type" href="./String.html">String</a>):<a class="type" href="./Class.html">Class</a>&lt;<a class="type" href="./Dynamic.html">Dynamic</a>&gt;</code></p></h3><div class="doc"><p>Resolves a class by name.</p>
-<pre><code>
-If `name` is the path of an existing class, that class is returned.
-
-Otherwise null is returned.
-
-If `name` is null or the path to a different type, the result is
-unspecified.
-
-The class name must not include any type parameters.
-</code></pre></div></div><div class="platform platform-flash"><a name="resolveEnum"></a><h3><p><code><span class="keyword">static </span><span class="keyword">function</span> <a href="#resolveEnum"><span class="identifier">resolveEnum</span></a>(name:<a class="type" href="./String.html">String</a>):<a class="type" href="./Enum.html">Enum</a>&lt;<a class="type" href="./Dynamic.html">Dynamic</a>&gt;</code></p></h3><div class="doc"><p>Resolves an enum by name.</p>
-<pre><code>
-If `name` is the path of an existing enum, that enum is returned.
-
-Otherwise null is returned.
-
-If `name` is null the result is unspecified.
-
-If `name` is the path to a different type, null is returned.
-
-The enum name must not include any type parameters.
-</code></pre></div></div><div class="platform platform-flash"><a name="typeof"></a><h3><p><code><span class="keyword">static </span><span class="keyword">function</span> <a href="#typeof"><span class="identifier">typeof</span></a>(v:<a class="type" href="./Dynamic.html">Dynamic</a>):<a class="type" href="./ValueType.html">ValueType</a></code></p></h3><div class="doc"><p>Returns the runtime type of value <code>v</code>.</p>
-<pre><code>
-The result corresponds to the type `v` has at runtime, which may vary
+any fields which were added to obj at runtime.</p>
+<p>The order of the fields in the returned Array is unspecified.</p>
+<p>If <code>c</code> is null, the result is unspecified.</p>
+<p>(As3) This method only returns instance fields that are public.</p></div></div></div><div class="not-inherited"><div class="platform platform-flash"><a name="getSuperClass"></a><h3><p><code><span class="keyword">static </span><span class="keyword">function</span> <a href="#getSuperClass"><span class="identifier">getSuperClass</span></a>(c:<a class="type" href="./Class.html">Class</a>&lt;<a class="type" href="./Dynamic.html">Dynamic</a>&gt;):<a class="type" href="./Class.html">Class</a>&lt;<a class="type" href="./Dynamic.html">Dynamic</a>&gt;</code></p></h3><div class="doc"><p>Returns the super-class of class <code>c</code>.</p>
+<p>If <code>c</code> has no super class, null is returned.</p>
+<p>If <code>c</code> is null, the result is unspecified.</p>
+<p>In general, type parameter information cannot be obtained at runtime.</p></div></div></div><div class="not-inherited"><div class="platform platform-flash"><a name="resolveClass"></a><h3><p><code><span class="keyword">static </span><span class="keyword">function</span> <a href="#resolveClass"><span class="identifier">resolveClass</span></a>(name:<a class="type" href="./String.html">String</a>):<a class="type" href="./Class.html">Class</a>&lt;<a class="type" href="./Dynamic.html">Dynamic</a>&gt;</code></p></h3><div class="doc"><p>Resolves a class by name.</p>
+<p>If <code>name</code> is the path of an existing class, that class is returned.</p>
+<p>Otherwise null is returned.</p>
+<p>If <code>name</code> is null or the path to a different type, the result is
+unspecified.</p>
+<p>The class name must not include any type parameters.</p></div></div></div><div class="not-inherited"><div class="platform platform-flash"><a name="resolveEnum"></a><h3><p><code><span class="keyword">static </span><span class="keyword">function</span> <a href="#resolveEnum"><span class="identifier">resolveEnum</span></a>(name:<a class="type" href="./String.html">String</a>):<a class="type" href="./Enum.html">Enum</a>&lt;<a class="type" href="./Dynamic.html">Dynamic</a>&gt;</code></p></h3><div class="doc"><p>Resolves an enum by name.</p>
+<p>If <code>name</code> is the path of an existing enum, that enum is returned.</p>
+<p>Otherwise null is returned.</p>
+<p>If <code>name</code> is null the result is unspecified.</p>
+<p>If <code>name</code> is the path to a different type, null is returned.</p>
+<p>The enum name must not include any type parameters.</p></div></div></div><div class="not-inherited"><div class="platform platform-flash"><a name="typeof"></a><h3><p><code><span class="keyword">static </span><span class="keyword">function</span> <a href="#typeof"><span class="identifier">typeof</span></a>(v:<a class="type" href="./Dynamic.html">Dynamic</a>):<a class="type" href="./ValueType.html">ValueType</a></code></p></h3><div class="doc"><p>Returns the runtime type of value <code>v</code>.</p>
+<p>The result corresponds to the type <code>v</code> has at runtime, which may vary
 per platform. Assumptions regarding this should be minimized to avoid
-surprises.
-</code></pre></div></div></div></div></div></body></html>
+surprises.</p></div></div></div><a onclick="toggleInheritedFields()">Toggle inherited fields</a></div></div></div></body></html>
