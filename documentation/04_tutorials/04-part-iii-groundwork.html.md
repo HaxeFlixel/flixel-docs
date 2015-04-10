@@ -106,7 +106,7 @@ class Player extends FlxSprite
 {
 	public function new(X:Float=0, Y:Float=0, ?SimpleGraphic:Dynamic) 
 	{
-		super(X, Y, ?SimpleGraphic);	
+		super(X, Y, SimpleGraphic);	
 	}
 }</code></pre></p>
 		<p>We'll need to fix this up a bit to make it usable.</p>
@@ -118,7 +118,7 @@ class Player extends FlxSprite
 		<p>Becomes</p>
 		<p><pre><code class="haxe">public function new(X:Float=0, Y:Float=0)</code></pre></p>
 		<p>and</p>
-		<p><pre><code class="haxe">super(X, Y, ?SimpleGraphic);</code></pre></p>
+		<p><pre><code class="haxe">super(X, Y, SimpleGraphic);</code></pre></p>
 		<p>becomes</p>
 		<p><pre><code class="haxe">super(X, Y);</code></pre></p>
 		<p>With classes, we use the 'super' command to refer to the parent class. So, within out 'new' constructor, by calling super(X, Y) we are basically saying to go up the chain to our parent class, in this case FlxSprite, and call its constructor, passing it the X and Y parameters that were passed to us.</p>
