@@ -53,7 +53,7 @@ add(_btnPlay);</code></pre></p>
 		<p>First, we want the button to be in a nicer place. Sure, we could set the x,y coordinates when we create it, but there's a simpler way to do it.</p>
 		<p>Go up to the import section of the class, and, in a new line, type:</p>
 		<p><pre><code class="haxe">using flixel.util.FlxSpriteUtil;</code></pre></p>
-		<p>This is going to allow us to use some of FlxSpriteUtil's (one of many useful utility classes in HaxeFlixel) functions on our own objects in this class. This is thanks to a Haxe feature called Static Extension, and can be used for some powerful results.</p>
+		<p>This is going to allow us to use some of FlxSpriteUtil's (one of many useful utility classes in HaxeFlixel) functions on our own objects in this class. This is thanks to a Haxe feature called <a href="http://haxe.org/manual/lf-static-extension.html">Static Extension</a>, and can be used for some powerful results.</p>
 	</li>
 	<li>
 		<p>Back in the create function, add a new line somewhere after we create our FlxButton, and before <code>super.create();</code> (I like to add it before the button is added, but that's just my preference).</p>
