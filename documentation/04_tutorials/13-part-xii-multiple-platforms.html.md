@@ -101,7 +101,7 @@ _btnExit = FlxDestroyUtil.destroy(_btnExit);
 	<li>
 		<p>Next, we need to change our assets around a little bit. Right now, we have &lt;assets path="assets" /&gt; which just says "load all the assets!". We want to filter them out a little bit and only load the ones that we actually NEED. While we're here, we need to make a new version of our music. We need both an mp3 and an ogg version of our music - Flash only allows for mp3 files, however, it is the only platform that can use mp3s (you can read more the reasons why <a href="http://www.openfl.org/blog/2013/09/18/to-mp3-or-not-to-mp3/">here</a>) - besides, ogg is generally a better format to use. You can find free tools on the internet, such as <a href="http://audacity.sourceforge.net/">Audacity</a> to convert your audio file formats if you're not sure how to do that.</p>
 		<p>Once you have both versions of your music stored in assets/music, replace your assets tag with:</p>
-		<p><pre><code class="xml">&lt;assets path="assets/data" include="*.oel|*.oep" />
+		<p><pre><code class="xml">&lt;assets path="assets/data" include="*.oel" />
 &lt;assets path="assets/images" include="*.png" /&gt;
 &lt;assets path="assets/sounds" include="*.wav" /&gt;
 &lt;assets path="assets/music" include="*.mp3" if="flash" /&gt;
