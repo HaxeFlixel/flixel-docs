@@ -13,11 +13,3 @@ OpenFL has a an active community of developers building games for the web, conso
 OpenFL targets include native cross-compiled C++ for Desktop and Mobile targets as well as web targets such as Flash, Html5 and experimental Emscripten. OpenFL is written primarily in the Haxe language as well as platform specific code integrating with SDKs and native APIs.
 
 OpenFL provides HaxeFlixel with a familiar Flash API as well as an extended set of features for Native targets. This includes the use of GPU accelerated texture batching through drawTiles, multi-threading and more.
-
-OpenFL also provides a number of [professional services](http://www.openfl.org/company/services/):
-
-*   [App marketing](http://www.openfl.org/services/app-installs/ "App Marketing")
-*   [App publishing](http://www.openfl.org/services/publishing-game-porting/ "App Publishing")
-*   [Enterprise](http://www.openfl.org/services/enterprise/ "Enterprise")
-
-Developers can also benefit from their [premium memberships](http://www.openfl.org/membership/).
