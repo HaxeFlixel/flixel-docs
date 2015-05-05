@@ -75,6 +75,13 @@ _mWalls.setTileProperties(1, FlxObject.NONE);
 _mWalls.setTileProperties(2, FlxObject.ANY);
 add(_mWalls);</code></pre></p>
 		<p>This just loads our room file into our FlxOgmoLoader object, generates our FlxTilemap from the 'walls' layer, and then sets tile 1 (our floor tile) to not collide, and tile 2 (walls) to collide from any direction. Then we add our tilemap to the state.</p>
+		<p>For Tiled editor users (Ogmo works in Windows only), use this code instead:</p>
+		<p><pre><code class="haxe">_map = new TiledMap(AssetPaths.room_001__tmx); //(var _map : TiledMap)
+		_mWalls = new FlxTilemap();
+		_mWalls.widthInTiles = _map.width;
+		_mWalls.heightInTiles = _map.height;
+		_mWalls.loadMap(_map.getLayer("walls").tileArray, AssetPaths.tiles__png, _map.tileWidth, _map.tileHeight, 0, 1, 1, 3);
+		add(_mWalls);</code></pre></p>
 	</li>
 	<li>
 		<p>Now, we need to make our player object get placed in the right location on the map. So, change where we initialize our player from:</p>
@@ -102,6 +109,11 @@ _map.loadEntities(placeEntities, "entities");</code></pre></p>
 		<p>Now, we want to add collision to our state, so the player will bump into walls instead of just walking through them. So, in our update function, after super.update(); add:</p>
 		<p><pre><code class="haxe">FlxG.collide(_player, _mWalls);</code></pre></p>
 		<p>All this does is check collision between our player and our walls Tilemap each update, and will deal with overlaps accordingly.</p>
+		<p>With a map larger than the game size, it looks like the player can cross the walls when its position is above game height or width; this problem can be fixed by using this code instead:</p>
+		<p><pre><code class="haxe">if (_mWalls.overlaps(_player))
+{
+	FlxObject.separate(_player, _mWalls);
+}</code></pre></p>
 	</li>
 	<li>
 		<p>Finally, we want to make a small tweak to the player sprite. It's a good idea to make sure that your player has a decent chance of making it through doorways. Since, by default, our player sprite is the same size as our tiles (16x16 pixels), it makes it so the player has to thread the needle to make it through 1-tile wide doorways. To remedy this, we're going to change the player sprite's size and offsets. This won't change what is actually displayed for the player's graphic, only the hitbox.</p>
