@@ -28,4 +28,6 @@ Help spread the word of HaxeFlixel:
 
 ### Donations
 
+HaxeFlixel is currently accepting donations via its [Patreon page](https://www.patreon.com/haxeflixel).
+
 The HaxeFlixel team is currently holding discussions on how to best use donated money to encourage and reward contributions to the project. [@gamedevsam](https://twitter.com/gamedevsam) is the current treasurer for HaxeFlixel, contact him if you have any questions or suggestions regarding the use of donated funds.
