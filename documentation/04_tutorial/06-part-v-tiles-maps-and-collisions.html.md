@@ -48,8 +48,8 @@ private var _mWalls:FlxTilemap;
 We're basically just creating an object to hold our Ogmo Map, and then another one to hold the FlxTilemap that we will generate from the Ogmo map.
 5. In the create function, before we setup the player object, add:
 ```haxe
-_map = new FlxOgmoLoader(AssetPaths.room_001__oel);
-_mWalls = _map.loadTilemap(AssetPaths.tiles__png, 16, 16, "walls");
+_map = new FlxOgmoLoader(AssetPaths.room_001\_\_oel);
+_mWalls = _map.loadTilemap(AssetPaths.tiles\_\_png, 16, 16, "walls");
 _mWalls.setTileProperties(1, FlxObject.NONE);
 _mWalls.setTileProperties(2, FlxObject.ANY);
 add(_mWalls);

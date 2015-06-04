@@ -10,7 +10,7 @@ package ;
 import flixel.FlxBasic;
 import flixel.FlxG;
 import flixel.FlxSprite;
-import flixel.group.FlxGroup;
+import flixel.group.FlxTypedGroup;
 import flixel.text.FlxText;
 import flixel.util.FlxColor;
 using flixel.util.FlxSpriteUtil;
@@ -33,8 +33,8 @@ class HUD extends FlxTypedGroup<FlxSprite>
 		_txtHealth.setBorderStyle(FlxText.BORDER_SHADOW, FlxColor.GRAY, 1, 1);
 		_txtMoney = new FlxText(0, 2, 0, "0", 8);
 		_txtMoney.setBorderStyle(FlxText.BORDER_SHADOW, FlxColor.GRAY, 1, 1);
-		_sprHealth = new FlxSprite(4, _txtHealth.y + (_txtHealth.height/2)  - 4, AssetPaths.health__png);
-		_sprMoney = new FlxSprite(FlxG.width - 12, _txtMoney.y + (_txtMoney.height/2)  - 4, AssetPaths.coin__png);
+		_sprHealth = new FlxSprite(4, _txtHealth.y + (_txtHealth.height/2)  - 4, AssetPaths.health\_\_png);
+		_sprMoney = new FlxSprite(FlxG.width - 12, _txtMoney.y + (_txtMoney.height/2)  - 4, AssetPaths.coin\_\_png);
 		_txtMoney.alignment = "right";
 		_txtMoney.x = _sprMoney.x - _txtMoney.width - 4;
 		add(_sprBack);
@@ -86,6 +86,17 @@ This all seems simple enough, but it's actually going to require several compone
 1. The first component will be our CombatHUD class. This is a pretty big class - it's going to do most of the heavy lifting with our combat logic. You can see the complete class here: 
 https://github.com/SeiferTim/HaxeFlixel-Tutorial/blob/Part-IX/source/CombatHUD.hx
 Take some time to read through it to see how it works, then add it to your project.
+You will need to add a small function to our Enemy.hx class, as well:
+```haxe
+public function changeEnemy(EType:Int):Void
+{
+    if (etype != EType)
+    {
+        etype = EType;
+        loadGraphic("assets/images/enemy-" + Std.string(etype) + ".png", true, 16, 16);
+    }
+}
+```
 2. Next, we need to get our CombatHUD into our PlayState. Add this to the top of the PlayState Class:
 ```haxe
 private var _inCombat:Bool = false;
@@ -122,7 +133,7 @@ else
 		}
 		_inCombat = false;
 		_player.active = true;
-		_grpEnemies.active = true;		
+		_grpEnemies.active = true;
 	}
 }
 ```
@@ -156,5 +167,6 @@ if (isFlickering())
 	return;
 ```
 At the very top, before doing anything else in that function.
+You will also need to add `using flixel.util.FlxSpriteUtil;` to the top of the Enemy.hx class.
 
 And that should do it! Test out your game and make sure that it works! You can see the [source here](https://github.com/SeiferTim/HaxeFlixel-Tutorial/tree/Part-IX) to make sure you're on the same page. Next, we'll cover winning and losing and setting up all our different FlxStates.

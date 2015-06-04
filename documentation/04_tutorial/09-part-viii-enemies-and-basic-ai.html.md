@@ -143,10 +143,10 @@ public function idle():Void
 		}
 		else
 		{
-			_moveDir = FlxRandom.intRanged(0, 8) * 45;
+			_moveDir = FlxRandom.intRanged(0, 8) \* 45;
 			FlxAngle.rotatePoint(speed * .5, 0, 0, 0, _moveDir, velocity);
 		}
-		_idleTmr = FlxRandom.intRanged(1, 4);			
+		_idleTmr = FlxRandom.intRanged(1, 4);
 	}
 	else
 		_idleTmr -= FlxG.elapsed;

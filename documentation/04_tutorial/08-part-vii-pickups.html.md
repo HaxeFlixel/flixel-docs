@@ -16,7 +16,7 @@ Now that we have our little guy running around our map, lets give him something 
 public function new(X:Float=0, Y:Float=0) 
 {
 	super(X, Y);
-	loadGraphic(AssetsPath.coin__png, false, 8, 8);
+	loadGraphic(AssetsPath.coin\_\_png, false, 8, 8);
 }
 ```
 7. Now, head back to the PlayState. We need to change our map logic so that when it is loading the entities, when it sees a coin in our Ogmo file, it will add a coin to our state.

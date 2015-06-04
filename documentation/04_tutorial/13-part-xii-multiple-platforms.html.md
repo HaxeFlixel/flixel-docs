@@ -70,7 +70,7 @@ private var _btnExit:FlxButton;
 And, in create:
 #if desktop
 _btnExit = new FlxButton(FlxG.width - 28, 8, "X", clickExit);
-_btnExit.loadGraphic(AssetPaths.button__png, true, 20, 20);
+_btnExit.loadGraphic(AssetPaths.button\_\_png, true, 20, 20);
 add(_btnExit);
 #end
 Then our callback function just looks like:
@@ -118,9 +118,9 @@ Look for a section that looks like this and uncomment it (or just add this to yo
 5. Now that we have different versions of our music, we need to make sure we play the right version. In Main.hx, at the end of setupGame, replace the line where we start playing our music with:
 ```haxe
 #if flash
-FlxG.sound.playMusic(AssetPaths.HaxeFlixel_Tutorial_Game__mp3, 1, true);
+FlxG.sound.playMusic(AssetPaths.HaxeFlixel_Tutorial_Game\_\_mp3, 1, true);
 #else
-FlxG.sound.playMusic(AssetPaths.HaxeFlixel_Tutorial_Game__ogg, 1, true);
+FlxG.sound.playMusic(AssetPaths.HaxeFlixel_Tutorial_Game\_\_ogg, 1, true);
 #end
 ```
 6. You might be wondering how we're going to allow the user to move around in our game on a device without the keyboard or mouse. Well, HaxeFlixel comes with a VirtualPad object which we can use to accept touch input from the user and translate it into movement. Head over to PlayState.hx:
