@@ -69,8 +69,8 @@ private var _mWalls:FlxTilemap;</code></pre></p>
 	</li>
 	<li>
 		<p>In the create function, before we setup the player object, add:</p>
-		<p><pre><code class="haxe">_map = new FlxOgmoLoader(AssetPaths.room_001__oel);
-_mWalls = _map.loadTilemap(AssetPaths.tiles__png, 16, 16, "walls");
+		<p><pre><code class="haxe">_map = new FlxOgmoLoader(AssetPaths.room_001\_\_oel);
+_mWalls = _map.loadTilemap(AssetPaths.tiles\_\_png, 16, 16, "walls");
 _mWalls.setTileProperties(1, FlxObject.NONE);
 _mWalls.setTileProperties(2, FlxObject.ANY);
 add(_mWalls);</code></pre></p>

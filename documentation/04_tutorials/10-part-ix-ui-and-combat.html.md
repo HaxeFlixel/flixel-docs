@@ -12,7 +12,7 @@ title: "Part IX: UI and Combat"
 import flixel.FlxBasic;
 import flixel.FlxG;
 import flixel.FlxSprite;
-import flixel.group.FlxGroup;
+import flixel.group.FlxTypedGroup;
 import flixel.text.FlxText;
 import flixel.util.FlxColor;
 using flixel.util.FlxSpriteUtil;
@@ -35,8 +35,8 @@ class HUD extends FlxTypedGroup&lt;FlxSprite&gt;
 		_txtHealth.setBorderStyle(FlxText.BORDER_SHADOW, FlxColor.GRAY, 1, 1);
 		_txtMoney = new FlxText(0, 2, 0, "0", 8);
 		_txtMoney.setBorderStyle(FlxText.BORDER_SHADOW, FlxColor.GRAY, 1, 1);
-		_sprHealth = new FlxSprite(4, _txtHealth.y + (_txtHealth.height/2)  - 4, AssetPaths.health__png);
-		_sprMoney = new FlxSprite(FlxG.width - 12, _txtMoney.y + (_txtMoney.height/2)  - 4, AssetPaths.coin__png);
+		_sprHealth = new FlxSprite(4, _txtHealth.y + (_txtHealth.height/2)  - 4, AssetPaths.health\_\_png);
+		_sprMoney = new FlxSprite(FlxG.width - 12, _txtMoney.y + (_txtMoney.height/2)  - 4, AssetPaths.coin\_\_png);
 		_txtMoney.alignment = "right";
 		_txtMoney.x = _sprMoney.x - _txtMoney.width - 4;
 		add(_sprBack);
@@ -93,6 +93,15 @@ _hud.updateHUD(_health, _money);</code></pre></p>
 		<p>The first component will be our CombatHUD class. This is a pretty big class - it's going to do most of the heavy lifting with our combat logic. You can see the complete class here:</p>
 		<p><a href="https://github.com/SeiferTim/HaxeFlixel-Tutorial/blob/Part-IX/source/CombatHUD.hx">https://github.com/SeiferTim/HaxeFlixel-Tutorial/blob/Part-IX/source/CombatHUD.hx</a></p>
 		<p>Take some time to read through it to see how it works, then add it to your project.</p>
+        <p>You will need to add a small function to our Enemy.hx class, as well:</p>
+        <p><pre><code class="haxe">public function changeEnemy(EType:Int):Void
+{
+    if (etype != EType)
+    {
+        etype = EType;
+        loadGraphic("assets/images/enemy-" + Std.string(etype) + ".png", true, 16, 16);
+    }
+}</code></pre></p>
 	</li>
 	<li>
 		<p>Next, we need to get our CombatHUD into our PlayState. Add this to the top of the PlayState Class:</p>
@@ -130,7 +139,7 @@ else
 		}
 		_inCombat = false;
 		_player.active = true;
-		_grpEnemies.active = true;		
+		_grpEnemies.active = true;
 	}
 }</code></pre></p>
 		<p>So, we're adding a check to see if the player touches an enemy. If they do, we'll call a callback to see if we should start combat or not.</p>
@@ -163,6 +172,7 @@ private function startCombat(E:Enemy):Void
 		<p><pre><code class="haxe">if (isFlickering())
 	return;</code></pre></p>
 		<p>At the very top, before doing anything else in that function.</p>
+        <p>You will also need to add <pre><code class="haxe">using flixel.util.FlxSpriteUtil;</code></pre> to the top of the Enemy.hx class.
 	</li>
 </ol>
 
