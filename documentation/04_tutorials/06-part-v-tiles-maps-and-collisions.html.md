@@ -5,7 +5,8 @@ title: "Part V: Tiles, Maps, and Collisions"
 <p>Now it's time to make some maps for the player to move around in! To do this, we're going to use a tool called Ogmo Editor. Ogmo is a free tile map editor that works very nicely with HaxeFlixel. For this part of the tutorial, we're just going to use a simple 2-tile Tilesheet with a tile for Walls and a tile for Floors.</p>
 
 <p>You can make your own, with 16x16 pixel tiles, or use this one:</p>
-<p><a href="https://raw.githubusercontent.com/SeiferTim/HaxeFlixel-Tutorial/Part-V/assets/images/tiles.png"><img src="https://raw.githubusercontent.com/SeiferTim/HaxeFlixel-Tutorial/Part-V/assets/images/tiles.png" /></a></p>
+<p><a href="https://github.com/HaxeFlixel/flixel-demos/blob/dev/Tutorials/TurnBasedRPG/assets/images/tiles.png"><img src="https://raw.githubusercontent.com/HaxeFlixel/flixel-demos/master/Tutorials/TurnBasedRPG/
+assets/images/tiles.png" /></a></p>
 <p>(Note: the first tile should be empty!)</p>
 
 <ol>
@@ -69,8 +70,8 @@ private var _mWalls:FlxTilemap;</code></pre></p>
 	</li>
 	<li>
 		<p>In the create function, before we setup the player object, add:</p>
-		<p><pre><code class="haxe">_map = new FlxOgmoLoader(AssetPaths.room_001\_\_oel);
-_mWalls = _map.loadTilemap(AssetPaths.tiles\_\_png, 16, 16, "walls");
+		<p><pre><code class="haxe">_map = new FlxOgmoLoader(AssetPaths.room_001&#95;&#95;oel);
+_mWalls = _map.loadTilemap(AssetPaths.tiles&#95;&#95;png, 16, 16, "walls");
 _mWalls.setTileProperties(1, FlxObject.NONE);
 _mWalls.setTileProperties(2, FlxObject.ANY);
 add(_mWalls);</code></pre></p>
@@ -93,13 +94,13 @@ _map.loadEntities(placeEntities, "entities");</code></pre></p>
 	if (entityName == "player")
 	{
 		_player.x = x;
-		_player.y = y;	
+		_player.y = y;
 	}
 }</code></pre></p>
 		<p>So, if this function gets passed an entity with the name "player", it will set our player object's x and y values to the Entities x and y values (converting them from Strings to Ints).</p>
 	</li>
 	<li>
-		<p>Now, we want to add collision to our state, so the player will bump into walls instead of just walking through them. So, in our update function, after super.update(); add:</p>
+		<p>Now, we want to add collision to our state, so the player will bump into walls instead of just walking through them. So, in our update function, after <code>super.update();</code> add:</p>
 		<p><pre><code class="haxe">FlxG.collide(_player, _mWalls);</code></pre></p>
 		<p>All this does is check collision between our player and our walls Tilemap each update, and will deal with overlaps accordingly.</p>
 	</li>
@@ -115,4 +116,4 @@ offset.set(4, 2);</code></pre></p>
 	</li>
 </ol>
 
-<p><a href="https://github.com/SeiferTim/HaxeFlixel-Tutorial/tree/Part-V">Here is the source code</a> for what we have so far! In the next part, we'll talk about some small tweaks to the camera.</p>
+<p>In the next part, we'll talk about some small tweaks to the camera.</p>

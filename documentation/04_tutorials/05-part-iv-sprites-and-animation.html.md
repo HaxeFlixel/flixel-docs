@@ -7,7 +7,7 @@ title: "Part IV: Sprites and Animation"
 <p>First, you need to have the sprite's graphic. Using your image editor of choice, you can draw pretty much anything you want, and save it as a Transparent PNG. For our player sprite, we're going to have it be made up of 16x16 pixel frames, with two different frames for each of the 4-possible facing directions (Left and Right are used by the same 2 frames, since we will be flipping them later).</p>
 
 <p>You can draw it yourself, if you want, or use this image, created by my friend Vicky Hedgecock for this tutorial:</p>
-<p><a href="https://raw.githubusercontent.com/SeiferTim/HaxeFlixel-Tutorial/Part-IV/assets/images/player.png"><img src="https://raw.githubusercontent.com/SeiferTim/HaxeFlixel-Tutorial/Part-IV/assets/images/player.png" /></a></p>
+<p><a href="https://github.com/HaxeFlixel/flixel-demos/blob/master/Tutorials/TurnBasedRPG/assets/images/player.png"><img src="https://raw.githubusercontent.com/HaxeFlixel/flixel-demos/master/Tutorials/TurnBasedRPG/assets/images/player.png" /></a></p>
 
 <p>Save your file in "assets/images".</p>
 
@@ -82,4 +82,4 @@ if ((velocity.x != 0 || velocity.y != 0) && touching == FlxObject.NONE) // if th
 	</li>
 </ol>
 
-<p><a href="https://github.com/SeiferTim/HaxeFlixel-Tutorial/tree/Part-IV">Here is the source</a> for everything up to this point. Next, we'll talk about maps and collision!</p>
+<p>Next, we'll talk about maps and collision!</p>

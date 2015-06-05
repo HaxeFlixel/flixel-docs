@@ -33,7 +33,7 @@ private var _won:Bool;</code></pre></p>
 		<p>To the top of the class.</p>
 	</li>
 	<li>
-		<p>Next, in the update function, right under super.update() add:</p>
+		<p>Next, in the update function, right under <code>super.update()</code> add:</p>
 		<p><pre><code class="haxe">if (_ending)
 {
 	return;
@@ -95,7 +95,7 @@ _combatHud = FlxDestroyUtil.destroy(_combatHud);</code></pre></p>
 		<p>We need to add the GameOverState. This is going to be a pretty simple FlxState where we show a message - either "Game Over" or "You Win!", depending on our won flag, and the final score for this player. We will also use flixel's save/load functionality to compare the previous hi-scores, and, if the new score is higher, replace the saved hi-score, and show the hi-score on the screen.</p>
 		<p>Finally, we have a button to take the player back to the main menu.</p>
 		<p>Here is the code for that State:</p>
-		<p><a href="https://github.com/SeiferTim/HaxeFlixel-Tutorial/blob/Part-X/source/GameOverState.hx">https://github.com/SeiferTim/HaxeFlixel-Tutorial/blob/Part-X/source/GameOverState.hx</a></p>
+		<p><a href="https://github.com/HaxeFlixel/flixel-demos/blob/dev/Tutorials/TurnBasedRPG/source/GameOverState.hx">GameOverState.hx</a></p>
 	</li>
 </ol>
 
@@ -142,7 +142,7 @@ _btnOptions = FlxDestroyUtil.destroy(_btnOptions);</code></pre></p>
 	<li>
 		<p>The OptionsState that is called from the options button is fairly simple. It will contain a button to allow the user to clear the saved data (hi-scores, etc), as well as a simple FlxBar to show the user the current volume level of the game with buttons to adjust it up or down. It will save the volume values so that each time the game starts, it will 'remember' what volume it was last set to (I know there's no sound…. yet ;) )</p>
 		<p>The code for this State looks like this:</p>
-		<p><a href="https://github.com/SeiferTim/HaxeFlixel-Tutorial/blob/Part-X/source/OptionsState.hx">https://github.com/SeiferTim/HaxeFlixel-Tutorial/blob/Part-X/source/OptionsState.hx</a></p>
+		<p><a href="https://github.com/HaxeFlixel/flixel-demos/blob/dev/Tutorials/TurnBasedRPG/source/OptionsState.hx">OptionsState.hx</a></p>
 	</li>
 	<li>
 		<p>Finally, we want our game to load the stored volume (if there is any) each time the game starts, so, goto our Main.hx file, and, in setupGame, after addChild, add:</p>
@@ -162,4 +162,3 @@ _save.close();</code></pre></p>
 <p><img src="/images/tutorial/0022.png" /></p>
 
 <p>Looking good! Next time we'll give our volume something to do by adding sound and music!</p>
-<p>You can check out the current source for everything so far, <a href="https://github.com/SeiferTim/HaxeFlixel-Tutorial/tree/Part-X">here</a>!</p>
