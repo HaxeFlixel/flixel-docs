@@ -91,7 +91,7 @@ _hud.updateHUD(_health, _money);</code></pre></p>
 <ol>
 	<li>
 		<p>The first component will be our CombatHUD class. This is a pretty big class - it's going to do most of the heavy lifting with our combat logic. You can see the complete class here:</p>
-		<p><a href="https://github.com/SeiferTim/HaxeFlixel-Tutorial/blob/Part-IX/source/CombatHUD.hx">https://github.com/SeiferTim/HaxeFlixel-Tutorial/blob/Part-IX/source/CombatHUD.hx</a></p>
+		<p><a href="https://github.com/HaxeFlixel/flixel-demos/blob/dev/Tutorials/TurnBasedRPG/source/CombatHUD.hx">CombatHUD.hx</a></p>
 		<p>Take some time to read through it to see how it works, then add it to your project.</p>
         <p>You will need to add a small function to our Enemy.hx class, as well:</p>
         <p><pre><code class="haxe">public function changeEnemy(EType:Int):Void

@@ -17,7 +17,7 @@ title: "Part VII: Pickups"
 		<p><img src="/images/tutorial/0015.png" /></p>
 	</li>
 	<li>
-		<p>We're going to make our coins be 8x8 pixels. For the coin's graphic, you can use this image <a href="https://raw.githubusercontent.com/SeiferTim/HaxeFlixel-Tutorial/Part-VII/assets/images/coin.png"><img src="https://raw.githubusercontent.com/SeiferTim/HaxeFlixel-Tutorial/Part-VII/assets/images/coin.png" /></a>, or make your own. Make sure you save this in "assets/images".</p>
+		<p>We're going to make our coins be 8x8 pixels. For the coin's graphic, you can use this image <a href="https://github.com/HaxeFlixel/flixel-demos/blob/dev/Tutorials/TurnBasedRPG/assets/images/coin.png"><img src="https://raw.githubusercontent.com/HaxeFlixel/flixel-demos/dev/Tutorials/TurnBasedRPG/assets/images/coin.png" /></a>, or make your own. Make sure you save this in "assets/images".</p>
 	</li>
 	<li>
 		<p>Get back into FlashDevelop, and make a new class:</p>

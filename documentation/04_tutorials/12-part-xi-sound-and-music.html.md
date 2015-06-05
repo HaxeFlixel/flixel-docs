@@ -6,7 +6,7 @@ title: "Part XI: Sound and Music"
 
 <p>For this game, we're going to keep is simple (as usual). We're going to have a single, continuously looping track that plays while our game is running. We will also have several, simple sound effects that play for different actions. Playing sounds and music in HaxeFlixel is pretty easy, so this will go quickly!</p>
 
-<p>First, you'll need to make your music and sounds. My friend Patrick Crecelius from <a href="http://fatbard.tumblr.com/">Fat Bard</a> has provided <a href="https://raw.githubusercontent.com/SeiferTim/HaxeFlixel-Tutorial/Part-XI/assets/music/HaxeFlixel_Tutorial_Game.mp3">some music</a> for this tutorial - feel free to use it for this tutorial, or make your own.</p>
+<p>First, you'll need to make your music and sounds. My friend Patrick Crecelius from <a href="http://fatbard.tumblr.com/">Fat Bard</a> has provided <a href="https://raw.githubusercontent.com/HaxeFlixel/flixel-demos/dev/Tutorials/TurnBasedRPG/assets/music/HaxeFlixel_Tutorial_Game.mp3">some music</a> for this tutorial - feel free to use it for this tutorial, or make your own.</p>
 
 <p>I've made a set of sounds, using Bfxr, which you can use if you like, or, make your own!</p>
 
@@ -14,31 +14,31 @@ title: "Part XI: Sound and Music"
 
 <ul>
 	<li>
-		<p><a href="https://raw.githubusercontent.com/SeiferTim/HaxeFlixel-Tutorial/Part-XI/assets/sounds/coin.wav">coin.wav</a> - to be used when the player picks up a coin</p>
+		<p><a href="https://raw.githubusercontent.com/HaxeFlixel/flixel-demos/dev/Tutorials/TurnBasedRPG/assets/sounds/coin.wav">coin.wav</a> - to be used when the player picks up a coin</p>
 	</li>
 	<li>
-		<p><a href="https://raw.githubusercontent.com/SeiferTim/HaxeFlixel-Tutorial/Part-XI/assets/sounds/combat.wav">combat.wav</a> - to be used when combat starts</p>
+		<p><a href="https://raw.githubusercontent.com/HaxeFlixel/flixel-demos/dev/Tutorials/TurnBasedRPG/assets/sounds/combat.wav">combat.wav</a> - to be used when combat starts</p>
 	</li>
 	<li>
-		<p><a href="https://raw.githubusercontent.com/SeiferTim/HaxeFlixel-Tutorial/Part-XI/assets/sounds/fled.wav">fled.wav</a> - will play when the player successfully flees from combat</p>
+		<p><a href="https://raw.githubusercontent.com/HaxeFlixel/flixel-demos/dev/Tutorials/TurnBasedRPG/assets/sounds/fled.wav">fled.wav</a> - will play when the player successfully flees from combat</p>
 	</li>
 	<li>
-		<p><a href="https://raw.githubusercontent.com/SeiferTim/HaxeFlixel-Tutorial/Part-XI/assets/sounds/hurt.wav">hurt.wav</a> - will play whenever either the player or the enemy hits with an attack</p>
+		<p><a href="https://raw.githubusercontent.com/HaxeFlixel/flixel-demos/dev/Tutorials/TurnBasedRPG/assets/sounds/hurt.wav">hurt.wav</a> - will play whenever either the player or the enemy hits with an attack</p>
 	</li>
 	<li>
-		<p><a href="https://raw.githubusercontent.com/SeiferTim/HaxeFlixel-Tutorial/Part-XI/assets/sounds/lose.wav">lose.wav</a> - will play when the player dies in combat</p>
+		<p><a href="https://raw.githubusercontent.com/HaxeFlixel/flixel-demos/dev/Tutorials/TurnBasedRPG/assets/sounds/lose.wav">lose.wav</a> - will play when the player dies in combat</p>
 	</li>
 	<li>
-		<p><a href="https://raw.githubusercontent.com/SeiferTim/HaxeFlixel-Tutorial/Part-XI/assets/sounds/miss.wav">miss.wav</a> - will play whenever either the player or the enemy misses with an attack</p>
+		<p><a href="https://raw.githubusercontent.com/HaxeFlixel/flixel-demos/dev/Tutorials/TurnBasedRPG/assets/sounds/miss.wav">miss.wav</a> - will play whenever either the player or the enemy misses with an attack</p>
 	</li>
 	<li>
-		<p><a href="https://raw.githubusercontent.com/SeiferTim/HaxeFlixel-Tutorial/Part-XI/assets/sounds/select.wav">select.wav</a> - used by buttons and when the player makes a selection</p>
+		<p><a href="https://raw.githubusercontent.com/HaxeFlixel/flixel-demos/dev/Tutorials/TurnBasedRPG/assets/sounds/select.wav">select.wav</a> - used by buttons and when the player makes a selection</p>
 	</li>
 	<li>
-		<p><a href="https://raw.githubusercontent.com/SeiferTim/HaxeFlixel-Tutorial/Part-XI/assets/sounds/step.wav">step.wav</a> - used by the player and the enemies for 'footstep' sounds</p>
+		<p><a href="https://raw.githubusercontent.com/HaxeFlixel/flixel-demos/dev/Tutorials/TurnBasedRPG/assets/sounds/step.wav">step.wav</a> - used by the player and the enemies for 'footstep' sounds</p>
 	</li>
 	<li>
-		<p><a href="https://raw.githubusercontent.com/SeiferTim/HaxeFlixel-Tutorial/Part-XI/assets/sounds/win.wav">win.wav</a> - used when the player wins in combat</p>
+		<p><a href="https://raw.githubusercontent.com/HaxeFlixel/flixel-demos/dev/Tutorials/TurnBasedRPG/assets/sounds/win.wav">win.wav</a> - used when the player wins in combat</p>
 	</li>
 </ul>
 
