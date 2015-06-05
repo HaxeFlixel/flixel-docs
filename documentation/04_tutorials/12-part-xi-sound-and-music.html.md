@@ -49,7 +49,7 @@ title: "Part XI: Sound and Music"
 <ol>
 	<li>
 		<p>First, open up Main.hx. Since we want our music to start as soon as the game starts, and loop continuously no matter what happens, we're going to make it start playing outside of our states when we setup our game. In the setupGame function, after our volume-setting code, add:</p>
-		<p><pre><code class="haxe">FlxG.sound.playMusic(AssetPaths.HaxeFlixel_Tutorial_Game__mp3, 1, true);</code></pre></p>
+		<p><pre><code class="haxe">FlxG.sound.playMusic(AssetPaths.HaxeFlixel_Tutorial_Game\_\_mp3, 1, true);</code></pre></p>
 		<p>Be sure to change the file that you want to play, if your music file is named something different.</p>
 	</li>
 </ol>
@@ -59,7 +59,7 @@ title: "Part XI: Sound and Music"
 <ol>
 	<li>
 		<p>Next, we want to make our buttons all make a sound when they get clicked. This is simple, we just tell the button's onUp to load our sound. In MenuState, in create, after you initialize the play button, add this:</p>
-		<p><pre><code class="haxe">_btnPlay.onUp.sound = FlxG.sound.load(AssetPaths.select__wav);</code></pre></p>
+		<p><pre><code class="haxe">_btnPlay.onUp.sound = FlxG.sound.load(AssetPaths.select\_\_wav);</code></pre></p>
 	</li>
 	<li>
 		<p>Now, you can do the same for the options button (changing _btnPlay to _btnOptions), and then for each of the other buttons in our game: 4 of them in OptionsState, and one in GameOverState.</p>
@@ -70,7 +70,7 @@ title: "Part XI: Sound and Music"
 	</li>
 	<li>
 		<p>Then, in the constructor somewhere, we need to load the footstep sound:</p>
-		<p><pre><code class="haxe">_sndStep = FlxG.sound.load(AssetPaths.step__wav);</code></pre></p>
+		<p><pre><code class="haxe">_sndStep = FlxG.sound.load(AssetPaths.step\_\_wav);</code></pre></p>
 	</li>
 	<li>
 		<p>Now go to our updateMovement function, and, after we check if the player is moving (<code>if ((velocity.x != 0 || velocity.y != 0) &amp;&amp; touching == FlxObject.NONE)</code>), add:</p>
@@ -88,7 +88,7 @@ title: "Part XI: Sound and Music"
 	</li>
 	<li>
 		<p>And then, similarly to how we setup Player.hx, add this to our constructor:</p>
-		<p><pre><code class="haxe">_sndStep = FlxG.sound.load(AssetPaths.step__wav,.4);
+		<p><pre><code class="haxe">_sndStep = FlxG.sound.load(AssetPaths.step\_\_wav,.4);
 _sndStep.proximity(x,y,FlxG.camera.target, FlxG.width *.6);</code></pre></p>
 		<p>You'll notice that we are setting the volume to .4 (40%) this is because there will be plenty of enemies in the map, and there footsteps can get kind of annoying and loud. (Besides, they're probably walking around the dungeon barefoot, right?)</p>
 		<p>We then setup our proximity for our sounds, setting it's position  to the x and y of this enemy, and telling it to target the FlxG.camera.target object (which happens to be our Player!). Finally, we say that the radius of our footstep sound is a little bit more than half of the screen's width - so we should be able to hear enemies that are just off the screen, and all the enemies' footsteps will sound louder/softer based on their distance from the camera target.</p>
@@ -110,7 +110,7 @@ _sndStep.proximity(x,y,FlxG.camera.target, FlxG.width *.6);</code></pre></p>
 		<p>So, just like our other sounds, initialize the variable:</p>
 		<p><pre><code class="haxe">private var _sndCoin:FlxSound;</code></pre></p>
 		<p>Load the sound (in create):</p>
-		<p><pre><code class="haxe">_sndCoin = FlxG.sound.load(AssetPaths.coin__wav);</code></pre></p>
+		<p><pre><code class="haxe">_sndCoin = FlxG.sound.load(AssetPaths.coin\_\_wav);</code></pre></p>
 		<p>Clean it up (in destroy):</p>
 		<p><pre><code class="haxe">_sndCoin = FlxDestroyUtil.destroy(_sndCoin);</code></pre></p>
 		<p>And, in our playerTouchCoin function, inside of our if statement, add:</p>
@@ -128,13 +128,13 @@ private var _sndSelect:FlxSound;
 private var _sndWin:FlxSound;
 private var _sndCombat:FlxSound;</code></pre></p>
 		<p>To load them:</p>
-		<p><pre><code class="haxe">_sndFled = FlxG.sound.load(AssetPaths.fled__wav);
-_sndHurt = FlxG.sound.load(AssetPaths.hurt__wav);
-_sndLose = FlxG.sound.load(AssetPaths.lose__wav);
-_sndMiss = FlxG.sound.load(AssetPaths.miss__wav);
-_sndSelect = FlxG.sound.load(AssetPaths.select__wav);
-_sndWin = FlxG.sound.load(AssetPaths.win__wav);
-_sndCombat = FlxG.sound.load(AssetPaths.combat__wav);</code></pre></p>
+		<p><pre><code class="haxe">_sndFled = FlxG.sound.load(AssetPaths.fled\_\_wav);
+_sndHurt = FlxG.sound.load(AssetPaths.hurt\_\_wav);
+_sndLose = FlxG.sound.load(AssetPaths.lose\_\_wav);
+_sndMiss = FlxG.sound.load(AssetPaths.miss\_\_wav);
+_sndSelect = FlxG.sound.load(AssetPaths.select\_\_wav);
+_sndWin = FlxG.sound.load(AssetPaths.win\_\_wav);
+_sndCombat = FlxG.sound.load(AssetPaths.combat\_\_wav);</code></pre></p>
 		<p>and to clean them up:</p>
 		<p><pre><code class="haxe">_sndFled = FlxDestroyUtil.destroy(_sndFled);
 _sndHurt = FlxDestroyUtil.destroy(_sndHurt);

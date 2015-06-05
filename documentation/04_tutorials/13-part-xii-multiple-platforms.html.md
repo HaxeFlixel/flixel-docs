@@ -71,7 +71,7 @@ private var _btnExit:FlxButton;
 		<p>And, in create:</p>
 		<p><pre><code class="haxe">#if desktop
 _btnExit = new FlxButton(FlxG.width - 28, 8, "X", clickExit);
-_btnExit.loadGraphic(AssetPaths.button__png, true, 20, 20);
+_btnExit.loadGraphic(AssetPaths.button\_\_png, true, 20, 20);
 add(_btnExit);
 #end</code></pre></p>
 		<p>Then our callback function just looks like:</p>
@@ -122,9 +122,9 @@ _btnExit = FlxDestroyUtil.destroy(_btnExit);
 	<li>
 		<p>Now that we have different versions of our music, we need to make sure we play the right version. In Main.hx, at the end of setupGame, replace the line where we start playing our music with:</p>
 		<p><pre><code class="haxe">#if flash
-FlxG.sound.playMusic(AssetPaths.HaxeFlixel_Tutorial_Game__mp3, 1, true);
+FlxG.sound.playMusic(AssetPaths.HaxeFlixel_Tutorial_Game\_\_mp3, 1, true);
 #else
-FlxG.sound.playMusic(AssetPaths.HaxeFlixel_Tutorial_Game__ogg, 1, true);
+FlxG.sound.playMusic(AssetPaths.HaxeFlixel_Tutorial_Game\_\_ogg, 1, true);
 #end</code></pre></p>
 	</li>
 	<li>
