@@ -28,7 +28,7 @@ title: "Part VII: Pickups"
 		<p><pre><code class="haxe">public function new(X:Float=0, Y:Float=0) 
 {
 	super(X, Y);
-	loadGraphic(AssetPaths.coin\_\_png, false, 8, 8);
+	loadGraphic(AssetPaths.coin&#95;&#95;png, false, 8, 8);
 }</code></pre></p>
 	</li>
 	<li>
@@ -45,7 +45,7 @@ title: "Part VII: Pickups"
 add(_grpCoins);</code></pre></p>
 	</li>
 	<li>
-		<p>Next, we just want to change our placeEntities function to put a coin into our group every time it encounters one in our Ogmo file. At the end of our if statement, add:</p>
+		<p>Next, we just want to change our <code>placeEntities</code> function to put a coin into our group every time it encounters one in our Ogmo file. At the end of our if statement, add:</p>
 		<p><pre><code class="haxe">else if (entityName == "coin")
 {
 	_grpCoins.add(new Coin(x + 4, y + 4));
@@ -53,12 +53,12 @@ add(_grpCoins);</code></pre></p>
 		<p>This will simply create a new coin, tell it to be at the position defined in the Ogmo file (+4 x and y to center it on the tile), and add it to the Coin group.</p>
 	</li>
 	<li>
-		<p>Now we need to have the player be able to collect the coins. We're going to use an overlap check to do this. In update, after your FlxG.collide call, add:</p>
+		<p>Now we need to have the player be able to collect the coins. We're going to use an overlap check to do this. In update, after your <code>FlxG.collide</code> call, add:</p>
 		<p><pre><code class="haxe">FlxG.overlap(_player, _grpCoins, playerTouchCoin);</code></pre></p>
 		<p>This just says: every update, check if there are any overlaps between the player and the coin group, and if there are, call <code>playerTouchCoin</code>.</p>
 	</li>
 	<li>
-		<p>Let's add the playerTouchCoin callback now:</p>
+		<p>Let's add the <code>playerTouchCoin</code> callback now:</p>
 		<p><pre><code class="haxe">private function playerTouchCoin(P:Player, C:Coin):Void
 {
 	if (P.alive &amp;&amp; P.exists &amp;&amp; C.alive &amp;&amp; C.exists)
@@ -91,4 +91,4 @@ private function finishKill(_):Void
 <p>Try out the game now, and you'll notice the difference when you pick up coins! We'll do some more of this later on when we start adding 'juice' to our game.</p>
 <p><img src="/images/tutorial/0016b.png" /></p>
 
-<p>Check out the <a href="https://github.com/SeiferTim/HaxeFlixel-Tutorial/tree/Part-VII">source code</a> for what we've done so far, and in the next part, we'll talk about enemies!</p>
+<p>In the next part, we'll talk about enemies!</p>

@@ -33,7 +33,7 @@ private var _won:Bool;</code></pre></p>
 		<p>To the top of the class.</p>
 	</li>
 	<li>
-		<p>Next, in the update function, right under super.update() add:</p>
+		<p>Next, in the update function, right under <code>super.update()</code> add:</p>
 		<p><pre><code class="haxe">if (_ending)
 {
 	return;
@@ -162,4 +162,3 @@ _save.close();</code></pre></p>
 <p><img src="/images/tutorial/0022.png" /></p>
 
 <p>Looking good! Next time we'll give our volume something to do by adding sound and music!</p>
-<p>You can check out the current source for everything so far, <a href="https://github.com/SeiferTim/HaxeFlixel-Tutorial/tree/Part-X">here</a>!</p>

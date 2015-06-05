@@ -15,9 +15,9 @@ title: "Part VIII: Enemies and Basic AI"
 		<p><img src="/images/tutorial/0018.png" /></p>
 	</li>
 	<li>
-		<p>So we want to have 2 different enemies in our game. We'll need spritesheets for both of them, with 16x16 pixel frames and the same animation frames as our player. Name them 'enemy-0.png' and 'enemy-1.png' and put them in the assets/images folder. You can use these, if you want (thanks, again, Vicky!):</p>
-		<p><a href="https://raw.githubusercontent.com/SeiferTim/HaxeFlixel-Tutorial/Part-VIII/assets/images/enemy-0.png"><img src="https://raw.githubusercontent.com/SeiferTim/HaxeFlixel-Tutorial/Part-VIII/assets/images/enemy-0.png" /></a></p>
-		<p><a href="https://raw.githubusercontent.com/SeiferTim/HaxeFlixel-Tutorial/Part-VIII/assets/images/enemy-1.png"><img src="https://raw.githubusercontent.com/SeiferTim/HaxeFlixel-Tutorial/Part-VIII/assets/images/enemy-1.png" /></a></p>
+		<p>So we want to have 2 different enemies in our game. We'll need spritesheets for both of them, with 16x16 pixel frames and the same animation frames as our player. Name them 'enemy-0.png' and 'enemy-1.png' and put them in the 'assets/images' folder. You can use these, if you want (thanks, again, Vicky!):</p>
+		<p><a href="https://github.com/HaxeFlixel/flixel-demos/blob/dev/Tutorials/TurnBasedRPG/assets/images/enemy-0.png"><img src="https://raw.githubusercontent.com/HaxeFlixel/flixel-demos/dev/Tutorials/TurnBasedRPG/assets/images/enemy-0.png" /></a></p>
+		<p><a href="https://github.com/HaxeFlixel/flixel-demos/blob/dev/Tutorials/TurnBasedRPG/assets/images/enemy-1.png"><img src="https://raw.githubusercontent.com/HaxeFlixel/flixel-demos/dev/Tutorials/TurnBasedRPG/assets/images/enemy-1.png" /></a></p>
 		<p>Note: make sure that your enemy sprites are functionally the same - they should have the same number of frames for each 'facing' animation.</p>
 	</li>
 	<li>
@@ -152,7 +152,7 @@ playerPos = FlxPoint.get();</code></pre></p>
 		}
 		else
 		{
-			_moveDir = FlxRandom.intRanged(0, 8) \* 45;
+			_moveDir = FlxRandom.intRanged(0, 8) &#42; 45;
 			FlxAngle.rotatePoint(speed * .5, 0, 0, 0, _moveDir, velocity);
 		}
 		_idleTmr = FlxRandom.intRanged(1, 4);
@@ -203,4 +203,4 @@ _grpEnemies.forEachAlive(checkEnemyVision);</code></pre></p>
 
 <p>That's all there is to it! Try out your game and make sure it works!</p>
 <p><img src="/images/tutorial/0018b.png" /></p>
-<p><a href="https://github.com/SeiferTim/HaxeFlixel-Tutorial/tree/Part-VIII">Here's the source</a> so you can verify your code. Next, we'll add some UI to the game, and add our RPG-style Combat so you can fight the enemies!</p>
+<p>Next, we'll add some UI to the game, and add our RPG-style Combat so you can fight the enemies!</p>

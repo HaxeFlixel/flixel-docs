@@ -16,9 +16,9 @@ title: "Part VI: Zoom and Cameras"
 		<p>So, open the PlayState again.</p>
 	</li>
 	<li>
-		<p>In the create function, after you add the player and before super.create(), add:</p>
+		<p>In the create function, after you add the player and before <code>super.create()</code>, add:</p>
 		<p><pre><code class="haxe">FlxG.camera.follow(_player, FlxCamera.STYLE_TOPDOWN, 1);</code></pre></p>
-		<p>This simply tells the camera to follow the player using the Topdown style, with a lerp of 1 (which helps the camera move a little smoother). Note: we 'skipped' over the offset parameter, this is a neat feature in Haxe which you can read about <a href="https://github.com/HaxeFoundation/HaxeManual/blob/master/md/manual/types-function-optional-arguments.md">here</a> and <a href="https://github.com/HaxeFoundation/HaxeManual/blob/master/md/manual/types-function-default-values.md">here</a>.</p>
+		<p>This simply tells the camera to follow the player using the Topdown style, with a lerp of 1 (which helps the camera move a little smoother). Note: we 'skipped' over the offset parameter, this is a neat feature in Haxe which you can read about <a href="http://haxe.org/manual/types-function-optional-arguments.html">here</a> and <a href="http://haxe.org/manual/types-function-default-values.html">here</a>.</p>
 	</li>
 </ol>
 

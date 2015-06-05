@@ -18,7 +18,7 @@ private var _btnFullScreen:FlxButton;
 #end</code></pre></p>
 	</li>
 	<li>
-		<p>In the create function, somewhere after we add our _barVolume object, add:</p>
+		<p>In the create function, somewhere after we add our <code>_barVolume</code> object, add:</p>
 		<p><pre><code class="haxe">#if desktop
 _btnFullScreen = new FlxButton(0, _barVolume.y + _barVolume.height + 8, FlxG.fullscreen ? "FULLSCREEN" : "WINDOWED", clickFullscreen);
 _btnFullScreen.screenCenter(true, false);
@@ -35,7 +35,7 @@ private function clickFullscreen():Void
 	_save.data.fullscreen = FlxG.fullscreen;
 }
 #end</code></pre></p>
-		<p>Yes, we wrap the entire function in our conditional - if we're not building for desktop, this function will not exist. You'll also notice that we are saving the value of FlxG.fullscreen - this will be used to 'remember' the game's screen state when they next launch the game.</p>
+		<p>Yes, we wrap the entire function in our conditional - if we're not building for desktop, this function will not exist. You'll also notice that we are saving the value of <code>FlxG.fullscreen</code> - this will be used to 'remember' the game's screen state when they next launch the game.</p>
 	</li>
 	<li>
 		<p>Make sure you clean up you button in destroy:</p>
@@ -99,13 +99,13 @@ _btnExit = FlxDestroyUtil.destroy(_btnExit);
 		<p>This will give your app a package name to be used on the Android Device - it's best to be as unique as possible.</p>
 	</li>
 	<li>
-		<p>Next, we need to change our assets around a little bit. Right now, we have &lt;assets path="assets" /&gt; which just says "load all the assets!". We want to filter them out a little bit and only load the ones that we actually NEED. While we're here, we need to make a new version of our music. We need both an mp3 and an ogg version of our music - Flash only allows for mp3 files, however, it is the only platform that can use mp3s (you can read more the reasons why <a href="http://www.openfl.org/blog/2013/09/18/to-mp3-or-not-to-mp3/">here</a>) - besides, ogg is generally a better format to use. You can find free tools on the internet, such as <a href="http://audacity.sourceforge.net/">Audacity</a> to convert your audio file formats if you're not sure how to do that.</p>
+		<p>Next, we need to change our assets around a little bit. Right now, we have <code>&lt;assets path="assets" /&gt;</code> which just says "load all the assets!". We want to filter them out a little bit and only load the ones that we actually NEED. While we're here, we need to make a new version of our music. We need both an mp3 and an ogg version of our music - Flash only allows for mp3 files, however, it is the only platform that can use mp3s (you can read more the reasons why <a href="http://www.openfl.org/blog/2013/09/18/to-mp3-or-not-to-mp3/">here</a>) - besides, ogg is generally a better format to use. You can find free tools on the internet, such as <a href="http://audacity.sourceforge.net/">Audacity</a> to convert your audio file formats if you're not sure how to do that.</p>
 		<p>Once you have both versions of your music stored in assets/music, replace your assets tag with:</p>
-		<p><pre><code class="xml">&lt;assets path="assets/data" include="*.oel" />
-&lt;assets path="assets/images" include="*.png" /&gt;
-&lt;assets path="assets/sounds" include="*.wav" /&gt;
-&lt;assets path="assets/music" include="*.mp3" if="flash" /&gt;
-&lt;assets path="assets/music" include="*.ogg" unless="flash" /&gt;</code></pre></p>
+		<p><pre><code class="xml">&lt;assets path="assets/data" include="&#42;.oel" />
+&lt;assets path="assets/images" include="&#42;.png" /&gt;
+&lt;assets path="assets/sounds" include="&#42;.wav" /&gt;
+&lt;assets path="assets/music" include="&#42;.mp3" if="flash" /&gt;
+&lt;assets path="assets/music" include="&#42;.ogg" unless="flash" /&gt;</code></pre></p>
 		<p>This will simply load the assets from each of our specified folders, grabbing only the files that match the wildcards we've specified. For the music, we load mp3 files if we're building for flash, and ogg if we're building for anything else.</p>
 	</li>
 	<li>
@@ -116,15 +116,15 @@ _btnExit = FlxDestroyUtil.destroy(_btnExit);
 &lt;haxedef name="FLX_NO_TOUCH" if="desktop" /&gt;</code></pre></p>
 	</li>
 	<li>
-		<p>The last change to our Project.xml file is to make sure we don't try to use the Debug logic on mobile. At the very bottom of the file, before the closing &lt;/project&gt; tag, add:</p>
+		<p>The last change to our Project.xml file is to make sure we don't try to use the Debug logic on mobile. At the very bottom of the file, before the closing <code>&lt;/project&gt;</code> tag, add:</p>
 		<p><pre><code class="xml">&lt;haxedef name="FLX_NO_DEBUG" if="mobile" /&gt;</code></pre></p>
 	</li>
 	<li>
 		<p>Now that we have different versions of our music, we need to make sure we play the right version. In Main.hx, at the end of setupGame, replace the line where we start playing our music with:</p>
 		<p><pre><code class="haxe">#if flash
-FlxG.sound.playMusic(AssetPaths.HaxeFlixel_Tutorial_Game\_\_mp3, 1, true);
+FlxG.sound.playMusic(AssetPaths.HaxeFlixel_Tutorial_Game&#95;&#95;mp3, 1, true);
 #else
-FlxG.sound.playMusic(AssetPaths.HaxeFlixel_Tutorial_Game\_\_ogg, 1, true);
+FlxG.sound.playMusic(AssetPaths.HaxeFlixel_Tutorial_Game&#95;&#95;ogg, 1, true);
 #end</code></pre></p>
 	</li>
 	<li>
@@ -148,7 +148,7 @@ virtualPad = FlxDestroyUtil.destroy(virtualPad);
 		<p><pre><code class="haxe">#if mobile
 virtualPad.visible = false;
 #end</code></pre></p>
-		<p>And, to make it reappear, in update, somewhere around where we set _inCombat to false, add:</p>
+		<p>And, to make it reappear, in update, somewhere around where we set <code>_inCombat</code> to false, add:</p>
 		<p><pre><code class="haxe">#if mobile
 virtualPad.visible = true;
 #end</code></pre></p>
@@ -178,7 +178,7 @@ _right = _right || PlayState.virtualPad.buttonRight.status == FlxButton.PRESSED;
 		<p><pre><code class="haxe">#if !FLX_NO_KEYBOARD</code></pre></p>
 	</li>
 	<li>
-		<p>At the end of our if (!_wait) statement, before the last } we need to add our touch check:</p>
+		<p>At the end of our <code>if (!_wait)</code> statement, before the last <code>}</code> we need to add our touch check:</p>
 		<p><pre><code class="haxe">#if !FLX_NO_TOUCH
 var didSelect:Bool = false;
 for (touch in FlxG.touches.justReleased())
@@ -210,4 +210,4 @@ for (touch in FlxG.touches.justReleased())
 
 <p>And that's everything! You should be able to run your game on Flash, Windows (Neko, too!), and Android and have it work on each with slight variations. And you only have one project and one set of code!</p>
 
-<p><a href="https://github.com/SeiferTim/HaxeFlixel-Tutorial/tree/Part-XII">Here's the latest code</a>, and next we'll polish up our game and add a little juice to make it POP!</p>
+<p>Next we'll polish up our game and add a little juice to make it POP!</p>

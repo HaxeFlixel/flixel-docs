@@ -46,7 +46,7 @@ add(_btnPlay);</code></pre></p>
 {
 	FlxG.switchState(new PlayState());
 }</code></pre></p>
-		<p>This function calls FlxG.switchState, which switches the state from whatever the current state is (MenuState) to a new instance of PlayState.</p>
+		<p>This function calls <code>FlxG.switchState</code>, which switches the state from whatever the current state is (MenuState) to a new instance of PlayState.</p>
 	</li>
 	<li>
 		<p>Technically, at this point, the functionality would work - you could run your game and it would do what we want it to do, but we're missing a few things.</p>
@@ -67,11 +67,11 @@ add(_btnPlay);</code></pre></p>
 		<p>This is another utility class. This one gives us safe ways to remove and cleanup objects that we create.</p>
 	</li>
 	<li>
-		<p>Next, go down to the destroy function, and in a new line right after super.destroy(); add:</p>
+		<p>Next, go down to the destroy function, and in a new line right after <code>super.destroy();</code> add:</p>
 		<p><pre><code class="haxe">_btnPlay = FlxDestroyUtil.destroy(_btnPlay);</code></pre></p>
 		<p>This is going to remove our button object from memory, as well as set the variable to null, which allows it to be completely cleared when garbage collection happens.</p>
 		<p>It's good practice to make sure that any class-wide objects you create are properly destroyed, otherwise  you can start to see performance issues.</p>
-		<p>Note: I know we could have skipped this whole part if we had NOT defined _btnPlay as a class-wide variable, and instead just created it in the create function, but we'll be coming back to this button later on, and it's good practice to get into the habit of destroying your objects.</p>
+		<p>Note: I know we could have skipped this whole part if we had NOT defined <code>_btnPlay</code> as a class-wide variable, and instead just created it in the create function, but we'll be coming back to this button later on, and it's good practice to get into the habit of destroying your objects.</p>
 	</li>
 	<li>
 		<p>If you test your game out now, it should go straight to a black screen with our 'Play' button in the middle, and clicking the button will take you to another black screen. If that's what you get, it works! (Trust me!) So far, so good!</p>
@@ -86,7 +86,7 @@ add(_btnPlay);</code></pre></p>
 
 <ol>
 	<li>
-		<p>In the Project list on the right side of your screen, right-click on your `source' folder, and choose `Add', and then `New Class.'.</p>
+		<p>In the Project list on the right side of your screen, right-click on your "source" folder, and choose "Add", and then "New Class."</p>
 		<p><img src="/images/tutorial/0004.png" /></p>
 	</li>
 	<li>
@@ -106,8 +106,8 @@ class Player extends FlxSprite
 {
 	public function new(X:Float=0, Y:Float=0, ?SimpleGraphic:Dynamic) 
 	{
-		super(X, Y, SimpleGraphic);	
-	}
+		super(X, Y, SimpleGraphic);
+    }
 }</code></pre></p>
 		<p>We'll need to fix this up a bit to make it usable.</p>
 	</li>
@@ -124,7 +124,7 @@ class Player extends FlxSprite
 		<p>With classes, we use the 'super' command to refer to the parent class. So, within out 'new' constructor, by calling super(X, Y) we are basically saying to go up the chain to our parent class, in this case FlxSprite, and call its constructor, passing it the X and Y parameters that were passed to us.</p>
 	</li>
 	<li>
-		<p>Next, we'll want to create a placeholder image to show us where our Sprite is, so under  super(X, Y);, add:</p>
+		<p>Next, we'll want to create a placeholder image to show us where our Sprite is, so under <code>super(X, Y);</code>, add:</p>
 		<p><pre><code class="haxe">makeGraphic(16, 16, FlxColor.BLUE);</code></pre></p>
 		<p>(Make sure that an import is created for FlxColor, and if it isn't, add it.)</p>
 		<p>All we're doing here is saying that we want to make this sprite's graphic be a 16x16 pixel blue square.</p>
@@ -133,10 +133,10 @@ class Player extends FlxSprite
 		<p>For right now, we just want to get the Player class initialized, make sure that it works, and try adding it to our PlayState. It's not going to move or do anything yet, that will come in a minute. So save the changes to our Player class, and go back to the PlayState.</p>
 		<p>We need to define our Player variable, so underneath the class line, add:</p>
 		<p><pre><code class="haxe">private var _player:Player;</code></pre></p>
-		<p>And in the create() function, before super.create(); add:</p>
+		<p>And in the <code>create()</code> function, before super.create(); add:</p>
 		<p><pre><code class="haxe">_player = new Player(20, 20);
 add(_player);</code></pre></p>
-		<p>This simply assigns a new instance of our Player sprite to our _player variable, telling it to be placed at 20, 20 on the screen, and adds it to our PlayState.</p>
+		<p>This simply assigns a new instance of our Player sprite to our <code>_player</code> variable, telling it to be placed at 20, 20 on the screen, and adds it to our PlayState.</p>
 	</li>
 	<li>
 		<p>If you run your project right now, you should see our blue player on the screen!</p>
@@ -153,7 +153,7 @@ add(_player);</code></pre></p>
 	<li>
 		<p>In your Player class, above your new constructor, add:</p>
 		<p><pre><code class="haxe">public var speed:Float = 200;</code></pre></p>
-		<p>Then, in the constructor, after you call makeGraphic, we need to add some drag:</p>
+		<p>Then, in the constructor, after you call <code>makeGraphic</code>, we need to add some drag:</p>
 		<p><pre><code class="haxe">drag.x = drag.y = 1600;</code></pre></p>
 		<p>Drag, in HaxeFlixel, is sort of a way to slow down an object when it's not being moved. This will prevent our Player sprite from just running forever in the same direction when the user stops pressing any movement keys.</p>
 		<p>This is sort of arbitrary based on what 'feels' right - we can come back and tweak the numbers later on.</p>
@@ -227,11 +227,11 @@ else if (_right)
 	<li>
 		<p>Next, close the bracket from your 'if' statement from earlier:</p>
 		<p><pre><code class="haxe">}</code></pre></p>
-		<p>...and that's the end of our movement() function!</p>
+		<p>...and that's the end of our <code>movement()</code> function!</p>
 	</li>
 	<li>
 		<p>The only thing left to do is to add a call to this function in our update() function, and we're good to go!</p>
-		<p>Just before the `super.update();`, add:</p>
+		<p>Just before the <code>super.update();</code>, add:</p>
 		<p><pre><code class="haxe">movement();</code></pre></p>
 		<p>The update function, as you should remember, is called each 'frame' of the game. So, each time our PlayState gets its update called, when it calls update on all of its members, it will trigger the player's update which will check our movement() logic, adjust the player's velocity accordingly, and then call its super.update(), which will take the velocity that we've just changed into account and figures out where the player sprite should move.</p>
 	</li>
@@ -239,4 +239,4 @@ else if (_right)
 
 <p>Whew! It sounds a lot more complicated than it really is - if you try out the game right now, you'll see that you can run around the screen by pressing any combination of arrow keys and WASD!</p>
 
-<p><a href="https://github.com/SeiferTim/HaxeFlixel-Tutorial/tree/Part-III">Here's the source</a> for the two classes we've worked on so far, so you can make sure you're on the right page. Next, we'll work on making the player sprite actually look like something!</p>
+<p>Next, we'll work on making the player sprite actually look like something!</p>

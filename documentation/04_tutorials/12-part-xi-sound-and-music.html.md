@@ -49,7 +49,7 @@ title: "Part XI: Sound and Music"
 <ol>
 	<li>
 		<p>First, open up Main.hx. Since we want our music to start as soon as the game starts, and loop continuously no matter what happens, we're going to make it start playing outside of our states when we setup our game. In the setupGame function, after our volume-setting code, add:</p>
-		<p><pre><code class="haxe">FlxG.sound.playMusic(AssetPaths.HaxeFlixel_Tutorial_Game\_\_mp3, 1, true);</code></pre></p>
+		<p><pre><code class="haxe">FlxG.sound.playMusic(AssetPaths.HaxeFlixel_Tutorial_Game&#95;&#95;mp3, 1, true);</code></pre></p>
 		<p>Be sure to change the file that you want to play, if your music file is named something different.</p>
 	</li>
 </ol>
@@ -59,18 +59,18 @@ title: "Part XI: Sound and Music"
 <ol>
 	<li>
 		<p>Next, we want to make our buttons all make a sound when they get clicked. This is simple, we just tell the button's onUp to load our sound. In MenuState, in create, after you initialize the play button, add this:</p>
-		<p><pre><code class="haxe">_btnPlay.onUp.sound = FlxG.sound.load(AssetPaths.select\_\_wav);</code></pre></p>
+		<p><pre><code class="haxe">_btnPlay.onUp.sound = FlxG.sound.load(AssetPaths.select&#95;&#95;wav);</code></pre></p>
 	</li>
 	<li>
-		<p>Now, you can do the same for the options button (changing _btnPlay to _btnOptions), and then for each of the other buttons in our game: 4 of them in OptionsState, and one in GameOverState.</p>
+		<p>Now, you can do the same for the options button (changing <code>&#95;btnPlay</code> to <code>&#95;btnOptions</code>), and then for each of the other buttons in our game: 4 of them in OptionsState, and one in GameOverState.</p>
 	</li>
 	<li>
 		<p>Next, let's give our player some footsteps. We don't want to create and destroy a new sound object every time we want to play the same sound, so we will create a FlxSound object to be used over and over. In the top of Player.hx, add:</p>
-		<p><pre><code class="haxe">private var _sndStep:FlxSound;</code></pre></p>
+		<p><pre><code class="haxe">private var &#95;sndStep:FlxSound;</code></pre></p>
 	</li>
 	<li>
 		<p>Then, in the constructor somewhere, we need to load the footstep sound:</p>
-		<p><pre><code class="haxe">_sndStep = FlxG.sound.load(AssetPaths.step\_\_wav);</code></pre></p>
+		<p><pre><code class="haxe">_sndStep = FlxG.sound.load(AssetPaths.step&#95;&#95;wav);</code></pre></p>
 	</li>
 	<li>
 		<p>Now go to our updateMovement function, and, after we check if the player is moving (<code>if ((velocity.x != 0 || velocity.y != 0) &amp;&amp; touching == FlxObject.NONE)</code>), add:</p>
@@ -88,7 +88,7 @@ title: "Part XI: Sound and Music"
 	</li>
 	<li>
 		<p>And then, similarly to how we setup Player.hx, add this to our constructor:</p>
-		<p><pre><code class="haxe">_sndStep = FlxG.sound.load(AssetPaths.step\_\_wav,.4);
+		<p><pre><code class="haxe">_sndStep = FlxG.sound.load(AssetPaths.step&#95;&#95;wav,.4);
 _sndStep.proximity(x,y,FlxG.camera.target, FlxG.width *.6);</code></pre></p>
 		<p>You'll notice that we are setting the volume to .4 (40%) this is because there will be plenty of enemies in the map, and there footsteps can get kind of annoying and loud. (Besides, they're probably walking around the dungeon barefoot, right?)</p>
 		<p>We then setup our proximity for our sounds, setting it's position  to the x and y of this enemy, and telling it to target the FlxG.camera.target object (which happens to be our Player!). Finally, we say that the radius of our footstep sound is a little bit more than half of the screen's width - so we should be able to hear enemies that are just off the screen, and all the enemies' footsteps will sound louder/softer based on their distance from the camera target.</p>
@@ -110,7 +110,7 @@ _sndStep.proximity(x,y,FlxG.camera.target, FlxG.width *.6);</code></pre></p>
 		<p>So, just like our other sounds, initialize the variable:</p>
 		<p><pre><code class="haxe">private var _sndCoin:FlxSound;</code></pre></p>
 		<p>Load the sound (in create):</p>
-		<p><pre><code class="haxe">_sndCoin = FlxG.sound.load(AssetPaths.coin\_\_wav);</code></pre></p>
+		<p><pre><code class="haxe">_sndCoin = FlxG.sound.load(AssetPaths.coin&#95;&#95;wav);</code></pre></p>
 		<p>Clean it up (in destroy):</p>
 		<p><pre><code class="haxe">_sndCoin = FlxDestroyUtil.destroy(_sndCoin);</code></pre></p>
 		<p>And, in our playerTouchCoin function, inside of our if statement, add:</p>
@@ -129,12 +129,12 @@ private var _sndWin:FlxSound;
 private var _sndCombat:FlxSound;</code></pre></p>
 		<p>To load them:</p>
 		<p><pre><code class="haxe">_sndFled = FlxG.sound.load(AssetPaths.fled\_\_wav);
-_sndHurt = FlxG.sound.load(AssetPaths.hurt\_\_wav);
-_sndLose = FlxG.sound.load(AssetPaths.lose\_\_wav);
-_sndMiss = FlxG.sound.load(AssetPaths.miss\_\_wav);
-_sndSelect = FlxG.sound.load(AssetPaths.select\_\_wav);
-_sndWin = FlxG.sound.load(AssetPaths.win\_\_wav);
-_sndCombat = FlxG.sound.load(AssetPaths.combat\_\_wav);</code></pre></p>
+_sndHurt = FlxG.sound.load(AssetPaths.hurt&#95;&#95;wav);
+_sndLose = FlxG.sound.load(AssetPaths.lose&#95;&#95;wav);
+_sndMiss = FlxG.sound.load(AssetPaths.miss&#95;&#95;wav);
+_sndSelect = FlxG.sound.load(AssetPaths.select&#95;&#95;wav);
+_sndWin = FlxG.sound.load(AssetPaths.win&#95;&#95;wav);
+_sndCombat = FlxG.sound.load(AssetPaths.combat&#95;&#95;wav);</code></pre></p>
 		<p>and to clean them up:</p>
 		<p><pre><code class="haxe">_sndFled = FlxDestroyUtil.destroy(_sndFled);
 _sndHurt = FlxDestroyUtil.destroy(_sndHurt);
@@ -148,23 +148,23 @@ _sndCombat = FlxDestroyUtil.destroy(_sndCombat);</code></pre></p>
 		<p><pre><code class="haxe">_sndCombat.play();</code></pre></p>
 		<p>In finishFadeIn, add:</p>
 		<p><pre><code class="haxe">_sndSelect.play();</code></pre></p>
-		<p>In update, inside each of our three if statements related to button presses (if (_fire), else if (_up), else if (_down)) add:</p>
+		<p>In update, inside each of our three if statements related to button presses (<code>if (_fire), else if (_up), else if (_down)</code>) add:</p>
 		<p><pre><code class="haxe">sndSelect.play();</code></pre></p>
-		<p>In makeChoice, in our logic for a 'hit' (after _damages[1].text = "1";), add:</p>
+		<p>In makeChoice, in our logic for a 'hit' (after <code>_damages[1].text = "1";</code>), add:</p>
 		<p><pre><code class="haxe">_sndHurt.play();</code></pre></p>
 		<p>and in our miss logic, add:</p>
 		<p><pre><code class="haxe">_sndMiss.play();</code></pre></p>
-		<p>Further down, if the player escapes (after outcome = ESCAPE), add:</p>
+		<p>Further down, if the player escapes (after <code>outcome = ESCAPE</code>), add:</p>
 		<p><pre><code class="haxe">_sndFled.play();</code></pre></p>
 		<p>In enemyAttack, if the enemy hits, add:</p>
 		<p><pre><code class="haxe">_sndHurt.play();</code></pre></p>
 		<p>and if they miss add:</p>
 		<p><pre><code class="haxe">_sndMiss.play();</code></pre></p>
-		<p>Finally, in doneDamageOut, after outcome = DEFEAT, add:</p>
+		<p>Finally, in doneDamageOut, after <code>outcome = DEFEAT</code>, add:</p>
 		<p><pre><code class="haxe">_sndLose.play();</code></pre></p>
 		<p>and after outcome = VICTORY, add:</p>
 		<p><pre><code class="haxe">_sndWin.play();</code></pre></p>
 	</li>
 </ol>
 
-<p>And that's it for sound! Play your game now, and you should hear all of the effects we've added (make sure your volume is up high enough, too!) <a href="https://github.com/SeiferTim/HaxeFlixel-Tutorial/tree/Part-XI">Here is the source</a> for this part of the tutorial. It's starting to look like a real game! Next time, we'll get it working on multiple platforms!</p>
+<p>And that's it for sound! Play your game now, and you should hear all of the effects we've added (make sure your volume is up high enough, too!) It's starting to look like a real game! Next time, we'll get it working on multiple platforms!</p>

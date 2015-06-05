@@ -56,7 +56,7 @@ class HUD extends FlxTypedGroup&lt;FlxSprite&gt;
 		_txtMoney.x = _sprMoney.x - _txtMoney.width - 4;
 	}
 }</code></pre></p>
-		<p>This class extends FlxTypedGroup&lt;FlxSprite&gt; so that it can hold all of our FlxSprite objects. It is composed of 5 different items: a background (black, with a 1-pixel thick white line along the bottom), 2 FlxText objects: 1 for Health, and 1 for Money, and 2 FlxSprites, for the icons to go next to the FlxTexts. At the end of our constructor, we have a forEach call - we use this to iterate through each of the items in this group, and it just sets their scrollFactor.x and scrollFactor.y to 0, meaning, even if the camera scrolls, all of these items will stay at the same position relative to the screen.</p>
+		<p>This class extends <code>FlxTypedGroup&lt;FlxSprite&gt;</code> so that it can hold all of our FlxSprite objects. It is composed of 5 different items: a background (black, with a 1-pixel thick white line along the bottom), 2 FlxText objects: 1 for Health, and 1 for Money, and 2 FlxSprites, for the icons to go next to the FlxTexts. At the end of our constructor, we have a forEach call - we use this to iterate through each of the items in this group, and it just sets their scrollFactor.x and scrollFactor.y to 0, meaning, even if the camera scrolls, all of these items will stay at the same position relative to the screen.</p>
 		<p>Finally, we have a function that we can call from anywhere to tell the HUD what it should display.</p>
 	</li>
 	<li>
@@ -67,7 +67,7 @@ private var _money:Int = 0;
 private var _health:Int = 3;</code></pre></p>
 	</li>
 	<li>
-		<p>In the create function, before super.create(), add:</p>
+		<p>In the create function, before <code>super.create()</code>, add:</p>
 		<p><pre><code class="haxe">_hud = new HUD();
 add(_hud);</code></pre></p>
 	</li>
@@ -140,7 +140,7 @@ else
 		_inCombat = false;
 		_player.active = true;
 		_grpEnemies.active = true;
-	}
+    }
 }</code></pre></p>
 		<p>So, we're adding a check to see if the player touches an enemy. If they do, we'll call a callback to see if we should start combat or not.</p>
 		<p>If we're in combat, we're simply going to keep checking to see if the combatHUD is still visible - once it becomes invisible, we know that combat has finished, and we can determine the outcome. If the outcome is VICTORY (one of our 4 enum values), we will kill the enemy, but if the player Fled the battle, we will make the enemy flicker, to show that the player is safe from fighting it again for a short amount of time.</p>
@@ -178,4 +178,4 @@ private function startCombat(E:Enemy):Void
 
 <p>And that should do it! Test out your game and make sure that it works!</p>
 <p><img src="/images/tutorial/0020.png" /></p>
-<p>You can see the <a href="https://github.com/SeiferTim/HaxeFlixel-Tutorial/tree/Part-IX">source here</a> to make sure you're on the same page. Next, we'll cover winning and losing and setting up all our different FlxStates.</p>
+<p>Next, we'll cover winning and losing and setting up all our different FlxStates.</p>

@@ -82,4 +82,4 @@ if ((velocity.x != 0 || velocity.y != 0) && touching == FlxObject.NONE) // if th
 	</li>
 </ol>
 
-<p><a href="https://github.com/SeiferTim/HaxeFlixel-Tutorial/tree/Part-IV">Here is the source</a> for everything up to this point. Next, we'll talk about maps and collision!</p>
+<p>Next, we'll talk about maps and collision!</p>
