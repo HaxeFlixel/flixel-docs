@@ -195,7 +195,7 @@ if (_left && _right)
 		<p>Next, we need to determine which direction to move the player, and by how much. There's a common mistake that I see from people making games which allow for diagonal movement, and that is that if they do something like this:</p>
 		<p><pre><code class="haxe">velocity.x = speed;
 velocity.y = speed;</code></pre></p>
-		<p>While this will, technically, move something diagonally down and right, it will actually move much FASTER than it really should be moving. This is because of <a href="http://en.wikipedia.org/wiki/Pythagorean_theorem">the way triangles work</a>. So, for our Player to move, we're not just going to set its velocity = Speed - that would be too easy! Instead, we're going to calculate exactly what its velocity should be with Angles!</p>
+		<p>While this will, technically, move something diagonally down and right, it will actually move much FASTER than it really should be moving. This is because of <a href="http://en.wikipedia.org/wiki/Pythagorean_theorem">the way triangles work</a>. So, for our player to move, we're not just going to set its <code>velocity</code> to <code>speed</code> - that would be too easy! Instead, we're going to calculate exactly what its velocity should be with angles!</p>
 		<p>The first part of this is to figure out what angle we want to have the player move based on the keys that are being pressed. In HaxeFlixel, angle 0 is to the right, and -90 (or 270) is up.</p>
 		<p><pre><code class="haxe">var mA:Float = 0;
 if (_up)
