@@ -6,13 +6,13 @@ Flixel comes with a fairly powerful debugging overlay. You can open it with one 
 
 Note that the debugger does not exist when compiling with `FLX_NO_DEBUG`. With the default `Project.xml`, this is the case in release mode.
 
-# PICTURE
+<img src="../images/02_handbook/debugger/debugger-overlay.png" />
 
 ## Debug draw
 
 `FlxG.debugger.drawDebug` can be enabled to display the hitboxes of every `FlxObject` added to the state (alternatively, press the cube button in the upper right corner of the debugger).
 
-# PICTURE
+<img src="../images/02_handbook/debugger/draw-debug.png" />
 
 The hitboxes are color-coded based on the collision properties. For `FlxObject` and `FlxSprite` this means:
 
@@ -45,8 +45,6 @@ var playerAction = new LogStyle("[Player]", "00FF40");
 FlxG.log.advanced(" Shoot", playerAction);
 ```
 
-# PICTURE
-
 ## The Watch Window
 
 It's very common to use `trace()`-calls to output the value of certain variables for debugging. However, this approach doesn't scale very well - at 60 fps, tracing the values of multiple variables results in a flood of messages. Breakpoints-debugging is great to inspect a game's internal state, but doesn't help when interrupting the execution is not an option, for example when debugging input logic.
@@ -64,9 +62,11 @@ The display string does not have to be the same as the variable's name, "numEnem
 FlxG.watch.add(_enemies, "length", "numEnemies");
 ```
 
+<img src="../images/02_handbook/debugger/watch-window.png" />
+
 For static variables, you pass the class instead of an object:
 
-```
+```haxe
 FlxG.watch.add(FlxG, "height");
 ```
 
@@ -76,13 +76,13 @@ To remove a watch entry again, simply call `FlxG.watch.remove(object, variableNa
 
 ### Quick watches
 
-Quick watches are a lightweight alternative to a regular watch entry. They don't require a variable, they simply store a value for a `String` name. The following example stores the result of `FlxG.keys.anyPressed(["Up", "W"])` under the name `"Up key pressed"` - this is updated every frame since it happens in `update()`.
+Quick watches are a lightweight alternative to a regular watch entry. They don't require a variable, they simply store a value for a `String` name. The following example stores the result of `FlxG.keys.anyPressed(["UP", "W"])` under the name `"Up key pressed"` - this is updated every frame since it happens in `update()`.
 
 ```
 override public function update():Void
 {
 	super.update();
-	FlxG.watch.addQuick("Up key pressed", FlxG.keys.anyPressed(["Up", "W"]));
+	FlxG.watch.addQuick("Up key pressed", FlxG.keys.anyPressed(["UP", "W"]));
 }
 ```
 
@@ -97,8 +97,6 @@ Quick watch values can not be modified.
 
 The stats window displays some basic profiling info:
 
-# PICTURE
-
 1. FPS value
 2. Memory usage in MB
 3. The amount of `update()` calls this frame (and the time it took in ms)
@@ -108,13 +106,15 @@ The stats window displays some basic profiling info:
 
 3 and 4 are especially useful when it comes to performance optimization ("Do I need to optimize my rendering or my update-logic?"). Of course this is only very basic data, profiling tools like [Adobe Scout](https://creative.adobe.com/products/scout) or [hxScout](https://github.com/jcward/hxScout) provide much more detailed information.
 
+<img src="../images/02_handbook/debugger/stats-window.png" />
+
 ## The Bitmap Log Window
 
 The Bitmap Log can be used to display `BitmapData` objects via `FlxG.bitmapLog.add(bitmapData)`. This can be useful to debug logic that manipulates some `BitmapData`. The window provides a slideshow to scroll through logged bitmaps. You can use the middle mouse button to move the graphic around and the mouse wheel to zoom in and out.
 
-# PICTURE
-
 You can also inspect flixel's internal `BitmapData` cache by calling `FlxG.bitmapLog.viewCache()` or entering the console command `viewCache` (short: `vc`).
+
+<img src="../images/02_handbook/debugger/view-cache.png" />
 
 ## The Console Window
 
