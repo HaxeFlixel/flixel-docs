@@ -55,7 +55,7 @@ _sprScreen.dirty = true;</code></pre></p>
 
 <p>That's all there is to it! Our <code>_sprWaveSprite</code> will fade in and out with the CombatHUD already. Try our the effect to see how it looks!</p>
 
-<p><img src="/images/tutorial/0022.png" /></p>
+<p><img src="../images/04_tutorials/0022.png" /></p>
 
 <p>You might have noticed, while testing the game, that the mouse cursor can get in the way - especially since it's not needed outside of the menu states. We can remedy this pretty easily.</p>
 <p>In the <code>PlayState.create()</code>, add:</p>

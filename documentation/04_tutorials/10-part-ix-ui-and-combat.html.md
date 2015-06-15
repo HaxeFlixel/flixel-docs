@@ -79,7 +79,7 @@ _hud.updateHUD(_health, _money);</code></pre></p>
 </ol>
 
 <p>Go ahead and test out your game, and the HUD should update each time you pick up a coin!</p>
-<p><img src="/images/tutorial/0019.png" /></p>
+<p><img src="../images/04_tutorials/0019.png" /></p>
 <p>If we had a way to 'hurt' the player, we could also update the health on the HUD… but in order to do that, we need to figure out how we're going to do combat!</p>
 
 <p>Let's begin by establishing what we want our combat system to achieve. First, we're not going to be making the next Final Fantasy game here, this is just a basic demonstration to show how a few different elements can work. So, I think all we want to do is have a simple interface that appears when the player touches an enemy that shows the Player's health, and the Enemy's health (in a health bar, for obfuscation), and gives the player 2 options: FIGHT or FLEE.</p>
@@ -177,5 +177,5 @@ private function startCombat(E:Enemy):Void
 </ol>
 
 <p>And that should do it! Test out your game and make sure that it works!</p>
-<p><img src="/images/tutorial/0020.png" /></p>
+<p><img src="../images/04_tutorials/0020.png" /></p>
 <p>Next, we'll cover winning and losing and setting up all our different FlxStates.</p>

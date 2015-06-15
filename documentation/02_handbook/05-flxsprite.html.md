@@ -91,7 +91,7 @@ This method is destructive to the sprite and should be used when you want to mak
 
 Flixel supports spritesheet animation.
 
-![](/images/sprite-animation-example.png)
+![](../images/02_handbook/sprite-animation-example.png)
 
 ```haxe
 player.loadGraphic("assets/player.png", true, 32, 36);

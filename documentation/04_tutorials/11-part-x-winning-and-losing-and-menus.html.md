@@ -101,7 +101,7 @@ _combatHud = FlxDestroyUtil.destroy(_combatHud);</code></pre></p>
 
 <p>If you test your game, you should be able to trigger the GameOverState by either dying in combat or defeating the boss, and then clicking on the button in the GameOverState will take you back to our MenuState so you can play again. If all of that works, you're on the right track! But… our MenuState is looking a little bland, now… let's fix that up!</p>
 
-<p><img src="/images/tutorial/0021.png" /></p>
+<p><img src="../images/04_tutorials/0021.png" /></p>
 
 <ol>
 	<li>
@@ -159,6 +159,6 @@ _save.close();</code></pre></p>
 
 <p>Test everything out, make sure it's working, and that if you change your volume under options and then exit the game, it retains the value the next time to get into the options screen.</p>
 
-<p><img src="/images/tutorial/0022.png" /></p>
+<p><img src="../images/04_tutorials/0022.png" /></p>
 
 <p>Looking good! Next time we'll give our volume something to do by adding sound and music!</p>

@@ -18,23 +18,23 @@ assets/images/tiles.png" /></a></p>
 	</li>
 	<li>
 		<p>Next, you need to define your project's settings. Go through each tab, one-by-one, and set it up to look like the following:</p>
-		<p><img src="/images/tutorial/0007.png" /></p>
-		<p><img src="/images/tutorial/0008.png" /></p>
-		<p><img src="/images/tutorial/0008b.png" /></p>
-		<p><img src="/images/tutorial/0009.png" /></p>
-		<p><img src="/images/tutorial/0010.png" /></p>
+		<p><img src="../images/04_tutorials/0007.png" /></p>
+		<p><img src="../images/04_tutorials/0008.png" /></p>
+		<p><img src="../images/04_tutorials/0008b.png" /></p>
+		<p><img src="../images/04_tutorials/0009.png" /></p>
+		<p><img src="../images/04_tutorials/0010.png" /></p>
 	</li>
 	<li>
 		<p>Hit Apply to save your changes. You should now see a screen that looks like this:</p>
-		<p><img src="/images/tutorial/0011.png" /></p>
+		<p><img src="../images/04_tutorials/0011.png" /></p>
 	</li>
 	<li>
 		<p>Make sure you're on the 'walls' layer, and, using tools on the right, draw out a simple map. Make sure it's completely encircled by walls (so the player can't wander off the map), and make the insides filled with floor tiles. You should end up with something like this:</p>
-		<p><img src="/images/tutorial/0012.png" /></p>
+		<p><img src="../images/04_tutorials/0012.png" /></p>
 	</li>
 	<li>
 		<p>Now, switch over to the 'entities' layer, and place your player entity somewhere in one of your rooms:</p>
-		<p><img src="/images/tutorial/0013.png" /></p>
+		<p><img src="../images/04_tutorials/0013.png" /></p>
 	</li>
 	<li>
 		<p>Go up to Level > Save Level, and save this as "room-001.oel" in "assets/data".</p>
@@ -112,7 +112,7 @@ offset.set(4, 2);</code></pre></p>
 	</li>
 	<li>
 		<p>Go ahead and run your project, and you should be able to run around the map.</p>
-		<p><img src="/images/tutorial/0013b.png" /></p>
+		<p><img src="../images/04_tutorials/0013b.png" /></p>
 	</li>
 </ol>
 

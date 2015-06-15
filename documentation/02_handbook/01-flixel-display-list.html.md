@@ -13,4 +13,4 @@ For performance reasons, Flixel has its own independent display list and it rend
 
 You can see the display objects used in a typical Flixel game in this diagram. Note you can still place display objects above or below Flixel's camera. It it recommended to use `FlxG.addChildBelowMouse()` and `FlxG.removeChild()` for that.
 
-<img src="/images/flixel-display-list.png" style="max-width:400px" />
+<img src="../images/02_handbook/flixel-display-list.png" style="max-width:400px" />

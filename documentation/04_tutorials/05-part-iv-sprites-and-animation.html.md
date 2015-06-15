@@ -78,7 +78,7 @@ if ((velocity.x != 0 || velocity.y != 0) && touching == FlxObject.NONE) // if th
 	</li>
 	<li>
 		<p>Save your changes and run your project, and you should see your player sprite animate while being moved, and facing the right direction!</p>
-		<p><img src="/images/tutorial/0006b.png" /></p>
+		<p><img src="../images/04_tutorials/0006b.png" /></p>
 	</li>
 </ol>
 

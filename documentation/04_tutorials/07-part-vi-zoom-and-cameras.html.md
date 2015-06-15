@@ -23,6 +23,6 @@ title: "Part VI: Zoom and Cameras"
 </ol>
 
 <p>That's it! Test out the game and see how it looks!</p>
-<p><img src="/images/tutorial/0013c.png" /></p>
+<p><img src="../images/04_tutorials/0013c.png" /></p>
 
 <p>Next, let's give the player something to pickup around the map!</p>

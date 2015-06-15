@@ -7,12 +7,12 @@ title: "Part VIII: Enemies and Basic AI"
 <ol>
 	<li>
 		<p>This should be second nature by now - add a new entity type in your Ogmo project:</p>
-		<p><img src="/images/tutorial/0017.png" /></p>
+		<p><img src="../images/04_tutorials/0017.png" /></p>
 		<p>Make sure you add the 'etype' value.</p>
 	</li>
 	<li>
 		<p>Then scatter some enemies around the map. Make all but one of them have an etype value of '0', and the other one be '1'.</p>
-		<p><img src="/images/tutorial/0018.png" /></p>
+		<p><img src="../images/04_tutorials/0018.png" /></p>
 	</li>
 	<li>
 		<p>So we want to have 2 different enemies in our game. We'll need spritesheets for both of them, with 16x16 pixel frames and the same animation frames as our player. Name them 'enemy-0.png' and 'enemy-1.png' and put them in the 'assets/images' folder. You can use these, if you want (thanks, again, Vicky!):</p>
@@ -202,5 +202,5 @@ _grpEnemies.forEachAlive(checkEnemyVision);</code></pre></p>
 </ol>
 
 <p>That's all there is to it! Try out your game and make sure it works!</p>
-<p><img src="/images/tutorial/0018b.png" /></p>
+<p><img src="../images/04_tutorials/0018b.png" /></p>
 <p>Next, we'll add some UI to the game, and add our RPG-style Combat so you can fight the enemies!</p>

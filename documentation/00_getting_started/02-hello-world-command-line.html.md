@@ -86,4 +86,4 @@ lime test neko
 
 If you struggled through any part of this tutorial, ask a question on our [forum](/forum) :)
 
-<img src="/images/hello-world.jpg" style="width:100%;" />
+<img src="../images/00_getting_started/hello-world.jpg" style="width:100%;" />

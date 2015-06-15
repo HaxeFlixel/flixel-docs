@@ -87,14 +87,14 @@ add(_btnPlay);</code></pre></p>
 <ol>
 	<li>
 		<p>In the Project list on the right side of your screen, right-click on your "source" folder, and choose "Add", and then "New Class."</p>
-		<p><img src="/images/tutorial/0004.png" /></p>
+		<p><img src="../images/04_tutorials/0004.png" /></p>
 	</li>
 	<li>
 		<p>In the New Haxe Class Dialog that pops up, enter "Player" for "Name", and next to "Base Class", click "Browse." and search for "flixel.FlxSprite" and choose it.</p>
 	</li>
 	<li>
 		<p>Once your screen looks like this, hit "OK":</p>
-		<p><img src="/images/tutorial/0005.png" /></p>
+		<p><img src="../images/04_tutorials/0005.png" /></p>
 	</li>
 	<li>
 		<p>You should now see a very basic class which extends FlxSprite:</p>
@@ -140,7 +140,7 @@ add(_player);</code></pre></p>
 	</li>
 	<li>
 		<p>If you run your project right now, you should see our blue player on the screen!</p>
-		<p><img src="/images/tutorial/0006.png" /></p>
+		<p><img src="../images/04_tutorials/0006.png" /></p>
 		<p>Now let's get it to move around!</p>
 	</li>
 </ol>

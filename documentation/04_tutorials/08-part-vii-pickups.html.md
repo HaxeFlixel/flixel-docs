@@ -10,18 +10,18 @@ title: "Part VII: Pickups"
 	</li>
 	<li>
 		<p>On the Entities tab, add a new entity:</p>
-		<p><img src="/images/tutorial/0014.png" /></p>
+		<p><img src="../images/04_tutorials/0014.png" /></p>
 	</li>
 	<li>
 		<p>Open up the level we used before, and, on the 'entities' layer, scatter a bunch of coins around:</p>
-		<p><img src="/images/tutorial/0015.png" /></p>
+		<p><img src="../images/04_tutorials/0015.png" /></p>
 	</li>
 	<li>
 		<p>We're going to make our coins be 8x8 pixels. For the coin's graphic, you can use this image <a href="https://github.com/HaxeFlixel/flixel-demos/blob/dev/Tutorials/TurnBasedRPG/assets/images/coin.png"><img src="https://raw.githubusercontent.com/HaxeFlixel/flixel-demos/master/Tutorials/TurnBasedRPG/assets/images/coin.png" /></a>, or make your own. Make sure you save this in "assets/images".</p>
 	</li>
 	<li>
 		<p>Get back into FlashDevelop, and make a new class:</p>
-		<p><img src="/images/tutorial/0016.png" /></p>
+		<p><img src="../images/04_tutorials/0016.png" /></p>
 	</li>
 	<li>
 		<p>For now, our coin is going to be really simple. Just change the constructor to look like this:</p>
@@ -89,6 +89,6 @@ private function finishKill(_):Void
 </ol>
 
 <p>Try out the game now, and you'll notice the difference when you pick up coins! We'll do some more of this later on when we start adding 'juice' to our game.</p>
-<p><img src="/images/tutorial/0016b.png" /></p>
+<p><img src="../images/04_tutorials/0016b.png" /></p>
 
 <p>In the next part, we'll talk about enemies!</p>
