@@ -20,6 +20,10 @@ title: "Part VI: Zoom and Cameras"
 		<p><pre><code class="haxe">FlxG.camera.follow(_player, FlxCamera.STYLE_TOPDOWN, 1);</code></pre></p>
 		<p>This simply tells the camera to follow the player using the Topdown style, with a lerp of 1 (which helps the camera move a little smoother). Note: we 'skipped' over the offset parameter, this is a neat feature in Haxe which you can read about <a href="http://haxe.org/manual/types-function-optional-arguments.html">here</a> and <a href="http://haxe.org/manual/types-function-default-values.html">here</a>.</p>
 	</li>
+  <li>
+    <p>Finally, we need to tell the game that our world is the size of the map, otherwise, collision checks will stop working once we move outside the current screen.</p>
+    <p><pre><code class="haxe">FlxG.worldBounds.set(0, 0, _mWalls.width, _mWalls.height);</code></pre></p>
+    <p>For other games, it might make sense to have your `worldBounds` move along with the camera, or do some other fancy things, but, in our case, this works fine.</p>
 </ol>
 
 <p>That's it! Test out the game and see how it looks!</p>
