@@ -12,14 +12,14 @@ title: "Part II: Testing with a New Project"
 	</li>
 	<li>
 		<p>Outside of the Command Prompt, launch FlashDevelop. Select File>Open and browse to where your FlixelTut directory was created. It should look something like this:</p>
-		<p><img src="/images/tutorial/0001.png"/></p>
+		<p><img src="../images/04_tutorials/0001.png"/></p>
 	</li>
 	<li>
 		<p>Open the FlixelTut.hxproj file.</p>
 	</li>
 	<li>
 		<p>Over on the right side of the screen, you should see your Project. This will contain all the files that the Template generated for us.</p>
-		<p><img src="/images/tutorial/0002.png" /></p>
+		<p><img src="../images/04_tutorials/0002.png" /></p>
 	</li>
 	<li>
 		<p>Next, let's make sure that our project builds and runs properly. By default, a fresh, new Flixel Template Project will launch the game in the MenuState. So go ahead and double-click to open that file from the project list.</p>
@@ -37,9 +37,9 @@ title: "Part II: Testing with a New Project"
 	</li>
 	<li>
 		<p>The Moment of Truth! Go up to the toolbar in FlashDevelop and choose 'Debug' and 'Flash':</p>
-		<p><img src="/images/tutorial/0002b.png" /></p>
+		<p><img src="../images/04_tutorials/0002b.png" /></p>
 		<p>Then, press the blue arrow next to 'Debug' (or hit F5) and you should see:</p>
-		<p><img src="/images/tutorial/0003.png" /></p>
+		<p><img src="../images/04_tutorials/0003.png" /></p>
 		<p>It worked! You've built and run your first HaxeFlixel code!</p>
 	</li>
 </ol>
