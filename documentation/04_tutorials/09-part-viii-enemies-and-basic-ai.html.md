@@ -50,18 +50,18 @@ What would a dungeon game be without enemies? Let's add some!
 	
 		override public function draw():Void 
 		{
-			if ((velocity.x != 0 || velocity.y != 0 ) &amp;&amp; touching == FlxObject.NONE)
+			if ((velocity.x != 0 || velocity.y != 0 ) && touching == FlxObject.NONE)
 			{
 				if (Math.abs(velocity.x) > Math.abs(velocity.y))
 				{
-					if (velocity.x &lt; 0)
+					if (velocity.x < 0)
 						facing = FlxObject.LEFT;
 					else
 						facing = FlxObject.RIGHT;
 				}
 				else
 				{
-					if (velocity.y &lt; 0)
+					if (velocity.y < 0)
 						facing = FlxObject.UP;
 					else
 						facing = FlxObject.DOWN;
@@ -165,7 +165,7 @@ In order to let our enemies 'think', we're going to utilize a very simple [Finit
 		{
 			_brain.activeState = chase;
 		}
-		else if (_idleTmr &lt;= 0)
+		else if (_idleTmr <= 0)
 		{
 			if (FlxRandom.chanceRoll(1))
 			{

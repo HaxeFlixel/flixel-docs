@@ -71,7 +71,7 @@ Now that we have our little guy running around our map, lets give him something 
 	```haxe
 	private function playerTouchCoin(P:Player, C:Coin):Void
 	{
-		if (P.alive &amp;&amp; P.exists &amp;&amp; C.alive &amp;&amp; C.exists)
+		if (P.alive && P.exists && C.alive && C.exists)
 		{
 			C.kill();
 		}
