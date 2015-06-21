@@ -2,7 +2,9 @@
 title: "Part V: Tiles, Maps, and Collisions"
 ```
 
-<p>Now it's time to make some maps for the player to move around in! To do this, we're going to use a tool called Ogmo Editor. Ogmo is a free tile map editor that works very nicely with HaxeFlixel. For this part of the tutorial, we're just going to use a simple 2-tile Tilesheet with a tile for Walls and a tile for Floors.</p>
+<p>Now it's time to make some maps for the player to move around in! To do this, we're going to use a tool called Ogmo Editor. Ogmo is a free tile map editor that works very nicely with HaxeFlixel.</p>
+
+<p>For this part of the tutorial, we're just going to use a simple 2-tile Tilesheet with a tile for Walls and a tile for Floors.</p>
 
 <p>You can make your own, with 16x16 pixel tiles, or use this one:</p>
 <p><a href="https://github.com/HaxeFlixel/flixel-demos/blob/dev/Tutorials/TurnBasedRPG/assets/images/tiles.png"><img src="https://raw.githubusercontent.com/HaxeFlixel/flixel-demos/master/Tutorials/TurnBasedRPG/
@@ -12,6 +14,7 @@ assets/images/tiles.png" /></a></p>
 <ol>
 	<li>
 		<p>Go to <a href="http://www.ogmoeditor.com/">http://www.ogmoeditor.com/</a> to download and install it, then launch the editor.</p>
+    <p>Note: Ogmo is Windows-only, if you are using something else (or,if you just want to), you can try using <a href="http://www.mapeditor.org/">Tiled</a>, another free, but slightly more complex tool.</p>
 	</li>
 	<li>
 		<p>Go to Project > New Project and name your project whatever you want. I would save it under assets/data.</p>
@@ -67,6 +70,7 @@ assets/images/tiles.png" /></a></p>
 		<p><pre><code class="haxe">private var _map:FlxOgmoLoader;
 private var _mWalls:FlxTilemap;</code></pre></p>
 		<p>We're basically just creating an object to hold our Ogmo Map, and then another one to hold the FlxTilemap that we will generate from the Ogmo map.</p>
+    <p>For Tiled, change `FlxOgmoLoader` to `TiledMap`.</p>
 	</li>
 	<li>
 		<p>In the create function, before we setup the player object, add:</p>
@@ -76,6 +80,13 @@ _mWalls.setTileProperties(1, FlxObject.NONE);
 _mWalls.setTileProperties(2, FlxObject.ANY);
 add(_mWalls);</code></pre></p>
 		<p>This just loads our room file into our FlxOgmoLoader object, generates our FlxTilemap from the 'walls' layer, and then sets tile 1 (our floor tile) to not collide, and tile 2 (walls) to collide from any direction. Then we add our tilemap to the state.</p>
+    <p>For Tiled, this changes to:</p>
+    <p><pre><code class="haxe">_map = new TiledMap(AssetPaths.room_001__tmx);
+_mWalls = new FlxTilemap();
+_mWalls.loadMapFromArray(cast(_map.getLayer("walls"), TiledTileLayer).tileArray, _map.width, _map.height, AssetPaths.tiles__png, _map.tileWidth, _map.tileHeight, FlxTilemapAutoTiling.OFF, 1, 1, 3);
+_mWalls.setTileProperties(2, FlxObject.NONE);
+_mWalls.setTileProperties(3, FlxObject.ANY);
+add(_mWalls);</code></pre></p>
 	</li>
 	<li>
 		<p>Now, we need to make our player object get placed in the right location on the map. So, change where we initialize our player from:</p>
@@ -84,6 +95,12 @@ add(_mWalls);</code></pre></p>
 		<p><pre><code class="haxe">_player = new Player();
 _map.loadEntities(placeEntities, "entities");</code></pre></p>
 		<p>We're simply telling our _map object to loop through all of the entities in our 'entities' layer, and call the placeEntities function for each one (which we're about to make now).</p>
+    <p>`TiledMap` does not have a built-in `loadEntities` function, so you'll need to change this to:</p>
+    <p><pre><code class="haxe">var tmpMap:TiledObjectLayer = cast _map.getLayer("entities");
+for (e in tmpMap.objects)
+{
+  placeEntities(e.type, e.xmlData.x);
+}</code></pre></p>
 	</li>
 	<li>
 		<p>Let's make the placeEntities function now. When we call loadEntities on our map, it will pass the name of the entity, as well as its Xml data to whatever function we want. In our function, we need to take this information and do something with it. It will look like this now:</p>
