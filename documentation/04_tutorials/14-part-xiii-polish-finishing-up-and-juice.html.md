@@ -50,7 +50,7 @@ Next, let's add a background effect to our CombatHUD to help bring our the comba
 
 2. In the constructor, we'll initialize these two objects (add this before we create our _sprBack):
 
-		```haxe
+	```haxe
 	_sprScreen = new FlxSprite().makeGraphic(FlxG.width, FlxG.height, FlxColor.TRANSPARENT);
 	_sprWave = new FlxWaveSprite(_sprScreen, WaveMode.ALL, 4, -1, 4);
 	add(_sprWave);
