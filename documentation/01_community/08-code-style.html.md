@@ -336,7 +336,7 @@ private function getColor(color:Color):Int {
 
 This is preferable to how this code would look like in a lot of other languages, for example C#:
 
-```haxe
+```csharp
 int getColor(Color color) {
   switch (color) {
     case Color.RED:
