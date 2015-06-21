@@ -14,8 +14,8 @@ to). We will work primarily with Flash most of the time.
 We are going to be building a small dungeon crawler. You can see the finished product here:
 
 <object width="640" height="480">
-    <param name="movie" value="http://haxeflixel.com/tutorial/FlixelTut.swf">
-    <embed src="http://haxeflixel.com/tutorial/FlixelTut.swf" width="640" height="480">
+    <param name="movie" value="http://haxeflixel.com/demos/swf/TurnBasedRPG.swf">
+    <embed src="http://haxeflixel.com/demos/swf/TurnBasedRPG.swf" width="640" height="480">
     </embed>
 </object>
 
