@@ -112,7 +112,7 @@ Our game is really starting to come together! Now we need it to feel more like a
 
 	Here is the code for that State:
 
-	[GameOverState.hx](https://github.com/HaxeFlixel/flixel-demos/blob/dev/Tutorials/TurnBasedRPG/source/GameOverState.hx)
+	[GameOverState.hx](https://github.com/HaxeFlixel/flixel-demos/blob/master/Tutorials/TurnBasedRPG/source/GameOverState.hx)
 
 If you test your game, you should be able to trigger the GameOverState by either dying in combat or defeating the boss, and then clicking on the button in the GameOverState will take you back to our MenuState so you can play again. If all of that works, you're on the right track! But… our MenuState is looking a little bland, now… let's fix that up!
 
@@ -165,7 +165,7 @@ If you test your game, you should be able to trigger the GameOverState by either
 
 	The code for this State looks like this:
 
-	[OptionsState.hx](https://github.com/HaxeFlixel/flixel-demos/blob/dev/Tutorials/TurnBasedRPG/source/OptionsState.hx)
+	[OptionsState.hx](https://github.com/HaxeFlixel/flixel-demos/blob/master/Tutorials/TurnBasedRPG/source/OptionsState.hx)
 
 	Finally, we want our game to load the stored volume (if there is any) each time the game starts, so, goto our Main.hx file, and, in setupGame, after addChild, add:
 

@@ -97,7 +97,7 @@ This all seems simple enough, but it's actually going to require several compone
 
 1. The first component will be our CombatHUD class. This is a pretty big class - it's going to do most of the heavy lifting with our combat logic. You can see the complete class here:
 
-	[CombatHUD.hx](https://github.com/HaxeFlixel/flixel-demos/blob/dev/Tutorials/TurnBasedRPG/source/CombatHUD.hx)
+	[CombatHUD.hx](https://github.com/HaxeFlixel/flixel-demos/blob/master/Tutorials/TurnBasedRPG/source/CombatHUD.hx)
 
 	Take some time to read through it to see how it works, then add it to your project. You will need to add a small function to our Enemy.hx class, as well:
         
