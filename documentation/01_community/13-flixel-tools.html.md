@@ -6,7 +6,7 @@ To make HaxeFlixel development easier, a set of command line tools has been deve
 
 ### Installation:
 
-The latest stable release of the tools is published just like flixel on Haxelib, so installing is easy:
+The tools are available on haxelib:
 
 ```bash
 haxelib install flixel-tools
