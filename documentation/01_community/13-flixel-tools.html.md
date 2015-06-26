@@ -4,7 +4,7 @@ title: "Flixel Tools"
 
 To make HaxeFlixel development easier, a set of command line tools has been developed with [Haxe](http://haxe.org) and [Neko](http://nekovm.org). With it you can easily create our demo projects, templates and more. Just like HaxeFlixel it is an open-source tool and additions/improvements from the community are welcome at the [flixel-tools GitHub repository](https://github.com/HaxeFlixel/flixel-tools).
 
-### Installation:
+## Installation
 
 The tools are available on haxelib:
 
@@ -12,7 +12,7 @@ The tools are available on haxelib:
 haxelib install flixel-tools
 ```
 
-## Setup the Tools
+## Setup
 
 To set the tools up initially / to be able to use the `flixel` alias in your console:
 
