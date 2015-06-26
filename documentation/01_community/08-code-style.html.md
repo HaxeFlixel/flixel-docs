@@ -86,7 +86,7 @@ class Example
 
 ### In Function Bodies
 
-Using line breaks to group code section that logically belong together can help readability like in this example:
+Using line breaks to group code sections that logically belong together can help readability like in this example:
 
 ``` haxe
 private function resetHelpers():Void
