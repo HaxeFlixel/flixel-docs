@@ -37,6 +37,6 @@ To generate the API docs yourself use the following method:
  * Run the genxml.bat
  * Run the gendocs.bat
 
-Note this will use your localy enabled haxelib flixel versions, e.g. if you have `haxelib git flixel` set to `dev` etc.
+Note this will use your locally enabled haxelib flixel versions, e.g. if you have `haxelib git flixel` set to `dev` etc.
 
 The docs will now be generated in the `api/dox-gen/output` folder.
