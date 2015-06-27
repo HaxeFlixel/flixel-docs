@@ -8,7 +8,7 @@ This is HaxeFlixel's code style. Not the entire codebase conforms for it at the 
 
 ### Before Opening Curly Brackets
 
-There should always be a single line break before a opening curly brackets.
+There should always be a single line break before an opening curly bracket.
 
 **Good:**
 
@@ -133,7 +133,7 @@ function shootBulletAtEnemy(target:Enemy, bullet:BulletType):Void
 
 However, function names should also not be too short - you should be able to roughly know what a function does simply by reading its name - reading its description, if existant, should ideally not be necessary. 
 
-An example for a bad / too simple name would be `shoot()` instead of `shootEnemy()` in this example.
+An example for a bad / too simple name would be `shoot()` instead of `shootEnemy()`.
 
 ### Spacing
 
@@ -157,8 +157,7 @@ Spaces *should* be used before the opening brackets of `if`, `for`, `while` and 
 
 ### Parameter Names
 
-Use lowerCamelCases for function parameters 
-and use `this` to explicitly reference to class members (only when neccessary):
+Use lowerCamelCases for function parameters and use `this` to explicitly reference to class members (only when neccessary):
 
 ``` haxe
 function translate(words:String, bableFish:BableFish):Void
@@ -176,8 +175,7 @@ function translate(Words:String, BableFish:BableFish):Void
 }
 ```
 
-In the core of HaxeFlixel, there are a lot of method parameters written in capitalized letters (not preferred in Haxe),
-this is mostly legacy from the AS3 Flixel's code style and hard to change them all. However, newly written functions should follow the lowerCamelCases style. Also, we encourge contributors to convert them when fixing bugs/updating existing codes.
+In the core of HaxeFlixel, there are a lot of method parameters are capitalized (not preferred in Haxe). This is mostly legacy from the AS3 Flixel's code style and hard to change them all. However, newly written functions should follow the lowerCamelCase style. Also, we encourge contributors to convert them when fixing bugs/updating existing codes.
 
 ## Colon Spacing
 
