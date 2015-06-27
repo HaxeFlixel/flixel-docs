@@ -6,13 +6,13 @@ Flixel comes with a fairly powerful debugging overlay. You can open it with one 
 
 Note that the debugger does not exist when compiling with `FLX_NO_DEBUG`. With the default `Project.xml`, this is the case in release mode.
 
-<img src="../images/02_handbook/debugger/debugger-overlay.png" />
+![](../images/02_handbook/debugger/debugger-overlay.png)
 
 ## Debug draw
 
 `FlxG.debugger.drawDebug` can be enabled to display the hitboxes of every `FlxObject` added to the state (alternatively, press the cube button in the upper right corner of the debugger).
 
-<img src="../images/02_handbook/debugger/draw-debug.png" />
+![](../images/02_handbook/debugger/draw-debug.png)
 
 The hitboxes are color-coded based on the collision properties. For `FlxObject` and `FlxSprite` this means:
 
@@ -62,7 +62,7 @@ The display string does not have to be the same as the variable's name, "numEnem
 FlxG.watch.add(_enemies, "length", "numEnemies");
 ```
 
-<img src="../images/02_handbook/debugger/watch-window.png" />
+![](../images/02_handbook/debugger/watch-window.png)
 
 For static variables, you pass the class instead of an object:
 
@@ -78,7 +78,7 @@ To remove a watch entry again, simply call `FlxG.watch.remove(object, variableNa
 
 Quick watches are a lightweight alternative to a regular watch entry. They don't require a variable, they simply store a value for a `String` name. The following example stores the result of `FlxG.keys.anyPressed(["UP", "W"])` under the name `"Up key pressed"` - this is updated every frame since it happens in `update()`.
 
-```
+```haxe
 override public function update():Void
 {
 	super.update();
@@ -106,7 +106,7 @@ The stats window displays some basic profiling info:
 
 3 and 4 are especially useful when it comes to performance optimization ("Do I need to optimize my rendering or my update-logic?"). Of course this is only very basic data, profiling tools like [Adobe Scout](https://creative.adobe.com/products/scout) or [hxScout](https://github.com/jcward/hxScout) provide much more detailed information.
 
-<img src="../images/02_handbook/debugger/stats-window.png" />
+![](../images/02_handbook/debugger/stats-window.png)
 
 ## The Bitmap Log Window
 
@@ -114,7 +114,7 @@ The Bitmap Log can be used to display `BitmapData` objects via `FlxG.bitmapLog.a
 
 You can also inspect flixel's internal `BitmapData` cache by calling `FlxG.bitmapLog.viewCache()` or entering the console command `viewCache` (short: `vc`).
 
-<img src="../images/02_handbook/debugger/view-cache.png" />
+![](../images/02_handbook/debugger/view-cache.png)
 
 ## The Console Window
 
@@ -126,25 +126,54 @@ The console stores executed commands (use the up and down keys to cycle through 
 
 The `help` command already provides a short documentation on available commands, for some however it's worth going into a little more detail.
 
-### The set command
+### The `set` command
 
 `set` (short: `s`) sets the value of an arbitrary variable using `Reflect.setProperty()`.
 
 Let's take a look at an example that works in the Mode demo:
 
-`set FlxG.state._player.x 50`
+```
+set FlxG.state._player.x 50
+```
 
 If the command was successful, the player x position should now be 50 and the log window says `> set: Player.x is now 50`.
 
 The first argument is the path to the variable. The "starting point" of the dot-path needs to be registered for the console to be able to resolve the variable. `FlxG` is automatically registered to the console beforehand by Flixel.
 The same is true for the current `FlxG.state` instance. This allows us to shorten the command:
 
-`set state._player.x 50`
+```
+set state._player.x 50`
+```
 
 To register objects (to access member variables) or classes (to access static variables), you can call `FlxG.console.registerObject()`:
 
+```haxe
+// Inside the Player constructor
+FlxG.console.registerObject("player", this);
 ```
 
+With that, the previous command can be shortened even further to just `set player.x 50`.
+
+### The `call` command
+
+`call` (short: `c`) is the counterpart to `set` for calling function (using `Reflect.callMethod()` under the hood). We can use this to make the Player in Mode jump:
+
+```
+call state._player.jump
+```
+
+Upon succesful execution, `> call: Called 'state._player.jump()'` should be output to the log window.
+`FlxG.console.registerFunction()` can be used to register a function with an alias. This can be used to shorten the previous command to just `call jump`:
+
+```haxe
+// Inside the Player constructor
+FlxG.console.registerFunction("jump", jump);
+```
+
+You can also call functions with arguments:
+
+```
+call FlxG.camera.shake 0.05 5
 ```
 
 ## Tracker Windows
@@ -152,5 +181,7 @@ To register objects (to access member variables) or classes (to access static va
 ## The VCR
 
 ## Extending the Debugger
+
+
 
 ## Debugger Styles
