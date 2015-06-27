@@ -61,7 +61,7 @@ One of the great things about using Ogmo with HaxeFlixel is that there is alread
 	```
 	and change it to:
 	
-	```haxe
+	```xml
 	<haxelib name="flixel-adddons" />
 	```
 
