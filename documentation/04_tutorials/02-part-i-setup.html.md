@@ -1,4 +1,4 @@
-```
+  ```
 title: "Part I: Setup"
 ```
 
@@ -21,16 +21,16 @@ Run it to install Haxe.
 
 3. At the Command Prompt, enter the following commands (one at a time):
 
-```bash
-haxelib install lime
-haxelib run lime setup
-lime install openfl
-lime setup windows
-lime setup android
-haxelib install flixel
-haxelib install flixel-tools
-haxelib run flixel-tools setup
-```
+  ```bash
+  haxelib install lime
+  haxelib run lime setup
+  lime install openfl
+  lime setup windows
+  lime setup android
+  haxelib install flixel
+  haxelib install flixel-tools
+  haxelib run flixel-tools setup
+  ```
 
 4. Next, download and install the latest version of FlashDevelop: http://www.flashdevelop.org/
 
