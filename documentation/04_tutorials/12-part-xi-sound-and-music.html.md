@@ -108,7 +108,6 @@ If you try your game out right now, it should play music!
 	```
 
 10. Then, make sure you clean up your sound object again (in destroy):
-		
 
 	```haxe
 	_sndStep = FlxDestroyUtil.destroy(_sndStep);
