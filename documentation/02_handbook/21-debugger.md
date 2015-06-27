@@ -195,12 +195,11 @@ Here's an example command `spawnEnemy`, spawning a new enemy at the current mous
 
 ```haxe
 // in PlayState#create()
-FlxG.console.addCommand(["spawnEnemy", "se"], function()
-{
+FlxG.console.addCommand(["spawnEnemy", "se"], function() {
 	var mousePos = FlxG.mouse.getWorldPosition();
 	var enemy = _enemies.recycle(Enemy);
 	enemy.init(Std.int(mousePos.x), Std.int(mousePos.y), _enemyBullets, _bigGibs, _player);
-})
+});
 ```
 
 ## Tracker Windows
