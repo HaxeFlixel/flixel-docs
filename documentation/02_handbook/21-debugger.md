@@ -118,7 +118,7 @@ You can also inspect flixel's internal `BitmapData` cache by calling `FlxG.bitma
 
 ## The Console Window
 
-The console allows you to do things like calling arbitrary functions or setting the values of arbitrary variables at runtime (where you would otherwise have to recompile the game).
+The console allows you to set the values of variables or call functions at runtime (where you would otherwise have to recompile the game) and many other things.
 
 By default, the game is paused when the console text field receives focus. After a command is executed, the game progresses one frame so the effects can be seen.
 
@@ -142,7 +142,7 @@ The first argument is the path to the variable. The "starting point" of the dot-
 The same is true for the current `FlxG.state` instance. This allows us to shorten the command:
 
 ```
-set state._player.x 50`
+set state._player.x 50
 ```
 
 To register objects (to access member variables) or classes (to access static variables), you can call `FlxG.console.registerObject()`:
@@ -156,24 +156,51 @@ With that, the previous command can be shortened even further to just `set playe
 
 ### The `call` command
 
-`call` (short: `c`) is the counterpart to `set` for calling function (using `Reflect.callMethod()` under the hood). We can use this to make the Player in Mode jump:
+`call` (short: `c`) is the counterpart to `set` for calling functions (using `Reflect.callMethod()` under the hood). We can use this to make the player in Mode jump:
 
 ```
 call state._player.jump
 ```
 
 Upon succesful execution, `> call: Called 'state._player.jump()'` should be output to the log window.
-`FlxG.console.registerFunction()` can be used to register a function with an alias. This can be used to shorten the previous command to just `call jump`:
+
+We can shorten the previous command by registering an alias for `jump()` with `FlxG.console.registerFunction()`. The following makes the command `call jump` possible:
 
 ```haxe
 // Inside the Player constructor
 FlxG.console.registerFunction("jump", jump);
 ```
 
-You can also call functions with arguments:
+It's also possible to call functions with arguments:
 
 ```
 call FlxG.camera.shake 0.05 5
+```
+
+### The `fields` command
+
+`fields` (short: `f`) lists all fields (variables, properties and fuctions) of a given object, for example
+
+```
+fields state._player
+```
+
+Note that this is equivalent to `fields state._player 0` and doesn't include any fields of parent classes like `FlxSprite`. The second argument specifies how many parent classes should be included. With `3`, it would go all the way down to `FlxBasic`, since the inheritance hierarchy looks like this: `Player` > `FlxSprite` > `FlxObject` > `FlxBasic`.
+
+### Addings custom commands
+
+Custom console commands can be registered with `FlxG.console.addCommand()`. In principle, a custom command is just a function, so this is similar to what you can already do with the `call` command. However, doing it this way there's no need to prefix the command with `call`. There are also a few more options, like the ability to add some documentation for the `help` command.
+
+Here's an example command `spawnEnemy`, spawning a new enemy at the current mouse position. 
+
+```haxe
+// in PlayState#create()
+FlxG.console.addCommand(["spawnEnemy", "se"], function()
+{
+	var mousePos = FlxG.mouse.getWorldPosition();
+	var enemy = _enemies.recycle(Enemy);
+	enemy.init(Std.int(mousePos.x), Std.int(mousePos.y), _enemyBullets, _bigGibs, _player);
+})
 ```
 
 ## Tracker Windows
