@@ -39,8 +39,8 @@
 .nav-list>li>a.treeLink {padding-left:20px;}
 .nav-list a { word-wrap: break-word; font-size:14px; text-shadow: none!important;}
 .nav-list>.active>a.treeLink, .nav-list>.active>a.treeLink:hover, .nav-list>.active>a.treeLink:focus {
-	background:#F48821;
-	color:#fff;
+  background: #E5E5E5;
+  color: #08c;
 }
 
 .nav-list li i.fa {
