@@ -210,7 +210,7 @@ First, let's define our player's movement speed and deceleration amounts:
 2. While there are plenty of ways to handle player movement, it can be simpler to add it to the Player class. We'll want to add a new function that will watch for player input and respond to it, so, make a new function:
 	
 	```haxe
-	private function movement():Void
+	public function movement():Void
 	{
 	}
 	```
@@ -300,7 +300,7 @@ First, let's define our player's movement speed and deceleration amounts:
 	Just before the `super.update();`, add:
 	
 	```haxe
-	movement();
+	_player.movement();
 	```
 
 	The update function, as you should remember, is called each 'frame' of the game. So, each time our PlayState gets its update called, when it calls update on all of its members, it will trigger the player's update which will check our movement() logic, adjust the player's velocity accordingly, and then call its super.update(), which will take the velocity that we've just changed into account and figures out where the player sprite should move.
