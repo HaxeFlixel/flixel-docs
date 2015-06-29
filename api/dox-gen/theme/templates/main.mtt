@@ -29,20 +29,52 @@
 	<title>::api.currentPageName::::if api.config.pageTitle !=null:: - ::api.config.pageTitle::::end::</title>
 </head>
 <body>
-	<nav class="navbar dark navbar-static-top" role="navigation">
-	  <div class="container">
-	   <div class="navbar-header">
-	    <a class="brand" href="http://haxe.org/"><img src="http://haxe.org/img/haxe-logo-horizontal-on-dark.svg" width="107" height="21" alt="Haxe" onerror="this.src='http://haxe.org/img/haxe-logo-horizontal-on-dark.png'"/></a>
-	    <span class="tagline">API Documentation</span>			
-		<div class="pull-right">
-			<a href="http://haxe.org/download/" target="_blank">Download</a> |
-			<a href="http://haxe.org/manual/" target="_blank">Read the manual</a>
+	<nav>
+		<div class="navbar navbar-inverse navbar-fixed-top">
+			<div class="container">
+			<div class="navbar-header">
+					<button data-target=".navbar-collapse" data-toggle="collapse" class="navbar-toggle" type="button">
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
+					<a href="http://www.haxeflixel.com/" class="navbar-brand"><img src="http://www.haxeflixel.com/images/haxeflixel-header.png" alt="HaxeFlixel" /></a>
+				</div>
+				<div class="navbar-collapse collapse">
+					<ul class="nav navbar-nav">
+						<li>
+							<a href="http://www.haxeflixel.com/demos">Demos</a>
+						</li>
+                        <li class="dropdown" >
+                            <a href="/showcase" class="dropdown-toggle" data-toggle="dropdown">Showcase <span class="caret"></span></a>
+                            <ul class="dropdown-menu" role="menu">
+                                <li>
+                                    <a href="http://www.haxeflixel.com/showcase/games">Games</a>
+                                </li>
+                                <li>
+                                    <a href="http://www.haxeflixel.com/showcase/jams">Jams</a>
+                                </li>
+                            </ul>
+                        </li>
+						<li >
+							<a href="http://www.haxeflixel.com/blog">Blog</a>
+						</li>
+						<li >
+							<a href="http://www.haxeflixel.com/documentation">Docs</a>
+						</li>
+						<li class='active'>
+							<a href="." >API</a>
+						</li>
+						<li >
+							<a href="http://www.haxeflixel.com/forum">Forum</a>
+						</li>
+					</ul>
+				</div>
+			</div>
 		</div>
-	   </div>
-	  </div>
 	</nav>
-	<div class="container">
-        <div class="row-fluid">
+	<div class="container navbar-offset">
+        <div class="row-fluid container-main">
             <div class="span3">
               <div class="well sidebar-nav">
                 <form class="form-search" id="searchForm">
@@ -68,14 +100,42 @@
         </div>
 	</div>
 
-	<footer class="section dark site-footer">
-		<div class="container">
-			<div class="copyright">
-				<p ::cond api.isDefined("version")::>This documentation is generated for version ::api.getValue('version')::</p>
-				<p>&copy;2015&nbsp;
-				<a href="http://haxe.org/foundation/" title="Haxe Foundation Website" class="hf-link">Haxe Foundation</a> |&nbsp;
-				<a href="https://github.com/HaxeFoundation/haxe" title="Haxe on Github">Contribute to Haxe</a>
-				</p>
+	<footer>
+		<div class="footer-main">
+			<div class=" container">
+	
+				<div class="footer-social">
+	
+					<iframe width="120px" scrolling="0" height="20px" frameborder="0"
+							allowtransparency="true"
+							src="http://ghbtns.com/github-btn.html?user=HaxeFlixel&amp;repo=flixel&amp;type=watch&amp;count=true&amp;size=small"></iframe>
+	
+					<a href="https://twitter.com/haxeflixel" class="twitter-follow-button" data-show-count="true"
+					data-lang="en" data-size="small">Follow @haxeflixel</a>
+	
+					<script>!function (d, s, id)
+					{
+						var js, fjs = d.getElementsByTagName (s)[0];
+						if (!d.getElementById (id))
+						{
+							js = d.createElement (s);
+							js.id = id;
+							js.src = "//platform.twitter.com/widgets.js";
+							fjs.parentNode.insertBefore (js, fjs);
+						}
+					} (document, "script", "twitter-wjs");</script>
+	
+				</div>
+	
+				<div class="footer-powered-by">
+					<p>HaxeFlixel is powered by</p>
+					<a href="http://haxe.org"><img src="http://www.haxeflixel.com/images/haxe.svg" alt="Haxe" title="Haxe" /></a>
+					+
+					<a href="http://openfl.org"><img class="openfl-footer-logo" src="http://www.haxeflixel.com//images/openfl.svg" alt="OpenFL" title="OpenFL" /></a>
+					+
+					<a href="http://flixel.org"><img class="flixel-footer-logo" src="http://www.haxeflixel.com//images/flixel.svg" alt="Flixel" title="Flixel" /></a>
+				</div>
+	
 			</div>
 		</div>
 	</footer>
