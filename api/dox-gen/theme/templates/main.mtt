@@ -83,14 +83,14 @@
                     <input id="search" type="text" placeholder="Search" autocomplete="off"/>
                   </div>
                 </form>		
-				<div class="dropdown">
+				<!--<div class="dropdown">
 					<select id="select-platform" class="selectpicker" title="Filter by platform" data-width="100%">
 						<option value="all" selected="true">All Platforms</option>
 						::foreach i api.config.platforms::
 							<option>::i::</option>
 						::end::
 					</select>
-				</div>
+				</div>-->
 			</div>
               <div class="well sidebar-nav">
                 <div id="nav"></div>
