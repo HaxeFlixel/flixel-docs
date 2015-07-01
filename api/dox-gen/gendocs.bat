@@ -1,1 +1,1 @@
-haxelib run dox -i flash.xml -o .. -theme ./theme --title "HaxeFlixel API docs" -D source-path https://github.com/HaxeFlixel/flixel/tree/master -D version 3.3.8
+haxelib run dox -i xml/bin/flash/types.xml -o .. -theme ./theme --title "HaxeFlixel API" -D source-path https://github.com/HaxeFlixel/flixel/tree/master -D version 3.3.9

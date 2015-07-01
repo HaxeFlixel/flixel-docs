@@ -1,2 +1,4 @@
-__chxdoctmp
-chxdoc
+api/dox-gen/xml/bin/flash/obj/
+api/dox-gen/xml/bin/flash/haxe/
+api/dox-gen/xml/bin/flash/bin/
+api/dox-gen/xml/bin/.build
