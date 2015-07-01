@@ -10,13 +10,7 @@
 </macro>
 
 <macro name="printPlatforms(platforms)">
-	<p class="availability">
-		Available on
-		::if platforms.length == api.config.platforms.length:: all platforms
-		::elseif platforms.length > 1:: ::platforms.join(", ")::
-		::else:: ::platforms.join("")::
-		::end::
-	</p>
+	
 </macro>
 
 <macro name="printLinkedPath(path, params)">
