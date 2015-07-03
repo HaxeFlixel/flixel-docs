@@ -296,14 +296,23 @@ First, let's define our player's movement speed and deceleration amounts:
 	Next, close the bracket from your 'if' statement from earlier.
 	...and that's the end of our `movement()` function!
 
-9. The only thing left to do is to add a call to this function in our update() function, and we're good to go!
-	Just before the `super.update();`, add:
+9. The only thing left to do is to `override` the `update()` function in `Player.hx` as well and call `movement()` from it. FlashDevelop can generate the necessary boilerplate code for you, just type `override` and a space, after which a completion popup should appear:
+	
+	![](../images/04_tutorials/overrideCompletion.png)
+
+	Select `update` and press enter.
+
+	Now you just need to add the function call, after which it should look like this:
 	
 	```haxe
-	movement();
+	override public function update():Void 
+	{
+		movement();
+		super.update();
+	}
 	```
 
-	The update function, as you should remember, is called each 'frame' of the game. So, each time our PlayState gets its update called, when it calls update on all of its members, it will trigger the player's update which will check our movement() logic, adjust the player's velocity accordingly, and then call its super.update(), which will take the velocity that we've just changed into account and figures out where the player sprite should move.
+	The `update()` function, as you should remember, is called each 'frame' of the game. So, each time our `PlayState` gets its `update()` called, it calls `update()` on all of its `members`, including the player's `update()`. This in turn will run our `movement()` logic and adjust the player's `velocity` accordingly. After that, it call its `super.update()`, which will take the `velocity` that we've just changed into account and figures out where the player sprite should move to.
 
 
 Whew! It sounds a lot more complicated than it really is - if you try out the game right now, you'll see that you can run around the screen by pressing any combination of arrow keys and WASD!
