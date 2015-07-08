@@ -27,7 +27,7 @@ On the [official GitHub repository](https://github.com/HaxeFlixel/flixel/issues)
 Almost, it still is in development.
 
 ### Will next-gen consoles be supported?
-Maybe. It's out of scope of HaxeFlixel, it all depends of OpenFL.
+Eventually, yes! Read more about it [here](http://haxeflixel.com/forum/?place=msg%2Fhaxeflixel%2FNUOpgGUKMvE%2FLNZB819BLS0J).
 
 ### My sounds are lagging!?
 On some platforms you need to manually cache sounds: `FlxG.sound.cache("sound");` or `flixel.system.FlxAssets.cacheSounds();` to do all at once.
@@ -38,5 +38,5 @@ Collisions are limited to the area defined by `FlxG.worldBounds`. For example in
 ### Can I make 3D games with HaxeFlixel?
 No, the framework is limited to 2D graphics.
 
-### How do i protect my data from being copied out of assets folder?
-Simply add embed="true" in <assets path="assets"> line that is in the Project.xml , so you get something like this <assets path="assets" embed="true"/>
+### How do I protect my assets from being stolen?
+If you add `embed="true"` to the `<assets path="assets">` tag of the `Project.xml`, the asset files are embedded into the .exe.
