@@ -37,3 +37,6 @@ Collisions are limited to the area defined by `FlxG.worldBounds`. For example in
 
 ### Can I make 3D games with HaxeFlixel?
 No, the framework is limited to 2D graphics.
+
+### How do i protect my data from being copied out of assets folder?
+Simply add embed="true" in <assets path="assets"> line that is in the Project.xml , so you get something like this <assets path="assets" embed="true"/>
