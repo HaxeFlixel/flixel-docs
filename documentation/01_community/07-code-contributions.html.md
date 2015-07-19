@@ -14,7 +14,7 @@ If you are making changes to the codebase that could include breaking changes or
 
 ###Merge Approval
 
-Before a major feature is merged into core our general workflow is to get approval from a [core-contributor](https://github.com/orgs/HaxeFlixel/members) with push access.
+Before a major feature is merged into core our general workflow is to get approval from a [core-contributor](https://github.com/orgs/HaxeFlixel/people) with push access.
 
 Developers do have limited time so keep in mind some simple steps to get your pull request accepted:
 
