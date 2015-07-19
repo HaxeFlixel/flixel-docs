@@ -95,15 +95,15 @@ private function resetHelpers():Void
 	resetSizeFromFrame();
 	_flashRect2.x = 0;
 	_flashRect2.y = 0;
-	
+
 	if (graphic != null)
 	{
 		_flashRect2.width = graphic.width;
 		_flashRect2.height = graphic.height;
 	}
-	
+
 	centerOrigin();
-	
+
 #if FLX_RENDER_BLIT
 	dirty = true;
 	getFlxFrameBitmapData();
@@ -131,7 +131,7 @@ function shootAtASpecificEnemyWithABulletTypeOf(target:Enemy, bullet:BulletType)
 function shootBulletAtEnemy(target:Enemy, bullet:BulletType):Void
 ```
 
-However, function names should also not be too short - you should be able to roughly know what a function does simply by reading its name - reading its description, if existant, should ideally not be necessary. 
+However, function names should also not be too short - you should be able to roughly know what a function does simply by reading its name - reading its description, if existant, should ideally not be necessary.
 
 An example for a bad / too simple name would be `shoot()` instead of `shootEnemy()`.
 
@@ -253,19 +253,19 @@ The following rules apply, sorted by priority:
 
 ## Comments
 
-Comments should only be used when you can't find a way to express the same thing in code. They tend to add noise to the code base and rarely get updated when the code changes, which results in misinformation and inaccurate comments. 
+Comments should only be used when you can't find a way to express the same thing in code. They tend to add noise to the code base and rarely get updated when the code changes, which results in misinformation and inaccurate comments.
 
 Take the following comment section for example, it does not provide *any* additional value beyond what the code and the class / parameter names already tell you (one of the reasons why choosing good names is so important!). It should thus be removed completely.
 
 ```haxe
 /**
  * Sets the position.
- * 
+ *
  * @param	x	The x coordinate.
  * @param	y 	The y coordinate.
- */ 
+ */
 public function setPosition(x:Int, y:Int):Void
-``` 
+```
 
 ## Class names
 
@@ -276,7 +276,7 @@ All class names should be prefixed by `Flx`, e.g.:
 - `FlxSprite`
 - etc..
 
-Even though this is widely regarded as bad style, it still makes sense to follow this convention since it is so deeply ingrained into the flixel workflow and doing otherwise would be very inconsistent and confusing. 
+Even though this is widely regarded as bad style, it still makes sense to follow this convention since it is so deeply ingrained into the flixel workflow and doing otherwise would be very inconsistent and confusing.
 
 This convention does not come without its advantages, for example you can easily tell which classes belong to the engine and which ones don't when writing a game.
 
@@ -291,19 +291,19 @@ The most common example where formatting is needed are the comment sections for 
 ```haxe
 /**
  * Sets the position.
- * 
+ *
  * @param   x   The x coordinate.
  * @param   y   The y coordinate.
- */ 
+ */
 public function setPosition(x:Int, y:Int):Void
 ```
- 
+
 ## Position of metadata
 
 Metadata should always be placed in a new line for increased readability:
 
 ```haxe
-@:isVar 
+@:isVar
 @:allow(flixel.tweens.FlxTween)
 private static var pool(get, null):FlxPool<MultiVarTween>;
 ```
@@ -323,11 +323,13 @@ There shouldn't be more than one empty line to separate sections.
 Unlike in most other languages with object-oriented syntax, everything in Haxe is an expression. This extends to `switch-case`, meaning that it evaluates to a value. This value can be assinged to a variable, passed to a function or simply returned by a function:
 
 ```haxe
-private function getColor(color:Color):Int {
-  return switch (color) {
+private function getColor(color:Color):Int
+{
+  return switch (color)
+  {
     case Color.RED: 0xff0000;
     case Color.BLUE: 0x0000ff;
-    case Color.GREEN: 0x00ff00;  
+    case Color.GREEN: 0x00ff00;
   }
 }
 ```
