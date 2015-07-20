@@ -25,15 +25,15 @@ First up, let's get our player from the MenuState to our PlayState. Eventually, 
 	```haxe
 	class MenuState extends FlxState
 	```
-	
+
 	We're going define a new variable. This is where you would define all the variables that you intend to use throughout a given class. We need to define a new FlxButton variable to use as our 'play' button. So, type:
-		
+
 	```haxe
 	private var _btnPlay:FlxButton;
 	```
 
 	Note: If you're using FlashDevelop, it should automatically create an import for FlxButton (`import flixel.ui.FlxButton;`) at the top of the class. This should be mostly automatic whenever you use class, but if it doesn't add it for some reason, you can enter it manually, or, highlight FlxButton in the editor and hit `Ctrl+Shift+1` to add it.
-	
+
 2. Now, go down to our create() function, and, right before `super.create();`, type:
 
 	```haxe
@@ -46,21 +46,21 @@ First up, let's get our player from the MenuState to our PlayState. Eventually, 
 	Don't worry about the position of the button right now, we're going to move it in a second.
 
 3. Now we need to define our clickPlay function. Somewhere in the class, outside of any existing functions, type:
-	
+
 	```haxe
 	private function clickPlay():Void
 	{
 		FlxG.switchState(new PlayState());
 	}
-	
+
 	```
 
 	This function calls `FlxG.switchState`, which switches the state from whatever the current state is (MenuState) to a new instance of PlayState.
-	
+
 4. Technically, at this point, the functionality would work - you could run your game and it would do what we want it to do, but we're missing a few things.
 	First, we want the button to be in a nicer place. Sure, we could set the x,y coordinates when we create it, but there's a simpler way to do it.
 	Go up to the import section of the class, and, in a new line, type:
-	
+
 	```haxe
 	using flixel.util.FlxSpriteUtil;
 	```
@@ -77,7 +77,7 @@ First up, let's get our player from the MenuState to our PlayState. Eventually, 
 	screenCenter is a function in FlxSpriteUtil which takes an object and centers it on the screen either horizontally, vertically or (by default) both. By calling it on our button, the button will be placed in the center of the screen.
 
 6. Finally, we need to make sure we clean things up a little. Go back up the imports and add:
-	
+
 	```haxe
 	import flixel.util.FlxDestroyUtil;
 	```
@@ -85,7 +85,7 @@ First up, let's get our player from the MenuState to our PlayState. Eventually, 
 	This is another utility class. This one gives us safe ways to remove and cleanup objects that we create.
 
 7. Next, go down to the destroy function, and in a new line right after `super.destroy();` add:
-	
+
 	```haxe
 	_btnPlay = FlxDestroyUtil.destroy(_btnPlay);
 	```
@@ -121,7 +121,7 @@ We're going to be extending the FlxSprite class to create our Player class.
 
 	class Player extends FlxSprite
 	{
-		public function new(X:Float=0, Y:Float=0, ?SimpleGraphic:Dynamic) 
+		public function new(X:Float=0, Y:Float=0, ?SimpleGraphic:Dynamic)
 		{
 			super(X, Y, SimpleGraphic);
 	    }
@@ -132,7 +132,7 @@ We're going to be extending the FlxSprite class to create our Player class.
 
 5. First, lets take out the SimpleGraphic parameter in the constructor. For our Player sprite, we don't need to pass it the graphic.
 	So
-	
+
 	```haxe
 	public function new(X:Float=0, Y:Float=0, ?SimpleGraphic:Dynamic)
 	```
@@ -144,7 +144,7 @@ We're going to be extending the FlxSprite class to create our Player class.
 	```
 
 	and
-	
+
 	```haxe
 	super(X, Y, SimpleGraphic);
 	```
@@ -155,10 +155,10 @@ We're going to be extending the FlxSprite class to create our Player class.
 	super(X, Y);
 	```
 
-	With classes, we use the 'super' command to refer to the parent class. So, within out 'new' constructor, by calling super(X, Y) we are basically saying to go up the chain to our parent class, in this case FlxSprite, and call its constructor, passing it the X and Y parameters that were passed to us.
+	With classes, we use the 'super' command to refer to the parent class. So, within our 'new' constructor, by calling super(X, Y) we are basically saying to go up the chain to our parent class, in this case FlxSprite, and call its constructor, passing it the X and Y parameters that were passed to us.
 
 6. Next, we'll want to create a placeholder image to show us where our Sprite is, so under `super(X, Y);`, add:
-7. 
+7.
 	```haxe
 	makeGraphic(16, 16, FlxColor.BLUE);
 	```
@@ -172,9 +172,9 @@ We're going to be extending the FlxSprite class to create our Player class.
 	```haxe
 	private var _player:Player;
 	```
-	
+
 	And in the `create()` function, before super.create(); add:
-	
+
 	```haxe
 	_player = new Player(20, 20);
 	add(_player);
@@ -183,7 +183,7 @@ We're going to be extending the FlxSprite class to create our Player class.
 	This simply assigns a new instance of our Player sprite to our `_player` variable, telling it to be placed at 20, 20 on the screen, and adds it to our PlayState.
 
 9. If you run your project right now, you should see our blue player on the screen!
-	
+
 	![](../images/04_tutorials/0006.png)
 
 	Now let's get it to move around!
@@ -193,13 +193,13 @@ So, how do we actually want our Player to move around on the screen? Well, I thi
 First, let's define our player's movement speed and deceleration amounts:
 
 1. In your Player class, above your new constructor, add:
-	
+
 	```haxe
 	public var speed:Float = 200;
 	```
 
 	Then, in the constructor, after you call `makeGraphic`, we need to add some drag:
-	
+
 	```haxe
 	drag.x = drag.y = 1600;
 	```
@@ -208,7 +208,7 @@ First, let's define our player's movement speed and deceleration amounts:
 	This is sort of arbitrary based on what 'feels' right - we can come back and tweak the numbers later on.
 
 2. While there are plenty of ways to handle player movement, it can be simpler to add it to the Player class. We'll want to add a new function that will watch for player input and respond to it, so, make a new function:
-	
+
 	```haxe
 	private function movement():Void
 	{
@@ -225,7 +225,7 @@ First, let's define our player's movement speed and deceleration amounts:
 	```
 
 4. Next, we want to actually find out which of these directions the player wants to move in. We'll do that by checking if certain keys are being pressed:
-		
+
 	```haxe
 	_up = FlxG.keys.anyPressed(["UP", "W"]);
 	_down = FlxG.keys.anyPressed(["DOWN", "S"]);
@@ -236,7 +236,7 @@ First, let's define our player's movement speed and deceleration amounts:
 	The anyPressed function allows us to ask if any keys out of a list of keys are currently being pressed. You send it an array of Keys (their names) and it will return 'true' if any of them are pressed. There are a couple of similar functions to check for other key states we might use later on.
 
 5. Next, we want to cancel out opposing directions - if the player is pressing Up and Down at the same time, we're not going to move anywhere:
-	
+
 	```haxe
 	if (_up && _down)
 	     _up = _down = false;
@@ -245,9 +245,9 @@ First, let's define our player's movement speed and deceleration amounts:
 	```
 
 6. Next, we'll make sure the player is actually moving:
-	
+
 	```haxe
-	if ( _up || _down || _left || _right)
+	if (_up || _down || _left || _right)
 	```
 
 7. Next, we need to determine which direction to move the player, and by how much. There's a common mistake that I see from people making games which allow for diagonal movement, and that is that if they do something like this:
@@ -258,9 +258,9 @@ First, let's define our player's movement speed and deceleration amounts:
 	```
 
 	While this will, technically, move something diagonally down and right, it will actually move much FASTER than it really should be moving. This is because of [the way triangles work](http://en.wikipedia.org/wiki/Pythagorean_theorem). So, for our player to move, we're not just going to set its `velocity` to `speed` - that would be too easy! Instead, we're going to calculate exactly what its velocity should be with angles!
-	
+
 	The first part of this is to figure out what angle we want to have the player move based on the keys that are being pressed. In HaxeFlixel, angle 0 is to the right, and -90 (or 270) is up.
-	
+
 	```haxe
 	var mA:Float = 0;
 	if (_up)
@@ -297,15 +297,15 @@ First, let's define our player's movement speed and deceleration amounts:
 	...and that's the end of our `movement()` function!
 
 9. The only thing left to do is to `override` the `update()` function in `Player.hx` as well and call `movement()` from it. FlashDevelop can generate the necessary boilerplate code for you, just type `override` and a space, after which a completion popup should appear:
-	
+
 	![](../images/04_tutorials/overrideCompletion.png)
 
 	Select `update` and press enter.
 
 	Now you just need to add the function call, after which it should look like this:
-	
+
 	```haxe
-	override public function update():Void 
+	override public function update():Void
 	{
 		movement();
 		super.update();
