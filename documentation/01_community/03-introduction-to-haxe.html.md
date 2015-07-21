@@ -7,15 +7,15 @@ The Haxe programming language itself is High Level and Strictly Typed. It allows
 
 Haxe is an open-source technology, free to use and modify. The Haxe toolkit provides a powerful cross-platform core Std library that lets your code solve problems and have a codebase that is more versatile.
 
-Backed by the [Haxe Foundation](http://www.haxe-foundation.org), industry sponsors and partners, it receives enterprise support and is sponsored and recognized by developers at a growing number of large companies such as Nickelodeon, Disney, TiVo, Prezi, Stencyl and more. The Haxe Foundation directs long term initiatives for Haxe and officially sponsors the [Open Flash Library](http://www.openfl.org) that HaxeFlixel also leverages.
+Backed by the [Haxe Foundation](http://haxe.org/foundation), industry sponsors and partners, it receives enterprise support and is sponsored and recognized by developers at a growing number of large companies such as Nickelodeon, Disney, TiVo, Prezi, Stencyl and more. The Haxe Foundation directs long term initiatives for Haxe and officially sponsors the [Open Flash Library](http://www.openfl.org) that HaxeFlixel also leverages.
 
 Haxe has an active Google community page and IRC channel:
 
 *   https://groups.google.com/forum/#!forum/haxelang
-*   IRC channel #haxe on freenode. 
+*   IRC channel #haxe on freenode.
 
 Haxe is being developed through GitHub:
 
 *   https://github.com/HaxeFoundation
 
-[![](/images/haxe-logo.png)](http://haxe.org)
+[![](/documentation/images/01_community/haxe-logo.png)](http://haxe.org)
