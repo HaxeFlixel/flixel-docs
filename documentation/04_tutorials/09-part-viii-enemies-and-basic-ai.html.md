@@ -5,7 +5,7 @@ title: "Part VIII: Enemies and Basic AI"
 What would a dungeon game be without enemies? Let's add some!
 
 1. This should be second nature by now - add a new entity type in your Ogmo project:
-	
+
 	![](../images/04_tutorials/0017.png)
 
 	Make sure you add the 'etype' value.
@@ -30,8 +30,8 @@ What would a dungeon game be without enemies? Let's add some!
 	{
 		public var speed:Float = 140;
 		public var etype(default, null):Int;
-		
-		public function new(X:Float=0, Y:Float=0, EType:Int) 
+
+		public function new(X:Float=0, Y:Float=0, EType:Int)
 		{
 			super(X, Y);
 			etype = EType;
@@ -47,8 +47,8 @@ What would a dungeon game be without enemies? Let's add some!
 			offset.x = 4;
 			offset.y = 2;
 		}
-	
-		override public function draw():Void 
+
+		override public function draw():Void
 		{
 			if ((velocity.x != 0 || velocity.y != 0 ) && touching == FlxObject.NONE)
 			{
@@ -66,15 +66,15 @@ What would a dungeon game be without enemies? Let's add some!
 					else
 						facing = FlxObject.DOWN;
 				}
-	
-				switch(facing)
+
+				switch (facing)
 				{
 					case FlxObject.LEFT, FlxObject.RIGHT:
 						animation.play("lr");
-						
+
 					case FlxObject.UP:
 						animation.play("u");
-						
+
 					case FlxObject.DOWN:
 						animation.play("d");
 				}
@@ -89,7 +89,7 @@ What would a dungeon game be without enemies? Let's add some!
 5. Next, we'll make a FlxGroup in our PlayState to hold our Enemies, and load them into the map, very much the same way we did our coins.
 
 	At the top of our class, add:
-	
+
 	```haxe
 	private var _grpEnemies:FlxTypedGroup<Enemy>;
 	```
@@ -102,7 +102,7 @@ What would a dungeon game be without enemies? Let's add some!
 	```
 
 	and at the end of our if/else statement in placeEntities:
-	
+
 	```haxe
 	else if (entityName == "enemy")
 	{
@@ -122,12 +122,12 @@ In order to let our enemies 'think', we're going to utilize a very simple [Finit
 	class FSM
 	{
 		public var activeState:Void->Void;
-		
+
 		public function new(?InitState:Void->Void):Void
 		{
 			activeState = InitState;
 		}
-		
+
 		public function update():Void
 		{
 			if (activeState != null)
@@ -139,7 +139,7 @@ In order to let our enemies 'think', we're going to utilize a very simple [Finit
 2. Next, we'll change our Enemy class a little.
 
 	We need to define these variables at the top of the class:
-	
+
 	```haxe
 	private var _brain:FSM;
 	private var _idleTmr:Float;
@@ -149,7 +149,7 @@ In order to let our enemies 'think', we're going to utilize a very simple [Finit
 	```
 
 3. At the end of the constructor, add:
-	
+
 	```haxe
 	_brain = new FSM(idle);
 	_idleTmr = 0;
@@ -183,7 +183,7 @@ In order to let our enemies 'think', we're going to utilize a very simple [Finit
 			_idleTmr -= FlxG.elapsed;
 		}
 	}
-	
+
 	public function chase():Void
 	{
 		if (!seesPlayer)
@@ -195,8 +195,8 @@ In order to let our enemies 'think', we're going to utilize a very simple [Finit
 			FlxVelocity.moveTowardsPoint(this, playerPos, Std.int(speed));
 		}
 	}
-	
-	override public function update():Void 
+
+	override public function update():Void
 	{
 	    _brain.update();
 	    super.update();
@@ -206,7 +206,7 @@ In order to let our enemies 'think', we're going to utilize a very simple [Finit
 	The way this is going to work is that each enemy will start in the Idle state. In the PlayState we will have each enemy check to see if it can see the player or not. If it can, it will switch to the Chase state, until it can't see the player anymore. While in the Idle state, every so often (in random intervals) it will choose a random direction to move in for a little while (with a small chance to just stand still). While in the Chase state, they will move directly towards the player.
 
 5. Let's jump over to the PlayState to add our player's vision logic. In update, under the overlap and collision checks, add:
-	
+
 	```haxe
 	FlxG.collide(_grpEnemies, _mWalls);
 	_grpEnemies.forEachAlive(checkEnemyVision);
