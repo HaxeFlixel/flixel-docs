@@ -25,7 +25,7 @@ Now we need to actually load the player's graphic into the sprite. So, bring up 
 2. Next, we want to allow the sprite to be flipped based on its facing value. This makes it so we only need sprites for one direction (Left), and not two (Left and Right).
 
 	Add the following:
-	
+
 	```haxe
 	setFacingFlip(FlxObject.LEFT, false, false);
 	setFacingFlip(FlxObject.RIGHT, true, false);
@@ -42,7 +42,7 @@ Now we need to actually load the player's graphic into the sprite. So, bring up 
 	```
 
 	We're finished with the constructor changes, the final step is to change our updateMovement function to tell the player sprite which way to face. So, modify our section which deals with setting the player's angle to look something like this:
-	
+
 	```haxe
 	var mA:Float = 0; // our temporary angle
 	if (_up)  // the player is pressing UP
@@ -76,7 +76,7 @@ Now we need to actually load the player's graphic into the sprite. So, bring up 
 	FlxAngle.rotatePoint(speed, 0, 0, 0, mA, velocity); // determine our velocity based on angle and speed
 	if ((velocity.x != 0 || velocity.y != 0) && touching == FlxObject.NONE) // if the player is moving (velocity is not 0 for either axis), we need to change the animation to match their facing
 	{
-		switch(facing)
+		switch (facing)
 		{
 			case FlxObject.LEFT, FlxObject.RIGHT:
 				animation.play("lr");
