@@ -8,7 +8,7 @@ Now we want to show the player what's going on. So we need to have some kind of 
 
 	```haxe
 	package;
-	
+
 	import flixel.FlxBasic;
 	import flixel.FlxG;
 	import flixel.FlxSprite;
@@ -16,7 +16,7 @@ Now we want to show the player what's going on. So we need to have some kind of 
 	import flixel.text.FlxText;
 	import flixel.util.FlxColor;
 	using flixel.util.FlxSpriteUtil;
-	
+
 	class HUD extends FlxTypedGroup<FlxSprite>
 	{
 		private var _sprBack:FlxSprite;
@@ -24,8 +24,8 @@ Now we want to show the player what's going on. So we need to have some kind of 
 		private var _txtMoney:FlxText;
 		private var _sprHealth:FlxSprite;
 		private var _sprMoney:FlxSprite;
-		
-		public function new() 
+
+		public function new()
 		{
 			super();
 			_sprBack = new FlxSprite().makeGraphic(FlxG.width, 20, FlxColor.BLACK);
@@ -47,7 +47,7 @@ Now we want to show the player what's going on. So we need to have some kind of 
 				spr.scrollFactor.set();
 			});
 		}
-		
+
 		public function updateHUD(Health:Int = 0, Money:Int = 0):Void
 		{
 			_txtHealth.text = Std.string(Health) + " / 3";
@@ -62,7 +62,7 @@ Now we want to show the player what's going on. So we need to have some kind of 
 	Finally, we have a function that we can call from anywhere to tell the HUD what it should display.
 
 2. Now let's get it to work and have it update whenever we pick up a coin. In your PlayState, add to the top of the class:
-		
+
 	```haxe
 	private var _hud:HUD;
 	private var _money:Int = 0;
@@ -100,7 +100,7 @@ This all seems simple enough, but it's actually going to require several compone
 	[CombatHUD.hx](https://github.com/HaxeFlixel/flixel-demos/blob/master/Tutorials/TurnBasedRPG/source/CombatHUD.hx)
 
 	Take some time to read through it to see how it works, then add it to your project. You will need to add a small function to our Enemy.hx class, as well:
-        
+
 	```haxe
 	public function changeEnemy(EType:Int):Void
 	{
@@ -134,7 +134,7 @@ This all seems simple enough, but it's actually going to require several compone
 		FlxG.collide(_player, _mWalls);
 		FlxG.overlap(_player, _grpCoins, playerTouchCoin);
 		FlxG.collide(_grpEnemies, _mWalls);
-		checkEnemyVision();
+		checkEnemyVision;
 		FlxG.overlap(_player, _grpEnemies, playerTouchEnemy);
 	}
 	else
@@ -163,7 +163,7 @@ This all seems simple enough, but it's actually going to require several compone
 	If we're in combat, we're simply going to keep checking to see if the combatHUD is still visible - once it becomes invisible, we know that combat has finished, and we can determine the outcome. If the outcome is VICTORY (one of our 4 enum values), we will kill the enemy, but if the player Fled the battle, we will make the enemy flicker, to show that the player is safe from fighting it again for a short amount of time.
 
 5. Next, lets add the functions to handle the player touching an enemy:
-	
+
 	```haxe
 	private function playerTouchEnemy(P:Player, E:Enemy):Void
 	{
@@ -172,7 +172,7 @@ This all seems simple enough, but it's actually going to require several compone
 			startCombat(E);
 		}
 	}
-	
+
 	private function startCombat(E:Enemy):Void
 	{
 		_inCombat = true;
@@ -191,7 +191,7 @@ This all seems simple enough, but it's actually going to require several compone
 6. Finally, we want enemies that are flickering to not move - they should act kind of stunned for a second after the enemy flees.
 
 	In the Enemy class, under update, add:
-	
+
 	```haxe
 	if (isFlickering())
 		return;
@@ -199,12 +199,12 @@ This all seems simple enough, but it's actually going to require several compone
 
 	At the very top, before doing anything else in that function.
 
-    You will also need to add 
+    You will also need to add
 
 	```haxe
 	using flixel.util.FlxSpriteUtil;
 	```
-	
+
 	to the top of the Enemy.hx class.
 
 And that should do it! Test out your game and make sure that it works!
