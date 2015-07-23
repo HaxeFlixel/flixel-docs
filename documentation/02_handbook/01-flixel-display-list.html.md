@@ -5,7 +5,7 @@ The Flixel Display list is a specially designed structure for your game's sprite
 
 #### FlxSprites != Flash Sprites
 
-The flash API has a [display list](http://www.adobe.com/devnet/flash/quickstart/display_list_programming_as3.html) that is populated by adding [display objects](http://help.adobe.com/en_US/FlashPlatform/reference/actionscript/3/flash/display/DisplayObject.html) in a parent child relationship. Sprites are an extended form of display objects that have extended features. They can be added, removed and can have their parent and children's depth changed with an easy to use API.
+The flash API has a [display list](http://help.adobe.com/en_US/as3/dev/WS5b3ccc516d4fbf351e63e3d118a9b90204-7e58.html) that is populated by adding [display objects](http://help.adobe.com/en_US/FlashPlatform/reference/actionscript/3/flash/display/DisplayObject.html) in a parent child relationship. Sprites are an extended form of display objects that have extended features. They can be added, removed and can have their parent and children's depth changed with an easy to use API.
 
 It is a common misconception for Flash Developers to assume that FlxSprites in Flixel work like the Flash Sprites. FlxSprites also do not share the event system Flash Sprites have, so `addEventListener()` is also not available or necessary in most situations.
 
