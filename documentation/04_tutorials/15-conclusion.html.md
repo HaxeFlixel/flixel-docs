@@ -4,7 +4,7 @@ title: "Conclusion"
 
 Now we have a pretty complete, working game! It's not too complex, but it should give you a full, well-rounded idea of how to make your own games in HaxeFlixel. I really hope you've enjoyed this tutorial, and take the time to play around with the code some more to try expanding the game even further. You could add more levels, add stairway objects to move between them, add more enemy types, and collectibles, and upgrades… the list goes on.
 
-You can grab the complete source code for the game [here](https://github.com/HaxeFlixel/flixel-demos/tree/dev/Tutorials/TurnBasedRPG).
+You can grab the complete source code for the game [here](https://github.com/HaxeFlixel/flixel-demos/tree/master/Tutorials/TurnBasedRPG).
 
 The power of HaxeFlixel comes from it's balance of simplicity and versatility. With only a few lines of code you can do almost anything you can think of.
 
