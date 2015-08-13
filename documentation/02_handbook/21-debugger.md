@@ -232,6 +232,24 @@ FlxG.debugger.addTrackerProfile(new TrackerProfile(Player, ["isReadyToJump", "_s
 
 ## The VCR
 
+Flixel's VCR feature (recording and replaying via `FlxG.vcr`) is mostly disabled by default and can be activated with the `FLX_RECORD` define. Even so, a few features are still available by default via the middle three buttons of the debugger:
+
+![](../images/02_handbook/debugger/vcr-disabled.png)
+
+The left button resets the current state via `FlxG.resetState()`.
+
+The middle button pauses / unpauses the game.
+
+The right button pauses the game if it isn't already paused and skips ahead exactly one frame (one `update()` and one `draw()` call). This can be very useful for debugging certain issues.
+
+If `FLX_RECORD` is defined, two more buttons are available:
+
+![](../images/02_handbook/debugger/vcr-enabled.png)
+
+The circle starts a new recording - it also resets the current state, since the VCR does not support recordings that start mid-state. If a recording has already been started, the button stops it and opens a file dialog to save it.
+
+The button with the folder icon right allows loading record files and replaying them.
+
 ## Adding Debugger Buttons
 
 You can add custom buttons to the debugger header using `FlxG.debugger.addButton()`. This is what `FlxNapeState` from flixel-addons does if you use it - it adds a convenient "N" button to toggle Nape's debug draw.
