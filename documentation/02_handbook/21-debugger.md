@@ -232,7 +232,13 @@ FlxG.debugger.addTrackerProfile(new TrackerProfile(Player, ["isReadyToJump", "_s
 
 ## The VCR
 
-## Extending the Debugger
+## Adding Debugger Buttons
+
+You can add custom buttons to the debugger header using `FlxG.debugger.addButton()`. This is what `FlxNapeState` from flixel-addons does if you use it - it adds a convenient "N" button to toggle Nape's debug draw.
+
+![](../images/02_handbook/debugger/nape-button.png)
+
+Debugger buttons are persistent across states - `FlxG.debugger.removeButton()` has to be called manually to remove state-specific buttons.
 
 ## Debugger Layouts
 
