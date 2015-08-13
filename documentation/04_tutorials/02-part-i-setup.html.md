@@ -1,15 +1,15 @@
-```
+  ```
 title: "Part I: Setup"
 ```
 
 The first things we need to do is install all of the components we need to work with HaxeFlixel. These are:
 
-*   Haxe
-*   Lime
-*   OpenFL
-*   HaxeFlixel
-*   FlashDevelop
-*   Flash Debug Player
+* Haxe
+* Lime
+* OpenFL
+* HaxeFlixel
+* FlashDevelop
+* Flash Debug Player
 
 There is a more verbose explanation on installing many of these things [here](http://www.openfl.org/documentation/setup/),
 but I’ll walk you through it quickly. If anything goes wrong, check there for more information.
@@ -21,30 +21,17 @@ Run it to install Haxe.
 
 3. At the Command Prompt, enter the following commands (one at a time):
 
-  1. ```bash
+  ```bash
   haxelib install lime
-  ```
-  2. ```bash
   haxelib run lime setup
-  ```
-  3. ```bash
   lime install openfl
-  ```
-  4. ```bash
   lime setup windows
-  ```
-  5. ```bash
   lime setup android
-  ```
-  6. ```bash
   haxelib install flixel
-  ```
-  7. ```bash
   haxelib install flixel-tools
-  ```
-  8. ```bash
   haxelib run flixel-tools setup
   ```
+
 4. Next, download and install the latest version of FlashDevelop: http://www.flashdevelop.org/
 
 5. Finally, head over here: http://www.adobe.com/support/flashplayer/downloads.html and download and install the

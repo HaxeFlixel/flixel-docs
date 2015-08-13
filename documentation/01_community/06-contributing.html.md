@@ -25,3 +25,11 @@ Help spread the word of HaxeFlixel:
 - Write about what you are doing with HaxeFlixel to inspire others by using our forum or your own site.
 - Record a video about your use or tutorial using HaxeFlixel.
 - Make an awesome game and attribute HaxeFlixel as the technology that helped make it happen ;)
+
+### Donations
+
+HaxeFlixel is currently accepting donations via its [Patreon page](https://www.patreon.com/haxeflixel).
+
+Please read [this blog post](http://haxeflixel.com/blog/02-HaxeFlixel-patreon/) to understand how the funds will be distributed.
+
+[@gamedevsam](https://twitter.com/gamedevsam) is the current treasurer for HaxeFlixel, [contact him](http://sambatista.com/contact) if you have any questions or suggestions regarding the use of donated funds.

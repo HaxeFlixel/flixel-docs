@@ -2,66 +2,48 @@
 title: "Flixel Tools"
 ```
 
-To make HaxeFlixel development easier a set of command line tools has been developed with [Haxe](http://haxe.org) and [Neko](http://nekovm.org). With it you can easily create our demo projects, templates and more. Just like HaxeFlixel it is an open-source tool and additions/improvements from the community are welcome at the [Flixel Tools GitHub repository](https://github.com/HaxeFlixel/flixel-tools).
+To make HaxeFlixel development easier, a set of command line tools has been developed with [Haxe](http://haxe.org) and [Neko](http://nekovm.org). With it you can easily create our demo projects, templates and more. Just like HaxeFlixel it is an open-source tool and additions/improvements from the community are welcome at the [flixel-tools GitHub repository](https://github.com/HaxeFlixel/flixel-tools).
 
-### Installation:
+## Installation
 
-The latest stable release of the tools is published just like flixel on Haxelib, so installing is easy:
+The tools are available on haxelib:
 
-```
+```bash
 haxelib install flixel-tools
 ```
 
-#### GIT
-
-You need to make sure you have git installed, [git](http://git-scm.com/download/).
-
-### Setup the Tools
+## Setup
 
 To set the tools up initially / to be able to use the `flixel` alias in your console:
 
-```
+```bash
 haxelib run flixel-tools setup
 ```
 
-### Commands
+## Commands
+
+### `create` (`c`)
 
 Create a new demo (in the current directory):
 
-```
+```bash
 flixel create <name_or_number>
 ```
 
-If no name or number is given it will list all demos and prompt you for a choice, by number or name.
+If no name or number is given, it will list all demos and prompt you for a choice, by number or name.
 
-To create a new default game template use the following, with -n option being the name you want:
+### `template` (`tpl`)
 
-```
-flixel template -n <name>
-```
+To create a new project from the default template:
 
-You can compile all demos for specified platform using __testdemos__ command (flash if not specified):
-
-Valid platforms (don't forget the __-__): flash, neko, windows, mac, linux, ios, android, html5 (experimental)
-
-```
-flixel testdemos -<platform>
+```bash
+flixel tpl -n <name>
 ```
 
-- Currently the templates created are only compatible with the latest [dev branch of flixel](https://github.com/HaxeFlixel/flixel). For flixel 2.x use the command: ```haxelib run flixel new -name <name>```
+Alternatively, a `barebones` template is available. It contains no comments and only has a single state:
 
-### Install the tools from git:
-
-- Please make sure you are also running the latest version of haxelib you can make sure with the command:
-
-```
-haxelib selfupdate
+```bash
+flixel tpl barebones -n <name>
 ```
 
-#### Run the following set of commands to install the tools:
-
-To clone this repo to your haxelib directory:
-
-```
-haxelib git flixel-tools https://github.com/HaxeFlixel/flixel-tools.git
-```
+Any folder in the `flixel-templates` haxelib is treated as a template and can be created with the `flixel tpl <foldername>` syntax. This makes it easy to create custom templates.

@@ -1,1 +1,1 @@
-haxelib run dox -i flash.xml -o .. -res resources --title "HaxeFlixel API docs" -D source-path https://github.com/HaxeFlixel/flixel/tree/master
+haxelib run dox -i xml/bin/flash/types.xml -o .. -theme ./theme --title "HaxeFlixel API" -D version 3.3.9 --exclude "(__ASSET__|ApplicationMain|DocumentClass|DefaultAssetLibrary|Main|NMEPreloader)"
