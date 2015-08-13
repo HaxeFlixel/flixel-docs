@@ -2,7 +2,7 @@
 title: "Debugger"
 ```
 
-Flixel comes with a fairly powerful debugging overlay. You can open it with one of the two default toggle keys (\` and \, on a QWERTY keyboard layout at least). Note that these are configurable via `FlxG.debugger.toggleKeys`. Alternatively, you can do the same in code via the `FlxG.debugger.visible` flag.
+Flixel comes with a fairly powerful debugging overlay. You can open it with one of the two default toggle keys (\` and \ with a QWERTY keybaord layout). Note that these are configurable via `FlxG.debugger.toggleKeys`. Alternatively, you can do the same in code via the `FlxG.debugger.visible` flag.
 
 Note that the debugger does not exist when compiling with `FLX_NO_DEBUG`. With the default `Project.xml`, this is the case in release mode.
 
@@ -204,10 +204,34 @@ FlxG.console.addCommand(["spawnEnemy", "se"], function() {
 
 ## Tracker Windows
 
+Tracker windows are a convenient way to inspect the most important properties of a class / object. Each tracker window is basically a watch window instance. It's the only window type that can be closed.
+
+A _tracker profile_ defines the properties that should be watched for a specific class. Let's take a look at the pre-defined tracker profile for `FlxSprite`:
+
+```haxe
+new TrackerProfile(FlxSprite, ["frameWidth", "frameHeight", "alpha", "origin", "offset", "scale"], [FlxObject])
+```
+
+The first argument determines the class the profile belongs to, the second is an `Array<String>` of the properties. The third argument is a list of extensions - in this case just `FlxObject`. This means that the properties defined in the tracker profile of `FlxObject` will be added to tracker windows for `FlxSprite` as well. This works recursively - `FlxObject` "extends" the `FlxBasic` tracker profile. So in a way, tracker profiles support inheritance. This is why `FlxG.debugger.track(_player)` in Mode's `PlayState#create()` creates a window with a longer list of properties than you'd initially expect from the `FlxSprite` profile:
+
+![](../images/02_handbook/debugger/track-player.png)
+
+Alternatively, you can use the console to create tracker windows at runtime:
+
+`track FlxG.state._player`
+
+The real power of tracker windows comes with the ability to define custom profiles, for example for the `Player` class in Mode:
+
+```haxe
+FlxG.debugger.addTrackerProfile(new TrackerProfile(Player, ["isReadyToJump", "_shootCounter", "_jumpPower"], [FlxBasic]));
+```
+
+(Note: calling `addTrackerProfile()` causes a crash on the latest haxelib release due to a bug. As a workaround, you can call `FlxG.debugger.track(null);` beforehand).
+
+![](../images/02_handbook/debugger/track-player-custom.png)
+
 ## The VCR
 
 ## Extending the Debugger
-
-
 
 ## Debugger Styles
