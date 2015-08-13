@@ -212,7 +212,7 @@ A _tracker profile_ defines the properties that should be watched for a specific
 new TrackerProfile(FlxSprite, ["frameWidth", "frameHeight", "alpha", "origin", "offset", "scale"], [FlxObject])
 ```
 
-The first argument determines the class the profile belongs to, the second is an `Array<String>` of the properties. The third argument is a list of extensions - in this case just `FlxObject`. This means that the properties defined in the tracker profile of `FlxObject` will be added to tracker windows for `FlxSprite` as well. This works recursively - `FlxObject` "extends" the `FlxBasic` tracker profile. So in a way, tracker profiles support inheritance. This is why `FlxG.debugger.track(_player)` in Mode's `PlayState#create()` creates a window with a longer list of properties than you'd initially expect from the `FlxSprite` profile:
+The first argument determines the class the profile belongs to, the second is an `Array<String>` containing the property names. The third argument is a list of extensions - in this case just `FlxObject`. This means that the properties defined in the tracker profile of `FlxObject` will be added to tracker windows for `FlxSprite` as well. This works recursively - `FlxObject` "extends" the `FlxBasic` tracker profile, so any properties of that profile will be added as well. This is why `FlxG.debugger.track(_player)` in Mode's `PlayState#create()` creates a window with a longer list of properties than you'd initially expect from the `FlxSprite` profile:
 
 ![](../images/02_handbook/debugger/track-player.png)
 
