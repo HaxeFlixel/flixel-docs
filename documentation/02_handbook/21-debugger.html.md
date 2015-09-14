@@ -104,7 +104,7 @@ The stats window displays some basic profiling info:
 5. The size of the `FlxQuadtree` pool for collision detection
 6. The size of the `FlxList` (used for quad trees) pool
 
-3 and 4 are especially useful when it comes to performance optimization ("Do I need to optimize my rendering or my update-logic?"). Of course this is only very basic data, profiling tools like [Adobe Scout](https://creative.adobe.com/products/scout) or [hxScout](https://github.com/jcward/hxScout) provide much more detailed information.
+3 and 4 are especially useful when it comes to performance optimization ("Do I need to optimize my rendering or my update-logic?"). Of course this is only very basic data, profiling tools like [Adobe Scout](https://creative.adobe.com/products/scout) or [hxScout](http://hxscout.com) provide much more detailed information.
 
 ![](../images/02_handbook/debugger/stats-window.png)
 
