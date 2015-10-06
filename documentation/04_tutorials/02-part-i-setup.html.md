@@ -35,6 +35,6 @@ Run it to install Haxe.
 4. Next, download and install the latest version of FlashDevelop: http://www.flashdevelop.org/
 
 5. Finally, head over here: http://www.adobe.com/support/flashplayer/downloads.html and download and install the
-Flash Debug Player (scroll down and choose "Download the Windows Flash Player 13 Projector")
+Flash Debug Player (scroll down and choose "Download the Flash Player projector content debugger")
 
 Assuming everything went smoothly, you should be all set! Now we can actually get to the fun part and start coding!
