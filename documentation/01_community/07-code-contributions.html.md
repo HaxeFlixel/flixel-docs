@@ -10,7 +10,7 @@ All repositories except the [website](https://github.com/HaxeFlixel/haxeflixel.c
 
 To clarify: the `dev` branch on [flixel-addons](https://github.com/HaxeFlixel/flixel-addons) and [flixel-demos](https://github.com/HaxeFlixel/flixel-demos) is only compatible with the `dev` branch of [flixel](https://github.com/HaxeFlixel/flixel).
 
-If you are making changes to the codebase that could include breaking changes or a new API, we make use of the pull request feature and suggest developers use a feature branch model. [Feature banches](https://www.atlassian.com/git/workflows#!workflow-feature-branch) are simply new branches with your code that are named with a title relating to your code.
+If you are making changes to the codebase that could include breaking changes or a new API, we make use of the pull request feature and suggest developers use a feature branch model. [Feature branches](https://www.atlassian.com/git/workflows#!workflow-feature-branch) are simply new branches with your code that are named with a title relating to your code.
 
 ###Merge Approval
 
