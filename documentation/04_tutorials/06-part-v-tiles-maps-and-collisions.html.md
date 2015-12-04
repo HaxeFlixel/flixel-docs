@@ -12,6 +12,8 @@ You can make your own, with 16x16 pixel tiles, or use this one:
 
 1. Go to [http://www.ogmoeditor.com](http://www.ogmoeditor.com/) to download and install it, then launch the editor.
 
+	In case you can't install Ogmo Editor on your computer, you can directly use [this sample file](https://raw.githubusercontent.com/HaxeFlixel/flixel-demos/1.1.2/Tutorials/TurnBasedRPG/assets/data/room-001.oel) and go to step 8.
+
 2. Go to Project > New Project and name your project whatever you want. I would save it under assets/data.
 
 3. Next, you need to define your project's settings. Go through each tab, one-by-one, and set it up to look like the following:
