@@ -16,7 +16,7 @@ When you run your game now, you'll notice that everything is really, really smal
 	FlxG.camera.follow(_player, FlxCamera.STYLE_TOPDOWN, 1);
 	```
 
-	This simply tells the camera to follow the player using the Topdown style, with a lerp of 1 (which helps the camera move a little smoother). Note: we 'skipped' over the offset parameter, this is a neat feature in Haxe which you can read about [here](http://haxe.org/manual/types-function-optional-arguments.html) and [here](http://haxe.org/manual/types-function-default-values.html").
+	This simply tells the camera to follow the player using the Topdown style, with a lerp of 1 (which helps the camera move a little smoother). Note: we 'skipped' over the offset parameter, this is a neat feature in Haxe which you can read about [here](http://haxe.org/manual/types-function-optional-arguments.html) and [here](http://haxe.org/manual/types-function-default-values.html).
 
 That's it! Test out the game and see how it looks!
 
