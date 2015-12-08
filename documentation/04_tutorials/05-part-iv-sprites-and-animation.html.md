@@ -41,7 +41,7 @@ Now we need to actually load the player's graphic into the sprite. So, bring up 
 	animation.add("d", [0, 1, 0, 2], 6, false);
 	```
 
-	We're finished with the constructor changes, the final step is to change our updateMovement function to tell the player sprite which way to face. So, modify our section which deals with setting the player's angle to look something like this:
+	We're finished with the constructor changes, the final step is to change our movement function to tell the player sprite which way to face. So, modify our section which deals with setting the player's angle to look something like this:
 
 	```haxe
 	var mA:Float = 0; // our temporary angle
