@@ -101,7 +101,7 @@ Now that we have our little guy running around our map, lets give him something 
 
 	FlxTween is a powerful tool that lets you animate an object's properties. For our coins, we want to make it fade out while also rising up.
 
-	We set the duration to .33 seconds, and the tween type to ONESHOT so it only happens one time (instead of looping). We are using the 'circOut' easing style, to make it look a little nicer, and we want to call the finishKill function when the Tween has completed, which just sets the coin's exists property to false, removing it from the screen.
+	We set the duration to .33 seconds, and we are using the 'circOut' easing style, to make the tween look a little nicer. Also we want to call the finishKill function when the tween has completed, which just sets the coin's exists property to false, removing it from the screen. By default the tween type is set to ONESHOT so it only happens one time (instead of looping). You can change this by specifying type field, but in our case the default behavior is just what we need. 
 	
 	Normally, the FlxTween complete callback will pass the FlxTween, but the "_" parameter in finishKill just allows us to tell our function that we don't care about the parameter being passed to it.
 
