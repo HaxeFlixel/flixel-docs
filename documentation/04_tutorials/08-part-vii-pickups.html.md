@@ -101,9 +101,9 @@ Now that we have our little guy running around our map, lets give him something 
 
 	FlxTween is a powerful tool that lets you animate an object's properties. For our coins, we want to make it fade out while also rising up.
 
-	We set the duration to .33 seconds, and we are using the 'circOut' easing style, to make the tween look a little nicer. Also we want to call the finishKill function when the tween has completed, which just sets the coin's exists property to false, removing it from the screen. By default the tween type is set to ONESHOT so it only happens one time (instead of looping). You can change this by specifying type field, but in our case the default behavior is just what we need. 
+	We set the duration to .33 seconds, and we are using the `circOut` easing style, to make the tween look a little nicer. Also we want to call `finishKill()` when the tween has completed, which just sets the coin's `exists` property to false, removing it from the screen. By default, the tween type is set to `ONESHOT` so it is only executed once (instead of looping). You can change this by specifying a different `type` in the tween options, but in our case the default behavior is just what we need. 
 	
-	Normally, the FlxTween complete callback will pass the FlxTween, but the "_" parameter in finishKill just allows us to tell our function that we don't care about the parameter being passed to it.
+	The type of the `FlxTween` complete callback is `FlxTween->Void` (receives a single `FlxTween` parameter and returns nothing). In this case, we named it `_` to indicate that we don't care about it, which is a common Haxe idiom (other than that, there's nothing special about it - to the compiler it's just a parameter named `_`).
 
 Try out the game now, and you'll notice the difference when you pick up coins! We'll do some more of this later on when we start adding 'juice' to our game.
 
