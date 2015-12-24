@@ -7,7 +7,7 @@ Welcome to HaxeFlixel, here we will show you how to setup your system to start m
 
 Getting started requires three steps:
 
-1. [Install OpenFL and Haxe](http://www.openfl.org/documentation/setup/)
+1. [Install OpenFL and Haxe](http://www.openfl.org/download/)
 2. [Install HaxeFlixel](/documentation/install-haxeflixel)
 4. [HaxeFlixel Hello World](/documentation/hello-world-command-line)
 
