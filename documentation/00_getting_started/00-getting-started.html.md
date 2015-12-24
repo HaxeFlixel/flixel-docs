@@ -13,16 +13,15 @@ Getting started requires three steps:
 
 ----
 
-Time to complete this installation is close to 20 minutes. 
-(depending on the speed of your Internet connection for downloading the components)
+Time to complete this installation is close to 20 minutes (depending on the speed of your Internet connection for downloading the components).
 
 If you require some help:
  
 - Ask a question in the [community forums](/forum);
-- Join the irc channel [#haxeflixel](irc://chat.freenode.net/#haxeflixel) on freenode.
+- Join the IRC channel [#haxeflixel](irc://chat.freenode.net/#haxeflixel) on freenode.
 
 ----
 
-This guide is an open and community effort if you think you can help us improve it, please submit a pull request on 
-[GitHub](https://github.com/HaxeFlixel/haxeflixel.com). Doing so is made easier from the direct github edit link on 
+This guide is an open and community effort - if you think you can help us improve it, please submit a pull request on 
+[GitHub](https://github.com/HaxeFlixel/haxeflixel.com). Doing so is made easier from the direct GitHub edit link on 
 the top right hand side of each page.
