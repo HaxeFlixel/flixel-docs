@@ -16,7 +16,7 @@ If you are wanting to use the latest Haxe toolkit you can see instructions to [b
 
 2.  [Installing OpenFl](http://haxeflixel.com/documentation/install-openfl/)
 
-If you are wanting to use the latest OpenFL code, depending on your target there are instructions for building on [OpenFl's main repositories](https://github.com/openfl/openfl#development-build).
+If you are wanting to use the latest OpenFL code, depending on your target there are instructions for building on [OpenFl's main repositories](https://github.com/openfl/openfl#development-build).  You do not have to use the latest OpenFL to use the dev branch of HaxeFlixel.
 
 HaxeLib lets you have multiple versions of a library like Flixel installed at a time.
 
