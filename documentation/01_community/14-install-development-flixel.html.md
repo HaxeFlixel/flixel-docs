@@ -40,13 +40,28 @@ In some cases, your haxelib is not up-to-date. This can cause problems when tryi
 haxelib selfupdate
 ```
 
-![console screen of haxelib selfupdate](http://s18.postimg.org/r86v2iw3d/haxelib_selfupdate_1.png)
+You should see output similar to the following:
 
-You should be prompted to run the update.hxml. Just type in the command as it's on the screen:
-
-``` bash
-haxe update.hxml
 ```
+C:\HaxeToolkit\haxe>haxelib selfupdate
+Downloading haxelib_client-3,2,0-rc,3.zip...
+Download complete : 69579 bytes in 0.2s (310.2KB/s)
+  Install src/tools/haxelib/Validator.hx
+  Install src/tools/haxelib/SiteApi.hx
+  Install src/tools/haxelib/SemVer.hx
+  Install src/tools/haxelib/Rebuild.hx
+  Install src/tools/haxelib/Main.hx
+  Install src/tools/haxelib/Data.hx
+  Install src/tools/haxelib/ConvertXml.hx
+  Install haxelib.json
+  Current version is now 3.2.0-rc.3
+Done
+Haxelib successfully updated.
+rebuild launched
+
+C:\HaxeToolkit\haxe>
+```
+
 
 **Install flixel from git**
 
