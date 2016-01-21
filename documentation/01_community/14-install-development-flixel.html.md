@@ -43,7 +43,6 @@ haxelib selfupdate
 You should see output similar to the following:
 
 ```
-C:\HaxeToolkit\haxe>haxelib selfupdate
 Downloading haxelib_client-3,2,0-rc,3.zip...
 Download complete : 69579 bytes in 0.2s (310.2KB/s)
   Install src/tools/haxelib/Validator.hx
@@ -58,8 +57,6 @@ Download complete : 69579 bytes in 0.2s (310.2KB/s)
 Done
 Haxelib successfully updated.
 rebuild launched
-
-C:\HaxeToolkit\haxe>
 ```
 
 
