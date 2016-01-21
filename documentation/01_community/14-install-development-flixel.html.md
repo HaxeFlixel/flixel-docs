@@ -10,11 +10,11 @@ All new development is done on the [dev branch](https://github.com/HaxeFlixel/fl
 
 You must have completed the following Getting Started tutorials:
 
-1.  [Installing Haxe](http://haxeflixel.com/documentation/install-haxe)
+* [Installing Haxe](http://haxeflixel.com/documentation/install-haxe)
 
 If you are wanting to use the latest Haxe toolkit you can see instructions to [build Haxe from source here](http://haxe.org/download/manual_install#building-from-source).
 
-2.  [Installing OpenFl](http://haxeflixel.com/documentation/install-openfl/)
+* [Installing OpenFl](http://haxeflixel.com/documentation/install-openfl/)
 
 If you are wanting to use the latest OpenFL code, depending on your target there are instructions for building on [OpenFl's main repositories](https://github.com/openfl/openfl#development-build).  You do not have to use the latest OpenFL to use the dev branch of HaxeFlixel.
 
@@ -31,6 +31,10 @@ You can see the versions of Flixel and other HaxeLib packages like OpenFL with t
 ``` bash
 haxelib list
 ```
+
+* Install git.
+
+Windows-only note: Ensure that during the installation process, you select the non-default option that allows you to use git from the Windows Command Prompt.  (You'll also need to re-open your Command Prompt window after installation for git to become available there.)
 
 **Install flixel from git**
 
