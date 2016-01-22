@@ -267,7 +267,7 @@ Take the following comment section for example, it does not provide *any* additi
 public function setPosition(x:Int, y:Int):Void
 ```
 
-## Class names
+## Class Names
 
 All class names should be prefixed by `Flx`, e.g.:
 
@@ -279,6 +279,22 @@ All class names should be prefixed by `Flx`, e.g.:
 Even though this is widely regarded as bad style, it still makes sense to follow this convention since it is so deeply ingrained into the flixel workflow and doing otherwise would be very inconsistent and confusing.
 
 This convention does not come without its advantages, for example you can easily tell which classes belong to the engine and which ones don't when writing a game.
+
+## Enum Value Names
+
+The names of enum values are capitalized. The same convention applies to abstract enums.
+
+```haxe
+enum FlxCameraFollowStyle
+{
+	LOCKON;
+	PLATFORMER;
+	TOPDOWN;
+	TOPDOWN_TIGHT;
+	SCREEN_BY_SCREEN;
+	NO_DEAD_ZONE;
+}
+```
 
 ## Indentation and Formatting / Tabs and spaces
 
