@@ -10,7 +10,7 @@
 	<haxelib name="flixel-addons" />
 	<haxelib name="flixel-ui" />
 	<haxelib name="nape" />
-	<haxelib name="spinehx" />
+	<haxelib name="spinehaxe" />
 
 	<haxeflag name="--macro" value="include('flixel')" />
 </project>
