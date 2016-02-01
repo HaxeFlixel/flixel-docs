@@ -6,9 +6,9 @@ title: "Android"
 
 The Android target makes use of a chain of frameworks to compile your native Android game from Haxe code. OpenFL uses the [Hxcpp](http://lib.haxe.org/p/hxcpp) and the [Android NDK](http://developer.android.com/tools/sdk/ndk/index.html) specifically so no virtual machine is involved.
 
-The Haxe compiler uses it's ```cpp``` target to compile your ```Haxe``` code for the [LibSDL](http://libsdl.org) OpenGL library so that the Android NDK can then use this "native-code" for your Android game. You can read more about the Android NDK from Google [here](http://developer.android.com/tools/sdk/ndk/index.html), however this process is completely automated by [OpenFL](http://openfl.org). Android is is part of the cpp group of targets and when developers mention ```cpp``` the topic will may be relevant to HaxeFlixel Android.
+The Haxe compiler uses its ```cpp``` target to compile your ```Haxe``` code for the [LibSDL](http://libsdl.org) OpenGL library so that the Android NDK can then use this "native-code" for your Android game. You can read more about the Android NDK from Google [here](http://developer.android.com/tools/sdk/ndk/index.html), however this process is completely automated by [OpenFL](http://openfl.org). Android is part of the cpp group of targets and when developers mention ```cpp``` the topic may be relevant to HaxeFlixel Android.
 
-With [OpenFL](http://openfl.org) using native-code and OpenGL with [LibSDL](http://libsdl.org), the rendering methods are different to where Flixel started with Flash. Android uses GPU accelerated Texture Batching for the best possible performance in mobile devices.
+With [OpenFL](http://openfl.org) using native-code and OpenGL with [LibSDL](http://libsdl.org), the rendering methods are different to where Flixel started with Flash. Android uses GPU accelerated Texture Batching for the best possible performance on mobile devices.
 
 ### Conditionals
 ----
@@ -69,7 +69,7 @@ The basic command to compile and test Android:
 lime test android
 ```
 
-Run this command from the root folder of your project, the default project.xml will be used automatically. For the test command to run on your device you should have it connected with ADB working correctly.
+Run this command from the root folder of your project; the default project.xml will be used automatically. For the test command to run on your device you should have it connected with ADB working correctly.
 
 ----
 
