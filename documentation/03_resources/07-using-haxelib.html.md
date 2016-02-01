@@ -4,41 +4,43 @@ title: "Using Haxelib"
 
 Haxelib is a package manager and utility that comes with your Haxe install. Here are the most used commands, the full usage docs are [available here](http://haxe.org/doc/haxelib/using_haxelib).
 
-### Install a Library
+### Installing a Library
 
 Install a Haxelib library from [lib.haxe.org](http://lib.haxe.org/):
 
 ```
-haxelib install <project>
+haxelib install <library>
 ```
 
-Install a Haxelib library from git:
+Install a Haxelib library from Git:
 
 ```
-haxelib git <url> <branch>
+haxelib git <library> <url> <branch>
 ```
 
-Update your Haxelib libraries, including the git ones:
+_Note: `haxelib git` enables the development directory for that library, which silently prevents `haxelib set` from working. Use `haxelib dev <library>` to disable it._
+
+Update your Haxelib libraries, including the ones from Git:
 
 ```
 haxelib upgrade
 ```
 
-Set a Haxelib at a specific version:
+Change to different version of a library:
 
 ```
-haxelib set <haxelib-name> <version>
+haxelib set <library> <version>
 ```
 
-Remove a Haxe library:
+Remove a library:
 
 ```
-haxelib remove <project>
+haxelib remove <library>
 ```
 
-### Update Haxelib itself:
+### Updating Haxelib itself
 
-To make sure you are using the latest version of Haxelib you can run the selfupdate command. This will update Haxelib itself by automatically downloading the latest version.
+To make sure you are using the latest version of Haxelib you can run the `selfupdate` command.
 
 ```
 haxelib selfupdate
