@@ -4,7 +4,7 @@ title: "Mobile Targets"
 
 With the penetration of mobile devices in the world ignoring mobile targets for your games and applications is ignoring a huge audience.
 
-Mobile devices even though amazing have particular bottlenecks not present on desktop targets. The bottleneck most significant to HaxeFlixel games is the low powered cpu. HaxeFlixel's answer to this is to make use of gpu acceleration provided by OpenFL.
+Mobile devices even though amazing have particular bottlenecks not present on desktop targets. The bottleneck most significant to HaxeFlixel games is the low powered CPU. HaxeFlixel's answer to this is to make use of GPU acceleration provided by OpenFL.
 
 #### CPU
 
@@ -20,7 +20,7 @@ Due to the nature of mobile hardware there are often maximum sizes for textures 
 
 Here you can see an overview of size limits obtained from webgl browsers [http://webglstats.com/#h_texsize](http://webglstats.com/#h_texsize)
 
-You can also look up a device on [glxbench.com](http://glxbench.com), under the GL config tab look for GL_MAX_TEXTURE_SIZE.
+You can also look up a device on [glxbench.com](http://glxbench.com), under the GL config tab look for `GL_MAX_TEXTURE_SIZE`.
 
 Here is an overview of the variety in devices, feel free to add to the list;
 
