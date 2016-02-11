@@ -8,7 +8,7 @@ This project was founded by Alexander Hohlov, also known on [Beeblerox](https://
 
 > #### Haxe and OpenFL improves the longevity and opportunities for your Flixel Games.
 
-HaxeFlixel is largely based on the [ AS3 version of Flixel ](https://github.com/AdamAtomic/flixel) written by [ Adam “Atomic” Saltsman](http://www.adamatomic.com/). One of the major motivations for creating HaxeFlixel is overcoming the limitations of the Actionscript 3 language and the Adobe Flash and Air runtime targets. HaxeFlixel has been able to incorporate and continues to add new language features of Haxe and incorporate exciting new runtime targets through OpenFL.
+HaxeFlixel is largely based on the [ AS3 version of Flixel ](https://github.com/AdamAtomic/flixel) written by [ Adam “Atomic” Saltsman](http://www.adamatomic.com/). One of the major motivations for creating HaxeFlixel is overcoming the limitations of the ActionScript 3 language and the Adobe Flash and AIR runtime targets. HaxeFlixel has been able to incorporate and continues to add new language features of Haxe and incorporate exciting new runtime targets through OpenFL.
 
 The aim of this website is to provide HaxeFlixel with a friendly and connected web presence. It has been developed by Chris Decoster with great input from the community. It provides a place for experienced developers and beginners alike, to easily share their experiences in developing and learning how to make games. We have seen the website form a central location to share resources and improve HaxeFlixel itself.
 
