@@ -25,13 +25,9 @@ This is the place where you add your sprites, tilemaps etc to your state to be r
 
 This is the place where you remove sprites etc you have added to your state. Everything you remove still exists so you can add it back later. If you're not going to use the removed object again you might want to consider removing it from memory by setting it as null for example.
 
-#### update()
+#### update(elapsed:Float)
 
 This is the place where you can run code on every frame of your game. It's where you setup your input controls, trigger movement and almost all of your gameplay logic.
-
-#### destroy()
-
-This is a common method throughout Flixel that ensures that you remove objects from the memory. If you don't properly destroy your objects in your states the objects may not be cleaned up by the garbage collection and consume memory over time.
 
 ``` haxe
 package;
@@ -45,16 +41,10 @@ class FlxExampleState extends FlxState
 		//create your state objects here
 	}
 
-	override public function update():Void
+	override public function update(elapsed:Float):Void
 	{
 		//call super to update the core state class
-		super.update();
-	}
-
-	override public function destroy():Void
-	{
-		//call super to destroy the core state class objects
-		super.destroy();
+		super.update(elapsed);
 	}
 }
 ```
@@ -69,6 +59,7 @@ import flixel.FlxObject;
 import flixel.FlxG;
 import flixel.FlxSprite;
 import flixel.FlxState;
+import flixel.graphics.FlxGraphic;
 
 class FlxExampleState extends FlxState
 {
@@ -86,11 +77,11 @@ class FlxExampleState extends FlxState
 
 		//create a tilemap level
 		level = new FlxTilemap();
-		level.loadMap('assets/level.csv', FlxTilemap.imgAuto, 0, 0, FlxTilemap.AUTO);
+		level.loadMap('assets/level.csv', FlxGraphic.fromClass(GraphicAuto), 0, 0, AUTO);
 		add(level);
 	}
 
-	override public function update():Void
+	override public function update(elapsed:Float):Void
 	{
 		//control the player with keyboard
 		wizard.acceleration.x = 0;
@@ -105,21 +96,9 @@ class FlxExampleState extends FlxState
 		}
 		if (FlxG.keys.SPACE && player.isTouching(FlxObject.FLOOR))
 		{
-				wizard.velocity.y = -wizard.maxVelocity.y / 2;
+			wizard.velocity.y = -wizard.maxVelocity.y / 2;
 		}
-		super.update();
-	}
-
-	override public function destroy():Void
-	{
-		//destroy for garbage collection when you switch state
-		wizard.destroy();
-		wizard = null;
-
-		level.destroy();
-		level = null;
-
-		super.destroy();
+		super.update(elapsed);
 	}
 }
 ```
