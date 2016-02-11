@@ -11,7 +11,6 @@ The Haxe compiler uses its ```cpp``` target to compile your ```Haxe``` code for 
 With [OpenFL](http://openfl.org) using native-code and OpenGL with [LibSDL](http://libsdl.org), the rendering methods are different to where Flixel started with Flash. Android uses GPU accelerated Texture Batching for the best possible performance on mobile devices.
 
 ### Conditionals
-----
 
 ```
 #if cpp
@@ -28,7 +27,6 @@ With [OpenFL](http://openfl.org) using native-code and OpenGL with [LibSDL](http
 ```
 
 ### Project XML settings
-----
 
 Mobile platforms can use a window width and height of 0, which is a special value that uses the full resolution of the current display.
 
@@ -54,14 +52,11 @@ Custom PNG icons: (Check [Iconography / Android Developers](http://developer.and
 <icon path="96.png" size="96" if="android" />
 ```
 
-
 ### Compile Commands
-----
 
 Sublime Text, Flash Develop and Intellij Idea support Android compilation through their GUI.
 
 #### Command line
-----
 
 The basic command to compile and test Android:
 
@@ -71,12 +66,8 @@ lime test android
 
 Run this command from the root folder of your project; the default project.xml will be used automatically. For the test command to run on your device you should have it connected with ADB working correctly.
 
-----
-
-If you want to use the Android simulator, add “-simulator when running/testing. Be sure your virtual device is API >=15 and has GPU enabled.
+If you want to use the Android simulator, add `-simulator` when running/testing. Be sure your virtual device is API >=15 and has GPU enabled.
 
 ```
 lime test android -simulator
 ```
-
-----
