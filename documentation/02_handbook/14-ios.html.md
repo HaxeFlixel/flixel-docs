@@ -31,9 +31,8 @@ iOS uses GPU accelerated Texture Batching for the best possible performance in m
 ```
 
 ### Project XML settings
-----
 
-Mobile platforms can use a window width and height of 0, which is a special value that uses the full resolution of the current display.
+Mobile platforms can use a window `width` and `height` of 0, which is a special value that uses the full resolution of the current display.
 
 ```
 <window width="0" height="0" background="#FFFFFF" fps="60" />
@@ -67,12 +66,10 @@ Custom PNG icons and launch images: (Check [iOS Icon and Image Sizes Guidelines]
 ```
 
 ### Compile Commands
-----
 
-Sublime Text, Flash Develop and Intellij Idea support iOS compilation through their GUI.
+Sublime Text, FlashDevelop and IntelliJ IDEA support iOS compilation through their GUI.
 
 #### Command line
-----
 
 The basic command to compile and test iOS:
 
@@ -80,14 +77,10 @@ The basic command to compile and test iOS:
 lime test ios
 ```
 
-Run this command from the root folder of your project, the default project.xml will be used automatically.
+Run this command from the root folder of your project, the default `Project.xml` will be used automatically.
 
-----
-
-If you want to use the iOS simulator, add “-simulator when running/testing.
+If you want to use the iOS simulator, add `-simulator` when running/testing.
 
 ```
 lime test ios -simulator
 ```
-
-----
