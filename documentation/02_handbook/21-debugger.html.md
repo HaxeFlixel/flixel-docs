@@ -91,7 +91,7 @@ Quick watch values can not be modified.
 
 ### Mouse watch
 
-`FlxG.watch.addMouse()` is a convenient helper to display the current mouse position in the watch window. This can be useful to find the right coordinates to position UI elements at. You can also use the console command `watchMouse` (short: `wm`) to call this function.
+`FlxG.watch.addMouse()` is a convenient helper to display the current mouse position in the watch window. This can be useful to find the right coordinates to position UI elements at. You can also use the console command `watchMouse` to call this function.
 
 ## The Stats Window
 
@@ -112,90 +112,27 @@ The stats window displays some basic profiling info:
 
 The Bitmap Log can be used to display `BitmapData` objects via `FlxG.bitmapLog.add(bitmapData)`. This can be useful to debug logic that manipulates some `BitmapData`. The window provides a slideshow to scroll through logged bitmaps. You can use the middle mouse button to move the graphic around and the mouse wheel to zoom in and out.
 
-You can also inspect flixel's internal `BitmapData` cache by calling `FlxG.bitmapLog.viewCache()` or entering the console command `viewCache` (short: `vc`).
+You can also inspect flixel's internal `BitmapData` cache by calling `FlxG.bitmapLog.viewCache()` or entering the console command `viewCache`.
 
 ![](../images/02_handbook/debugger/view-cache.png)
 
 ## The Console Window
 
-The console allows you to set the values of variables or call functions at runtime (where you would otherwise have to recompile the game) and many other things.
+The console allows a limited subset of Haxe code to be parsed and executed at runtime via [hscript](https://github.com/HaxeFoundation/hscript) via reflection. Commands like `state._player.x = 50` or `state._player.jump()` as you'd expect. Especially on targets with long compile times, this can speed up development substantially.
+
+`state` is the starting point for hscript and needs to be registered to the console to be available - Flixel already does this for you. The same goes for a few classes like `FlxG` or `Math`. To register further objects or classes, call `FlxG.console.registerObject()`.
 
 By default, the game is paused when the console text field receives focus. After a command is executed, the game progresses one frame so the effects can be seen.
 
 The console stores executed commands (use the up and down keys to cycle through them). This history is persistent across executions of your game (but not across different target platforms).
 
-The `help` command already provides a short documentation on available commands, for some however it's worth going into a little more detail.
-
-### The `set` command
-
-`set` (short: `s`) sets the value of an arbitrary variable using `Reflect.setProperty()`.
-
-Let's take a look at an example that works in the Mode demo:
-
-```
-set FlxG.state._player.x 50
-```
-
-If the command was successful, the player x position should now be 50 and the log window says `> set: Player.x is now 50`.
-
-The first argument is the path to the variable. The "starting point" of the dot-path needs to be registered for the console to be able to resolve the variable. `FlxG` is automatically registered to the console beforehand by Flixel.
-The same is true for the current `FlxG.state` instance. This allows us to shorten the command:
-
-```
-set state._player.x 50
-```
-
-To register objects (to access member variables) or classes (to access static variables), you can call `FlxG.console.registerObject()`:
-
-```haxe
-// Inside the Player constructor
-FlxG.console.registerObject("player", this);
-```
-
-With that, the previous command can be shortened even further to just `set player.x 50`.
-
-### The `call` command
-
-`call` (short: `c`) is the counterpart to `set` for calling functions (using `Reflect.callMethod()` under the hood). We can use this to make the player in Mode jump:
-
-```
-call state._player.jump
-```
-
-Upon succesful execution, `> call: Called 'state._player.jump()'` should be output to the log window.
-
-We can shorten the previous command by registering an alias for `jump()` with `FlxG.console.registerFunction()`. The following makes the command `call jump` possible:
-
-```haxe
-// Inside the Player constructor
-FlxG.console.registerFunction("jump", jump);
-```
-
-It's also possible to call functions with arguments:
-
-```
-call FlxG.camera.shake 0.05 5
-```
-
-### The `fields` command
-
-`fields` (short: `f`) lists all fields (variables, properties and fuctions) of a given object, for example
-
-```
-fields state._player
-```
-
-Note that this is equivalent to `fields state._player 0` and doesn't include any fields of parent classes like `FlxSprite`. The second argument specifies how many parent classes should be included. With `3`, it would go all the way down to `FlxBasic`, since the inheritance hierarchy looks like this: `Player` > `FlxSprite` > `FlxObject` > `FlxBasic`.
-
 ### Addings custom commands
 
-Custom console commands can be registered with `FlxG.console.addCommand()`. In principle, a custom command is just a function, so this is similar to what you can already do with the `call` command. However, doing it this way there's no need to prefix the command with `call`. There are also a few more options, like the ability to add some documentation for the `help` command.
-
-Here's an example command `spawnEnemy`, spawning a new enemy at the current mouse position. 
+Functions can also be registered to the console directly as commands via `FlxG.console.registerFunction()`. Here's an example with a function called `"spawnEnemy"`, spawning a new enemy at the current mouse position in the Mode demo.
 
 ```haxe
 // in PlayState#create()
-FlxG.console.addCommand(["spawnEnemy", "se"], function() {
+FlxG.console.addCommand("spawnEnemy", function() {
 	var mousePos = FlxG.mouse.getWorldPosition();
 	var enemy = _enemies.recycle(Enemy);
 	enemy.init(Std.int(mousePos.x), Std.int(mousePos.y), _enemyBullets, _bigGibs, _player);
@@ -218,7 +155,7 @@ The first argument determines the class the profile belongs to, the second is an
 
 Alternatively, you can use the console to create tracker windows at runtime:
 
-`track FlxG.state._player`
+`track(FlxG.state._player)`
 
 The real power of tracker windows comes with the ability to define custom profiles, for example for the `Player` class in Mode:
 
