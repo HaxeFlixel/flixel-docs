@@ -14,7 +14,7 @@ An object of type `FlxKeyList` contains a `Bool` for each key on the keyboard. T
 Here's an example of how to put it all together:
 
 ``` haxe
-override public function update():Void
+override public function update(elapsed:Float):Void
 {
 	if (FlxG.keys.pressed.UP)
 	{
@@ -34,7 +34,7 @@ override public function update():Void
 		// This code is only execute once, on the frame immediately after the key has been released
 	}
 
-	super.update();
+	super.update(elapsed);
 }
 ```
 
@@ -43,19 +43,19 @@ override public function update():Void
 You can check multiple keys at once using the `anyPressed()`, `anyJustPressed()` and `anyJustReleased()` methods of `FlxKeyboard`. This allows to bind multiple keys to one action easily, for example controlling the player with either WASD or the arrow keys. These methods take an `Array` of key names (as `String`s) and return true if any of the given keys has the desired property.
 
 ``` haxe
-override public function update():Void
+override public function update(elapsed:Float):Void
 {
-	if (FlxG.keys.anyPressed(["LEFT", "A"]))
+	if (FlxG.keys.anyPressed([LEFT, A]))
 	{
 		// Move left
 	}
 	
-	if (FlxG.keys.anyPressed(["RIGHT", "D"]))
+	if (FlxG.keys.anyPressed([RIGHT, D]))
 	{
 		// Move right
 	}
 
-	super.update();
+	super.update(elapsed);
 }
 ```
 
