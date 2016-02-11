@@ -49,10 +49,6 @@ This will let you get the first FlxBasic object that has exists == false, this i
 
 This will recursively kill() all objects so that they will be ready for use with getFirstAvailable.
 
-#### callAll(FunctionName:String, Args:Array&lt;Dynamic&gt; = null, Recurse:Bool = true);
-
-Call the specified function on all members of the group.
-
 #### sort(Function:Int->T->T->Int, Order:Int = FlxSort.ASCENDING);
 
 Call this function to sort the group according to a particular value and order. You will need to specificy a sorting function to do so. If you want to sort by something other than y, you will have to write a custom sorting function.
