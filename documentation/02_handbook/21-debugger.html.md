@@ -120,7 +120,7 @@ You can also inspect flixel's internal `BitmapData` cache by calling `FlxG.bitma
 
 The console allows a limited subset of Haxe code to be parsed and executed at runtime via [hscript](https://github.com/HaxeFoundation/hscript). Commands like `state._player.x = 50` or `state._player.jump()` as you'd expect. Especially on targets with long compile times, this can speed up development substantially.
 
-It also supports auto completion for class fields, similar to the completion popups in IDEs (albeit without documentation, which is not available at runtime).
+It also supports auto completion for class fields and registered functions / objects / classes, similar to the completion popups in IDEs (albeit without documentation, which is not available at runtime).
 
 ![](../images/02_handbook/debugger/console-completion.png)
 
