@@ -2,7 +2,7 @@
 title: "About"
 ```
 
-HaxeFlixel is an open source 2D game library written for use with the [Open Flash Library](https://github.com/openfl) and the [Haxe Toolkit](http://haxe.org), it is completely free for personal or commercial use. This game library enables multi-platform development for native targets on mobile and desktop as well as Flash and experimental Html5 support on web platforms. 
+HaxeFlixel is an open source 2D game engine written for use with the [Open Flash Library](https://github.com/openfl) and the [Haxe Toolkit](http://haxe.org), it is completely free for personal or commercial use. It enables multi-platform development for native targets on mobile and desktop as well as Flash and HTML5 on web platforms. 
 
 This project was founded by Alexander Hohlov, also known on [Beeblerox](https://github.com/Beeblerox) on GitHub, who continues to be the project lead for the [HaxeFlixel Organisation](https://github.com/HaxeFlixel) group. The project itself also has an active community with contributions from highly valued developers (by GitHub names) [crazysam](https://github.com/crazysam), [impaler](https://github.com/impaler), [Werdn](https://github.com/werdn), [ProG4mr](https://github.com/ProG4mr), [Gama11](https://github.com/gama11), [sergey-miryanov](https://github.com/sergey-miryanov) and more.
 
@@ -14,7 +14,7 @@ The aim of this website is to provide HaxeFlixel with a friendly and connected w
 
 Everyone is highly encouraged to contribute to HaxeFlixel itself and the resources on this website.
 
-<img src="../images/01_community/about-haxeflixel.png" style="width:100%" />
+![](../images/01_community/about-haxeflixel.png")
 
 <div class="row">
 
