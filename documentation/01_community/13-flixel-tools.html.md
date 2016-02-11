@@ -40,10 +40,4 @@ To create a new project from the default template:
 flixel tpl -n <name>
 ```
 
-Alternatively, a `barebones` template is available. It contains no comments and only has a single state:
-
-```bash
-flixel tpl barebones -n <name>
-```
-
 Any folder in the `flixel-templates` haxelib is treated as a template and can be created with the `flixel tpl <foldername>` syntax. This makes it easy to create custom templates.
