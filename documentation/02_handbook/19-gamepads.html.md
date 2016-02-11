@@ -3,18 +3,18 @@ title: "Gamepads"
 apiPath: input/gamepad/index.html
 ```
 
-Gamepad Input for HaxeFlixel is provided through the FlxGamepad class and is available through `FlxG.gamepads` and the `InputFrontEnd`. Gamepads are made available through the openfl `JoystickEvent` api.
+Gamepad input for HaxeFlixel is provided through the `FlxGamepad` class and is available through `FlxG.gamepads` and the `InputFrontEnd`.
 
-Since gamepads have a variety of manufacturers their keycodes provided to HaxeFlixel API differ from model to model. HaxeFlixel has collected some GamepadIDs from popular gamepads such as `xbox` and `playstation`.
+Since gamepads have a variety of manufacturers their keycodes provided to HaxeFlixel API differ from model to model. HaxeFlixel provides mappings that map buttons and sticks to common IDs for convenient use. Mappings are available for:
 
-You can see an example of using buttons IDs for multiple gamepad types in the HaxeFlixel demo [GamepadTest](https://github.com/HaxeFlixel/flixel-demos/tree/dev/Input/GamepadTest).
-
-HaxeFlixel has collected the following GamePad ID mappings:
-- [Xbox](https://github.com/HaxeFlixel/flixel/blob/dev/flixel/input/gamepad/XboxButtonID.hx)
-- [PS3](https://github.com/HaxeFlixel/flixel/blob/dev/flixel/input/gamepad/PS3ButtonID.hx)
-- [PS4](https://github.com/HaxeFlixel/flixel/blob/dev/flixel/input/gamepad/PS4ButtonID.hx)
-- [OUYA](https://github.com/HaxeFlixel/flixel/blob/dev/flixel/input/gamepad/OUYAButtonID.hx)
-- [Logitech](https://github.com/HaxeFlixel/flixel/blob/dev/flixel/input/gamepad/LogitechButtonID.hx)
+- XInput (Xbox 360, Xbox One, etc)
+- PS4
+- OUYA
+- Logitech
+- WiiRemote
+- Mayflash WiiRemote
+- MFi
+- PS Vita
 
 Here's some example logic for basic detection of Xbox 360 controller input:
 
@@ -22,33 +22,29 @@ Here's some example logic for basic detection of Xbox 360 controller input:
 import flixel.FlxG;
 import flixel.FlxState;
 import flixel.input.gamepad.FlxGamepad;
-import flixel.input.gamepad.XboxButtonID;
 
 class PlayState extends FlxState
 {
-    private var _gamePad:FlxGamepad;
-
-    override public function update():Void 
+    override public function update(elapsed:Float):Void 
     {
-        super.update();
+        super.update(elapsed);
 
         // Important: can be null if there's no active gamepad yet!
-        _gamePad = FlxG.gamepads.lastActive;
-
-        if (_gamePad != null)
+        gamepad = FlxG.gamepads.lastActive;
+        if (gamepad != null)
         {
-            gamepadControls();
+            updateGamepadInput(gamepad);
         }
     }
 
-    private function gamepadControls():Void
+    private function updateGamepadInput(gamepad:FlxGamepad):Void
     {
-        if (_gamePad.pressed(XboxButtonID.A))
+        if (gamepad.pressed.A)
         {
             trace("The A button of the Xbox 360 controller is pressed.");
         }
 		
-        if (_gamePad.getAxis(XboxButtonID.LEFT_ANALOGUE_X) != 0)
+        if (gamepad.analog.justMoved.LEFT_STICK_X)
         {
             trace("The x axis of the left analogue stick of the Xbox 360 controller has been moved.");
         }
@@ -56,7 +52,7 @@ class PlayState extends FlxState
 }
 ```
 
-If you want to support a controller that HaxeFlixel doesn't provide the IDs for, the following methods of FlxGamePad should be helpful for working out what those IDs are:
+If you want to support a controller that HaxeFlixel doesn't provide the IDs for, the following methods of `FlxGamePad` methods should be helpful for working out what those IDs are:
 
 - `firstPressedButtonID()`
 - `firstJustPressedButtonID()`
@@ -68,4 +64,4 @@ If you want to support a controller that HaxeFlixel doesn't provide the IDs for,
 FLX_NO_GAMEPAD
 ```
 
-HaxeFlixel includes a [conditional](http://haxeflixel.com/documentation/haxeflixel-conditionals/) to omit using Gamepads for optimization purposes if you are developing for a platform such as mobile or your game just isn't designed for them.
+HaxeFlixel includes a [conditional](http://haxeflixel.com/documentation/haxeflixel-conditionals/) to omit using gamepads for optimization purposes if you are developing for a platform such as mobile or your game just isn't designed for them.
