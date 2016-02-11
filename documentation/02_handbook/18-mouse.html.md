@@ -12,7 +12,7 @@ On non-mobile targets, the mouse starts out by being visible by default. You can
 The most common use of `FlxG.mouse` is checking the state of the left mouse button.
 
 ``` haxe
-override public function update():Void
+override public function update(elapsed:Float):Void
 {
 	if (FlxG.mouse.pressed)
 	{
@@ -29,7 +29,7 @@ override public function update():Void
 		// The left mouse button has just been released
 	}
 
-	super.update();
+	super.update(elapsed);
 }
 
 ```
