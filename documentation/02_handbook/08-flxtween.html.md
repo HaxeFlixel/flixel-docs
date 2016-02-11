@@ -11,7 +11,7 @@ For example, if you want to move a `FlxSprite` across the screen, this code snip
 sprite.x = 200;
 sprite.y = 200;
 
-FlxTween.tween(sprite, { x:600, y:800 }, 2);
+FlxTween.tween(sprite, { x: 600, y: 800 }, 2);
 ```
 
 The first two lines specify the start position of the sprite, because the `tween()` method assumes the current position is the starting position.
@@ -27,19 +27,19 @@ For example, this code stops the translation of the sprite if the player presses
 ```haxe
 private var tween:FlxTween;
 
-override public function new()
+public function new()
 {
 	super();
 	// set up sprite
 	tween = FlxTween.tween(sprite, { x:600, y:800 }, 2);
 }
 
-override public function update()
+override public function update(elapsed:Float)
 {
+	super.update(elapsed);
+	
 	if (FlxG.keys.justPressed.SPACE)
-	{
 		tween.cancel();
-	}
 }
 ```
 
@@ -59,7 +59,7 @@ Possible values are:
 	
 	- **FlxTween.BACKWARD**: plays tween in reverse direction.
 
-- `complete`: a callback function, which is called once the tween has finished. This is called every time the tween has finished one execution and comes in handy for repeating tweens (**LOOPING** and **PINGPONG**). The method must take a `FlxTween` and return nothing.
+- `onComplete`: a callback function, which is called once the tween has finished. This is called every time the tween has finished one execution and comes in handy for repeating tweens (**LOOPING** and **PINGPONG**). The method must take a `FlxTween` and return nothing.
 
 - `ease`: an optional easer function. This can be used to make the beginning and end of a tween smoother. The [`FlxEase`](http://api.haxeflixel.com/types/flixel/tweens/FlxEase.html) class provides many static methods for this which should cover most cases. The following list shows all functions from `FlxEase`. In all of these, `In` can be replaced by `Out` or `InOut`, depending on where you want to apply the easing effect: at the beginning of the animation, at the end or at both sides.
 
@@ -81,13 +81,13 @@ Possible values are:
 For example:
 
 ```haxe
-override public function new()
+public function new()
 {
 	super();
 	// set up sprite
 	sprite.x = 200;
 	sprite.y = 200;
-	FlxTween.tween(sprite, { x:600, y:800 }, 2, { type:FlxTween.PINGPONG, ease:FlxEase.quadInOut, complete:changeColor, startDelay:1, loopDelay:2 });
+	FlxTween.tween(sprite, { x: 600, y: 800 }, 2, { type: FlxTween.PINGPONG, ease: FlxEase.quadInOut, onComplete: changeColor, startDelay: 1, loopDelay: 2 });
 }
 
 private function changeColor(tween:FlxTween):Void
@@ -115,12 +115,6 @@ Notice that unlike in the `tween()` method, the duration is specified before the
 This method is for tweening the angle of a `FlxSprite`.
 
 Usage: **angle**(Sprite : `FlxSprite`, FromAngle : `Float`, ToAngle : `Float`, Duration : `Float`, ?Options : `TweenOptions`)
-
-#### `fader()`
-
-Used to tween the volume of your game as stored in `FlxG.sound.volume`. It only needs the target volume and a duration.
-
-Usage: **fader**(Volume : `Float`, Duration : `Float`, ?Options : `TweenOptions`)
 
 #### Motion and Path Tweens
 
