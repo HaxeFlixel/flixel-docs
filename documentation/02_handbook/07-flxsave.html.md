@@ -29,8 +29,8 @@ Note: If you plan to use `FlxG.save` you can skip the initializing and binding s
 Once bound, the save is essentially "live". To write to it you use the .data property of variable, treating it as an [object](http://haxe.org/ref/dynamic):
 
 ``` haxe
-_gameSave.data.boxPositions = new Array();
-_gameSave.data.boxPositions.push(new FlxPoint(box.x, box.y));
+_gameSave.data.boxPositions = new Array<FlxPoint>();
+_gameSave.data.boxPositions.push(box.getPosition());
 
 _gameSave.data.enemy = myEnemy;
 
@@ -50,9 +50,8 @@ In certain cases you may need to [serialize and unserialize](http://haxe.org/man
 In order to retrieve your saved data, you simply make sure you have a correctly bound `FlxSave` variable and read each value from the `.data` property.
 
 ``` haxe
-box.x = _gameSave.data.boxPositions[tempCount].x;
-box.y = _gameSave.data.boxPositions[tempCount].y;
-
+var position = _gameSave.data.boxPositions[tempCount];
+box.setPosition(position.x, position.y);
 ```
 
 This means that, depending on your save needs, when loading a save slot you may need to loop through a long list of data to assign each of the values back to it's correct home.
@@ -65,6 +64,6 @@ When you save data to a given `FlxSave` save slot there is, of course, the possi
 
 #### Other methods
 
-In the Save demo the application creates and binds a `FlxSave` variable when the demo state initializes (see `PlayState.create()` ), and then leaves this variable accessible for loading and saving from that point on. This allows you to continually update the save object when necessary, but it's equally valid to create, initialize, and bind a FlxSave variable only when loading and saving. In that case you should familiarize yourself with `.close()` and `.destroy()`for safe and efficient handling of your `FlxSave`.
+In the Save demo the application creates and binds a `FlxSave` variable when the demo state initializes (see `PlayState#create()`), and then leaves this variable accessible for loading and saving from that point on. This allows you to continually update the save object when necessary, but it's equally valid to create, initialize, and bind a FlxSave variable only when loading and saving. In that case you should familiarize yourself with `.close()` and `.destroy()`for safe and efficient handling of your `FlxSave`.
 
 To review these additional methods and check out any other `FlxSave` functionality in more detail, take a look at the [API documentation](http://api.haxeflixel.com/flixel/util/FlxSave.html) or look at the class definition itself (currently under the util package in the flixel library).
