@@ -2,15 +2,15 @@
 title: "Why a Haxe Version"
 ```
 
-The original Actionscript 3 version of [Flixel](http://flixel.org) has proven to be an effective code base to make 2D games quickly and easily for the Adobe Flash and Air runtimes. [Haxe](http://haxe.org) and the [Open Flash Library](https://github.com/openfl) provide significant enhancements and opportunities that Actionscript 3, Air and Flash are limited by. [Haxe](http://haxe.org) and the [OpenFL](https://github.com/openfl) offers more efficient and open source native runtimes to your code base that Actionscript 3 and Adobe Flash/Air are not able to provide. HaxeFlixel still retains the same Flash player target, but you gain a[ familiar, yet superior](/wiki/as3-haxe-comparison) open source language [Haxe](http://haxe.org).
+The original ActionScript 3 version of [Flixel](http://flixel.org) has proven to be an effective codebase to make 2D games quickly and easily for the Adobe Flash and AIR runtimes. [Haxe](http://haxe.org) and the [Open Flash Library](https://github.com/openfl) provide significant enhancements and opportunities that ActionScript 3, AIR and Flash are limited by. [Haxe](http://haxe.org) and the [OpenFL](https://github.com/openfl) offers more efficient and open source native runtimes to your code base that Actionscript 3 and Adobe Flash/Air are not able to provide. HaxeFlixel still retains the same Flash Player target, but you gain a[ familiar, yet superior](/wiki/as3-haxe-comparison) open source language [Haxe](http://haxe.org).
 
-#### Use of a superior open source, cross compiled language
+#### Use of a superior open source, cross-compiled language
 
-Haxe as a toolkit and language provides features today that Actionscript developers have been seeking for years (Actionscript 4, cancelled code name "Next" compiler). The language Actionscript 3, although proven to be effective and easy to learn, can be a barrier itself.
+Haxe as a toolkit and language provides features today that ActionScript developers have been seeking for years (ActionScript 4, cancelled code name "Next" compiler). The language ActionScript 3, although proven to be effective and easy to learn, can be a barrier itself.
 
-The Haxe language offers a familiar syntax whilst being able to cross-compile to different target languages such as native C++, Neko, HTML5, PHP, Java and more. For example OpenFL is letting you target Linux natively where Adobe has discontinued their Air support some time ago.
+The Haxe language offers a familiar syntax whilst being able to cross-compile to different target languages such as native C++, Neko, HTML5, PHP, Java and more. For example OpenFL is letting you target Linux natively where Adobe has discontinued their AIR support some time ago.
 
-Haxe still lets you target Flash and Air runtimes, whilst also opening the doors to much more. You gain the benefits of a superior language and open source runtime. For example,  C++ works with OpenFL and [LibSDL](http://www.libsdl.org/), which would not be possible with Adobe's workflow. HaxeFlixel is far from the only Actionscript library being ported to Haxe. [HaxePunk](http://haxepunk.com/) and other projects can be found on [GitHub](https://github.com/languages/Haxe) and [haxelib](http://lib.haxe.org/).
+Haxe still lets you target Flash and AIR runtimes, whilst also opening the doors to much more. You gain the benefits of a superior language and open source runtime. For example,  C++ works with OpenFL and [LibSDL](http://www.libsdl.org/), which would not be possible with Adobe's workflow. HaxeFlixel is far from the only ActionScript library being ported to Haxe. [HaxePunk](http://haxepunk.com/) and other projects can be found on [GitHub](https://github.com/languages/Haxe) and [haxelib](http://lib.haxe.org/).
 
 #### Native Targets are not a Virtual Machine
 
