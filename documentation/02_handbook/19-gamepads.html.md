@@ -46,7 +46,7 @@ class PlayState extends FlxState
 		
         if (gamepad.analog.justMoved.LEFT_STICK_X)
         {
-            trace("The x axis of the left analogue stick of the Xbox 360 controller has been moved.");
+            trace("The x axis of the left analog stick of the Xbox 360 controller has been moved.");
         }
     }
 }
@@ -64,4 +64,4 @@ If you want to support a controller that HaxeFlixel doesn't provide the IDs for,
 FLX_NO_GAMEPAD
 ```
 
-HaxeFlixel includes a [conditional](http://haxeflixel.com/documentation/haxeflixel-conditionals/) to omit using gamepads for optimization purposes if you are developing for a platform such as mobile or your game just isn't designed for them.
+HaxeFlixel includes a [conditional](http://haxeflixel.com/documentation/haxeflixel-conditionals/) to omit using gamepads for optimization purposes if you are developing for a platform such as mobile, or your game just isn't designed for them.
