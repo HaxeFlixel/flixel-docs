@@ -4,7 +4,7 @@ title: "HaxeFlixel Conditionals"
 
 ### What is "conditional compilation"?
 
-[Conditional compilation macros](http://haxe.org/ref/conditionals) are a powerful feature Haxe offers to optimize your code by only compiling certain parts of it. For example, the following pseudo-code optimizes inputs based on the target platform:
+[Conditional compilation flags](http://haxe.org/manual/lf-condition-compilation.html) are a powerful feature Haxe offers to optimize your code by only compiling certain parts of it. For example, the following pseudo-code optimizes inputs based on the target platform:
 
 ``` haxe
 #if (web || desktop)
@@ -32,9 +32,7 @@ HaxeFlixel makes use of this feature and allows you to optimize your game using 
 
 ```
 // Example xml node to enable to Flixel record system.
-
 <haxedef name="FLX_RECORD" />
-
 ```
 
 #### FLX_RECORD
@@ -51,28 +49,28 @@ By default, flixel uses the flash [native cursor API](http://www.adobe.com/devne
 
 #### FLX_NO_MOUSE
 
-This allows you to optimize your game by compiling it without any mouse-related code, which can make sense for mobile targets. This is why in the template, if="mobile"  is added to the haxedef set tag. Keep in mind that this might require you to use conditionals in your own code for anything related to FlxG.mouse, which does not exist if this define is set.
+This allows you to optimize your game by compiling it without any mouse-related code, which can make sense for mobile targets. This is why in the template, `if="mobile"`  is added to the haxedef set tag. Keep in mind that this might require you to use conditionals in your own code for anything related to `FlxG.mouse`, which does not exist if this define is set.
 
 #### FLX_NO_KEYBOARD
 
-This allows you to optimize your game by compiling it without any keyboard-related code, which can make sense for mobile targets. This is why in the template, if="mobile"  is added to the haxedef set tag. Keep in mind that this might require you to use conditionals in your own code for anything related to FlxG.keyboard or FlxG.keys, which do not exist if this define is set.
+This allows you to optimize your game by compiling it without any keyboard-related code, which can make sense for mobile targets. This is why in the template, `if="mobile"`  is added to the haxedef set tag. Keep in mind that this might require you to use conditionals in your own code for anything related to `FlxG.keyboard` or `FlxG.keys`, which do not exist if this define is set.
 
 #### FLX_NO_TOUCH
 
-This allows you to optimize your game by compiling it without any touch-related code, which can make sense for desktop targets. This is why in the template, if="desktop"  is added to the haxedef set tag. Keep in mind that this might require you to use conditionals in your own code for anything related to FlxG.touches, which does not exist if this define is set.
+This allows you to optimize your game by compiling it without any touch-related code, which can make sense for desktop targets. This is why in the template, `if="desktop"`  is added to the haxedef set tag. Keep in mind that this might require you to use conditionals in your own code for anything related to `FlxG.touches`, which does not exist if this define is set.
 
 #### FLX_NO_GAMEPAD
 
-This allows you to optimize your game by compiling it without any gamepad-related code. Keep in mind that this might require you to use conditionals in your own code for anything related to FlxG.gamepads, which does not exist if this define is set.
+This allows you to optimize your game by compiling it without any gamepad-related code. Keep in mind that this might require you to use conditionals in your own code for anything related to `FlxG.gamepads`, which does not exist if this define is set.
 
-#### FLX_NO_SOUNDTRAY
+#### FLX_NO_SOUND_TRAY
 
-This disables the flixel core sound tray, which appears whenever your adjust the volume via the 0 (mute the game), + or - keys. Note that this does not disable the ability to control the game's volume using these hotkeys, just the soundtray itself. You can disable volume control entirely by setting FlxG.sound.muteKeys, FlxG.sound.volumeUpKeys and FlxG.sound.volumeDownKeys to null.
+This disables the flixel core sound tray, which appears whenever your adjust the volume via the 0 (mute the game), + or - keys. Note that this does not disable the ability to control the game's volume using these hotkeys, just the soundtray itself. You can disable volume control entirely by setting `FlxG.sound.muteKeys`, `FlxG.sound.volumeUpKeys` and `FlxG.sound.volumeDownKeys` to `null`.
 
 #### FLX_NO_FOCUS_LOST_SCREEN
 
-Flixel automatically pauses the game when it loses focus and shows its so-called "focus lost screen", which is basically an overlay darkening the screen area with a white "play-button" in the middle. Using this define disables that screen, but not the feature to automatically pause - use the FlxG.autoPause Bool for that.
+Flixel automatically pauses the game when it loses focus and shows its so-called "focus lost screen", which is basically an overlay darkening the screen area with a white "play-button" in the middle. Using this define disables that screen, but not the feature to automatically pause - use the `FlxG.autoPause` Bool for that.
 
 #### FLX_NO_DEBUG
 
-This disables the flixel core debugger, which you can toggle using the \ and ` keys. It makes sense to do so for release build, which is why unless="debug"  is added to this tag in the template. It basically means that the flixel debugger is disabled when compiling a release, and enabled when compiling a debug build.
+This disables the flixel core debugger, which you can toggle using the \ and \` keys. It makes sense to do so for release build, which is why `unless="debug"`  is added to this tag in the template. It basically means that the flixel debugger is disabled when compiling a release, and enabled when compiling a debug build.
