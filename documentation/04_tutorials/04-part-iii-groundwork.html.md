@@ -58,23 +58,14 @@ First up, let's get our player from the MenuState to our PlayState. Eventually, 
 	This function calls `FlxG.switchState`, which switches the state from whatever the current state is (MenuState) to a new instance of PlayState.
 
 4. Technically, at this point, the functionality would work - you could run your game and it would do what we want it to do, but we're missing a few things.
-	First, we want the button to be in a nicer place. Sure, we could set the x,y coordinates when we create it, but there's a simpler way to do it.
-	Go up to the import section of the class, and, in a new line, type:
-
-	```haxe
-	using flixel.util.FlxSpriteUtil;
-	```
-
-	This is going to allow us to use some of FlxSpriteUtil's (one of many useful utility classes in HaxeFlixel) functions on our own objects in this class. This is thanks to a Haxe feature called [Static Extension](http://haxe.org/manual/lf-static-extension.html), and can be used for some powerful results.
-
-5. Back in the create function, add a new line somewhere after we create our FlxButton, and before `super.create();` (I like to add it before the button is added, but that's just my preference).
+	First, we want the button to be in a nicer place. Sure, we could set the x,y coordinates when we create it, but there's a simpler way to do it. Back in the create function, add a new line somewhere after we create our FlxButton, and before `super.create();` (I like to add it before the button is added, but that's just my preference).
 	Type:
 
 	```haxe
 	_btnPlay.screenCenter();
 	```
 
-	screenCenter is a function in FlxSpriteUtil which takes an object and centers it on the screen either horizontally, vertically or (by default) both. By calling it on our button, the button will be placed in the center of the screen.
+	`screenCenter()` is a function which takes an object and centers it on the screen either horizontally, vertically or (by default) both. By calling it on our button, the button will be placed in the center of the screen.
 
 6. Finally, we need to make sure we clean things up a little. Go back up the imports and add:
 
@@ -118,13 +109,14 @@ We're going to be extending the FlxSprite class to create our Player class.
 	package;
 
 	import flixel.FlxSprite;
+	import flixel.system.FlxAssets.FlxGraphicAsset;
 
 	class Player extends FlxSprite
 	{
-		public function new(X:Float=0, Y:Float=0, ?SimpleGraphic:Dynamic)
+		public function new(X:Float=0, Y:Float=0, ?SimpleGraphic:FlxGraphicAsset)
 		{
 			super(X, Y, SimpleGraphic);
-	    }
+		}
 	}
 	```
 
@@ -134,7 +126,7 @@ We're going to be extending the FlxSprite class to create our Player class.
 	So
 
 	```haxe
-	public function new(X:Float=0, Y:Float=0, ?SimpleGraphic:Dynamic)
+	public function new(X:Float=0, Y:Float=0, ?SimpleGraphic:FlxGraphicAsset)
 	```
 
 	Becomes
@@ -207,7 +199,7 @@ First, let's define our player's movement speed and deceleration amounts:
 	Drag, in HaxeFlixel, is sort of a way to slow down an object when it's not being moved. This will prevent our Player sprite from just running forever in the same direction when the user stops pressing any movement keys.
 	This is sort of arbitrary based on what 'feels' right - we can come back and tweak the numbers later on.
 
-2. While there are plenty of ways to handle player movement, it can be simpler to add it to the Player class. We'll want to add a new function that will watch for player input and respond to it, so, make a new function:
+2. While there are plenty of ways to handle player movement, it can be simpler to add it to the `Player` class. We'll want to add a new function that will watch for player input and respond to it, so, make a new function:
 
 	```haxe
 	private function movement():Void
@@ -227,15 +219,15 @@ First, let's define our player's movement speed and deceleration amounts:
 4. Next, we want to actually find out which of these directions the player wants to move in. We'll do that by checking if certain keys are being pressed:
 
 	```haxe
-	_up = FlxG.keys.anyPressed(["UP", "W"]);
-	_down = FlxG.keys.anyPressed(["DOWN", "S"]);
-	_left = FlxG.keys.anyPressed(["LEFT", "A"]);
-	_right = FlxG.keys.anyPressed(["RIGHT", "D"]);
+	_up = FlxG.keys.anyPressed([UP, W]);
+	_down = FlxG.keys.anyPressed([DOWN, S]);
+	_left = FlxG.keys.anyPressed([LEFT, A]);
+	_right = FlxG.keys.anyPressed([RIGHT, D]);
 	```
 
-	The anyPressed function allows us to ask if any keys out of a list of keys are currently being pressed. You send it an array of Keys (their names) and it will return 'true' if any of them are pressed. There are a couple of similar functions to check for other key states we might use later on.
+	The `anyPressed()` function allows us to ask if any keys out of a list of keys are currently being pressed. You send it an array of keys (their names) and it will return `true` if any of them are pressed. There are a couple of similar functions to check for other key states we might use later on.
 
-5. Next, we want to cancel out opposing directions - if the player is pressing Up and Down at the same time, we're not going to move anywhere:
+5. Next, we want to cancel out opposing directions - if the player is pressing up and down at the same time, we're not going to move anywhere:
 
 	```haxe
 	if (_up && _down)
@@ -287,13 +279,14 @@ First, let's define our player's movement speed and deceleration amounts:
 
 	All this will do is create a temporary variable to hold our angle, and then, based on which direction(s) the player is pressing, set that angle to the direction we plan on moving the player.
 
-8. Now, we know which angle the player should be moving in, we need to figure out how much velocity it needs to move that way. We're going to do this by creating a point, which will be how much velocity the player would have if our angle was 0, then rotate it based on our actual angle, and finally make our player's velocity equal to the resulting, rotated point:
+8. Now, we know which angle the player should be moving in, we need to figure out how much velocity it needs to move that way. We're going to do this by setting `velocity.x` to `speed` and `velocity.y` to `0`. Then we rotate that point around `(0, 0)` (`FlxPoint.weak()`) by `mA` degrees.
 
 	```haxe
-	FlxAngle.rotatePoint(speed, 0, 0, 0, mA, velocity);
+	velocity.set(speed, 0);
+	velocity.rotate(FlxPoint.weak(), mA);
 	```
 
-	Next, close the bracket from your 'if' statement from earlier.
+	Next, close the bracket from your `if` statement from earlier.
 	...and that's the end of our `movement()` function!
 
 9. The only thing left to do is to `override` the `update()` function in `Player.hx` as well and call `movement()` from it. FlashDevelop can generate the necessary boilerplate code for you, just type `override` and a space, after which a completion popup should appear:
@@ -305,10 +298,10 @@ First, let's define our player's movement speed and deceleration amounts:
 	Now you just need to add the function call, after which it should look like this:
 
 	```haxe
-	override public function update():Void
+	override public function update(elapsed:Float):Void
 	{
 		movement();
-		super.update();
+		super.update(elapsed);
 	}
 	```
 
