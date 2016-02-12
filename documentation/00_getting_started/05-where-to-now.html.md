@@ -17,7 +17,7 @@ We also strongly recommend reading about the systems behind HaxeFlixel by readin
 
 For AS3 developers, you can get a quickstart on Haxe from this:
 
-*   [AS3 and Haxe Comparison](http://haxeflixel.com/documentation/as3-and-haxe-comparison/)
+*   [AS3 and Haxe Comparison](http://www.openfl.org/archive/developer/documentation/actionscript-developers/)
 *   [​Haxe API](http://api.haxe.org/)
 
 We also invite you to talk with our community in the forums and IRC! :)
