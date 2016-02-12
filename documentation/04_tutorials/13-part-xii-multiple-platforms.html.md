@@ -222,10 +222,11 @@ To make our game work with Android, we have to make a few more changes. First, w
 
 	```haxe
 	#if mobile
-	_up = _up || PlayState.virtualPad.buttonUp.pressed;
-	_down = _down || PlayState.virtualPad.buttonDown.pressed;
-	_left  = _left || PlayState.virtualPad.buttonLeft.pressed;
-	_right = _right || PlayState.virtualPad.buttonRight.pressed;
+	var virtualPad = PlayState.virtualPad;
+	_up = _up || virtualPad.buttonUp.pressed;
+	_down = _down || virtualPad.buttonDown.pressed;
+	_left  = _left || virtualPad.buttonLeft.pressed;
+	_right = _right || virtualPad.buttonRight.pressed;
 	#end
 	```
 
