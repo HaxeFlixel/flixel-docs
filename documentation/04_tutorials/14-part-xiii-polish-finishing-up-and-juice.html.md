@@ -14,7 +14,8 @@ FlxG.camera.fade(FlxColor.BLACK, .33, true);
 Then, if you want to fade out (when switching states), you can do something like this:
 
 ```haxe
-FlxG.camera.fade(FlxColor.BLACK,.33, false,function() {
+FlxG.camera.fade(FlxColor.BLACK,.33, false, function()
+{
 	FlxG.switchState(new PlayState());
 });
 ```
@@ -32,49 +33,51 @@ So, each time the player gets hurt in combat, the screen will flash white, and w
 I know we've used tweens a few times already, but lets add one to show the enemy getting hurt in combat. We're simply going to make a tween that moves the enemy a few pixels to the right, then triggers a second tween to move the enemy back - each one taking .1 seconds to complete. So, in the makeChoice function of CombatHUD, right before we play the hurt sound for the enemy, add:
 
 ```haxe
-FlxTween.tween(_sprEnemy, { x:_sprEnemy.x + 4 }, .1, { complete: function(_) {
+FlxTween.tween(_sprEnemy, { x:_sprEnemy.x + 4 }, .1, { complete: function(_)
+{
 	FlxTween.tween(_sprEnemy, { x:_sprEnemy.x - 4 }, .1);
 }} );
 ```
 
 Check out how that looks. Tweens are a very simple and powerful tool to make your game feel more active when used properly.
 
-Next, let's add a background effect to our CombatHUD to help bring our the combat screen out from the map a little bit. We're going to copy what's on the camera's buffer, desaturate it, and then apply a FlxWaveSprite to give it a wavy effect. HaxeFlixel has several addons, like FlxWaveSprite or FlxGlitchSprite that can be used for a number of effects.
+Next, let's add a background effect to our `CombatHUD` to help bring our the combat screen out from the map a little bit. We're going to copy what's on the camera's buffer, desaturate it, and then apply a `FlxWaveEffect` to give it a wavy effect. HaxeFlixel has several effects like this that can be used for a number of effects (`FlxGlitchEffect`, `FlxRainbowEffect`...).
 
-1. Open up the CombatHUD class and add these two objects:
+1. Open up the `CombatHUD` class and add this variable:
 
 	```haxe
 	private var _sprScreen:FlxSprite;
-	private var _sprWave:FlxWaveSprite;
 	```
 
-2. In the constructor, we'll initialize these two objects (add this before we create our _sprBack):
+2. In the constructor, we'll initialize these two variables (add this before we create our `_sprBack`):
 
 	```haxe
 	_sprScreen = new FlxSprite().makeGraphic(FlxG.width, FlxG.height, FlxColor.TRANSPARENT);
-	_sprWave = new FlxWaveSprite(_sprScreen, WaveMode.ALL, 4, -1, 4);
-	add(_sprWave);
+	var waveEffect = new FlxWaveEffect(FlxWaveMode.ALL, 4, -1, 4);
+	var waveSprite = new FlxEffectSprite(_sprScreen, [waveEffect]);
+	add(waveSprite);
 	```
 
-	First, we make our `_sprScreen`, make it the size of the window, and just leave it empty for now. Then we make a FlxWaveSprite, tell it to target our `_sprScreen`, and set its properties.
+	First, we make our `_sprScreen`, make it the size of the window, and just leave it empty for now. Then we create a `FlxEffectSprite`, tell it to target our `_sprScreen`, and set its properties. It only uses a single effect, our `waveEffect` instance (it's possible to chain multiple effects using `FlxEffectSprite`).
 
 3. Next, in `initCombat` we want to make our `_sprScreen` take a copy of whatever is on the camera's buffer and apply it to itself, and then desaturate the image. Our FlxWaveSprite will always copy whatever is on our `_sprScreen` every update automatically.
 
 	```haxe
-	#if flash
-	_sprScreen.pixels.copyPixels(FlxG.camera.buffer, FlxG.camera.buffer.rect, new Point());
-	#else
-	_sprScreen.pixels.draw(FlxG.camera.canvas, new Matrix(1, 0, 0, 1, 0, 0));
-	#end
+	_sprScreen.drawFrame();
+	var screenPixels = _sprScreen.framePixels;
+	
+	if (FlxG.renderBlit)
+		screenPixels.copyPixels(FlxG.camera.buffer, FlxG.camera.buffer.rect, new Point());
+	else
+		screenPixels.draw(FlxG.camera.canvas, new Matrix(1, 0, 0, 1, 0, 0));
+	
 	var rc:Float = 1 / 3;
 	var gc:Float = 1 / 2;
 	var bc:Float = 1 / 6;
-	_sprScreen.pixels.applyFilter(_sprScreen.pixels, _sprScreen.pixels.rect, new Point(), new ColorMatrixFilter([rc, gc, bc, 0, 0, rc, gc, bc, 0, 0, rc, gc, bc, 0, 0, 0, 0, 0, 1, 0]));
-	_sprScreen.resetFrameBitmapDatas();
-	_sprScreen.dirty = true;
+	screenPixels.applyFilter(screenPixels, screenPixels.rect, new Point(), new ColorMatrixFilter([rc, gc, bc, 0, 0, rc, gc, bc, 0, 0, rc, gc, bc, 0, 0, 0, 0, 0, 1, 0]));
 	```
 
-That's all there is to it! Our `_sprWaveSprite` will fade in and out with the CombatHUD already. Try our the effect to see how it looks!
+That's all there is to it! Our effect sprite will fade in and out with the `CombatHUD` already. Try our the effect to see how it looks!
 
 ![](../images/04_tutorials/0022.png)
 
@@ -87,6 +90,6 @@ FlxG.mouse.visible = false;
 #end
 ```
 
-And be sure to do the reverse (`= true`) in `GameOverState.create()` No more pesky mouse cursor when we don't need it!
+And be sure to do the reverse (`= true`) in `GameOverState#create()` No more pesky mouse cursor when we don't need it!
 
 There are plenty of other tweaks and tricks you can add to your games. I've shown you just a couple. Try playing around with the different addons special effects classes in HaxeFlixel and see what else you can come up with. Take a look at [the demos](http://haxeflixel.com/demos/) for more examples.
