@@ -2,7 +2,6 @@
 title: "Cheat Sheet"
 ```
 
-
 ## [FlxSprite](http://haxeflixel.com/documentation/flxsprite) (Base)
 
 ```haxe
@@ -18,9 +17,9 @@ class MySprite extends FlxSprite
 		super();
 	}
 
-	override public function update():Void
+	override public function update(elapsed:Float):Void
 	{
-		super.update();
+		super.update(elapsed);
 	}
 
 	override public function destroy():Void
@@ -46,9 +45,9 @@ class MyState extends FlxState
     	super.create();
     }
 
-    override public function update():Void
+    override public function update(elapsed:Float):Void
     {
-    	super.update();
+    	super.update(elapsed);
     }
 
     override public function destroy():Void
@@ -65,7 +64,6 @@ class MyState extends FlxState
 FlxG.switchState(new MyState());
 ```
 
-
 ## Load [FlxSprite](http://haxeflixel.com/documentation/flxsprite)
 
 ```haxe
@@ -74,7 +72,6 @@ loadGraphic("assets/my_sprite.png");
 // OR dynamically create a rect
 makeGraphic(100, 100, 0xFFFFFFFF); // width, height, color (AARRGGBB hexadecimal)
 ```
-
 
 ## FlxText
 
@@ -89,8 +86,8 @@ import flixel.util.FlxColor;
 ```haxe
 myText = new FlxText(0, 0, 500); // x, y, width
 myText.text = "Hello World";
-myText.setFormat("assets/font.ttf", 20, FlxColor.WHITE, "center");
-myText.setBorderStyle(FlxText.BORDER_OUTLINE, FlxColor.RED, 1);
+myText.setFormat("assets/font.ttf", 20, FlxColor.WHITE, CENTER);
+myText.setBorderStyle(OUTLINE, FlxColor.RED, 1);
 ```
 
 
@@ -129,27 +126,20 @@ Play on your code:
 
 ```haxe
 FlxG.sound.play("sound_1");
-
 // Loop music
 FlxG.sound.playMusic("music_1");
 ```
-
 
 ## Keyboard Input
 
 ```haxe
 // 'A' key
-if (FlxG.keys.justPressed.A) 
-{
-}
+if (FlxG.keys.justPressed.A) {}
+if (FlxG.keys.pressed.A) {}
+if (FlxG.keys.justReleased.A) {}
 
-if (FlxG.keys.pressed.A)
-{
-}
-
-if (FlxG.keys.justReleased.A) 
-{
-}
+// Checking multiple keys:
+if (FlxG.keys.anyPressed([RIGHT, D])) {}
 ```
 
 #### Keys
@@ -191,17 +181,9 @@ if (FlxG.keys.justReleased.A)
 ## [Mouse](http://haxeflixel.com/documentation/mouse) Input
 
 ```haxe
-if (FlxG.mouse.pressed) 
-{
-}
-
-if (FlxG.mouse.justPressed) 
-{
-}
-
-if (FlxG.mouse.justReleased) 
-{
-}
+if (FlxG.mouse.pressed) {}
+if (FlxG.mouse.justPressed) {}
+if (FlxG.mouse.justReleased) {}
 ```
 
 #### Positional Data
@@ -222,23 +204,14 @@ Current "delta" value of mouse wheel. If the wheel was just scrolled up, it will
 FlxG.mouse.wheel;
 ```
 
-
 ## Touch Input
 
 ```haxe
 for (touch in FlxG.touches.list)
 {
-	if (touch.justPressed)
-	{
-	}
-	        
-	if (touch.pressed)
-	{
-	}
-	        
-	if (touch.justReleased)
-	{
-	}
+	if (touch.justPressed) {}
+	if (touch.pressed) {}
+	if (touch.justReleased) {}
 }
 ```
 
@@ -315,7 +288,7 @@ stringSignal.dispatch("World");
 ```
 
 You can have up to 4 parameters in your signal:
-```
+```haxe
 var collisionNotify = new FlxTypedSignal<FlxObject->FlxObject->Bool->Bool->Void>();
 collisionNotify.add(collisionCallback);
 
@@ -353,21 +326,16 @@ private function myCallback(Timer:FlxTimer):Void
 ## FlxRandom
 
 ```haxe
-import flixel.util.FlxRandom;
-```
-
-```haxe
 // (Int) between 0 and 10
-FlxRandom.intRanged(0, 10);
+FlxG.random.int(0, 10);
 
 // (Float) between 0.0 and 10.0
-FlxRandom.floatRanged(0.0, 10.0);
+FlxG.random.float(0.0, 10.0);
 
 // (Bool) Chance by percent
-FlxRandom.chanceRoll(50); // 50% chance to return 'true'
-FlxRandom.chanceRoll(10); // 10% chance to return 'true'
+FlxG.random.bool(50); // 50% chance to return 'true'
+FlxG.random.bool(10); // 10% chance to return 'true'
 ```
-
 
 ## [FlxTween](http://haxeflixel.com/documentation/flxtween/)
 
@@ -381,7 +349,7 @@ import flixel.tweens.FlxEase;
 
 ```haxe
 // Moves sprite to position (100, 200) in 3 seconds
-FlxTween.tween(sprite, { x:100, y:200 }, 3.0, { ease: FlxEase.quadInOut, complete: myCallback });
+FlxTween.tween(sprite, { x: 100, y: 200 }, 3.0, { ease: FlxEase.quadInOut, complete: myCallback });
 ```
 
 ```haxe
@@ -389,7 +357,6 @@ private function myCallback(Tween:FlxTween):Void
 {
 }
 ```
-
 
 ## FlxTween Options
 
@@ -428,7 +395,6 @@ private function callbackFunction(Tween:FlxTween):Void
 ```haxe
 { startDelay: 2.0 } // 2 seconds
 ```
-
 
 ## FlxEase List
 
