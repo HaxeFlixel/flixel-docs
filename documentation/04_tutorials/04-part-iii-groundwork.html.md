@@ -279,11 +279,11 @@ First, let's define our player's movement speed and deceleration amounts:
 
 	All this will do is create a temporary variable to hold our angle, and then, based on which direction(s) the player is pressing, set that angle to the direction we plan on moving the player.
 
-8. Now, we know which angle the player should be moving in, we need to figure out how much velocity it needs to move that way. We're going to do this by setting `velocity.x` to `speed` and `velocity.y` to `0`. Then we rotate that point around `(0, 0)` (`FlxPoint.weak()`) by `mA` degrees.
+8. Now, we know which angle the player should be moving in, we need to figure out how much velocity it needs to move that way. We're going to do this by setting `velocity.x` to `speed` and `velocity.y` to `0`. Then we rotate that point around `(0, 0)` by `mA` degrees.
 
 	```haxe
 	velocity.set(speed, 0);
-	velocity.rotate(FlxPoint.weak(), mA);
+	velocity.rotate(FlxPoint.weak(0, 0), mA);
 	```
 
 	Next, close the bracket from your `if` statement from earlier.
