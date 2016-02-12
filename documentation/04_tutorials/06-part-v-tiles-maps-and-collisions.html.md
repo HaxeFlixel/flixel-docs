@@ -52,7 +52,7 @@ One of the great things about using Ogmo with HaxeFlixel is that there is alread
 
 	This should run and install the new library. Close the command prompt window when it's finished.
 	
-2. Jump back into FlashDevelop and open up your Project.xml file. We need to tell our project to include flixel-addons in the libraries.
+2. Jump back into FlashDevelop and open up your `Project.xml` file. We need to tell our project to include flixel-addons in the libraries.
 
 3. Look for a line that says:
 	
@@ -74,19 +74,20 @@ One of the great things about using Ogmo with HaxeFlixel is that there is alread
 	private var _mWalls:FlxTilemap;
 	```
 
-	We're basically just creating an object to hold our Ogmo Map, and then another one to hold the FlxTilemap that we will generate from the Ogmo map.
+	We're basically just creating an object to hold our Ogmo Map, and then another one to hold the `FlxTilemap` that we will generate from the Ogmo map.
 
 5. In the create function, before we setup the player object, add:
 	
 	```haxe
 	_map = new FlxOgmoLoader(AssetPaths.room_001__oel);
+	_mWalls.follow();
 	_mWalls = _map.loadTilemap(AssetPaths.tiles__png, 16, 16, "walls");
 	_mWalls.setTileProperties(1, FlxObject.NONE);
 	_mWalls.setTileProperties(2, FlxObject.ANY);
 	add(_mWalls);
 	```
 
-	This just loads our room file into our FlxOgmoLoader object, generates our FlxTilemap from the 'walls' layer, and then sets tile 1 (our floor tile) to not collide, and tile 2 (walls) to collide from any direction. Then we add our tilemap to the state.
+	This just loads our room file into our `FlxOgmoLoader` object, generates our `FlxTilemap` from the 'walls' layer, and then sets tile 1 (our floor tile) to not collide, and tile 2 (walls) to collide from any direction. Then we add our tilemap to the state.
 
 6. Now, we need to make our player object get placed in the right location on the map. So, change where we initialize our player from:
 	
@@ -101,9 +102,9 @@ One of the great things about using Ogmo with HaxeFlixel is that there is alread
 	_map.loadEntities(placeEntities, "entities");
 	```
 
-	We're simply telling our _map object to loop through all of the entities in our 'entities' layer, and call the placeEntities function for each one (which we're about to make now).
+	We're simply telling our `_map` object to loop through all of the entities in our 'entities' layer, and call the placeEntities function for each one (which we're about to make now).
 
-7. Let's make the placeEntities function now. When we call loadEntities on our map, it will pass the name of the entity, as well as its Xml data to whatever function we want. In our function, we need to take this information and do something with it. It will look like this now:
+7. Let's make the `placeEntities()` function now. When we call loadEntities on our map, it will pass the name of the entity, as well as its Xml data to whatever function we want. In our function, we need to take this information and do something with it. It will look like this now:
 	
 	```haxe
 	private function placeEntities(entityName:String, entityData:Xml):Void
@@ -120,7 +121,7 @@ One of the great things about using Ogmo with HaxeFlixel is that there is alread
 
 	So, if this function gets passed an entity with the name "player", it will set our player object's x and y values to the Entities x and y values (converting them from Strings to Ints).
 
-8. Now, we want to add collision to our state, so the player will bump into walls instead of just walking through them. So, in our update function, after `super.update();` add:
+8. Now, we want to add collision to our state, so the player will bump into walls instead of just walking through them. So, in our update function, after `super.update(elapsed);` add:
 
 	```haxe
 	FlxG.collide(_player, _mWalls);
