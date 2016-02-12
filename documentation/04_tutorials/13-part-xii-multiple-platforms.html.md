@@ -8,7 +8,7 @@ HaxeFlixel comes equipped with a powerful feature called conditionals. By adding
 
 It's not all that complicated. We'll start with something simple: adding the ability to toggle Fullscreen mode on Windows.
 
-Let's add a button to the OptionsState:
+Let's add a button to the `OptionsState`:
 
 1. When we initialize and interact with our button, we only want to do it on 'desktop' platforms. So, at the top of the class, add:
 
@@ -23,7 +23,7 @@ Let's add a button to the OptionsState:
 	```haxe
 	#if desktop
 	_btnFullScreen = new FlxButton(0, _barVolume.y + _barVolume.height + 8, FlxG.fullscreen ? "FULLSCREEN" : "WINDOWED", clickFullscreen);
-	_btnFullScreen.screenCenter(true, false);
+	_btnFullScreen.screenCenter(X);
 	add(_btnFullScreen);
 	#end
 	```
@@ -51,9 +51,10 @@ Let's add a button to the OptionsState:
 	#end
 	```
 
-5. Next, let's change around our Main.hx so that when the game starts it will launch into whatever state the game was last in - fullscreen or not. We need to move things around a little, since we need to find out if we're going into fullscreen or not BEFORE we call new FlxGame, but we need to set the volume AFTER, so the section in setupGame should be changed to look like this:
+5. Next, let's change around our `Main.hx` so that when the game starts it will launch into whatever state the game was last in - fullscreen or not. We need to move things around a little, since we need to find out if we're going into fullscreen or not BEFORE we call new `FlxGame`, but we need to set the volume AFTER, so `new()` should look like this:
 
 	```haxe
+	var startFullscreen:Bool = false;
 	var _save:FlxSave = new FlxSave();
 	_save.bind("flixel-tutorial");
 	#if desktop
@@ -63,7 +64,8 @@ Let's add a button to the OptionsState:
 	}
 	#end
 	
-	addChild(new FlxGame(gameWidth, gameHeight, initialState, zoom, framerate, framerate, skipSplash, startFullscreen));
+	super();
+	addChild(new FlxGame(320, 240, MenuState, 1, 60, 60, false, startFullscreen));
 	
 	if (_save.data.volume != null)
 	{
@@ -209,10 +211,10 @@ To make our game work with Android, we have to make a few more changes. First, w
 
 	```haxe
 	#if !FLX_NO_KEYBOARD
-	_up = FlxG.keys.anyPressed(["UP", "W"]);
-	_down = FlxG.keys.anyPressed(["DOWN", "S"]);
-	_left = FlxG.keys.anyPressed(["LEFT", "A"]);
-	_right = FlxG.keys.anyPressed(["RIGHT", "D"]);
+	_up = FlxG.keys.anyPressed([UP, W]);
+	_down = FlxG.keys.anyPressed([DOWN, S]);
+	_left = FlxG.keys.anyPressed([LEFT, A]);
+	_right = FlxG.keys.anyPressed([RIGHT, D]);
 	#end
 	```
 
@@ -220,10 +222,10 @@ To make our game work with Android, we have to make a few more changes. First, w
 
 	```haxe
 	#if mobile
-	_up = _up || PlayState.virtualPad.buttonUp.status == FlxButton.PRESSED;
-	_down = _down || PlayState.virtualPad.buttonDown.status == FlxButton.PRESSED;
-	_left  = _left || PlayState.virtualPad.buttonLeft.status == FlxButton.PRESSED;
-	_right = _right || PlayState.virtualPad.buttonRight.status == FlxButton.PRESSED;
+	_up = _up || PlayState.virtualPad.buttonUp.pressed;
+	_down = _down || PlayState.virtualPad.buttonDown.pressed;
+	_left  = _left || PlayState.virtualPad.buttonLeft.pressed;
+	_right = _right || PlayState.virtualPad.buttonRight.pressed;
 	#end
 	```
 
