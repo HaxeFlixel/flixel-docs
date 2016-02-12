@@ -60,7 +60,7 @@ Next, let's add a background effect to our `CombatHUD` to help bring our the com
 
 	First, we make our `_sprScreen`, make it the size of the window, and just leave it empty for now. Then we create a `FlxEffectSprite`, tell it to target our `_sprScreen`, and set its properties. It only uses a single effect, our `waveEffect` instance (it's possible to chain multiple effects using `FlxEffectSprite`).
 
-3. Next, in `initCombat` we want to make our `_sprScreen` take a copy of whatever is on the camera's buffer and apply it to itself, and then desaturate the image. Our FlxWaveSprite will always copy whatever is on our `_sprScreen` every update automatically.
+3. Next, in `initCombat` we want to make our `_sprScreen` take a copy of whatever is on the camera's buffer and apply it to itself, and then desaturate the image. Our effect sprite will always copy whatever is on our `_sprScreen` every update automatically.
 
 	```haxe
 	_sprScreen.drawFrame();
