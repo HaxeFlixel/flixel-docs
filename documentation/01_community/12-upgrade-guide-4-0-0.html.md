@@ -147,6 +147,65 @@ As with regular enums, the enum name may be omitted.
 | `loadGraphicFromTexture()`                        | _removed_ (assign a frames collection to `frames`) |
 | `loadRotatedGraphicFromTexture()`                 | _removed_ (assign a frames collection to `frames`) |
 
+### `FlxTilemap`:
+
+`loadMap()` has been split up into `loadMapFromArray()` and `loadMapFromCSV()`.
+
+### `FlxGroup`:
+
+`callAll()` and `setAll()` have been removed - use `forEach()` instead:
+
+```haxe
+// 3.3.x
+group.setAll("scrollFactor", FlxPoint.get(0, 0));
+group.callAll("kill");
+```
+
+```haxe
+// 4.0.0
+group.forEach(function(basic:FlxBasic))
+{
+	basic.scrollFactor.set(0, 0);
+	basic.kill();
+}
+```
+
+### `flixel.input.gamepad`:
+
+The hardware IDs of the different controller types are now mapped to a common `FlxGamepadInputID`. This avoids the need of having to handle multiple controller types - this now happens automatically under the hood.
+
+```haxe
+// 3.3.x
+if (gamepad.pressed(XboxButtonID.A) ||
+	gamepad.pressed(OUYAButtonID.O) ||
+	gamepad.pressed(LogitechButtonID.TWO)) {} 
+```
+
+```haxe
+// 4.0.0
+if (gamepad.anyPressed([FlxGamepadInputID.A])) {}
+// or
+if (gamepad.pressed.A) {}
+```
+
+It is still possible to use the IDs from the `flixel.input.gamepad.id` classes via the functions with the `Raw` suffix.
+
+Because of the poor driver support, the PS3 ID class / support for PS3 controllers have been removed.
+
+### `FlxPath`:
+
+`FlxPath#start()` no longer takes a `FlxObject` argument, instead, `FlxObject` now has a path property. This means `FlxObject` takes care of updating the path, taking care of the issue that paths are not paused along with the objects they work on in substates.
+
+```haxe
+// 3.3.x
+var path = new FlxPath().start(object, points);
+```
+
+```haxe
+// 4.0.0
+object.path = new FlxPath().start(points);
+```
+
 ### `FlxColor` / `FlxColorUtil` refactor:
 
 `FlxColor` is now an [`abstract`](http://haxe.org/manual/types-abstract.html), which means it can be used like an object, while the underlying type is still a regular `Int`. The static `FlxColorUtil` functions can now be used as member methods or properties:
@@ -234,7 +293,7 @@ point.rotate(pivot, angle);
 
 | HaxeFlixel 3.3.x                                        | HaxeFlixel 4.0.0                                          |
 | --------------------------------------------------------|-----------------------------------------------------------|
-| newAmount = `FlxMath.wrapValue(value, amount, max - 1)` | newAmount = `FlxMath.wrapValue(value + amount, min, max)` |
+| newAmount = `FlxMath.wrapValue(value, amount, max + 1)` | newAmount = `FlxMath.wrapValue(value + amount, min, max)` |
 | `FlxMath.getDistance(point1, point2)`                   | `point1.distanceTo(point2)`                               |
 | `FlxMath.MIN_VALUE`                                     | `FlxMath.MIN_VALUE_FLOAT`                                 |
 | `FlxMath.MAX_VALUE`                                     | `FlxMath.MAX_VALUE_FLOAT`                                 |
@@ -247,5 +306,8 @@ point.rotate(pivot, angle);
 | `FlxPoint#inFlxRect()`                            | `FlxPoint#inRect()`                                |
 | `FlxRect#containsFlxPoint()`                      | `FlxRect#containsPoint()`                          |
 | `flixel.plugin.MouseEventManager`                 | `flixel.input.mouse.FlxMouseEventManager`          |
+| `flixel.util.loaders.CachedGraphics`              | `flixel.graphics.FlxGraphic`                       |
 
 `FlxVelocity`'s `accelerateTowards*()`-functions now only take a single `maxSpeed` argument (instead of `x` and `y`).
+
+The `complete` option of `FlxTween` is now called `onComplete`.
