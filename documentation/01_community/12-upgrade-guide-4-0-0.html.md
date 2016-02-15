@@ -147,6 +147,14 @@ As with regular enums, the enum name may be omitted.
 | `loadGraphicFromTexture()`                        | _removed_ (assign a frames collection to `frames`) |
 | `loadRotatedGraphicFromTexture()`                 | _removed_ (assign a frames collection to `frames`) |
 
+### `FlxCamera`:
+
+| HaxeFlixel 3.3.x                                  | HaxeFlixel 4.0.0                                            |
+| --------------------------------------------------|-------------------------------------------------------------|
+| `bounds`                                          | `minScrollX`, `minScrollY`, `maxScrollX` and `maxScrollY`   |
+| `setBounds()`                                     | `setScrollBoundsRect()`                                     |
+| `follow()`'s `Offset` argument                    | _removed_                                                   |
+
 ### `FlxTilemap`:
 
 `loadMap()` has been split up into `loadMapFromArray()` and `loadMapFromCSV()`.
@@ -293,7 +301,7 @@ point.rotate(pivot, angle);
 
 | HaxeFlixel 3.3.x                                        | HaxeFlixel 4.0.0                                          |
 | --------------------------------------------------------|-----------------------------------------------------------|
-| newAmount = `FlxMath.wrapValue(value, amount, max + 1)` | newAmount = `FlxMath.wrapValue(value + amount, min, max)` |
+| `newAmount = FlxMath.wrapValue(value, amount, max + 1)` | `newAmount = FlxMath.wrapValue(value + amount, min, max)` |
 | `FlxMath.getDistance(point1, point2)`                   | `point1.distanceTo(point2)`                               |
 | `FlxMath.MIN_VALUE`                                     | `FlxMath.MIN_VALUE_FLOAT`                                 |
 | `FlxMath.MAX_VALUE`                                     | `FlxMath.MAX_VALUE_FLOAT`                                 |
@@ -311,3 +319,40 @@ point.rotate(pivot, angle);
 `FlxVelocity`'s `accelerateTowards*()`-functions now only take a single `maxSpeed` argument (instead of `x` and `y`).
 
 The `complete` option of `FlxTween` is now called `onComplete`.
+
+
+## flixel-addons
+
+Not all flixel-addons changes are covered here. Please check the [changelog](https://github.com/HaxeFlixel/flixel-addons/blob/master/CHANGELOG.md) for the rest.
+
+### `FlxNapeState` refactor:
+
+`FlxNapeState` is now `FlxNapeSpace` and no longer extends `FlxState`. This makes it possible to use the `flixel.addons.nape` package along with other `FlxState` subclasses (for example `FlxUIState`).
+
+```haxe
+// flixel-addons 1.x.x
+import flixel.addons.nape.FlxNapeState;
+
+class PlayState extends FlxNapeState
+{
+	override public function create():Void
+	{
+		super.create();
+	}
+}
+```
+
+```haxe
+// flixel-addons 2.0.0
+import flixel.FlxState;
+import flixel.addons.nape.FlxNapeSpace;
+
+class PlayState extends FlxState
+{
+	override public function create():Void
+	{
+		super.create();
+		FlxNapeSpace.init();
+	}
+}
+```
