@@ -136,10 +136,116 @@ As with regular enums, the enum name may be omitted.
 | `FlxG.keys.anyPressed(["SPACE", "W"])`            | `FlxG.keys.anyPressed([FlxKey.SPACE, FlxKey.W])`   |
 | `FlxG.keys.anyPressed(["SPACE", "W"])`            | `FlxG.keys.anyPressed([SPACE, W])`                 |
 
-### Other:
+### `FlxSprite`:
 
-Moved `FlxTextField` to flixel-addons:
+| HaxeFlixel 3.3.x                                  | HaxeFlixel 4.0.0                                   |
+| --------------------------------------------------|----------------------------------------------------|
+| `getScreenXY()`                                   | `getScreenPosition()`                              |
+| `cachedGraphics`                                  | `graphic`                                          |
+| `resetFrameBitmaps()`                             | _removed_ (set `dirty` to `true` to regen graphic) |
+| `getFlxFrameBitmapData()`                         | `updateFramePixels()`                              |
+| `loadGraphicFromTexture()`                        | _removed_ (assign a frames collection to `frames`) |
+| `loadRotatedGraphicFromTexture()`                 | _removed_ (assign a frames collection to `frames`) |
+
+### `FlxColor` / `FlxColorUtil` refactor:
+
+`FlxColor` is now an [`abstract`](http://haxe.org/manual/types-abstract.html), which means it can be used like an object, while the underlying type is still a regular `Int`. The static `FlxColorUtil` functions can now be used as member methods or properties:
+
+```haxe
+// 3.3.x
+var color:Int = 0x008080;
+trace(FlxColorUtil.getGreen(color));
+```
+
+```haxe
+// 4.0.0
+var color:FlxColor = 0x008080;
+trace(color.green);
+```
+
+The amount of colors presets (`FlxColor.RED` etc..) has been reduced.
+
+### `FlxEmitter` refactor:
+
+`FlxEmitterExt` has been merged into `FlxEmitter`. For circular emitters, `FlxEmitterMode.CIRCLE` can be used.
+
+Most properties are now `FlxRangeBounds` objects which have a `min` and a `max` `FlxRange` object.
+
+The separate color component `Bounds` have been merged into a `FlxRangeBounds<FlxColor>`.
+
+| HaxeFlixel 3.3.x                                  | HaxeFlixel 4.0.0                                   |
+| --------------------------------------------------|----------------------------------------------------|
+| `at()`                                            | `focusOn()`                                        |
+| `on`                                              | `emitting`                                         |
+
+#### `FlxParticle` changes:
+
+Most properties are now `FlxRange` objects which have a `start` and an `end` value (for example `velocityRange`).
+
+| HaxeFlixel 3.3.x                                  | HaxeFlixel 4.0.0                                   |
+| --------------------------------------------------|----------------------------------------------------|
+| `maxLifespan`                                     | `lifespan`                                         |
+| `lifespan`                                        | `age` (counts up instead of down)                  |
+
+### `FlxRandom` refactor:
+
+`FlxRandom` can now be instantiated and the static functions are now member methods. A pre-created instance is available via `FlxG.random`.
+
+Some methods have also been renamed or removed:
+
+| HaxeFlixel 3.3.x                                  | HaxeFlixel 4.0.0                                   |
+| --------------------------------------------------|----------------------------------------------------|
+| `FlxRandom.intRanged(min, max)`                   | `FlxG.random.int(min, max)`                        |
+| `FlxRandom.floatRanged(min, max)`                 | `FlxG.random.float(min, max)`                      |
+| `FlxRandom.floatRanged(min, max)`                 | `FlxG.random.float(min, max)`                      |
+| `FlxRandom.chanceRoll(chance)`                    | `FlxG.random.bool(chance)`                         |
+| `FlxRandom.weightedGetObject()`                   | _removed_ (`getObject()` now has a range argument) |
+| `FlxRandom.colorExt()`                            | _removed_                                          |
+
+### `FlxAngle` changes:
+
+| HaxeFlixel 3.3.x                                  | HaxeFlixel 4.0.0                                   |
+| --------------------------------------------------|----------------------------------------------------|
+| `FlxAngle.getAngle(point1, point2)`               | `point1.angleBetween(point2)`                      |
+| `FlxAngle.angleLimit()`                           | _removed_ (use `FlxMath.bound()` instead)          |
+
+There have been several changes to `FlxAngle.rotatePoint()`:
+
+- the y-axis is no longer inverted
+- rotation is now clockwise
+- moved to `FlxPoint` (`rotate()`)
+
+```haxe
+// 3.3.x
+var angle = 45;
+var point = FlxPoint.get(10, 5);
+FlxAngle.rotatePoint(x, y, pivotX, pivotY, angle, point);
+```
+
+```haxe
+// 4.0.0
+var angle = 45;
+var point = FlxPoint.get(10 + x, 5 + y);
+var pivot = FlxPoint.weak(pivotX, pivotY);
+point.rotate(pivot, angle);
+```
+
+### `FlxMath` changes:
+
+| HaxeFlixel 3.3.x                                        | HaxeFlixel 4.0.0                                          |
+| --------------------------------------------------------|-----------------------------------------------------------|
+| newAmount = `FlxMath.wrapValue(value, amount, max - 1)` | newAmount = `FlxMath.wrapValue(value + amount, min, max)` |
+| `FlxMath.getDistance(point1, point2)`                   | `point1.distanceTo(point2)`                               |
+| `FlxMath.MIN_VALUE`                                     | `FlxMath.MIN_VALUE_FLOAT`                                 |
+| `FlxMath.MAX_VALUE`                                     | `FlxMath.MAX_VALUE_FLOAT`                                 |
+
+### Other:
 
 | HaxeFlixel 3.3.x                                  | HaxeFlixel 4.0.0                                   |
 | --------------------------------------------------|----------------------------------------------------|
 | `import flixel.text.FlxTextField`                 | `import flixel.addons.text.FlxTextField`           |
+| `FlxPoint#inFlxRect()`                            | `FlxPoint#inRect()`                                |
+| `FlxRect#containsFlxPoint()`                      | `FlxRect#containsPoint()`                          |
+| `flixel.plugin.MouseEventManager`                 | `flixel.input.mouse.FlxMouseEventManager`          |
+
+`FlxVelocity`'s `accelerateTowards*()`-functions now only take a single `maxSpeed` argument (instead of `x` and `y`).
