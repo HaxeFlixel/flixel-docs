@@ -13,7 +13,7 @@ On flash, gamepad support has been added. For your project to work, you have to 
 When compiling to HTML5, make sure to remove `<haxelib name="openfl" />` from your `Project.xml`. This is already being handled in flixel's own `include.xml`.
 
 | HaxeFlixel 3.2.x                        | HaxeFlixel 3.3.0                      |
-| --------------------------------------- |---------------------------------------|                    
+| --------------------------------------- |---------------------------------------|
 | FlxTween.multiVar()                     | FlxTween.tween()                      |
 | FlxTween.singleVar()                    | FlxTween.tween()                      |
 | FlxTween.fader(0, 5);                   | FlxTween.tween(FlxG.sound, {volume: 0}, 5); |
