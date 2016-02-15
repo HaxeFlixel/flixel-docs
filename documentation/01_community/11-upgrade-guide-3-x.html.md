@@ -1,5 +1,5 @@
 ```
-title: "Upgrade Guide"
+title: "Upgrade Guide 3.x"
 ```
 
 ## 3.3.0
