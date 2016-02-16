@@ -264,7 +264,6 @@ Some methods have also been renamed or removed:
 | --------------------------------------------------|----------------------------------------------------|
 | `FlxRandom.intRanged(min, max)`                   | `FlxG.random.int(min, max)`                        |
 | `FlxRandom.floatRanged(min, max)`                 | `FlxG.random.float(min, max)`                      |
-| `FlxRandom.floatRanged(min, max)`                 | `FlxG.random.float(min, max)`                      |
 | `FlxRandom.chanceRoll(chance)`                    | `FlxG.random.bool(chance)`                         |
 | `FlxRandom.weightedGetObject()`                   | _removed_ (`getObject()` now has a range argument) |
 | `FlxRandom.colorExt()`                            | _removed_                                          |
