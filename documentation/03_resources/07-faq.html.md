@@ -20,7 +20,7 @@ No, HaxeFlixel abstracts it completely.
 - [Videos from Christopher Butler](https://www.youtube.com/watch?v=LpKvSPwHOP8&list=PLi0ypjD5PcV9xdjycW0hYi_HD297012tE)
 (covering everything from installation to prototyping a platformer).
 
-### I found I bug, where to report?
+### I found a bug, where to report?
 On the [official GitHub repository](https://github.com/HaxeFlixel/flixel/issues).
 
 ### Is HTML5 supported?
