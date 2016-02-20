@@ -1,5 +1,5 @@
 ```
-title: "11 - Victory and Defeat Menu"
+title: "11 - Game Over Menu"
 ```
 
 Our game is really starting to come together! Now we need it to feel more like a 'game' with a win and lose scenario. For our (very simple) game, we'll just make it so that if you ever die in combat, you get a Game Over, and when you beat the boss enemy, you Win. Both of these conditions will take you to the same `FlxState` to show you your score and allow you to play again if you want.
