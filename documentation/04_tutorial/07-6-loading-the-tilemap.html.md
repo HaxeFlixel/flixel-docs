@@ -100,6 +100,6 @@ One of the great things about using Ogmo with HaxeFlixel is that there is alread
 
 10. Go ahead and run your project, and you should be able to run around the map.
 
-	![](../images/04_tutorials/0013b.png)
+	![](../images/04_tutorial/0013b.png)
 
 In the next part, we'll talk about some small tweaks to the camera.

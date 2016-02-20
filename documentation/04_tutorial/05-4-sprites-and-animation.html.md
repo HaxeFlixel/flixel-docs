@@ -95,6 +95,6 @@ Now we need to actually load the player's graphic into the sprite. So, bring up 
 
 4. Save your changes and run your project, and you should see your player sprite animate while being moved, and facing the right direction!
 
-	![](../images/04_tutorials/0006b.png)
+	![](../images/04_tutorial/0006b.png)
 
 Next, we'll talk about maps and collision!

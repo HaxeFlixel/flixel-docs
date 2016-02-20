@@ -13,13 +13,13 @@ Now we want to make sure that everything is installed properly - and we want to 
 	
 2. Outside of the Command Prompt, launch FlashDevelop. Select File>Open and browse to where your FlixelTut directory was created. It should look something like this:
 
-	![](../images/04_tutorials/0001.png)
+	![](../images/04_tutorial/0001.png)
 
 3. Open the FlixelTut.hxproj file.
 
 4. Over on the right side of the screen, you should see your Project. This will contain all the files that the Template generated for us.
 
-	![](../images/04_tutorials/0002.png)
+	![](../images/04_tutorial/0002.png)
 
 5. Next, let's make sure that our project builds and runs properly. By default, a fresh, new Flixel Template Project will launch the game in the MenuState. So go ahead and double-click to open that file from the project list.
 	This file is a very basic (and empty) example of a FlxState Class. You can think of FlxStates a little bit like 'scenes'. When your game is running, one - and only one - state will be the active state. Anything "added" to that state will be visible and accessible by the player, and, for the most part, will be segregated from other States in your game.
@@ -38,11 +38,11 @@ Now we want to make sure that everything is installed properly - and we want to 
 
 7. The Moment of Truth! Go up to the toolbar in FlashDevelop and choose 'Debug' and 'Flash':
 
-	![](../images/04_tutorials/0002b.png)
+	![](../images/04_tutorial/0002b.png)
 
 	Then, press the blue arrow next to 'Debug' (or hit F5) and you should see:
 	
-	![](../images/04_tutorials/0003.png)
+	![](../images/04_tutorial/0003.png)
 
 	It worked! You've built and run your first HaxeFlixel code!
 

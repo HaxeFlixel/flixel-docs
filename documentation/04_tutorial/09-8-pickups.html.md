@@ -8,17 +8,17 @@ Now that we have our little guy running around our map, lets give him something 
 
 2. On the Entities tab, add a new entity:
 		
-	![](../images/04_tutorials/0014.png)
+	![](../images/04_tutorial/0014.png)
 
 3. Open up the level we used before, and, on the 'entities' layer, scatter a bunch of coins around:
 
-	![](../images/04_tutorials/0015.png)
+	![](../images/04_tutorial/0015.png)
 
 4. We're going to make our coins be 8x8 pixels. For the coin's graphic, you can use this image ![](https://raw.githubusercontent.com/HaxeFlixel/flixel-demos/master/Tutorials/TurnBasedRPG/assets/images/coin.png), or make your own. Make sure you save this in "assets/images".
 
 5. Get back into FlashDevelop, and make a new class:
 
-	![](../images/04_tutorials/0016.png)
+	![](../images/04_tutorial/0016.png)
 
 6. For now, our coin is going to be really simple. Just change the constructor to look like this:
 
@@ -107,6 +107,6 @@ Now that we have our little guy running around our map, lets give him something 
 
 Try out the game now, and you'll notice the difference when you pick up coins! We'll do some more of this later on when we start adding 'juice' to our game.
 
-![](../images/04_tutorials/0016b.png)
+![](../images/04_tutorial/0016b.png)
 
 In the next part, we'll talk about enemies!

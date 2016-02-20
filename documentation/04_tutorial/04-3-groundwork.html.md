@@ -95,13 +95,13 @@ We're going to be extending the FlxSprite class to create our Player class.
 
 1. In the Project list on the right side of your screen, right-click on your "source" folder, and choose "Add", and then "New Class."
 
-	![](../images/04_tutorials/0004.png)
+	![](../images/04_tutorial/0004.png)
 
 2. In the New Haxe Class Dialog that pops up, enter "Player" for "Name", and next to "Base Class", click "Browse." and search for "flixel.FlxSprite" and choose it.
 
 3. Once your screen looks like this, hit "OK":
 
-	![](../images/04_tutorials/0005.png)
+	![](../images/04_tutorial/0005.png)
 
 4. You should now see a very basic class which extends FlxSprite:
 
@@ -176,7 +176,7 @@ We're going to be extending the FlxSprite class to create our Player class.
 
 9. If you run your project right now, you should see our blue player on the screen!
 
-	![](../images/04_tutorials/0006.png)
+	![](../images/04_tutorial/0006.png)
 
 	Now let's get it to move around!
 
@@ -291,7 +291,7 @@ First, let's define our player's movement speed and deceleration amounts:
 
 9. The only thing left to do is to `override` the `update()` function in `Player.hx` as well and call `movement()` from it. FlashDevelop can generate the necessary boilerplate code for you, just type `override` and a space, after which a completion popup should appear:
 
-	![](../images/04_tutorials/overrideCompletion.png)
+	![](../images/04_tutorial/overrideCompletion.png)
 
 	Select `update` and press enter.
 
