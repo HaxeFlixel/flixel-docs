@@ -150,9 +150,9 @@ To make our game work with Android, we have to make a few more changes. First, w
 
 4. The last change to our Project.xml file is to make sure we don't try to use the Debug logic on mobile. At the very bottom of the file, before the closing `</project>` tag, add:
 
-```xml
-<haxedef name="FLX_NO_DEBUG" if="mobile" />
-```
+	```xml
+	<haxedef name="FLX_NO_DEBUG" if="mobile" />
+	```
 
 5. Now that we have different versions of our music, we need to make sure we play the right version. In Main.hx, at the end of setupGame, replace the line where we start playing our music with:
 
