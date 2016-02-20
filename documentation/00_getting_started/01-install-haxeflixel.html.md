@@ -35,7 +35,7 @@ haxelib upgrade
 
 ## Install flixel command
 
-Run the following command to be able to use [flixel commands](https://github.com/HaxeFlixel/flixel-docs/blob/master/documentation/01_community/13-flixel-tools.html.md#commands):
+Run the following command to be able to use [flixel commands](https://github.com/HaxeFlixel/flixel-docs/blob/master/documentation/04_community/13-flixel-tools.html.md#commands):
 	
 ``` bash
 haxelib install flixel-tools

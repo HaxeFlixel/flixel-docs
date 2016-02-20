@@ -86,7 +86,7 @@ Now we want to show the player what's going on. So we need to have some kind of 
 
 Go ahead and test out your game, and the HUD should update each time you pick up a coin!
 
-![](../images/04_tutorial/0019.png)
+![](../images/01_tutorial/0019.png)
 
 If we had a way to 'hurt' the player, we could also update the health on the HUD… but in order to do that, we need to figure out how we're going to do combat!
 
@@ -210,6 +210,6 @@ This all seems simple enough, but it's actually going to require several compone
 
 And that should do it! Test out your game and make sure that it works!
 
-![](../images/04_tutorial/0020.png)
+![](../images/01_tutorial/0020.png)
 
 Next, we'll cover winning and losing and setting up all our different `FlxState`s.

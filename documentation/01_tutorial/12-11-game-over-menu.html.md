@@ -116,7 +116,7 @@ Our game is really starting to come together! Now we need it to feel more like a
 
 If you test your game, you should be able to trigger the `GameOverState` by either dying in combat or defeating the boss, and then clicking on the button in the `GameOverState` will take you back to our `MenuState` so you can play again. If all of that works, you're on the right track! But… our `MenuState` is looking a little bland, now… let's fix that up!
 
-[](../images/04_tutorial/0021.png)
+[](../images/01_tutorial/0021.png)
 
 1. Let's add a title and an options button to the `MenuState`:
 
@@ -183,6 +183,6 @@ If you test your game, you should be able to trigger the `GameOverState` by eith
 
 Test everything out, make sure it's working, and that if you change your volume under options and then exit the game, it retains the value the next time to get into the options screen.
 
-![](../images/04_tutorial/0022.png)
+![](../images/01_tutorial/0022.png)
 
 Looking good! Next time we'll give our volume something to do by adding sound and music!

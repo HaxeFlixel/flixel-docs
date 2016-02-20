@@ -18,4 +18,4 @@ Haxe is being developed through GitHub:
 
 *   https://github.com/HaxeFoundation
 
-[![](../images/01_community/haxe-logo.png)](http://haxe.org)
+[![](../images/04_community/haxe-logo.png)](http://haxe.org)

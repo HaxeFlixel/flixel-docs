@@ -20,6 +20,6 @@ When you run your game now, you'll notice that everything is really, really smal
 
 That's it! Test out the game and see how it looks!
 
-![](../images/04_tutorial/0013c.png)
+![](../images/01_tutorial/0013c.png)
 
 Next, let's give the player something to pickup around the map!

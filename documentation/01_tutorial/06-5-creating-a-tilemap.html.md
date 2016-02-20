@@ -16,27 +16,27 @@ You can make your own, with 16x16 pixel tiles, or use this one:
 
 3. Next, you need to define your project's settings. Go through each tab, one-by-one, and set it up to look like the following:
 
-	![](../images/04_tutorial/0007.png)
+	![](../images/01_tutorial/0007.png)
 
-	![](../images/04_tutorial/0008.png)
+	![](../images/01_tutorial/0008.png)
 
-	![](../images/04_tutorial/0008b.png)
+	![](../images/01_tutorial/0008b.png)
 
-	![](../images/04_tutorial/0009.png)
+	![](../images/01_tutorial/0009.png)
 
-	![](../images/04_tutorial/0010.png)
+	![](../images/01_tutorial/0010.png)
 
 4. Hit Apply to save your changes. You should now see a screen that looks like this:
 	
-	![](../images/04_tutorial/0011.png)
+	![](../images/01_tutorial/0011.png)
 
 5. Make sure you're on the 'walls' layer, and, using tools on the right, draw out a simple map. Make sure it's completely encircled by walls (so the player can't wander off the map), and make the insides filled with floor tiles. You should end up with something like this:
 	
-	![](../images/04_tutorial/0012.png)
+	![](../images/01_tutorial/0012.png)
 
 6. Now, switch over to the 'entities' layer, and place your player entity somewhere in one of your rooms:
 	
-	![](../images/04_tutorial/0013.png)
+	![](../images/01_tutorial/0013.png)
 
 7. Go up to Level > Save Level, and save this as "room-001.oel" in "assets/data".
 
