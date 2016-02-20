@@ -1,5 +1,5 @@
 ```
-title: "9 - UI and Combat"
+title: "10 - UI and Combat"
 ```
 
 Now we want to show the player what's going on. So we need to have some kind of HUD on the screen to tell them what their current/max health is, and how many coins they have. For the health icon you can use this image ![](https://raw.githubusercontent.com/HaxeFlixel/flixel-demos/master/Tutorials/TurnBasedRPG/assets/images/health.png), or make your own. Make sure you save this in "assets/images".

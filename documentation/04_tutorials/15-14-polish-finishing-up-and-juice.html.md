@@ -1,5 +1,5 @@
 ```
-title: "13 - Polish, finishing up, and juice!"
+title: "14 - Polish, finishing up, and juice!"
 ```
 
 In this section, I'm going to show you a few simple tricks to add some polish and juice to your game. You may have seen me drop a few of these into the code earlier on, but we'll go through a few places now to talk about them.
