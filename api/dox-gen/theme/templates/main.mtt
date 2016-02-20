@@ -45,17 +45,9 @@
 						<li>
 							<a href="http://www.haxeflixel.com/demos">Demos</a>
 						</li>
-                        <li class="dropdown" >
-                            <a href="/showcase" class="dropdown-toggle" data-toggle="dropdown">Showcase <span class="caret"></span></a>
-                            <ul class="dropdown-menu" role="menu">
-                                <li>
-                                    <a href="http://www.haxeflixel.com/showcase/games">Games</a>
-                                </li>
-                                <li>
-                                    <a href="http://www.haxeflixel.com/showcase/jams">Jams</a>
-                                </li>
-                            </ul>
-                        </li>
+						<li>
+							<a href="http://www.haxeflixel.com/showcase">Showcase</a>
+						</li>
 						<li >
 							<a href="http://www.haxeflixel.com/blog">Blog</a>
 						</li>
