@@ -1,5 +1,5 @@
 ```
-title: "Part VIII: Enemies and Basic AI"
+title: "8 - Enemies and Basic AI"
 ```
 
 What would a dungeon game be without enemies? Let's add some!

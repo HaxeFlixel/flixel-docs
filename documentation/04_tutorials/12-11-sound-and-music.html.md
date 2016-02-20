@@ -1,5 +1,5 @@
 ```
-title: "Part XI: Sound and Music"
+title: "11 - Sound and Music"
 ```
 
 Our game is really coming together now, but it's still missing something… there's no sound yet!

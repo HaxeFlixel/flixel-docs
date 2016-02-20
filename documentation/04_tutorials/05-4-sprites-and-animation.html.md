@@ -1,5 +1,5 @@
 ```
-title: "Part IV: Sprites and Animation"
+title: "4 - Sprites and Animation"
 ```
 
 So we have a player sprite that moves around the screen. Great! But… we don't want it to just look like a block… so let's add some graphics!

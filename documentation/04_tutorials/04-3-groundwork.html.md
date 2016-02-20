@@ -1,5 +1,5 @@
 ```
-title: "Part III: Groundwork"
+title: "3 - Groundwork"
 ```
 
 Now it's time to think about what we actually want our game to be, and how we're going to pull it off. Luckily, I've done all the hard work for you.

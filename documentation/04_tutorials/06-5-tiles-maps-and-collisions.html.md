@@ -1,5 +1,5 @@
 ```
-title: "Part V: Tiles, Maps, and Collisions"
+title: "5 - Tiles, Maps, and Collisions"
 ```
 
 Now it's time to make some maps for the player to move around in! To do this, we're going to use a tool called Ogmo Editor. Ogmo is a free tile map editor that works very nicely with HaxeFlixel. For this part of the tutorial, we're just going to use a simple 2-tile Tilesheet with a tile for Walls and a tile for Floors.

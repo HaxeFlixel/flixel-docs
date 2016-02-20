@@ -1,5 +1,5 @@
 ```
-title: "Part II: Testing with a New Project"
+title: "2 - Testing with a New Project"
 ```
 
 Now we want to make sure that everything is installed properly - and we want to set up the framework for our game. So we're going to make a new project, open it with FlashDevelop and test that it builds and runs.
