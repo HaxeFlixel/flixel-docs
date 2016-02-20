@@ -454,3 +454,8 @@ footer:before {
   float: left;
 }
 
+/* offset anchors to account for the header */
+.anchor {
+  padding-top: 60px;
+  margin-top: -60px;
+}

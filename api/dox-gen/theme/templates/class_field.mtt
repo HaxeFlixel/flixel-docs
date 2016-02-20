@@ -9,10 +9,10 @@
 
 	<a ::attr name field.name::></a>
 	<h3>
-		<p>$$printFieldSignature(::field::,::isStatic::)</p>
+		<p class="anchor">$$printFieldSignature(::field::,::isStatic::)</p>
 		::if field.overloads != null::
 			::foreach field field.overloads::
-				<p>$$printFieldSignature(::field::,::isStatic::)</p>
+				<p class="anchor">$$printFieldSignature(::field::,::isStatic::)</p>
 			::end::
 		::end::
 	</h3>
