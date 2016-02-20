@@ -14,7 +14,7 @@ The aim of this website is to provide HaxeFlixel with a friendly and connected w
 
 Everyone is highly encouraged to contribute to HaxeFlixel itself and the resources on this website.
 
-![](../images/04_community/about-haxeflixel.png")
+![](../images/04_community/about-haxeflixel.png)
 
 <div class="row">
 
