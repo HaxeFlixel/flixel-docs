@@ -21,11 +21,6 @@ class MySprite extends FlxSprite
 	{
 		super.update(elapsed);
 	}
-
-	override public function destroy():Void
-	{
-		super.destroy();
-	}
 }
 ```
 
@@ -48,11 +43,6 @@ class MyState extends FlxState
     override public function update(elapsed:Float):Void
     {
     	super.update(elapsed);
-    }
-
-    override public function destroy():Void
-    {
-        super.destroy();
     }
 }
 ```
@@ -294,13 +284,6 @@ collisionNotify.add(collisionCallback);
 
 function collisionCallback(source:FlxObject, target:FlxObject, shouldKillSource:Bool, shouldKillTarget:Bool):Void (...)
 ```
-
-__Don't forget to clean up the signal when your object is destroyed:__
-```haxe
-signal = FlxDestroyUtil.destroy(signal);
-stringSignal = FlxDestroyUtil.destroy(stringSignal);
-```
-
 
 ## FlxTimer
 
