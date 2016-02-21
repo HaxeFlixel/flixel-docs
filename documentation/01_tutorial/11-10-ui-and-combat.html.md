@@ -2,7 +2,7 @@
 title: "10 - UI and Combat"
 ```
 
-Now we want to show the player what's going on. So we need to have some kind of HUD on the screen to tell them what their current/max health is, and how many coins they have. For the health icon you can use this image ![](https://raw.githubusercontent.com/HaxeFlixel/flixel-demos/master/Tutorials/TurnBasedRPG/assets/images/health.png), or make your own. Make sure you save this in "assets/images".
+Now we want to show the player what's going on. So we need to have some kind of HUD on the screen to tell them what their current/max health is, and how many coins they have. For the health icon you can use this image ![](https://raw.githubusercontent.com/HaxeFlixel/flixel-demos/master/Tutorials/TurnBasedRPG/assets/images/health.png), or make your own. Make sure you save this in `assets/images`.
 
 1. We'll start by making a new `HUD` class which will hold all our HUD elements:
 
@@ -58,11 +58,11 @@ Now we want to show the player what's going on. So we need to have some kind of 
 	}
 	```
 
-	This class extends `FlxTypedGroup<FlxSprite>` so that it can hold all of our `FlxSprite` objects. It is composed of 5 different items: a background (black, with a 1-pixel thick white line along the bottom), 2 `FlxText` objects: 1 for Health, and 1 for Money, and 2 `FlxSprite`s, for the icons to go next to the `FlxText`s. At the end of our constructor, we have a `forEach` call - we use this to iterate through each of the items in this group, and it just sets their `scrollFactor.x` and `scrollFactor.y` to 0, meaning, even if the camera scrolls, all of these items will stay at the same position relative to the screen.
+	This class extends `FlxTypedGroup<FlxSprite>` so that it can hold all of our `FlxSprite` objects. It is composed of 5 different items: a background (black, with a 1-pixel thick white line along the bottom), 2 `FlxText` objects: 1 for health, and 1 for money, and two `FlxSprite` objects, for the icons to go next to the `FlxText` objects. At the end of our constructor, we have a `forEach()` call - we use this to iterate through each of the items in this group, and it just sets their `scrollFactor.x` and `scrollFactor.y` to 0, meaning, even if the camera scrolls, all of these items will stay at the same position relative to the screen.
 
 	Finally, we have a function that we can call from anywhere to tell the `HUD` what it should display.
 
-2. Now let's get it to work and have it update whenever we pick up a coin. In your `PlayState`, add to the top of the class:
+2. Now let's get it to work and have it update whenever we pick up a coin. In your `PlayState`, add this to the top of the class:
 
 	```haxe
 	private var _hud:HUD;
@@ -70,14 +70,14 @@ Now we want to show the player what's going on. So we need to have some kind of 
 	private var _health:Int = 3;
 	```
 
-3. In the create function, before `super.create()`, add:
+3. In `create()`, before `super.create()`, add:
 
 	```haxe
 	_hud = new HUD();
 	add(_hud);
 	```
 
-4. Finally, in the `playerTouchCoin()` function we added earlier, somewhere inside the if statement, add:
+4. Finally, in the `playerTouchCoin()` function we added earlier, somewhere inside the `if`-statement, add:
 
 	```haxe
 	_money++;
@@ -90,9 +90,9 @@ Go ahead and test out your game, and the HUD should update each time you pick up
 
 If we had a way to 'hurt' the player, we could also update the health on the HUD… but in order to do that, we need to figure out how we're going to do combat!
 
-Let's begin by establishing what we want our combat system to achieve. First, we're not going to be making the next Final Fantasy game here, this is just a basic demonstration to show how a few different elements can work. So, I think all we want to do is have a simple interface that appears when the player touches an enemy that shows the Player's health, and the Enemy's health (in a health bar, for obfuscation), and gives the player 2 options: FIGHT or FLEE.
+Let's begin by establishing what we want our combat system to achieve. First, we're not going to be making the next Final Fantasy game here, this is just a basic demonstration to show how a few different elements can work. So, I think all we want to do is have a simple interface that appears when the player touches an enemy that shows the player's health, and the enemy's health (in a health bar, for obfuscation), and gives the player 2 options: `FIGHT` or `FLEE`.
 
-If they choose to fight, we'll roll some random chance checks to see if the player hits the enemy, and if the enemy hits the player - a hit will do 1 damage. Once the enemy dies, we'll continue on. If they choose to flee, we'll do a check to see if they do flee or not - if they do, the interface closes and the enemy will be stunned for a few seconds so the player can move away. If they fail to flee, the enemy will get a free hit against the player. We'll also show the damage and Misses on the interface.
+If they choose to fight, we'll roll some random chance checks to see if the player hits the enemy, and if the enemy hits the player - a hit will do 1 damage. Once the enemy dies, we'll continue on. If they choose to flee, we'll do a check to see if they do flee or not - if they do, the interface closes and the enemy will be stunned for a few seconds so the player can move away. If they fail to flee, the enemy will get a free hit against the player. We'll also show the damage and misses on the interface.
 
 This all seems simple enough, but it's actually going to require several components working together to make it work. It's the most complicated piece of our game so far.
 
@@ -100,7 +100,7 @@ This all seems simple enough, but it's actually going to require several compone
 
 	[CombatHUD.hx](https://github.com/HaxeFlixel/flixel-demos/blob/master/Tutorials/TurnBasedRPG/source/CombatHUD.hx)
 
-	Take some time to read through it to see how it works, then add it to your project. You will need to add a small function to our `Enemy.hx` class, as well:
+	Take some time to read through it to see how it works, then add it to your project. You will need to add a small function to our `Enemy` class as well:
 
 	```haxe
 	public function changeEnemy(EType:Int):Void
@@ -113,21 +113,21 @@ This all seems simple enough, but it's actually going to require several compone
 	}
 	```
 
-2. Next, we need to get our `CombatHUD` into our `PlayState`. Add this to the top of the PlayState Class:
+2. Next, we need to get our `CombatHUD` into our `PlayState`. Add this to the top of the `PlayState` class:
 
 	```haxe
 	private var _inCombat:Bool = false;
 	private var _combatHud:CombatHUD;
 	```
 
-3. Move down to the create function, and, after we add the HUD, and before we call `super.create`, add:
+3. Move down to `create()`, and, after we add the HUD, and before we call `super.create()`, add:
 
 	```haxe
 	_combatHud = new CombatHUD();
 	add(_combatHud);
 	```
 
-4. Go down to our `update()` function, and change it so that we're ONLY checking for collision and overlaps and things when we're not in combat. Everything after the `super.update` should look like this:
+4. Go down to our `update()`, and change it so that we're ONLY checking for collisions and overlaps when we're not in combat. Everything after the `super.update()` should look like this:
 
 	```haxe
 	if (!_inCombat)
@@ -161,7 +161,7 @@ This all seems simple enough, but it's actually going to require several compone
 
 	So, we're adding a check to see if the player touches an enemy. If they do, we'll call a callback to see if we should start combat or not.
 
-	If we're in combat, we're simply going to keep checking to see if the combatHUD is still visible - once it becomes invisible, we know that combat has finished, and we can determine the outcome. If the outcome is `VICTORY` (one of our 4 enum values), we will kill the enemy, but if the player Fled the battle, we will make the enemy flicker, to show that the player is safe from fighting it again for a short amount of time.
+	If we're in combat, we're simply going to keep checking to see if the combat HUD is still visible - once it becomes invisible, we know that combat has finished, and we can determine the outcome. If the outcome is `VICTORY` (one of our four enum values), we will kill the enemy, but if the player fled the battle, we will make the enemy flicker, to show that the player is safe from fighting it again for a short amount of time.
 
 5. Next, lets add the functions to handle the player touching an enemy:
 
@@ -183,15 +183,15 @@ This all seems simple enough, but it's actually going to require several compone
 	}
 	```
 
-	All we're doing here is checking to see if the player is alive and exists and the enemy is alive and exists and not flickering (flickering enemies are those we've just fled from), and if so, we start combat.
+	All we're doing here is verify that both the player and the enemy are alive and exist, as well as that the enemy is not flickering (flickering enemies are those we've just fled from). If so, we start combat.
 
-	The `startCombat` function simply sets our `inCombat` flag (so we know not to do collisions), and sets the player and all the enemies to inactive, so they no longer update.
+	The `startCombat()` function simply sets our `inCombat` flag (so we know not to do collisions), and sets the player and all the enemies to inactive, so they no longer update.
 
-	Finally, we call the initCombat function in our `CombatHUD`, which initializes it and makes it start working.
+	Finally, we call `initCombat()` in our `CombatHUD`, which initializes it and makes it start working.
 
 6. Finally, we want enemies that are flickering to not move - they should act kind of stunned for a second after the enemy flees.
 
-	In the Enemy class, under update, add:
+	In the `Enemy` class, under `update()`, add:
 
 	```haxe
 	if (isFlickering())
@@ -206,10 +206,10 @@ This all seems simple enough, but it's actually going to require several compone
 	using flixel.util.FlxSpriteUtil;
 	```
 
-	to the top of the `Enemy.hx` class.
+	to the top of the `Enemy` class.
 
 And that should do it! Test out your game and make sure that it works!
 
 ![](../images/01_tutorial/0020.png)
 
-Next, we'll cover winning and losing and setting up all our different `FlxState`s.
+Next, we'll cover winning and losing and setting up all our different states.
