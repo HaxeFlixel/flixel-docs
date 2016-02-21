@@ -2,7 +2,7 @@
 title: "5 - Creating a Tilemap"
 ```
 
-Now it's time to make some maps for the player to move around in! To do this, we're going to use a tool called Ogmo Editor. Ogmo is a free tile map editor that works very nicely with HaxeFlixel. For this part of the tutorial, we're just going to use a simple 2-tile Tilesheet with a tile for Walls and a tile for Floors.
+Now it's time to make some maps for the player to move around in! To do this, we're going to use a tool called _Ogmo Editor_. Ogmo is a free tilemap editor that works very nicely with HaxeFlixel. For this part of the tutorial, we're just going to use a simple 2-tile tilesheet with a tile for walls and a tile for floors.
 
 You can make your own, with 16x16 pixel tiles, or use this one:
 
@@ -12,7 +12,7 @@ You can make your own, with 16x16 pixel tiles, or use this one:
 
 1. Go to [http://www.ogmoeditor.com](http://www.ogmoeditor.com/) to download and install it, then launch the editor.
 
-2. Go to Project > New Project and name your project whatever you want. I would save it under assets/data.
+2. Go to `Project > New Project` and name your project whatever you want. Save it in `assets/data`.
 
 3. Next, you need to define your project's settings. Go through each tab, one-by-one, and set it up to look like the following:
 
@@ -38,7 +38,7 @@ You can make your own, with 16x16 pixel tiles, or use this one:
 	
 	![](../images/01_tutorial/0013.png)
 
-7. Go up to Level > Save Level, and save this as "room-001.oel" in "assets/data".
+7. Go up to `Level > Save Level`, and save this as `room-001.oel` in `assets/data`.
 
 8. We're done with Ogmo for now, so save all your changes and exit.
 
