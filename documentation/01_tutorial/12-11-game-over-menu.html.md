@@ -2,32 +2,11 @@
 title: "11 - Game Over Menu"
 ```
 
-Our game is really starting to come together! Now we need it to feel more like a 'game' with a win and lose scenario. For our (very simple) game, we'll just make it so that if you ever die in combat, you get a Game Over, and when you beat the boss enemy, you Win. Both of these conditions will take you to the same `FlxState` to show you your score and allow you to play again if you want.
+Our game is really starting to come together! Now we need it to feel more like a 'game' with a win and lose scenario. For our (very simple) game, we'll just make it so that if you ever die in combat, you get a Game Over, and when you beat the boss enemy, you win. Both of these conditions will take you to the same `FlxState` to show you your score and allow you to play again if you want.
 
-1. The first thing we want to do is stop our `CombatHUD` from stopping once the player has been defeated. So in the doneResultsIn function, remove the `if (outcome != DEFEAT)` statement.
+1. The first thing we want to do is stop our `CombatHUD` from stopping once the player has been defeated. So in `doneResultsIn()`, remove the `if (outcome != DEFEAT)` statement.
 
-2. We also need to make sure that when our `CombatHUD` gets destroyed it cleans up all the objects that it has properly. So add this function:
-
-	```haxe
-	override public function destroy():Void
-	{
-		super.destroy();
-		e = FlxDestroyUtil.destroy(e);
-		_sprBack = FlxDestroyUtil.destroy(_sprBack);
-		_sprPlayer = FlxDestroyUtil.destroy(_sprPlayer);
-		_sprEnemy = FlxDestroyUtil.destroy(_sprEnemy);
-		_enemyHealthBar = FlxDestroyUtil.destroy(_enemyHealthBar);
-		_txtPlayerHealth = FlxDestroyUtil.destroy(_txtPlayerHealth);
-		_damages = FlxDestroyUtil.destroyArray(_damages);
-		_pointer = FlxDestroyUtil.destroy(_pointer);
-		_choices = FlxDestroyUtil.destroyArray(_choices);
-		_results = FlxDestroyUtil.destroy(_results);
-	}
-	```
-
-	It's good practice to get into the habit of destroying all your objects in the destroy function of a class.
-
-3. Now, in PlayState, we need to add some flags to see if we're ending the game, and if the player has 'won' or not. So, add:
+2. Now, in `PlayState`, we need to add some flags to see if we're ending the game, and if the player has 'won' or not. So, add:
 	
 	```haxe
 	private var _ending:Bool;
@@ -36,7 +15,7 @@ Our game is really starting to come together! Now we need it to feel more like a
 
 	To the top of the class.
 
-4. Next, in the update function, right under `super.update(elapsed)` add:
+3. Next, in `update()`, right under `super.update(elapsed)` add:
 
 	```haxe
 	if (_ending)
@@ -47,7 +26,7 @@ Our game is really starting to come together! Now we need it to feel more like a
 
 	We don't want to allow anything else to go on if we're ending the game and getting ready to switch states.
 
-5. Next, still in `update`, we're going to change our combatHud logic to this:
+4. Next, still in `update()`, we're going to change our logic to this:
 
 	```haxe
 	if (!_combatHud.visible)
@@ -82,11 +61,11 @@ Our game is really starting to come together! Now we need it to feel more like a
 	}
 	```
 
-	This will now check to see if the outcome was `DEFEAT`, and if it was, it will set our ending flag to true, and then tell the camera to start fading out - calling `doneFadeOut` when it's done.
+	This will now check to see if the outcome was `DEFEAT`, and if it was, it will set our ending flag to true, and then tell the camera to start fading out - calling `doneFadeOut()` when it's done.
 
 	Similarly, if the outcome was `VICTORY`, and the enemy that was just defeated was type 1 (the boss), we set our `won` flag to `true`, and also start fading out.
 
-6. When the camera is done fading to black, we call this function, which will switch the state to our `GameOverState` (which you'll make in a second), passing it if the player won or not, and how much money they have.
+5. When the camera is done fading to black, we call this function, which will switch the state to our `GameOverState` (which you'll make in a second), passing it if the player won or not, and how much money they have.
 
 	```haxe
 	private function doneFadeOut():Void 
@@ -95,18 +74,7 @@ Our game is really starting to come together! Now we need it to feel more like a
 	}
 	```
 
-7. Make sure we clean up our objects when this state is destroyed (in the `destroy` function):
-	
-	```haxe
-	_player = FlxDestroyUtil.destroy(_player);
-	_mWalls = FlxDestroyUtil.destroy(_mWalls);
-	_grpCoins = FlxDestroyUtil.destroy(_grpCoins);
-	_grpEnemies = FlxDestroyUtil.destroy(_grpEnemies);
-	_hud = FlxDestroyUtil.destroy(_hud);
-	_combatHud = FlxDestroyUtil.destroy(_combatHud);
-	```
-
-8. We need to add the `GameOverState`. This is going to be a pretty simple `FlxState` where we show a message - either "Game Over" or "You Win!", depending on our won flag, and the final score for this player. We will also use flixel's save/load functionality to compare the previous hi-scores, and, if the new score is higher, replace the saved hi-score, and show the hi-score on the screen.
+ We need to add the `GameOverState`. This is going to be a pretty simple `FlxState` where we show a message - either "Game Over" or "You Win!", depending on our won flag, and the final score for this player. We will also use flixel's save/load functionality to compare the previous highscores, and, if the new score is higher, replace the saved highscore, and show the highscore on the screen.
 
 	Finally, we have a button to take the player back to the main menu.
 
@@ -118,14 +86,14 @@ If you test your game, you should be able to trigger the `GameOverState` by eith
 
 [](../images/01_tutorial/0021.png)
 
-1. Let's add a title and an options button to the `MenuState`:
+1. Let's add a title and an options-button to the `MenuState`:
 
 	```haxe
 	private var _txtTitle:FlxText;
 	private var _btnOptions:FlxButton;
 	```
 
-2. Then, in create, we'll add them to the state (and move the Play button, as well):
+2. Then, in `create()`, we'll add them to the state (and move the play-button as well):
 
 	```haxe
 	_txtTitle = new FlxText(20, 0, 0, "HaxeFlixel\nTutorial\nGame", 22);
@@ -144,7 +112,7 @@ If you test your game, you should be able to trigger the `GameOverState` by eith
 	add(_btnOptions);
 	```
 
-3. Add the function that gets called when the options button is clicked:
+3. Add the function that gets called when the options-button is clicked:
 
 	```haxe
 	private function clickOptions():Void
@@ -153,21 +121,13 @@ If you test your game, you should be able to trigger the `GameOverState` by eith
 	}
 	```
 
-4. Then, finally, add some clean-up logic to our destroy function:
-	
-	```haxe
-	_txtTitle = FlxDestroyUtil.destroy(_txtTitle);
-	_btnPlay = FlxDestroyUtil.destroy(_btnPlay);
-	_btnOptions = FlxDestroyUtil.destroy(_btnOptions);
-	```
-
-5. The `OptionsState` that is called from the options button is fairly simple. It will contain a button to allow the user to clear the saved data (hi-scores, etc), as well as a simple FlxBar to show the user the current volume level of the game with buttons to adjust it up or down. It will save the volume values so that each time the game starts, it will 'remember' what volume it was last set to (I know there's no sound…. yet ;) )
+4. The `OptionsState` that is called from the options button is fairly simple. It will contain a button to allow the user to clear the saved data (highscores, etc), as well as a simple `FlxBar` to show the user the current volume level of the game with buttons to adjust it up or down. It will save the volume values so that each time the game starts, it will 'remember' what volume it was last set to (I know there's no sound…. yet ;))
 
 	The code for this State looks like this:
 
 	[OptionsState.hx](https://github.com/HaxeFlixel/flixel-demos/blob/master/Tutorials/TurnBasedRPG/source/OptionsState.hx)
 
-	Finally, we want our game to load the stored volume (if there is any) each time the game starts, so, goto our Main.hx file, and, in setupGame, after addChild, add:
+	Finally, we want our game to load the stored volume (if there is any) each time the game starts, so, go to `Main.hx`, and add this after the `addChild()` call:
 
 	```haxe
 	var _save:FlxSave = new FlxSave();
@@ -179,7 +139,7 @@ If you test your game, you should be able to trigger the `GameOverState` by eith
 	_save.close();
 	```
 
-	Pretty simple: it makes a new `FlxSave` object, binds it to our "flixel-tutorial" and then checks if there is a volume value stored in it, and if there is, sets our game's volume to match, and then closes the save.
+	Pretty simple: it makes a new `FlxSave` object, binds it to our `"flixel-tutorial"` and then checks if there is a volume value stored in it, and if there is, sets our game's volume to match, and then closes the save.
 
 Test everything out, make sure it's working, and that if you change your volume under options and then exit the game, it retains the value the next time to get into the options screen.
 
