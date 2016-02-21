@@ -8,20 +8,20 @@ What would a dungeon game be without enemies? Let's add some!
 
 	![](../images/01_tutorial/0017.png)
 
-	Make sure you add the 'etype' value.
+	Make sure you add the `etype` value.
 
 
-2. Then scatter some enemies around the map. Make all but one of them have an etype value of '0', and the other one be '1'.
+2. Then scatter some enemies around the map. Make all but one of them have an `etype` value of `0`, and the other one be `1`.
 
 	![](../images/01_tutorial/0018.png)
 
-3. So we want to have 2 different enemies in our game. We'll need spritesheets for both of them, with 16x16 pixel frames and the same animation frames as our player. Name them 'enemy-0.png' and 'enemy-1.png' and put them in the 'assets/images' folder. You can use these, if you want (thanks, again, Vicky!):
+3. So we want to have 2 different enemies in our game. We'll need spritesheets for both of them, with 16x16 pixel frames and the same animation frames as our player. Name them `enemy-0.png` and `enemy-1.png` and put them in the `assets/images` folder. You can use these, if you want (thanks, again, Vicky!):
 
 	![](https://raw.githubusercontent.com/HaxeFlixel/flixel-demos/master/Tutorials/TurnBasedRPG/assets/images/enemy-0.png)
 
 	![](https://raw.githubusercontent.com/HaxeFlixel/flixel-demos/master/Tutorials/TurnBasedRPG/assets/images/enemy-1.png)
 
-	Note: make sure that your enemy sprites are functionally the same - they should have the same number of frames for each 'facing' animation.
+	Note: make sure that your enemy sprites are functionally the same - they should have the same number of frames for each `facing` animation.
 
 4. Let's add a new `Enemy` class. This class is going to look a lot like our `Player` class, with a few changes:
 
@@ -86,7 +86,7 @@ What would a dungeon game be without enemies? Let's add some!
 
 	The main difference is that we have a new `etype` variable, which we will use to figure out which enemy sprite to load, and which one we're dealing with, etc.
 
-5. Next, we'll make a `FlxGroup` in our `PlayState` to hold our Enemies, and load them into the map, very much the same way we did our coins.
+5. Next, we'll make a `FlxGroup` in our `PlayState` to hold our enemies, and load them into the map, very much the same way we did our coins.
 
 	At the top of our class, add:
 
@@ -114,7 +114,7 @@ Go ahead and test out your game to make sure the enemies are added properly.
 
 Now let's give them some brains.
 
-In order to let our enemies 'think', we're going to utilize a very simple [Finite-state Machine (FSM)](http://en.wikipedia.org/wiki/Finite_state_machine). Basically, the FSM works by saying that a given machine (or entity) can only be in one state at a time. For our enemies, we're going to give them 2 possible states: Idle and Chase. When they can't 'see' the player, they will be Idle - wandering around aimlessly. Once the player is in view, however, they will switch to the Chase state and run towards the player.
+In order to let our enemies 'think', we're going to utilize a very simple [Finite-state Machine (FSM)](http://en.wikipedia.org/wiki/Finite_state_machine). Basically, the FSM works by saying that a given machine (or entity) can only be in one state at a time. For our enemies, we're going to give them 2 possible states: `Idle` and `Chase`. When they can't 'see' the player, they will be `Idle` - wandering around aimlessly. Once the player is in view, however, they will switch to the `Chase` state and run towards the player.
 
 1. Shouldn't be that hard! First, we'll make our `FSM` class:
 
@@ -206,9 +206,9 @@ In order to let our enemies 'think', we're going to utilize a very simple [Finit
 	}
 	```
 
-	The way this is going to work is that each enemy will start in the Idle state. In the `PlayState` we will have each enemy check to see if it can see the player or not. If it can, it will switch to the Chase state, until it can't see the player anymore. While in the Idle state, every so often (in random intervals) it will choose a random direction to move in for a little while (with a small chance to just stand still). While in the Chase state, they will move directly towards the player.
+	The way this is going to work is that each enemy will start in the `Idle` state. In the `PlayState` we will have each enemy check to see if it can see the player or not. If it can, it will switch to the `Chase` state, until it can't see the player anymore. While in the `Idle` state, every so often (in random intervals) it will choose a random direction to move in for a little while (with a small chance to just stand still). While in the `Chase` state, they will move directly towards the player.
 
-5. Let's jump over to the `PlayState` to add our player's vision logic. In `update`, under the overlap and collision checks, add:
+5. Let's jump over to the `PlayState` to add our player's vision logic. In `update()`, under the overlap and collision checks, add:
 
 	```haxe
 	FlxG.collide(_grpEnemies, _mWalls);
@@ -234,4 +234,4 @@ That's all there is to it! Try out your game and make sure it works!
 
 ![](../images/01_tutorial/0018b.png)
 
-Next, we'll add some UI to the game, and add our RPG-style Combat so you can fight the enemies!
+Next, we'll add some UI to the game, and add our RPG-style combat so you can fight the enemies!
