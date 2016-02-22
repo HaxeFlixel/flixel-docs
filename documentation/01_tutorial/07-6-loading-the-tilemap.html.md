@@ -22,7 +22,7 @@ One of the great things about using Ogmo with HaxeFlixel is that there is alread
 	and change it to:
 	
 	```xml
-	<haxelib name="flixel-adddons" />
+	<haxelib name="flixel-addons" />
 	```
 
 	Save this change. You're now playing with flixel-addons!
