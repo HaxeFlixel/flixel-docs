@@ -33,7 +33,7 @@ So, each time the player gets hurt in combat, the screen will flash white, and w
 I know we've used tweens a few times already, but lets add one to show the enemy getting hurt in combat. We're simply going to make a tween that moves the enemy a few pixels to the right, then triggers a second tween to move the enemy back - each one taking `.1` seconds to complete. So, in the `makeChoice()` function of `CombatHUD`, right before we play the hurt sound for the enemy, add:
 
 ```haxe
-FlxTween.tween(_sprEnemy, { x: _sprEnemy.x + 4 }, .1, { complete: function(_)
+FlxTween.tween(_sprEnemy, { x: _sprEnemy.x + 4 }, .1, { onComplete: function(_)
 {
 	FlxTween.tween(_sprEnemy, { x: _sprEnemy.x - 4 }, .1);
 }});

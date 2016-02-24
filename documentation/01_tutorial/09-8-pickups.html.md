@@ -88,7 +88,7 @@ Now that we have our little guy running around our map, lets give him something 
 	override public function kill():Void
 	{
 		alive = false;
-		FlxTween.tween(this, { alpha: 0, y: y - 16 }, .33, { ease: FlxEase.circOut, complete: finishKill });
+		FlxTween.tween(this, { alpha: 0, y: y - 16 }, .33, { ease: FlxEase.circOut, onComplete: finishKill });
 	}
 	
 	private function finishKill(_):Void
