@@ -4,7 +4,7 @@ title: "About"
 
 HaxeFlixel is an open source 2D game engine written for use with the [Open Flash Library](https://github.com/openfl) and the [Haxe Toolkit](http://haxe.org), it is completely free for personal or commercial use. It enables multi-platform development for native targets on mobile and desktop as well as Flash and HTML5 on web platforms. 
 
-This project was founded by Alexander Hohlov, also known on [Beeblerox](https://github.com/Beeblerox) on GitHub, who continues to be the project lead for the [HaxeFlixel Organisation](https://github.com/HaxeFlixel) group. The project itself also has an active community with contributions from highly valued developers (by GitHub names) [crazysam](https://github.com/crazysam), [impaler](https://github.com/impaler), [Werdn](https://github.com/werdn), [ProG4mr](https://github.com/ProG4mr), [Gama11](https://github.com/gama11), [sergey-miryanov](https://github.com/sergey-miryanov) and more.
+This project was founded by Alexander Hohlov, also known on [Beeblerox](https://github.com/Beeblerox) on GitHub, who continues to be the project lead for the [HaxeFlixel Organisation](https://github.com/HaxeFlixel) group. The project itself also has an active community with contributions from highly valued developers (by GitHub names) [GameDevSam](https://github.com/gamedevsam), [impaler](https://github.com/impaler), [Werdn](https://github.com/werdn), [ProG4mr](https://github.com/ProG4mr), [Gama11](https://github.com/gama11), [sergey-miryanov](https://github.com/sergey-miryanov) and more.
 
 > #### Haxe and OpenFL improves the longevity and opportunities for your Flixel Games.
 
@@ -78,11 +78,11 @@ Everyone is highly encouraged to contribute to HaxeFlixel itself and the resourc
 	<p>Chris is a generalist developer who has worked on various features and bug fixes for the engine and tools. Chris is also responsible for our logo, website and forum and is a long time member of the project.</p>
 </li>
     <li>
-	<a href="http://github.com/crazysam">
-		<h4>CrazySam</h4>
+	<a href="http://github.com/gamedevsam">
+		<h4>GameDevSam</h4>
 	</a>
 	<img style="float:left; margin-right: 14px;" src="../images/04_community/developers/crazysam.png">
-	<p>Sam is a formidable programmer who spends his working days doing GUI programming with AAA titles. Sam is also a passionate Indie developer and community organiser in the Baltimore area. He is responsible for many optimisations and improvements to the engine and has been a part of it shortly after it began.</p>
+	<p>Sam is a formidable programmer who spends his working days doing GUI programming with AAA titles. Sam is also a passionate Indie developer and community organiser in the Baltimore area. He is responsible for many optimisations and improvements to the engine and has been a part of HaxeFlixel shortly after it began.</p>
 </li>
     <li>
 	<a href="http://github.com/gama11">
