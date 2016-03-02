@@ -11,7 +11,7 @@ Getting started requires three steps:
 2. [Install HaxeFlixel](/documentation/install-haxeflixel)
 3. [HaxeFlixel Hello World](/documentation/hello-world-command-line)
 
-For FlashDevelop users: [Getting started easily with FlashDevelop](/documentation/00_getting_started/03-FlashDevelop)
+For FlashDevelop users: [Getting started easily with FlashDevelop](/documentation/FlashDevelop/)
 
 ----
 
