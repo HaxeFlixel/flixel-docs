@@ -14,9 +14,9 @@ To install FlashDevelop please see the official documentation for detailed instr
 Installing HaxeFlixel
 --------
 
-In FlashDevelop you can install Haxe and/or HaxeFlixel easily from the AppMan (Tools -> Install Software...) by selecting items to install and after the install is finished, restarting FlashDevelop.
+In FlashDevelop you can install Haxe and/or HaxeFlixel easily from the AppMan: (Tools -> Install Software...). Select items individually or click the green HaxeFlixel selector link on the bottom and then click Install. After the install is finished, restart FlashDevelop so that the changes get picked up properly.
 
-![FlashDevelop](http://flashdevelop.org/screenshots/appman.jpg "FlashDevelop")
+<img src="../images/00_getting_started/appman.jpg" style="width:100%;" />
 
 **It's encouraged you [install the latest development version](http://www.flashdevelop.org/community/viewtopic.php?f=9&amp;t=3529) and [report any bugs](https://github.com/fdorg/flashdevelop/issues) you encounter. New features are added constantly to improve Haxe programming with FlashDevelop.**
 
