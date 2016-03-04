@@ -11,7 +11,7 @@ HaxeFlixel gives you the `FlxSave` class to manage saving and loading your game'
 
 To use `FlxSave` you need a variable typed to that class. You can create your own variable (perhaps in your registry class, in your gameplay `FlxState`, or as a local variable in your save/load functions). You may also use the one that HaxeFlixel itself uses (`FlxG.save`).
 
-The example code used below is largely taken from the [HaxeFlixel save demo](http://haxeflixel.com/demos/FlxSave/). If you have already installed HaxeFlixel, then to install the demo project just open a command line utility, navigate to the folder you would like to install into, and enter the command flixel create Save, or download the source via GitHub using the link on the demo web page.
+The example code used below is largely taken from the [HaxeFlixel save demo](http://haxeflixel.com/demos/Save/). If you have already installed HaxeFlixel, then to install the demo project just open a command line utility, navigate to the folder you would like to install into, and enter the command flixel create Save, or download the source via GitHub using the link on the demo web page.
 
 #### Saving
 
