@@ -2,7 +2,7 @@
 title: "iOS"
 ```
 
-<img src="/images/targets/ios-logo.svg" width="160px" style="float:left; padding:10px" />
+<img src="/images/targets/ios-logo.png" width="160px" style="float:left; padding:10px" />
 
 The iOS target makes use of a chain of frameworks to compile your native iOS game from Haxe code. OpenFL uses the [Hxcpp](http://lib.haxe.org/p/hxcpp) and XCode natively so no virtual machine is involved.
 When you compile an iOS project an xcode project file is also automatically generated in the build directly so you can make use of the XCode profiler and toolset.
