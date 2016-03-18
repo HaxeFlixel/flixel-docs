@@ -22,7 +22,7 @@ _gameSave = new FlxSave(); // initialize
 _gameSave.bind("SaveDemo"); // bind to the named save slot
 ```
 
-Note the string "SaveDemo". This is how HaxeFlixel tracks what save slot you are binding to in local storage. If you want to have multiple saves, you will probably want to define a series of strings to identify each slot, eg. "SaveSlot1", "SaveSlot2", etc. and bind to the appropriate one. For more information on using multiple save slots, take a look at [Wolfgang's article](http://www.funstormgames.com/blog/2012/01/flixel-advanced-saving-tips-tricks/) on the subject for AS3 Flixel, but keep in mind that [the AS3 syntax is a little different from Haxe](http://www.openfl.org/archive/developer/documentation/actionscript-developers/).
+Note the string "SaveDemo". This is how HaxeFlixel tracks what save slot you are binding to in local storage.  (BTW, it can't contain spaces.)  If you want to have multiple saves, you will probably want to define a series of strings to identify each slot, eg. "SaveSlot1", "SaveSlot2", etc. and bind to the appropriate one. For more information on using multiple save slots, take a look at [Wolfgang's article](http://www.funstormgames.com/blog/2012/01/flixel-advanced-saving-tips-tricks/) on the subject for AS3 Flixel, but keep in mind that [the AS3 syntax is a little different from Haxe](http://www.openfl.org/archive/developer/documentation/actionscript-developers/).
 
 Note: If you plan to use `FlxG.save` you can skip the initializing and binding steps, as HaxeFlixel has done it for you.
 
