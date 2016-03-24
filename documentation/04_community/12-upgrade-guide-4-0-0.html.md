@@ -56,7 +56,7 @@ FlxG.camera.follow(FlxCameraFollowStyle.LOCKON);
 
 Which of these two styles is used is mostly a matter of personal preference.
 
-#### `FlxCamera` follow styles:
+#### `FlxCamera` shake modes:
 
 | HaxeFlixel 3.3.x                                  | HaxeFlixel 4.0.0                                   |
 | --------------------------------------------------|----------------------------------------------------|
@@ -64,7 +64,7 @@ Which of these two styles is used is mostly a matter of personal preference.
 | `FlxCamera.SHAKE_HORIZONAL_ONLY`                  | `flixel.util.FlxAxes.X`                            |
 | `FlxCamera.SHAKE_VERTICAL_ONLY`                   | `flixel.util.FlxAxes.Y`                            |
 
-#### `FlxCamera` shake modes:
+#### `FlxCamera` follow styles:
 
 | HaxeFlixel 3.3.x                                  | HaxeFlixel 4.0.0                                   |
 | --------------------------------------------------|----------------------------------------------------|
