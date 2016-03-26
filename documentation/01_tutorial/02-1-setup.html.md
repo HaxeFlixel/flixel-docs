@@ -27,12 +27,17 @@ There is a more verbose explanation on installing many of these things [here](ht
   lime setup android
   haxelib install flixel
   haxelib install flixel-tools
-  haxelib run flixel-tools setup
   ```
 
-4. Next, download and install the latest version of [FlashDevelop](http://www.flashdevelop.org/).
+4. This next command will prompt you to create an command alias and select your default editor. Type and enter 'y' to accept an alias and '1' to choose FlashDevelop as your editor. Selecting '3' for None will not produce a .hxproj file when creating a new project from a template. 
 
-5. Finally, head over [here](http://www.adobe.com/support/flashplayer/downloads.html) and download and install the
+```
+haxelib run flixel-tools setup
+```
+
+5. Next, download and install the latest version of [FlashDevelop](http://www.flashdevelop.org/).
+
+6. Finally, head over [here](http://www.adobe.com/support/flashplayer/downloads.html) and download and install the
 Flash Debug Player (scroll down and choose "Download the Flash Player projector content debugger").
 
 Assuming everything went smoothly, you should be all set - now we can actually get to the fun part and start coding!
