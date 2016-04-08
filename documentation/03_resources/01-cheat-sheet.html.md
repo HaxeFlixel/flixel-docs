@@ -104,20 +104,26 @@ private function myCallback():Void
 
 
 ## Sounds and Music
-Declare each file on `Project.xml`, with an unique `id`.
+With the stock `Project.xml`, simply place them in your project's `assets/music` and `assets/sounds` subfolders and they're ready to use.
+
+Sounds are usually in WAV format (44.1 kHz source).
+
+Music must be in MP3 format (44.1 kHz source) for Flash, and OGG for everything else.  To support both Flash and non-Flash platforms without bundling both formats in your output, you can replace the stock `<assets>` tag in your `Project.xml` with this:
 
 ```xml
-<assets path="assets">
-	<music path="music_1.ogg" id="music_1" />
-	<sound path="sound_1.ogg" id="sound_1" />
-</assets>
+	<assets path="assets" exclude="*.ogg" if="flash"/>
+	<assets path="assets" exclude="*.mp3" unless="flash"/>
 ```
-Play on your code:
+Play in your code:
 
 ```haxe
-FlxG.sound.play("sound_1");
-// Loop music
-FlxG.sound.playMusic("music_1");
+FlxG.sound.play(AssetPaths.mySound__wav);
+// Loop music, Flash only
+FlxG.sound.playMusic(AssetPaths.myMusic__mp3);
+// Loop music, non-Flash only
+FlxG.sound.playMusic(AssetPaths.myMusic__ogg);
+// Loop music, Flash or non
+FlxG.sound.playMusic(FlxAssets.getSound("assets/music/myMusic")); // getSound() will add either .ogg or .mp3 as needed
 ```
 
 ## Keyboard Input
