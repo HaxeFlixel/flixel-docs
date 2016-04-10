@@ -111,8 +111,8 @@ Sound effects are usually in WAV format (44.1 kHz source).
 Music must be in MP3 format (44.1 kHz source) for Flash, and OGG for everything else.  To support both Flash and non-Flash platforms without bundling both formats in your output, you can replace the stock `<assets>` tag in your `Project.xml` with this:
 
 ```xml
-	<assets path="assets" exclude="*.ogg" if="flash"/>
-	<assets path="assets" exclude="*.mp3" unless="flash"/>
+<assets path="assets" exclude="*.ogg" if="flash"/>
+<assets path="assets" exclude="*.mp3" unless="flash"/>
 ```
 Play in your code:
 
@@ -126,8 +126,8 @@ FlxG.sound.play("assets/sounds/mySound.wav");
 FlxG.sound.playMusic(AssetPaths.myMusic__mp3);
 // Loop music, non-Flash only
 FlxG.sound.playMusic(AssetPaths.myMusic__ogg);
-// Loop music, Flash or non
-FlxG.sound.playMusic(FlxAssets.getSound("assets/music/myMusic")); // getSound() will add either .mp3 (flash) or .ogg (otherwise)
+// Loop music, Flash or non (getSound() adds .mp3 on Flash and .ogg otherwise)
+FlxG.sound.playMusic(FlxAssets.getSound("assets/music/myMusic"));
 ```
 
 ## Keyboard Input
