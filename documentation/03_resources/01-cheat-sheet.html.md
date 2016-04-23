@@ -451,6 +451,20 @@ private function myCallback(Object1:FlxObject, Object2:FlxObject):Void
 
 Or use `FlxG.collide()` which calls `FlxG.overlap()` and presets the `ProcessCallback` parameter to `FlxObject.separate()`.
 
+## Quick check whether there was a collision
+
+```haxe
+// sets the touching flags
+FlxG.collide(player, level);
+if (player.isTouching(FlxObject.DOWN))
+{
+// player stands on the ground and can jump 
+}
+
+// will reset touching flags when called
+super.update(elapsed);
+```
+
 ## Pixel Perfect Collision
 
 **FlxG.pixelPerfectOverlap**(Sprite, Sprite2)
@@ -534,6 +548,13 @@ trace("My var: ", myVar);
 
 // Watch
 FlxG.watch.add(object, "property");
+
+// Add world space mouse position to watch list
+FlxG.watch.addMouse();
+
+// Create a tracker window for player (of class Player) showing "x", "y" and custom fields "jumping" and "ladder"
+FlxG.debugger.addTrackerProfile(new TrackerProfile(Player, ["x", "y", "jumping", "ladder"], []));
+FlxG.debugger.track(player, "Hero");
 ```
 
 
