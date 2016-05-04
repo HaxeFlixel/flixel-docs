@@ -16,7 +16,9 @@ Since gamepads have a variety of manufacturers their keycodes provided to HaxeFl
 - MFi
 - PS Vita
 
-Here's some example logic for basic detection of Xbox 360 controller input:
+For most gamepads HaxeFlixel will automatically detect the model and abstract the API inputs under a common "universal" gamepad model based on the Xbox 360 layout. The underlying device-specific "raw" inputs are still available for you to poll direclty, if you choose.
+
+Here's some example logic for basic detection using the "universal" gamepad API:
 
 ``` haxe
 import flixel.FlxG;
@@ -41,16 +43,24 @@ class PlayState extends FlxState
     {
         if (gamepad.pressed.A)
         {
-            trace("The A button of the Xbox 360 controller is pressed.");
+            trace("The bottom face button of the controller is pressed.");
         }
 		
         if (gamepad.analog.justMoved.LEFT_STICK_X)
         {
-            trace("The x axis of the left analog stick of the Xbox 360 controller has been moved.");
+            trace("The x axis of the left analog stick of the controller has been moved.");
         }
     }
 }
 ```
+
+In this case, ```gamepad.pressed.A``` checks whether the bottom face button is pressed. On a PS4 controller this would be the "X" button.
+
+Also, ```gamepad.pressed.A``` is an optimized shorthand for ```gamepad.pressed.check(FlxGamepadInputID.A)```. You want to use the latter syntax if you need to check a variable (which would be the case if the user can customize their inputs).
+
+If you wanted to check a device-specific input, you would use the ```checkRaw``` function, like this: ```gamepad.pressed.checkRaw(PS4ID.X)```
+
+Device-specific inputs can be found in the ```flixel.input.gamepad.id``` package.
 
 If you want to support a controller that HaxeFlixel doesn't provide the IDs for, the following methods of `FlxGamePad` methods should be helpful for working out what those IDs are:
 
