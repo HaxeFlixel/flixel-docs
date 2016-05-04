@@ -54,9 +54,9 @@ class PlayState extends FlxState
 }
 ```
 
-In this case, ```gamepad.pressed.A``` checks whether the bottom face button is pressed. On a PS4 controller this would be the "X" button.
+In this case, ```gamepad.pressed.A``` checks whether the bottom face button is pressed. On a PS4 controller this would be the "X" button, on an XBox 360 or XBox One controller this would be the "A" button.
 
-Also, ```gamepad.pressed.A``` is an optimized shorthand for ```gamepad.pressed.check(FlxGamepadInputID.A)```. You want to use the latter syntax if you need to check a variable (which would be the case if the user can customize their inputs).
+Also, the ```gamepad.pressed.A``` syntax is shorthand for ```gamepad.pressed.check(FlxGamepadInputID.A)```. You want to use the latter syntax if you need to check a variable (which would be the case if the user can customize their inputs).
 
 If you wanted to check a device-specific input, you would use the ```checkRaw``` function, like this: ```gamepad.pressed.checkRaw(PS4ID.X)```
 
