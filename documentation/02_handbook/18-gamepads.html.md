@@ -64,9 +64,15 @@ Device-specific inputs can be found in the ```flixel.input.gamepad.id``` package
 
 If you want to support a controller that HaxeFlixel doesn't provide the IDs for, the following methods of `FlxGamePad` methods should be helpful for working out what those IDs are:
 
+Return the ```FlxGamepadInputID``` value under the "universal" gamepad model:
 - `firstPressedButtonID()`
 - `firstJustPressedButtonID()`
 - `firstJustReleasedButtonID()`
+
+Return the device-specific input ID value:
+- `firstPressedButtonRawID()`
+- `firstJustPressedButtonRawID()`
+- `firstJustReleasedButtonRawID()`
 
 ### Conditional to remove gamepads
 
