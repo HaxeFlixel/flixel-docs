@@ -27,7 +27,7 @@ On the [official GitHub repository](https://github.com/HaxeFlixel/flixel/issues)
 Almost, it still is in development.
 
 ### Will next-gen consoles be supported?
-Eventually, yes! Read more about it [here](http://haxeflixel.com/forum/?place=msg%2Fhaxeflixel%2FNUOpgGUKMvE%2FLNZB819BLS0J).
+Eventually, yes! Read more about it [here](https://groups.google.com/d/topic/haxeflixel/NUOpgGUKMvE/discussion).
 
 ### My sounds are lagging!?
 On some platforms you need to manually cache sounds: `FlxG.sound.cache("sound");` or `flixel.system.FlxAssets.cacheSounds();` to do all at once.

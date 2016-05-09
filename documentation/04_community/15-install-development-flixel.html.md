@@ -50,4 +50,4 @@ Navigate to `flixel-demos/Platformers/Mode`. Compile and run the game with `lime
 
 **Need more help?**
 
-Check out our [forum](http://forum.haxeflixel.com) and [#haxeflixel on freenode IRC](irc://chat.freenode.net/#haxeflixel).
+Check out our [forum](http://forum.haxeflixel.com/) and [#haxeflixel on freenode IRC](irc://chat.freenode.net/#haxeflixel).

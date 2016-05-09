@@ -66,6 +66,6 @@ lime test flash
 lime test neko
 ```
 
-If you struggled through any part of this tutorial, ask a question on our [forum](/forum) :)
+If you struggled through any part of this tutorial, ask a question on our [forum](http://forum.haxeflixel.com/) :)
 
 <img src="../images/00_getting_started/hello-world.jpg" style="width:100%;" />
