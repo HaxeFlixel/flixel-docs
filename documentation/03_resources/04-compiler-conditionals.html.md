@@ -11,11 +11,11 @@ A basic example may include logic like this:
 ``` haxe
 #if desktop
 
-//desktop only code
+// desktop only code
 
 #elseif mobile
 
-//mobile only code
+// mobile only code
 
 #end
 ```
@@ -25,6 +25,16 @@ Conditionals relevant to your HaxeFlixel games may include:
 mobile, desktop, native, web
 ios, android, blackberry, webos, windows, mac, linux, html5
 flash, cpp, neko, js
+```
+Multiple targets can be used together:
+
+
+```
+#if (mac || linux || android)
+
+// code specific for these platforms
+
+#end
 ```
 
 To define your own it is as easy as adding to your ```Project.xml```:
