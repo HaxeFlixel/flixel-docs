@@ -3,7 +3,7 @@ title: "Install HaxeFlixel"
 ```
 
 HaxeFlixel requires a system with a working installation of OpenFL and Haxe. 
-If you havent set this up previously please follow the 
+If you haven't set this up previously please follow the 
 [official install guide](http://www.openfl.org/documentation/setup/) and return here.
 
 To install the latest stable version of HaxeFlixel you can use [haxelib](http://lib.haxe.org/) 
