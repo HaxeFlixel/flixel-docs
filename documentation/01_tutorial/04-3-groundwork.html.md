@@ -131,7 +131,7 @@ We're going to be extending the `FlxSprite` class to create our `Player` class.
 	With classes, we use the 'super' keyword to refer to the parent class. So, within our `new()` / the constructor, by calling `super(X, Y)` we are basically saying to go up the chain to our parent class, in this case `FlxSprite`, and call its constructor, passing it the `X` and `Y` arguments that were passed to us.
 
 6. Next, we'll want to create a placeholder image to show us where our sprite is, so under `super(X, Y);`, add:
-7.
+
 	```haxe
 	makeGraphic(16, 16, FlxColor.BLUE);
 	```
@@ -139,7 +139,7 @@ We're going to be extending the `FlxSprite` class to create our `Player` class.
 	(Make sure that an import is created for `FlxColor`, and if it isn't, add it)
 	All we're doing here is saying that we want to make this sprite's graphic be a 16x16 pixel blue square.
 
-8. For right now, we just want to get the `Player` class initialized, make sure that it works, and try adding it to our `PlayState`. It's not going to move or do anything yet, that will come in a minute. So save the changes to our `Player` class, and go back to the `PlayState`.
+7. For right now, we just want to get the `Player` class initialized, make sure that it works, and try adding it to our `PlayState`. It's not going to move or do anything yet, that will come in a minute. So save the changes to our `Player` class, and go back to the `PlayState`.
 	We need to define our `Player` variable, so underneath the class line, add:
 
 	```haxe
@@ -155,7 +155,7 @@ We're going to be extending the `FlxSprite` class to create our `Player` class.
 
 	This simply assigns a new instance of our `Player` sprite to our `_player` variable, telling it to be placed at `(20, 20)` on the screen, and adds it to our `PlayState`.
 
-9. If you run your project right now, you should see our blue player on the screen!
+8. If you run your project right now, you should see our blue player on the screen!
 
 	![](../images/01_tutorial/0006.png)
 
