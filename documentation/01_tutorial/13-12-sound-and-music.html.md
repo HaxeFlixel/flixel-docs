@@ -4,7 +4,7 @@ title: "12 - Sound and Music"
 
 Our game is really coming together now, but it's still missing something… there's no _sound_ yet!
 
-For this game, we're going to keep is simple (as usual). We're going to have a single, continuously looping track that plays while our game is running. We will also have several, simple sound effects that play for different actions. Playing sounds and music in HaxeFlixel is pretty easy, so this will go quickly!
+For this game, we're going to keep it simple (as usual). We're going to have a single, continuously looping track that plays while our game is running. We will also have several, simple sound effects that play for different actions. Playing sounds and music in HaxeFlixel is pretty easy, so this will go quickly!
 
 First, you'll need to make your music and sounds. Patrick Crecelius from [Fat Bard](http://fatbard.tumblr.com) has provided [some music](https://raw.githubusercontent.com/HaxeFlixel/flixel-demos/master/Tutorials/TurnBasedRPG/assets/music/HaxeFlixel_Tutorial_Game.mp3) for this tutorial - feel free to use it for this tutorial, or make your own.
 
