@@ -30,7 +30,7 @@ Almost, it still is in development.
 Eventually, yes! Read more about it [here](https://groups.google.com/d/topic/haxeflixel/NUOpgGUKMvE/discussion).
 
 ### My sounds are lagging!?
-On some platforms you need to manually cache sounds: `FlxG.sound.cache("sound");` or `flixel.system.FlxAssets.cacheSounds();` to do all at once.
+On some platforms you need to manually cache sounds: `FlxG.sound.cache("sound");` or `FlxG.sound.cacheAll();` to do all at once.
 
 ### My player falls off-screen after walking a certain distance!
 Collisions are limited to the area defined by `FlxG.worldBounds`. For example in platformers where this area needs to be larger, you need to adjust it manually.
