@@ -201,8 +201,8 @@ Debugger buttons are persistent across states - `FlxG.debugger.removeButton()` h
 
 ## Debugger Layouts
 
-A debugger layout determines the initial position and size of each debugger window. The available layouts are described in the [DebuggerLayout](http://api.haxeflixel.com/flixel/system/debug/DebuggerLayout.html) enum. You can change the current layout by calling `FlxG.debugger.setLayout()`.
+A debugger layout determines the initial position and size of each debugger window. The available layouts are described in the [FlxDebuggerLayout](http://api.haxeflixel.com/flixel/system/debug/FlxDebuggerLayout.html) enum. You can change the current layout by calling `FlxG.debugger.setLayout()`.
 
-Here's an example of `DebuggerLayout.RIGHT`:
+Here's an example of `FlxDebuggerLayout.RIGHT`:
 
 ![](../images/02_handbook/debugger/layout-right.png)
