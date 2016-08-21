@@ -15,7 +15,6 @@ There is a multitude of channels to interact with the community:
 - Join our development chat on [Slack](https://haxeflixel.slack.com/)<sup>[1]</sup>
 - [HaxeFlixel server](https://discord.gg/0uEuWH3spjck73Lo) on Discord
 - [HaxeFlixel group](http://steamcommunity.com/groups/haxeflixel) on Steam
-
-
+- [/r/haxeflixel](https://www.reddit.com/r/haxeflixel) subreddit
 
 <sup>[1] requires an invite - just tweet your email address @HaxeFlixel to get one</sup>
