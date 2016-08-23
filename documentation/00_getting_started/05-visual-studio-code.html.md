@@ -49,6 +49,8 @@ Because this is a bit tedious, it's recommended to add a shortcut for opening th
 
 You can now open the list of tasks directly with `Ctrl+T`.
 
+There is also a _default build task_ you can run with `Ctrl+Shift+B`. By default it is set to `flash debug`. To change this, open `.vscode/tasks.json` and move `"isBuildCommand": true` to another task.
+
 ### Code Completion
 
 If you've correctly installed the Haxe extension and are using a Haxe version higher > 3.3.0, it should work out of the box. Make sure you've compiled the project at least once with the `flash debug` task (this is done automatically if you used the `template` or `create` command of flixel-tools) - code completion requires `.hxml` files, which are generated in your project's `export` directory during the build. `export/flash/haxe/debug.hxml` is the one used by default, since this is the first entry in `.vscode/settings.json`. It seems to be the most robust right now, other targets have completion errors sometimes.
