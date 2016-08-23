@@ -20,7 +20,7 @@ flixel template -n "VSCodeTest" -ide vscode
 flixel create -ide vscode
 ```
 
-Alternatively, you can copy the IDE config files to already existing projects. Run this command to add a `.vscode` folder to the current working directory:
+Alternatively, you can copy the IDE config files to already existing projects. Run this command to add a `.vscode` folder to the current working directory (needs to be a project folder and contain a `Project.xml`):
 
 ```
 flixel configure . -ide vscode
