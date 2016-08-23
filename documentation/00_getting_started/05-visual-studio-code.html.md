@@ -11,7 +11,7 @@
 
 The Haxe extension requires Haxe 3.3.0-rc1 or newer.
 
-### Configuring for use with Flixel projects
+### Configuring for use with Flixel Projects
 
 VSCode stores its project-specific settings in a `.vscode` subfolder. Getting the configurations right manually is a bit tedious, which is why you can use [flixel-tools](http://haxeflixel.com/documentation/flixel-tools/) to create a new template project or demo with a pre-created config. Simply make sure to select VSCode as your editor of choice during the `setup` command, or add `-ide vscode` to the command you're running.
 
@@ -51,6 +51,18 @@ You can now open the list of tasks directly with `Ctrl+T`.
 
 There is also a _default build task_ you can run with `Ctrl+Shift+B`. By default it is set to `flash debug`. To change this, open `.vscode/tasks.json` and move `"isBuildCommand": true` to another task.
 
+### Compiler Errors / Problems View
+
+If you get compiler error(s) during the build, errors may show up in the _Output_ view at the bottom of the screen. You will notice that errors are _not_ clickable here.
+
+![](../images/00_getting_started/vscode/output.png)
+
+However, VSCode doesh have a _Problems_ view supporting double-click navigation (comparable to the Results panel in FlashDevelop). Just press `Ctrl+Shift+M` or double-click this button in the status bar:
+
+![](../images/00_getting_started/vscode/problems-status-bar.png)
+
+![](../images/00_getting_started/vscode/problems.png)
+
 ### Code Completion
 
 If you've correctly installed the Haxe extension and are using a Haxe version higher > 3.3.0, it should work out of the box. Make sure you've compiled the project at least once with the `flash debug` task (this is done automatically if you used the `template` or `create` command of flixel-tools) - code completion requires `.hxml` files, which are generated in your project's `export` directory during the build. `export/flash/haxe/debug.hxml` is the one used by default, since this is the first entry in `.vscode/settings.json`. It seems to be the most robust right now, other targets have completion errors sometimes.
@@ -63,4 +75,4 @@ To switch the active completion config to a target different than Flash, press `
 
 ![](../images/00_getting_started/vscode/display-configs.png)
 
-Again, note that you should have compiled for these targets at least once for the `.hxml` files to be created by Lime.
+Again, note that you should have compiled for these targets at least once for the `.hxml` files to be created by Lime. Changing the selected config is comparable to changing the selection in FlashDevelop's target dropdown, except it doesn't have any effect on building.
