@@ -59,4 +59,6 @@ To switch the active completion config to a target different than Flash, press `
 
 ![](../images/00_getting_started/vscode/active-config.png)
 
+![](../images/00_getting_started/vscode/display-configs.png)
+
 Again, note that you should have compiled for these targets at least once for the `.hxml` files to be created by Lime.
