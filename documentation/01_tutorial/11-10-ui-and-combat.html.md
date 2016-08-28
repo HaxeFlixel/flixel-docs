@@ -12,7 +12,7 @@ Now we want to show the player what's going on. So we need to have some kind of 
 	import flixel.FlxBasic;
 	import flixel.FlxG;
 	import flixel.FlxSprite;
-	import flixel.group.FlxTypedGroup;
+	import flixel.group.FlxGroup.FlxTypedGroup;
 	import flixel.text.FlxText;
 	import flixel.util.FlxColor;
 	using flixel.util.FlxSpriteUtil;
