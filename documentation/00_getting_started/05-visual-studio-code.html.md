@@ -1,3 +1,7 @@
+```
+title: "Visual Studio Code"
+```
+
 ![](../images/00_getting_started/vscode/vscode-logo.png)
 
 [Visual Studio Code](https://code.visualstudio.com/) is a fairly new, open-source, cross-platform, lightweight code editor by Microsoft. Although it still has a few rough edges, the [Haxe extension](https://github.com/vshaxe/vshaxe) arguably turns VSCode into the editor with the most advanced Haxe support available right now. Being developed by some of the Haxe compiler's maintainers, it has great integration of the compiler's [IDE services](https://haxe.org/manual/cr-completion.html) and uses them for:
