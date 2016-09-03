@@ -200,6 +200,20 @@ It is still possible to use the IDs from the `flixel.input.gamepad.id` classes v
 
 Because of the poor driver support, the PS3 ID class / support for PS3 controllers have been removed.
 
+### `FlxTimer`:
+
+Timers cannot be started right at construction anymore, instead you need to call `start()`:
+
+```haxe
+// 3.3.x
+new FlxTimer(time, onComplete, loops);
+```
+
+```haxe
+// 4.0.0
+new FlxTimer().start(time, onComplete, loops);
+```
+
 ### `FlxPath`:
 
 `FlxPath#start()` no longer takes a `FlxObject` argument, instead, `FlxObject` now has a path property. This means `FlxObject` takes care of updating the path, taking care of the issue that paths are not paused along with the objects they work on in substates.
@@ -314,6 +328,7 @@ point.rotate(pivot, angle);
 | `FlxRect#containsFlxPoint()`                      | `FlxRect#containsPoint()`                          |
 | `flixel.plugin.MouseEventManager`                 | `flixel.input.mouse.FlxMouseEventManager`          |
 | `flixel.util.loaders.CachedGraphics`              | `flixel.graphics.FlxGraphic`                       |
+| `FlxArrayUtil.getRandom()`                        | `FlxG.random.getObject()`                          |
 
 `FlxVelocity`'s `accelerateTowards*()`-functions now only take a single `maxSpeed` argument (instead of `x` and `y`).
 
