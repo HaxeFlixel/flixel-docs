@@ -12,6 +12,8 @@ You can make your own, with 16x16 pixel tiles, or use this one:
 
 1. Go to [http://www.ogmoeditor.com](http://www.ogmoeditor.com/) to download and install it, then launch the editor.
 
+	Note: Ogmo is Windows-only, if you are using something else (or, if you just want to), you can try using [Tiled](http://www.mapeditor.org/), another free, but slightly more complex tool.
+
 2. Go to `Project > New Project` and name your project whatever you want. Save it in `assets/data`.
 
 3. Next, you need to define your project's settings. Go through each tab, one-by-one, and set it up to look like the following:

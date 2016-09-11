@@ -36,6 +36,8 @@ One of the great things about using Ogmo with HaxeFlixel is that there is alread
 
 	We're basically just creating an object to hold our Ogmo map, and then another one to hold the `FlxTilemap` that we will generate from the Ogmo map.
 
+	For Tiled, change `FlxOgmoLoader` to `TiledMap`.
+
 5. In `create()`, before we setup the player object, add:
 	
 	```haxe
@@ -48,6 +50,17 @@ One of the great things about using Ogmo with HaxeFlixel is that there is alread
 	```
 
 	This just loads our room file into our `FlxOgmoLoader` object, generates our `FlxTilemap` from the 'walls' layer, and then sets tile 1 (our floor tile) to not collide, and tile 2 (walls) to collide from any direction. Then we add our tilemap to the state.
+
+	For Tiled, this changes to:
+
+	```haxe
+	_map = new TiledMap(AssetPaths.room_001__tmx)
+	_mWalls = new FlxTilemap();
+	_mWalls.loadMapFromArray(cast(_map.getLayer("walls"), TiledTileLayer).tileArray, _map.width, _map.height, AssetPaths.tiles__png, _map.tileWidth, _map.tileHeight, FlxTilemapAutoTiling.OFF, 1, 1, 3);
+	_mWalls.setTileProperties(2, FlxObject.NONE);
+	_mWalls.setTileProperties(3, FlxObject.ANY);
+	add(_mWalls);
+	```
 
 6. Now, we need to make our player object get placed in the right location on the map. So, change where we initialize our player from:
 	
@@ -63,6 +76,16 @@ One of the great things about using Ogmo with HaxeFlixel is that there is alread
 	```
 
 	We're simply telling our `_map` object to loop through all of the entities in our 'entities' layer, and call the `placeEntities()` for each one (which we're about to make now).
+
+    `TiledMap` does not have a built-in `loadEntities()` function, so for that you'll need to change this to:
+
+	```haxe
+	var tmpMap:TiledObjectLayer = cast _map.getLayer("entities");
+	for (e in tmpMap.objects)
+	{
+		placeEntities(e.type, e.xmlData.x);
+	}
+	```
 
 7. Let's make the `placeEntities()` function now. When we call `loadEntities()` on our map, it will pass the name of the entity, as well as its XML data to whatever function we want. In our function, we need to take this information and do something with it. It will look like this now:
 	
