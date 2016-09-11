@@ -20,20 +20,18 @@ There is a more verbose explanation on installing many of these things [here](ht
 3. In the command prompt, enter the following commands (one at a time):
 
   ```bash
-  haxelib install lime
-  haxelib run lime setup
-  lime install openfl
-  lime setup windows
-  lime setup android
   haxelib install flixel
   haxelib install flixel-tools
+  haxelib run lime setup
+  lime setup windows
+  lime setup android
   ```
 
-4. This next command will prompt you to create an command alias and select your default editor. Type and enter 'y' to accept an alias and '1' to choose FlashDevelop as your editor. Selecting '3' for None will not produce a .hxproj file when creating a new project from a template. 
+4. This next command will prompt you to create an command alias and select your default editor. Type and enter 'y' to accept an alias and '1' to choose FlashDevelop as your editor. Selecting '3' for 'None' will not produce a `.hxproj` file when creating a new project from a template. 
 
-```
-haxelib run flixel-tools setup
-```
+  ```
+  haxelib run flixel-tools setup
+  ```
 
 5. Next, download and install the latest version of [FlashDevelop](http://www.flashdevelop.org/).
 
