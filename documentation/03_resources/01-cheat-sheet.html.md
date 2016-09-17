@@ -490,15 +490,15 @@ The last argument of `makeGraphic()` is `Unique`, whether the graphic should be 
 
 ```haxe
 var lineStyle:LineStyle = { color: FlxColor.RED, thickness: 1 };
-var fillStyle:DrawStyle = { color: FlxColor.RED, alpha: 0.5 };
+var drawStyle:DrawStyle = { smoothing: true };
 ```
 
 ```haxe
 // Circle
-canvas.drawCircle(X, Y, Radius, Color, lineStyle, fillStyle);
+canvas.drawCircle(X, Y, Radius, Color, lineStyle, drawStyle);
 
 // Ellipse
-canvas.drawEllipse(X, Y, Width, Height, Color, lineStyle, fillStyle);
+canvas.drawEllipse(X, Y, Width, Height, Color, lineStyle, drawStyle);
 
 // Line
 canvas.drawLine(StartX, StartY, EndX, EndY, lineStyle);
@@ -509,19 +509,19 @@ vertices[0] = new FlxPoint(0, 0);
 vertices[1] = new FlxPoint(100, 0);
 vertices[2] = new FlxPoint(100, 300);
 vertices[3] = new FlxPoint(0, 100);
-canvas.drawPolygon(vertices, Color, lineStyle, fillStyle);
+canvas.drawPolygon(vertices, Color, lineStyle, drawStyle);
 
 // Triangle
-canvas.drawTriangle(X, Y, Height, Color, lineStyle, fillStyle);
+canvas.drawTriangle(X, Y, Height, Color, lineStyle, drawStyle);
 
 // Rect
-canvas.drawRect(X, Y, Width, Height, Color, lineStyle, fillStyle);
+canvas.drawRect(X, Y, Width, Height, Color, lineStyle, drawStyle);
 
 // Round Rect
-canvas.drawRoundRect(X, Y, Width, Height, EllipseWidth, EllipseHeight, Color, lineStyle, fillStyle);
+canvas.drawRoundRect(X, Y, Width, Height, EllipseWidth, EllipseHeight, Color, lineStyle, drawStyle);
 
 // Rect Complex
-canvas.drawRoundRectComplex(X, Y, Width, Height, TopLeftRadius, TopRightRadius, BottomLeftRadius, BottomRightRadius, Color, lineStyle, fillStyle);
+canvas.drawRoundRectComplex(X, Y, Width, Height, TopLeftRadius, TopRightRadius, BottomLeftRadius, BottomRightRadius, Color, lineStyle, drawStyle);
 ```
 
 Use `canvas.fill(FlxColor.TRANSPARENT);` to clear the canvas.
