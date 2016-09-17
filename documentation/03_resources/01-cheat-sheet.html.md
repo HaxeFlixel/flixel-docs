@@ -489,8 +489,8 @@ add(canvas);
 The last argument of `makeGraphic()` is `Unique`, whether the graphic should be an unique instance in the graphics cache, if you create multiple graphics like this, set it to `true` to avoid conflicts.
 
 ```haxe
-var lineStyle = { color: FlxColor.RED, thickness: 1 };
-var fillStyle = { color: FlxColor.RED, alpha: 0.5 };
+var lineStyle:LineStyle = { color: FlxColor.RED, thickness: 1 };
+var fillStyle:DrawStyle = { color: FlxColor.RED, alpha: 0.5 };
 ```
 
 ```haxe
