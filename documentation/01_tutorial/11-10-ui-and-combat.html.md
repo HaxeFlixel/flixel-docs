@@ -200,13 +200,13 @@ This all seems simple enough, but it's actually going to require several compone
 
 	At the very top, before doing anything else in that function.
 
-    You will also need to add
+	You will also need to add the following line to the top of both the `Enemy` and `PlayState` classes.
 
 	```haxe
 	using flixel.util.FlxSpriteUtil;
 	```
 
-	to the top of the `Enemy` class.
+	This will allow us to use the "flicker" APIs from the `FlxSpriteUtil` class.
 
 And that should do it! Test out your game and make sure that it works!
 
