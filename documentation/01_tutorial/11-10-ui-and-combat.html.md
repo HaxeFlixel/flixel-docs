@@ -163,7 +163,15 @@ This all seems simple enough, but it's actually going to require several compone
 
 	If we're in combat, we're simply going to keep checking to see if the combat HUD is still visible - once it becomes invisible, we know that combat has finished, and we can determine the outcome. If the outcome is `VICTORY` (one of our four enum values), we will kill the enemy, but if the player fled the battle, we will make the enemy flicker, to show that the player is safe from fighting it again for a short amount of time.
 
-5. Next, lets add the functions to handle the player touching an enemy:
+5. You may have noticed that our `Enemy` class does not have a `flicker()` function. That's because we're going to use one found in the `FlxSpriteUtil` class. Haxe has a nice feature to help us do so. Add this line at the top of the `PlayState` file, just after your imports:
+
+	```haxe
+	using flixel.util.FlxSpriteUtil;
+	```
+
+	This will allow us to use the APIs in the `FlxSpriteUtil` class, such as `flicker()`, which can be used on any `FlxObject`. For more on how this works, take a look at [the Haxe documentation](https://haxe.org/manual/lf-static-extension.html).
+
+6. Next, let's add the functions to handle the player touching an enemy:
 
 	```haxe
 	private function playerTouchEnemy(P:Player, E:Enemy):Void
@@ -189,7 +197,7 @@ This all seems simple enough, but it's actually going to require several compone
 
 	Finally, we call `initCombat()` in our `CombatHUD`, which initializes it and makes it start working.
 
-6. Finally, we want enemies that are flickering to not move - they should act kind of stunned for a second after the enemy flees.
+7. Finally, we want enemies that are flickering to not move - they should act kind of stunned for a second after the enemy flees.
 
 	In the `Enemy` class, under `update()`, add:
 
@@ -200,13 +208,11 @@ This all seems simple enough, but it's actually going to require several compone
 
 	At the very top, before doing anything else in that function.
 
-	You will also need to add the following line to the top of both the `Enemy` and `PlayState` classes.
+	Note that `isFlickering()` comes from `FlxSpriteUtil`. So, just like before, you will also need to add the "using" line at the top of the `Enemy` class file:
 
 	```haxe
 	using flixel.util.FlxSpriteUtil;
 	```
-
-	This will allow us to use the "flicker" APIs from the `FlxSpriteUtil` class.
 
 And that should do it! Test out your game and make sure that it works!
 
