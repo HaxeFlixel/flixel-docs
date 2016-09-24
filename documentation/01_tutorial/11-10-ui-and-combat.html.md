@@ -100,7 +100,15 @@ This all seems simple enough, but it's actually going to require several compone
 
 	[CombatHUD.hx](https://github.com/HaxeFlixel/flixel-demos/blob/master/Tutorials/TurnBasedRPG/source/CombatHUD.hx)
 
-	Take some time to read through it to see how it works, then add it to your project. You will need to add a small function to our `Enemy` class as well:
+	Take some time to read through it to see how it works, then add it to your project.
+
+	Like our `HUD` class above, the `CombatHUD` class draws most of its assets dynamically (e.g. with `FlxSprite`), but there is one image file we'll need—an arrow the player can use to select a choice. Download it from the link below (or make your own), name it `pointer.png` and add it to the `assets/images` folder.
+
+	<span style="background-color:black">
+	![](https://raw.githubusercontent.com/HaxeFlixel/flixel-demos/master/Tutorials/TurnBasedRPG/assets/images/pointer.png)
+	</span>
+
+2. Now, you will need to add a small function to our `Enemy` class:
 
 	```haxe
 	public function changeEnemy(EType:Int):Void
@@ -113,21 +121,21 @@ This all seems simple enough, but it's actually going to require several compone
 	}
 	```
 
-2. Next, we need to get our `CombatHUD` into our `PlayState`. Add this to the top of the `PlayState` class:
+3. Next, we need to get our `CombatHUD` into our `PlayState`. Add this to the top of the `PlayState` class:
 
 	```haxe
 	private var _inCombat:Bool = false;
 	private var _combatHud:CombatHUD;
 	```
 
-3. Move down to `create()`, and, after we add the HUD, and before we call `super.create()`, add:
+4. Move down to `create()`, and, after we add the HUD, and before we call `super.create()`, add:
 
 	```haxe
 	_combatHud = new CombatHUD();
 	add(_combatHud);
 	```
 
-4. Go down to our `update()`, and change it so that we're ONLY checking for collisions and overlaps when we're not in combat. Everything after the `super.update()` should look like this:
+5. Go down to our `update()`, and change it so that we're ONLY checking for collisions and overlaps when we're not in combat. Everything after the `super.update()` should look like this:
 
 	```haxe
 	if (!_inCombat)
@@ -163,7 +171,7 @@ This all seems simple enough, but it's actually going to require several compone
 
 	If we're in combat, we're simply going to keep checking to see if the combat HUD is still visible - once it becomes invisible, we know that combat has finished, and we can determine the outcome. If the outcome is `VICTORY` (one of our four enum values), we will kill the enemy, but if the player fled the battle, we will make the enemy flicker, to show that the player is safe from fighting it again for a short amount of time.
 
-5. You may have noticed that our `Enemy` class does not have a `flicker()` function. That's because we're going to use one found in the `FlxSpriteUtil` class. Haxe has a nice feature to help us do so. Add this line at the top of the `PlayState` file, just after your imports:
+6. You may have noticed that our `Enemy` class does not have a `flicker()` function. That's because we're going to use one found in the `FlxSpriteUtil` class. Haxe has a nice feature to help us do so. Add this line at the top of the `PlayState` file, just after your imports:
 
 	```haxe
 	using flixel.util.FlxSpriteUtil;
@@ -171,7 +179,7 @@ This all seems simple enough, but it's actually going to require several compone
 
 	This will allow us to use the APIs in the `FlxSpriteUtil` class, such as `flicker()`, which can be used on any `FlxObject`. For more on how this works, take a look at [the Haxe documentation](https://haxe.org/manual/lf-static-extension.html).
 
-6. Next, let's add the functions to handle the player touching an enemy:
+7. Next, let's add the functions to handle the player touching an enemy:
 
 	```haxe
 	private function playerTouchEnemy(P:Player, E:Enemy):Void
@@ -197,7 +205,7 @@ This all seems simple enough, but it's actually going to require several compone
 
 	Finally, we call `initCombat()` in our `CombatHUD`, which initializes it and makes it start working.
 
-7. Finally, we want enemies that are flickering to not move - they should act kind of stunned for a second after the enemy flees.
+8. Finally, we want enemies that are flickering to not move - they should act kind of stunned for a second after the enemy flees.
 
 	In the `Enemy` class, under `update()`, add:
 
