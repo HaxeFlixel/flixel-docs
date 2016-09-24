@@ -102,7 +102,7 @@ This all seems simple enough, but it's actually going to require several compone
 
 	Take some time to read through it to see how it works, then add it to your project.
 
-	Like our `HUD` class above, the `CombatHUD` class draws most of its assets dynamically (e.g. with `FlxSprite`), but there is one image file we'll need—an arrow the player can use to select a choice. Download it from the link below (or make your own), name it `pointer.png` and add it to the `assets/images` folder.
+	We already have most of the assets used to draw the `CombatHUD`, but there is one image file we still need—an arrow the player can use to select a choice. Download it from the link below (or make your own), name it `pointer.png` and add it to the `assets/images` folder.
 
 	<span style="background-color:black">
 	![](https://raw.githubusercontent.com/HaxeFlixel/flixel-demos/master/Tutorials/TurnBasedRPG/assets/images/pointer.png)
