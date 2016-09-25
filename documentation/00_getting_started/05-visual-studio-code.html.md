@@ -32,7 +32,7 @@ Alternatively, you can copy the IDE config files to already existing projects. R
 flixel configure . -ide vscode
 ```
 
-You can also use this to configure an entire directory or projects, like flixel-demos:
+You can also use this to configure an entire directory of projects, like flixel-demos:
 
 ```
 flixel configure C:\HaxeToolkit\haxe\lib\flixel-demos\git -ide vscode
