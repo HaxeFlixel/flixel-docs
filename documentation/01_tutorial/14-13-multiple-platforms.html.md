@@ -132,7 +132,7 @@ To make our game work with Android, we have to make a few more changes. First, w
 	<haxedef name="FLX_NO_TOUCH" if="desktop" />
 	```
 
-4. Now that we have different versions of our music, we need to make sure we play the right version. In `Main.hx`, replace the line where we start playing our music with:
+4. Now that we have different versions of our music, we need to make sure we play the right version. In `MenuState.hx`, replace the line where we start playing our music with:
 
 	```haxe
 	#if flash
