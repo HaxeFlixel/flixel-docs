@@ -32,13 +32,16 @@ Once you have your music, place it in `assets/music`, and your sound files shoul
 
 Now let's change our code to use these sounds:
 
-1. First, open up `Main.hx`. Since we want our music to start as soon as the game starts, and loop continuously no matter what happens, we're going to make it start playing outside of our states when we setup our game. In the setupGame function, after our volume-setting code, add:
+1. First, open up `MenuState.hx`. Since we want our music to start as soon as the game starts, and loop continuously no matter what happens, we're going to add this to `create()`.
 
 	```haxe
-	FlxG.sound.playMusic(AssetPaths.HaxeFlixel_Tutorial_Game__mp3, 1, true);
+	if (FlxG.sound.music == null) // don't restart the music if it's alredy playing
+	{
+		FlxG.sound.playMusic(AssetPaths.HaxeFlixel_Tutorial_Game__mp3, 1, true);
+	}
 	```
 
-	Be sure to change the file that you want to play, if your music file is named something different.
+	We're also checking if the music is already playing, since we don't want to restart it unnecessarily in that case.
 
 If you try your game out right now, it should play music!
 
