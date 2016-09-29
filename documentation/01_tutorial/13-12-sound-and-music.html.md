@@ -43,29 +43,29 @@ Now let's change our code to use these sounds:
 
 	We're also checking if the music is already playing, since we don't want to restart it unnecessarily in that case.
 
-If you try your game out right now, it should play music!
+	If you try your game out right now, it should play music!
 
-1. Next, we want to make our buttons all make a sound when they get clicked. This is simple, we just tell the button's `onUp` to load our sound. In the `MenuState`'s `create()`, after you initialize the play-button, add this:
+2. Next, we want to make our buttons all make a sound when they get clicked. This is simple, we just tell the button's `onUp` to load our sound. In the `MenuState`'s `create()`, after you initialize the play-button, add this:
 
 	```haxe
 	_btnPlay.onUp.sound = FlxG.sound.load(AssetPaths.select__wav);
 	```
 
-2. Now, you can do the same for the options button (changing `_btnPlay` to `_btnOptions`), and then for each of the other buttons in our game: four of them in `OptionsState`, and one in `GameOverState`.
+3. Now, you can do the same for the options button (changing `_btnPlay` to `_btnOptions`), and then for each of the other buttons in our game: four of them in `OptionsState`, and one in `GameOverState`.
 
-3. Next, let's give our player some footsteps. We don't want to create and destroy a new sound object every time we want to play the same sound, so we will create a `FlxSound` object to be used over and over. At the top of the `Player` class, add:
+4. Next, let's give our player some footsteps. We don't want to create and destroy a new sound object every time we want to play the same sound, so we will create a `FlxSound` object to be used over and over. At the top of the `Player` class, add:
 	
 	```haxe
 	private var _sndStep:FlxSound;
 	```
 
-4. Then, we need to load the footstep sound somewhere in the constructor:
+5. Then, we need to load the footstep sound somewhere in the constructor:
 
 	```haxe
 	_sndStep = FlxG.sound.load(AssetPaths.step__wav);
 	```
 
-5. Now go to our `movement()` function, and, after we check if the player is moving (`if ((velocity.x != 0 || velocity.y != 0) && touching == FlxObject.NONE)`), add:
+6. Now go to our `movement()` function, and, after we check if the player is moving (`if ((velocity.x != 0 || velocity.y != 0) && touching == FlxObject.NONE)`), add:
 
 	```haxe
 	_sndStep.play();
@@ -73,13 +73,13 @@ If you try your game out right now, it should play music!
 
 	A neat little property of `FlxSound` objects is that if you ever tell one to play, if it's already playing (and you haven't set the `forceRestart` flag), it won't play again. This means we can easily call play on our sound every frame, and it will sound as if the sound is just being looped - for as long as the player is moving, but will finish if the player has stopped moving, and not start up again while they are stationary.
 
-6. Now, let's give enemies their own footsteps, too. The difference is, instead of just always playing the step sound at full volume, we're going to change the volume based on the proximity of the enemy to the player. This will be easier than it sounds. First, add our sound variable to the top of Enemy.hx:
+7. Now, let's give enemies their own footsteps, too. The difference is, instead of just always playing the step sound at full volume, we're going to change the volume based on the proximity of the enemy to the player. This will be easier than it sounds. First, add our sound variable to the top of Enemy.hx:
 
 	```haxe
 	private var _sndStep:FlxSound;
 	```
 
-7. And then, similarly to how we setup the `Player` class, add this to our constructor:
+8. And then, similarly to how we setup the `Player` class, add this to our constructor:
 
 	```haxe
 	_sndStep = FlxG.sound.load(AssetPaths.step__wav,.4);
@@ -88,9 +88,9 @@ If you try your game out right now, it should play music!
 
 	You'll notice that we are setting the volume to `.4` (40%) this is because there will be plenty of enemies on the map, and there footsteps can get kind of annoying and loud (besides, they're probably walking around the dungeon barefoot, right?).
 
-	We then setup our proximity for our sounds, setting it's position  to the `x` and `y` position of this enemy, and telling it to target the `FlxG.camera.target` object (which happens to be our player!). Finally, we say that the radius of our footstep sound is a little bit more than half of the screen's width - so we should be able to hear enemies that are just off the screen, and all the enemies' footsteps will sound louder/softer based on their distance from the camera target.
+9. We then setup our proximity for our sounds, setting it's position  to the `x` and `y` position of this enemy, and telling it to target the `FlxG.camera.target` object (which happens to be our player!). Finally, we say that the radius of our footstep sound is a little bit more than half of the screen's width - so we should be able to hear enemies that are just off the screen, and all the enemies' footsteps will sound louder/softer based on their distance from the camera target.
 
-8. Next, in the enemy's `update()`, after `super.update()`, we're going to check if the enemy is moving and not bumping into a wall. If they are moving, we set the position of our sound to wherever our enemy is (to the bottom of his sprite - where his feet are), and then play the sound.
+10. Next, in the enemy's `update()`, after `super.update()`, we're going to check if the enemy is moving and not bumping into a wall. If they are moving, we set the position of our sound to wherever our enemy is (to the bottom of his sprite - where his feet are), and then play the sound.
 
 	```haxe
 	if ((velocity.x != 0 || velocity.y != 0) && touching == FlxObject.NONE)
@@ -100,7 +100,7 @@ If you try your game out right now, it should play music!
 	}
 	```
 
-9. Next, let's head over to `PlayState`. We really only need one sound to be in the `PlayState` itself, and that's the one for picking up a coin. While you could put this into the `Coin` class, because there could be a lot of coins loaded at once, and because we really can't pick up more than one coin at a time (so the sounds don't need to overlap), putting a single coin sound effect in our `PlayState` saves us a bit of overhead.
+11. Next, let's head over to `PlayState`. We really only need one sound to be in the `PlayState` itself, and that's the one for picking up a coin. While you could put this into the `Coin` class, because there could be a lot of coins loaded at once, and because we really can't pick up more than one coin at a time (so the sounds don't need to overlap), putting a single coin sound effect in our `PlayState` saves us a bit of overhead.
 
 	So, just like our other sounds, initialize the variable:
 
