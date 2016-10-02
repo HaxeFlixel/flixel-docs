@@ -50,7 +50,7 @@ Our game is really starting to come together! Now we need it to feel more like a
 					FlxG.camera.fade(FlxColor.BLACK, .33, false, doneFadeOut);
 				}
 			}
-			else 
+			else
 			{
 				_combatHud.e.flicker();
 			}
@@ -68,7 +68,7 @@ Our game is really starting to come together! Now we need it to feel more like a
 5. When the camera is done fading to black, we call this function, which will switch the state to our `GameOverState` (which you'll make in a second), passing it if the player won or not, and how much money they have.
 
 	```haxe
-	private function doneFadeOut():Void 
+	private function doneFadeOut():Void
 	{
 		FlxG.switchState(new GameOverState(_won, _money));
 	}
@@ -126,6 +126,12 @@ If you test your game, you should be able to trigger the `GameOverState` by eith
 	The code for this State looks like this:
 
 	[OptionsState.hx](https://github.com/HaxeFlixel/flixel-demos/blob/master/Tutorials/TurnBasedRPG/source/OptionsState.hx)
+
+	The `OptionsState` class uses a different spritesheet for the volume adjustment buttons (because they should appear smaller than the default buttons). This asset must have 3 frames, one to represent each button state: `NORMAL`, `HIGHLIGHT`, and `PRESSED`. As long as we set up the frames in that order, the `FlxButton` class will handle the rest.
+
+	Once again, you can make your own, or use the image below. Place it in the `assets/images` folder, and you should be all set.
+
+	![](https://raw.githubusercontent.com/HaxeFlixel/flixel-demos/master/Tutorials/TurnBasedRPG/assets/images/button.png)
 
 	Finally, we want our game to load the stored volume (if there is any) each time the game starts, so, go to `Main.hx`, and add this after the `addChild()` call:
 
