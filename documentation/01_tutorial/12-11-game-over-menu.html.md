@@ -127,7 +127,7 @@ If you test your game, you should be able to trigger the `GameOverState` by eith
 
 	[OptionsState.hx](https://github.com/HaxeFlixel/flixel-demos/blob/master/Tutorials/TurnBasedRPG/source/OptionsState.hx)
 
-	The `OptionsState` class uses a different spritesheet for the volume adjustment buttons (because they should appear smaller than the default buttons). This asset must have 3 frames, one to represent each button state: NORMAL, HIGHLIGHT, and PRESSED. As long as we set up the frames in that order, the `FlxButton` class will handle the rest.
+	The `OptionsState` class uses a different spritesheet for the volume adjustment buttons (because they should appear smaller than the default buttons). This asset must have 3 frames, one to represent each button state: `NORMAL`, `HIGHLIGHT`, and `PRESSED`. As long as we set up the frames in that order, the `FlxButton` class will handle the rest.
 
 	Once again, you can make your own, or use the image below. Place it in the `assets/images` folder, and you should be all set.
 
