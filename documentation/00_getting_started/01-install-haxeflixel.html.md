@@ -9,9 +9,15 @@ from the following command:
 haxelib install flixel
 ```
 
-This also automatically installs OpenFL and Lime.
+This also automatically installs OpenFL and Lime. After Haxelib has completed you can compile games to Flash. HTML5 and Neko out of the box.
 
-After Haxelib has completed you can compile games to Flash. HTML5 and Neko out of the box. 
+Now run:
+
+```bash
+haxelib run lime setup
+```
+
+This makes `lime` available as a command (alias for `haxelib run lime`).
 
 To compile to desktop and mobile targets, you have to make sure you have run their respective `lime setup` 
 commands are completed, each are specified in the 
