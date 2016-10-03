@@ -10,7 +10,9 @@ First, you'll need to make your music and sounds. Patrick Crecelius from [Fat Ba
 
 We've also created some sound effects using [Bfxr](http://www.bfxr.net/), which you can use if you like, or, make your own!
 
-- [coin.wav](https://raw.githubusercontent.com/HaxeFlixel/flixel-demos/master/Tutorials/TurnBasedRPG/assets/sounds/coin.wav) - to be used when the player picks up a coin
+If you've been following along since the UI and Combat section, you already downloaded a few of these, but be sure you have them all.
+
+- [coin.wav](https://raw.githubusercontent.com/HaxeFlixel/flixel-demos/master/Tutorials/TurnBasedRPG/assets/sounds/coin.wav) - **new!** to be used when the player picks up a coin
 
 - [combat.wav](https://raw.githubusercontent.com/HaxeFlixel/flixel-demos/master/Tutorials/TurnBasedRPG/assets/sounds/combat.wav) - to be used when combat starts
 
@@ -24,7 +26,7 @@ We've also created some sound effects using [Bfxr](http://www.bfxr.net/), which 
 
 - [select.wav](https://raw.githubusercontent.com/HaxeFlixel/flixel-demos/master/Tutorials/TurnBasedRPG/assets/sounds/select.wav) - used by buttons and when the player makes a selection
 
-- [step.wav](https://raw.githubusercontent.com/HaxeFlixel/flixel-demos/master/Tutorials/TurnBasedRPG/assets/sounds/step.wav) - used by the player and the enemies for 'footstep' sounds
+- [step.wav](https://raw.githubusercontent.com/HaxeFlixel/flixel-demos/master/Tutorials/TurnBasedRPG/assets/sounds/step.wav) - **new!** used by the player and the enemies for 'footstep' sounds
 
 - [win.wav](https://raw.githubusercontent.com/HaxeFlixel/flixel-demos/master/Tutorials/TurnBasedRPG/assets/sounds/win.wav) - used when the player wins in combat
 
