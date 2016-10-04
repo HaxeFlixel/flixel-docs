@@ -128,7 +128,7 @@ Now let's change our code to use these sounds:
 
 12. All of the rest of our sounds, because they deal with combat, will be in our `CombatHUD` class.
 
-	Assuming you downloaded the file, the sounds should already be there, but as a learning exercise, it's a good idea to go through and check. This will help you better understand sounds for when you're working on your next game.
+	Assuming you downloaded the `CombatHUD` file, the sounds should already be there, but as a learning exercise, it's a good idea to go through and check. This will help you better understand sounds for when you're working on your next game.
 
 	To initialize them:
 
