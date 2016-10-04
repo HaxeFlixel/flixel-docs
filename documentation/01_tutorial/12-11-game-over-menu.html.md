@@ -4,9 +4,7 @@ title: "11 - Game Over Menu"
 
 Our game is really starting to come together! Now we need it to feel more like a 'game' with a win and lose scenario. For our (very simple) game, we'll just make it so that if you ever die in combat, you get a Game Over, and when you beat the boss enemy, you win. Both of these conditions will take you to the same `FlxState` to show you your score and allow you to play again if you want.
 
-1. The first thing we want to do is stop our `CombatHUD` from stopping once the player has been defeated. So in `doneResultsIn()`, remove the `if (outcome != DEFEAT)` statement.
-
-2. Now, in `PlayState`, we need to add some flags to see if we're ending the game, and if the player has 'won' or not. So, add:
+1. Let's start with `PlayState`. We need to add some flags to see if we're ending the game, and if the player has 'won' or not. So, add:
 	
 	```haxe
 	private var _ending:Bool;
@@ -15,7 +13,7 @@ Our game is really starting to come together! Now we need it to feel more like a
 
 	To the top of the class.
 
-3. Next, in `update()`, right under `super.update(elapsed)` add:
+2. Next, in `update()`, right under `super.update(elapsed)` add:
 
 	```haxe
 	if (_ending)
@@ -26,7 +24,7 @@ Our game is really starting to come together! Now we need it to feel more like a
 
 	We don't want to allow anything else to go on if we're ending the game and getting ready to switch states.
 
-4. Next, still in `update()`, we're going to change our logic to this:
+3. Next, still in `update()`, we're going to change our logic to this:
 
 	```haxe
 	if (!_combatHud.visible)
@@ -65,7 +63,7 @@ Our game is really starting to come together! Now we need it to feel more like a
 
 	Similarly, if the outcome was `VICTORY`, and the enemy that was just defeated was type 1 (the boss), we set our `won` flag to `true`, and also start fading out.
 
-5. When the camera is done fading to black, we call this function, which will switch the state to our `GameOverState` (which you'll make in a second), passing it if the player won or not, and how much money they have.
+4. When the camera is done fading to black, we call this function, which will switch the state to our `GameOverState` (which you'll make in a second), passing it if the player won or not, and how much money they have.
 
 	```haxe
 	private function doneFadeOut():Void
