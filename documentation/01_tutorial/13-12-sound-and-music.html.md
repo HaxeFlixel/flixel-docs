@@ -53,7 +53,9 @@ Now let's change our code to use these sounds:
 	_btnPlay.onUp.sound = FlxG.sound.load(AssetPaths.select__wav);
 	```
 
-3. Now, you can do the same for the options button (changing `_btnPlay` to `_btnOptions`), and then for each of the other buttons in our game: four of them in `OptionsState`, and one in `GameOverState`.
+3. Now, you can do the same for the options button (changing `_btnPlay` to `_btnOptions`).
+
+	For each of the other buttons in our game - four of them in `OptionsState`, and one in `GameOverState` - the code already exists, but as a learning exercise, you can go through those files and see what was done.
 
 4. Next, let's give our player some footsteps. We don't want to create and destroy a new sound object every time we want to play the same sound, so we will create a `FlxSound` object to be used over and over. At the top of the `Player` class, add:
 	
@@ -125,6 +127,8 @@ Now let's change our code to use these sounds:
 	This time we will use `forceRestart` so that if the player happens to pickup several coins close to each other the sound will keep up with them.
 
 12. All of the rest of our sounds, because they deal with combat, will be in our `CombatHUD` class.
+
+	Assuming you downloaded the file, the sounds should already be there, but as a learning exercise, it's a good idea to go through and check. This will help you better understand sounds for when you're working on your next game.
 
 	To initialize them:
 
