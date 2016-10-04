@@ -102,7 +102,23 @@ This all seems simple enough, but it's actually going to require several compone
 
 	Take some time to read through it to see how it works, then add it to your project.
 
-	We already have most of the assets used to draw the `CombatHUD`, but there is one image file we still need - an arrow the player can use to select a choice. Download it from [this link](https://raw.githubusercontent.com/HaxeFlixel/flixel-demos/master/Tutorials/TurnBasedRPG/assets/images/pointer.png) (or make your own), name it `pointer.png` and add it to the `assets/images` folder.
+	We already have most of the assets used by the `CombatHUD`, but there is one image file we still need - an arrow the player can use to select a choice. Download it from [this link](https://raw.githubusercontent.com/HaxeFlixel/flixel-demos/master/Tutorials/TurnBasedRPG/assets/images/pointer.png) (or make your own), name it `pointer.png` and add it to the `assets/images` folder.
+
+	The `CombatHUD` also uses something we haven't discussed yet: *sounds*. We'll dig in to this more in the Sound and Music section. For now, just download these files and place them in the `assets/sounds` folder. This will ensure the code compiles.
+
+	- [combat.wav](https://raw.githubusercontent.com/HaxeFlixel/flixel-demos/master/Tutorials/TurnBasedRPG/assets/sounds/combat.wav)
+
+	- [fled.wav](https://raw.githubusercontent.com/HaxeFlixel/flixel-demos/master/Tutorials/TurnBasedRPG/assets/sounds/fled.wav)
+
+	- [hurt.wav](https://raw.githubusercontent.com/HaxeFlixel/flixel-demos/master/Tutorials/TurnBasedRPG/assets/sounds/hurt.wav)
+
+	- [lose.wav](https://raw.githubusercontent.com/HaxeFlixel/flixel-demos/master/Tutorials/TurnBasedRPG/assets/sounds/lose.wav)
+
+	- [miss.wav](https://raw.githubusercontent.com/HaxeFlixel/flixel-demos/master/Tutorials/TurnBasedRPG/assets/sounds/miss.wav)
+
+	- [select.wav](https://raw.githubusercontent.com/HaxeFlixel/flixel-demos/master/Tutorials/TurnBasedRPG/assets/sounds/select.wav)
+
+	- [win.wav](https://raw.githubusercontent.com/HaxeFlixel/flixel-demos/master/Tutorials/TurnBasedRPG/assets/sounds/win.wav)
 
 2. Now, you will need to add a small function to our `Enemy` class:
 
