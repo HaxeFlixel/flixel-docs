@@ -20,7 +20,7 @@ When compiling to HTML5, make sure to remove `<haxelib name="openfl" />` from yo
 | FlxSound.survive                        | FlxSound.persist                      |
 | MouseEventManager.addSprite()           | MouseEventManager.add()               |
 | FlxObject.forceComplexRender = true;    | FlxObject.pixelPerfectRender = false; |
-| FlxText.width                           | FlxText.fieldWidth                    |                        
+| FlxText.width                           | FlxText.fieldWidth                    |
 | FlxSprite.setOriginToCenter()           | FlxSprite.centerOrigin()              |
 | FlxG.safeDestroy()                      | FlxDestroyUtil.destroy()              |
 | FlxTilemap.scaleX                       | FlxTilemap.scale.x                    |

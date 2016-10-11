@@ -2,8 +2,17 @@
 title: "Upgrade Guide 4.0.0"
 ```
 
+## 4.2.0
+
+- `FlxTween.manager` is now `FlxTween.globalManager`.
+- `FlxTimer.manager` is now `FlxTimer.globalManager`.
+- `FlxCamera`'s scroll bounds now account for `zoom`. This means that you may need to adjust calls to `setScrollBounds()`, `setScrollBoundsRect()` or changes to the `minScrollX` / `Y` / `maxScrollX` / `Y` properties if they manually accounted for zoom.
+- The `active` variable of objects in `flixel.util.helpers` now defaults to `true` instead of `false`.
+
+## 4.0.0
+
 This guide is intended for users upgrading projects from version 3.3.x to 4.0.0. For non-breaking changes, please refer to the [changelog](https://github.com/HaxeFlixel/flixel/blob/master/CHANGELOG.md).
-	
+
 The minimum required Haxe version for this release is 3.2.0.
 
 A lot of changes can be handled with a simple find-and-replace in the editor of your choice.
