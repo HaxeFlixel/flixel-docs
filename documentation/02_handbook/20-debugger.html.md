@@ -2,7 +2,7 @@
 title: "Debugger"
 ```
 
-Flixel comes with a fairly powerful debugging overlay. You can open it with one of the default toggle keys (`F2` and \` and \ with a QWERTY keyboard layout). Note that these are configurable via `FlxG.debugger.toggleKeys`. Alternatively, you can do the same in code via the `FlxG.debugger.visible` flag.
+Flixel comes with a fairly powerful debugging overlay. You can open it with one of the default toggle keys (`F2`, \` and \ with a QWERTY keyboard layout). Note that these are configurable via `FlxG.debugger.toggleKeys`. Alternatively, you can do the same in code via the `FlxG.debugger.visible` flag.
 
 Note that the debugger does not exist when compiling with `FLX_NO_DEBUG`. With the default `Project.xml`, this is the case in release mode.
 
