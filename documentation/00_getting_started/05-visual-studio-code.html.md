@@ -63,7 +63,7 @@ If you get compiler error(s) during the build, errors may show up in the _Output
 
 ![](../images/00_getting_started/vscode/output.png)
 
-However, VSCode doesh have a _Problems_ view supporting double-click navigation (comparable to the Results panel in FlashDevelop). Just press `Ctrl+Shift+M` or double-click this button in the status bar:
+However, VSCode does have a _Problems_ view supporting double-click navigation (comparable to the Results panel in FlashDevelop). Just press `Ctrl+Shift+M` or double-click this button in the status bar:
 
 ![](../images/00_getting_started/vscode/problems-status-bar.png)
 
