@@ -180,11 +180,11 @@ group.callAll("kill");
 
 ```haxe
 // 4.0.0
-group.forEach(function(basic:FlxBasic))
+group.forEach(function(basic:FlxBasic)
 {
 	basic.scrollFactor.set(0, 0);
 	basic.kill();
-}
+});
 ```
 
 ### `flixel.input.gamepad`:
