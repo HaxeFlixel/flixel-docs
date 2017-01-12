@@ -19,8 +19,8 @@ haxelib run lime setup
 
 This makes `lime` available as a command (alias for `haxelib run lime`).
 
-To compile to desktop and mobile targets, you have to make sure you have run their respective `lime setup` 
-commands are completed, each are specified in the 
+To compile to desktop and mobile targets, you have to make sure you have run the respective `lime setup` 
+commands. Each are specified in the 
 [OpenFL platform docs](http://www.openfl.org/documentation/setup/platforms/).
 
 ## Updating HaxeFlixel
