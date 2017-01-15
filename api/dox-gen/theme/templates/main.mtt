@@ -13,8 +13,8 @@
 ::use "header.mtt"::::end::
 <body>
 ::use "topbar.mtt"::::end::
-<div class="container main-content">
-	<div class="row-fluid">
+<div class="container main-content navbar-offset">
+	<div class="row-fluid container-main">
 		<div class="span3">
 		<div class="well sidebar-nav">
 			<form class="form-search" id="searchForm">

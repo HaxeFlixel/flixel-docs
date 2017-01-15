@@ -1,17 +1,35 @@
-<style>
-::raw "
-.navbar .brand {
-	display: inline-block;
-	float: none;
-	text-shadow: 0 0 0 transparent;
-"::
-</style>
 <nav class="nav">
-	<div class="navbar">
-		<div class="navbar-inner" style="background:$$getHexValue(::themeColor::); border-bottom:1px solid rgba(0,0,0,.09)">
-			<div class="container">
-				<a ::cond api.isDefined("logo"):: ::attr href if(api.isDefined("website")) api.getValue("website") else api.config.rootPath:: class="brand"><img alt="" ::attr src api.getValue("logo"):: /></a>
-				<a ::attr href api.config.rootPath:: class="brand" style="color:$$getHexValue(::textColor::)">::if api.config.pageTitle!=null::::api.config.pageTitle::::else::API Documentation::end::</a>
+	<div class="navbar navbar-inverse navbar-fixed-top">
+		<div class="container">
+		<div class="navbar-header">
+				<button data-target=".navbar-collapse" data-toggle="collapse" class="navbar-toggle" type="button">
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
+				<a href="http://www.haxeflixel.com/" class="navbar-brand"><img src="http://www.haxeflixel.com/images/haxeflixel-header.png" alt="HaxeFlixel" /></a>
+			</div>
+			<div class="navbar-collapse collapse">
+				<ul class="nav navbar-nav">
+					<li>
+						<a href="http://www.haxeflixel.com/demos">Demos</a>
+					</li>
+					<li>
+						<a href="http://www.haxeflixel.com/showcase">Showcase</a>
+					</li>
+					<li >
+						<a href="http://www.haxeflixel.com/blog">Blog</a>
+					</li>
+					<li >
+						<a href="http://www.haxeflixel.com/documentation">Docs</a>
+					</li>
+					<li class='active'>
+						<a href="." >API</a>
+					</li>
+					<li >
+						<a href="http://forum.haxeflixel.com/">Forum</a>
+					</li>
+				</ul>
 			</div>
 		</div>
 	</div>
