@@ -57,13 +57,14 @@ add(new FlxText(0, 0, 0, "Hello World!"));
 
 Save the file and return to your command line window. Now we can compile the project.
 
-Without running the [lime setup](/documentation/install-openfl) commands you can compile to Flash and Neko out of the box.
+Without running the [lime setup](/documentation/install-openfl) commands you can compile to Flash, Neko and HTML5 out of the box.
 
-Test your project from the following commands:
+Test your project with the following commands:
 
 ``` bash
 lime test flash
 lime test neko
+lime test html5
 ```
 
 If you struggled through any part of this tutorial, ask a question on our [forum](http://forum.haxeflixel.com/) :)
