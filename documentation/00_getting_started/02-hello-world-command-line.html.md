@@ -21,7 +21,7 @@ You will now see a new folder named "HelloWorld" with all the files for your pro
 
 ## Add the "Hello World" FlxText
 
-Adding the text is as simple as opening the `MenuState.hx` file in the newly created source folder.
+Adding the text is as simple as opening the `PlayState.hx` file in the newly created source folder.
 
 The file will look like this:
 
@@ -35,7 +35,7 @@ import flixel.text.FlxText;
 import flixel.ui.FlxButton;
 import flixel.math.FlxMath;
 
-class MenuState extends FlxState
+class PlayState extends FlxState
 {
 	override public function create():Void
 	{
