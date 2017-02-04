@@ -133,7 +133,7 @@ We're going to be extending the `FlxSprite` class to create our `Player` class.
 6. Next, we'll want to create a placeholder image to show us where our sprite is, so under `super(X, Y);`, add:
 
 	```haxe
-	makeGraphic(16, 16, FlxColor.BLUE);
+	makeGraphic(16, 16, flixel.util.FlxColor.BLUE);
 	```
 
 	(Make sure that an import is created for `FlxColor`, and if it isn't, add it)
