@@ -30,7 +30,7 @@ This method is inlined so that in haxe no closure will need to be created.
 In AS3, a closure would need to be created in general, so for performance
 reasons you 'may' choose to use iteration as follows:
 <pre>
-for (var i:int = 0; i &lt; list.length; i++) {</p></td></tr><tr class="class"><td width="200"><a href="../../nape/callbacks/ConstraintCallback.html" title="nape.callbacks.ConstraintCallback">ConstraintCallback</a></td><td><p>Callback object for Constraint type events.
+for (var i:int = 0; i &lt; list.length; i++) {</p></td></tr><tr class="class"><td width="200"><a href="../../nape/callbacks/ConstraintCallback.html" title="nape.callbacks.ConstraintCallback">ConstraintCallback</a></td><td><p>Callback object for Constraint type events.
 <br/><br/>
 This, like all other callback objects are automatically reused
 and you should not keep any reference to them.</p></td></tr><tr class="class"><td width="200"><a href="../../nape/callbacks/ConstraintListener.html" title="nape.callbacks.ConstraintListener">ConstraintListener</a></td><td><p>Event listener for Constraint type events.
@@ -46,7 +46,7 @@ be Shapes, Bodys, Compounds or a mix thereof).
 <br/><br/>
 The events that can be caught are BEGIN, ONGOING, and END type events.
 Theses listeners will operate between pairs of Interactors.
-<pre></p></td></tr><tr class="class"><td width="200"><a href="../../nape/callbacks/InteractionType.html" title="nape.callbacks.InteractionType">InteractionType</a></td><td><p>Enumeration of Interaction types.</p></td></tr><tr class="class"><td width="200"><a href="../../nape/callbacks/Listener.html" title="nape.callbacks.Listener">Listener</a></td><td><p>Base type for all Nape callback listeners.</p></td></tr><tr class="class"><td width="200"><a href="../../nape/callbacks/ListenerIterator.html" title="nape.callbacks.ListenerIterator">ListenerIterator</a></td><td><p>Haxe Iterator<T> compatible iterator over Nape list.</p></td></tr><tr class="class"><td width="200"><a href="../../nape/callbacks/ListenerList.html" title="nape.callbacks.ListenerList">ListenerList</a></td><td><p>Nape list of Listener type objects
+<pre></p></td></tr><tr class="class"><td width="200"><a href="../../nape/callbacks/InteractionType.html" title="nape.callbacks.InteractionType">InteractionType</a></td><td><p>Enumeration of Interaction types.</p></td></tr><tr class="class"><td width="200"><a href="../../nape/callbacks/Listener.html" title="nape.callbacks.Listener">Listener</a></td><td><p>Base type for all Nape callback listeners.</p></td></tr><tr class="class"><td width="200"><a href="../../nape/callbacks/ListenerIterator.html" title="nape.callbacks.ListenerIterator">ListenerIterator</a></td><td><p>Haxe Iterator<T> compatible iterator over Nape list.</p></td></tr><tr class="class"><td width="200"><a href="../../nape/callbacks/ListenerList.html" title="nape.callbacks.ListenerList">ListenerList</a></td><td><p>Nape list of Listener type objects
 <br/><br/>
 Internally this list is at present implemented as a linked list with
 object pooled nodes and iterators with various fast paths made for
@@ -64,7 +64,7 @@ This method is inlined so that in haxe no closure will need to be created.
 In AS3, a closure would need to be created in general, so for performance
 reasons you 'may' choose to use iteration as follows:
 <pre>
-for (var i:int = 0; i &lt; list.length; i++) {</p></td></tr><tr class="class"><td width="200"><a href="../../nape/callbacks/ListenerType.html" title="nape.callbacks.ListenerType">ListenerType</a></td><td><p>Enumeration of Listener types.</p></td></tr><tr class="class"><td width="200"><a href="../../nape/callbacks/OptionType.html" title="nape.callbacks.OptionType">OptionType</a></td><td><p>OptionType representing matching behaviour for Listeners.
+for (var i:int = 0; i &lt; list.length; i++) {</p></td></tr><tr class="class"><td width="200"><a href="../../nape/callbacks/ListenerType.html" title="nape.callbacks.ListenerType">ListenerType</a></td><td><p>Enumeration of Listener types.</p></td></tr><tr class="class"><td width="200"><a href="../../nape/callbacks/OptionType.html" title="nape.callbacks.OptionType">OptionType</a></td><td><p>OptionType representing matching behaviour for Listeners.
 <br/><br/>
 An object's set of CbType's 'matches' against an OptionType iff.
 the OptionType's includes list intersects the object's set of CbTypes
