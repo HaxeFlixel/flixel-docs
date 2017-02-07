@@ -1,4 +1,5 @@
 {
-  "name": "Default Haxe Theme",
-  "author": "Haxe Foundation"
+  "name": "HaxeFlixel Theme",
+  "author": "HaxeFlixel",
+  "parentTheme": "default"
 }
