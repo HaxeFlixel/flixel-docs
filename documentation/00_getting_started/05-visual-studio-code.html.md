@@ -91,4 +91,4 @@ The "Haxe Debug" extension that is included in the extension pack also allows yo
 
 Here's what it looks like in action:
 
-![](../images/00_getting_started/vscode/flash-debugging.png)
+<img src="../images/00_getting_started/vscode/flash-debugging.png" style="width:100%;" />
