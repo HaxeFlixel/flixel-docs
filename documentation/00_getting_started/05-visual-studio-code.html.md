@@ -2,9 +2,9 @@
 title: "Visual Studio Code"
 ```
 
-![](../images/00_getting_started/vscode/vscode-logo.png)
+[![](../images/00_getting_started/vscode/vscode-plus-haxe.png)](https://marketplace.visualstudio.com/items?itemName=vshaxe.haxe-extension-pack)
 
-[Visual Studio Code](https://code.visualstudio.com/) is a fairly new, open-source, cross-platform, lightweight code editor by Microsoft. Although it still has a few rough edges, the [Haxe extension](https://github.com/vshaxe/vshaxe) arguably turns VSCode into the editor with the most advanced Haxe support available right now. Being developed by some of the Haxe compiler's maintainers, it has great integration of the compiler's [IDE services](https://haxe.org/manual/cr-completion.html) and uses them for:
+[Visual Studio Code](https://code.visualstudio.com/) is an open-source, cross-platform, lightweight code editor by Microsoft. Although it still has a few rough edges, the [Haxe Extension Pack](https://marketplace.visualstudio.com/items?itemName=vshaxe.haxe-extension-pack) arguably turns VSCode into the editor with the most advanced Haxe support available right now. Being developed by some of the Haxe compiler's maintainers, it seamlessly integrates with the compiler's [IDE services](https://haxe.org/manual/cr-completion.html) and uses them for:
 
 - code completion
 - go to definition
@@ -13,7 +13,9 @@ title: "Visual Studio Code"
 - finding unused imports
 - etc...
 
-The Haxe extension requires Haxe 3.3.0-rc1 or newer.
+The Haxe extension requires [Haxe 3.4.0](http://haxe.org/download/) or newer.
+
+The "Haxe Debug" extension that is included in the extension pack also allows you to debug Flixel games on the Flash target.
 
 ### Configuring for use with Flixel Projects
 
@@ -71,7 +73,7 @@ However, VSCode does have a _Problems_ view supporting double-click navigation (
 
 ### Code Completion
 
-If you've correctly installed the Haxe extension and are using a Haxe version higher > 3.3.0, it should work out of the box. Make sure you've compiled the project at least once with the `flash debug` task (this is done automatically if you used the `template` or `create` command of flixel-tools) - code completion requires `.hxml` files, which are generated in your project's `export` directory during the build. `export/flash/haxe/debug.hxml` is the one used by default, since this is the first entry in `.vscode/settings.json`. It seems to be the most robust right now, other targets have completion errors sometimes.
+If you've correctly installed the Haxe extension and are using a Haxe version higher >= 3.4.0, it should work out of the box. Make sure you've compiled the project at least once with the `flash debug` task (this is done automatically if you used the `template` or `create` command of flixel-tools) - code completion requires `.hxml` files, which are generated in your project's `export` directory during the build. `export/flash/haxe/debug.hxml` is the one used by default, since this is the first entry in `.vscode/settings.json`. It seems to be the most robust right now, other targets have completion errors sometimes.
 
 ![](../images/00_getting_started/vscode/completion.png)
 
