@@ -4,7 +4,7 @@ title: "Neko"
 
 <img src="../images/02_handbook/nekovm-logo.png" width="128px" style="float:left; padding:10px" />
 
-[Neko](http://nekovm.org/) is an high-level dynamically typed programming language and virtual machine. Neko as a target of HaxeFlixel and OpenFL supports an api close to the CPP builds of HaxeFlixel.
+[Neko](http://nekovm.org/) is a high-level dynamically typed programming language and virtual machine. Neko as a target of HaxeFlixel and OpenFL supports an API close to the CPP builds of HaxeFlixel.
 
 The NekoVM itself is part of the [Haxe Toolkit](http://haxe.org/doc/start/neko) and is used throughout Haxelib, Lime, OpenFL and flixel-tools to easily create cross-platform tools. Neko gives the power of the Haxe standard library to cross platform development tools.
 
@@ -16,11 +16,11 @@ Neko itself is also used server-side in [websites](https://github.com/ufront) an
 
 Its advantages:
 - Extremely fast compilation time that can run on Linux, Mac or Windows.
-- Since it uses almost the same API as the cpp builds it is a quicker way to test.
+- Since it uses almost the same API as the CPP builds, it is a quicker way to test.
   When you test with Flash it will use a much different part of the Haxe API.
 
 Its disadvantages:
-- Being a virtual machine it is does not perform as well as a native build using the SDL builds of Lime. 
+- Being a virtual machine, it is does not perform as well as a native build using the SDL builds of Lime. 
   Performance can be close to the Flash Player depending on the context.
 
 ### Conditionals
@@ -37,7 +37,7 @@ Its disadvantages:
 
 #### Command line
 
-The basic command to compile and test the neko target:
+The basic command to compile and test the Neko target:
 
 ```
 lime test neko
