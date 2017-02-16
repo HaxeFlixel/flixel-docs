@@ -24,6 +24,11 @@
 			"taskName": "Local Webserver",
 			"command": "haxe",
 			"args": ["--cwd", "api/dox-gen", "localhost.hxml"]
+		},
+		{
+			"taskName": "Clean Docs",
+			"command": "haxe",
+			"args": ["--cwd", "api/dox-gen", "clean.hxml"]
 		}
 	]
 }
