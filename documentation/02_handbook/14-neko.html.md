@@ -2,13 +2,13 @@
 title: "Neko"
 ```
 
-<img src="/images/targets/neko-logo.jpg" width="160px" style="float:left; padding:10px" />
+<img src="../images/02_handbook/nekovm-logo.png" width="160px" style="float:left; padding:10px" />
 
 [Neko](http://nekovm.org/) is an high-level dynamically typed programming language and virtual machine. Neko as a target of HaxeFlixel and OpenFL supports an api close to the CPP builds of HaxeFlixel.
 
 The NekoVM itself is part of the [Haxe Toolkit](http://haxe.org/doc/start/neko) and is used throughout Haxelib, Lime, OpenFL and flixel-tools to easily create cross-platform tools. Neko gives the power of the Haxe standard library to cross platform development tools.
 
-Neko itself is also used server-side in [websites](https://github.com/ufront) and general backend systems like the Haxelib. It contains a fully featured threading and socket api as well as integration with the [Apache server](http://haxe.org/doc/build/mod_neko).
+Neko itself is also used server-side in [websites](https://github.com/ufront) and general backend systems like the Haxelib. It contains a fully featured threading and socket API as well as integration with the [Apache server](http://haxe.org/doc/build/mod_neko).
 
 [Joshua Granick](http://www.joshuagranick.com/blog/):
 
