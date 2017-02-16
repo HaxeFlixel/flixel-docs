@@ -1,0 +1,29 @@
+{
+	"version": "0.1.0",
+	"isShellCommand": true,
+	"showOutput": "always",
+	"suppressTaskName": true,
+	"tasks": [
+		{
+			"taskName": "Generate Docs",
+			"command": "haxe",
+			"args": ["--cwd", "api/dox-gen", "gendocs.hxml"],
+			"isBuildCommand": true
+		},
+		{
+			"taskName": "Generate XML",
+			"command": "haxe",
+			"args": ["--cwd", "api/dox-gen/xml", "genxml.hxml"]
+		},
+		{
+			"taskName": "Test Docs",
+			"command": "haxe",
+			"args": ["--cwd", "api/dox-gen", "testdocs.hxml"]
+		},
+		{
+			"taskName": "Local Webserver",
+			"command": "haxe",
+			"args": ["--cwd", "api/dox-gen", "localhost.hxml"]
+		}
+	]
+}

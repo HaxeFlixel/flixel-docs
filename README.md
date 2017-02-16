@@ -30,12 +30,16 @@ The markdown syntax used in the docs is the  [GitHub-Flavored-Markdown](https://
 	
 Api documentation is provided in the `./api` folder, they are currently generated with [dox](https://github.com/HaxeFlixel/dox). You can view the API docs offline by running `nekotools server` in that directory and navigating to [localhost:2000](http://localhost:2000/).
 
-To generate the API docs yourself use the following method:
+To generate the API docs yourself, you need to have dox installed (for instructions refer to [the readme](https://github.com/HaxeFlixel/dox/blob/master/README.md)).
 
-* Install dox (for instructions refer to [the readme](https://github.com/HaxeFlixel/dox/blob/master/README.md))
-* Generate the API docs (navigate to `api/dox-gen`)
- * Run the `xml/genxml.bat`
- * Run the `gendocs.bat`
+Then, either:
+
+- Navigate to `api/dox-gen`
+- Run `haxe testdocs.hxml`
+
+or
+
+- Run the "Test Docs" build task in VSCode
 
 The docs will now be generated in the `api` folder.
 
