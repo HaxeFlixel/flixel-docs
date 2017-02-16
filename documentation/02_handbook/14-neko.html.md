@@ -2,7 +2,7 @@
 title: "Neko"
 ```
 
-<img src="../images/02_handbook/nekovm-logo.png" width="160px" style="float:left; padding:10px" />
+<img src="../images/02_handbook/nekovm-logo.png" width="128px" style="float:left; padding:10px" />
 
 [Neko](http://nekovm.org/) is an high-level dynamically typed programming language and virtual machine. Neko as a target of HaxeFlixel and OpenFL supports an api close to the CPP builds of HaxeFlixel.
 
