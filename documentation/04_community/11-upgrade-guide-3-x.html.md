@@ -75,7 +75,7 @@ Also, the following API changes have been made for consistency:
 
 ## 3.1.0
 
-HaxeFlixel 3.1 is a continuization of our efforts of making the API cleaner and more intuitive, keeping the amount of bugs as low as possible and adding new features. It is one of the biggest releases so far.
+HaxeFlixel 3.1 is a continuation of our efforts of making the API cleaner and more intuitive, keeping the amount of bugs as low as possible and adding new features. It is one of the biggest releases so far.
 
 This page is a summary of all breaking changes - for a more in-depth list of changes, please refer to the [changelog](https://github.com/HaxeFlixel/flixel/blob/dev/CHANGELOG.md).
 
@@ -100,7 +100,7 @@ This page is a summary of all breaking changes - for a more in-depth list of cha
 
 - `labelOffset:FlxPoint` is now an array (`labelOffsets:Array<FlxPoint>`) which uses the button status constants as indices for more control over the button position.
 - The highlight frame of the button spritesheet is now ignored by default on mobile devices, since it does not make much sense there - you can't hover over a button on a touchscreen.
-- It is now possible to "swipe-press" a button, which means you can press it if the input (mouse or touch) has been moved over the button and then relased. Previously, you could only press a button if the press happened while you were *already* hovering over the button. This especially makes `FlxVirtualPad` more usable.
+- It is now possible to "swipe-press" a button, which means you can press it if the input (mouse or touch) has been moved over the button and then released. Previously, you could only press a button if the press happened while you were *already* hovering over the button. This especially makes `FlxVirtualPad` more usable.
 
 
 ### FlxG.keys and FlxG.keyboard
@@ -175,7 +175,7 @@ A noteworthy amount of fields inside of `FlxSprite` have been renamed to increas
 
 ### Scale Modes
 
-HaxeFlixel 3.1.0 introduces scale modes to simplify targetting multiple resolutions. `FlxG.scaleMode` can be an instance of the following classes:
+HaxeFlixel 3.1.0 introduces scale modes to simplify targeting multiple resolutions. `FlxG.scaleMode` can be an instance of the following classes:
 
 -  `RatioScaleMode` (default!)
 -  `FillScaleMode`
@@ -290,7 +290,7 @@ This was a decision the core developers agreed upon, to make the package structu
 
 Frontends in HaxeFlixel 3.x are a new structure to the core of Flixel and which tackles the often criticized bloated collection of static methods in FlxG.
 
-Frontends are accessed in `FlxG.frontend` in a similar fasion to what Flixel devs are used to. Careful thought has been given to organise them into logical shortcuts. This way the api will be easier browse, remember and maintain.
+Frontends are accessed in `FlxG.frontend` in a similar fashion to what Flixel devs are used to. Careful thought has been given to organise them into logical shortcuts. This way the api will be easier browse, remember and maintain.
 
 For example in HaxeFlixel 2.x to add a `FlxCamera` you would use `FlxG.addCamera(camera:FlxCamera);`, this `addCamera` method has been moved into a `camera` frontend with all the other `camera` related shortcuts.
 So the code in HaxeFlixel 3.x to add a `FlxCamera` is now `FlxG.cameras.add(camera:FlxCamera)`.
@@ -319,7 +319,7 @@ So you do not need to have system assets anymore, everything in your project's `
 
 ### New Debugger and Interactive Console
 
-HaxeFlixel 3.x includes a powerful console and improved debugger. The new debugger system by default redirects the core `trace()` command to the log. Alternativley you can use `FlxG.log.add()` , `FlxG.watch.add()`, `FlxG.log.warn` and more.
+HaxeFlixel 3.x includes a powerful console and improved debugger. The new debugger system by default redirects the core `trace()` command to the log. Alternatively you can use `FlxG.log.add()` , `FlxG.watch.add()`, `FlxG.log.warn` and more.
 
 ### New Flixel Command Line Tools
 

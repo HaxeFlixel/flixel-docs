@@ -8,7 +8,7 @@ Mobile devices even though amazing have particular bottlenecks not present on de
 
 #### CPU
 
-The processing power of mobile cpus are often the biggest bottleneck when compared to a desktop target. Mobile cpus are constrained by low power architectures and are simply not as powerful. Manipulating pixels like bitmap filters do with Flash software rendering is simply too slow for mobile devices. HaxeFlixel has answered this for Flixel games to use the GPU for rendering your sprites instead of using software rendering like its done with Flash.
+The processing power of mobile CPUs are often the biggest bottleneck when compared to a desktop target. Mobile CPUs are constrained by low power architectures and are simply not as powerful. Manipulating pixels like bitmap filters do with Flash software rendering is simply too slow for mobile devices. HaxeFlixel has answered this for Flixel games to use the GPU for rendering your sprites instead of using software rendering like its done with Flash.
 
 #### Memory
 
@@ -18,7 +18,7 @@ Memory on mobile devices as you can imagine does not compare to the desktop. Whe
 
 Due to the nature of mobile hardware there are often maximum sizes for textures that are much lower than desktop hardware. There is no definitive guide to size limits as it depends on the hardware of each device individually.
 
-Here you can see an overview of size limits obtained from webgl browsers [http://webglstats.com/#h_texsize](http://webglstats.com/#h_texsize)
+Here you can see an overview of size limits obtained from WebGL browsers [http://webglstats.com/#h_texsize](http://webglstats.com/#h_texsize)
 
 You can also look up a device on [glxbench.com](http://glxbench.com), under the GL config tab look for `GL_MAX_TEXTURE_SIZE`.
 

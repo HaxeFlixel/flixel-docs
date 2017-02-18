@@ -16,7 +16,7 @@ Since gamepads have a variety of manufacturers their keycodes provided to HaxeFl
 - MFi
 - PS Vita
 
-For most gamepads HaxeFlixel will automatically detect the model and abstract the API inputs under a common "universal" gamepad model based on the Xbox 360 layout. The underlying device-specific "raw" inputs are still available for you to poll direclty, if you choose.
+For most gamepads HaxeFlixel will automatically detect the model and abstract the API inputs under a common "universal" gamepad model based on the Xbox 360 layout. The underlying device-specific "raw" inputs are still available for you to poll directly, if you choose.
 
 Here's some example logic for basic detection using the "universal" gamepad API:
 

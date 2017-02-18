@@ -19,7 +19,7 @@ A lot of changes can be handled with a simple find-and-replace in the editor of 
 
 ### `elapsed` argument added to `update()`
 
-The function signaure of `update()` changed to `update(elapsed:Float)`. `FlxG.elapsed` is still available, but it is recommended to use the argument value instead.
+The function signature of `update()` changed to `update(elapsed:Float)`. `FlxG.elapsed` is still available, but it is recommended to use the argument value instead.
 
 | HaxeFlixel 3.3.x                                  | HaxeFlixel 4.0.0                                      |
 | --------------------------------------------------|-------------------------------------------------------|
@@ -56,7 +56,7 @@ Typed classes have been moved into the modules of the non-typed versions:
 
 ActionScript 3 does not have enums, which is why a lot of these "value sets" were implemented using integer constants. For improved type-safety and to better fit the Haxe coding style, they have been converted to enums:
 
-As long as it's not ambigious, Haxe allows using just the enum value name without the enum's name. In the first case, the enum also does not need to be imported. For example, this means that both of these syntaxes are valid:
+As long as it's not ambiguous, Haxe allows using just the enum value name without the enum's name. In the first case, the enum also does not need to be imported. For example, this means that both of these syntaxes are valid:
 
 ```haxe
 FlxG.camera.follow(LOCKON);
@@ -70,7 +70,7 @@ Which of these two styles is used is mostly a matter of personal preference.
 | HaxeFlixel 3.3.x                                  | HaxeFlixel 4.0.0                                   |
 | --------------------------------------------------|----------------------------------------------------|
 | `FlxCamera.SHAKE_BOTH_AXES`                       | `flixel.util.FlxAxes.XY`                           |
-| `FlxCamera.SHAKE_HORIZONAL_ONLY`                  | `flixel.util.FlxAxes.X`                            |
+| `FlxCamera.SHAKE_HORIZONTAL_ONLY`                 | `flixel.util.FlxAxes.X`                            |
 | `FlxCamera.SHAKE_VERTICAL_ONLY`                   | `flixel.util.FlxAxes.Y`                            |
 
 #### `FlxCamera` follow styles:

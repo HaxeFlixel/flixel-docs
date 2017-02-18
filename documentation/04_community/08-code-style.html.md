@@ -131,7 +131,7 @@ function shootAtASpecificEnemyWithABulletTypeOf(target:Enemy, bullet:BulletType)
 function shootBulletAtEnemy(target:Enemy, bullet:BulletType):Void
 ```
 
-However, function names should also not be too short - you should be able to roughly know what a function does simply by reading its name - reading its description, if existant, should ideally not be necessary.
+However, function names should also not be too short - you should be able to roughly know what a function does simply by reading its name - reading its description, if existent, should ideally not be necessary.
 
 An example for a bad / too simple name would be `shoot()` instead of `shootEnemy()`.
 
@@ -157,7 +157,7 @@ Spaces *should* be used before the opening brackets of `if`, `for`, `while` and 
 
 ### Parameter Names
 
-Use lowerCamelCases for function parameters and use `this` to explicitly reference to class members (only when neccessary):
+Use lowerCamelCases for function parameters and use `this` to explicitly reference to class members (only when necessary):
 
 ``` haxe
 function translate(words:String, bableFish:BableFish):Void
@@ -175,7 +175,7 @@ function translate(Words:String, BableFish:BableFish):Void
 }
 ```
 
-In the core of HaxeFlixel, there are a lot of method parameters are capitalized (not preferred in Haxe). This is mostly legacy from the AS3 Flixel's code style and hard to change them all. However, newly written functions should follow the lowerCamelCase style. Also, we encourge contributors to convert them when fixing bugs/updating existing codes.
+In the core of HaxeFlixel, there are a lot of method parameters are capitalized (not preferred in Haxe). This is mostly legacy from the AS3 Flixel's code style and hard to change them all. However, newly written functions should follow the lowerCamelCase style. Also, we encourage contributors to convert them when fixing bugs/updating existing codes.
 
 ## Colon Spacing
 
@@ -336,7 +336,7 @@ There shouldn't be more than one empty line to separate sections.
 
 ## Using switch-case as an Expression
 
-Unlike in most other languages with object-oriented syntax, everything in Haxe is an expression. This extends to `switch-case`, meaning that it evaluates to a value. This value can be assinged to a variable, passed to a function or simply returned by a function:
+Unlike in most other languages with object-oriented syntax, everything in Haxe is an expression. This extends to `switch-case`, meaning that it evaluates to a value. This value can be assigned to a variable, passed to a function or simply returned by a function:
 
 ```haxe
 private function getColor(color:Color):Int

@@ -130,7 +130,7 @@ By default, the game is paused when the console text field receives focus. After
 
 The console stores executed commands (use the up and down keys to cycle through them). This history is persistent across executions of your game (but not across different target platforms).
 
-### Addings custom commands
+### Adding custom commands
 
 Functions can also be registered to the console directly as commands via `FlxG.console.registerFunction()`. Here's an example with a function called `"spawnEnemy"`, spawning a new enemy at the current mouse position in the Mode demo.
 

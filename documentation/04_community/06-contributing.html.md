@@ -20,7 +20,7 @@ Help spread the word! What you can do to help:
 - Star our GitHub Repository.
 - Follow us on [Twitter](https://twitter.com/haxeflixel).
 - Talk about us on social media: Twitter, blogs, forums.
-- Write about your experiences of HaxeFlixel on your favourite blog, social network.
+- Write about your experiences of HaxeFlixel on your favorite blog, social network.
 - Write about what you are doing with HaxeFlixel to inspire others by using our forum or your own site.
 - Record a video about your use or tutorial using HaxeFlixel.
 - Make an awesome game and attribute HaxeFlixel as the technology that helped make it happen ;)

@@ -54,7 +54,7 @@ Custom PNG icons: (Check [Iconography / Android Developers](http://developer.and
 
 ### Compile Commands
 
-Sublime Text, Flash Develop and Intellij Idea support Android compilation through their GUI.
+Sublime Text, Flash Develop and IntelliJ Idea support Android compilation through their GUI.
 
 #### Command line
 

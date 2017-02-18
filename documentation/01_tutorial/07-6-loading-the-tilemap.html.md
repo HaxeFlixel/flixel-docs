@@ -103,7 +103,7 @@ One of the great things about using Ogmo with HaxeFlixel is that there is alread
 	}
 	```
 
-	So, if this function gets passed an entity with the name "player", it will set our player object's `x` and `y` values to the entitie's `x` and `y` values (converting them from `String` to `Int`).
+	So, if this function gets passed an entity with the name "player", it will set our player object's `x` and `y` values to the entity's `x` and `y` values (converting them from `String` to `Int`).
 
 8. Now, we want to add collisions to our state, so the player will bump into walls instead of just walking through them. So, in `update()`, after `super.update(elapsed);` add:
 

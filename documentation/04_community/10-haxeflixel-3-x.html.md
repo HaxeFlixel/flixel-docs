@@ -31,7 +31,7 @@ to the codebase
 
 * [Flixel Templates](https://github.com/haxeflixel/flixel-templates) the place for our default template for new projects
 
-* [HaxeFlixel Website](https://github.com/haxeflixel/haxeflixel.com) the sourcecode for the fontend website and haxeflixel documentation
+* [HaxeFlixel Website](https://github.com/haxeflixel/haxeflixel.com) the source code for the frontend website and HaxeFlixel documentation
 
 #### HaxeFlixel documentation
 

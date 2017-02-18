@@ -8,5 +8,5 @@ As the types of games and use cases of HaxeFlixel are vast we appreciate develop
 
 If you are familiar with AS3 and new to Haxe, we encourage you to read the [AS3 and Haxe comparison](http://www.openfl.org/archive/developer/documentation/actionscript-developers/).
 
-HaxeFlixel's API is largely the same as the AS3 version, and existing documentation and resources for Actionscript 3 are still relevant.
+HaxeFlixel's API is largely the same as the AS3 version, and existing documentation and resources for ActionScript 3 are still relevant.
 The biggest changes in the API were made in HaxeFlixel 3.x you can review the changes on the [HaxeFlixel 3.x page.](/documentation/haxeflixel-3-x)

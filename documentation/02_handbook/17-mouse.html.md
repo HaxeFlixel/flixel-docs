@@ -91,7 +91,7 @@ if (FlxG.mouse.wheel != 0)
 
 ## Flash native cursor API
 
-AS3-Flixel used a simple `Sprite` to display a bitmap graphic that is synchronized with the mouse position every frame. This approach is not optimal, as it causes what is commonly referred to as "mouse lag" - the cursor sprite lags behind the actual mouse position. Depending on the game's framerate and the player's mouse speed, this can be very noticable and thus have a negative impact on the overall experience.
+AS3-Flixel used a simple `Sprite` to display a bitmap graphic that is synchronized with the mouse position every frame. This approach is not optimal, as it causes what is commonly referred to as "mouse lag" - the cursor sprite lags behind the actual mouse position. Depending on the game's framerate and the player's mouse speed, this can be very noticeable and thus have a negative impact on the overall experience.
 
 HaxeFlixel leverages the [flash native cursor API](http://www.adobe.com/devnet/flashplayer/articles/native-mouse-cursors.html) for better mouse cursor performance. However, there are certain restrictions to native cursors:
 

@@ -13,7 +13,7 @@ If you are unfamiliar with timesteps, here is a quick explanation.
 
 A fixed timestep results in `FlxG.elapsed` always returning the same value in each update() iteration. The result is that the game runs "slower" if the computer can't keep up with the update speed. So for example, if the game is supposed to run at 60 FPS and it's running at 30 FPS, the user will perceive it to run at half the expected speed.
 
-A variable timestep results in `FlxG.elapsed` returning a value according to the time that passed since the last update() call, and the game running at perceibably the expected speed for the user. However if the framerate is too low and the coder hasn't been careful (or studied Numerical Analysis), it could result in unpredicted behaviour and a game that doesn't run slow but is simply unplayable or broken.
+A variable timestep results in `FlxG.elapsed` returning a value according to the time that passed since the last update() call, and the game running at perceivably the expected speed for the user. However if the framerate is too low and the coder hasn't been careful (or studied Numerical Analysis), it could result in unpredicted behaviour and a game that doesn't run slow but is simply unplayable or broken.
 
 ## Framerate inconsistency in an empty FlxState
 
