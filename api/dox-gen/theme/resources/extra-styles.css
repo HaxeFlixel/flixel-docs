@@ -150,3 +150,7 @@ footer:before {
   padding-top: 60px;
   margin-top: -60px;
 }
+
+.table {
+  width: 95%;
+}
