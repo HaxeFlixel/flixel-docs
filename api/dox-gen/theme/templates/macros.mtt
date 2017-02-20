@@ -103,7 +103,7 @@
 			<span class="label">write only</span>
 		::end::
 
-	<a href="::api.pathToUrl(type.path)::#::field.name::"><span class="identifier">::field.name::</span></a>:$$printLinkedType(::field.type::)$$printInitExpr(::field.expr::)
+	<a href="::api.pathToUrl(type.path)::#::field.name::"><span class="identifier">::field.name::</span></a>:$$printLinkedType(::field.type::)$$printInitExpr(::field::)
 
 	::case 2::
 		<a href="#::field.name::"><span class="identifier">::field.name::</span></a>
@@ -125,10 +125,23 @@
 	</code>
 </macro>
 
-<macro name="printInitExpr(expr)">
-	<span ::cond expr != null::>
-		 = ::expr::
+<macro name="printInitExpr(field)">
+	<span ::cond field.expr != null::>
+		 = ::field.expr::
 	</span>
+	::switch field.type::
+	::case::
+	::case::
+	::case::
+	::case::
+	::case::
+	::case::
+	::case::
+	::case::
+		::if args[0] == "flixel.util.FlxColor" && field.expr != null ::
+			<span class="colorbox" style="background: ::if field.expr.indexOf("FlxColor.") >= 0:: ::field.expr.split("FlxColor.").join(""):: ::else:: ::field.expr.split("0xFF").join("#"):: ::end::"></span>
+		::end::
+	::end::
 </macro>
 
 <macro name="printClassBody(type)">
