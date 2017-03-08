@@ -3,13 +3,9 @@ title: "Hello World Command Line"
 ```
 "Hello World" is a [common example](http://en.wikipedia.org/wiki/Hello_world_program) of getting started with programming, here we will show you how to add Hello World with HaxeFlixel's `FlxText`. You can compile this test for any supported target platform.
 
-Using the command line with HaxeFlixel is made easier with our custom built flixel-tools utility, also made with Haxe.
+Make sure you have installed Flixel, as well as set up the `lime` and `flixel` commands [as explained previously](/documentation/install-haxeflixel/).
 
-## Installation of flixel-tools
-
-You first need to install and setup flixel-tools - please refer to [this guide](/documentation/flixel-tools/) for doing so.
-
-## Create a new HaxeFlixel Project Template
+## Create a new HaxeFlixel Project
 
 HaxeFlixel requires a basic structure of files for any project that you can automatically create with the `template` command (`tpl` for short).
 
@@ -19,11 +15,9 @@ flixel tpl -n "HelloWorld"
 
 You will now see a new folder named "HelloWorld" with all the files for your project being created automatically.
 
-## Add the "Hello World" FlxText
+## Add the "Hello World" `FlxText`
 
-Adding the text is as simple as opening the `PlayState.hx` file in the newly created source folder.
-
-The file will look like this:
+Adding the text is as simple as opening the `PlayState.hx` file in the newly created `source` folder. The file should look like this:
 
 ``` haxe
 package;
@@ -57,7 +51,7 @@ add(new FlxText(0, 0, 0, "Hello World!"));
 
 Save the file and return to your command line window. Now we can compile the project.
 
-Without running the [lime setup](/documentation/install-openfl) commands you can compile to Flash, Neko and HTML5 out of the box.
+Without running the `lime setup` commands you can compile to Flash, Neko and HTML5 out of the box.
 
 Test your project with the following commands:
 
