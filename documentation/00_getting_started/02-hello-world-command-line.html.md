@@ -43,11 +43,15 @@ class PlayState extends FlxState
 }
 ```
 
-All you need to do is add the following in the `create()` function:
+All you need to do is add the following three lines to the `create()` function:
 
 ``` haxe
-add(new FlxText(0, 0, 0, "Hello World!")); 
+var text = new FlxText(0, 0, 0, "Hello World", 64);
+text.screenCenter();
+add(text);
 ```
+
+This will create a new `FlxText` instance with font size `48`, center it on the screen and `add()` it so it is displayed.
 
 Save the file and return to your command line window. Now we can compile the project.
 
@@ -61,6 +65,6 @@ lime test neko
 lime test html5
 ```
 
-If you struggled through any part of this tutorial, ask a question on our [forum](http://forum.haxeflixel.com/) :)
+If you struggled through any part of this tutorial, ask a question on our [forum](http://forum.haxeflixel.com/). :)
 
-<img src="../images/00_getting_started/hello-world.jpg" style="width:100%;" />
+![](../images/00_getting_started/hello-world.png)
