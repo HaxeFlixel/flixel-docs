@@ -5,7 +5,7 @@ title: "Hello World Command Line"
 
 Make sure you have installed Flixel, as well as set up the `lime` and `flixel` commands [as explained previously](/documentation/install-haxeflixel/).
 
-## Create a new HaxeFlixel Project
+### Create a new HaxeFlixel Project
 
 HaxeFlixel requires a basic structure of files for any project that you can automatically create with the `template` command (`tpl` for short).
 
@@ -15,7 +15,7 @@ flixel tpl -n "HelloWorld"
 
 You will now see a new folder named "HelloWorld" with all the files for your project being created automatically.
 
-## Add the "Hello World" `FlxText`
+### Add the "Hello World" `FlxText`
 
 Adding the text is as simple as opening the `PlayState.hx` file in the newly created `source` folder. The file should look like this:
 
@@ -43,7 +43,7 @@ class PlayState extends FlxState
 }
 ```
 
-All you need to do is add the following three lines to the `create()` function:
+All you need to do is add the following three lines to the `create()` function (and save the file):
 
 ``` haxe
 var text = new FlxText(0, 0, 0, "Hello World", 64);
@@ -51,9 +51,11 @@ text.screenCenter();
 add(text);
 ```
 
-This will create a new `FlxText` instance with font size `48`, center it on the screen and `add()` it so it is displayed.
+This will create a new `FlxText` instance with font size `64`, center it on the screen and `add()` it so it is displayed.
 
-Save the file and return to your command line window. Now we can compile the project.
+### Test the Project
+
+Return to your command line window. Now we can compile the project.
 
 Without running the `lime setup` commands you can compile to Flash, Neko and HTML5 out of the box.
 

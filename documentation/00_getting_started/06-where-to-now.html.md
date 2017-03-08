@@ -4,7 +4,7 @@ title: "Where to now?"
 
 If you have successfully compiled a Hello World sample, the best place we recommend is to jump to our large collection of demos to learn by example, try improving a game and pulling one apart to see how it works:
 
-*	[Demos](http://haxeflixel.com/demos)
+*   [Demos](http://haxeflixel.com/demos)
 *   [Source for the demos](https://github.com/HaxeFlixel/flixel-demos/tree/master)
 
 If you are totally new to Flixel, please review our Handbook here:
@@ -15,7 +15,7 @@ We also strongly recommend reading about the systems behind HaxeFlixel by readin
 
 *   [Community](http://haxeflixel.com/documentation/community/)
 
-For AS3 developers, you can get a quickstart on Haxe from this:
+For AS3 developers, you can get a quick start on Haxe from these:
 
 *   [AS3 and Haxe Comparison](http://www.openfl.org/archive/developer/documentation/actionscript-developers/)
 *   [​Haxe API](http://api.haxe.org/)
