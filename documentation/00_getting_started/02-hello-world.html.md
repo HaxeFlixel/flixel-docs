@@ -1,6 +1,7 @@
 ```
-title: "Hello World Command Line"
+title: "Hello World"
 ```
+
 "Hello World" is a [common example](http://en.wikipedia.org/wiki/Hello_world_program) of getting started with programming, here we will show you how to add Hello World with HaxeFlixel's `FlxText`. You can compile this test for any supported target platform.
 
 Make sure you have installed Flixel, as well as set up the `lime` and `flixel` commands [as explained previously](/documentation/install-haxeflixel/).

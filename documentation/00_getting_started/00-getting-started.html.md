@@ -9,7 +9,7 @@ Getting started requires three steps:
 
 1. [Install Haxe](http://haxe.org/download)
 2. [Install HaxeFlixel](/documentation/install-haxeflixel)
-3. [HaxeFlixel Hello World](/documentation/hello-world-command-line)
+3. [HaxeFlixel Hello World](/documentation/hello-world)
 
 After that, you have to choose an editor / IDE to work in. Several popular options have their own pages here:
 
