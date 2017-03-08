@@ -25,22 +25,18 @@ commands. Each are specified in the
 
 ## Updating HaxeFlixel
 
-You can use the following command to update just flixel:
-	
+You can use the following command to update flixel:
+
 ``` bash
 haxelib update flixel
 ```
 
-Alternatively, you can update all your haxelib libraries at once with this command:
-	
-``` bash
-haxelib upgrade
-```	
+If you wanted to update e.g. `flixel-addons` instead, just replace `flixel` with `flixel-addons`.
 
 ## Install flixel command
 
-Run the following command to be able to use [flixel commands](http://haxeflixel.com/documentation/flixel-tools/):
-	
+Run the following two commands to be able to use [flixel commands](http://haxeflixel.com/documentation/flixel-tools/):
+
 ``` bash
 haxelib install flixel-tools
 haxelib run flixel-tools setup
