@@ -11,18 +11,11 @@ If you are totally new to Flixel, please review our Handbook here:
 
 *   [Handbook](http://haxeflixel.com/documentation/haxeflixel-handbook/)
 
-We also strongly recommend reading about the systems behind HaxeFlixel by reading our community documentation:
-
-*   [Community](http://haxeflixel.com/documentation/community/)
-
-For AS3 developers, you can get a quick start on Haxe from these:
+For former AS3 developers, you can get a quick start on Haxe from these:
 
 *   [AS3 and Haxe Comparison](http://www.openfl.org/archive/developer/documentation/actionscript-developers/)
 *   [​Haxe API](http://api.haxe.org/)
 
-We also invite you to talk with our community in the forums and IRC! :)
-
-*   [Forum](http://forum.haxeflixel.com/))
-*   [#haxeflixel on freenode IRC](irc://chat.freenode.net/#haxeflixel)
+For ways to get in touch with the community, check out this list of [various communication channels](/documentation/community/).
 
 Furthermore, this documentation and website is the front of HaxeFlixel information and we welcome additions from users like you. :)
