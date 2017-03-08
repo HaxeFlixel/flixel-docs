@@ -4,7 +4,7 @@ title: "Visual Studio Code"
 
 [![](../images/00_getting_started/vscode/vscode-plus-haxe.png)](https://marketplace.visualstudio.com/items?itemName=vshaxe.haxe-extension-pack)
 
-[Visual Studio Code](https://code.visualstudio.com/) is an open-source, cross-platform, lightweight code editor by Microsoft. Although it still has a few rough edges, the [Haxe Extension Pack](https://marketplace.visualstudio.com/items?itemName=vshaxe.haxe-extension-pack) arguably turns VSCode into the editor with the most advanced Haxe support available right now. Being developed by some of the Haxe compiler's maintainers, it seamlessly integrates with the compiler's [IDE services](https://haxe.org/manual/cr-completion.html) and uses them for:
+[Visual Studio Code](https://code.visualstudio.com/) is an open-source, cross-platform, lightweight code editor by Microsoft. Although it still has a few rough edges, the [Haxe Extension Pack](https://marketplace.visualstudio.com/items?itemName=vshaxe.haxe-extension-pack) arguably turns VSCode into the editor with the most advanced Haxe support available right now. It seamlessly integrates with the compiler's [IDE services](https://haxe.org/manual/cr-completion.html) and uses them for:
 
 - code completion
 - go to definition
@@ -14,6 +14,8 @@ title: "Visual Studio Code"
 - etc...
 
 The Haxe extension requires [Haxe 3.4.0](http://haxe.org/download/) or newer.
+
+You can find detailed documentation for vshaxe in the [Wiki](https://github.com/vshaxe/vshaxe/wiki), this page focuses on the Flixel-specific parts.
 
 ### Configuring for use with Flixel Projects
 
