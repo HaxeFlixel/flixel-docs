@@ -67,6 +67,8 @@ lime test neko
 lime test html5
 ```
 
+> Note: While compiling, you may see some warnings such as `"Use programPath instead"` (or `"Could not find generated font file"` for HTML5). These can safely be ignored.
+
 If you struggled through any part of this tutorial, ask a question on our [forum](http://forum.haxeflixel.com/). :)
 
 ![](../images/00_getting_started/hello-world.png)
