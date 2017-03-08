@@ -20,6 +20,6 @@ We are going to be building a small **dungeon crawler**. You can see the finishe
 
 If you have any questions, or get stuck during this tutorial, you can post on our [community forums](http://forum.haxeflixel.com/), or in the #haxeflixel IRC channel on freenode.
 
-This tutorial was originally written using HaxeFlixel version 3.3.0, but updated for 4.0.0.
+This tutorial was originally written using HaxeFlixel version 3.3.0, but updated for 4.2.0.
 
 So let's go ahead and get started!
