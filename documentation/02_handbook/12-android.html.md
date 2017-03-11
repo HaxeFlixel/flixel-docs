@@ -6,6 +6,8 @@ title: "Android"
 
 The Android target makes use of a chain of frameworks to compile your native Android game from Haxe code. OpenFL uses the [Hxcpp](http://lib.haxe.org/p/hxcpp) and the [Android NDK](http://developer.android.com/tools/sdk/ndk/index.html) specifically so no virtual machine is involved.
 
+To set up android, run `lime setup android` after installing HaxeFlixel. You can choose to download necessary components (eg. Android SDK and NDK) or use existing installations.
+
 The Haxe compiler uses its ```cpp``` target to compile your ```Haxe``` code for the [LibSDL](http://libsdl.org) OpenGL library so that the Android NDK can then use this "native-code" for your Android game. You can read more about the Android NDK from Google [here](http://developer.android.com/tools/sdk/ndk/index.html), however this process is completely automated by [OpenFL](http://openfl.org). Android is part of the cpp group of targets and when developers mention ```cpp``` the topic may be relevant to HaxeFlixel Android.
 
 With [OpenFL](http://openfl.org) using native-code and OpenGL with [LibSDL](http://libsdl.org), the rendering methods are different to where Flixel started with Flash. Android uses GPU accelerated Texture Batching for the best possible performance on mobile devices.
