@@ -18,9 +18,9 @@ We'll tackle each of these things one-by-one.
 
 First up, let's get our player from the `MenuState` to our `PlayState`. Eventually, we'll want a fancy `MenuState` with a button for options, but for right now, we'll just have a button that says "Play" and switches to our `PlayState`.
 
-1. Go ahead and delete the line we added for our "Hello World" test.
+1. Go ahead and delete the line we added for our "Hello World" test within the `PlayState`.
 
-	Next, go up to the top of the class - right under where it says:
+	Next, go up to the top of the class within `MenuState` - right under where it says:
 
 	```haxe
 	class MenuState extends FlxState
@@ -34,7 +34,7 @@ First up, let's get our player from the `MenuState` to our `PlayState`. Eventual
 
 	Note: if you're using FlashDevelop, it should automatically create an import for `FlxButton` (`import flixel.ui.FlxButton;`) at the top of the class. This should be mostly automatic whenever you use class, but if it doesn't add it for some reason, you can enter it manually, or, highlight `FlxButton` in the editor and hit `Ctrl+Shift+1` to add it.
 
-2. Now, go down to `create()`, and, right before `super.create();`, type:
+2. Now, type the following on the lines before `super.create();` within the `create()` method:
 
 	```haxe
 	_btnPlay = new FlxButton(0, 0, "Play", clickPlay);
