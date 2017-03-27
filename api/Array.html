@@ -85,8 +85,8 @@ algorithm, <code><a href="./haxe/ds/ArraySort.html#sort">haxe.ds.ArraySort.sort<
 <p>If <code>f</code> is null, the result is unspecified.</p></div></div><div class="field "><a name="splice"></a><h3><p class="anchor"><code><a href="#splice"><span class="identifier">splice</span></a>(<span style="white-space:nowrap">pos:<a class="type" title="The standard Int type." href="./Int.html">Int</a>,</span> <span style="white-space:nowrap">len:<a class="type" title="The standard Int type." href="./Int.html">Int</a></span>):<a class="type" title="An Array is a storage for values." href="./Array.html">Array</a>&lt;<span class="type">T</span>&gt;</code></p></h3><div class="doc"><p>Removes <code>len</code> elements from <code>this</code> Array, starting at and including
 <code>pos</code>, an returns them.</p>
 <p>This operation modifies <code>this</code> Array in place.</p>
-<p>If <code>len</code> is &lt; 0 or <code>pos</code> exceeds <code>this</code>.length, the result is the empty
-Array [].</p>
+<p>If <code>len</code> is &lt; 0 or <code>pos</code> exceeds <code>this</code>.length, an empty Array [] is 
+returned and <code>this</code> Array is unchanged.</p>
 <p>If <code>pos</code> is negative, its value is calculated from the end    of <code>this</code>
 Array by <code>this.<a href="#length">length</a> + pos</code>. If this yields a negative value, 0 is
 used instead.</p>
