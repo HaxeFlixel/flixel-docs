@@ -7,7 +7,7 @@ For a given interaction type, two Shapes will be permitted to interact only if
 &lt;code&gt;(shape1.group &amp;amp; shape2.mask) != 0 &amp;amp;&amp;amp; (shape2.group &amp;amp; shape1.mask) != 0&lt;/code&gt;
 &lt;br/&gt;&lt;br/&gt;
 There are 32 real groups corresponding to a set bit in the group/mask fields. For instance
-a group value of 0x120 corresponds to the 'real' groups 5 and 8 as &lt;code&gt;0x120 = (1&amp;lt;&lt;5) | (1&lt;&lt;8)&lt;/code&gt;
+a group value of 0x120 corresponds to the &#039;real&#039; groups 5 and 8 as &lt;code&gt;0x120 = (1&amp;lt;&lt;5) | (1&lt;&lt;8)&lt;/code&gt;
 &lt;br/&gt;&lt;br/&gt;
 Nape provides group/mask for each interaction type. The actual precedence of interactions
 is further defined simply as: Sensor &gt; Fluid &gt; Collision.

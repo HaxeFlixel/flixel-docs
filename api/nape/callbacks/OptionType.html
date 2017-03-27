@@ -3,9 +3,9 @@
 <!--use textcolor from settings, otherwise create a contrasting color to theme color-->
 <head><meta charset="utf-8"/><link href="../../bootstrap/css/bootstrap.min.css" rel="stylesheet"/><link href="../../bootstrap/css/bootstrap-responsive.min.css" rel="stylesheet"/><link href="../../bootstrap/css/bootstrap-select.min.css" rel="stylesheet"/><link href="http://fonts.googleapis.com/css?family=Open+Sans:400,700,700italic,400italic" rel="stylesheet" type="text/css"/><link href="http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,600,600italic,400" rel="stylesheet" type="text/css"/><link href="http://netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.css" rel="stylesheet" type="text/css"/><script src="../../jquery-1.9.1.min.js"></script><script src="../../bootstrap/js/bootstrap.min.js"></script><script src="../../bootstrap/js/bootstrap-select.min.js"></script><link href="../../styles.css" rel="stylesheet"/><link href="../../extra-styles.css" rel="stylesheet"/><link href="../../haxe-nav.css" rel="stylesheet"/><script type="text/javascript">var dox = {rootPath: "../../",platforms: ["types"]};</script><script type="text/javascript" src="../../nav.js"></script><script type="text/javascript" src="../../index.js"></script><link rel="icon" href="../../favicon.ico" type="image/x-icon"></link><title>nape.callbacks.OptionType - HaxeFlixel API</title><meta name="description" content="OptionType representing matching behaviour for Listeners.
 &lt;br/&gt;&lt;br/&gt;
-An object's set of CbType's 'matches' against an OptionType iff.
-the OptionType's includes list intersects the object's set of CbTypes
-and the OptionType's excludes list 'does not' intersect the object's set
+An object&#039;s set of CbType&#039;s &#039;matches&#039; against an OptionType iff.
+the OptionType&#039;s includes list intersects the object&#039;s set of CbTypes
+and the OptionType&#039;s excludes list &#039;does not&#039; intersect the object&#039;s set
 of CbTypes.
 &lt;pre&gt;
 option = new OptionType([A, B], [C, D]);
@@ -13,7 +13,7 @@ obj.cbTypes = [] // =&gt; does not match option.
 obj.cbTypes = [A] // =&gt; matches the option
 obj.cbTypes = [A, C] // =&gt; does not match option.
 &lt;/pre&gt;
-The optionType's includes and excludes list are managed to be always
+The optionType&#039;s includes and excludes list are managed to be always
 disjoint: The action of including an already excluded type serves to
 remove it from the excludes list, equalliy excluding an already included
 type serves to remove it from the includes list.
