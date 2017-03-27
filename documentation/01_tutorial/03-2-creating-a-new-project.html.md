@@ -24,7 +24,7 @@ Now we want to make sure that everything is installed properly - and we want to 
 5. Next, let's make sure that our project builds and runs properly. By default, a fresh, new Flixel template project will launch the game in the `PlayState`. So go ahead and double-click to open that file from the project list.
 	This file is a very basic (and empty) example of a `FlxState` subclass. You can think of `FlxState`s a little bit like 'scenes'. When your game is running, one - and only one - state will be the active state. Anything 'added' to that state will be visible and accessible by the player, and, for the most part, will be segregated from other states in your game.
 
-	They are great for having different sections of your game that are sort of in a bubble from one another, such as the `MenuState` and the `PlayState` (where the game is actually played).
+	They are great for having different sections of your game that are sort of in a bubble from one another, such as a `MenuState` (which we will add later) and the `PlayState` (where the game is actually played).
 
 	You'll see that, at least for now, the `PlayState` only has two functions in it: `create()` and `update()`. When a state is loaded, its `create()` function is called. This is where you want to initialize all of the things in your state.
 

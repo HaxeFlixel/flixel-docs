@@ -23,12 +23,7 @@ Adding the text is as simple as opening the `PlayState.hx` file in the newly cre
 ``` haxe
 package;
 
-import flixel.FlxG;
-import flixel.FlxSprite;
 import flixel.FlxState;
-import flixel.text.FlxText;
-import flixel.ui.FlxButton;
-import flixel.math.FlxMath;
 
 class PlayState extends FlxState
 {
@@ -47,7 +42,7 @@ class PlayState extends FlxState
 All you need to do is add the following three lines to the `create()` function (and save the file):
 
 ``` haxe
-var text = new FlxText(0, 0, 0, "Hello World", 64);
+var text = new flixel.text.FlxText(0, 0, 0, "Hello World", 64);
 text.screenCenter();
 add(text);
 ```

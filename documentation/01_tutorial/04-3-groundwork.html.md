@@ -16,17 +16,18 @@ So, what does that all actually translate to in HaxeFlixel?
 
 We'll tackle each of these things one-by-one.
 
-First up, let's get our player from the `MenuState` to our `PlayState`. Eventually, we'll want a fancy `MenuState` with a button for options, but for right now, we'll just have a button that says "Play" and switches to our `PlayState`.
+First up, let's create a simple menu. Eventually, we'll want a fancy `MenuState` with a button for options, but for right now, we'll just have a button that says "Play" and switches to our `PlayState`.
 
 1. Go ahead and delete the line we added for our "Hello World" test within the `PlayState`.
 
-	Next, go up to the top of the class within `MenuState` - right under where it says:
+	Now, create a file named `MenuState.hx` in the same directory as `PlayState.hx` (`Right Click -> Add -> New Empty File...`). Then, you can just copy the content of `PlayState.hx` over (but replace the class name with `MenuState`):
 
 	```haxe
 	class MenuState extends FlxState
+	{
 	```
 
-	We're going define a new variable. This is where you would define all the variables that you intend to use throughout a given class. We need to define a new `FlxButton` variable to use as our 'play' button. So, type:
+	Right after the class declaration, we're going define a new variable. This is where you would define all the variables that you intend to use throughout a given class. We need to define a new `FlxButton` variable to use as our 'play' button. So, type:
 
 	```haxe
 	private var _btnPlay:FlxButton;
