@@ -13,7 +13,7 @@ Getting started requires three steps:
 
 After that, you have to choose an editor / IDE to work in. Several popular options have their own pages here:
 
-- [Visual Studio Code](/documentation/visual-studio-code) (our personal recommendation)
+- [Visual Studio Code](/documentation/visual-studio-code) (recommended)
 - [HaxeDevelop / FlashDevelop](/documentation/FlashDevelop)
 - [Sublime Text](/documentation/sublime-text)
 
