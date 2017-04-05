@@ -2,9 +2,9 @@
 title: "Desktop Targets"
 ```
 
-The desktop targets of HaxeFlixel run on all mainstream operating systems (OSX, Windows and Linux). They are all compiled to C++ through the Hxcpp library and are rendered through interfacing with the [Simple DirectMedia Layer.](http://libsdl.org) The code for this part of the library is developed through [NME ](https://github.com/haxenme/NME)which provides dll libs that openfl interfaces with.
+The desktop targets of HaxeFlixel run on all mainstream operating systems (macOS, Windows and Linux). They are all compiled to C++ through the Hxcpp library and are rendered through interfacing with the [Simple DirectMedia Layer.](http://libsdl.org) The code for this part of the library is developed through [NME ](https://github.com/haxenme/NME)which provides dll libs that openfl interfaces with.
 
-The biggest advantage of desktop targets compared to web and mobile is the power of desktop CPU and GPU processors. More complex scenes, physics and number of objects rendered can give a larger creative freedom in the games you create.
+The biggest advantage of desktop targets compared to web and mobile is the power of desktop CPU and GPU processors. The ability to create more complex scenes, advanced physics and a larger number of objects rendered grants more creative freedom than is possible with the relatively basic web and mobile targets.
 
 Rendering in HaxeFlixel is done through the drawTiles API. OpenGL textures are used with the GPU to render Flixel sprites. This native C++ code and use of the GPU outperforms runtimes such as the Flash Player and Adobe AIR in most circumstances substantially.
 
