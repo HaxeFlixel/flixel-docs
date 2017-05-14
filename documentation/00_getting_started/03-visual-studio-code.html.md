@@ -21,7 +21,7 @@ You can find detailed documentation for vshaxe in the [Wiki](https://github.com/
 
 VSCode stores its project-specific settings in a `.vscode` subfolder. Getting the configurations right manually is a bit tedious, which is why you can use [flixel-tools](http://haxeflixel.com/documentation/flixel-tools/) to create a new template project or demo with a pre-created config. Simply make sure to select VSCode as your editor of choice during the `setup` command, or add `-ide vscode` to the command you're running.
 
-Note: you need at least flixel-tools 1.2.0 and flixel-templates 2.1.0.
+**Note:** it's recommended to use the latest versions of flixel-tools and flixel-templates.
 
 ```
 flixel template -n "VSCodeTest" -ide vscode
