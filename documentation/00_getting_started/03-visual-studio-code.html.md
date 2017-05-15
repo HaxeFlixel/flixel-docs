@@ -19,26 +19,33 @@ You can find detailed documentation for vshaxe in the [Wiki](https://github.com/
 
 ### Configuring for use with Flixel Projects
 
-VSCode stores its project-specific settings in a `.vscode` subfolder. Getting the configurations right manually is a bit tedious, which is why you can use [flixel-tools](http://haxeflixel.com/documentation/flixel-tools/) to create a new template project or demo with a pre-created config. Simply make sure to select VSCode as your editor of choice during the `setup` command, or add `-ide vscode` to the command you're running.
+VSCode stores its project-specific settings in a `.vscode` subfolder - [flixel-tools](http://haxeflixel.com/documentation/flixel-tools/) can create this folder for you. Just make sure to select VSCode as your preferred during the `setup` command, or add `-ide vscode` to the command you're running.
 
-**Note:** it's recommended to use the latest versions of flixel-tools and flixel-templates.
+From here, there are four options. **Note:** it's recommended to use the latest versions of flixel-tools and flixel-templates.
 
-```
-flixel template -n "VSCodeTest" -ide vscode
-flixel create -ide vscode
-```
+1. Create a new, empty project:
 
-Alternatively, you can copy the IDE config files to already existing projects. Run this command to add a `.vscode` folder to the current working directory (needs to be a project folder and contain a `Project.xml`):
+    ```
+    flixel template -n "VSCodeTest" -ide vscode
+    ```
 
-```
-flixel configure . -ide vscode
-```
+2. Create a new project based on one of the [demos](/demos):
 
-You can also use this to configure an entire directory of projects, like flixel-demos:
+    ```
+    flixel create -ide vscode
+    ```
 
-```
-flixel configure C:\HaxeToolkit\haxe\lib\flixel-demos\git -ide vscode
-```
+3. Add the `.vscode` folder to a project that already exists, for instance the current working directory:
+
+    ```
+    flixel configure . -ide vscode
+    ```
+
+4. Add VSCode config files to an entire directory of projects, like flixel-demos:
+
+    ```
+    flixel configure C:\HaxeToolkit\haxe\lib\flixel-demos\git -ide vscode
+    ```
 
 ### Building your Project
 
