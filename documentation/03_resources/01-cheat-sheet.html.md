@@ -61,6 +61,9 @@ loadGraphic("assets/my_sprite.png");
 
 // OR dynamically create a rect
 makeGraphic(100, 100, 0xFFFFFFFF); // width, height, color (AARRGGBB hexadecimal)
+
+// to update bounding box by default (positioned on top left corner of the sprite)
+updateHitbox(); // or offset.set(10, 5); to shift bounding box 10 pixels horizontally and 5 pixels vertically
 ```
 
 ## FlxText
@@ -202,6 +205,41 @@ Current "delta" value of mouse wheel. If the wheel was just scrolled up, it will
 
 ```haxe
 FlxG.mouse.wheel;
+```
+
+#### Up, Down, Over, Out callbacks per object
+
+```haxe
+var clickableSprite: FlxSprite;
+
+// ...
+
+// register plugin in PlayState.create()
+FlxG.plugins.add(new FlxMouseEventManager());
+
+// ...
+
+// register callbacks
+var pixelPerfect = false;
+FlxMouseEventManager.add(clickableSprite, mousePressedCallback, mouseReleasedCallback, null, null, false, true, pixelPerfect, [FlxMouseButtonID.LEFT, FlxMouseButtonID.RIGHT]);
+
+// ...
+
+function mousePressedCallback(sprite: FlxSprite)
+{
+	if (FlxG.mouse.justPressed)
+	{
+		// left button was pressed
+	}
+	else if (FlxG.mouse.justPressedRight)
+	{
+		// right button was pressed
+	}
+}
+
+function mouseReleasedCallback(sprite: FlxSprite)
+{
+}
 ```
 
 ## Touch Input
@@ -451,7 +489,14 @@ private function myCallback(Object1:FlxObject, Object2:FlxObject):Void
 
 Or use `FlxG.collide()` which calls `FlxG.overlap()` and presets the `ProcessCallback` parameter to `FlxObject.separate()`.
 
-## Quick check whether there was a collision
+### Set world bounds
+
+```haxe
+// collision won't work outside the bounds, and by default they are only size of one screen
+FlxG.worldBounds.set(tileMap.x, tileMap.y, tileMap.width, tileMap.height);
+```
+
+### Quick check whether there was a collision
 
 ```haxe
 // sets the touching flags
@@ -465,9 +510,27 @@ if (player.isTouching(FlxObject.DOWN))
 super.update(elapsed);
 ```
 
-## Pixel Perfect Collision
+### Teleport sprite
 
-**FlxG.pixelPerfectOverlap**(Sprite, Sprite2)
+```haxe
+// after setting the sprite's new position
+setPosition(10, 100);
+// don't forget to update 'last' variable if you don't want overlap callbacks for objects between old and new positions of the sprite
+last.set(x, y);
+```
+
+### Avoiding repetitive collision callbacks
+
+```haxe
+// https://github.com/HaxeFlixel/flixel/issues/1247
+FlxG.worldDivisions = 1;
+```
+
+### Pixel Perfect Collision
+
+```haxe
+var overlapping = FlxG.pixelPerfectOverlap(Sprite, Sprite2);
+```
 
 
 ## Drawing Shapes
@@ -534,6 +597,26 @@ Use `canvas.fill(FlxColor.TRANSPARENT);` to clear the canvas.
 scrollFactor.set(0, 0);
 ```
 
+### Zooming game while leaving HUD intact
+
+```haxe
+gameCamera = new FlxCamera(0, 0, screenWidth, screenHeight);
+uiCamera = new FlxCamera(0, 0, screenWidth, screenHeight);
+
+gameCamera.bgColor = 0xff626a71;
+uiCamera.bgColor = FlxColor.TRANSPARENT;
+
+gameCamera.zoom = 0.5;
+
+FlxG.cameras.reset(gameCamera);
+FlxG.cameras.add(uiCamera);
+
+FlxCamera.defaultCameras = [ gameCamera ];
+
+
+hudElement.cameras = [ uiCamera ];
+```
+
 
 ## Debugger
 
@@ -569,4 +652,36 @@ FlxG.mouse.visible = false;
 
 ```haxe
 acceleration.y = 600;
+```
+
+
+## Sort objects in FlxGroup
+
+```haxe
+// sort by Y for top-down game
+group.sort(FlxSort.byY, FlxSort.ASCENDING);
+
+// sort with custom function (here: by Z)
+objectGroup.sort(
+		function (Order:Int, Obj1:FlxBasic, Obj2:FlxBasic):Int
+		{
+			if (!Std.is(Obj1, BaseObject) || !Std.is(Obj2, BaseObject))
+				return 0;
+
+			return FlxSort.byValues(Order, cast(Obj1, BaseObject).z, cast(Obj2, BaseObject).z);
+		},
+	FlxSort.ASCENDING);
+```
+
+
+## FlxPoint pool
+
+```haxe
+// get from FlxPoint pool
+var tileSize = FlxPoint.get(16, 16);
+		
+var actionTileset = FlxTileFrames.fromGraphic(FlxG.bitmap.add("assets/images/ui/actions.png"), tileSize);
+
+// release it back in pool to reuse
+tileSize.put();
 ```
