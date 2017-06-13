@@ -209,6 +209,6 @@ Here's an example of `FlxDebuggerLayout.RIGHT`:
 
 ## The Interaction Tool
 
-The Interaction Tool, enabled by the ![](../images/02_handbook/debugger/icons/interactive.png) icon in the debugger overlay, allows you to change game elements, e.g. move sprites, while the game is still running. [Click here](./debugger-interaction) to know more about the interaction tool.
+The Interaction Tool, enabled by the ![](../images/02_handbook/debugger/icons/interactive.png) icon in the debugger overlay, allows you to change game elements, e.g. move sprites, while the game is still running. [Click here](./debugger-interaction) to learn more about the interaction tool.
 
 ![](../images/02_handbook/debugger/interaction-mover-shortcut.gif)
