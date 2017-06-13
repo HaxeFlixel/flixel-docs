@@ -206,3 +206,9 @@ A debugger layout determines the initial position and size of each debugger wind
 Here's an example of `FlxDebuggerLayout.RIGHT`:
 
 ![](../images/02_handbook/debugger/layout-right.png)
+
+## The Interaction Tool
+
+The Interaction Tool, enabled by the ![](../images/02_handbook/debugger/icons/interactive.png) icon in the debugger overlay, allows you to change game elements, e.g. move sprites, while the game is still running. [Click here](./debugger-interaction) to learn more about the interaction tool.
+
+![](../images/02_handbook/debugger/interaction-mover-shortcut.gif)
