@@ -22,6 +22,10 @@ Krita is a free digital painting and illustration application. Krita offers CMYK
 
 ## Sound Editors
 
+#### [Audacity](http://www.audacityteam.org/)
+
+Audacity is free, open source, cross-platform audio software for multi-track recording and editing.
+
 #### [LMMS](http://lmms.sourceforge.net/)
 
 LMMS is a free cross-platform software which allows you to produce music with your computer.
@@ -33,6 +37,10 @@ SFXR is a sound generator, widely used for creating sound effects for Ludum Dare
 #### [BFXR](http://www.bfxr.net/)
 
 BFXR is an improved ActionScript 3 port of SFXR with more features. It has moved in the direction of increased complexity and range of expression.
+
+#### [LabChirp](http://labbed.net/software/labchirp/)
+
+LabChirp is a program for creating sound effects.
 
 ## Map Editors
 
