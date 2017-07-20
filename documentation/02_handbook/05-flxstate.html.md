@@ -69,7 +69,7 @@ class FlxExampleState extends FlxState
 	override public function create():Void
 	{
 		//create a main player
-		wizard = new FlxSprite(200, 200,'assets/player.png');
+		wizard = new FlxSprite(200, 200, 'assets/player.png');
 		wizard.maxVelocity.set(80, 200);
 		wizard.acceleration.y = 200; // gravity
 		wizard.drag.x = wizard.maxVelocity.x * 4;
@@ -86,15 +86,15 @@ class FlxExampleState extends FlxState
 		//control the player with keyboard
 		wizard.acceleration.x = 0;
 
-		if (FlxG.keys.LEFT)
+		if (FlxG.keys.pressed.LEFT)
 		{
 			wizard.acceleration.x = -wizard.maxVelocity.x * 4;
 		}
-		if (FlxG.keys.RIGHT)
+		if (FlxG.keys.pressed.RIGHT)
 		{
 			wizard.acceleration.x = wizard.maxVelocity.x * 4;
 		}
-		if (FlxG.keys.SPACE && player.isTouching(FlxObject.FLOOR))
+		if (FlxG.keys.justPressed.SPACE && wizard.isTouching(FlxObject.FLOOR))
 		{
 			wizard.velocity.y = -wizard.maxVelocity.y / 2;
 		}
