@@ -1,14 +1,15 @@
 {
 	"version": "2.0.0",
-	"isShellCommand": true,
-	"showOutput": "always",
 	"suppressTaskName": true,
 	"tasks": [
 		{
 			"taskName": "Generate Docs",
 			"command": "haxe",
 			"args": ["--cwd", "api/dox-gen", "gendocs.hxml"],
-			"isBuildCommand": true
+			"group": {
+				"kind": "build",
+				"isDefault": true
+			}
 		},
 		{
 			"taskName": "Generate XML",
