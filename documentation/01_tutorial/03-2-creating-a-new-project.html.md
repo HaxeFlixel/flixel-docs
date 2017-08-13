@@ -31,14 +31,19 @@ Now we want to make sure that everything is installed properly - and we want to 
 	`update()` is where all the real magic happens - it is called every 'frame' in your game (by default 60 times per second). When a `FlxState`'s `update()` is called, it will call `update()` on all of the objects that have been added to it. This is basically how everything in your game actually 'happens'. We will get to play with this more later on.
 	For now, we JUST want to see that the whole thing works, so, we're going to add a simple `FlxText` object to this state.
 
-6. In `create()`, right before the line that says `super.create();`, add a new line and type the following:
+6. At the top, below `import flixel.FlxState;` add 
+	```haxe
+	import flixel.text.FlxText;
+	```
+
+7. In `create()`, right before the line that says `super.create();`, add a new line and type the following:
 
 	```haxe
 	add(new FlxText(10, 10, 100, "Hello, World!"));
 	```
 	Then save your changes.
 
-7. The Moment of Truth! Go up to the toolbar in FlashDevelop and choose 'Debug' and 'Flash':
+8. The Moment of Truth! Go up to the toolbar in FlashDevelop and choose 'Debug' and 'Flash':
 
 	![](../images/01_tutorial/0002b.png)
 
