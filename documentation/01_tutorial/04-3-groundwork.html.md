@@ -67,7 +67,9 @@ First up, let's create a simple menu. Eventually, we'll want a fancy `MenuState`
 
 	`screenCenter()` is a function which takes an object and centers it on the screen either horizontally, vertically or (by default) both. By calling it on our button, the button will be placed in the center of the screen.
 
-8. If you test your game out now, it should go straight to a black screen with our 'Play' button in the middle, and clicking the button will take you to another black screen. If that's what you get, it works! So far, so good!
+5. Next, we need to make sure that the game actually starts with our `MenuState`. Open `Main.hx` and replace the `PlayState` reference with `MenuState`.
+
+6. If you test your game out now, it should go straight to a black screen with our 'Play' button in the middle, and clicking the button will take you to another black screen. If that's what you get, it works! So far, so good!
 
 Next, let's make a simple player sprite that you can move around on the screen.
 
