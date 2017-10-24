@@ -32,7 +32,7 @@ class PlayState extends FlxState
         super.update(elapsed);
 
         // Important: can be null if there's no active gamepad yet!
-        gamepad = FlxG.gamepads.lastActive;
+        var gamepad:FlxGamepad = FlxG.gamepads.lastActive;
         if (gamepad != null)
         {
             updateGamepadInput(gamepad);
