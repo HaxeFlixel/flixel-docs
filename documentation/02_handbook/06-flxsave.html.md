@@ -26,7 +26,7 @@ Note the string "SaveDemo". This is how HaxeFlixel tracks what save slot you are
 
 Note: If you plan to use `FlxG.save` you can skip the initializing and binding steps, as HaxeFlixel has done it for you.
 
-Once bound, the save is essentially "live". To write to it you use the .data property of variable, treating it as an [object](http://haxe.org/ref/dynamic):
+Once bound, the save is essentially "live". To write to it you use the .data property of variable, treating it as an [object](https://haxe.org/manual/types-dynamic.html):
 
 ``` haxe
 _gameSave.data.boxPositions = new Array<FlxPoint>();
@@ -43,7 +43,7 @@ Writes the local shared object to disk immediately.
 **Required on non-Flash targets.**
 
 ##### Serialization
-In certain cases you may need to [serialize and unserialize](http://haxe.org/manual/serialization) your data (fancy words for "take my data and turn it into a specially formatted string, or back into data") to avoid errors, but you may want to try it without serialization unless you experience problems.
+In certain cases you may need to [serialize and unserialize](https://haxe.org/manual/std-serialization.html) your data (fancy words for "take my data and turn it into a specially formatted string, or back into data") to avoid errors, but you may want to try it without serialization unless you experience problems.
 
 #### Loading
 
