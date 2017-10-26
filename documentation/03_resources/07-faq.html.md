@@ -15,7 +15,7 @@ No, HaxeFlixel abstracts it completely.
 
 - [@SeiferTim's](https://twitter.com/SeiferTim) [Dungeon Crawler Tutorial](http://haxeflixel.com/documentation/tutorials/)
 
-- [Kasoki's](https://github.com/atomicptr/GameMechanicExplorer-HaxeFlixel) [Game Mechanic Explorer port](http://gme.qr9.de/)
+- [atomicptr's](https://github.com/atomicptr/GameMechanicExplorer-HaxeFlixel) [Game Mechanic Explorer port](http://gme.qr9.de/)
 
 - [Videos from Christopher Butler](https://www.youtube.com/watch?v=LpKvSPwHOP8&list=PLi0ypjD5PcV9xdjycW0hYi_HD297012tE)
 (covering everything from installation to prototyping a platformer).
