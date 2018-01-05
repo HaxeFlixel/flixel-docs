@@ -25,13 +25,13 @@ override public function update(elapsed:Float):Void
 	if (FlxG.keys.justPressed.LEFT)
 	{
 		// The left arrow key has just been pressed
-		// This code is only execute once, on the frame immediately after the key has been pressed
+		// This code is only executed once, on the frame immediately after the key has been pressed
 	}
 	
 	if (FlxG.keys.justReleased.LEFT)
 	{
 		// The left arrow key has just been released
-		// This code is only execute once, on the frame immediately after the key has been released
+		// This code is only executed once, on the frame immediately after the key has been released
 	}
 
 	super.update(elapsed);
@@ -40,7 +40,7 @@ override public function update(elapsed:Float):Void
 
 ## Checking multiple keys
 
-You can check multiple keys at once using the `anyPressed()`, `anyJustPressed()` and `anyJustReleased()` methods of `FlxKeyboard`. This allows to bind multiple keys to one action easily, for example controlling the player with either WASD or the arrow keys. These methods take an `Array` of key names (as `String`s) and return true if any of the given keys has the desired property.
+You can check multiple keys at once using the `anyPressed()`, `anyJustPressed()` and `anyJustReleased()` methods of `FlxKeyboard`. This allows you to bind multiple keys to one action easily, for example controlling the player with either WASD or the arrow keys. These methods take an `Array` of key names (as `String`s) and return true if any of the given keys have the desired property.
 
 ``` haxe
 override public function update(elapsed:Float):Void
