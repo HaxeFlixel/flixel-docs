@@ -478,7 +478,7 @@ super.update(elapsed);
 using flixel.util.FlxSpriteUtil;
 ```
 
-Haxe docs about the `using` keyword: [haxe.org/manual/using](http://haxe.org/manual/using).
+Haxe docs about the `using` keyword: [haxe.org/manual/lf-static-extension.html](https://haxe.org/manual/lf-static-extension.html).
 
 ```haxe
 var canvas = new FlxSprite();
