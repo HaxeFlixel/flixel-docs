@@ -17,7 +17,7 @@ You can find detailed documentation for the Haxe extension in the [Wiki](https:/
 
 ### Installation
 
-- Download the latest version of [Visual Studio Code](https://code.visualstudio.com/).
+- Download and install the latest version of [Visual Studio Code](https://code.visualstudio.com/).
 - Go to the Extensions tab and install the [Lime extension](https://marketplace.visualstudio.com/items?itemName=openfl.lime-vscode-extension). This automatically installs the Haxe extension as well.
 
     ![](../images/00_getting_started/vscode/lime-installation.png)
