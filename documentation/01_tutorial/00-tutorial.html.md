@@ -11,15 +11,13 @@ We are going to be building a small **dungeon crawler**. You can see the finishe
 
 <br/>
 <object width="640" height="480">
-    <param name="movie" value="http://haxeflixel.com/demos/swf/TurnBasedRPG.swf">
-    <embed src="http://haxeflixel.com/demos/swf/TurnBasedRPG.swf" width="640" height="480">
+    <param name="movie" value="https://haxeflixel.com/demos/swf/TurnBasedRPG.swf">
+    <embed src="https://haxeflixel.com/demos/swf/TurnBasedRPG.swf" width="640" height="480">
     </embed>
 </object>
 <br/>
 
 
-If you have any questions, or get stuck during this tutorial, you can post on our [community forums](http://forum.haxeflixel.com/), or in the #haxeflixel IRC channel on freenode.
-
-This tutorial was originally written using HaxeFlixel version 3.3.0, but updated for 4.2.0.
+If you have any questions or get stuck during this tutorial, you can get help [here](/documentation/community/).
 
 So let's go ahead and get started!

@@ -11,7 +11,7 @@ Flixel, separates it from Flash, and combines it with the power and freedom of [
 multi-platform language, so that you can write games that can be easily published to all sorts of platforms
 (Windows, Flash, iOS, Android, and more).
 
-When you’re working with HaxeFlixel, it is not all that different from writing AS3 code - although there are a few
+When you're working with HaxeFlixel, it is not all that different from writing AS3 code - although there are a few
 variations. Plus, it comes with a ton of built-in features - classes, utilities, and functions - that handle a lot
 of common or complex things that you might need to do. And, because it’s open-source, if you find something that it
 can’t do, it’s really easy to change the code - and if your changes would benefit others,
@@ -20,4 +20,4 @@ can’t do, it’s really easy to change the code - and if your changes would be
 It is a library that is easy to use, but offers the freedom and power to do anything you can think of without
 limitations caused by a rigid interface.
 
-You can find out more about HaxeFlixel, [here](http://haxeflixel.com/documentation/about/).
+You can find out more about HaxeFlixel [here](http://haxeflixel.com/documentation/about/).
