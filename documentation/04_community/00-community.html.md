@@ -5,16 +5,18 @@ rootDoc: true
 
 HaxeFlixel is a collaborative project from [contributors all over the world](https://github.com/HaxeFlixel/flixel/graphs/contributors).
 
-There is a multitude of channels to interact with the community:
+If you need help or just want to chat , HaxeFlixel has a...
 
-- Our [forums](http://forum.haxeflixel.com/)
-- [#haxeflixel](http://webchat.freenode.net/?channels=%23haxeflixel&uio=d4) on IRC (freenode.net)
-- [@HaxeFlixel](https://twitter.com/HaxeFlixel) on Twitter
-- The [HaxeFlixel organization](http://github.com/haxeflixel) on GitHub
-- The [HaxeFlixel page](http://www.indiedb.com/engines/haxeflixel) on IndieDB
-- Join our development chat on [Slack](https://haxeflixel.slack.com/)<sup>[1]</sup>
-- [HaxeFlixel server](https://discord.gg/0uEuWH3spjck73Lo) on Discord
-- [HaxeFlixel group](http://steamcommunity.com/groups/haxeflixel) on Steam
-- [/r/haxeflixel](https://www.reddit.com/r/haxeflixel) subreddit
+- [Discord Server](https://discord.gg/0uEuWH3spjck73Lo)
+- [Forum](http://forum.haxeflixel.com/)
+- [Slack](https://haxeflixel.slack.com/)<sup>[1]</sup>
+- [IRC Channel](http://webchat.freenode.net/?channels=%23haxeflixel&uio=d4)
+- [Subreddit](https://www.reddit.com/r/haxeflixel)
+
+Other HaxeFlixel-related pages:
+
+- [HaxeFlixel on Twitter](https://twitter.com/HaxeFlixel)
+- [HaxeFlixel on GitHub](http://github.com/haxeflixel)
+- [HaxeFlixel on IndieDB](http://www.indiedb.com/engines/haxeflixel)
 
 <sup>[1] requires an invite - just tweet your email address @HaxeFlixel to get one</sup>
