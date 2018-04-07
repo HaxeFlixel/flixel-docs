@@ -23,6 +23,10 @@ First up, let's create a simple menu. Eventually, we'll want a fancy `MenuState`
 	Now, create a file named `MenuState.hx` in the same directory as `PlayState.hx` (`Right Click -> Add -> New Empty File...`). Then, you can just copy the content of `PlayState.hx` over (but replace the class name with `MenuState`):
 
 	```haxe
+	package;
+
+	import flixel.FlxState;
+	
 	class MenuState extends FlxState
 	{
 	```
@@ -32,6 +36,11 @@ First up, let's create a simple menu. Eventually, we'll want a fancy `MenuState`
 	```haxe
 	private var _btnPlay:FlxButton;
 	```
+	And at the top add 
+	```haxe
+	import flixel.ui.FlxButton;
+	```
+
 
 	Note: if you're using FlashDevelop, it should automatically create an import for `FlxButton` (`import flixel.ui.FlxButton;`) at the top of the class. This should be mostly automatic whenever you use class, but if it doesn't add it for some reason, you can enter it manually, or, highlight `FlxButton` in the editor and hit `Ctrl+Shift+1` to add it.
 
@@ -53,6 +62,10 @@ First up, let's create a simple menu. Eventually, we'll want a fancy `MenuState`
 	{
 		FlxG.switchState(new PlayState());
 	}
+	```
+	And at the top`add 
+	```haxe
+	import flixel.FlxG;
 	```
 
 	This function calls `FlxG.switchState()`, which switches the state from whatever the current state is (`MenuState`) to a new instance of `PlayState`.
