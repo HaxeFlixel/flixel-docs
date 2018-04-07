@@ -207,15 +207,15 @@ Current "delta" value of mouse wheel. If the wheel was just scrolled up, it will
 FlxG.mouse.wheel;
 ```
 
-#### Up, Down, Over, Out callbacks per object
+#### Up, Down, Over, Out Callbacks per Object
 
 ```haxe
-var clickableSprite: FlxSprite;
+var clickableSprite:FlxSprite;
 
 // ...
 
 // register plugin in PlayState.create()
-FlxG.plugins.add(new FlxMouseEventManager());
+FlxMouseEventManager.init();
 
 // ...
 
@@ -225,7 +225,7 @@ FlxMouseEventManager.add(clickableSprite, mousePressedCallback, mouseReleasedCal
 
 // ...
 
-function mousePressedCallback(sprite: FlxSprite)
+function mousePressedCallback(sprite:FlxSprite)
 {
 	if (FlxG.mouse.justPressed)
 	{
@@ -237,7 +237,7 @@ function mousePressedCallback(sprite: FlxSprite)
 	}
 }
 
-function mouseReleasedCallback(sprite: FlxSprite)
+function mouseReleasedCallback(sprite:FlxSprite)
 {
 }
 ```
@@ -489,11 +489,11 @@ private function myCallback(Object1:FlxObject, Object2:FlxObject):Void
 
 Or use `FlxG.collide()` which calls `FlxG.overlap()` and presets the `ProcessCallback` parameter to `FlxObject.separate()`.
 
-### Set world bounds
+### Setting World Bounds
 
 ```haxe
 // collision won't work outside the bounds, and by default they are only size of one screen
-FlxG.worldBounds.set(tileMap.x, tileMap.y, tileMap.width, tileMap.height);
+FlxG.worldBounds.set(tilemap.x, tilemap.y, tilemap.width, tilemap.height);
 ```
 
 ### Quick check whether there was a collision
@@ -501,9 +501,10 @@ FlxG.worldBounds.set(tileMap.x, tileMap.y, tileMap.width, tileMap.height);
 ```haxe
 // sets the touching flags
 FlxG.collide(player, level);
+
 if (player.isTouching(FlxObject.DOWN))
 {
-// player stands on the ground and can jump 
+	// player stands on the ground and can jump 
 }
 
 // will reset touching flags when called
@@ -519,19 +520,11 @@ setPosition(10, 100);
 last.set(x, y);
 ```
 
-### Avoiding repetitive collision callbacks
-
-```haxe
-// https://github.com/HaxeFlixel/flixel/issues/1247
-FlxG.worldDivisions = 1;
-```
-
 ### Pixel Perfect Collision
 
 ```haxe
-var overlapping = FlxG.pixelPerfectOverlap(Sprite, Sprite2);
+var overlapping = FlxG.pixelPerfectOverlap(sprite1, sprite2);
 ```
-
 
 ## Drawing Shapes
 
@@ -611,10 +604,9 @@ gameCamera.zoom = 0.5;
 FlxG.cameras.reset(gameCamera);
 FlxG.cameras.add(uiCamera);
 
-FlxCamera.defaultCameras = [ gameCamera ];
+FlxCamera.defaultCameras = [gameCamera];
 
-
-hudElement.cameras = [ uiCamera ];
+hudElement.cameras = [uiCamera];
 ```
 
 
@@ -640,20 +632,17 @@ FlxG.debugger.addTrackerProfile(new TrackerProfile(Player, ["x", "y", "jumping",
 FlxG.debugger.track(player, "Hero");
 ```
 
-
 ## Hiding Cursor
 
 ```haxe
 FlxG.mouse.visible = false;
 ```
 
-
 ## Adding Gravity
 
 ```haxe
 acceleration.y = 600;
 ```
-
 
 ## Sort objects in FlxGroup
 
@@ -662,24 +651,22 @@ acceleration.y = 600;
 group.sort(FlxSort.byY, FlxSort.ASCENDING);
 
 // sort with custom function (here: by Z)
-objectGroup.sort(
-		function (Order:Int, Obj1:FlxBasic, Obj2:FlxBasic):Int
-		{
-			if (!Std.is(Obj1, BaseObject) || !Std.is(Obj2, BaseObject))
-				return 0;
-
-			return FlxSort.byValues(Order, cast(Obj1, BaseObject).z, cast(Obj2, BaseObject).z);
-		},
-	FlxSort.ASCENDING);
+var group = new FlxTypedGroup<ZSprite>();
+group.sort(
+	function(order:Int, sprite1:ZSprite, sprite2:ZSprite):Int
+	{
+		return FlxSort.byValues(order, sprite1.z, sprite2.z);
+	},
+	FlxSort.ASCENDING
+);
 ```
 
-
-## FlxPoint pool
+## FlxPoint Pool
 
 ```haxe
 // get from FlxPoint pool
 var tileSize = FlxPoint.get(16, 16);
-		
+
 var actionTileset = FlxTileFrames.fromGraphic(FlxG.bitmap.add("assets/images/ui/actions.png"), tileSize);
 
 // release it back in pool to reuse
