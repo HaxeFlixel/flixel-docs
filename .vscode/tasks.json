@@ -1,9 +1,8 @@
 {
 	"version": "2.0.0",
-	"suppressTaskName": true,
 	"tasks": [
 		{
-			"taskName": "Generate Docs",
+			"label": "Generate Docs",
 			"command": "haxe",
 			"args": ["--cwd", "api/dox-gen", "gendocs.hxml"],
 			"group": {
@@ -12,22 +11,22 @@
 			}
 		},
 		{
-			"taskName": "Generate XML",
+			"label": "Generate XML",
 			"command": "haxe",
 			"args": ["--cwd", "api/dox-gen/xml", "genxml.hxml"]
 		},
 		{
-			"taskName": "Test Docs",
+			"label": "Test Docs",
 			"command": "haxe",
 			"args": ["--cwd", "api/dox-gen", "testdocs.hxml"]
 		},
 		{
-			"taskName": "Local Webserver",
+			"label": "Local Webserver",
 			"command": "haxe",
 			"args": ["--cwd", "api/dox-gen", "localhost.hxml"]
 		},
 		{
-			"taskName": "Clean Docs",
+			"label": "Clean Docs",
 			"command": "haxe",
 			"args": ["--cwd", "api/dox-gen", "clean.hxml"]
 		}
