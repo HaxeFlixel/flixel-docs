@@ -20,7 +20,7 @@
 			<form class="form-search" id="searchForm">
 			<div class="input-prepend input-block-level">
 				<span class="add-on"><i class="icon-search"></i></span>
-				<input id="search" type="text" placeholder="Search" autocomplete="off"/>
+				<input id="search" type="text" placeholder="Filter" autocomplete="off"/>
 			</div>
 			</form>		
 			<div class="dropdown" ::cond (api.config.platforms.length>1)::>
@@ -44,6 +44,16 @@
 
 <script src="::api.config.rootPath::/highlighter.js"></script>
 <link href="::api.config.rootPath::highlighter.css" rel="stylesheet" />
-	
+
+::if (api.isDefined("googleAnalytics"))::
+::set trackingID=api.getValue("googleAnalytics")::
+<script async="async" src="https://www.googletagmanager.com/gtag/js?id=::trackingID::"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);} 
+gtag('js', new Date());
+gtag('config', '::trackingID::');
+</script>
+::end::
 </body>
 </html>
