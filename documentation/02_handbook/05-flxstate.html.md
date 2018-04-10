@@ -19,7 +19,7 @@ This is where you setup and create all your state's objects; for example your le
 
 #### add(object:FlxBasic)
 
-This is the place where you add your sprites, tilemaps etc to your state to be rendered. It works similar to the OpenFL's display list API with `addChild()`.
+This is the place where you add your sprites, tilemaps etc to your state to be rendered. It works similar to OpenFL's display list API with `addChild()`.
 
 #### remove(object:FlxBasic)
 
