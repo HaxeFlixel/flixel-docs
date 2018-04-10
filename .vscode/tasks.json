@@ -22,7 +22,8 @@
 				"--cwd",
 				"api/dox-gen/xml",
 				"genxml.hxml"
-			]
+			],
+			"problemMatcher": []
 		},
 		{
 			"label": "Test Docs",
@@ -31,7 +32,8 @@
 				"--cwd",
 				"api/dox-gen",
 				"testdocs.hxml"
-			]
+			],
+			"problemMatcher": []
 		},
 		{
 			"label": "Local Webserver",
@@ -40,7 +42,8 @@
 				"--cwd",
 				"api/dox-gen",
 				"localhost.hxml"
-			]
+			],
+			"problemMatcher": []
 		},
 		{
 			"label": "Clean Docs",
@@ -49,7 +52,8 @@
 				"--cwd",
 				"api/dox-gen",
 				"clean.hxml"
-			]
+			],
+			"problemMatcher": []
 		}
 	]
 }
