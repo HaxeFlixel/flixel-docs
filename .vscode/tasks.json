@@ -4,31 +4,52 @@
 		{
 			"label": "Generate Docs",
 			"command": "haxe",
-			"args": ["--cwd", "api/dox-gen", "gendocs.hxml"],
+			"args": [
+				"--cwd",
+				"api/dox-gen",
+				"gendocs.hxml"
+			],
 			"group": {
 				"kind": "build",
 				"isDefault": true
-			}
+			},
+			"problemMatcher": []
 		},
 		{
 			"label": "Generate XML",
 			"command": "haxe",
-			"args": ["--cwd", "api/dox-gen/xml", "genxml.hxml"]
+			"args": [
+				"--cwd",
+				"api/dox-gen/xml",
+				"genxml.hxml"
+			]
 		},
 		{
 			"label": "Test Docs",
 			"command": "haxe",
-			"args": ["--cwd", "api/dox-gen", "testdocs.hxml"]
+			"args": [
+				"--cwd",
+				"api/dox-gen",
+				"testdocs.hxml"
+			]
 		},
 		{
 			"label": "Local Webserver",
 			"command": "haxe",
-			"args": ["--cwd", "api/dox-gen", "localhost.hxml"]
+			"args": [
+				"--cwd",
+				"api/dox-gen",
+				"localhost.hxml"
+			]
 		},
 		{
 			"label": "Clean Docs",
 			"command": "haxe",
-			"args": ["--cwd", "api/dox-gen", "clean.hxml"]
+			"args": [
+				"--cwd",
+				"api/dox-gen",
+				"clean.hxml"
+			]
 		}
 	]
 }
