@@ -100,12 +100,12 @@ Alternatively, you can switch to the _Problems_ tab which has a nicer presentati
 
 ### Flash Debugging
 
-The `.vscode` template from flixel-tools already includes the `launch.json` needed for Flash debugging. To make use of it, you also need to install the [Haxe Debug extension](https://marketplace.visualstudio.com/items?itemName=vshaxe.haxe-debug). Make sure that:
+The `.vscode` template from flixel-tools already includes the `launch.json` needed for Flash debugging. To make use of it, you also need to install the [Flash Debugger extension](https://marketplace.visualstudio.com/items?itemName=vshaxe.haxe-debug). Make sure that:
 
 1. Java is installed and available.
 2. The "Flash Player projector content debugger" is associated with `.swf` files.
 
-Check the [usage section of the Readme](https://github.com/vshaxe/vshaxe-debugadapter#usage) for detailed instructions.
+Check the [usage section of the Readme](https://github.com/vshaxe/flash-debugger#usage) for detailed instructions.
 
 After this, you just have to select one of the launch configs to start debugging:
 
