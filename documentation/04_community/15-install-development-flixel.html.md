@@ -8,12 +8,12 @@ All new development is done on the dev branches of [HaxeFlixel's GitHub reposito
 
 **Prerequisites**
 
-* You must have completed the [Getting Started tutorial](/documentation/getting-started/) to have the necessary dependencies (Haxe and OpenFL).
+* You must have completed the [Getting Started](/documentation/getting-started/) guide to have the necessary dependencies (Haxe and OpenFL).
 
   If you want to use development builds of OpenFL and Lime, please refer to these instructions:
     
-    * https://github.com/openfl/openfl#development-builds
-    * https://github.com/openfl/lime#building-from-source
+    * [OpenFL development builds](https://github.com/openfl/openfl#development-builds)
+    * [Building Lime from source](https://github.com/openfl/lime#building-from-source)
 
 * Install [Git](https://git-scm.com/)
 
