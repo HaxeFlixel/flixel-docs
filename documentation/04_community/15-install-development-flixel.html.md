@@ -8,23 +8,16 @@ All new development is done on the dev branches of [HaxeFlixel's GitHub reposito
 
 **Prerequisites**
 
-You must have completed the following Getting Started tutorials:
+* You must have completed the [Getting Started tutorial](/documentation/getting-started/) to have the necessary dependencies (Haxe and OpenFL).
 
-* [Installing Haxe](http://haxeflixel.com/documentation/install-haxe)
+  If you want to use development builds of OpenFL and Lime, please refer to these instructions:
+    
+    * https://github.com/openfl/openfl#development-builds
+    * https://github.com/openfl/lime#building-from-source
 
-* [Installing OpenFL](http://haxeflixel.com/documentation/install-openfl/)
+* Install [Git](https://git-scm.com/)
 
-If you are wanting to use the latest OpenFL code, depending on your target there are instructions for building on [OpenFL's main repositories](https://github.com/openfl/openfl#development-build). You do not have to use the latest OpenFL to use the dev branch of HaxeFlixel.
-
-Haxelib lets you have multiple versions of a library like Flixel installed at a time. You can see the versions of Flixel and other Haxelib packages like OpenFL with the following command (with the active version in square brackets):
-
-``` bash
-haxelib list
-```
-
-* Install Git
-
-Windows-only note: ensure that during the installation process, you select the non-default option that allows you to use Git from the Windows command prompt (you'll also need to re-open your command prompt window after installation for Git to become available there).
+  Windows-only note: ensure that during the installation process, you select the non-default option that allows you to use Git from the Windows command prompt (you'll also need to re-open your command prompt window after installation for Git to become available there).
 
 **Install Flixel from GitHub**
 
@@ -42,7 +35,7 @@ haxelib git flixel-addons https://github.com/HaxeFlixel/flixel-addons
 haxelib git flixel-ui https://github.com/HaxeFlixel/flixel-ui
 ```
 
-Should you want to use `haxelib set <library> <version>` to switch back to released versions, be sure to run `haxelib dev <library>` beforehand. `haxelib git` enables the "development directory" for a library, which causes a silent failure of `haxelib set`.
+Should you want to use `haxelib set <library> <version>` to switch back to released versions, be sure to run `haxelib dev <library>` beforehand. `haxelib git` enables the "development directory" for a library, which overrides `haxelib set` commands.
 
 **Testing the installation with the Mode demo**
 
@@ -50,4 +43,4 @@ Navigate to `flixel-demos/Platformers/Mode`. Compile and run the game with `lime
 
 **Need more help?**
 
-Check out our [forum](http://forum.haxeflixel.com/) and [#haxeflixel on freenode IRC](irc://chat.freenode.net/#haxeflixel).
+Get in touch with the [community](/documentation/community).
