@@ -18,7 +18,7 @@ Haxe is a cross-compiled language which is unlike solutions such as Adobe Air th
 
 #### Open Source Extendible Framework
 
-By using the Haxe Toolkit and OpenFL, advanced developers can extend and modify anything in the toolchain right down from the compiler to the native runtime code used by NME and SDL. The developers and the community behind these tools have shown a constant improvement to the projects over many years. History has shown commercial solutions do not always prioritize developer requests, and even advanced developers can't just fix their issues or bugs they find themselves.
+By using the Haxe Toolkit and OpenFL, advanced developers can extend and modify anything in the toolchain right down from the compiler and the native runtime code such as HXCPP and SDL. The developers and the community behind these tools have shown a constant improvement to the projects over many years. History has shown commercial solutions do not always prioritize developer requests, and even advanced developers can't just fix their issues or bugs they find themselves.
 
 The source code for everything in the toolchain is available on GitHub:
 

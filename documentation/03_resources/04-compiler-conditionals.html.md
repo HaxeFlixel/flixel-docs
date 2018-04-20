@@ -23,7 +23,7 @@ Conditionals relevant to your HaxeFlixel games may include:
 
 ```
 mobile, desktop, native, web
-ios, android, blackberry, webos, windows, mac, linux, html5
+ios, android, windows, mac, linux, html5
 flash, cpp, neko, js
 ```
 Multiple targets can be used together:

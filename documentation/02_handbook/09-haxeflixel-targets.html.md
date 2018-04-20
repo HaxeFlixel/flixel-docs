@@ -14,8 +14,6 @@ HaxeFlixel currently supports the following targets through OpenFL:
 
 - [iOS](/documentation/ios)
 - [Android](/documentation/android)
-- Blackberry
-- WebOS
 
 #### Web
 
@@ -28,7 +26,6 @@ Using these targets requires the appropriate SDK's and system setup assisted thr
 lime setup windows
 lime setup mac
 lime setup android
-lime setup blackberry
 ```
 
 ### HTML5

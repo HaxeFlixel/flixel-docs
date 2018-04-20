@@ -4,7 +4,7 @@ title: "Introduction to OpenFL"
 
 <img src="/images/openfl.jpg" width="100%" />
 
-The [Open Flash Library](http://www.openfl.org) (OpenFL) previously known as NME, is an innovative framework designed to provide fast, productive development for Windows, Mac, Linux, iOS, Android, BlackBerry, Tizen, Mozilla OS, Flash and HTML5 – all using the same source code.
+The [Open Flash Library](http://www.openfl.org) (OpenFL) previously known as NME, is an innovative framework designed to provide fast, productive development for Windows, Mac, Linux, iOS, Android, Flash and HTML5 – all using the same source code.
 
 OpenFL has a history of providing the Flash API wherever possible however it is also used to extend upon that API. OpenFL is powered by the Haxe Toolkit's cross-compiler that lets it produce native code such as C++ for its target platforms.
 
