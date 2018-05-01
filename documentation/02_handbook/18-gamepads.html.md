@@ -39,7 +39,7 @@ class PlayState extends FlxState
         }
     }
 
-    private function updateGamepadInput(gamepad:FlxGamepad):Void
+    function updateGamepadInput(gamepad:FlxGamepad):Void
     {
         if (gamepad.pressed.A)
         {

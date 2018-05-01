@@ -13,7 +13,7 @@ There should always be a single line break before an opening curly bracket.
 **Good:**
 
 ``` haxe
-private function example()
+function example()
 {
 	while (true)
 	{
@@ -26,7 +26,7 @@ private function example()
 **Bad:**
 
 ``` haxe
-private function example() {
+function example() {
 	while (true) {
 		trace("looping");
 		trace("still looping");
@@ -89,7 +89,7 @@ class Example
 Using line breaks to group code sections that logically belong together can help readability like in this example:
 
 ``` haxe
-private function resetHelpers():Void
+function resetHelpers():Void
 {
 	resetFrameSize();
 	resetSizeFromFrame();
@@ -207,8 +207,6 @@ For unary operators however, it's preferable not to use any spaces:
 | `i++`                                  | `i ++`                                 |
 | `visible = !visible`                   | `visible = ! visible`                  |
 
-
-
 ## Leveraging Type Inference
 
 The Haxe compiler does not require you to declare the type of a variable ([read more](http://haxe.org/ref/type_infer)).
@@ -321,13 +319,13 @@ Metadata should always be placed in a new line for increased readability:
 ```haxe
 @:isVar
 @:allow(flixel.tweens.FlxTween)
-private static var pool(get, null):FlxPool<MultiVarTween>;
+static var pool(get, null):FlxPool<MultiVarTween>;
 ```
 
 as opposed to:
 
 ```haxe
-@:isVar @:allow(flixel.tweens.FlxTween) private static var pool(get, null):FlxPool<MultiVarTween>;
+@:isVar @:allow(flixel.tweens.FlxTween) static var pool(get, null):FlxPool<MultiVarTween>;
 ```
 
 However, if there are two many of these sections it be worth considering to split the function into several smaller ones.
@@ -339,7 +337,7 @@ There shouldn't be more than one empty line to separate sections.
 Unlike in most other languages with object-oriented syntax, everything in Haxe is an expression. This extends to `switch-case`, meaning that it evaluates to a value. This value can be assigned to a variable, passed to a function or simply returned by a function:
 
 ```haxe
-private function getColor(color:Color):Int
+function getColor(color:Color):Int
 {
   return switch (color)
   {

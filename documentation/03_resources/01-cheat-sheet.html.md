@@ -98,7 +98,7 @@ myButton.loadGraphic("assets/custom.png");
 ```
 
 ```haxe
-private function myCallback():Void
+function myCallback():Void
 {
 }
 ```
@@ -345,7 +345,7 @@ new FlxTimer().start(10.0, myCallback, 3);
 ```
 
 ```haxe
-private function myCallback(Timer:FlxTimer):Void
+function myCallback(Timer:FlxTimer):Void
 {
 }
 ```
@@ -384,7 +384,7 @@ FlxTween.tween(sprite, { x: 100, y: 200 }, 3.0, { ease: FlxEase.quadInOut, compl
 ```
 
 ```haxe
-private function myCallback(Tween:FlxTween):Void
+function myCallback(Tween:FlxTween):Void
 {
 }
 ```
@@ -402,7 +402,7 @@ private function myCallback(Tween:FlxTween):Void
 ```
 
 ```haxe
-private function callbackFunction(Tween:FlxTween):Void
+function callbackFunction(Tween:FlxTween):Void
 {
 }
 ```
@@ -482,7 +482,7 @@ FlxG.overlap(ObjectOrGroup1, ObjectOrGroup2, myCallback);
 ```
 
 ```haxe
-private function myCallback(Object1:FlxObject, Object2:FlxObject):Void
+function myCallback(Object1:FlxObject, Object2:FlxObject):Void
 {
 }
 ```

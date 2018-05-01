@@ -30,7 +30,7 @@ First up, let's create a simple menu. Eventually, we'll want a fancy `MenuState`
 	Right after the class declaration, we're going define a new variable. This is where you would define all the variables that you intend to use throughout a given class. We need to define a new `FlxButton` variable to use as our 'play' button. So, type:
 
 	```haxe
-	private var _btnPlay:FlxButton;
+	var _btnPlay:FlxButton;
 	```
 
 	Note: if you're using FlashDevelop, it should automatically create an import for `FlxButton` (`import flixel.ui.FlxButton;`) at the top of the class. This should be mostly automatic whenever you use class, but if it doesn't add it for some reason, you can enter it manually, or, highlight `FlxButton` in the editor and hit `Ctrl+Shift+1` to add it.
@@ -49,7 +49,7 @@ First up, let's create a simple menu. Eventually, we'll want a fancy `MenuState`
 3. Now we need to define our `clickPlay()` function. Somewhere in the class, outside of any existing functions, type:
 
 	```haxe
-	private function clickPlay():Void
+	function clickPlay():Void
 	{
 		FlxG.switchState(new PlayState());
 	}
@@ -146,7 +146,7 @@ We're going to be extending the `FlxSprite` class to create our `Player` class.
 	We need to define our `Player` variable, so underneath the class line, add:
 
 	```haxe
-	private var _player:Player;
+	var _player:Player;
 	```
 
 	And in `create()`, before `super.create();` add:
@@ -186,7 +186,7 @@ First, define our player's movement speed and deceleration amounts:
 2. While there are plenty of ways to handle player movement, it can be simpler to add it to the `Player` class. We'll want to add a new function that will watch for player input and respond to it, so, make a new function:
 
 	```haxe
-	private function movement():Void
+	function movement():Void
 	{
 	}
 	```

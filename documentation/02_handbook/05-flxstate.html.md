@@ -63,8 +63,8 @@ import flixel.graphics.FlxGraphic;
 
 class FlxExampleState extends FlxState
 {
-	private var wizard:FlxSprite;
-	private var level:FlxTilemap;
+	var wizard:FlxSprite;
+	var level:FlxTilemap;
 
 	override public function create():Void
 	{

@@ -46,7 +46,7 @@ Next, let's add a background effect to our `CombatHUD` to help bring our the com
 1. Open up the `CombatHUD` class and add this variable:
 
 	```haxe
-	private var _sprScreen:FlxSprite;
+	var _sprScreen:FlxSprite;
 	```
 
 2. In the constructor, we'll initialize these two variables (add this before we create our `_sprBack`):

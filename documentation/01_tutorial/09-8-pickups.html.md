@@ -35,7 +35,7 @@ Now that we have our little guy running around our map, lets give him something 
 8. First, let's make a `FlxGroup` to hold all the coins in. At the top of our class, where we defined all our variables so far, add:
 	
 	```haxe
-	private var _grpCoins:FlxTypedGroup<Coin>;
+	var _grpCoins:FlxTypedGroup<Coin>;
 	```
 	
 	`FlxGroup`s are like arrays of Flixel Objects which can be used in a lot of different ways. In this case, since our group will only be containing coins, we will make it a `FlxTypedGroup<Coin>`.
@@ -69,7 +69,7 @@ Now that we have our little guy running around our map, lets give him something 
 11. Let's add the `playerTouchCoin()` callback now:
 
 	```haxe
-	private function playerTouchCoin(P:Player, C:Coin):Void
+	function playerTouchCoin(P:Player, C:Coin):Void
 	{
 		if (P.alive && P.exists && C.alive && C.exists)
 		{
@@ -91,7 +91,7 @@ Now that we have our little guy running around our map, lets give him something 
 		FlxTween.tween(this, { alpha: 0, y: y - 16 }, .33, { ease: FlxEase.circOut, onComplete: finishKill });
 	}
 	
-	private function finishKill(_):Void
+	function finishKill(_):Void
 	{
 		exists = false;
 	}

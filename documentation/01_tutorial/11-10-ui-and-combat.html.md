@@ -19,11 +19,11 @@ Now we want to show the player what's going on. So we need to have some kind of 
 
 	class HUD extends FlxTypedGroup<FlxSprite>
 	{
-		private var _sprBack:FlxSprite;
-		private var _txtHealth:FlxText;
-		private var _txtMoney:FlxText;
-		private var _sprHealth:FlxSprite;
-		private var _sprMoney:FlxSprite;
+		var _sprBack:FlxSprite;
+		var _txtHealth:FlxText;
+		var _txtMoney:FlxText;
+		var _sprHealth:FlxSprite;
+		var _sprMoney:FlxSprite;
 
 		public function new()
 		{
@@ -65,9 +65,9 @@ Now we want to show the player what's going on. So we need to have some kind of 
 2. Now let's get it to work and have it update whenever we pick up a coin. In your `PlayState`, add this to the top of the class:
 
 	```haxe
-	private var _hud:HUD;
-	private var _money:Int = 0;
-	private var _health:Int = 3;
+	var _hud:HUD;
+	var _money:Int = 0;
+	var _health:Int = 3;
 	```
 
 3. In `create()`, before `super.create()`, add:
@@ -136,8 +136,8 @@ This all seems simple enough, but it's actually going to require several compone
 3. Next, we need to get our `CombatHUD` into our `PlayState`. Add this to the top of the `PlayState` class:
 
 	```haxe
-	private var _inCombat:Bool = false;
-	private var _combatHud:CombatHUD;
+	var _inCombat:Bool = false;
+	var _combatHud:CombatHUD;
 	```
 
 4. Move down to `create()`, and, after we add the HUD, and before we call `super.create()`, add:
@@ -194,7 +194,7 @@ This all seems simple enough, but it's actually going to require several compone
 7. Next, let's add the functions to handle the player touching an enemy:
 
 	```haxe
-	private function playerTouchEnemy(P:Player, E:Enemy):Void
+	function playerTouchEnemy(P:Player, E:Enemy):Void
 	{
 		if (P.alive && P.exists && E.alive && E.exists && !E.isFlickering())
 		{
@@ -202,7 +202,7 @@ This all seems simple enough, but it's actually going to require several compone
 		}
 	}
 
-	private function startCombat(E:Enemy):Void
+	function startCombat(E:Enemy):Void
 	{
 		_inCombat = true;
 		_player.active = false;

@@ -25,7 +25,7 @@ If you start a tween using the code above, it will run until the desired values 
 For example, this code stops the translation of the sprite if the player presses the spacebar of his keyboard:
 
 ```haxe
-private var tween:FlxTween;
+var tween:FlxTween;
 
 public function new()
 {
@@ -90,7 +90,7 @@ public function new()
 	FlxTween.tween(sprite, { x: 600, y: 800 }, 2, { type: FlxTween.PINGPONG, ease: FlxEase.quadInOut, onComplete: changeColor, startDelay: 1, loopDelay: 2 });
 }
 
-private function changeColor(tween:FlxTween):Void
+function changeColor(tween:FlxTween):Void
 {
 	// change the color of the sprite here
 }

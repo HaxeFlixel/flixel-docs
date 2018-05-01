@@ -7,8 +7,8 @@ Our game is really starting to come together! Now we need it to feel more like a
 1. Let's start with `PlayState`. We need to add some flags to see if we're ending the game, and if the player has 'won' or not. So, add:
 	
 	```haxe
-	private var _ending:Bool;
-	private var _won:Bool;
+	var _ending:Bool;
+	var _won:Bool;
 	```
 
 	To the top of the class.
@@ -66,7 +66,7 @@ Our game is really starting to come together! Now we need it to feel more like a
 4. When the camera is done fading to black, we call this function, which will switch the state to our `GameOverState` (which you'll make in a second), passing it if the player won or not, and how much money they have.
 
 	```haxe
-	private function doneFadeOut():Void
+	function doneFadeOut():Void
 	{
 		FlxG.switchState(new GameOverState(_won, _money));
 	}
@@ -87,8 +87,8 @@ If you test your game, you should be able to trigger the `GameOverState` by eith
 1. Let's add a title and an options-button to the `MenuState`:
 
 	```haxe
-	private var _txtTitle:FlxText;
-	private var _btnOptions:FlxButton;
+	var _txtTitle:FlxText;
+	var _btnOptions:FlxButton;
 	```
 
 2. Then, in `create()`, we'll add them to the state (and move the play-button as well):
@@ -113,7 +113,7 @@ If you test your game, you should be able to trigger the `GameOverState` by eith
 3. Add the function that gets called when the options-button is clicked:
 
 	```haxe
-	private function clickOptions():Void
+	function clickOptions():Void
 	{
 		FlxG.switchState(new OptionsState());
 	}

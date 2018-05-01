@@ -60,7 +60,7 @@ Now let's change our code to use these sounds:
 4. Next, let's give our player some footsteps. We don't want to create and destroy a new sound object every time we want to play the same sound, so we will create a `FlxSound` object to be used over and over. At the top of the `Player` class, add:
 	
 	```haxe
-	private var _sndStep:FlxSound;
+	var _sndStep:FlxSound;
 	```
 
 5. Then, we need to load the footstep sound somewhere in the constructor:
@@ -80,7 +80,7 @@ Now let's change our code to use these sounds:
 7. Now, let's give enemies their own footsteps, too. The difference is, instead of just always playing the step sound at full volume, we're going to change the volume based on the proximity of the enemy to the player. This will be easier than it sounds. First, add our sound variable to the top of Enemy.hx:
 
 	```haxe
-	private var _sndStep:FlxSound;
+	var _sndStep:FlxSound;
 	```
 
 8. And then, similarly to how we setup the `Player` class, add this to our constructor:
@@ -109,7 +109,7 @@ Now let's change our code to use these sounds:
 	So, just like our other sounds, initialize the variable:
 
 	```haxe
-	private var _sndCoin:FlxSound;
+	var _sndCoin:FlxSound;
 	```
 
 	Load the sound in `create()`:
@@ -133,13 +133,13 @@ Now let's change our code to use these sounds:
 	To initialize them:
 
 	```haxe
-	private var _sndFled:FlxSound;
-	private var _sndHurt:FlxSound;
-	private var _sndLose:FlxSound;
-	private var _sndMiss:FlxSound;
-	private var _sndSelect:FlxSound;
-	private var _sndWin:FlxSound;
-	private var _sndCombat:FlxSound;
+	var _sndFled:FlxSound;
+	var _sndHurt:FlxSound;
+	var _sndLose:FlxSound;
+	var _sndMiss:FlxSound;
+	var _sndSelect:FlxSound;
+	var _sndWin:FlxSound;
+	var _sndCombat:FlxSound;
 	```
 
 	To load them:

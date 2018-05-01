@@ -14,7 +14,7 @@ Let's add a button to the `OptionsState`:
 
 	```haxe
 	#if desktop
-	private var _btnFullScreen:FlxButton;
+	var _btnFullScreen:FlxButton;
 	#end
 	```
 
@@ -32,7 +32,7 @@ Let's add a button to the `OptionsState`:
 
 	```haxe
 	#if desktop
-	private function clickFullscreen():Void
+	function clickFullscreen():Void
 	{
 		FlxG.fullscreen = !FlxG.fullscreen;
 		_btnFullScreen.text = FlxG.fullscreen ? "FULLSCREEN" : "WINDOWED";
@@ -71,7 +71,7 @@ We do that by adding a new button to the `MenuState`:
 
 	```haxe
 	#if desktop
-	private var _btnExit:FlxButton;
+	var _btnExit:FlxButton;
 	#end
 	```
 
@@ -89,7 +89,7 @@ We do that by adding a new button to the `MenuState`:
 
 	```haxe
 	#if desktop
-	private function clickExit():Void
+	function clickExit():Void
 	{
 		System.exit(0);
 	}

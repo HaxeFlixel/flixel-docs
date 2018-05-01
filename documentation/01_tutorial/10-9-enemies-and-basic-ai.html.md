@@ -91,7 +91,7 @@ What would a dungeon game be without enemies? Let's add some!
 	At the top of our class, add:
 
 	```haxe
-	private var _grpEnemies:FlxTypedGroup<Enemy>;
+	var _grpEnemies:FlxTypedGroup<Enemy>;
 	```
 
 	In the create function,  right after we add our coin group:
@@ -141,9 +141,9 @@ In order to let our enemies 'think', we're going to utilize a very simple [Finit
 	We need to define these variables at the top of the class:
 
 	```haxe
-	private var _brain:FSM;
-	private var _idleTmr:Float;
-	private var _moveDir:Float;
+	var _brain:FSM;
+	var _idleTmr:Float;
+	var _moveDir:Float;
 	public var seesPlayer:Bool = false;
 	public var playerPos(default, null):FlxPoint;
 	```
@@ -218,7 +218,7 @@ In order to let our enemies 'think', we're going to utilize a very simple [Finit
 6. Next, add the `checkEnemyVision()` function:
 
 	```haxe
-	private function checkEnemyVision(e:Enemy):Void
+	function checkEnemyVision(e:Enemy):Void
 	{
 		if (_mWalls.ray(e.getMidpoint(), _player.getMidpoint()))
 		{

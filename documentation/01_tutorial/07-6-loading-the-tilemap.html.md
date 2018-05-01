@@ -30,8 +30,8 @@ One of the great things about using Ogmo with HaxeFlixel is that there is alread
 4. Go back to your `PlayState`, and, underneath where the `_player` variable is defined, add:
 	
 	```haxe
-	private var _map:FlxOgmoLoader;
-	private var _mWalls:FlxTilemap;
+	var _map:FlxOgmoLoader;
+	var _mWalls:FlxTilemap;
 	```
 
 	We're basically just creating an object to hold our Ogmo map, and then another one to hold the `FlxTilemap` that we will generate from the Ogmo map.
@@ -91,7 +91,7 @@ One of the great things about using Ogmo with HaxeFlixel is that there is alread
 7. Let's make the `placeEntities()` function now. When we call `loadEntities()` on our map, it will pass the name of the entity, as well as its XML data to whatever function we want. In our function, we need to take this information and do something with it. It will look like this now:
 	
 	```haxe
-	private function placeEntities(entityName:String, entityData:Xml):Void
+	function placeEntities(entityName:String, entityData:Xml):Void
 	{
 		var x:Int = Std.parseInt(entityData.get("x"));
 		var y:Int = Std.parseInt(entityData.get("y"));
