@@ -131,4 +131,4 @@ To start debugging, follow these steps:
 
   ![](../images/00_getting_started/vscode/launch-configs-html5.png)
 
-![](../images/00_getting_started/vscode/html5-debugging.png)
+<img src="../images/00_getting_started/vscode/html5-debugging.png" style="width:100%;" />
