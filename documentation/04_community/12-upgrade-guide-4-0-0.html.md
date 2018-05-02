@@ -4,9 +4,9 @@ title: "Upgrade Guide 4.0.0"
 
 ## 4.4.0
 
-Breaking changes in 4.4.0 are limited to usage with OpenFL 8. OpenFL 3.6.1 (Legacy _or_ Next) is still fully supported. The breaking changes when upgrading to OpenFL 8.0.0 and Lime 6.3.0 are as follows:
+Breaking changes in 4.4.0 are limited to usage with OpenFL 8. OpenFL 3.6.1 (Legacy or Next) is still fully supported. The breaking changes when upgrading to OpenFL 8.0.0 and Lime 6.3.0 are as follows:
 
-- There is no support for blend modes (`FlxSprite.blend`). This is because `drawQuads()`, the rendering API replacing `drawTiles()` with OpenFL 8, doesn't support them. In some cases, blend modes may be emulated using shaders. An example of this can be seen in our [BlendModeShaders](https://github.com/HaxeFlixel/flixel-demos/tree/dev/Effects/BlendModeShaders) demo.
+- There is no support for blend modes (`FlxSprite.blend`). This is because `drawQuads()` (the rendering API replacing `drawTiles()` in OpenFL 8), doesn't support them. In some cases, blend modes may be emulated using shaders. An example of this can be seen in our [BlendModeShaders](https://github.com/HaxeFlixel/flixel-demos/tree/dev/Effects/BlendModeShaders) demo.
 - Like already the case in OpenFL 3.6.1 + Next, the `flixel.effects.postprocess` API is not supported in OpenFL 8. As a replacement, a shader filter can be applied to the `FlxGame` instance or a `FlxCamera` as shown in the [Filters](https://github.com/HaxeFlixel/flixel-demos/tree/dev/Effects/Filters) demo.
 - OpenFL 3.6.1 with `-Dnext` had support for per-sprite, per-camera or game-wide GLSL shaders. All of these are still fully supported, but the syntax has changed a bit.
 
@@ -62,7 +62,7 @@ To summarize the differences, shaders should...
 - use `@:glFragmentSource()` metadata for the shader source rather than a `@fragment var`
 - have `#pragma header` before `main()`
 
-Attributes have changes as follows:
+Attributes have changed as follows:
 
 | With OpenFL 3.6.1 + Next                          | With OpenFL 8                                         |
 | --------------------------------------------------|-------------------------------------------------------|
@@ -70,13 +70,14 @@ Attributes have changes as follows:
 | `${Shader.vTexCoord}`                             | `openfl_TextureCoordv`                                |
 | `${Shader.uTextureSize}`                          | `openfl_TextureSize`                                  |
 
-You may also have noticed that in the invert shader example, `texture2D()` has been replaced with `flixel_texture2D(`. The former still works, but when using `flixel_texture2D()` in per-sprite shaders, the `alpha` and colortransforms of a `FlxSprite` are already applied on the returned color, which was previously not supported. The effectof this can be seen when activating shaders as well as toggling "Simple" to "Complex" in FlxBunnyMark:
+You may also have noticed that in the invert shader example, `texture2D()` has been replaced with `flixel_texture2D()`. The former still works, but when using `flixel_texture2D()` in per-sprite shaders, the `alpha` and color transforms of a `FlxSprite` are already applied on the returned color, which was previously not supported. The effect of this can be seen when activating shaders as well as toggling "Simple" to "Complex" in FlxBunnyMark:
 
 | With OpenFL 3.6.1 + Next                          | With OpenFL 8                                         |
 | --------------------------------------------------|-------------------------------------------------------|
 | ![](../images/04_community/upgrade-guide/openfl3-shaders.png) | ![](../images/04_community/upgrade-guide/openfl8-shaders.png) |
 
-Further examples can be found in the demos with shaders, which are all compatible with both OpenFL 3.6.1 + Next andOpenFL 8:
+Further shader examples can be found in these demos, which are all compatible with both OpenFL 3.6.1 + Next and OpenFL 8:
+
   - [Filters](https://github.com/HaxeFlixel/flixel-demos/tree/dev/Effects/Filters)
   - [FlxBunnyMark](https://github.com/HaxeFlixel/flixel-demos/tree/dev/Performance/FlxBunnyMark)
   - [BlendModeShaders](https://github.com/HaxeFlixel/flixel-demos/tree/dev/Effects/BlendModeShaders)
