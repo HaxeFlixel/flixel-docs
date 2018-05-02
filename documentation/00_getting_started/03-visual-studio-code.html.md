@@ -117,7 +117,7 @@ Here's what it should look like when you hit a breakpoint:
 
 ### HTML5 Debugging
 
-The default `launch.json` has a launch config for debugging the HTML5 target in Chrome as well. This requires the [Debugger for Chrome](https://marketplace.visualstudio.com/items?itemName=msjsdiag.debugger-for-chrome) extension to be installed. Similar extension exist for other browsers (e.g. [Firefox](https://marketplace.visualstudio.com/items?itemName=hbenl.vscode-firefox-debug)), but the launch configuration needed for them should be similar.
+The default `launch.json` has a launch config for debugging the HTML5 target in Chrome as well. This requires the [Debugger for Chrome](https://marketplace.visualstudio.com/items?itemName=msjsdiag.debugger-for-chrome) extension to be installed. Similar extensions exist for other browsers (e.g. [Firefox](https://marketplace.visualstudio.com/items?itemName=hbenl.vscode-firefox-debug)), but the launch configuration needed for them should be similar.
 
 To start debugging, follow these steps:
 
