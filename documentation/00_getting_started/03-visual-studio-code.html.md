@@ -100,7 +100,7 @@ Alternatively, you can switch to the _Problems_ tab which has a nicer presentati
 
 ### Flash Debugging
 
-The `.vscode` template from flixel-tools already includes the `launch.json` needed for Flash debugging. To make use of it, you also need to install the [Flash Debugger extension](https://marketplace.visualstudio.com/items?itemName=vshaxe.haxe-debug). Make sure that:
+The `.vscode` template from flixel-tools already includes the `launch.json` needed for Flash debugging. To make use of it, you also need to install the [Flash Debugger](https://marketplace.visualstudio.com/items?itemName=vshaxe.haxe-debug) extension. Make sure that:
 
 1. Java is installed and available.
 2. The "Flash Player projector content debugger" is associated with `.swf` files.
@@ -114,3 +114,21 @@ After this, you just have to select one of the launch configs to start debugging
 Here's what it should look like when you hit a breakpoint:
 
 <img src="../images/00_getting_started/vscode/flash-debugging.png" style="width:100%;" />
+
+### HTML5 Debugging
+
+The default `launch.json` has a launch config for debugging the HTML5 target in Chrome as well. This requires the [Debugger for Chrome](https://marketplace.visualstudio.com/items?itemName=msjsdiag.debugger-for-chrome) extension to be installed. Similar extension exist for other browsers (e.g. [Firefox](https://marketplace.visualstudio.com/items?itemName=hbenl.vscode-firefox-debug)), but the launch configuration needed for them should be similar.
+
+To start debugging, follow these steps:
+
+- Select `HTML5` and `Debug` in the status bar:
+
+  ![](../images/00_getting_started/vscode/html5-debug.png)
+
+- Run the `lime test` task (see "Building" section earlier on this page).
+
+- Go to the Debug menu, select the HTML5 configuration and start it:
+
+  ![](../images/00_getting_started/vscode/launch-configs-html5.png)
+
+![](../images/00_getting_started/vscode/html5-debugging.png)
