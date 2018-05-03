@@ -10,13 +10,8 @@ This tutorial is geared towards building for Flash, Windows, and Android. We wil
 We are going to be building a small **dungeon crawler**. You can see the finished product here:
 
 <br/>
-<object width="640" height="480">
-    <param name="movie" value="https://haxeflixel.com/demos/swf/TurnBasedRPG.swf">
-    <embed src="https://haxeflixel.com/demos/swf/TurnBasedRPG.swf" width="640" height="480">
-    </embed>
-</object>
+<iframe class="html5-demo" src="/demos/html5/TurnBasedRPG" width="640" height="480"></iframe>
 <br/>
-
 
 If you have any questions or get stuck during this tutorial, you can get help [here](/documentation/community/).
 
