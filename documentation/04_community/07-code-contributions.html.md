@@ -36,4 +36,4 @@ Everything about the technology stack of HaxeFlixel is open-source so you can co
 - This [documentation](https://github.com/HaxeFlixel/flixel-docs)
 - The website [haxeflixel.com](https://github.com/HaxeFlixel/haxeflixel.com)
 
-If you are wanting to contribute code, please review the [style guide](https://haxeflixel.com/documentation/code-style).
+If you are wanting to contribute code, please review the [style guide](/documentation/code-style).
