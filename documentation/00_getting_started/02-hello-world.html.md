@@ -51,20 +51,14 @@ This will create a new `FlxText` instance with font size `64`, center it on the 
 
 ### Test the Project
 
-Return to your command line window. Now we can compile the project.
-
-Without running the `lime setup` commands you can compile to Flash, Neko and HTML5 out of the box.
-
-Test your project with the following commands:
+Return to your command line window - now we can compile the project. Without running the `lime setup` commands you can compile to HTML5, Flash and Neko out of the box with these commands:
 
 ``` bash
+lime test html5
 lime test flash
 lime test neko
-lime test html5
 ```
 
-Note: While compiling, you may see some warnings such as "Use programPath instead" (or "Could not find generated font file" for HTML5). These can safely be ignored.
-
-If you struggled through any part of this tutorial, ask a question on our [forum](http://forum.haxeflixel.com/). :)
+If you struggled through any part of this tutorial, [get in touch with the community](/documentation/community/) for support.
 
 ![](../images/00_getting_started/hello-world.png)
