@@ -12,7 +12,7 @@ All new development is done on the dev branches of [HaxeFlixel's GitHub reposito
 
   If you want to use development builds of OpenFL and Lime, please refer to these instructions:
     
-    * [OpenFL development builds](https://github.com/openfl/openfl#development-builds)
+    * [OpenFL development builds](https://github.com/openfl/openfl/blob/develop/README-haxelib.md#development-builds)
     * [Building Lime from source](https://github.com/openfl/lime#building-from-source)
 
 * Install [Git](https://git-scm.com/)
