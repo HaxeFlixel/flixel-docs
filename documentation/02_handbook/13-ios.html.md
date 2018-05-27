@@ -67,7 +67,7 @@ Custom PNG icons and launch images: (Check [iOS Icon and Image Sizes Guidelines]
 
 ### Compile Commands
 
-Visual Studio Code, FlashDevelop and IntelliJ IDEA support CPP desktop compilation through their GUI.
+Visual Studio Code, FlashDevelop and IntelliJ IDEA support iOS compilation through their GUI.
 
 #### Command line
 

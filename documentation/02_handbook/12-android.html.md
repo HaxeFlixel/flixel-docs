@@ -56,7 +56,7 @@ Custom PNG icons: (Check [Iconography / Android Developers](http://developer.and
 
 ### Compile Commands
 
-Visual Studio Code, FlashDevelop and IntelliJ IDEA support CPP desktop compilation through their GUI.
+Visual Studio Code, FlashDevelop and IntelliJ IDEA support Android compilation through their GUI.
 
 #### Command line
 
