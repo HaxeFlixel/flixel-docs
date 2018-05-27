@@ -11,11 +11,10 @@ Getting started requires three steps:
 2. [Install HaxeFlixel](/documentation/install-haxeflixel)
 3. [HaxeFlixel Hello World](/documentation/hello-world)
 
-After that, you have to choose an editor / IDE to work in. Several popular options have their own pages here:
+After that, you have to choose an editor / IDE to work in. Two popular options have their own pages here:
 
 - [Visual Studio Code](/documentation/visual-studio-code) (recommended)
 - [HaxeDevelop / FlashDevelop](/documentation/FlashDevelop)
-- [Sublime Text](/documentation/sublime-text)
 
 A more comprehensive list of options can be found on [haxe.org](https://haxe.org/documentation/introduction/editors-and-ides.html).
 

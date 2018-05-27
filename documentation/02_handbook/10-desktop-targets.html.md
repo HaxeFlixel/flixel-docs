@@ -38,7 +38,7 @@ OpenFL also exposes the following specific settings for the desktop target:
 
 ### Compile Commands
 
-Sublime Text, Flash Develop and IntelliJ IDEA support CPP desktop compilation through their GUI.
+Visual Studio Code, FlashDevelop and IntelliJ IDEA support CPP desktop compilation through their GUI.
 
 #### Command Line
 
