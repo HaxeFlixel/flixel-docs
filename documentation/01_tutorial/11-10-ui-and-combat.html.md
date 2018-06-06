@@ -222,13 +222,13 @@ This all seems simple enough, but it's actually going to require several compone
 	In the `Enemy` class, under `update()`, add:
 
 	```haxe
-	if (isFlickering())
+	if (this.isFlickering())
 		return;
 	```
 
 	At the very top, before doing anything else in that function.
 
-	Note that `isFlickering()` comes from `FlxSpriteUtil`. So, just like before, you will also need to add the "using" line at the top of the `Enemy` class file:
+	Note that `isFlickering()` comes from `FlxSpriteUtil`. So, just like before, you will also need to add the `using` line at the top of the `Enemy` class file:
 
 	```haxe
 	using flixel.util.FlxSpriteUtil;
