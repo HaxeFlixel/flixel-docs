@@ -21,15 +21,14 @@ A basic example may include logic like this:
 ```
 Conditionals relevant to your HaxeFlixel games may include:
 
-```
-mobile, desktop, native, web
-ios, android, windows, mac, linux, html5
-flash, cpp, neko, js
-```
+- `mobile`, `desktop`, `web`
+- `ios`, `android`, `windows`, `mac`, `linux`, `html5`
+- `flash`, `cpp`, `neko`, `js`
+
 Multiple targets can be used together:
 
 
-```
+```haxe
 #if (mac || linux || android)
 
 // code specific for these platforms
@@ -39,20 +38,20 @@ Multiple targets can be used together:
 
 To define your own it is as easy as adding to your ```Project.xml```:
 
-```
-<set name="magic" />
+```xml
+<haxedef name="magic" />
 ```
 
 Now this will work:
 
-```
+```haxe
 #if magic
-//Create a dragon
+// Create a dragon
 #end
 ```
 
 Since Haxe lets you use some logic with the conditionals you can enable something just for mobile, as in:
 
-```
-<set name="magic" if="mobile"/>
+```xml
+<haxedef name="magic" if="mobile"/>
 ```
