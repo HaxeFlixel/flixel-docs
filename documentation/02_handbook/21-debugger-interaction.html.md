@@ -37,3 +37,11 @@ The mover tool is also activated while the `SHIFT` key is kept pressed, so you c
 ![](../images/02_handbook/debugger/interaction-mover-shortcut.gif)
 
 When you stop pressing `SHIFT`, the element(s) will stop moving and your previously active tool will become effective again.
+
+### Transform
+
+The transform tool ![](../images/02_handbook/debugger/icons/transform.png) allows you to resize and rotate a selected game object. In order to use this functionality, select a single element using the pointer tool, then pick the transform tool and click-and-drag any of the markers around the object:
+
+![](../images/02_handbook/debugger/interaction-transform.gif)
+
+The circular marker at the top-left corner of the selected object can be used to rotate it, while the squared markers can be used to resize it.
