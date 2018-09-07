@@ -224,7 +224,7 @@ screen, such as a menu.
 `FlxActionManager` lets you:
 - ADD action sets
 - REMOVE action sets
-- ACTIVATE an action set for a specific device.
+- ACTIVATE an action set for a specific device
 - UPDATE all your action sets at once
 - ENFORCE the "only one action set active per device at a time" rule
 
