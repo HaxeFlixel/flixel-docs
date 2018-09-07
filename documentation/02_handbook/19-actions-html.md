@@ -78,9 +78,9 @@ if present, and update the `x` and `y` values (if an analog action).
 value of `triggered`.
 
 Either is sufficient to keep the action updated. You *must* update each 
-action at least once per global update tick to ensure accurate input, but don't 
-worry about calling `update()` or `check()` *too* often, an internal safety 
-check prevents the internal state from updating more than once per tick.
+action at least once per global update tick to ensure accurate input, but if you
+accidentally update an action more than once per tick, it's okay -- an internal 
+safety check ensures that nothing bad happens.
 
 If you don't want to manually update `FlxAction`s, use the `FlxActionManager`, 
 which will keep them updated for you.
