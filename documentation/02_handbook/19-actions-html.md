@@ -88,7 +88,7 @@ which will keep them updated for you.
 ## `FlxActionInput`
 
 A `FlxActionInput` represents a specific input event on a specific input device,
-like "when the A button on gamepad one is JUST_PRESSED", which you can use to 
+like "when the A button on gamepad #1 is JUST_PRESSED", which you can use to 
 trigger a `FlxAction`.
 
 These come in digital and analog forms for every device that Flixel supports. 
