@@ -228,7 +228,7 @@ screen, such as a menu.
 - UPDATE all your action sets at once
 - ENFORCE the "only one action set active per device at a time" rule
 
-To create and add action set, you would do something like this:
+To create and add an action set, do something like:
 
 ```haxe
 //where up, down, left, right, select are digital actions
@@ -237,11 +237,11 @@ var menuSetIndex = actionManager.addSet(set);
 ```
 
 Note that `addSet` returns the action set's index. All operations on action sets
-require the action set's index, not it's name. This is for performance reasons.
-If you forget to store the action set, or otherwise lose track of an action 
-set's index, you can query it at any time by passing the set's name to 
-`getSetIndex()`. Just be sure not to do this repeatedly in frequently called 
-loops -- store the index and use that from then on.
+require the action set's index (an `Int`), not its name (a `String`). This is 
+for performance reasons. If you forget to store the action set, or otherwise 
+lose track of an action set's index, you can query it at any time by passing the
+set's name to `getSetIndex()`. Just be sure not to do this repeatedly in 
+frequently called loops.
 
 ### Steam Input
 
