@@ -161,8 +161,9 @@ at once.
 ## `FlxActionManager`
 
 `FlxActionManager` lets you manage multiple actions without having to update
-them manually and/or use action sets that you selectively activate. Action sets can be turned on and off for specific input devices at specific times, which is great 
-for both local multiplayer games and games with complex input.
+them manually, and also lets you control action sets. Action sets are groups of
+actions that can be selectively activated for specific input devices at specific times, which is great for local multiplayer games, games with complex input, and
+games using the Steam Input API.
 
 `FlxActionManager` is not initialized in Flixel by default, you have to add it yourself in your initialization code:
 
