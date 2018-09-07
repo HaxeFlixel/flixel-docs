@@ -77,7 +77,6 @@ If you don't want to manually update `FlxAction`s, use the `FlxActionManager`,
 which will keep them updated for you.
 
 ## `FlxActionInput`
-=============
 
 A `FlxActionInput` represents a specific input event on a specific input device.
 These come in digital and analog forms for every device that Flixel supports. 
@@ -151,3 +150,160 @@ public function new(Trigger:FlxAnalogState, Axis:FlxAnalogAxis = EITHER)
 Since there's only one mouse we don't need to specify the device, and we don't
 need to specify any specific part of the mouse either. Whenever this action
 updates the `x` and `y` values will match the mouse position.
+
+## `FlxActionSet`
+
+A `FlxActionSet` is little more than a glorified array of `FlxAction`s. There's
+little reason to use them directly unless you are using the `FlxActionManager`,
+but they can still be a convenient way to call `update()` on all your actions
+at once.
+
+## `FlxActionManager`
+
+`FlxActionManager` lets you manage multiple actions without having to update
+them manually and/or use action sets that you can selectively activate for 
+specific input devices at specific times, which is great for local multiplayer 
+games, and games with complex input.
+
+`FlxActionManager` is not initialized in Flixel by default, you have to add it yourself in your initialization code:
+
+```haxe
+var actionManager = new FlxActionManager();
+FlxG.inputs.add(actionManager);
+```
+
+Once the action manager has been set up, you can simply add actions to it, and
+it will ensure that all your actions are kept up to date:
+
+```haxe
+//add actions one by one:
+actionManager.addAction(jump);
+actionManager.addAction(shoot);
+
+//add several actions at once:
+actionManager.addActions([action1,action2,action3,action4,action5]);
+```
+
+Then in your update loop you can simply check the `triggered` property, or just
+wait for callbacks to fired, if you set any.
+
+```haxe
+function updateLoop()
+{
+    if(jump.triggered) doJump();
+    if(shoot.triggered) doShoot();
+}
+```
+
+### Default action set
+
+What's actually happening when you call `addAction` or `addActions` is that it's
+asking for actions, *and* which action set you want to add them to:
+
+```haxe
+public function addAction(Action:FlxAction, ActionSet:Int = 0):Bool
+```
+
+If you don't provide an action set, it assumes you want to add them to the first
+one. And if you haven't defined a first action set, it will create one for you,
+name it "default", and immediately activate it for you.
+
+### Working with action sets
+
+Only ONE action set is considered active at a given time for any given device, 
+but multiple devices can be subscribed to the same action set.
+
+For instance, in an asymetrical co-op game where one person drives a tank
+and the other mans the turret, gamepad #1 could use action set "drive" and
+gamepad #2 could use action set "gunner". The same could go for the mouse,
+the keyboard, etc. And in a single-player game you might want to just change
+the action set of ALL input devices every time you switch to a different
+screen, such as a menu.
+
+`FlxActionManager` lets you:
+- ADD action sets
+- REMOVE action sets
+- ACTIVATE an action set for a specific device.
+- UPDATE all your action sets at once
+- ENFORCE the "only one action set active per device at a time" rule
+
+To create and add action set, you would do something like this:
+
+```haxe
+//where up, down, left, right, select are digital actions
+var set = new FlxActionSet("menu", [up, down, left, right, select]);
+var menuSetIndex = actionManager.addSet(set);
+```
+
+Note that `addSet` returns the action set's index. All operations on action sets
+require the action set's index, not it's name. This is for performance reasons.
+If you forget to store the action set, or otherwise lose track of an action 
+set's index, you can query it at any time by passing the set's name to 
+`getSetIndex()`. Just be sure not to do this repeatedly in frequently called 
+loops -- store the index and use that from then on.
+
+### Steam Input
+
+If you are using the steamwrap library, `FlxActionManager` gains the ability
+to automatically create action sets from a steamwrap object derived from the
+master vdf game actions file that Steam makes you set up. You must then ACTIVATE
+one of those action sets for any connected steam controllers, which will 
+automatically attach the proper steam action inputs to the actions in the set.
+You can also add as many regular `FlxActionInput`s as you like to any actions in
+the sets.
+
+NOTE:
+If you are using a Steam Controller, you MUST use `FlxActionManager` in order
+to properly process the Steam Controller API via `FlxAction`s. The only other
+alternative is to call the steamwrap functions directly.
+
+### JSON parsing
+
+`FlxActionManager` can generate a JSON string representation of your action sets via `exportToJSON()` You can also initialize your action sets by calling
+`initFromJSON`, feeding in the parsed object representation of the same format.
+
+The format is:
+
+```
+typedef ActionSetJSONArray = 
+{
+    @:optional var actionSets:Array<ActionSetJSON>;
+}
+
+typedef ActionSetJSON =
+{
+    @:optional var name:String;
+    @:optional var analogActions:Array<String>;
+    @:optional var digitalActions:Array<String>;
+}
+```
+
+Which would look something like this in practice:
+```json
+{
+    "actionSets" : [
+        {
+            "name" : "SomeSet",
+            "analogActions" : [
+                "some_analog_action_1",
+                "some_analog_action_2"
+            ],
+            "digitalActions" : [
+                "some_digital_action_1",
+                "some_digital_action_2"
+            ]
+        },
+        {
+            "name" : "AnotherSet",
+            "analogActions" : [
+                "another_analog_action_1",
+                "another_analog_action_2"
+            ],
+            "digitalActions" : [
+                "another_digital_action_1",
+                "another_digital_action_2"
+            ]
+        }
+    ]
+}
+```
