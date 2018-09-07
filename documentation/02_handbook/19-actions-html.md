@@ -221,9 +221,13 @@ one (index 0). And if you haven't defined any action sets, it will create one
 for you at index 0, name it "default", and immediately activate it for all
 devices.
 
+NOTE:
+By default, when you change `FlxState`s, the default action set, including all referenced actions and inputs, will be cleared out and destroyed. You can change
+this behavior by modifying the `FlxActionManager.resetOnStateSwitch` policy. 
+
 If you're not juggling multiple action sets, you will probably never need to 
-worry about this, but we feel it's important to explain what's going on under
-the hood in case you encounter unexpected behavior.
+worry about any of this -- just add new actions at the start of every state.
+We like to explain what's going on under the hood just in case you encounter unexpected behavior.
 
 ### Working with action sets
 
