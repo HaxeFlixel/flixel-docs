@@ -253,6 +253,11 @@ automatically attach the proper steam action inputs to the actions in the set.
 You can also add as many regular `FlxActionInput`s as you like to any actions in
 the sets.
 
+```haxe
+var config = steamwrap.data.ControllerConfig.fromVDF(myVDF);
+actionManager.initSteam(config,digitalCallback,analogCallback);
+```
+
 NOTE:
 If you are using the Steam Input API and/or a Steam Controller, you MUST use `FlxActionManager` in order to properly process Steam's API via `FlxAction`s.
 The only other alternative is to call the steamwrap functions directly.
