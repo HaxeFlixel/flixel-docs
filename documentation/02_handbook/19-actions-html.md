@@ -245,7 +245,7 @@ frequently called loops.
 
 ### Steam Input
 
-If you are using the steamwrap library, `FlxActionManager` gains the ability
+If you are using the [steamwrap](https://www.github.com/larsiusprime/steamwrap) library, `FlxActionManager` gains the ability
 to automatically create action sets from a steamwrap object derived from the
 master vdf game actions file that Steam makes you set up. You must then ACTIVATE
 one of those action sets for any connected steam controllers, which will 
