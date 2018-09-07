@@ -15,7 +15,7 @@ directly:
 - Remove tight coupling between specific input bindings and actions
 - Makes it easy to refactor your input code
 - Makes it easy to support player-defined input bindings
-- Easily add support for multiple input devices
+- Makes it easy to handle multiple input devices simultaneously
 - Allows use of the Steam Input API
 - Makes it easier to implement:
   - AI-controlled players/bots
