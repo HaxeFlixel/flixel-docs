@@ -5,12 +5,19 @@ apiPath: input/actions/index.html
 
 Players & designers care about *actions* (Mario *jumps*, Samus *shoots*, Captain 
 Falcon *turns*, *brakes*, and *accelerates*), whereas computers care about 
-*inputs* (The W key is `PRESSED`, the Left Mouse button was `JUST_RELEASED`, 
-Gamepad #2's analog stick is `MOVED` with values `x=0.4, y=-0.5`).
+*inputs* (The W key is `PRESSED`, the left mouse button was `JUST_RELEASED`, 
+gamepad #2's analog stick is `MOVED` with values `x=0.4, y=-0.5`).
 
-`FlxAction`s let you organize your game around actions, removing tight coupling 
-with specific input bindings and providing various other benefits as well.
-`FlxAction`s are also required for those who wish to use the Steam Input API.
+The `FlxAction` API provides several benefits:
+
+- Declutter logic by focusing on actions, not inputs
+- Remove tight coupling between specific input bindings and actions
+- Make it easy to rebind controls on the fly
+- Easily add support for multiple input devices
+- Allows use of the Steam Input API
+- Makes it easier to implement:
+  - AI-controlled players/bots
+  - Replay systems (record actions, not inputs, then play them back)
 
 ## `FlxAction`
 
