@@ -101,7 +101,7 @@ jump.addMouse(LEFT, JUST_PRESSED);
 jump.addGamepad(A, JUST_PRESSED, FIRST_ACTIVE);
 ```
 
-These helper functions are shorthand for creating and attaching inputs like so:
+These helper functions are a shorthand for this equivalent:
 ```haxe
 jump.add(new FlxActionInputDigitalKeyboard(SPACE, JUST_PRESSED));
 jump.add(new FlxActionInputDigitalMouse(LEFT, JUST_PRESSED));
