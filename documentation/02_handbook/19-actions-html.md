@@ -197,7 +197,7 @@ actionManager.addActions([action1,action2,action3,action4,action5]);
 ```
 
 Then in your update loop you can simply check the `triggered` property, or just
-wait for callbacks to fired, if you've set any.
+wait for callbacks to fire, if you've set any.
 
 ```haxe
 function updateLoop()
@@ -220,6 +220,10 @@ If you don't provide an action set, it assumes you want to add them to the first
 one (index 0). And if you haven't defined any action sets, it will create one
 for you at index 0, name it "default", and immediately activate it for all
 devices.
+
+If you're not juggling multiple action sets, you will probably never need to 
+worry about this, but we feel it's important to explain what's going on under
+the hood in case you encounter unexpected behavior.
 
 ### Working with action sets
 
