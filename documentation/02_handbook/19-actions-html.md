@@ -147,8 +147,8 @@ Another example is `FlxActionInputAnalogMousePosition`:
 public function new(Trigger:FlxAnalogState, Axis:FlxAnalogAxis = EITHER)
 ```
 
-Since there's only one mouse we don't need to specify the device, and we don't
-need to specify any specific part of the mouse either. Whenever this action
+Since there's only ever one mouse, we don't need to specify the device, and we don't
+need to specify a button since we just want the position. Whenever this action 
 updates the `x` and `y` values will match the mouse position.
 
 ## `FlxActionSet`
@@ -161,9 +161,8 @@ at once.
 ## `FlxActionManager`
 
 `FlxActionManager` lets you manage multiple actions without having to update
-them manually and/or use action sets that you can selectively activate for 
-specific input devices at specific times, which is great for local multiplayer 
-games, and games with complex input.
+them manually and/or use action sets that you selectively activate. Action sets can be turned on and off for specific input devices at specific times, which is great 
+for both local multiplayer games and games with complex input.
 
 `FlxActionManager` is not initialized in Flixel by default, you have to add it yourself in your initialization code:
 
