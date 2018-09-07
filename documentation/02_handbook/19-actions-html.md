@@ -285,7 +285,7 @@ The only other alternative is to call the steamwrap functions directly.
 
 The format is:
 
-```
+```haxe
 typedef ActionSetJSONArray = 
 {
     @:optional var actionSets:Array<ActionSetJSON>;
