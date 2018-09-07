@@ -119,8 +119,8 @@ when the action should fire. For instance, here is the constructor for `FlxActio
 public function new(Key:FlxKey, Trigger:FlxInputState)
 ```
 
-This requires you to specify a specific key, as well as an input state (PRESSED,
-JUST_PRESSED, RELEASED, JUST_RELEASED).
+This requires you to specify a specific key, as well as an input state (`PRESSED`,
+`JUST_PRESSED`, `RELEASED`, `JUST_RELEASED`).
 
 Now here's the constructor for `FlxActionInputDigitalGamepad`, note that in 
 addition to specifying the button and the trigger state, we also have to specify
