@@ -3,15 +3,13 @@ title: "Actions"
 apiPath: input/actions/index.html
 ```
 
-Humans (players & designers) care about *actions*.
-Mario JUMPS, Samus SHOOTS, Captain Falcon TURNS, BRAKES, and ACCELERATES.
+Players & designers care about *actions* (Mario JUMPS, Samus SHOOTS, Captain 
+Falcon TURNS, BRAKES, and ACCELERATES), whereas computers care about *inputs*
+(The W key is PRESSED, the Left Mouse button was JUST_RELEASED, Gamepad #2's 
+analog stick is MOVED with values (x=0.4, y=-0.5)).
 
-Computers care about *inputs*.
-The W key is PRESSED, the Left Mouse button was JUST_RELEASED, Gamepad #2's 
-analog stick is MOVED with values (x=0.4, y=-0.5).
-
-`FlxAction`s are a convenient way to organize your game around *actionsand 
-remove tight coupling with specific input bindings, and have various other
+`FlxAction`s are a convenient way to organize your game around actions and 
+remove tight coupling with specific input bindings, with various other
 benefits as well `FlxAction`s are also required for those who wish to use the 
 Steam Input API.
 
