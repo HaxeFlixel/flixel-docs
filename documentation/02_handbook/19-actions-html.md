@@ -185,7 +185,7 @@ actionManager.addActions([action1,action2,action3,action4,action5]);
 ```
 
 Then in your update loop you can simply check the `triggered` property, or just
-wait for callbacks to fired, if you set any.
+wait for callbacks to fired, if you've set any.
 
 ```haxe
 function updateLoop()
@@ -197,16 +197,17 @@ function updateLoop()
 
 ### Default action set
 
-What's actually happening when you call `addAction` or `addActions` is that it's
-asking for actions, *and* which action set you want to add them to:
+What's actually happening when you call `addAction` or `addActions` is that the
+manager is asking for both actions *and* the action set you want to add them to:
 
 ```haxe
 public function addAction(Action:FlxAction, ActionSet:Int = 0):Bool
 ```
 
 If you don't provide an action set, it assumes you want to add them to the first
-one. And if you haven't defined a first action set, it will create one for you,
-name it "default", and immediately activate it for you.
+one (index 0). And if you haven't defined any action sets, it will create one
+for you at index 0, name it "default", and immediately activate it for all
+devices.
 
 ### Working with action sets
 
