@@ -14,7 +14,7 @@ directly:
 - Declutter logic by focusing on actions, not inputs
 - Remove tight coupling between specific input bindings and actions
 - Makes it easy to refactor your input code
-- Makes it easy to add custom input bindings
+- Makes it easy to support player-defined input bindings
 - Easily add support for multiple input devices
 - Allows use of the Steam Input API
 - Makes it easier to implement:
