@@ -8,11 +8,13 @@ Falcon *turns*, *brakes*, and *accelerates*), whereas computers care about
 *inputs* (The W key is `PRESSED`, the left mouse button was `JUST_RELEASED`, 
 gamepad #2's analog stick is `MOVED` with values `x=0.4, y=-0.5`).
 
-The `FlxAction` API provides several benefits:
+The `FlxAction` API provides several benefits over handling every input case 
+directly:
 
 - Declutter logic by focusing on actions, not inputs
 - Remove tight coupling between specific input bindings and actions
-- Make it easy to rebind controls on the fly
+- Makes it easy to refactor your input code
+- Makes it easy to add custom input bindings
 - Easily add support for multiple input devices
 - Allows use of the Steam Input API
 - Makes it easier to implement:
