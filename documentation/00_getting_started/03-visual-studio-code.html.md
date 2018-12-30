@@ -65,6 +65,12 @@ Once you've installed the Lime extension and have a project with a `.vscode` fol
 
 ![](../images/00_getting_started/vscode/lime-dropdowns.png)
 
+Add package FlxG
+
+    ```
+    import flixel.FlxG;
+    ```
+
 Code completion features should work out of the box now:
 
 ![](../images/00_getting_started/vscode/completion.png)
