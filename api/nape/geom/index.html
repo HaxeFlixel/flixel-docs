@@ -1,15 +1,15 @@
 <!DOCTYPE html>
 <html lang="en"><!-- use theme color or fallback -->
 <!--use textcolor from settings, otherwise create a contrasting color to theme color-->
-<head><meta charset="utf-8"/><link href="../../bootstrap/css/bootstrap.min.css" rel="stylesheet"/><link href="../../bootstrap/css/bootstrap-responsive.min.css" rel="stylesheet"/><link href="../../bootstrap/css/bootstrap-select.min.css" rel="stylesheet"/><link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700,700italic,400italic" rel="stylesheet" type="text/css"/><link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:200,600,600italic,400" rel="stylesheet" type="text/css"/><link href="https://netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.css" rel="stylesheet" type="text/css"/><script src="../../jquery-1.9.1.min.js"></script><script src="../../bootstrap/js/bootstrap.min.js"></script><script src="../../bootstrap/js/bootstrap-select.min.js"></script><link href="../../styles.css" rel="stylesheet"/><link href="../../extra-styles.css" rel="stylesheet"/><link href="../../haxe-nav.css" rel="stylesheet"/><script type="text/javascript">var dox = {rootPath: "../../",platforms: ["types"]};</script><script type="text/javascript" src="../../nav.js"></script><script type="text/javascript" src="../../index.js"></script><link rel="icon" href="../../favicon.ico" type="image/x-icon"></link><title>nape.geom - HaxeFlixel API</title></head><body><nav class="nav"><div class="navbar navbar-inverse navbar-fixed-top"><div class="container"><div class="navbar-header"><button data-target=".navbar-collapse" data-toggle="collapse" class="navbar-toggle" type="button"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button><a href="http://www.haxeflixel.com/" class="navbar-brand"><img src="http://www.haxeflixel.com/images/haxeflixel-header.png" alt="HaxeFlixel"/></a></div><div class="navbar-collapse collapse"><ul class="nav navbar-nav"><li><a href="http://www.haxeflixel.com/demos">Demos</a></li><li><a href="http://www.haxeflixel.com/showcase">Showcase</a></li><li><a href="http://www.haxeflixel.com/blog">Blog</a></li><li><a href="http://www.haxeflixel.com/documentation">Docs</a></li><li class="active"><a href=".">API</a></li><li><a href="http://forum.haxeflixel.com/">Forum</a></li></ul></div></div></div></nav><div class="container main-content navbar-offset"><div class="row-fluid container-main"><div class="span3"><div class="well sidebar-nav"><form class="form-search" id="searchForm"><div class="input-prepend input-block-level"><span class="add-on"><i class="icon-search"></i></span><input id="search" type="text" placeholder="Filter" autocomplete="off"/></div></form></div><div class="well sidebar-nav"><div id="nav"></div></div></div><div class="span9"><h1>nape.geom </h1>  <table class="table table-condensed"><tbody><tr><th width="200"><i class="fa fa-folder-o"></i><a href="../index.html" title="nape">..</a></th><td></td></tr><tr class="class"><td width="200"><a href="../../nape/geom/AABB.html" title="nape.geom.AABB">AABB</a></td><td><p>Axis Aligned Bounding Box (AABB)
+<head><meta charset="utf-8"/><link href="../../bootstrap/css/bootstrap.min.css" rel="stylesheet"/><link href="../../bootstrap/css/bootstrap-responsive.min.css" rel="stylesheet"/><link href="../../bootstrap/css/bootstrap-select.min.css" rel="stylesheet"/><link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700,700italic,400italic" rel="stylesheet" type="text/css"/><link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:200,600,600italic,400" rel="stylesheet" type="text/css"/><link href="https://netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.css" rel="stylesheet" type="text/css"/><script src="../../jquery-1.9.1.min.js"></script><script src="../../bootstrap/js/bootstrap.min.js"></script><script src="../../bootstrap/js/bootstrap-select.min.js"></script><link href="../../styles.css" rel="stylesheet"/><link href="../../extra-styles.css" rel="stylesheet"/><link href="../../haxe-nav.css" rel="stylesheet"/><script>var dox = {rootPath: "../../",platforms: ["types"]};</script><script src="../../nav.js"></script><script src="../../index.js"></script><link rel="icon" href="../../favicon.ico" type="image/x-icon"/><title>nape.geom - HaxeFlixel API</title></head><body><nav class="nav"><div class="navbar navbar-inverse navbar-fixed-top"><div class="container"><div class="navbar-header"><button data-target=".navbar-collapse" data-toggle="collapse" class="navbar-toggle" type="button"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button><a href="http://www.haxeflixel.com/" class="navbar-brand"><img src="http://www.haxeflixel.com/images/haxeflixel-header.png" alt="HaxeFlixel"/></a></div><div class="navbar-collapse collapse"><ul class="nav navbar-nav"><li><a href="http://www.haxeflixel.com/demos">Demos</a></li><li><a href="http://www.haxeflixel.com/showcase">Showcase</a></li><li><a href="http://www.haxeflixel.com/blog">Blog</a></li><li><a href="http://www.haxeflixel.com/documentation">Docs</a></li><li class="active"><a href=".">API</a></li><li><a href="http://forum.haxeflixel.com/">Forum</a></li></ul></div></div></div></nav><div class="container main-content navbar-offset"><div class="row-fluid container-main"><div class="span3"><div class="well sidebar-nav"><form class="form-search" id="searchForm"><div class="input-prepend input-block-level"><span class="add-on"><i class="icon-search"></i></span><input id="search" type="text" placeholder="Filter" autocomplete="off"/></div></form></div><div class="well sidebar-nav"><div id="nav"></div></div></div><div class="span9"><h1>nape.geom </h1>  <table class="table table-condensed"><tbody><tr><th style="width:200px;"><i class="fa fa-folder-o"></i><a href="../../nape/index.html" title="nape">..</a></th><td></td></tr><tr class="class"><td style="width:200px;"><a href="../../nape/geom/AABB.html" title="nape.geom.AABB">AABB</a></td><td><p>Axis Aligned Bounding Box (AABB)
 <br/><br/>
 Note that in many cases of an AABB object being returned by a Nape function
 the AABB object will be marked internally as an 'immutable' AABB. This will
 always be documented and trying to mutate such an AABB will result in an
-error being thrown.</p></td></tr><tr class="class"><td width="200"><a href="../../nape/geom/ConvexResult.html" title="nape.geom.ConvexResult">ConvexResult</a></td><td><p>Class representing the results of a convex cast operation.
+error being thrown.</p></td></tr><tr class="class"><td style="width:200px;"><a href="../../nape/geom/ConvexResult.html" title="nape.geom.ConvexResult">ConvexResult</a></td><td><p>Class representing the results of a convex cast operation.
 <br/><br/>
 These objects are allocated from an object pool and can
-be released back to that pool by calling its dispose method.</p></td></tr><tr class="class"><td width="200"><a href="../../nape/geom/ConvexResultIterator.html" title="nape.geom.ConvexResultIterator">ConvexResultIterator</a></td><td><p>Haxe Iterator<T> compatible iterator over Nape list.</p></td></tr><tr class="class"><td width="200"><a href="../../nape/geom/ConvexResultList.html" title="nape.geom.ConvexResultList">ConvexResultList</a></td><td><p>Nape list of ConvexResult type objects
+be released back to that pool by calling its dispose method.</p></td></tr><tr class="class"><td style="width:200px;"><a href="../../nape/geom/ConvexResultIterator.html" title="nape.geom.ConvexResultIterator">ConvexResultIterator</a></td><td><p>Haxe Iterator<T> compatible iterator over Nape list.</p></td></tr><tr class="class"><td style="width:200px;"><a href="../../nape/geom/ConvexResultList.html" title="nape.geom.ConvexResultList">ConvexResultList</a></td><td><p>Nape list of ConvexResult type objects
 <br/><br/>
 Internally this list is at present implemented as a linked list with
 object pooled nodes and iterators with various fast paths made for
@@ -27,14 +27,14 @@ This method is inlined so that in haxe no closure will need to be created.
 In AS3, a closure would need to be created in general, so for performance
 reasons you 'may' choose to use iteration as follows:
 <pre>
-for (var i:int = 0; i &lt; list.length; i++) {</p></td></tr><tr class="class"><td width="200"><a href="../../nape/geom/Geom.html" title="nape.geom.Geom">Geom</a></td><td><p>Geom class provides interface to collision detection routines in nape.</p></td></tr><tr class="class"><td width="200"><a href="../../nape/geom/GeomPoly.html" title="nape.geom.GeomPoly">GeomPoly</a></td><td><p>Polygon class with various geometric methods
+for (var i:int = 0; i &lt; list.length; i++) {</p></td></tr><tr class="class"><td style="width:200px;"><a href="../../nape/geom/Geom.html" title="nape.geom.Geom">Geom</a></td><td><p>Geom class provides interface to collision detection routines in nape.</p></td></tr><tr class="class"><td style="width:200px;"><a href="../../nape/geom/GeomPoly.html" title="nape.geom.GeomPoly">GeomPoly</a></td><td><p>Polygon class with various geometric methods
 <br/><br/>
 This class represents a general Polygon, rather than the Polygon class
 which is physics shape.
 <br/><br/>
 Internally this polygon is stored as a circularly linked list of special
 vertex types that are exposed via a Vec2 that is lazily constructed whenever
-necessary to the API.</p></td></tr><tr class="class"><td width="200"><a href="../../nape/geom/GeomPolyIterator.html" title="nape.geom.GeomPolyIterator">GeomPolyIterator</a></td><td><p>Haxe Iterator<T> compatible iterator over Nape list.</p></td></tr><tr class="class"><td width="200"><a href="../../nape/geom/GeomPolyList.html" title="nape.geom.GeomPolyList">GeomPolyList</a></td><td><p>Nape list of GeomPoly type objects
+necessary to the API.</p></td></tr><tr class="class"><td style="width:200px;"><a href="../../nape/geom/GeomPolyIterator.html" title="nape.geom.GeomPolyIterator">GeomPolyIterator</a></td><td><p>Haxe Iterator<T> compatible iterator over Nape list.</p></td></tr><tr class="class"><td style="width:200px;"><a href="../../nape/geom/GeomPolyList.html" title="nape.geom.GeomPolyList">GeomPolyList</a></td><td><p>Nape list of GeomPoly type objects
 <br/><br/>
 Internally this list is at present implemented as a linked list with
 object pooled nodes and iterators with various fast paths made for
@@ -52,10 +52,10 @@ This method is inlined so that in haxe no closure will need to be created.
 In AS3, a closure would need to be created in general, so for performance
 reasons you 'may' choose to use iteration as follows:
 <pre>
-for (var i:int = 0; i &lt; list.length; i++) {</p></td></tr><tr class="class"><td width="200"><a href="../../nape/geom/GeomVertexIterator.html" title="nape.geom.GeomVertexIterator">GeomVertexIterator</a></td><td><p>Haxe compatible iterator over vertices of GeomPoly.
+for (var i:int = 0; i &lt; list.length; i++) {</p></td></tr><tr class="class"><td style="width:200px;"><a href="../../nape/geom/GeomVertexIterator.html" title="nape.geom.GeomVertexIterator">GeomVertexIterator</a></td><td><p>Haxe compatible iterator over vertices of GeomPoly.
 <br/><br/>
 Vec2's intrinsically tied to the vertices are exposed through
-the iterator which does not modify the state of the polygon.</p></td></tr><tr class="class"><td width="200"><a href="../../nape/geom/IsoFunction.html" title="nape.geom.IsoFunction">IsoFunction</a></td><td><p>For 'flash' targets only.
+the iterator which does not modify the state of the polygon.</p></td></tr><tr class="class"><td style="width:200px;"><a href="../../nape/geom/IsoFunction.html" title="nape.geom.IsoFunction">IsoFunction</a></td><td><p>For 'flash' targets only.
 <br/><br/>
 Iso-functions for MarchingSquares must be given
 as an object implementing this IsoFunction interface. This is for
@@ -63,10 +63,10 @@ reasons of avoiding excessive memory allocations that occur through
 automatic boxing of arguments/return values when using function values.
 <br/>
 Since iso-functions may be called 10,000's of times per-invocation of
-marching-squares, this can quickly accumulate into a lot of GC activity.</p></td></tr><tr class="type"><td width="200"><a href="../../nape/geom/IsoFunctionDef.html" title="nape.geom.IsoFunctionDef">IsoFunctionDef</a></td><td><p>Typedef defining iso-function type for MarchingSquares.
+marching-squares, this can quickly accumulate into a lot of GC activity.</p></td></tr><tr class="type"><td style="width:200px;"><a href="../../nape/geom/IsoFunctionDef.html" title="nape.geom.IsoFunctionDef">IsoFunctionDef</a></td><td><p>Typedef defining iso-function type for MarchingSquares.
 <code>
 typedef IsoFunctionDef = #if flash IsoFunction #else Float-&gt;Float-&gt;Float #end;
-</code></p></td></tr><tr class="class"><td width="200"><a href="../../nape/geom/MarchingSquares.html" title="nape.geom.MarchingSquares">MarchingSquares</a></td><td><p>Iso-surface extraction into polygons.
+</code></p></td></tr><tr class="class"><td style="width:200px;"><a href="../../nape/geom/MarchingSquares.html" title="nape.geom.MarchingSquares">MarchingSquares</a></td><td><p>Iso-surface extraction into polygons.
 <br/><br/>
 This class, with only one static method provides an interface to
 an algorithm which will, when given a function mapping each point
@@ -86,17 +86,17 @@ var iy = if (y &lt; 0) 0 else if (y >= bitmap.height - 1) bitmap.height - 2 else
 var fx = x - ix;
 var fy = y - iy;
 var gx = 1 - fx;
-var gy = 1 - fy;</p></td></tr><tr class="class"><td width="200"><a href="../../nape/geom/Mat23.html" title="nape.geom.Mat23">Mat23</a></td><td><p>2D Matrix class representing affine transformations:
+var gy = 1 - fy;</p></td></tr><tr class="class"><td style="width:200px;"><a href="../../nape/geom/Mat23.html" title="nape.geom.Mat23">Mat23</a></td><td><p>2D Matrix class representing affine transformations:
 <pre>
 [ a  b  tx ]
 [ c  d  ty ]
 [ 0  0  1  ]
-</pre></p></td></tr><tr class="class"><td width="200"><a href="../../nape/geom/MatMN.html" title="nape.geom.MatMN">MatMN</a></td><td><p>A general MxN dimensional matrix.
+</pre></p></td></tr><tr class="class"><td style="width:200px;"><a href="../../nape/geom/MatMN.html" title="nape.geom.MatMN">MatMN</a></td><td><p>A general MxN dimensional matrix.
 <br/><br/>
-This object is not often used in Nape :)</p></td></tr><tr class="class"><td width="200"><a href="../../nape/geom/Ray.html" title="nape.geom.Ray">Ray</a></td><td><p>Parametrically defined ray used in ray casting functions.</p></td></tr><tr class="class"><td width="200"><a href="../../nape/geom/RayResult.html" title="nape.geom.RayResult">RayResult</a></td><td><p>Class representing the results of a ray cast operation.
+This object is not often used in Nape :)</p></td></tr><tr class="class"><td style="width:200px;"><a href="../../nape/geom/Ray.html" title="nape.geom.Ray">Ray</a></td><td><p>Parametrically defined ray used in ray casting functions.</p></td></tr><tr class="class"><td style="width:200px;"><a href="../../nape/geom/RayResult.html" title="nape.geom.RayResult">RayResult</a></td><td><p>Class representing the results of a ray cast operation.
 <br/><br/>
 These objects are allocated from an object pool and can
-be released back to that pool by calling its dispose method.</p></td></tr><tr class="class"><td width="200"><a href="../../nape/geom/RayResultIterator.html" title="nape.geom.RayResultIterator">RayResultIterator</a></td><td><p>Haxe Iterator<T> compatible iterator over Nape list.</p></td></tr><tr class="class"><td width="200"><a href="../../nape/geom/RayResultList.html" title="nape.geom.RayResultList">RayResultList</a></td><td><p>Nape list of RayResult type objects
+be released back to that pool by calling its dispose method.</p></td></tr><tr class="class"><td style="width:200px;"><a href="../../nape/geom/RayResultIterator.html" title="nape.geom.RayResultIterator">RayResultIterator</a></td><td><p>Haxe Iterator<T> compatible iterator over Nape list.</p></td></tr><tr class="class"><td style="width:200px;"><a href="../../nape/geom/RayResultList.html" title="nape.geom.RayResultList">RayResultList</a></td><td><p>Nape list of RayResult type objects
 <br/><br/>
 Internally this list is at present implemented as a linked list with
 object pooled nodes and iterators with various fast paths made for
@@ -114,7 +114,7 @@ This method is inlined so that in haxe no closure will need to be created.
 In AS3, a closure would need to be created in general, so for performance
 reasons you 'may' choose to use iteration as follows:
 <pre>
-for (var i:int = 0; i &lt; list.length; i++) {</p></td></tr><tr class="class"><td width="200"><a href="../../nape/geom/Vec2.html" title="nape.geom.Vec2">Vec2</a></td><td><p>2 Dimensional vector.
+for (var i:int = 0; i &lt; list.length; i++) {</p></td></tr><tr class="class"><td style="width:200px;"><a href="../../nape/geom/Vec2.html" title="nape.geom.Vec2">Vec2</a></td><td><p>2 Dimensional vector.
 <br/><br/>
 Note that in many cases of a Vec2 object being returned by a Nape function
 the Vec2 object will be marked internally as an 'immutable' Vec2. This will
@@ -141,7 +141,7 @@ var polygon = new Polygon(vertices);
 In this example, passing <code>true</code> to the Polygon.box method means
 that we will be returned a Vec2List containing only 'weak' Vec2s. Upon
 passing this Vec2List to the Polygon constructor, all of the Vec2s from
-that list will be automatically disposed.</p></td></tr><tr class="class"><td width="200"><a href="../../nape/geom/Vec2Iterator.html" title="nape.geom.Vec2Iterator">Vec2Iterator</a></td><td><p>Haxe Iterator<T> compatible iterator over Nape list.</p></td></tr><tr class="class"><td width="200"><a href="../../nape/geom/Vec2List.html" title="nape.geom.Vec2List">Vec2List</a></td><td><p>Nape list of Vec2 type objects
+that list will be automatically disposed.</p></td></tr><tr class="class"><td style="width:200px;"><a href="../../nape/geom/Vec2Iterator.html" title="nape.geom.Vec2Iterator">Vec2Iterator</a></td><td><p>Haxe Iterator<T> compatible iterator over Nape list.</p></td></tr><tr class="class"><td style="width:200px;"><a href="../../nape/geom/Vec2List.html" title="nape.geom.Vec2List">Vec2List</a></td><td><p>Nape list of Vec2 type objects
 <br/><br/>
 Internally this list is at present implemented as a linked list with
 object pooled nodes and iterators with various fast paths made for
@@ -159,11 +159,11 @@ This method is inlined so that in haxe no closure will need to be created.
 In AS3, a closure would need to be created in general, so for performance
 reasons you 'may' choose to use iteration as follows:
 <pre>
-for (var i:int = 0; i &lt; list.length; i++) {</p></td></tr><tr class="class"><td width="200"><a href="../../nape/geom/Vec3.html" title="nape.geom.Vec3">Vec3</a></td><td><p>A 3 dimensional vector object.
+for (var i:int = 0; i &lt; list.length; i++) {</p></td></tr><tr class="class"><td style="width:200px;"><a href="../../nape/geom/Vec3.html" title="nape.geom.Vec3">Vec3</a></td><td><p>A 3 dimensional vector object.
 <br/><br/>
 In many instances a Vec3 will be accessible from Nape which is marked
 as immutable, these cases will be documented and modifying such a Vec3
-will result in an error.</p></td></tr><tr class="class"><td width="200"><a href="../../nape/geom/Winding.html" title="nape.geom.Winding">Winding</a></td><td><p>Enumeration represents the winding of a Polygon.
+will result in an error.</p></td></tr><tr class="class"><td style="width:200px;"><a href="../../nape/geom/Winding.html" title="nape.geom.Winding">Winding</a></td><td><p>Enumeration represents the winding of a Polygon.
 <br/><br/>
 To appreciate what the winding of a polygon means, think of a polygon who's
 vertices are the numbers on a clock face.</p></td></tr></tbody></table></div></div></div><footer><div class="footer-main"><div class=" container"><div class="footer-social"><iframe width="120px" scrolling="0" height="20px" frameborder="0" allowtransparency="true" src="http://ghbtns.com/github-btn.html?user=HaxeFlixel&amp;repo=flixel&amp;type=watch&amp;count=true&amp;size=small"></iframe><a href="https://twitter.com/haxeflixel" class="twitter-follow-button" data-show-count="true" data-lang="en" data-size="small">Follow @haxeflixel</a><script>!function (d, s, id){var js, fjs = d.getElementsByTagName (s)[0];if (!d.getElementById (id)){js = d.createElement (s);js.id = id;js.src = "//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore (js, fjs);}} (document, "script", "twitter-wjs");</script></div><div class="footer-powered-by"><p>HaxeFlixel is powered by</p><a href="http://haxe.org"><img src="http://www.haxeflixel.com/images/haxe.svg" alt="Haxe" title="Haxe"/></a>+<a href="http://openfl.org"><img class="openfl-footer-logo" src="http://www.haxeflixel.com//images/openfl.svg" alt="OpenFL" title="OpenFL"/></a>+<a href="http://flixel.org"><img class="flixel-footer-logo" src="http://www.haxeflixel.com//images/flixel.svg" alt="Flixel" title="Flixel"/></a></div></div></div></footer><script src="../..//highlighter.js"></script><link href="../../highlighter.css" rel="stylesheet"/></body></html>
