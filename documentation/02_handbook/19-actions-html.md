@@ -275,7 +275,7 @@ the sets.
 
 ```haxe
 var config = steamwrap.data.ControllerConfig.fromVDF(myVDF);
-actionManager.initSteam(config,digitalCallback,analogCallback);
+actionManager.initSteam(config, digitalCallback, analogCallback);
 ```
 
 NOTE:
@@ -284,18 +284,18 @@ The only other alternative is to call the steamwrap functions directly.
 
 ### JSON parsing
 
-`FlxActionManager` can generate a JSON string representation of your action sets via `exportToJSON()` You can also initialize your action sets by calling
-`initFromJSON`, feeding in the parsed object representation of the same format.
+`FlxActionManager` can generate a JSON string representation of your action sets via `exportToJson()` You can also initialize your action sets by calling
+`initFromJson()`, feeding in the parsed object representation of the same format.
 
 The format is:
 
 ```haxe
-typedef ActionSetJSONArray = 
+typedef ActionSetJsonArray = 
 {
     @:optional var actionSets:Array<ActionSetJSON>;
 }
 
-typedef ActionSetJSON =
+typedef ActionSetJson =
 {
     @:optional var name:String;
     @:optional var analogActions:Array<String>;
