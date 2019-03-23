@@ -54,7 +54,8 @@ First up, let's create a simple menu. Eventually, we'll want a fancy `MenuState`
 		FlxG.switchState(new PlayState());
 	}
 	```
-
+	(import flixel.FlxG;)
+	
 	This function calls `FlxG.switchState()`, which switches the state from whatever the current state is (`MenuState`) to a new instance of `PlayState`.
 
 4. Technically, at this point, the functionality would work - you could run your game and it would do what we want it to do, but we're missing a few things.
@@ -138,7 +139,8 @@ We're going to be extending the `FlxSprite` class to create our `Player` class.
 	```haxe
 	makeGraphic(16, 16, FlxColor.BLUE);
 	```
-
+	(import flixel.util.FlxColor;)
+	
 	(Make sure that an import is created for `FlxColor`, and if it isn't, add it)
 	All we're doing here is saying that we want to make this sprite's graphic be a 16x16 pixel blue square.
 
@@ -208,6 +210,7 @@ First, define our player's movement speed and deceleration amounts:
 	_left = FlxG.keys.anyPressed([LEFT, A]);
 	_right = FlxG.keys.anyPressed([RIGHT, D]);
 	```
+	(import flixel.FlxG;)
 
 	The `anyPressed()` function allows us to ask if any keys out of a list of keys are currently being pressed. You send it an array of keys (their names) and it will return `true` if any of them are pressed. There are a couple of similar functions to check for other key states we might use later on.
 
@@ -269,6 +272,7 @@ First, define our player's movement speed and deceleration amounts:
 	velocity.set(speed, 0);
 	velocity.rotate(FlxPoint.weak(0, 0), mA);
 	```
+	(import flixel.math.FlxPoint;)
 
 	Next, close the bracket from your `if` statement from earlier.
 	...and that's the end of our `movement()` function!
