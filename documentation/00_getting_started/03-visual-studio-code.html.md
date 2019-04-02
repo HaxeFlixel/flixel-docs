@@ -83,7 +83,7 @@ To build and run your project, select the `lime: test` task. With Flixel's templ
 
 You may want to assign a shortcut to `Run Task...` or change the shortcut for `Run Build Task...` to something more convenient such as `F5`. You can do so in `File` -> `Preferences` -> `Keyboard Shortcuts`.
 
-Finally, you can change the target and build configuration (Debug, Release, Final) by using the dropdown menus in the status bar:
+Finally, you can change the current configuration (combination of target and Debug/Release/Final) by using the dropdown menu in the status bar:
 
 ![](../images/00_getting_started/vscode/change-config.gif)
 
