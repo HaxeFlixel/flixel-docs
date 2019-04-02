@@ -7,7 +7,7 @@ Welcome to HaxeFlixel, here we will show you how to setup your system to start m
 
 Getting started requires three steps:
 
-1. [Install Haxe](http://haxe.org/download)
+1. [Install Haxe](https://haxe.org/download/version/4.0.0-rc.2/)
 2. [Install HaxeFlixel](/documentation/install-haxeflixel)
 3. [HaxeFlixel Hello World](/documentation/hello-world)
 
