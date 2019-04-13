@@ -3,9 +3,7 @@ title: "Getting Started"
 rootDoc: true
 ```
 
-Welcome to HaxeFlixel! Here we will show you how to setup your Windows, Linux or Mac system to start making games.
-
-Getting started requires three steps:
+Welcome to HaxeFlixel! To setup your Windows, Linux or Mac system to start making games, there are three steps:
 
 1. [Install Haxe](https://haxe.org/download/version/4.0.0-rc.2/)
 2. [Install HaxeFlixel](/documentation/install-haxeflixel)
@@ -26,6 +24,5 @@ If you need more help, reach out via any of the [communication channels](/docume
 
 ----
 
-Note: this guide is an open and community effort - if you think you can help us improve it, please submit a pull request on 
-[GitHub](https://github.com/HaxeFlixel/haxeflixel.com). Doing so is made easier from the direct GitHub edit link on 
-the top right hand side of each page.
+Note: this guide is a community effort. If you think you can help us improve it, please submit a pull request on 
+[GitHub](https://github.com/HaxeFlixel/haxeflixel.com) - each page has an "Edit" button in the upper right corner for this.
