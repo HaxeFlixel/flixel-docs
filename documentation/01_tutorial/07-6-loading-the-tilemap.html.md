@@ -84,7 +84,7 @@ One of the great things about using Ogmo with HaxeFlixel is that there is alread
 	var tmpMap:TiledObjectLayer = cast _map.getLayer("entities");
 	for (e in tmpMap.objects)
 	{
-		placeEntities(e.type, e.xmlData.x);
+		placeEntities(e.name, e.xmlData.x);
 	}
 	```
 
