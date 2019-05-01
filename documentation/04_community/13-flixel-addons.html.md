@@ -27,7 +27,7 @@ To use the addons in a project simply add the following XML node to your OpenFL 
 ## What's in the addons?
 
 - Ports of [Photonstorm's Flixel Power Tools](http://www.photonstorm.com/flixel-power-tools)
-- [Nape](http://napephys.com/) Physics integration
+- [Nape](https://github.com/HaxeFlixel/nape-haxe4/) Physics integration
 - [Tiled](http://www.mapeditor.org/) integration
 - [Ogmo](http://www.ogmoeditor.com/) integration
 - [Spine](http://esotericsoftware.com/) integration
