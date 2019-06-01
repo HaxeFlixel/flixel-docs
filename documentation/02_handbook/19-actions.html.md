@@ -33,7 +33,7 @@ Digital actions let you do things like: `if(SHOOT.check()) doShoot();` in your
 update loop rather than have a big ugly block that accounts for every input 
 device you support.
 
-Analog actions let you do things like `moveCharacter(MOVE.x,MOVE.y)` or 
+Analog actions let you do things like `moveCharacter(MOVE.x, MOVE.y)` or 
 `fireLaserBeam(LASER_INTENSITY.x)`, nicely hiding whatever devices are actually
 driving the input, and just providing you with the resulting floating point 
 values.
@@ -55,8 +55,8 @@ something like this:
 ```haxe
 function updateLoop()
 {
-    if(jump.check()) doJump();
-    if(move.check()) doMove(move.x,move.y);
+    if (jump.check()) doJump();
+    if (move.check()) doMove(move.x, move.y);
 }
 ```
 
@@ -66,8 +66,8 @@ function updateLoop()
 {
     jump.update();
     move.update();
-    if(jump.triggered) doJump();
-    if(move.triggered) doMove(move.x,move.y);
+    if (jump.triggered) doJump();
+    if (move.triggered) doMove(move.x, move.y);
 }
 ```
 
@@ -193,7 +193,7 @@ actionManager.addAction(jump);
 actionManager.addAction(shoot);
 
 //add several actions at once:
-actionManager.addActions([action1,action2,action3,action4,action5]);
+actionManager.addActions([action1, action2, action3, action4, action5]);
 ```
 
 Then in your update loop you can simply check the `triggered` property, or just
@@ -202,8 +202,8 @@ wait for callbacks to fire, if you've set any.
 ```haxe
 function updateLoop()
 {
-    if(jump.triggered) doJump();
-    if(shoot.triggered) doShoot();
+    if (jump.triggered) doJump();
+    if (shoot.triggered) doShoot();
 }
 ```
 
