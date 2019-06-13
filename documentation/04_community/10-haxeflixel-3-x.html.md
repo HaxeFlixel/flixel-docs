@@ -41,7 +41,7 @@ Documentation is an ever going process as a project continues to evolve and peop
 
 ### Upgrade Guide
 
-Please review our [upgrade guide]/documentation/upgrade-guide-3-x/) for detailed steps on updating your HaxeFlixel 2.x projects.
+Please review our [upgrade guide](https://haxeflixel.com/documentation/upgrade-guide-3-x/) for detailed steps on updating your HaxeFlixel 2.x projects.
 
 ### What's next for Flixel?
 
