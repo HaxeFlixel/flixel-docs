@@ -54,7 +54,7 @@ One of the great things about using Ogmo with HaxeFlixel is that there is alread
 	For Tiled, this changes to:
 
 	```haxe
-	_map = new TiledMap(AssetPaths.room_001__tmx)
+	_map = new TiledMap(AssetPaths.room_001__tmx);
 	_mWalls = new FlxTilemap();
 	_mWalls.loadMapFromArray(cast(_map.getLayer("walls"), TiledTileLayer).tileArray, _map.width, _map.height, AssetPaths.tiles__png, _map.tileWidth, _map.tileHeight, FlxTilemapAutoTiling.OFF, 1, 1, 3);
 	_mWalls.follow();
