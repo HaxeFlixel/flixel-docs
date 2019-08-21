@@ -5,7 +5,7 @@ rootDoc: true
 
 Welcome to HaxeFlixel! To setup your Windows, Linux or Mac system to start making games, there are three steps:
 
-1. [Install Haxe](https://haxe.org/download/version/4.0.0-rc.2/)
+1. [Install Haxe](https://haxe.org/download/version/4.0.0-rc.3/)
 2. [Install HaxeFlixel](/documentation/install-haxeflixel)
 3. [Run Hello World](/documentation/hello-world)
 
