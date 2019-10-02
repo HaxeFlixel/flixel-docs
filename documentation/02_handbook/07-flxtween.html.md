@@ -22,7 +22,7 @@ The first parameter is the object you want to act upon; the second parameter is 
 
 If you start a tween using the code above, it will run until the desired values are reached, then stop. As the `tween()` method returns an object of type `FlxTween`, keeping this object in a variable allows you to access the current tween running if you wish to control it.
 
-For example, this code stops the translation of the sprite if the player presses the spacebar of his keyboard:
+For example, this code stops the translation of the sprite if the player presses the spacebar of their keyboard:
 
 ```haxe
 var tween:FlxTween;
