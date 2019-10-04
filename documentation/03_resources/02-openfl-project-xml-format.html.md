@@ -8,5 +8,4 @@ Every OpenFL project uses an XML file to setup the compile settings for your pro
 
 This is a complete specification of the XML file:
 
-[OpenFL Project Format](https://gist.github.com/jgranick/1763850#file-gistfile1-xml)
-<gist>1763850</gist>
+[Lime XML Project Format](https://lime.software/docs/project-files/xml-format/)
