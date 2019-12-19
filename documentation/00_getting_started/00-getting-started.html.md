@@ -25,4 +25,4 @@ If you need more help, reach out via any of the [communication channels](/docume
 ----
 
 Note: this guide is a community effort. If you think you can help us improve it, please submit a pull request on 
-[GitHub](https://github.com/HaxeFlixel/haxeflixel.com) - each page has an "Edit" button in the upper right corner for this.
+[GitHub](https://github.com/HaxeFlixel/flixel-docs) - each page has an "Edit" button in the upper right corner for this.
