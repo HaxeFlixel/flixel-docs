@@ -42,22 +42,35 @@ class PlayState extends FlxState
 All you need to do is add the following three lines to the `create()` function (and save the file):
 
 ``` haxe
-var text = new flixel.text.FlxText(0, 0, 0, "Hello World", 64);
-text.screenCenter();
-add(text);
+override public function create():Void
+{
+	super.create();
+		
+	var text = new flixel.text.FlxText(0, 0, 0, "Hello World", 64);
+	text.screenCenter();
+	add(text);
+}
 ```
 
 This will create a new `FlxText` instance with font size `64`, center it on the screen and `add()` it so it is displayed.
 
 ### Test the Project
 
-Return to your command line window - now we can compile the project. Without running the `lime setup` commands you can compile to HTML5, Flash and Neko out of the box with these commands:
+Return to your command line window - now we can compile the project. First switch to the directory containing the `Project.xml` file:
+
+```bash
+cd HelloWorld
+```
+
+You can then compile to HTML5, Flash and Neko out of the box with these commands:
 
 ``` bash
 lime test html5
 lime test flash
 lime test neko
 ```
+
+Other targets require further setup. For more details, check the "Advanced Setup" section of the [Lime documentation](https://lime.software/docs/home/).
 
 If you struggled through any part of this tutorial, [get in touch with the community](/documentation/community/) for support.
 
