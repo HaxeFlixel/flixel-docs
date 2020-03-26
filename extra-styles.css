@@ -23,7 +23,7 @@ body {
   background-position: center top, left top;
 }
 
-.container-main {
+div.main-content > div {
   margin-top: 9px;
   margin-bottom: 100px;
   background: #ffffff;
@@ -33,11 +33,6 @@ body {
   padding: 16px;
   overflow: hidden;
   padding-top: 50px;
-}
-
-.container-main-content {
-  max-width: 600px;
-  margin: 0 auto;
 }
 
 .navbar{position:relative;z-index:1000;min-height:50px;margin-bottom:22px;border:1px solid transparent}.navbar:before,.navbar:after{content:" ";display:table;}
@@ -136,7 +131,6 @@ footer:before {
 
 .footer-powered-by img {
   width: 40px;
-.hover-scale-fx(1.2);
   margin: 6px;
 }
 
