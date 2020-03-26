@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<project>
+	<meta title="Docs" version="1.0.0" />
+	<app file="Main" main="Main" />
+	<set name="SWF_VERSION" value="11.8" />
+	
+	<haxedef name="doc-gen" />
+	<haxedef name="FLX_RECORD" />
+	
+	<haxelib name="flixel" />
+	<haxelib name="flixel-addons" />
+	<haxelib name="flixel-ui" />
+	<haxelib name="nape-haxe4" />
+	<haxelib name="spinehaxe" />
+
+	<haxeflag name="--macro" value="include('flixel')" />
+</project>

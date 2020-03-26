@@ -1,0 +1,2 @@
+-cmd cd ..
+-cmd ls | grep -v "dox-gen" | xargs rm -r
