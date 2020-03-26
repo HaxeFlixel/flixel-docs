@@ -8,11 +8,11 @@ Now that we have our little guy running around our map, lets give him something 
 
 2. On the `Entities` tab, add a new entity:
 	
-	![](../images/01_tutorial/ogmo_project_entities_coin.png)
+	<img src="../images/01_tutorial/ogmo_project_entities_coin.png" style="width:100%;" />
 
 3. Open up the level we used before, and, on the 'entities' layer, scatter a bunch of coins around:
 
-	![](../images/01_tutorial/ogmo_editor_entities_coins.png)
+	<img src="../images/01_tutorial/ogmo_editor_entities_coins.png" style="width:100%;" />
 
 4. We're going to make our coins be 8x8 pixels. For the coin's graphic, you can use this image ![](https://raw.githubusercontent.com/HaxeFlixel/flixel-demos/master/Tutorials/TurnBasedRPG/assets/images/coin.png), or make your own. Make sure you save this in `assets/images`.
 

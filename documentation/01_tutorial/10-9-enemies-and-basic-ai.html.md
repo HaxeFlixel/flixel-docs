@@ -6,11 +6,11 @@ What would a dungeon game be without enemies? Let's add some!
 
 1. This should be second nature by now - add two new entity types in your Ogmo project, `enemy` and `boss`:
 
-	![](../images/01_tutorial/ogmo_project_entities_enemies.png)
+	<img src="../images/01_tutorial/ogmo_project_entities_enemies.png" style="width:100%;" />
 
 2. Then scatter some enemies and a boss around the map.
 
-	![](../images/01_tutorial/ogmo_editor_entities_enemies.png)
+	<img src="../images/01_tutorial/ogmo_editor_entities_enemies.png" style="width:100%;" />
 
 3. So we want to have 2 different enemies in our game. We'll need spritesheets for both of them, with 16x16 pixel frames and the same animation frames as our player. Name them `enemy-0.png` and `enemy-1.png` and put them in the `assets/images` folder. You can use these, if you want (thanks, again, Vicky!):
 
