@@ -13,5 +13,5 @@
 	<haxelib name="nape-haxe4" />
 	<haxelib name="spinehaxe" />
 
-	<haxeflag name="--macro" value="include('flixel')" />
+	<haxeflag name="--macro" value="include('flixel', true, ['flixel.system.macros'])" />
 </project>
