@@ -24,7 +24,6 @@ body {
 }
 
 div.main-content > div {
-  margin-top: 9px;
   margin-bottom: 100px;
   background: #ffffff;
   border: 1px solid #D0D0D0;
@@ -102,7 +101,6 @@ div.main-content > div {
 
 /* footer */
 .footer-main {
-  margin-top: 60px;
   background: url("http://www.haxeflixel.com/images/footer-shadow.png") repeat-x scroll 0 0 #515151;
   min-height: 110px;
   text-shadow: none;
