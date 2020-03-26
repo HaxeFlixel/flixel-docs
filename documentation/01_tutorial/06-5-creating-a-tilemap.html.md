@@ -10,38 +10,40 @@ You can make your own, with 16x16 pixel tiles, or use this one:
 
 (Note: the first tile should be empty!)
 
-1. Go to [http://www.ogmoeditor.com](http://www.ogmoeditor.com/) to download and install it, then launch the editor.
+1. Download and install [Ogmo Editor 3](https://ogmo-editor-3.github.io/), then launch it.
 
-	Note: Ogmo is Windows-only, if you are using something else (or, if you just want to), you can try using [Tiled](http://www.mapeditor.org/), another free, but slightly more complex tool.
+2. Click on `New Project` and navigate to `assets/data` - save the project as `flixel_tut.ogmo`.
 
-2. Go to `Project > New Project` and name your project whatever you want. Save it in `assets/data`.
+3. On the `General` tab, you can rename your project, set the default level sizes, and more. Set it up like this:
 
-3. Next, you need to define your project's settings. Go through each tab, one-by-one, and set it up to look like the following:
+	![](../images/01_tutorial/ogmo_project_general.png)
 
-	![](../images/01_tutorial/0007.png)
+4. On the `Layers` tab, make an `Entity Layer` called `entities` and a `Tile Layer` called `walls`:
 
-	![](../images/01_tutorial/0008.png)
+	![](../images/01_tutorial/ogmo_project_layers.png)
 
-	![](../images/01_tutorial/0008b.png)
+5. On the `Entities` tab, make an entity called `player`:
 
-	![](../images/01_tutorial/0009.png)
+	![](../images/01_tutorial/ogmo_project_entities.png)
 
-	![](../images/01_tutorial/0010.png)
+6. Finally, on the `Tilesets` tab, make a new tileset called `tiles` and load the tiles from earlier:
 
-4. Hit Apply to save your changes. You should now see a screen that looks like this:
+	![](../images/01_tutorial/ogmo_project_tilesets.png)
+
+7. When you're done, click on `Save` and you'll be brought to this screen:
 	
-	![](../images/01_tutorial/0011.png)
+	![](../images/01_tutorial/ogmo_editor_blank.png)
 
-5. Make sure you're on the 'walls' layer, and, using tools on the right, draw out a simple map. Make sure it's completely encircled by walls (so the player can't wander off the map), and make the insides filled with floor tiles. You should end up with something like this:
+8. Make sure you're on the `walls` layer, and using the tools at the top, draw out a simple map. Make sure it's completely encircled by walls (so the player can't wander off the map), and make the insides filled with floor tiles. You should end up with something like this:
 	
-	![](../images/01_tutorial/0012.png)
+	![](../images/01_tutorial/ogmo_editor_tiles.png)
 
-6. Now, switch over to the 'entities' layer, and place your player entity somewhere in one of your rooms:
+9. Now, switch over to the 'entities' layer, and place your player entity somewhere in one of your rooms:
 	
-	![](../images/01_tutorial/0013.png)
+	![](../images/01_tutorial/ogmo_editor_entities.png)
 
-7. Go up to `Level > Save Level`, and save this as `room-001.oel` in `assets/data`.
+10. Hit Ctrl+S (Cmd+S on Mac), and save this level as `room-001.json` in `assets/data`.
 
-8. We're done with Ogmo for now, so save all your changes and exit.
+We're done with Ogmo for now, so save all your changes and exit.
 
 In the next part, we will learn how to load the newly created tilemap into our game.

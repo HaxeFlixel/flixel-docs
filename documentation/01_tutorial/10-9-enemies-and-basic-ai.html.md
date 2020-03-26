@@ -4,16 +4,13 @@ title: "9 - Enemies and Basic AI"
 
 What would a dungeon game be without enemies? Let's add some!
 
-1. This should be second nature by now - add a new entity type in your Ogmo project:
+1. This should be second nature by now - add two new entity types in your Ogmo project, `enemy` and `boss`:
 
-	![](../images/01_tutorial/0017.png)
+	![](../images/01_tutorial/ogmo_project_entities_enemies.png)
 
-	Make sure you add the `etype` value.
+2. Then scatter some enemies and a boss around the map.
 
-
-2. Then scatter some enemies around the map. Make all but one of them have an `etype` value of `0`, and the other one be `1`.
-
-	![](../images/01_tutorial/0018.png)
+	![](../images/01_tutorial/ogmo_editor_entities_enemies.png)
 
 3. So we want to have 2 different enemies in our game. We'll need spritesheets for both of them, with 16x16 pixel frames and the same animation frames as our player. Name them `enemy-0.png` and `enemy-1.png` and put them in the `assets/images` folder. You can use these, if you want (thanks, again, Vicky!):
 
@@ -104,10 +101,8 @@ What would a dungeon game be without enemies? Let's add some!
 	and at the end of our if/else statement in placeEntities:
 
 	```haxe
-	else if (entityName == "enemy")
-	{
-		_grpEnemies.add(new Enemy(x + 4, y, Std.parseInt(entityData.get("etype"))));
-	}
+	else if (e.name == "enemy") _grpEnemies.add(new Enemy(e.x + 4, e.y, 0));
+	else if (e.name == "boss") _grpEnemies.add(new Enemy(e.x + 4, e.y, 1));
 	```
 
 Go ahead and test out your game to make sure the enemies are added properly.
