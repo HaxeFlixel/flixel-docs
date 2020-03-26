@@ -30,26 +30,26 @@ One of the great things about using Ogmo with HaxeFlixel is that there is alread
 4. Go back to your `PlayState`, and, underneath where the `_player` variable is defined, add:
 	
 	```haxe
-	var _map:FlxOgmoLoader;
+	var _map:FlxOgmo3Loader;
 	var _mWalls:FlxTilemap;
 	```
 
 	We're basically just creating an object to hold our Ogmo map, and then another one to hold the `FlxTilemap` that we will generate from the Ogmo map.
 
-	For Tiled, change `FlxOgmoLoader` to `TiledMap`.
+	For Tiled, change `FlxOgmo3Loader` to `TiledMap`.
 
 5. In `create()`, before we setup the player object, add:
 	
 	```haxe
-	_map = new FlxOgmoLoader(AssetPaths.room_001__oel);
-	_mWalls = _map.loadTilemap(AssetPaths.tiles__png, 16, 16, "walls");
+	_map = new FlxOgmo3Loader(AssetPaths.flixel_tut__ogmo, AssetPaths.room_001__json);
+	_mWalls = _map.loadTilemap(AssetPaths.tiles__png, "walls");
 	_mWalls.follow();
 	_mWalls.setTileProperties(1, FlxObject.NONE);
 	_mWalls.setTileProperties(2, FlxObject.ANY);
 	add(_mWalls);
 	```
 
-	This just loads our room file into our `FlxOgmoLoader` object, generates our `FlxTilemap` from the 'walls' layer, and then sets tile 1 (our floor tile) to not collide, and tile 2 (walls) to collide from any direction. Then we add our tilemap to the state.
+	This just loads our room file into our `FlxOgmo3Loader` object, generates our `FlxTilemap` from the 'walls' layer, and then sets tile 1 (our floor tile) to not collide, and tile 2 (walls) to collide from any direction. Then we add our tilemap to the state.
 
 	For Tiled, this changes to:
 
@@ -84,18 +84,9 @@ One of the great things about using Ogmo with HaxeFlixel is that there is alread
 	var tmpMap:TiledObjectLayer = cast _map.getLayer("entities");
 	for (e in tmpMap.objects)
 	{
-		placeEntities(e.name, e.xmlData.x);
-	}
-	```
-
-7. Let's make the `placeEntities()` function now. When we call `loadEntities()` on our map, it will pass the name of the entity, as well as its XML data to whatever function we want. In our function, we need to take this information and do something with it. It will look like this now:
-	
-	```haxe
-	function placeEntities(entityName:String, entityData:Xml):Void
-	{
-		var x:Int = Std.parseInt(entityData.get("x"));
-		var y:Int = Std.parseInt(entityData.get("y"));
-		if (entityName == "player")
+		var x:Int = Std.parseInt(e.xmlData.x.get("x"));
+		var y:Int = Std.parseInt(e.xmlData.x.get("y"));
+		if (e.name == "player")
 		{
 			_player.x = x;
 			_player.y = y;
@@ -103,7 +94,16 @@ One of the great things about using Ogmo with HaxeFlixel is that there is alread
 	}
 	```
 
-	So, if this function gets passed an entity with the name "player", it will set our player object's `x` and `y` values to the entity's `x` and `y` values (converting them from `String` to `Int`).
+7. Let's make the `placeEntities()` function now. When we call `loadEntities()` on our map, it will pass the data of all of the placed entities to whatever function we want. In our function, we need to take this information and do something with it. It will look like this now:
+	
+	```haxe
+	function placeEntities(e:EntityData)
+	{
+		if (e.name == "player") _player.setPosition(e.x, e.y);
+	}
+	```
+
+	So, if this function gets passed an entity with the name "player", it will set our player object's `x` and `y` values to the entity's `x` and `y` values.
 
 8. Now, we want to add collisions to our state, so the player will bump into walls instead of just walking through them. So, in `update()`, after `super.update(elapsed);` add:
 

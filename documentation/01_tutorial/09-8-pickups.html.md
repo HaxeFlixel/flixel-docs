@@ -4,15 +4,15 @@ title: "8 - Pickups"
 
 Now that we have our little guy running around our map, lets give him something to pick up. We'll add some simple coins that will add to the player's score when they are picked up.
 
-1. Open up your project in Ogmo again, and go to `Project > Edit Project`.
+1. Open up your project in Ogmo again, and click `Edit Project`.
 
-2. On the 'Entities' tab, add a new entity:
+2. On the `Entities` tab, add a new entity:
 	
-	![](../images/01_tutorial/0014.png)
+	![](../images/01_tutorial/ogmo_project_entities_coin.png)
 
 3. Open up the level we used before, and, on the 'entities' layer, scatter a bunch of coins around:
 
-	![](../images/01_tutorial/0015.png)
+	![](../images/01_tutorial/ogmo_editor_entities_coins.png)
 
 4. We're going to make our coins be 8x8 pixels. For the coin's graphic, you can use this image ![](https://raw.githubusercontent.com/HaxeFlixel/flixel-demos/master/Tutorials/TurnBasedRPG/assets/images/coin.png), or make your own. Make sure you save this in `assets/images`.
 
@@ -50,10 +50,7 @@ Now that we have our little guy running around our map, lets give him something 
 9. Next, we just want to change our `placeEntities()` function to put a coin into our group every time it encounters one in our Ogmo file. At the end of our if statement, add:
 
 	```haxe
-	else if (entityName == "coin")
-	{
-		_grpCoins.add(new Coin(x + 4, y + 4));
-	}
+	else if (e.name == "coin") _grpCoins.add(new Coin(e.x + 4, e.y + 4));
 	```
 	
 	This will simply create a new coin, tell it to be at the position defined in the Ogmo file (`+4` to `x` and `y` to center it on the tile), and add it to the Coin group.
