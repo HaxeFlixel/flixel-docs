@@ -15,6 +15,7 @@ jobs:
     - run: git clone https://github.com/HaxeFlixel/flixel --branch master
     - run: haxelib dev flixel flixel
     - run: haxe --cwd flixel/tests --run RunTravis flash new -install
+    - run: haxelib git dox https://github.com/HaxeFlixel/dox
     - run: haxe --cwd api/dox-gen build.hxml
     - uses: JamesIves/github-pages-deploy-action@3.4.2
       with:
