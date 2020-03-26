@@ -50,7 +50,10 @@ Now that we have our little guy running around our map, lets give him something 
 9. Next, we just want to change our `placeEntities()` function to put a coin into our group every time it encounters one in our Ogmo file. At the end of our if statement, add:
 
 	```haxe
-	else if (e.name == "coin") _grpCoins.add(new Coin(e.x + 4, e.y + 4));
+	else if (e.name == "coin")
+	{
+		_grpCoins.add(new Coin(e.x + 4, e.y + 4));
+	}
 	```
 	
 	This will simply create a new coin, tell it to be at the position defined in the Ogmo file (`+4` to `x` and `y` to center it on the tile), and add it to the Coin group.

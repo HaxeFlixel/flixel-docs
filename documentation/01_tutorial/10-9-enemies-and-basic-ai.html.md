@@ -91,18 +91,24 @@ What would a dungeon game be without enemies? Let's add some!
 	var _grpEnemies:FlxTypedGroup<Enemy>;
 	```
 
-	In the create function,  right after we add our coin group:
+	In the create function, right after we add our coin group:
 
 	```haxe
 	_grpEnemies = new FlxTypedGroup<Enemy>();
 	add(_grpEnemies);
 	```
 
-	and at the end of our if/else statement in placeEntities:
+	and at the end of our if/else statement in `placeEntities()`:
 
 	```haxe
-	else if (e.name == "enemy") _grpEnemies.add(new Enemy(e.x + 4, e.y, 0));
-	else if (e.name == "boss") _grpEnemies.add(new Enemy(e.x + 4, e.y, 1));
+	else if (e.name == "enemy")
+	{
+		_grpEnemies.add(new Enemy(e.x + 4, e.y, 0));
+	}
+	else if (e.name == "boss")
+	{
+		_grpEnemies.add(new Enemy(e.x + 4, e.y, 1));
+	}
 	```
 
 Go ahead and test out your game to make sure the enemies are added properly.
