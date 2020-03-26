@@ -26,12 +26,12 @@
 			"problemMatcher": []
 		},
 		{
-			"label": "Test Docs",
+			"label": "Build Docs",
 			"command": "haxe",
 			"args": [
 				"--cwd",
 				"api/dox-gen",
-				"testdocs.hxml"
+				"build.hxml"
 			],
 			"problemMatcher": []
 		},

@@ -1,5 +1,0 @@
--cmd cd xml
--cmd haxe genxml.hxml
--cmd cd ..
--cmd haxe gendocs.hxml
--cmd haxe localhost.hxml

@@ -35,11 +35,11 @@ To generate the API docs yourself, you need to have dox installed (for instructi
 Then, either:
 
 - Navigate to `api/dox-gen`
-- Run `haxe testdocs.hxml`
+- Run `haxe build.hxml`, then `haxe localhost.hxml`
 
 or
 
-- Run the "Test Docs" build task in VSCode
+- Run the "Build Docs" build task in VSCode, then "Local Webserver"
 
 The docs will now be generated in the `api` folder.
 
