@@ -29,7 +29,7 @@
 -D web
 --macro flixel.system.macros.FlxDefines.run()
 --remap spine:spinehaxe
---macro include('flixel')
+--macro include('flixel', true, ['flixel.system.macros'])
 -cp bin/flash
 -swf-lib obj/assets.swf
 -xml bin/flash/types.xml
