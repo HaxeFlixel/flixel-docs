@@ -1,0 +1,22 @@
+name: CI
+
+on:
+  push:
+    branches: [master]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+      with:
+        persist-credentials: false
+    - uses: krdlab/setup-haxe@v1.1.2
+    - run: git clone https://github.com/HaxeFlixel/flixel master
+    - run: haxe --cwd flixel/git/tests --run RunTravis flash new -install
+    - run: haxe --cwd api/dox-gen build.hxml
+    - uses: JamesIves/github-pages-deploy-action@3.4.2
+      with:
+        ACCESS_TOKEN: ${{secrets.ACCESS_TOKEN}}
+        BRANCH: gh-pages
+        FOLDER: api
