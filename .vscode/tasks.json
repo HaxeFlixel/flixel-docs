@@ -6,7 +6,7 @@
 			"command": "haxe",
 			"args": [
 				"--cwd",
-				"api/dox-gen",
+				"api",
 				"gendocs.hxml"
 			],
 			"group": {
@@ -20,7 +20,7 @@
 			"command": "haxe",
 			"args": [
 				"--cwd",
-				"api/dox-gen/xml",
+				"api/xml",
 				"genxml.hxml"
 			],
 			"problemMatcher": []
@@ -30,7 +30,7 @@
 			"command": "haxe",
 			"args": [
 				"--cwd",
-				"api/dox-gen",
+				"api",
 				"build.hxml"
 			],
 			"problemMatcher": []
@@ -40,7 +40,7 @@
 			"command": "haxe",
 			"args": [
 				"--cwd",
-				"api/dox-gen",
+				"api",
 				"localhost.hxml"
 			],
 			"problemMatcher": []
@@ -50,7 +50,7 @@
 			"command": "haxe",
 			"args": [
 				"--cwd",
-				"api/dox-gen",
+				"api",
 				"clean.hxml"
 			],
 			"problemMatcher": []

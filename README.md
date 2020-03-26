@@ -28,13 +28,13 @@ The markdown syntax used in the docs is the  [GitHub-Flavored-Markdown](https://
 
 ### API documentation
 	
-Api documentation is provided in the `./api` folder, they are currently generated with [dox](https://github.com/HaxeFlixel/dox). You can view the API docs offline by running `nekotools server` in that directory and navigating to [localhost:2000](http://localhost:2000/).
+API documentation is provided in the `./api` folder, they are currently generated with [dox](https://github.com/HaxeFlixel/dox). You can view the API docs offline by cloning this directory, checking out the `gh-pages` branch, running `nekotools server` in `./api` and navigating to [localhost:2000](http://localhost:2000/).
 
 To generate the API docs yourself, you need to have dox installed (for instructions refer to [the readme](https://github.com/HaxeFlixel/dox/blob/master/README.md)).
 
 Then, either:
 
-- Navigate to `api/dox-gen`
+- Navigate to `api`
 - Run `haxe build.hxml`, then `haxe localhost.hxml`
 
 or
