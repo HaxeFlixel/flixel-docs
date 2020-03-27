@@ -73,6 +73,7 @@
     color: rgb(200, 200, 200);
     font-weight: normal;
     font-size: 16px;
+    padding-right: 5px;
 }
 
 .viewsource {
@@ -350,6 +351,9 @@ h6 {
 
 .sidebar-nav {
     padding: 9px 0;
+}
+
+#explorer {
     max-height: 70vh;
     overflow-y: auto;
 }
@@ -382,10 +386,6 @@ table.params th {
     margin-bottom: 40px;
 }
 
-.doc-main p {
-    font-style: italic;
-}
-
 .section {
     border-bottom: 1px solid #eee;
 }
@@ -413,7 +413,6 @@ table.params th {
     /* font-weight: normal; */
     /* font-size: small; */
     margin-top: 20px;
-    font-style: italic;
 }
 
 .inline-content * {
