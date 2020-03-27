@@ -32,17 +32,12 @@ The markdown syntax used in the docs is the  [GitHub-Flavored-Markdown](https://
 	
 API documentation is provided in the `./api` folder, they are currently generated with [dox](https://github.com/HaxeFlixel/dox). You can view the API docs offline by cloning this directory, checking out the `gh-pages` branch, running `nekotools server` in `./api` and navigating to [localhost:2000](http://localhost:2000/).
 
-To generate the API docs yourself, you need to have dox installed (for instructions refer to [the readme](https://github.com/HaxeFlixel/dox/blob/master/README.md)).
+To generate the API docs yourself, you need to first run `npm install` in `api/dox`. Then run the following from the root directory:
 
-Then, either:
+```
+haxe --cwd api --run Make xml pages server
+```
 
-- Navigate to `api/dox`, run `npm install`
-- Navigate to `api`, run `haxe build.hxml`, then `haxe localhost.hxml`
-
-or
-
-- Run the "Build Docs" build task in VSCode, then "Local Webserver"
-
-The docs will now be generated in the `api` folder.
+The docs will now be generated in the `api/dox/out` folder and a local webserver started at `localhost:2000`.
 
 Note this will use your locally enabled haxelib flixel versions, e.g. if you have `haxelib git flixel` set to `dev` etc.

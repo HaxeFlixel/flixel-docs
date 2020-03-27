@@ -1,2 +1,0 @@
--cmd haxe --cwd xml xml.hxml
--cmd haxe --cwd dox -cmd npx haxe dox.hxml

@@ -17,7 +17,7 @@ jobs:
     - run: haxe --cwd flixel/tests --run RunTravis flash new -install
     - run: npm install
       working-directory: api/dox
-    - run: haxe --cwd api build.hxml
+    - run: haxe --cwd api --run Make xml pages
     - uses: JamesIves/github-pages-deploy-action@3.4.2
       with:
         ACCESS_TOKEN: ${{secrets.ACCESS_TOKEN}}
