@@ -6,18 +6,28 @@ import dox.Dox;
 import haxe.io.Path;
 import haxe.rtti.CType.TypeInfos;
 import sys.FileSystem;
+import sys.io.File;
 import sys.io.Process;
 
 using StringTools;
 
 class Main {
+	public static var defines:Map<String, String>;
+
 	static function main() {
+		defines = [
+			for (line in File.getContent("../xml/bin/defines.txt").split("\n")) {
+				var parts = ~/ /.split(line);
+				parts[0] => parts[1];
+			}
+		];
+
 		var config = new Config();
 		config.inputPath = "../xml/bin/flash/types.xml";
 		config.outputPath = "out";
 		config.loadTheme(getDoxPath(), "./theme");
 		config.pageTitle = "HaxeFlixel API";
-		config.defines = [Version => "4.6.3"];
+		config.defines = [Version => defines["flixel"]];
 		config.addFilter("(__ASSET__|ApplicationMain|DocumentClass|DefaultAssetLibrary|Main|NMEPreloader|zpp_nape)", false);
 
 		Dox.run(config, FlixelApi.new);
@@ -75,7 +85,7 @@ class FlixelApi extends Api {
 		} else if (module.startsWith("hscript")) {
 			"HaxeFoundation/hscript/tree/master";
 		} else {
-			"HaxeFoundation/haxe/tree/master/std"; // default
+			'HaxeFoundation/haxe/blob/${Main.defines["haxe"]}/std'; // default
 		}
 
 		return haxe.io.Path.join([url, module.replace(".", "/") + ending]);
