@@ -36,8 +36,8 @@ To generate the API docs yourself, you need to have dox installed (for instructi
 
 Then, either:
 
-- Navigate to `api`
-- Run `haxe build.hxml`, then `haxe localhost.hxml`
+- Navigate to `api/dox`, run `npm install`
+- Navigate to `api`, run `haxe build.hxml`, then `haxe localhost.hxml`
 
 or
 
