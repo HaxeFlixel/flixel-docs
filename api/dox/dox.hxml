@@ -1,0 +1,12 @@
+-lib dox
+
+-lib hxtemplo
+-lib hxparse
+-lib hxargs
+-lib markdown
+
+-main Main
+--interp
+# -java bin
+# -D jvm
+# -cmd java -jar bin/Main.jar

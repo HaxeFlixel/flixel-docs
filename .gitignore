@@ -1,2 +1,3 @@
 api/xml/bin
-api/out
+api/dox/out
+node_modules

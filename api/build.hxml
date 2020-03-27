@@ -1,2 +1,2 @@
--cmd haxe --cwd xml genxml.hxml
--cmd haxe gendocs.hxml
+-cmd haxe --cwd xml xml.hxml
+-cmd haxe --cwd dox dox.hxml
