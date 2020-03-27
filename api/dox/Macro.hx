@@ -9,7 +9,6 @@ class Macro {
 	// meh...
 	public macro static function getDoxPath():Expr {
 		var output = getProcessOutput('npx haxelib path dox');
-		trace(output);
 		for (line in output.split("\n")) {
 			if (FileSystem.exists(line)) {
 				var path = Path.directory(Path.removeTrailingSlashes(line.trim()));
