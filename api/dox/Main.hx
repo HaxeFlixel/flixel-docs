@@ -3,11 +3,8 @@ package;
 import dox.Api;
 import dox.Config;
 import dox.Dox;
-import haxe.io.Path;
 import haxe.rtti.CType.TypeInfos;
-import sys.FileSystem;
 import sys.io.File;
-import sys.io.Process;
 
 using StringTools;
 
@@ -25,39 +22,12 @@ class Main {
 		var config = new Config();
 		config.inputPath = "../xml/bin/flash/types.xml";
 		config.outputPath = "out";
-		config.loadTheme(getDoxPath(), "./theme");
+		config.loadTheme(Macro.getDoxPath(), "./theme");
 		config.pageTitle = "HaxeFlixel API";
 		config.defines = [Version => defines["flixel"]];
 		config.addFilter("(__ASSET__|ApplicationMain|DocumentClass|DefaultAssetLibrary|Main|NMEPreloader|zpp_nape)", false);
 
 		Dox.run(config, FlixelApi.new);
-	}
-
-	// meh...
-	static function getDoxPath():String {
-		var output = getProcessOutput('npx haxelib path dox');
-		for (line in output.split("\n")) {
-			if (FileSystem.exists(line)) {
-				return Path.directory(Path.removeTrailingSlashes(line.trim()));
-			}
-		}
-		throw "dox path not found";
-	}
-
-	static function getProcessOutput(cmd:String, ?args:Array<String>):String {
-		try {
-			var process = new Process(cmd, args);
-			var output = "";
-
-			try {
-				output = process.stdout.readAll().toString();
-			} catch (_:Dynamic) {}
-
-			process.close();
-			return output;
-		} catch (_:Dynamic) {
-			return "";
-		}
 	}
 }
 
