@@ -68,8 +68,8 @@ updateHitbox(); // or offset.set(10, 5); to shift bounding box 10 pixels horizon
 
 ## FlxText
 
-* **setFormat**(Font, Size, Color, Alignment)
-* **setBorderStyle**(Style, Color, Size)
+* **setFormat**(font, size, color, alignment)
+* **setBorderStyle**(style, color, size)
 
 ```haxe
 import flixel.text.FlxText;
@@ -313,6 +313,7 @@ function voidCallback()
 {
 	trace("Hello");
 }
+
 function stringCallback(text:String)
 {
 	trace(text);
@@ -345,7 +346,7 @@ new FlxTimer().start(10.0, myCallback, 3);
 ```
 
 ```haxe
-function myCallback(Timer:FlxTimer):Void
+function myCallback(timer:FlxTimer):Void
 {
 }
 ```
@@ -380,11 +381,11 @@ import flixel.tweens.FlxEase;
 
 ```haxe
 // Moves sprite to position (100, 200) in 3 seconds
-FlxTween.tween(sprite, { x: 100, y: 200 }, 3.0, { ease: FlxEase.quadInOut, complete: myCallback });
+FlxTween.tween(sprite, {x: 100, y: 200}, 3.0, {ease: FlxEase.quadInOut, complete: myCallback});
 ```
 
 ```haxe
-function myCallback(Tween:FlxTween):Void
+function myCallback(tween:FlxTween):Void
 {
 }
 ```
@@ -393,23 +394,23 @@ function myCallback(Tween:FlxTween):Void
 
 #### ease
 ```haxe
-{ ease: FlxEase.quadInOut }
+{ease: FlxEase.quadInOut}
 ```
 
 #### complete
 ```haxe
-{ complete: callbackFunction }
+{complete: callbackFunction}
 ```
 
 ```haxe
-function callbackFunction(Tween:FlxTween):Void
+function callbackFunction(tween:FlxTween):Void
 {
 }
 ```
 
 #### type
 ```haxe
-{ type: FlxTween.PINGPONG }
+{type: FlxTween.PINGPONG}
 ```
 * **FlxTween.BACKWARD:** plays tween in reverse direction
 * **FlxTween.LOOPING:** restarts immediately when it finishes.
@@ -419,12 +420,12 @@ function callbackFunction(Tween:FlxTween):Void
 
 #### loopDelay
 ```haxe
-{ loopDelay: 1.0 } // 1 second
+{loopDelay: 1.0} // 1 second
 ```
 
 #### startDelay
 ```haxe
-{ startDelay: 2.0 } // 2 seconds
+{startDelay: 2.0} // 2 seconds
 ```
 
 ## FlxEase List
@@ -478,16 +479,16 @@ for (member in myGroup)
 ## Collision
 
 ```haxe
-FlxG.overlap(ObjectOrGroup1, ObjectOrGroup2, myCallback);
+FlxG.overlap(objectOrGroup1, objectOrGroup2, myCallback);
 ```
 
 ```haxe
-function myCallback(Object1:FlxObject, Object2:FlxObject):Void
+function myCallback(object1:FlxObject, object2:FlxObject):Void
 {
 }
 ```
 
-Or use `FlxG.collide()` which calls `FlxG.overlap()` and presets the `ProcessCallback` parameter to `FlxObject.separate()`.
+Or use `FlxG.collide()` which calls `FlxG.overlap()` and presets the `processCallback` parameter to `FlxObject.separate()`.
 
 ### Setting World Bounds
 
@@ -545,19 +546,19 @@ add(canvas);
 The last argument of `makeGraphic()` is `Unique`, whether the graphic should be an unique instance in the graphics cache, if you create multiple graphics like this, set it to `true` to avoid conflicts.
 
 ```haxe
-var lineStyle:LineStyle = { color: FlxColor.RED, thickness: 1 };
-var drawStyle:DrawStyle = { smoothing: true };
+var lineStyle:LineStyle = {color: FlxColor.RED, thickness: 1};
+var drawStyle:DrawStyle = {smoothing: true};
 ```
 
 ```haxe
 // Circle
-canvas.drawCircle(X, Y, Radius, Color, lineStyle, drawStyle);
+canvas.drawCircle(x, y, radius, color, lineStyle, drawStyle);
 
 // Ellipse
-canvas.drawEllipse(X, Y, Width, Height, Color, lineStyle, drawStyle);
+canvas.drawEllipse(x, y, width, height, color, lineStyle, drawStyle);
 
 // Line
-canvas.drawLine(StartX, StartY, EndX, EndY, lineStyle);
+canvas.drawLine(startX, startY, endX, endY, lineStyle);
 
 // Polygon
 var vertices = new Array<FlxPoint>();
@@ -565,19 +566,19 @@ vertices[0] = new FlxPoint(0, 0);
 vertices[1] = new FlxPoint(100, 0);
 vertices[2] = new FlxPoint(100, 300);
 vertices[3] = new FlxPoint(0, 100);
-canvas.drawPolygon(vertices, Color, lineStyle, drawStyle);
+canvas.drawPolygon(vertices, color, lineStyle, drawStyle);
 
 // Triangle
-canvas.drawTriangle(X, Y, Height, Color, lineStyle, drawStyle);
+canvas.drawTriangle(x, y, height, color, lineStyle, drawStyle);
 
 // Rect
-canvas.drawRect(X, Y, Width, Height, Color, lineStyle, drawStyle);
+canvas.drawRect(x, y, width, height, color, lineStyle, drawStyle);
 
 // Round Rect
-canvas.drawRoundRect(X, Y, Width, Height, EllipseWidth, EllipseHeight, Color, lineStyle, drawStyle);
+canvas.drawRoundRect(x, y, width, height, ellipseWidth, ellipseHeight, color, lineStyle, drawStyle);
 
 // Rect Complex
-canvas.drawRoundRectComplex(X, Y, Width, Height, TopLeftRadius, TopRightRadius, BottomLeftRadius, BottomRightRadius, Color, lineStyle, drawStyle);
+canvas.drawRoundRectComplex(x, y, width, height, topLeftRadius, topRightRadius, bottomLeftRadius, bottomRightRadius, color, lineStyle, drawStyle);
 ```
 
 Use `canvas.fill(FlxColor.TRANSPARENT);` to clear the canvas.
