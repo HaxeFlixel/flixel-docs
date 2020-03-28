@@ -7,10 +7,9 @@ HaxeFlixel is a collaborative project from [contributors all over the world](htt
 
 If you need help or just want to chat , HaxeFlixel has a...
 
-- **[Discord Server](https://discordapp.com/invite/rqEBAgF)**
-- **[Forum](http://forum.haxeflixel.com/)**
+- [Discord Server](https://discordapp.com/invite/rqEBAgF) (most active)
+- [Forum](http://forum.haxeflixel.com/)
 - [StackOverflow Tag](https://stackoverflow.com/questions/tagged/haxeflixel)
-- [Subreddit](https://www.reddit.com/r/haxeflixel)
 
 Other HaxeFlixel-related pages:
 
