@@ -91,7 +91,7 @@ We do that by adding a new button to the `MenuState`:
 	#if desktop
 	function clickExit()
 	{
-		System.exit(0);
+		Sys.exit(0);
 	}
 	#end
 	```

@@ -279,4 +279,4 @@ That's all there is to it! Try out your game and make sure it works.
 
 ![](../images/01_tutorial/browser_enemy_brain.png)
 
-Next, we'll add some UI to the game, and add our RPG-style combat so you can fight the enemies1
+Next, we'll add some UI to the game, and add our RPG-style combat so you can fight the enemies!
