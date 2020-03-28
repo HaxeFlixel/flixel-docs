@@ -61,7 +61,7 @@ Possible values are:
 
 - `onComplete`: a callback function, which is called once the tween has finished. This is called every time the tween has finished one execution and comes in handy for repeating tweens (**LOOPING** and **PINGPONG**). The method must take a `FlxTween` and return nothing.
 
-- `ease`: an optional easer function. This can be used to make the beginning and end of a tween smoother. The [`FlxEase`](http://api.haxeflixel.com/types/flixel/tweens/FlxEase.html) class provides many static methods for this which should cover most cases. The following list shows all functions from `FlxEase`. In all of these, `In` can be replaced by `Out` or `InOut`, depending on where you want to apply the easing effect: at the beginning of the animation, at the end or at both sides.
+- `ease`: an optional easer function. This can be used to make the beginning and end of a tween smoother. The [`FlxEase`](http://haxeflixel.github.io/flixel-docs/types/flixel/tweens/FlxEase.html) class provides many static methods for this which should cover most cases. The following list shows all functions from `FlxEase`. In all of these, `In` can be replaced by `Out` or `InOut`, depending on where you want to apply the easing effect: at the beginning of the animation, at the end or at both sides.
 
 	- `backIn`
 	- `bounceIn`
@@ -122,4 +122,4 @@ The `FlxTween` class also contains the methods `linearMotion()`, `quadMotion()`,
 
 The methods `linearPath()` and `quadPath()` can be used for longer paths defined through an array of points, instead of a fixed number of points.
 
-If you want to use these methods please refer to the [`FlxTween` API](http://api.haxeflixel.com/flixel/tweens/FlxTween.html). 
+If you want to use these methods please refer to the [`FlxTween` API](http://haxeflixel.github.io/flixel-docs/flixel/tweens/FlxTween.html). 

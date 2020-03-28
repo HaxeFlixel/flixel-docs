@@ -12,7 +12,7 @@ The strongest criticism we have seen for Flixel has been a the idea that the cod
 
 3.x is an evolution and improvement of the original Flixel API. It has a focus on being more logically named and structured for users to remember and expect consistency. While doing this we see the latest code as something more easier to maintain and extend. The entire process was undertaken openly on our [GitHub pages](http://www.github.com/haxeflixel). 
 
-The API changes of HaxeFlixel 3.x have pushed this to a point release. Users who were developing with 2.x will need to update their code to the new and improved [API](http://api.haxeflixel.com/). We have collected the most important parts in our [upgrade guide](https://haxeflixel.com/documentation/upgrade-guide-3-x/).
+The API changes of HaxeFlixel 3.x have pushed this to a point release. Users who were developing with 2.x will need to update their code to the new and improved [API](http://haxeflixel.github.io/flixel-docs/). We have collected the most important parts in our [upgrade guide](https://haxeflixel.com/documentation/upgrade-guide-3-x/).
 
 However big the changes which there are many, it is still easy for existing Flixel users to learn and adopt.
 
