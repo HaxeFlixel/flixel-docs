@@ -51,7 +51,7 @@ override public function create():Void
 	add(text);
 }
 ```
-p
+
 This will create a new `FlxText` instance with font size `64`, center it on the screen and `add()` it so it is displayed.
 
 ### Test the Project
