@@ -6,7 +6,7 @@ Our game is really coming together now, but it's still missing something… ther
 
 For this game, we're going to keep it simple (as usual). We're going to have a single, continuously looping track that plays while our game is running. We will also have several, simple sound effects that play for different actions. Playing sounds and music in HaxeFlixel is pretty easy, so this will go quickly!
 
-First, you'll need to make your music and sounds. Patrick Crecelius from [Fat Bard](http://fatbard.tumblr.com) has provided [some music](https://raw.githubusercontent.com/HaxeFlixel/flixel-demos/master/Tutorials/TurnBasedRPG/assets/music/HaxeFlixel_Tutorial_Game.mp3) for this tutorial - feel free to use it for this tutorial, or make your own.
+First, you'll need to make your music and sounds. Patrick Crecelius from [Fat Bard](http://fatbard.tumblr.com) has provided [some music](https://raw.githubusercontent.com/HaxeFlixel/flixel-demos/master/Tutorials/TurnBasedRPG/assets/music/HaxeFlixel_Tutorial_Game.ogg) for this tutorial - feel free to use it for this tutorial, or make your own.
 
 We've also created some sound effects using [Bfxr](http://www.bfxr.net/), which you can use if you like, or, make your own!
 
@@ -39,7 +39,7 @@ Now let's change our code to use these sounds:
 	```haxe
 	if (FlxG.sound.music == null) // don't restart the music if it's already playing
 	{
-		FlxG.sound.playMusic(AssetPaths.HaxeFlixel_Tutorial_Game__mp3, 1, true);
+		FlxG.sound.playMusic(AssetPaths.HaxeFlixel_Tutorial_Game__ogg, 1, true);
 	}
 	```
 
@@ -50,29 +50,29 @@ Now let's change our code to use these sounds:
 2. Next, we want to make our buttons all make a sound when they get clicked. This is simple, we just tell the button's `onUp` to load our sound. In the `MenuState`'s `create()`, after you initialize the play-button, add this:
 
 	```haxe
-	_btnPlay.onUp.sound = FlxG.sound.load(AssetPaths.select__wav);
+	playButton.onUp.sound = FlxG.sound.load(AssetPaths.select__wav);
 	```
 
-3. Now, you can do the same for the options button (changing `_btnPlay` to `_btnOptions`).
+3. Now, you can do the same for the options button (changing `playButton` to `optionsButton`).
 
 	For each of the other buttons in our game - four of them in `OptionsState`, and one in `GameOverState` - the code already exists, but as a learning exercise, you can go through those files and see what was done.
 
 4. Next, let's give our player some footsteps. We don't want to create and destroy a new sound object every time we want to play the same sound, so we will create a `FlxSound` object to be used over and over. At the top of the `Player` class, add:
 	
 	```haxe
-	var _sndStep:FlxSound;
+	var stepSound:FlxSound;
 	```
 
 5. Then, we need to load the footstep sound somewhere in the constructor:
 
 	```haxe
-	_sndStep = FlxG.sound.load(AssetPaths.step__wav);
+	stepSound = FlxG.sound.load(AssetPaths.step__wav);
 	```
 
-6. Now go to our `movement()` function, and, after we check if the player is moving (`if ((velocity.x != 0 || velocity.y != 0) && touching == FlxObject.NONE)`), add:
+6. Now go to our `updateMovement()` function, and, after we check if the player is moving (`if ((velocity.x != 0 || velocity.y != 0) && touching == FlxObject.NONE)`), add:
 
 	```haxe
-	_sndStep.play();
+	stepSound.play();
 	```
 
 	A neat little property of `FlxSound` objects is that if you ever tell one to play, if it's already playing (and you haven't set the `forceRestart` flag), it won't play again. This means we can easily call play on our sound every frame, and it will sound as if the sound is just being looped - for as long as the player is moving, but will finish if the player has stopped moving, and not start up again while they are stationary.
@@ -80,27 +80,27 @@ Now let's change our code to use these sounds:
 7. Now, let's give enemies their own footsteps, too. The difference is, instead of just always playing the step sound at full volume, we're going to change the volume based on the proximity of the enemy to the player. This will be easier than it sounds. First, add our sound variable to the top of Enemy.hx:
 
 	```haxe
-	var _sndStep:FlxSound;
+	var stepSound:FlxSound;
 	```
 
 8. And then, similarly to how we setup the `Player` class, add this to our constructor:
 
 	```haxe
-	_sndStep = FlxG.sound.load(AssetPaths.step__wav,.4);
-	_sndStep.proximity(x,y,FlxG.camera.target, FlxG.width *.6);
+	stepSound = FlxG.sound.load(AssetPaths.step__wav, 0.4);
+	stepSound.proximity(x, y, FlxG.camera.target, FlxG.width * 0.6);
 	```
 
-	You'll notice that we are setting the volume to `.4` (40%) this is because there will be plenty of enemies on the map, and there footsteps can get kind of annoying and loud (besides, they're probably walking around the dungeon barefoot, right?).
+	You'll notice that we are setting the volume to `0.4` (40%) this is because there will be plenty of enemies on the map, and there footsteps can get kind of annoying and loud (besides, they're probably walking around the dungeon barefoot, right?).
 
 9. We then setup our proximity for our sounds, setting it's position  to the `x` and `y` position of this enemy, and telling it to target the `FlxG.camera.target` object (which happens to be our player!). Finally, we say that the radius of our footstep sound is a little bit more than half of the screen's width - so we should be able to hear enemies that are just off the screen, and all the enemies' footsteps will sound louder/softer based on their distance from the camera target.
 
-10. Next, in the enemy's `update()`, after `super.update()`, we're going to check if the enemy is moving and not bumping into a wall. If they are moving, we set the position of our sound to wherever our enemy is (to the bottom of his sprite - where his feet are), and then play the sound.
+10. Next, in the enemy's `update()`, before `super.update()`, we're going to check if the enemy is moving and not bumping into a wall. If they are moving, we set the position of our sound to wherever our enemy is (to the bottom of his sprite - where his feet are), and then play the sound.
 
 	```haxe
 	if ((velocity.x != 0 || velocity.y != 0) && touching == FlxObject.NONE)
 	{
-		_sndStep.setPosition(x + frameWidth / 2, y + height);
-		_sndStep.play();
+		stepSound.setPosition(x + frameWidth / 2, y + height);
+		stepSound.play();
 	}
 	```
 
@@ -109,19 +109,19 @@ Now let's change our code to use these sounds:
 	So, just like our other sounds, initialize the variable:
 
 	```haxe
-	var _sndCoin:FlxSound;
+	var coinSound:FlxSound;
 	```
 
 	Load the sound in `create()`:
 	
 	```haxe
-	_sndCoin = FlxG.sound.load(AssetPaths.coin__wav);
+	coinSound = FlxG.sound.load(AssetPaths.coin__wav);
 	```
 
-	And in `playerTouchCoin()`, inside the `ìf`-statement, add:
+	And in `playerTouchCoin()`, inside the `if`-statement, add:
 
 	```haxe
-	_sndCoin.play(true);
+	coinSound.play(true);
 	```
 
 	This time we will use `forceRestart` so that if the player happens to pickup several coins close to each other the sound will keep up with them.
@@ -133,87 +133,87 @@ Now let's change our code to use these sounds:
 	To initialize them:
 
 	```haxe
-	var _sndFled:FlxSound;
-	var _sndHurt:FlxSound;
-	var _sndLose:FlxSound;
-	var _sndMiss:FlxSound;
-	var _sndSelect:FlxSound;
-	var _sndWin:FlxSound;
-	var _sndCombat:FlxSound;
+	var fledSound:FlxSound;
+	var hurtSound:FlxSound;
+	var loseSound:FlxSound;
+	var missSound:FlxSound;
+	var selectSound:FlxSound;
+	var winSound:FlxSound;
+	var combatSound:FlxSound;
 	```
 
 	To load them:
 
 	```haxe
-	_sndFled = FlxG.sound.load(AssetPaths.fled__wav);
-	_sndHurt = FlxG.sound.load(AssetPaths.hurt__wav);
-	_sndLose = FlxG.sound.load(AssetPaths.lose__wav);
-	_sndMiss = FlxG.sound.load(AssetPaths.miss__wav);
-	_sndSelect = FlxG.sound.load(AssetPaths.select__wav);
-	_sndWin = FlxG.sound.load(AssetPaths.win__wav);
-	_sndCombat = FlxG.sound.load(AssetPaths.combat__wav);
+	fledSound = FlxG.sound.load(AssetPaths.fled__wav);
+	hurtSound = FlxG.sound.load(AssetPaths.hurt__wav);
+	loseSound = FlxG.sound.load(AssetPaths.lose__wav);
+	missSound = FlxG.sound.load(AssetPaths.miss__wav);
+	selectSound = FlxG.sound.load(AssetPaths.select__wav);
+	winSound = FlxG.sound.load(AssetPaths.win__wav);
+	combatSound = FlxG.sound.load(AssetPaths.combat__wav);
 	```
 
 	You can probably figure out where they all go, but I'll go through them anyway.
 
-	In initCombat, add:
+	In `initCombat()`:
 
 	```haxe
-	_sndCombat.play();
+	combatSound.play();
 	```
 
-	In finishFadeIn, add:
+	In `finishFadeIn()`:
 
 	```haxe
-	_sndSelect.play();
+	selectSound.play();
 	```
 
-	In `update()`, inside each of our three if statements related to button presses (`if (_fire), else if (_up), else if (_down)`) add:
+	In `update()`, inside each of our three if statements related to button presses (`if (_fire), else if (up), else if (down)`):
 
 	```haxe
-	sndSelect.play();
+	selectSound.play();
 	```
 
-	In makeChoice, in our logic for a 'hit' (after `_damages[1].text = "1";`), add:
+	In `makeChoice()`, in our logic for a 'hit' (after `_damages[1].text = "1";`):
 
 	```haxe
-	_sndHurt.play();
+	hurtSound.play();
 	```
 
-	and in our miss logic, add:
+	and in our miss logic:
 
 	```haxe
-	_sndMiss.play();
+	missSound.play();
 	```
 
-	Further down, if the player escapes (after `outcome = ESCAPE`), add:
+	Further down, if the player escapes (after `outcome = ESCAPE`):
 
 	```haxe
-	_sndFled.play();
+	fledSound.play();
 	```
 
-	In `enemyAttack()`, if the enemy hits, add:
+	In `enemyAttack()`, if the enemy hits:
 
 	```haxe
-	_sndHurt.play();
+	hurtSound.play();
 	```
 
-	and if they miss add:
+	and if they miss:
 
 	```haxe
-	_sndMiss.play();
+	missSound.play();
 	```
 
-	Finally, in `doneDamageOut()`, after `outcome = DEFEAT`, add:
+	Finally, in `doneDamageOut()`, after `outcome = DEFEAT`:
 
 	```haxe
-	_sndLose.play();
+	loseSound.play();
 	```
 
-	and after `outcome = VICTORY`, add:
+	and after `outcome = VICTORY`:
 	
 	```haxe
-	_sndWin.play();
+	winSound.play();
 	```
 
 And that's it for sound! Play your game now, and you should hear all of the effects we've added (make sure your volume is up high enough, too!) It's starting to look like a real game! Next time, we'll get it working on multiple platforms!

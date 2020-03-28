@@ -7,8 +7,8 @@ Our game is really starting to come together! Now we need it to feel more like a
 1. Let's start with `PlayState`. We need to add some flags to see if we're ending the game, and if the player has 'won' or not. So, add:
 	
 	```haxe
-	var _ending:Bool;
-	var _won:Bool;
+	var ending:Bool;
+	var won:Bool;
 	```
 
 	To the top of the class.
@@ -16,7 +16,7 @@ Our game is really starting to come together! Now we need it to feel more like a
 2. Next, in `update()`, right under `super.update(elapsed)` add:
 
 	```haxe
-	if (_ending)
+	if (ending)
 	{
 		return;
 	}
@@ -24,37 +24,37 @@ Our game is really starting to come together! Now we need it to feel more like a
 
 	We don't want to allow anything else to go on if we're ending the game and getting ready to switch states.
 
-3. Next, still in `update()`, we're going to change our logic to this:
+3. Next, still in `update()`, we're going to change our logic in `if (inCombat)` to this:
 
 	```haxe
-	if (!_combatHud.visible)
+	if (!combatHud.visible)
 	{
-		_health = _combatHud.playerHealth;
-		_hud.updateHUD(_health, _money);
-		if (_combatHud.outcome == DEFEAT)
+		health = combatHud.playerHealth;
+		hud.updateHUD(health, money);
+		if (combatHud.outcome == DEFEAT)
 		{
-			_ending = true;
-			FlxG.camera.fade(FlxColor.BLACK, .33, false, doneFadeOut);
+			ending = true;
+			FlxG.camera.fade(FlxColor.BLACK, 0.33, false, doneFadeOut);
 		}
 		else
 		{
-			if (_combatHud.outcome == VICTORY)
+			if (combatHud.outcome == VICTORY)
 			{
-				_combatHud.e.kill();
-				if (_combatHud.e.etype == 1)
+				combatHud.enemy.kill();
+				if (combatHud.enemy.type == BOSS)
 				{
-					_won = true;
-					_ending = true;
-					FlxG.camera.fade(FlxColor.BLACK, .33, false, doneFadeOut);
+					won = true;
+					ending = true;
+					FlxG.camera.fade(FlxColor.BLACK, 0.33, false, doneFadeOut);
 				}
 			}
 			else
 			{
-				_combatHud.e.flicker();
+				combatHud.enemy.flicker();
 			}
-			_inCombat = false;
-			_player.active = true;
-			_grpEnemies.active = true;
+			inCombat = false;
+			player.active = true;
+			enemies.active = true;
 		}
 	}
 	```
@@ -66,13 +66,13 @@ Our game is really starting to come together! Now we need it to feel more like a
 4. When the camera is done fading to black, we call this function, which will switch the state to our `GameOverState` (which you'll make in a second), passing it if the player won or not, and how much money they have.
 
 	```haxe
-	function doneFadeOut():Void
+	function doneFadeOut()
 	{
-		FlxG.switchState(new GameOverState(_won, _money));
+		FlxG.switchState(new GameOverState(won, money));
 	}
 	```
 
- We need to add the `GameOverState`. This is going to be a pretty simple `FlxState` where we show a message - either "Game Over" or "You Win!", depending on our won flag, and the final score for this player. We will also use flixel's save/load functionality to compare the previous highscores, and, if the new score is higher, replace the saved highscore, and show the highscore on the screen.
+5. Finally, we need to add the `GameOverState`. This is going to be a pretty simple `FlxState` where we show a message - either "Game Over" or "You Win!", depending on our won flag, and the final score for this player. We will also use flixel's save/load functionality to compare the previous highscores, and, if the new score is higher, replace the saved highscore, and show the highscore on the screen.
 
 	Finally, we have a button to take the player back to the main menu.
 
@@ -87,33 +87,33 @@ If you test your game, you should be able to trigger the `GameOverState` by eith
 1. Let's add a title and an options-button to the `MenuState`:
 
 	```haxe
-	var _txtTitle:FlxText;
-	var _btnOptions:FlxButton;
+	var titleText:FlxText;
+	var optionsButton:FlxButton;
 	```
 
 2. Then, in `create()`, we'll add them to the state (and move the play-button as well):
 
 	```haxe
-	_txtTitle = new FlxText(20, 0, 0, "HaxeFlixel\nTutorial\nGame", 22);
-	_txtTitle.alignment = CENTER;
-	_txtTitle.screenCenter(X);
-	add(_txtTitle);
+	titleText = new FlxText(20, 0, 0, "HaxeFlixel\nTutorial\nGame", 22);
+	titleText.alignment = CENTER;
+	titleText.screenCenter(X);
+	add(titleText);
 	
-	_btnPlay = new FlxButton(0, 0, "Play", clickPlay);
-	_btnPlay.x = (FlxG.width / 2) - _btnPlay.width - 10;
-	_btnPlay.y = FlxG.height - _btnPlay.height - 10;
-	add(_btnPlay);
+	playButton = new FlxButton(0, 0, "Play", clickPlay);
+	playButton.x = (FlxG.width / 2) - playButton.width - 10;
+	playButton.y = FlxG.height - playButton.height - 10;
+	add(playButton);
 	
-	_btnOptions = new FlxButton(0, 0, "Options", clickOptions);
-	_btnOptions.x = (FlxG.width / 2) + 10;
-	_btnOptions.y = FlxG.height - _btnOptions.height - 10;
-	add(_btnOptions);
+	optionsButton = new FlxButton(0, 0, "Options", clickOptions);
+	optionsButton.x = (FlxG.width / 2) + 10;
+	optionsButton.y = FlxG.height - optionsButton.height - 10;
+	add(optionsButton);
 	```
 
 3. Add the function that gets called when the options-button is clicked:
 
 	```haxe
-	function clickOptions():Void
+	function clickOptions()
 	{
 		FlxG.switchState(new OptionsState());
 	}
@@ -134,19 +134,19 @@ If you test your game, you should be able to trigger the `GameOverState` by eith
 	Finally, we want our game to load the stored volume (if there is any) each time the game starts, so, go to `Main.hx`, and add this after the `addChild()` call:
 
 	```haxe
-	var _save:FlxSave = new FlxSave();
-	_save.bind("flixel-tutorial");
-	if (_save.data.volume != null)
+	var save = new FlxSave();
+	save.bind("TurnBasedRPG");
+	if (save.data.volume != null)
 	{
-		FlxG.sound.volume = _save.data.volume;
+		FlxG.sound.volume = save.data.volume;
 	}
-	_save.close();
+	save.close();
 	```
 
-	Pretty simple: it makes a new `FlxSave` object, binds it to our `"flixel-tutorial"` and then checks if there is a volume value stored in it, and if there is, sets our game's volume to match, and then closes the save.
+	Pretty simple: it makes a new `FlxSave` object, binds it to our `"TurnBasedRPG"` and then checks if there is a volume value stored in it, and if there is, sets our game's volume to match, and then closes the save.
 
 Test everything out, make sure it's working, and that if you change your volume under options and then exit the game, it retains the value the next time to get into the options screen.
 
-![](../images/01_tutorial/0022.png)
+![](../images/01_tutorial/browser_options.png)
 
 Looking good! Next time we'll give our volume something to do by adding sound and music!

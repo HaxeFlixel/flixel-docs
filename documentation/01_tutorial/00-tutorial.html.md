@@ -5,7 +5,7 @@ rootDoc: true
 
 Welcome to HaxeFlixel! In this tutorial, you will learn how to create a complete game in HaxeFlixel from start to finish, and then some. Each step is broken into smaller chunks to help you get through even the most complicated and daunting steps.
 
-This tutorial is geared towards building for Flash, Windows, and Android. We will work primarily with Flash most of the time.
+This tutorial is geared towards building for HTML5, Windows, and Android. We will work primarily with HTML5 most of the time.
 
 We are going to be building a small **dungeon crawler**. You can see the finished product here:
 

@@ -12,27 +12,44 @@ What would a dungeon game be without enemies? Let's add some!
 
 	<img src="../images/01_tutorial/ogmo_editor_entities_enemies.png" style="width:100%;" />
 
-3. So we want to have 2 different enemies in our game. We'll need spritesheets for both of them, with 16x16 pixel frames and the same animation frames as our player. Name them `enemy-0.png` and `enemy-1.png` and put them in the `assets/images` folder. You can use these, if you want (thanks, again, Vicky!):
+3. So we want to have 2 different enemies in our game. We'll need spritesheets for both of them, with 16x16 pixel frames and the same animation frames as our player. Name them `enemy.png` and `boss.png` and put them in the `assets/images` folder. You can use these, if you want (thanks, again, Vicky!):
 
-	![](https://raw.githubusercontent.com/HaxeFlixel/flixel-demos/master/Tutorials/TurnBasedRPG/assets/images/enemy-0.png)
+	![](https://raw.githubusercontent.com/HaxeFlixel/flixel-demos/master/Tutorials/TurnBasedRPG/assets/images/enemy.png)
 
-	![](https://raw.githubusercontent.com/HaxeFlixel/flixel-demos/master/Tutorials/TurnBasedRPG/assets/images/enemy-1.png)
+	![](https://raw.githubusercontent.com/HaxeFlixel/flixel-demos/master/Tutorials/TurnBasedRPG/assets/images/boss.png)
 
 	Note: make sure that your enemy sprites are functionally the same - they should have the same number of frames for each `facing` animation.
 
-4. Let's add a new `Enemy` class. This class is going to look a lot like our `Player` class, with a few changes:
+4. Let's add a new some code for enemies. Since we're going to have two different types of enemies, regular enemies and the boss, let's start by creating an `EnemyType` enumeration:
 
 	```haxe
+	enum EnemyType
+	{
+		REGULAR;
+		BOSS;
+	}
+	```
+
+	This basically just gives us two handy constants that we can use to distuingish them. Our `Enemy` class is going to look a lot like our `Player`:
+
+	```haxe
+	package;
+
+	import flixel.FlxObject;
+	import flixel.FlxSprite;
+
 	class Enemy extends FlxSprite
 	{
-		public var speed:Float = 140;
-		public var etype(default, null):Int;
+		static inline var SPEED:Float = 140;
 
-		public function new(X:Float=0, Y:Float=0, EType:Int)
+		var type:EnemyType;
+
+		public function new(x:Float, y:Float, type:EnemyType)
 		{
-			super(X, Y);
-			etype = EType;
-			loadGraphic("assets/images/enemy-" + etype + ".png", true, 16, 16);
+			super(x, y);
+			this.type = type;
+			var graphic = if (type == BOSS) AssetPaths.boss__png else AssetPaths.enemy__png;
+			loadGraphic(graphic, true, 16, 16);
 			setFacingFlip(FlxObject.LEFT, false, false);
 			setFacingFlip(FlxObject.RIGHT, true, false);
 			animation.add("d", [0, 1, 0, 2], 6, false);
@@ -45,9 +62,9 @@ What would a dungeon game be without enemies? Let's add some!
 			offset.y = 2;
 		}
 
-		override public function draw():Void
+		override public function update(elapsed:Float)
 		{
-			if ((velocity.x != 0 || velocity.y != 0 ) && touching == FlxObject.NONE)
+			if ((velocity.x != 0 || velocity.y != 0) && touching == FlxObject.NONE)
 			{
 				if (Math.abs(velocity.x) > Math.abs(velocity.y))
 				{
@@ -76,44 +93,70 @@ What would a dungeon game be without enemies? Let's add some!
 						animation.play("d");
 				}
 			}
-			super.draw();
+			super.update(elapsed);
 		}
 	}
 	```
 
-	The main difference is that we have a new `etype` variable, which we will use to figure out which enemy sprite to load, and which one we're dealing with, etc.
+	The main difference is that we have a new `type` variable, which we will use to figure out which enemy sprite to load, and which one we're dealing with, etc.
 
 5. Next, we'll make a `FlxGroup` in our `PlayState` to hold our enemies, and load them into the map, very much the same way we did our coins.
 
 	At the top of our class, add:
 
 	```haxe
-	var _grpEnemies:FlxTypedGroup<Enemy>;
+	var enemies:FlxTypedGroup<Enemy>;
 	```
 
 	In the create function, right after we add our coin group:
 
 	```haxe
-	_grpEnemies = new FlxTypedGroup<Enemy>();
-	add(_grpEnemies);
+	enemies = new FlxTypedGroup<Enemy>();
+	add(enemies);
 	```
 
-	and at the end of our if/else statement in `placeEntities()`:
+	We will also need to add two more cases to our `placeEntities()` function:
+	
+	```haxe
+	else if (entity.name == "enemy")
+	{
+		enemies.add(new Enemy(entity.x + 4, entity.y, 0));
+	}
+	else if (entity.name == "boss")
+	{
+		enemies.add(new Enemy(entity.x + 4, entity.y, 1));
+	}
+	```
+
+	Go ahead and test out your game to make sure the enemies are added properly.
+	
+6. (optional step) Our `placeEntities()` is starting to get a bit repetitive. Each `if` checks `entity.name`, and each time we use `entity.x` and `entity.y`.
+	
+	Let's fix this by using a `switch-case` instead of an `if`/`else`-chain, as well as adding some temporary `x` and `y` variables:
 
 	```haxe
-	else if (e.name == "enemy")
+	var x = entity.x;
+	var y = entity.y;
+
+	switch (entity.name)
 	{
-		_grpEnemies.add(new Enemy(e.x + 4, e.y, 0));
-	}
-	else if (e.name == "boss")
-	{
-		_grpEnemies.add(new Enemy(e.x + 4, e.y, 1));
+		case "player":
+			player.setPosition(x, y);
+
+		case "coin":
+			coins.add(new Coin(x + 4, y + 4));
+
+		case "enemy":
+			enemies.add(new Enemy(x + 4, y, REGULAR));
+
+		case "boss":
+			enemies.add(new Enemy(x + 4, y, BOSS));
 	}
 	```
 
-Go ahead and test out your game to make sure the enemies are added properly.
+	There, that's a lot easier to read!
 
-Now let's give them some brains.
+Now let's give our enemies some brains.
 
 In order to let our enemies 'think', we're going to utilize a very simple [Finite-state Machine (FSM)](http://en.wikipedia.org/wiki/Finite_state_machine). Basically, the FSM works by saying that a given machine (or entity) can only be in one state at a time. For our enemies, we're going to give them 2 possible states: `Idle` and `Chase`. When they can't 'see' the player, they will be `Idle` - wandering around aimlessly. Once the player is in view, however, they will switch to the `Chase` state and run towards the player.
 
@@ -122,17 +165,16 @@ In order to let our enemies 'think', we're going to utilize a very simple [Finit
 	```haxe
 	class FSM
 	{
-		public var activeState:Void->Void;
+		public var activeState:Float->Void;
 
-		public function new(?InitState:Void->Void):Void
+		public function new(initialState:Float->Void)
 		{
-			activeState = InitState;
+			activeState = initialState;
 		}
 
-		public function update():Void
+		public function update(elapsed:Float)
 		{
-			if (activeState != null)
-				activeState();
+			activeState(elapsed);
 		}
 	}
 	```
@@ -142,69 +184,69 @@ In order to let our enemies 'think', we're going to utilize a very simple [Finit
 	We need to define these variables at the top of the class:
 
 	```haxe
-	var _brain:FSM;
-	var _idleTmr:Float;
-	var _moveDir:Float;
-	public var seesPlayer:Bool = false;
-	public var playerPos(default, null):FlxPoint;
+	var brain:FSM;
+	var idleTimer:Float;
+	var moveDirection:Float;
+	var seesPlayer:Bool;
+	var playerPosition:FlxPoint;
 	```
 
 3. At the end of the constructor, add:
 
 	```haxe
-	_brain = new FSM(idle);
-	_idleTmr = 0;
-	playerPos = FlxPoint.get();
+	brain = new FSM(idle);
+	idleTimer = 0;
+	playerPosition = FlxPoint.get();
 	```
 
 4. And then add the following functions:
 
 	```haxe
-	public function idle():Void
+	function idle(elapsed:Float)
 	{
 		if (seesPlayer)
 		{
-			_brain.activeState = chase;
+			brain.activeState = chase;
 		}
-		else if (_idleTmr <= 0)
+		else if (idleTimer <= 0)
 		{
 			if (FlxG.random.bool(1))
 			{
-				_moveDir = -1;
+				moveDirection = -1;
 				velocity.x = velocity.y = 0;
 			}
 			else
 			{
-				_moveDir = FlxG.random.int(0, 8) * 45;
+				moveDirection = FlxG.random.int(0, 8) * 45;
 				
-				velocity.set(speed * 0.5, 0);
-				velocity.rotate(FlxPoint.weak(), _moveDir);
+				velocity.set(SPEED * 0.5, 0);
+				velocity.rotate(FlxPoint.weak(), moveDirection);
 				
 			}
-			_idleTmr = FlxG.random.int(1, 4);			
+			idleTimer = FlxG.random.int(1, 4);			
 		}
 		else
-			_idleTmr -= FlxG.elapsed;
+			idleTimer -= elapsed;
 		
 	}
 
-	public function chase():Void
+	function chase(elapsed:Float)
 	{
 		if (!seesPlayer)
 		{
-			_brain.activeState = idle;
+			brain.activeState = idle;
 		}
 		else
 		{
-			FlxVelocity.moveTowardsPoint(this, playerPos, Std.int(speed));
+			FlxVelocity.moveTowardsPoint(this, playerPosition, Std.int(SPEED));
 		}
 	}
+	```
 
-	override public function update(elapsed:Float):Void
-	{
-	    _brain.update();
-	    super.update(elapsed);
-	}
+	Also add this line to `update()` before `super.elapsed()`:
+
+	```haxe
+	brain.update(elapsed);
 	```
 
 	The way this is going to work is that each enemy will start in the `Idle` state. In the `PlayState` we will have each enemy check to see if it can see the player or not. If it can, it will switch to the `Chase` state, until it can't see the player anymore. While in the `Idle` state, every so often (in random intervals) it will choose a random direction to move in for a little while (with a small chance to just stand still). While in the `Chase` state, they will move directly towards the player.
@@ -212,27 +254,29 @@ In order to let our enemies 'think', we're going to utilize a very simple [Finit
 5. Let's jump over to the `PlayState` to add our player's vision logic. In `update()`, under the overlap and collision checks, add:
 
 	```haxe
-	FlxG.collide(_grpEnemies, _mWalls);
-	_grpEnemies.forEachAlive(checkEnemyVision);
+	FlxG.collide(enemies, walls);
+	enemies.forEachAlive(checkEnemyVision);
 	```
 
 6. Next, add the `checkEnemyVision()` function:
 
 	```haxe
-	function checkEnemyVision(e:Enemy):Void
+	function checkEnemyVision(enemy:Enemy)
 	{
-		if (_mWalls.ray(e.getMidpoint(), _player.getMidpoint()))
+		if (walls.ray(enemy.getMidpoint(), player.getMidpoint()))
 		{
-			e.seesPlayer = true;
-			e.playerPos.copyFrom(_player.getMidpoint());
+			enemy.seesPlayer = true;
+			enemy.playerPosition.copyFrom(player.getMidpoint());
 		}
 		else
-			e.seesPlayer = false;
+		{
+			enemy.seesPlayer = false;
+		}
 	}
 	```
 
-That's all there is to it! Try out your game and make sure it works!
+That's all there is to it! Try out your game and make sure it works.
 
-![](../images/01_tutorial/0018b.png)
+![](../images/01_tutorial/browser_enemy_brain.png)
 
-Next, we'll add some UI to the game, and add our RPG-style combat so you can fight the enemies!
+Next, we'll add some UI to the game, and add our RPG-style combat so you can fight the enemies1

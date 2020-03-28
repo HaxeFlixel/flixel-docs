@@ -13,13 +13,13 @@ When you run your game now, you'll notice that everything is really, really smal
 4. In the create function, after you add the player and before `super.create()`, add:
 	
 	```haxe
-	FlxG.camera.follow(_player, TOPDOWN, 1);
+	FlxG.camera.follow(player, TOPDOWN, 1);
 	```
 
 	This simply tells the camera to follow the player using the `TOPDOWN` style, with a `lerp` of 1 (which helps the camera move a little more smoother).
 
 That's it! Test out the game and see how it looks!
 
-![](../images/01_tutorial/0013c.png)
+![](../images/01_tutorial/browser_zoomed.png)
 
 Next, let's give the player something to pickup around the map!

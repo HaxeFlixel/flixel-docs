@@ -9,51 +9,48 @@ Now we want to show the player what's going on. So we need to have some kind of 
 	```haxe
 	package;
 
-	import flixel.FlxBasic;
 	import flixel.FlxG;
 	import flixel.FlxSprite;
 	import flixel.group.FlxGroup.FlxTypedGroup;
 	import flixel.text.FlxText;
 	import flixel.util.FlxColor;
+
 	using flixel.util.FlxSpriteUtil;
 
 	class HUD extends FlxTypedGroup<FlxSprite>
 	{
-		var _sprBack:FlxSprite;
-		var _txtHealth:FlxText;
-		var _txtMoney:FlxText;
-		var _sprHealth:FlxSprite;
-		var _sprMoney:FlxSprite;
+		var background:FlxSprite;
+		var healthCounter:FlxText;
+		var moneyCounter:FlxText;
+		var healthIcon:FlxSprite;
+		var moneyIcon:FlxSprite;
 
 		public function new()
 		{
 			super();
-			_sprBack = new FlxSprite().makeGraphic(FlxG.width, 20, FlxColor.BLACK);
-			_sprBack.drawRect(0, 19, FlxG.width, 1, FlxColor.WHITE);
-			_txtHealth = new FlxText(16, 2, 0, "3 / 3", 8);
-			_txtHealth.setBorderStyle(SHADOW, FlxColor.GRAY, 1, 1);
-			_txtMoney = new FlxText(0, 2, 0, "0", 8);
-			_txtMoney.setBorderStyle(SHADOW, FlxColor.GRAY, 1, 1);
-			_sprHealth = new FlxSprite(4, _txtHealth.y + (_txtHealth.height/2)  - 4, AssetPaths.health__png);
-			_sprMoney = new FlxSprite(FlxG.width - 12, _txtMoney.y + (_txtMoney.height/2)  - 4, AssetPaths.coin__png);
-			_txtMoney.alignment = RIGHT;
-			_txtMoney.x = _sprMoney.x - _txtMoney.width - 4;
-			add(_sprBack);
-			add(_sprHealth);
-			add(_sprMoney);
-			add(_txtHealth);
-			add(_txtMoney);
-			forEach(function(spr:FlxSprite)
-			{
-				spr.scrollFactor.set(0, 0);
-			});
+			background = new FlxSprite().makeGraphic(FlxG.width, 20, FlxColor.BLACK);
+			background.drawRect(0, 19, FlxG.width, 1, FlxColor.WHITE);
+			healthCounter = new FlxText(16, 2, 0, "3 / 3", 8);
+			healthCounter.setBorderStyle(SHADOW, FlxColor.GRAY, 1, 1);
+			moneyCounter = new FlxText(0, 2, 0, "0", 8);
+			moneyCounter.setBorderStyle(SHADOW, FlxColor.GRAY, 1, 1);
+			healthIcon = new FlxSprite(4, healthCounter.y + (healthCounter.height/2)  - 4, AssetPaths.health__png);
+			moneyIcon = new FlxSprite(FlxG.width - 12, moneyCounter.y + (moneyCounter.height/2)  - 4, AssetPaths.coin__png);
+			moneyCounter.alignment = RIGHT;
+			moneyCounter.x = moneyIcon.x - moneyCounter.width - 4;
+			add(background);
+			add(healthIcon);
+			add(moneyIcon);
+			add(healthCounter);
+			add(moneyCounter);
+			forEach(function(sprite) sprite.scrollFactor.set(0, 0));
 		}
 
-		public function updateHUD(Health:Int = 0, Money:Int = 0):Void
+		public function updateHUD(health:Int, money:Int)
 		{
-			_txtHealth.text = Std.string(Health) + " / 3";
-			_txtMoney.text = Std.string(Money);
-			_txtMoney.x = _sprMoney.x - _txtMoney.width - 4;
+			healthCounter.text = health + " / 3";
+			moneyCounter.text = Std.string(money);
+			moneyCounter.x = moneyIcon.x - moneyCounter.width - 4;
 		}
 	}
 	```
@@ -65,28 +62,28 @@ Now we want to show the player what's going on. So we need to have some kind of 
 2. Now let's get it to work and have it update whenever we pick up a coin. In your `PlayState`, add this to the top of the class:
 
 	```haxe
-	var _hud:HUD;
-	var _money:Int = 0;
-	var _health:Int = 3;
+	var hud:HUD;
+	var money:Int = 0;
+	var health:Int = 3;
 	```
 
 3. In `create()`, before `super.create()`, add:
 
 	```haxe
-	_hud = new HUD();
-	add(_hud);
+	hud = new HUD();
+	add(hud);
 	```
 
 4. Finally, in the `playerTouchCoin()` function we added earlier, somewhere inside the `if`-statement, add:
 
 	```haxe
-	_money++;
-	_hud.updateHUD(_health, _money);
+	money++;
+	hud.updateHUD(health, money);
 	```
 
 Go ahead and test out your game, and the HUD should update each time you pick up a coin!
 
-![](../images/01_tutorial/0019.png)
+![](../images/01_tutorial/browser_hud.png)
 
 If we had a way to 'hurt' the player, we could also update the health on the HUD… but in order to do that, we need to figure out how we're going to do combat!
 
@@ -123,59 +120,60 @@ This all seems simple enough, but it's actually going to require several compone
 2. Now, you will need to add a small function to our `Enemy` class:
 
 	```haxe
-	public function changeEnemy(EType:Int):Void
+	public function changeType(type:EnemyType)
 	{
-	    if (etype != EType)
-	    {
-	        etype = EType;
-	        loadGraphic("assets/images/enemy-" + etype + ".png", true, 16, 16);
-	    }
+		if (this.type != type)
+		{
+			this.type = type;
+			var graphic = if (type == BOSS) AssetPaths.boss__png else AssetPaths.enemy__png;
+			loadGraphic(graphic, true, 16, 16);
+		}
 	}
 	```
 
 3. Next, we need to get our `CombatHUD` into our `PlayState`. Add this to the top of the `PlayState` class:
 
 	```haxe
-	var _inCombat:Bool = false;
-	var _combatHud:CombatHUD;
+	var inCombat:Bool = false;
+	var combatHud:CombatHUD;
 	```
 
 4. Move down to `create()`, and, after we add the HUD, and before we call `super.create()`, add:
 
 	```haxe
-	_combatHud = new CombatHUD();
-	add(_combatHud);
+	combatHud = new CombatHUD();
+	add(combatHud);
 	```
 
 5. Go down to our `update()`, and change it so that we're ONLY checking for collisions and overlaps when we're not in combat. Everything after the `super.update()` should look like this:
 
 	```haxe
-	if (!_inCombat)
+	if (inCombat)
 	{
-		FlxG.collide(_player, _mWalls);
-		FlxG.overlap(_player, _grpCoins, playerTouchCoin);
-		FlxG.collide(_grpEnemies, _mWalls);
-		_grpEnemies.forEachAlive(checkEnemyVision);
-		FlxG.overlap(_player, _grpEnemies, playerTouchEnemy);
-	}
-	else
-	{
-		if (!_combatHud.visible)
+		if (!combatHud.visible)
 		{
-			_health = _combatHud.playerHealth;
-			_hud.updateHUD(_health, _money);
-			if (_combatHud.outcome == VICTORY)
+			health = combatHud.playerHealth;
+			hud.updateHUD(health, money);
+			if (combatHud.outcome == VICTORY)
 			{
-				_combatHud.e.kill();
+				combatHud.enemy.kill();
 			}
 			else
 			{
-				_combatHud.e.flicker();
+				combatHud.enemy.flicker();
 			}
-			_inCombat = false;
-			_player.active = true;
-			_grpEnemies.active = true;
+			inCombat = false;
+			player.active = true;
+			enemies.active = true;
 		}
+	}
+	else
+	{
+		FlxG.collide(player, walls);
+		FlxG.overlap(player, coins, playerTouchCoin);
+		FlxG.collide(enemies, walls);
+		enemies.forEachAlive(checkEnemyVision);
+		FlxG.overlap(player, enemies, playerTouchEnemy);
 	}
 	```
 
@@ -194,20 +192,20 @@ This all seems simple enough, but it's actually going to require several compone
 7. Next, let's add the functions to handle the player touching an enemy:
 
 	```haxe
-	function playerTouchEnemy(P:Player, E:Enemy):Void
+	function playerTouchEnemy(player:Player, enemy:Enemy)
 	{
-		if (P.alive && P.exists && E.alive && E.exists && !E.isFlickering())
+		if (player.alive && player.exists && enemy.alive && enemy.exists && !enemy.isFlickering())
 		{
-			startCombat(E);
+			startCombat(enemy);
 		}
 	}
 
-	function startCombat(E:Enemy):Void
+	function startCombat(enemy:Enemy)
 	{
-		_inCombat = true;
-		_player.active = false;
-		_grpEnemies.active = false;
-		_combatHud.initCombat(_health, E);
+		inCombat = true;
+		player.active = false;
+		enemies.active = false;
+		combatHud.initCombat(health, enemy);
 	}
 	```
 
@@ -236,6 +234,6 @@ This all seems simple enough, but it's actually going to require several compone
 
 And that should do it! Test out your game and make sure that it works!
 
-![](../images/01_tutorial/0020.png)
+![](../images/01_tutorial/browser_combat_hud.png)
 
 Next, we'll cover winning and losing and setting up all our different states.

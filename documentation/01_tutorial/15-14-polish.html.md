@@ -8,13 +8,13 @@ First up, there's a simple effect we can do with our camera to have it fade in o
 We can add it to each of our states' `create()` function like so (right before `super.create()`):
 
 ```haxe
-FlxG.camera.fade(FlxColor.BLACK, .33, true);
+FlxG.camera.fade(FlxColor.BLACK, 0.33, true);
 ```
 
 Then, if you want to fade out (when switching states), you can do something like this:
 
 ```haxe
-FlxG.camera.fade(FlxColor.BLACK,.33, false, function()
+FlxG.camera.fade(FlxColor.BLACK, 0.33, false, function()
 {
 	FlxG.switchState(new PlayState());
 });
@@ -30,13 +30,15 @@ FlxG.camera.shake(0.01, 0.2);
 
 So, each time the player gets hurt in combat, the screen will flash white, and will shake a little bit for `0.2` seconds. Try it out!
 
-I know we've used tweens a few times already, but lets add one to show the enemy getting hurt in combat. We're simply going to make a tween that moves the enemy a few pixels to the right, then triggers a second tween to move the enemy back - each one taking `.1` seconds to complete. So, in the `makeChoice()` function of `CombatHUD`, right before we play the hurt sound for the enemy, add:
+I know we've used tweens a few times already, but lets add one to show the enemy getting hurt in combat. We're simply going to make a tween that moves the enemy a few pixels to the right, then triggers a second tween to move the enemy back - each one taking `0.1` seconds to complete. So, in the `makeChoice()` function of `CombatHUD`, right before we play the hurt sound for the enemy, add:
 
 ```haxe
-FlxTween.tween(_sprEnemy, { x: _sprEnemy.x + 4 }, .1, { onComplete: function(_)
-{
-	FlxTween.tween(_sprEnemy, { x: _sprEnemy.x - 4 }, .1);
-}});
+FlxTween.tween(enemySprite, {x: enemySprite.x + 4}, 0.1, {
+	onComplete: function(_)
+	{
+		FlxTween.tween(enemySprite, {x: enemySprite.x - 4}, 0.1);
+	}
+});
 ```
 
 Check out how that looks. Tweens are a very simple and powerful tool to make your game feel more active when used properly.
@@ -46,25 +48,25 @@ Next, let's add a background effect to our `CombatHUD` to help bring our the com
 1. Open up the `CombatHUD` class and add this variable:
 
 	```haxe
-	var _sprScreen:FlxSprite;
+	var screen:FlxSprite;
 	```
 
-2. In the constructor, we'll initialize these two variables (add this before we create our `_sprBack`):
+2. In the constructor, we'll initialize these two variables (add this before we create our `background`):
 
 	```haxe
-	_sprScreen = new FlxSprite().makeGraphic(FlxG.width, FlxG.height, FlxColor.TRANSPARENT);
+	screen = new FlxSprite().makeGraphic(FlxG.width, FlxG.height, FlxColor.TRANSPARENT);
 	var waveEffect = new FlxWaveEffect(FlxWaveMode.ALL, 4, -1, 4);
-	var waveSprite = new FlxEffectSprite(_sprScreen, [waveEffect]);
+	var waveSprite = new FlxEffectSprite(screen, [waveEffect]);
 	add(waveSprite);
 	```
 
-	First, we make our `_sprScreen`, make it the size of the window, and just leave it empty for now. Then we create a `FlxEffectSprite`, tell it to target our `_sprScreen`, and set its properties. It only uses a single effect, our `waveEffect` instance (it's possible to chain multiple effects using `FlxEffectSprite`).
+	First, we make our `screen`, make it the size of the window, and just leave it empty for now. Then we create a `FlxEffectSprite`, tell it to target our `screen`, and set its properties. It only uses a single effect, our `waveEffect` instance (it's possible to chain multiple effects using `FlxEffectSprite`).
 
-3. Next, in `initCombat` we want to make our `_sprScreen` take a copy of whatever is on the camera's buffer and apply it to itself, and then desaturate the image. Our effect sprite will always copy whatever is on our `_sprScreen` every update automatically.
+3. Next, in `initCombat` we want to make our `screen` take a copy of whatever is on the camera's buffer and apply it to itself, and then desaturate the image. Our effect sprite will always copy whatever is on our `screen` every update automatically.
 
 	```haxe
-	_sprScreen.drawFrame();
-	var screenPixels = _sprScreen.framePixels;
+	screen.drawFrame();
+	var screenPixels = screen.framePixels;
 	
 	if (FlxG.renderBlit)
 		screenPixels.copyPixels(FlxG.camera.buffer, FlxG.camera.buffer.rect, new Point());
@@ -85,11 +87,11 @@ You might have noticed, while testing the game, that the mouse cursor can get in
 In the `PlayState`'s `create()`, add:
 
 ```haxe
-#if !FLX_NO_MOUSE
+#if FLX_MOUSE
 FlxG.mouse.visible = false;
 #end
 ```
 
 And be sure to do the reverse (`= true`) in `GameOverState`'s `create()` No more pesky mouse cursor when we don't need it!
 
-There are plenty of other tweaks and tricks you can add to your games. Try playing around with the different addons special effects classes in HaxeFlixel and see what else you can come up with. Take a look at [the demos](http://haxeflixel.com/demos/) for more examples.
+There are plenty of other tweaks and tricks you can add to your games. Try playing around with the different addons special effects classes in HaxeFlixel and see what else you can come up with. Take a look at [the demos](/demos/) for more examples.

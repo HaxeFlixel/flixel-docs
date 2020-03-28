@@ -12,7 +12,7 @@ You can make your own, with 16x16 pixel tiles, or use this one:
 
 1. Download and install [Ogmo Editor 3](https://ogmo-editor-3.github.io/), then launch it.
 
-2. Click on `New Project` and navigate to `assets/data` - save the project as `flixel_tut.ogmo`.
+2. Click on `New Project` and navigate to `assets/data` - save the project as `turnBasedRPG.ogmo`.
 
 3. On the `General` tab, you can rename your project, set the default level sizes, and more. Set it up like this:
 
