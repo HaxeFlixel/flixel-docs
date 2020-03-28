@@ -12,7 +12,7 @@ Welcome to HaxeFlixel! To setup your Windows, Linux or Mac system to start makin
 After that, you have to choose an editor / IDE to work in. Two popular options have their own pages here:
 
 - [Visual Studio Code](/documentation/visual-studio-code) (recommended)
-- [HaxeDevelop / FlashDevelop](/documentation/FlashDevelop)
+- [HaxeDevelop](/documentation/HaxeDevelop) (Windows-only)
 
 A more comprehensive list of options can be found on [haxe.org](https://haxe.org/documentation/introduction/editors-and-ides.html).
 
