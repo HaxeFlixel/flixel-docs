@@ -51,7 +51,7 @@ override public function create():Void
 	add(text);
 }
 ```
-
+p
 This will create a new `FlxText` instance with font size `64`, center it on the screen and `add()` it so it is displayed.
 
 ### Test the Project
@@ -62,12 +62,12 @@ Return to your command line window - now we can compile the project. First switc
 cd HelloWorld
 ```
 
-You can then compile to HTML5, Flash and Neko out of the box with these commands:
+You can then compile to HTML5, Neko and Flash out of the box with these commands:
 
 ``` bash
 lime test html5
-lime test flash
 lime test neko
+lime test flash
 ```
 
 Other targets require further setup. For more details, check the "Advanced Setup" section of the [Lime documentation](https://lime.software/docs/home/).

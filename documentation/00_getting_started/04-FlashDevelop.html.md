@@ -19,8 +19,4 @@ In FlashDevelop you can install Haxe and/or HaxeFlixel and its template easily f
 
 <img src="../images/00_getting_started/fd-flixel-template.jpg" style="width:100%;" />
 
-**It's encouraged you [install the latest development version](http://www.flashdevelop.org/community/viewtopic.php?f=9&amp;t=3529) and [report any bugs](https://github.com/fdorg/flashdevelop/issues) you encounter. New features are added constantly to improve Haxe programming with FlashDevelop.**
-
-### Contributing
-
-You can contribute to FlashDevelop through their [GitHub repository](https://github.com/fdorg/flashdevelop).
+FlashDevelop is open source and you can contribute to it through their [GitHub repository](https://github.com/fdorg/flashdevelop).

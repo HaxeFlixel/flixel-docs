@@ -2,20 +2,13 @@
 title: "Where to now?"
 ```
 
-If you have successfully compiled a Hello World sample, the best place we recommend is to jump to our large collection of demos to learn by example, try improving a game and pulling one apart to see how it works:
+If you have successfully compiled a Hello World sample, there are multiple places to jump to from here:
 
-*   [Demos](http://haxeflixel.com/demos)
-*   [Source for the demos](https://github.com/HaxeFlixel/flixel-demos/tree/master)
+- Follow our step-by-step [tutorial](/tutorial/) to learn how to make a simple turn based RPG.
+- Check out our large collection of [demos](/demos/) to learn by example. Try improving a game and pulling one apart to see how it works!
+- Read about different aspects of Flixel in our [handbook](/handbook).
+- Browse our [API documentation](http://api.haxeflixel.com/).
 
-If you are totally new to Flixel, please review our Handbook here:
+Also be sure to [get in touch with the community](/documentation/community/) if you have any questions along the way!
 
-*   [Handbook](http://haxeflixel.com/documentation/haxeflixel-handbook/)
-
-For former AS3 developers, you can get a quick start on Haxe from these:
-
-*   [AS3 and Haxe Comparison](http://www.openfl.org/archive/developer/documentation/actionscript-developers/)
-*   [​Haxe API](http://api.haxe.org/)
-
-For ways to get in touch with the community, check out this list of [various communication channels](/documentation/community/).
-
-Furthermore, this documentation and website is the front of HaxeFlixel information and we welcome additions from users like you. :)
+Furthermore, this documentation and website are open source and we welcome additions from users like you. :)
