@@ -138,9 +138,11 @@ footer:before {
 }
 
 /* offset anchors to account for the header */
-.anchor {
-  padding-top: 60px;
-  margin-top: -60px;
+:target::before {
+  content: '';
+  display: block;
+  height: 55px;
+  margin-top: -55px;
 }
 
 .table {
