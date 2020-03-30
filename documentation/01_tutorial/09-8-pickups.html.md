@@ -19,10 +19,17 @@ Now that we have our little guy running around our map, lets give him something 
 5. Get back into VSCode, and make a new `Coin` class:
 
 	```haxe
-	public function new(x:Float, y:Float) 
+	package;
+
+	import flixel.FlxSprite;
+
+	class Coin extends FlxSprite
 	{
-		super(x, y);
-		loadGraphic(AssetPaths.coin__png, false, 8, 8);
+		public function new(x:Float, y:Float) 
+		{
+			super(x, y);
+			loadGraphic(AssetPaths.coin__png, false, 8, 8);
+		}
 	}
 	```
 
