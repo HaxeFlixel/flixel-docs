@@ -30,13 +30,19 @@ What would a dungeon game be without enemies? Let's add some!
 	}
 	```
 
-	This basically just gives us two handy constants that we can use to distuingish them. Our `Enemy` class is going to look a lot like our `Player`:
+	This basically just gives us two handy constants that we can use to distuingish them. We will put both the `enum` and our `Enemy` class into the same `Enemy.hx` "module" (that's what `.hx` files are called). The class is going to look very similar to our `Player`:
 
 	```haxe
 	package;
 
 	import flixel.FlxObject;
 	import flixel.FlxSprite;
+
+	enum EnemyType
+	{
+		REGULAR;
+		BOSS;
+	}
 
 	class Enemy extends FlxSprite
 	{
@@ -120,11 +126,11 @@ What would a dungeon game be without enemies? Let's add some!
 	```haxe
 	else if (entity.name == "enemy")
 	{
-		enemies.add(new Enemy(entity.x + 4, entity.y, 0));
+		enemies.add(new Enemy(entity.x + 4, entity.y, REGULAR));
 	}
 	else if (entity.name == "boss")
 	{
-		enemies.add(new Enemy(entity.x + 4, entity.y, 1));
+		enemies.add(new Enemy(entity.x + 4, entity.y, BOSS));
 	}
 	```
 

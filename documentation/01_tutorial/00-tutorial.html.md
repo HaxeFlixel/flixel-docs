@@ -13,6 +13,6 @@ We are going to be building a small **dungeon crawler**. You can see the finishe
 <iframe class="html5-demo" src="/demos/html5/TurnBasedRPG" width="640" height="480"></iframe>
 <br/>
 
-If you have any questions or get stuck during this tutorial, you can get help [here](/documentation/community/).
+If you have any questions or get stuck during this tutorial, you can get help [here](/documentation/community/). Also, the finished game is [part of flixel-demos](https://github.com/HaxeFlixel/flixel-demos/tree/master/Tutorials/TurnBasedRPG), so you can always compare to the source code of the finished game if you're unsure about something.
 
 So let's go ahead and get started!
