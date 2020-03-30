@@ -39,7 +39,7 @@ Now we want to make sure that everything is installed properly - and we want to 
 
 	While you're typing, code completion should pop up and suggest `FlxText`.
 
-	![](../images/01_tutorial/flxtext_completion.png)
+	![](../images/01_tutorial/vscode_flxtext_completion.png)
 
 	Here, press `Enter` or simply type a `(` - notice how the following lines has automatically been added to your imports at the top of the file:
 
