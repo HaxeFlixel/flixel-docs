@@ -8,7 +8,7 @@ As mentioned previously, you can grab the complete source code for the game [her
 
 The power of HaxeFlixel comes from it's balance of simplicity and versatility. With only a few lines of code you can do almost anything you can think of.
 
-If you want to learn more about using HaxeFlixel, take a look at the [documentation](http://haxeflixel.com/documentation/), and [API](http://haxeflixel.github.io/flixel-docs/) for lots more in-depth information.
+If you want to learn more about using HaxeFlixel, take a look at the [documentation](http://haxeflixel.com/documentation/), and [API](http://api.haxeflixel.com/) for lots more in-depth information.
 
 I'd like to thank Jens Fischer, Justo Delgado Baudí, the STL IGDA, and the HaxeFlixel Dev Community for helping me get this tutorial finished - a lot of editing and suggestions for improvement came from these people.
 

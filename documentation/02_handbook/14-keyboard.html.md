@@ -7,7 +7,7 @@ Keyboard input for HaxeFlixel is provided through the `FlxKeyboard` class and is
 
 ## Key Lists
 
-An object of type `FlxKeyList` contains a `Bool` for each key on the keyboard. The values are kept as an array internally, but you can easily refer to them by using special instance variables named after the key. For a full list of all available names look at the `FlxKeyList` documentation [here](http://haxeflixel.github.io/flixel-docs/flixel/input/keyboard/FlxKeyList.html).
+An object of type `FlxKeyList` contains a `Bool` for each key on the keyboard. The values are kept as an array internally, but you can easily refer to them by using special instance variables named after the key. For a full list of all available names look at the `FlxKeyList` documentation [here](http://api.haxeflixel.com/flixel/input/keyboard/FlxKeyList.html).
 
 `FlxKeyboard` uses the three key lists `pressed`, `justPressed` and `justReleased` to keep track of the keys. `pressed` contains `true` for all keys that are currently pressed. `justPressed` only contains `true` for all keys that have been pressed since the last frame.
 
