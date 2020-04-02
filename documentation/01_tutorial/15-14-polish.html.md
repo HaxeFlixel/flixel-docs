@@ -81,7 +81,7 @@ Next, let's add a background effect to our `CombatHUD` to help bring our the com
 
 That's all there is to it! Our effect sprite will fade in and out with the `CombatHUD` already. Try our the effect to see how it looks!
 
-![](../images/01_tutorial/0022.png)
+![](../images/01_tutorial/browser_combat_hud.png)
 
 You might have noticed, while testing the game, that the mouse cursor can get in the way - especially since it's not needed outside of the menu states. We can remedy this pretty easily.
 In the `PlayState`'s `create()`, add:
