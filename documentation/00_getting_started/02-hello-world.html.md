@@ -8,7 +8,13 @@ Make sure you have installed Flixel, as well as set up the `lime` and `flixel` c
 
 ### Create a new HaxeFlixel Project
 
-HaxeFlixel requires a basic structure of files for any project that you can automatically create with the `template` command (`tpl` for short).
+HaxeFlixel requires a basic structure of files for any project that can be created automatically for you. First open a command prompt and switch to the directory where you'd like to have the project using `cd`, for example:
+
+```bash
+cd C:\Users\<User>\Projects
+```
+
+Then run the `template` command (`tpl` for short):
 
 ``` bash
 flixel tpl -n "HelloWorld"
