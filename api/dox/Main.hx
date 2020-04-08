@@ -19,10 +19,10 @@ class Main {
 			}
 		];
 
-		var config = new Config();
+		var config = new Config(Macro.getDoxPath());
 		config.inputPath = "../xml/bin/flash/types.xml";
 		config.outputPath = "out";
-		config.loadTheme(Macro.getDoxPath(), "./theme");
+		config.loadTheme("./theme");
 		config.pageTitle = "HaxeFlixel API";
 		config.defines = [Version => defines["flixel"]];
 		config.addFilter("(__ASSET__|ApplicationMain|DocumentClass|DefaultAssetLibrary|Main|NMEPreloader|zpp_nape)", false);
@@ -69,7 +69,7 @@ class FlixelApi extends Api {
 		return false;
 	}
 
-	override function hasSourceLink():Bool {
-		return true;
+	override function hasSourceLink(type:TypeInfos):Bool {
+		return type.file != null && type.file.endsWith(".hx");
 	}
 }

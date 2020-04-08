@@ -1,4 +1,5 @@
 -lib dox
+-dce no
 
 -lib hxtemplo
 -lib hxparse
