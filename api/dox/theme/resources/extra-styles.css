@@ -99,6 +99,24 @@ div.main-content > div {
 .navbar-fixed-top{box-shadow:0 0 3px 3px rgba(0,0,0,0.3)}
 .navbar-brand{padding:10px}
 
+.inverse-dropdown {
+  background-color: #222 !important;
+  border-color: #080808 !important;
+
+}
+
+.inverse-dropdown.divider {
+  background-color: #000 !important;
+}
+
+.inverse-dropdown>li>a {
+  color: #9d9d9d !important;
+}
+.inverse-dropdown>li>a:hover {
+  color: #fff !important;
+  background-color: #000 !important;
+}
+
 /* footer */
 .footer-main {
   background: url("https://haxeflixel.com/images/footer-shadow.png") repeat-x scroll 0 0 #515151;
