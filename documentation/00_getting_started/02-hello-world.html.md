@@ -33,12 +33,12 @@ import flixel.FlxState;
 
 class PlayState extends FlxState
 {
-	override public function create():Void
+	override public function create()
 	{
 		super.create();
 	}
 
-	override public function update(elapsed:Float):Void
+	override public function update(elapsed:Float)
 	{
 		super.update(elapsed);
 	}
@@ -48,7 +48,7 @@ class PlayState extends FlxState
 All you need to do is add the following three lines to the `create()` function (and save the file):
 
 ``` haxe
-override public function create():Void
+override public function create()
 {
 	super.create();
 		
