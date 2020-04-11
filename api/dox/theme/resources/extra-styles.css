@@ -1,4 +1,4 @@
-@import url(http://fonts.googleapis.com/css?family=Ubuntu:400,700,400italic,700italic);
+@import url(https://fonts.googleapis.com/css?family=Ubuntu:400,700,400italic,700italic);
 
 /* nav */
 
@@ -18,7 +18,7 @@ nav a {
 }
 
 body {
-  background-image: url(http://www.haxeflixel.com/images/highlight-bg.png), url(http://www.haxeflixel.com//images/site-bg.png);
+  background-image: url(https://haxeflixel.com/images/highlight-bg.png), url(https://haxeflixel.com//images/site-bg.png);
   background-repeat: no-repeat, repeat;
   background-position: center top, left top;
 }
@@ -101,7 +101,7 @@ div.main-content > div {
 
 /* footer */
 .footer-main {
-  background: url("http://www.haxeflixel.com/images/footer-shadow.png") repeat-x scroll 0 0 #515151;
+  background: url("https://haxeflixel.com/images/footer-shadow.png") repeat-x scroll 0 0 #515151;
   min-height: 110px;
   text-shadow: none;
 }
