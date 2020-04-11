@@ -99,6 +99,27 @@ div.main-content > div {
 .navbar-fixed-top{box-shadow:0 0 3px 3px rgba(0,0,0,0.3)}
 .navbar-brand{padding:10px}
 
+.caret {
+  display: inline-block;
+  width: 0;
+  height: 0;
+  margin-left: 2px;
+  vertical-align: middle;
+  border-top: 4px dashed;
+  border-right: 4px solid transparent;
+  border-left: 4px solid transparent;
+}
+
+.dropdown-menu>li>a {
+  display: block;
+  padding: 3px 20px;
+  clear: both;
+  font-weight: 400;
+  line-height: 1.42857143;
+  color: #333;
+  white-space: nowrap;
+}
+
 .inverse-dropdown {
   background-color: #222 !important;
   border-color: #080808 !important;
