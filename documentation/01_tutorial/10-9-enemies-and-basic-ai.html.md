@@ -272,13 +272,20 @@ In order to let our enemies 'think', we're going to utilize a very simple [Finit
 		if (walls.ray(enemy.getMidpoint(), player.getMidpoint()))
 		{
 			enemy.seesPlayer = true;
-			enemy.playerPosition.copyFrom(player.getMidpoint());
+			enemy.playerPosition = player.getMidpoint();
 		}
 		else
 		{
 			enemy.seesPlayer = false;
 		}
 	}
+	```
+
+	Note how we need to modify two enemy variables for this. The default visibility in Haxe is `private`, so the compiler doesn't allow this. We will have to make them `public` instead:
+
+	```haxe
+	public var seesPlayer:Bool;
+	public var playerPosition:FlxPoint;
 	```
 
 That's all there is to it! Try out your game and make sure it works.
