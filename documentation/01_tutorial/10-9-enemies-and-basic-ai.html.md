@@ -193,8 +193,8 @@ In order to let our enemies 'think', we're going to utilize a very simple [Finit
 	var brain:FSM;
 	var idleTimer:Float;
 	var moveDirection:Float;
-	var seesPlayer:Bool;
-	var playerPosition:FlxPoint;
+	public var seesPlayer:Bool;
+	public var playerPosition:FlxPoint;
 	```
 
 3. At the end of the constructor, add:
