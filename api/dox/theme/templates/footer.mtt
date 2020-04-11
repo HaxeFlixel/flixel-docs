@@ -6,7 +6,7 @@
 
 				<iframe width="120px" scrolling="0" height="20px" frameborder="0"
 						allowtransparency="true"
-						src="http://ghbtns.com/github-btn.html?user=HaxeFlixel&amp;repo=flixel&amp;type=watch&amp;count=true&amp;size=small"></iframe>
+						src="https://ghbtns.com/github-btn.html?user=HaxeFlixel&amp;repo=flixel&amp;type=watch&amp;count=true&amp;size=small"></iframe>
 
 				<a href="https://twitter.com/haxeflixel" class="twitter-follow-button" data-show-count="true"
 				data-lang="en" data-size="small">Follow @haxeflixel</a>
@@ -27,11 +27,11 @@
 
 			<div class="footer-powered-by">
 				<p>HaxeFlixel is powered by</p>
-				<a href="http://haxe.org"><img src="http://www.haxeflixel.com/images/haxe.svg" alt="Haxe" title="Haxe" /></a>
+				<a href="https://haxe.org"><img src="https://haxeflixel.com/images/haxe.svg" alt="Haxe" title="Haxe" /></a>
 				+
-				<a href="http://openfl.org"><img class="openfl-footer-logo" src="http://www.haxeflixel.com//images/openfl.svg" alt="OpenFL" title="OpenFL" /></a>
+				<a href="https://openfl.org"><img class="openfl-footer-logo" src="https://haxeflixel.com//images/openfl.svg" alt="OpenFL" title="OpenFL" /></a>
 				+
-				<a href="http://flixel.org"><img class="flixel-footer-logo" src="http://www.haxeflixel.com//images/flixel.svg" alt="Flixel" title="Flixel" /></a>
+				<a href="http://flixel.org"><img class="flixel-footer-logo" src="https://haxeflixel.com//images/flixel.svg" alt="Flixel" title="Flixel" /></a>
 			</div>
 
 		</div>
