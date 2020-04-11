@@ -1,6 +1,10 @@
 class Make {
 	static function main() {
-		for (arg in Sys.args()) {
+		var args = Sys.args();
+		if (args.length == 0) {
+			args = ["dox", "xml", "pages", "server"];
+		}
+		for (arg in args) {
 			switch arg {
 				case "xml":
 					Sys.command("haxe --cwd xml xml.hxml");
