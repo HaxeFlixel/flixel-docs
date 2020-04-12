@@ -1,4 +1,4 @@
-# @install: lix --silent download "gh://github.com/HaxeFoundation/dox#9588e8749cf93369e093bbc2336779cb83d14925" into dox/1.4.0/github/9588e8749cf93369e093bbc2336779cb83d14925
-# @run: haxelib run-dir dox ${HAXE_LIBCACHE}/dox/1.4.0/github/9588e8749cf93369e093bbc2336779cb83d14925
--cp ${HAXE_LIBCACHE}/dox/1.4.0/github/9588e8749cf93369e093bbc2336779cb83d14925/src
+# @install: lix --silent download "gh://github.com/HaxeFoundation/dox#c0ac5a3d1d78479194bf8675ead7c3b256bfd901" into dox/1.4.0/github/c0ac5a3d1d78479194bf8675ead7c3b256bfd901
+# @run: haxelib run-dir dox ${HAXE_LIBCACHE}/dox/1.4.0/github/c0ac5a3d1d78479194bf8675ead7c3b256bfd901
+-cp ${HAXE_LIBCACHE}/dox/1.4.0/github/c0ac5a3d1d78479194bf8675ead7c3b256bfd901/src
 -D dox=1.4.0
