@@ -48,11 +48,11 @@ function translate(Words:String, BableFish:BableFish):Void
 }
 ```
 
-In the core of HaxeFlixel, there are a lot of method parameters are capitalized (not preferred in Haxe). This is mostly legacy from the AS3 Flixel's code style and hard to change them all. However, newly written functions should follow the lowerCamelCase style. Also, we encourage contributors to convert them when fixing bugs/updating existing codes.
+In the core of HaxeFlixel, a lot of method parameters are capitalized (not preferred in Haxe). This is mostly legacy from the AS3 Flixel's code style and hard to change them all. However, newly written functions should follow the `lowerCamelCase` style.
 
 ## Leveraging Type Inference
 
-The Haxe compiler does not require you to declare the type of a variable ([read more](http://haxe.org/ref/type_infer)).
+The Haxe compiler does not require you to declare the type of a variable ([read more](https://haxe.org/manual/type-system-type-inference.html)).
 
 ``` haxe
 //This is unnecessary
