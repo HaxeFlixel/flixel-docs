@@ -144,12 +144,12 @@ Unlike in most other languages with object-oriented syntax, everything in Haxe i
 ```haxe
 function getColor(color:Color):Int
 {
-  return switch (color)
-  {
-    case Color.RED: 0xff0000;
-    case Color.BLUE: 0x0000ff;
-    case Color.GREEN: 0x00ff00;
-  }
+	return switch (color)
+	{
+		case Color.RED: 0xff0000;
+		case Color.BLUE: 0x0000ff;
+		case Color.GREEN: 0x00ff00;
+	}
 }
 ```
 
@@ -157,14 +157,14 @@ This is preferable to how this code would look like in a lot of other languages,
 
 ```csharp
 int getColor(Color color) {
-  switch (color) {
-    case Color.RED:
-      return 0xff0000;
-    case Color.BLUE:
-      return 0x0000ff;
-    case Color.GREEN:
-      return 0x00ff00;
-  }
-  return 0x000000;
+	switch (color) {
+		case Color.RED:
+			return 0xff0000;
+		case Color.BLUE:
+			return 0x0000ff;
+		case Color.GREEN:
+			return 0x00ff00;
+	}
+	return 0x000000;
 }
 ```
