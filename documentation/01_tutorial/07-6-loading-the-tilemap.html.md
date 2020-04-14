@@ -25,7 +25,7 @@ One of the great things about using Ogmo with HaxeFlixel is that there is alread
 	<haxelib name="flixel-addons" />
 	```
 
-	Save this change, rebuild the project and run `F1 -> Developer: Reload Window` for VSCode to pick up the new library. You're now playing with flixel-addons!
+	Save this change - you're now playing with flixel-addons!
 
 4. Go back to your `PlayState`, and, underneath where the `player` variable is defined, add:
 	
