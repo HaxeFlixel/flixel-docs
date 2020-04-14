@@ -236,3 +236,34 @@ footer:before {
   margin-left: 10px;
   margin-bottom: -4px;
 }
+
+pre {
+	background-color: #1E1E1E;
+}
+.highlighted .mtk1 { color: #FFFFFF; }
+.highlighted .mtk2 { color: #FFFFFF; }
+.highlighted .mtk3 { color: #6796E6; }
+.highlighted .mtk4 { color: #608B4E; }
+.highlighted .mtk5 { color: #569CD6; }
+.highlighted .mtk6 { color: #D16969; }
+.highlighted .mtk7 { color: #D7BA7D; }
+.highlighted .mtk8 { color: #B5CEA8; }
+.highlighted .mtk9 { color: #CE9178; }
+.highlighted .mtk10 { color: #646695; }
+.highlighted .mtk11 { color: #4EC9B0; }
+.highlighted .mtk12 { color: #DCDCAA; }
+.highlighted .mtk13 { color: #9CDCFE; }
+.highlighted .mtk14 { color: #000080; }
+.highlighted .mtk15 { color: #F44747; }
+.highlighted .mtk16 { color: #C586C0; }
+.highlighted .mtk17 { color: #D4D4D4; }
+.highlighted .mtk18 { color: #808080; }
+.highlighted .mtki { font-style: italic; }
+.highlighted .mtkb { font-weight: bold; }
+.highlighted .mtku { text-decoration: underline; }
+.highlighted {
+	display: block;
+	overflow-x: auto;
+	font-family: Monaco, Menlo, Consolas, "Courier New", monospace;
+	font-size: 12px;
+}
