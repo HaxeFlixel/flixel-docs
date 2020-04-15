@@ -16,7 +16,7 @@ jobs:
     - uses: HaxeFlixel/setup-flixel@master
       with:
         haxe-version: stable
-        flixel-versions: dev
+        flixel-versions: release
         target: flash
     - run: npm install
       working-directory: api/dox
