@@ -10,8 +10,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
-      with:
-        persist-credentials: false
     - uses: lix-pm/setup-lix@master
     - uses: HaxeFlixel/setup-flixel@master
       with:
@@ -21,8 +19,8 @@ jobs:
     - run: npm install
       working-directory: api/dox
     - run: haxe --cwd api --run Make xml pages
-    - uses: JamesIves/github-pages-deploy-action@3.4.2
+    - name: Deploy
+      uses: peaceiris/actions-gh-pages@v3
       with:
-        ACCESS_TOKEN: ${{secrets.ACCESS_TOKEN}}
-        BRANCH: gh-pages
-        FOLDER: api/dox/out
+        github_token: ${{secrets.GITHUB_TOKEN}}
+        publish_dir: ./api/dox/out
