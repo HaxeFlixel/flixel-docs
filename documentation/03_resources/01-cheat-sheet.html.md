@@ -93,8 +93,8 @@ import flixel.ui.FlxButton;
 ```haxe
 myButton = new FlxButton(0, 0, "Label", myCallback);
 
-// Custom graphics
-myButton.loadGraphic("assets/custom.png");
+// Custom graphics (sprite sheet with 3 frames for normal / highlight / pressed)
+myButton.loadGraphic("assets/custom.png", true, width, height);
 ```
 
 ```haxe
