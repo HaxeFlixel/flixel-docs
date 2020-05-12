@@ -28,8 +28,7 @@ Now we want to show the player what's going on. So we need to have some kind of 
 		public function new()
 		{
 			super();
-			background = new FlxSprite().makeGraphic(FlxG.width, 20, FlxColor.BLACK);
-			background.drawRect(0, 19, FlxG.width, 1, FlxColor.WHITE);
+			background = new FlxSprite(0, 0).makeGraphic(FlxG.width, 20, FlxColor.BLACK);
 			healthCounter = new FlxText(16, 2, 0, "3 / 3", 8);
 			healthCounter.setBorderStyle(SHADOW, FlxColor.GRAY, 1, 1);
 			moneyCounter = new FlxText(0, 2, 0, "0", 8);
