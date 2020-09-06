@@ -410,13 +410,13 @@ function callbackFunction(tween:FlxTween):Void
 
 #### type
 ```haxe
-{type: FlxTween.PINGPONG}
+{type: FlxTweenType.PINGPONG}
 ```
-* **FlxTween.BACKWARD:** plays tween in reverse direction
-* **FlxTween.LOOPING:** restarts immediately when it finishes.
-* **FlxTween.ONESHOT:** stops and remove itself from its core container when it finishes.
-* **FlxTween.PERSIST:** stops when it finishes.
-* **FlxTween.PINGPONG:** plays tween hither and thither
+* **FlxTweenType.BACKWARD:** plays tween in reverse direction
+* **FlxTweenType.LOOPING:** restarts immediately when it finishes.
+* **FlxTweenType.ONESHOT:** stops and remove itself from its core container when it finishes.
+* **FlxTweenType.PERSIST:** stops when it finishes.
+* **FlxTweenType.PINGPONG:** plays tween hither and thither
 
 #### loopDelay
 ```haxe
