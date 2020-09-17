@@ -37,7 +37,7 @@ First up, let's create a simple menu. Eventually, we'll want a fancy `MenuState`
 
 	As before with `FlxText`, the import should be added automatically. If not, you can also add missing imports via the light bulb that should appear after saving the file when you have your cursor over `FlxButton`.	
 
-2. Now, type the following on the lines after `super.create();` within the `create()` method:
+2. Now, type the following on the lines before or after `super.create();` within the `create()` method:
 
 	```haxe
 	playButton = new FlxButton(0, 0, "Play", clickPlay);
@@ -73,12 +73,7 @@ First up, let's create a simple menu. Eventually, we'll want a fancy `MenuState`
 
 	`screenCenter()` is a function which takes an object and centers it on the screen either horizontally, vertically or (by default) both. By calling it on our button, the button will be placed in the center of the screen.
 
-5. Next, we need to make sure that the game actually starts with our `MenuState`. Open `Main.hx` and replace the `PlayState` reference with `MenuState`. You have to add the reference to the MenuState file using on the top of the `Main.hx`
-
-	```haxe
-	import MenuState;
-	```
-
+5. Next, we need to make sure that the game actually starts with our `MenuState`. Open `Main.hx` and replace the `PlayState` reference with `MenuState`.
 
 6. If you test your game out now, it should go straight to a black screen with our 'Play' button in the middle, and clicking the button will take you to another black screen. If that's what you get, it works! So far, so good!
 
