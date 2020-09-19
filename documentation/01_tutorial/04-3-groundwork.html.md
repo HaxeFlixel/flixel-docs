@@ -37,12 +37,13 @@ First up, let's create a simple menu. Eventually, we'll want a fancy `MenuState`
 
 	As before with `FlxText`, the import should be added automatically. If not, you can also add missing imports via the light bulb that should appear after saving the file when you have your cursor over `FlxButton`.	
 
-2. Now, type the following on the lines before `super.create();` within the `create()` method:
+2. Now, type the following on the lines before or after `super.create();` within the `create()` method:
 
 	```haxe
 	playButton = new FlxButton(0, 0, "Play", clickPlay);
 	add(playButton);
 	```
+	(`import flixel.ui.FlxButton;`)
 
 	This creates a `FlxButton` object and assigns it to the `playButton` variable. We're telling it to make the button at position `(0, 0)` (the top left corner of the screen), to make it say "Play" on it, and to call the function `clickPlay()` when a user clicks the button (we yet have to implement `clickPlay()`).
 	Then we add the object to our state so that it can be shown and interacted with.
