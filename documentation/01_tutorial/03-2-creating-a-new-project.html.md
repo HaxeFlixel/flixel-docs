@@ -16,7 +16,7 @@ Now we want to make sure that everything is installed properly - and we want to 
 
 	If not, simply open the `TurnBasedRPG` folder with `File > Open Folder...`.
 
-3. Over on the right side of the screen, you should see your project. This will contain all the files that the template generated for us.
+3. Over on the left side of the screen, you should see your project. This will contain all the files that the template generated for us.
 
 	![](../images/01_tutorial/vscode_files.png)
 
