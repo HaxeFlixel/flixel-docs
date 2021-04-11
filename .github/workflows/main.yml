@@ -13,7 +13,7 @@ jobs:
     - uses: lix-pm/setup-lix@master
     - uses: HaxeFlixel/setup-flixel@master
       with:
-        haxe-version: 4.1.5
+        haxe-version: 4.2.1
         flixel-versions: release
         target: flash
     - run: npm install
