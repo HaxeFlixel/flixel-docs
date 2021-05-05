@@ -594,20 +594,18 @@ scrollFactor.set(0, 0);
 ### Zooming game while leaving HUD intact
 
 ```haxe
-gameCamera = new FlxCamera(0, 0, screenWidth, screenHeight);
+// create a new camera for the HUD
 uiCamera = new FlxCamera(0, 0, screenWidth, screenHeight);
-
-gameCamera.bgColor = 0xff626a71;
 uiCamera.bgColor = FlxColor.TRANSPARENT;
 
-gameCamera.zoom = 0.5;
+// add camera to list and set 'DefaultDrawTarget' to false
+FlxG.cameras.add(uiCamera, false);
 
-FlxG.cameras.reset(gameCamera);
-FlxG.cameras.add(uiCamera);
-
-FlxCamera.defaultCameras = [gameCamera];
-
+// add element to the camera
 hudElement.cameras = [uiCamera];
+
+FlxG.camera.bgColor = 0xff626a71;
+FlxG.camera.zoom = 0.5; // zoom only on the default camera
 ```
 
 
