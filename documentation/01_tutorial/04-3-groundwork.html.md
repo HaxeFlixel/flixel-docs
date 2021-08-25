@@ -109,7 +109,8 @@ We're going to be extending the `FlxSprite` class to create our `Player` class.
 	makeGraphic(16, 16, FlxColor.BLUE);
 	```
 	
-	(Make sure that an import is created for `FlxColor`, and if it isn't, add it)
+	(`flixel.util.FlxColor`)
+	
 	All we're doing here is saying that we want to make this sprite's graphic be a 16x16 pixel blue square.
 
 7. For right now, we just want to get the `Player` class initialized, make sure that it works, and try adding it to our `PlayState`. It's not going to move or do anything yet, that will come in a minute. So save the changes to our `Player` class, and go back to the `PlayState`.
