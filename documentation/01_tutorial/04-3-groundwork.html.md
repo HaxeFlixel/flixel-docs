@@ -109,7 +109,7 @@ We're going to be extending the `FlxSprite` class to create our `Player` class.
 	makeGraphic(16, 16, FlxColor.BLUE);
 	```
 	
-	(`flixel.util.FlxColor`)
+	(`import flixel.util.FlxColor;`)
 	
 	All we're doing here is saying that we want to make this sprite's graphic be a 16x16 pixel blue square.
 
