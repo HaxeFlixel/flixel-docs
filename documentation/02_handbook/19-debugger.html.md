@@ -16,7 +16,7 @@ Note that the debugger does not exist when compiling with `FLX_NO_DEBUG`. With t
 
 The hitboxes are color-coded based on the collision properties. For `FlxObject` and `FlxSprite` this means:
 
-- Blue for `allowCollisions == FlxObject.NONE`
+- Blue for `allowCollisions == NONE`
 - Green for `immovable` objects
 - Red otherwise
 
@@ -24,8 +24,8 @@ The color is customizable via the `debugBoundingBoxColor` property.
 
 The behavior of tiles in `FlxTilemap` is slightly different:
 
-- Blue for `allowCollisions == FlxObject.NONE`
-- Green for `allowCollisions == FlxObject.ANY`
+- Blue for `allowCollisions == NONE`
+- Green for `allowCollisions == ANY`
 - Pink for other values of `allowCollisions`
 
 ## The Log Window

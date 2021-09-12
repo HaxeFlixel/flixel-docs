@@ -69,7 +69,7 @@ Now let's change our code to use these sounds:
 	stepSound = FlxG.sound.load(AssetPaths.step__wav);
 	```
 
-6. Now go to our `updateMovement()` function, and, after we check if the player is moving (`if ((velocity.x != 0 || velocity.y != 0) && touching == FlxObject.NONE)`), add:
+6. Now go to our `updateMovement()` function, and, after we check if the player is moving (`if ((velocity.x != 0 || velocity.y != 0) && touching == NONE)`), add:
 
 	```haxe
 	stepSound.play();
@@ -97,7 +97,7 @@ Now let's change our code to use these sounds:
 10. Next, in the enemy's `update()`, before `super.update()`, we're going to check if the enemy is moving and not bumping into a wall. If they are moving, we set the position of our sound to wherever our enemy is (to the bottom of his sprite - where his feet are), and then play the sound.
 
 	```haxe
-	if ((velocity.x != 0 || velocity.y != 0) && touching == FlxObject.NONE)
+	if ((velocity.x != 0 || velocity.y != 0) && touching == NONE)
 	{
 		stepSound.setPosition(x + frameWidth / 2, y + height);
 		stepSound.play();

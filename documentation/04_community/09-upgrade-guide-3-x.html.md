@@ -40,8 +40,8 @@ Flipping sprite graphics now works differently - the `flipped` variable has been
 If you want to continue to use `facing` to flip the graphic (e.g. in a platformer), you can use the following logic:
 
 ```haxe
-sprite.setFacingFlip(FlxObject.RIGHT, false, false);
-sprite.setFacingFlip(FlxObject.LEFT, true, false);
+sprite.setFacingFlip(RIGHT, false, false);
+sprite.setFacingFlip(LEFT, true, false);
 ```
 
 ### FlxTimer and FlxPath

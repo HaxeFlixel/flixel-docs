@@ -503,7 +503,7 @@ FlxG.worldBounds.set(tilemap.x, tilemap.y, tilemap.width, tilemap.height);
 // sets the touching flags
 FlxG.collide(player, level);
 
-if (player.isTouching(FlxObject.DOWN))
+if (player.isTouching(DOWN))
 {
 	// player stands on the ground and can jump 
 }

@@ -42,8 +42,8 @@ One of the great things about using Ogmo with HaxeFlixel is that there is alread
 	map = new FlxOgmo3Loader(AssetPaths.turnBasedRPG__ogmo, AssetPaths.room_001__json);
 	walls = map.loadTilemap(AssetPaths.tiles__png, "walls");
 	walls.follow();
-	walls.setTileProperties(1, FlxObject.NONE);
-	walls.setTileProperties(2, FlxObject.ANY);
+	walls.setTileProperties(1, NONE);
+	walls.setTileProperties(2, ANY);
 	add(walls);
 	```
 

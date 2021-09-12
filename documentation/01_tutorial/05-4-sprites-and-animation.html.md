@@ -27,8 +27,8 @@ Now we need to actually load the player's graphic into the sprite. So, bring up 
 	Add the following:
 
 	```haxe
-	setFacingFlip(FlxObject.LEFT, false, false);
-	setFacingFlip(FlxObject.RIGHT, true, false);
+	setFacingFlip(LEFT, false, false);
+	setFacingFlip(RIGHT, true, false);
 	```
 
 	All we're doing here is saying that we don't want to flip anything when facing left (because our sprite already faces left), and to flip horizontally when facing right. We could do the same for up and down if we wanted.
@@ -52,7 +52,7 @@ Now we need to actually load the player's graphic into the sprite. So, bring up 
 			newAngle -= 45;
 		else if (right)
 			newAngle += 45;
-		facing = FlxObject.UP;
+		facing = UP;
 	}
 	else if (down)
 	{
@@ -61,17 +61,17 @@ Now we need to actually load the player's graphic into the sprite. So, bring up 
 			newAngle += 45;
 		else if (right)
 			newAngle -= 45;
-		facing = FlxObject.DOWN;
+		facing = DOWN;
 	}
 	else if (left)
 	{
 		newAngle = 180;
-		facing = FlxObject.LEFT;
+		facing = LEFT;
 	}
 	else if (right)
 	{
 		newAngle = 0;
-		facing = FlxObject.RIGHT;
+		facing = RIGHT;
 	}
 
 	// determine our velocity based on angle and speed
@@ -79,16 +79,17 @@ Now we need to actually load the player's graphic into the sprite. So, bring up 
 	velocity.rotate(FlxPoint.weak(0, 0), newAngle);
 	
 	// if the player is moving (velocity is not 0 for either axis), we need to change the animation to match their facing
-	if ((velocity.x != 0 || velocity.y != 0) && touching == FlxObject.NONE) 
+	if ((velocity.x != 0 || velocity.y != 0) && touching == NONE) 
 	{
 		switch (facing)
 		{
-			case FlxObject.LEFT, FlxObject.RIGHT:
+			case LEFT, RIGHT:
 				animation.play("lr");
-			case FlxObject.UP:
+			case UP:
 				animation.play("u");
-			case FlxObject.DOWN:
+			case DOWN:
 				animation.play("d");
+			case _:
 		}
 	}
 	```

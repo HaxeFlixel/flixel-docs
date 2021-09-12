@@ -55,7 +55,6 @@ Here is an example of a simple game state;
 package;
 
 import flixel.tile.FlxTilemap;
-import flixel.FlxObject;
 import flixel.FlxG;
 import flixel.FlxSprite;
 import flixel.FlxState;
@@ -94,7 +93,7 @@ class FlxExampleState extends FlxState
 		{
 			wizard.acceleration.x = wizard.maxVelocity.x * 4;
 		}
-		if (FlxG.keys.justPressed.SPACE && wizard.isTouching(FlxObject.FLOOR))
+		if (FlxG.keys.justPressed.SPACE && wizard.isTouching(FLOOR))
 		{
 			wizard.velocity.y = -wizard.maxVelocity.y / 2;
 		}
