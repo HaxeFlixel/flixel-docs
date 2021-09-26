@@ -2,7 +2,7 @@
 title: "HaxeDevelop"
 ```
 
-[HaxeDevelop](https://haxedevelop.org/) is a distribution of FlashDevelop optimized for Haxe development. Is a free and open source (MIT license) source code editor and offers great and fast code completion & code generation, project compilation & debugging, plenty of project templates. It's one of the most popular Haxe IDEs. See their [wiki]( http://www.flashdevelop.org/wikidocs/index.php) for more information.
+HaxeDevelop is a distribution of FlashDevelop optimized for Haxe development. Is a free and open source (MIT license) source code editor and offers great and fast code completion & code generation, project compilation & debugging, plenty of project templates. It's one of the most popular Haxe IDEs. See their [wiki]( http://www.flashdevelop.org/wikidocs/index.php) for more information. The website is down, so you  wont be able to download it until the website is fixed.
 
 ### Installing HaxeFlixel
 
@@ -13,3 +13,4 @@ In HaxeDevelop, you can install Haxe and/or HaxeFlixel and its template easily f
 <img src="../images/00_getting_started/fd-flixel-template.jpg" style="width:100%;" />
 
 HaxeDevelop is open source and you can contribute to it through their [GitHub repository](https://github.com/fdorg/flashdevelop).
+
