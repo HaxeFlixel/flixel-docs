@@ -250,7 +250,7 @@ In order to let our enemies 'think', we're going to utilize a very simple [Finit
 	}
 	```
 
-	Also add this line to `update()` before `super.elapsed()`:
+	Also add this line to `update()` before `super.update(elapsed)`:
 
 	```haxe
 	brain.update(elapsed);
