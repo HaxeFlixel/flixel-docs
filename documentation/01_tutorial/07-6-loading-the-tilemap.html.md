@@ -34,6 +34,7 @@ One of the great things about using Ogmo with HaxeFlixel is that there is alread
 	var walls:FlxTilemap;
 	```
 	(`import flixel.tile.FlxTilemap;`)
+	(`import flixel.addons.editors.ogmo.FlxOgmo3Loader;`)
 
 	We're basically just creating an object to hold our Ogmo map, and then another one to hold the `FlxTilemap` that we will generate from the Ogmo map.
 
