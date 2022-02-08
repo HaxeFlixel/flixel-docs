@@ -10,6 +10,7 @@ Since gamepads have a variety of manufacturers their keycodes provided to HaxeFl
 - XInput (Xbox 360, Xbox One, etc)
 - PS4
 - OUYA
+- Switch Joycons/Pro Controllers
 - Logitech
 - WiiRemote
 - Mayflash WiiRemote
