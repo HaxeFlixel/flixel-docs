@@ -65,7 +65,6 @@ First up, let's create a simple menu. Eventually, we'll want a fancy `MenuState`
 	First, we want the button to be in a nicer place. Sure, we could set the `x` and `y` coordinates when we create it, but there's a simpler way to do it.
 	
 	Back in `create()`, add a new line somewhere after we create our `FlxButton`, and before `super.create();` type:
-	Type:
 
 	```haxe
 	playButton.screenCenter();
