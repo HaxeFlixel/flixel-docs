@@ -28,7 +28,7 @@ This makes `lime` available as a command (alias for `haxelib run lime`).
 
 To compile to desktop and mobile targets, you have to make sure you have run the respective `lime setup` 
 commands. Each are specified in the 
-[Lime "Advanced Setup" docs](https://lime.software/docs/advanced-setup/windows/).
+[Lime "Advanced Setup" docs](https://lime.openfl.org/docs/advanced-setup/windows/).
 
 ### Install the `flixel` command
 

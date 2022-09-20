@@ -76,7 +76,7 @@ lime test neko
 lime test flash
 ```
 
-Other targets require further setup. For more details, check the "Advanced Setup" section of the [Lime documentation](https://lime.software/docs/home/).
+Other targets require further setup. For more details, check the "Advanced Setup" section of the [Lime documentation](https://lime.openfl.org/docs/home/).
 
 If you struggled through any part of this tutorial, [get in touch with the community](/documentation/community/) for support.
 

@@ -8,4 +8,4 @@ Every OpenFL project uses an XML file to setup the compile settings for your pro
 
 This is a complete specification of the XML file:
 
-[Lime XML Project Format](https://lime.software/docs/project-files/xml-format/)
+[Lime XML Project Format](https://lime.openfl.org/docs/project-files/xml-format/)
