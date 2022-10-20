@@ -12,5 +12,7 @@ In HaxeDevelop, you can install Haxe and/or HaxeFlixel and its template easily f
 
 <img src="../images/00_getting_started/fd-flixel-template.jpg" style="width:100%;" />
 
+The template is also available on GitHub [here](https://github.com/HaxeFlixel/flixel-templates). You can install it mannually by taking the `395 Haxe - HaxeFlixel Project` folder and pasting it in `C:\Program Files (x86)\HaxeDevelop\Projects`.
+
 HaxeDevelop is open source and you can contribute to it through their [GitHub repository](https://github.com/fdorg/flashdevelop).
 
