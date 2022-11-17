@@ -36,12 +36,12 @@ Now we need to actually load the player's graphic into the sprite. So, bring up 
 3. Now, we need to define our animations. In our case, we want each animation to end with the player in their 'neutral' pose (legs together), that way each time we animate the player, it will return to the correct frame as soon as they stop animating. So, add:
 
 	```haxe
-		animation.add("d_idle", [0]);
-		animation.add("lr_idle", [3]);
-		animation.add("u_idle", [6]);
-		animation.add("d_walk", [0, 1, 0, 2], 6);
-		animation.add("lr_walk", [3, 4, 3, 5], 6);
-		animation.add("u_walk", [6, 7, 6, 8], 6);
+	animation.add("d_idle", [0]);
+	animation.add("lr_idle", [3]);
+	animation.add("u_idle", [6]);
+	animation.add("d_walk", [0, 1, 0, 2], 6);
+	animation.add("lr_walk", [3, 4, 3, 5], 6);
+	animation.add("u_walk", [6, 7, 6, 8], 6);
 	```
 
 	We're finished with the constructor changes, the final step is to change our `updateMovement()` function to tell the player sprite which way to face. So, modify our section which deals with setting the player's angle to look something like this:
