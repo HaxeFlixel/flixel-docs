@@ -242,8 +242,7 @@ First, define our player's movement speed and deceleration amounts:
 8. Now that we know which angle the player should be moving in, we need to figure out with how much `velocity` it needs to move that way. We're going to do this by setting `velocity.x` to `speed` and `velocity.y` to `0`. Then we rotate that point around `(0, 0)` by `newAngle` degrees.
 
 	```haxe
-	velocity.set(SPEED, 0);
-	velocity.rotate(FlxPoint.weak(0, 0), newAngle);
+	velocity.setPolarDegrees(SPEED, newAngle);
 	```
 
 	(`import flixel.math.FlxPoint;`)
