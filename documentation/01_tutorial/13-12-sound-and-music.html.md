@@ -94,14 +94,11 @@ Now let's change our code to use these sounds:
 
 9. We then setup our proximity for our sounds, setting it's position  to the `x` and `y` position of this enemy, and telling it to target the `FlxG.camera.target` object (which happens to be our player!). Finally, we say that the radius of our footstep sound is a little bit more than half of the screen's width - so we should be able to hear enemies that are just off the screen, and all the enemies' footsteps will sound louder/softer based on their distance from the camera target.
 
-10. Next, in the enemy's `update()`, before `super.update()`, we're going to check if the enemy is moving and not bumping into a wall. If they are moving, we set the position of our sound to wherever our enemy is (to the bottom of his sprite - where his feet are), and then play the sound.
+10. Next, similarly to where we added the player's step sounds, we're going to have the enemy play sounds, when it's playing it's walk animation. For these sounds, however, we will give the sound a position in the world.
 
 	```haxe
-	if ((velocity.x != 0 || velocity.y != 0) && touching == NONE)
-	{
-		stepSound.setPosition(x + frameWidth / 2, y + height);
-		stepSound.play();
-	}
+	stepSound.setPosition(x + frameWidth / 2, y + height);
+	stepSound.play();
 	```
 
 11. Next, let's head over to `PlayState`. We really only need one sound to be in the `PlayState` itself, and that's the one for picking up a coin. While you could put this into the `Coin` class, because there could be a lot of coins loaded at once, and because we really can't pick up more than one coin at a time (so the sounds don't need to overlap), putting a single coin sound effect in our `PlayState` saves us a bit of overhead.
