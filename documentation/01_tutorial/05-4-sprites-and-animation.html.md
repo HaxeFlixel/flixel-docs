@@ -33,7 +33,14 @@ Now we need to actually load the player's graphic into the sprite. So, bring up 
 
 	All we're doing here is saying that we don't want to flip anything when facing left (because our sprite already faces left), and to flip horizontally when facing right. We could do the same for up and down if we wanted.
 
-3. Now, we need to define our animations. In our case, we want each animation to end with the player in their 'neutral' pose (legs together), that way each time we animate the player, it will return to the correct frame as soon as they stop animating. So, add:
+3. Then, we want to make the hitbox match the graphics. With this more top down perspective, it's good practice for the hitbox to match the feet, so let's set ours to the bottom middle of the sprite:
+
+	```haxe
+	setSize(8, 8);
+	offset.set(4, 8);
+	```
+
+4. Now, we need to define our animations. In our case, we want each animation to end with the player in their 'neutral' pose (legs together), that way each time we animate the player, it will return to the correct frame as soon as they stop animating. So, add:
 
 	```haxe
 	animation.add("d_idle", [0]);
@@ -99,7 +106,7 @@ Now we need to actually load the player's graphic into the sprite. So, bring up 
 
 	Every time this function gets called, it will check to see which of the directions the player is pressing, and, based on those, which way the sprite should be facing, and which animation should be playing..
 
-4. Save your changes and run your project, and you should see your player sprite animate while being moved, and facing the right direction!
+5. Save your changes and run your project, and you should see your player sprite animate while being moved, and facing the right direction!
 
 	![](../images/01_tutorial/browser_animated_player.gif)
 
