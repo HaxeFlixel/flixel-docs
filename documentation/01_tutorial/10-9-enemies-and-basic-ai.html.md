@@ -45,7 +45,8 @@ What would a dungeon game be without enemies? Let's add some!
 
 	class Enemy extends FlxSprite
 	{
-		static inline var SPEED:Float = 140;
+		static inline var WALK_SPEED:Float = 40;
+		static inline var CHASE_SPEED:Float = 70;
 
 		var type:EnemyType;
 
@@ -217,20 +218,19 @@ In order to let our enemies 'think', we're going to utilize a very simple [Finit
 		}
 		else if (idleTimer <= 0)
 		{
-			if (FlxG.random.bool(1))
+			// 95% chance to move
+			if (FlxG.random.bool(95))
+			{
+				moveDirection = FlxG.random.int(0, 8) * 45;
+
+				velocity.setPolarDegrees(WALK_SPEED, moveDirection);
+			}
+			else
 			{
 				moveDirection = -1;
 				velocity.x = velocity.y = 0;
 			}
-			else
-			{
-				moveDirection = FlxG.random.int(0, 8) * 45;
-				
-				velocity.set(SPEED * 0.5, 0);
-				velocity.rotate(FlxPoint.weak(), moveDirection);
-				
-			}
-			idleTimer = FlxG.random.int(1, 4);			
+			idleTimer = FlxG.random.int(1, 4);
 		}
 		else
 			idleTimer -= elapsed;
@@ -245,7 +245,7 @@ In order to let our enemies 'think', we're going to utilize a very simple [Finit
 		}
 		else
 		{
-			FlxVelocity.moveTowardsPoint(this, playerPosition, Std.int(SPEED));
+			FlxVelocity.moveTowardsPoint(this, playerPosition, CHASE_SPEED);
 		}
 	}
 	```

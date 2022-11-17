@@ -141,7 +141,7 @@ First, define our player's movement speed and deceleration amounts:
 1. In your player class, above the constructor, add:
 
 	```haxe
-	static inline var SPEED:Float = 200;
+	static inline var SPEED:Float = 100;
 	```
 
 	Since this is a constant value that won't change, we make it `static inline` as well as following the `UPPER_CASE` naming convention.
@@ -149,7 +149,7 @@ First, define our player's movement speed and deceleration amounts:
 	Then, in the constructor, after you call `makeGraphic()`, we need to add some `drag`:
 
 	```haxe
-	drag.x = drag.y = 1600;
+	drag.x = drag.y = 800;
 	```
 
 	`drag`, in HaxeFlixel, is sort of a way to slow down an object when it's not being moved. This will prevent our player sprite from just running forever in the same direction when the user stops pressing any movement keys.
