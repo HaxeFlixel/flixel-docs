@@ -43,7 +43,7 @@ First up, let's create a simple menu. Eventually, we'll want a fancy `MenuState`
 	playButton = new FlxButton(0, 0, "Play", clickPlay);
 	add(playButton);
 	```
-	(`import flixel.ui.FlxButton;`)
+	(`import flixel.ui.FlxButton; //This is where you add your Flixel Imports or Folder Imports.`)
 
 	This creates a `FlxButton` object and assigns it to the `playButton` variable. We're telling it to make the button at position `(0, 0)` (the top left corner of the screen), to make it say "Play" on it, and to call the function `clickPlay()` when a user clicks the button (we yet have to implement `clickPlay()`).
 	Then we add the object to our state so that it can be shown and interacted with.
@@ -95,6 +95,7 @@ We're going to be extending the `FlxSprite` class to create our `Player` class.
 	{
 		public function new(x:Float = 0, y:Float = 0)
 		{
+			// This is where the Sprite Sheet can be made; Using this can be a good example as to adding stuff using the, y'know: X, and Y.
 			super(x, y);
 		}
 	}
