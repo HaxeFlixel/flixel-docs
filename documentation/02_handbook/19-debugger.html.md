@@ -136,7 +136,7 @@ Functions can also be registered to the console directly as commands via `FlxG.c
 
 ```haxe
 // in PlayState#create()
-FlxG.console.addCommand("spawnEnemy", function() {
+FlxG.console.registerFunction("spawnEnemy", function() {
 	var mousePos = FlxG.mouse.getWorldPosition();
 	var enemy = _enemies.recycle(Enemy);
 	enemy.init(Std.int(mousePos.x), Std.int(mousePos.y), _enemyBullets, _bigGibs, _player);
