@@ -72,8 +72,10 @@ What would a dungeon game be without enemies? Let's add some!
 
 		override public function update(elapsed:Float)
 		{
+			var action = "idle";
 			if (velocity.x != 0 || velocity.y != 0)
 			{
+				var action = "walk";
 				if (Math.abs(velocity.x) > Math.abs(velocity.y))
 				{
 					if (velocity.x < 0)
