@@ -10,7 +10,7 @@ This is the main location for HaxeFlixel documentation. Pull requests from this 
 
 ## Contents
 
-* The "main" documentation available on [haxeflixel.com/documentation](http://www.haxeflixel.com/documentation).
+* The "main" documentation available on [haxeflixel.com/documentation](https://haxeflixel.com/documentation).
 * The API documentation.
 
 ### Main documentation
