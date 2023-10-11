@@ -103,7 +103,7 @@ Alternatively, you can switch to the _Problems_ tab which has a nicer presentati
 The `.vscode` template from flixel-tools already includes the `launch.json` needed for debugging. The Lime "Build + Debug" / "Debug" launch configurations support debugging with the following targets / extensions:
 
 - Windows/Linux/Mac via [HXCPP Debugger](https://marketplace.visualstudio.com/items?itemName=vshaxe.hxcpp-debugger)
-- HTML5 via [Debugger for Chrome](https://marketplace.visualstudio.com/items?itemName=msjsdiag.debugger-for-chrome)
+- HTML5 via [Debugger for Chrome](https://marketplace.visualstudio.com/items?itemName=msjsdiag.debugger-for-chrome) or [Debugger for Firefox](https://marketplace.visualstudio.com/items?itemName=firefox-devtools.vscode-firefox-debug)
 - Flash via [Flash Debugger](https://marketplace.visualstudio.com/items?itemName=vshaxe.haxe-debug)
 
 Simply "Start Debugging" with the "Build + Debug" launch configuration (make sure the "Debug" configuration for the target you want to debug is selected in the status bar). This first builds the project and then starts the debugger.
