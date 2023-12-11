@@ -110,7 +110,7 @@ public function setPosition(x:Int, y:Int):Void
 
 ## Class Names
 
-All class names should be prefixed by `Flx`, e.g.:
+All type names should be prefixed by `Flx`, e.g.:
 
 - `FlxBasic`
 - `FlxObject`
@@ -120,6 +120,8 @@ All class names should be prefixed by `Flx`, e.g.:
 Even though this is widely regarded as bad style, it still makes sense to follow this convention since it is so deeply ingrained into the flixel workflow and doing otherwise would be very inconsistent and confusing.
 
 This convention does not come without its advantages, for example you can easily tell which classes belong to the engine and which ones don't when writing a game.
+
+Under the hood types that HaxeFlixel devs will likely never see or use should not have the `Flx` prefix, this will serve as an indicator that they are off the beaten path.
 
 ## Enum Value Names
 
