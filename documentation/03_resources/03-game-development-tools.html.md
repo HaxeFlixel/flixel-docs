@@ -58,7 +58,7 @@ Ogmo Editor is a generic level editor for indie game developers who use Windows.
 
 #### [LDtk](https://ldtk.io/)
 
-LDtk is a level editor created by the lead game designer of [Dead Cells](https://store.steampowered.com/app/588650/Dead_Cells/). This editor has some extra features work nicely with Haxe and HaxeFlixel, and focuses on being easy to use. This tutorial shows you how to use LDtk tile maps with HaxeFlixel.
+LDtk is a level editor created by the lead game designer of [Dead Cells](https://store.steampowered.com/app/588650/Dead_Cells/). This editor has some extra features work nicely with Haxe and HaxeFlixel, and focuses on being easy to use. [This tutorial](https://goop.wtf/2021/06/05/loading-ldtk-maps-in-haxeflixel.html) shows you how to use LDtk tile maps with HaxeFlixel.
 
 ## Asset Utilities
 
