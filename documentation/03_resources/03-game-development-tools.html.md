@@ -20,6 +20,10 @@ Inkscape supports many advanced SVG features (markers, clones, alpha blending, e
 
 Krita is a free digital painting and illustration application. Krita offers CMYK support, HDR painting, perspective grids, dockers, filters, painting assistants, and many other features you would expect.
 
+#### [Aseprite](https://www.aseprite.org/)
+
+Aseprite is a program designed for drawing pixel art. It has layers, animation tools, tile map tools, blend modes, and many more useful features. It's not free, but it's a favorite for many developers.
+
 ## Sound Editors
 
 #### [Audacity](http://www.audacityteam.org/)
@@ -44,21 +48,25 @@ LabChirp is a program for creating sound effects.
 
 ## Map Editors
 
-### [Tiled Map Editor](http://www.mapeditor.org/)
+#### [Tiled Map Editor](http://www.mapeditor.org/)
 
 Tiled is a general purpose tile map editor. It is meant to be used for editing maps of any tile-based game, be it an RPG, a platformer or a Breakout clone. [This demo shows how to load a Tiled map](http://haxeflixel.com/demos/TiledEditor/).
 
-### [Ogmo Editor](http://www.ogmoeditor.com/)
+#### [Ogmo Editor](http://www.ogmoeditor.com/)
 
 Ogmo Editor is a generic level editor for indie game developers who use Windows. It also happens to be free and open source. The editor is built to be reconfigurable, so you can set it up to work well for your game project. [This HaxeFlixel tutorial](http://haxeflixel.com/documentation/part-v-tiles-maps-and-collisions/) demonstrates how to create a simple top-down level with Ogmo.
 
+#### [LDtk](https://ldtk.io/)
+
+LDtk is a level editor created by the lead game designer of [Dead Cells](https://store.steampowered.com/app/588650/Dead_Cells/). This editor has some extra features work nicely with Haxe and HaxeFlixel, and focuses on being easy to use. [This tutorial](https://goop.wtf/2021/06/05/loading-ldtk-maps-in-haxeflixel.html) shows you how to use LDtk tile maps with HaxeFlixel.
+
 ## Asset Utilities
 
-### [ShoeBox](http://renderhjs.net/shoebox/)
+#### [ShoeBox](http://renderhjs.net/shoebox/)
 
 ShoeBox is a free Adobe Air based app for Windows and Mac OS X with game and UI related tools. It has many utilities that make asset management easier, such as [sprite packing](http://renderhjs.net/shoebox/packSprites.htm), [sprite extraction](http://renderhjs.net/shoebox/extractSprites.htm), [texture ripping](http://renderhjs.net/shoebox/textureRipper.htm), [bitmap font creation](http://renderhjs.net/shoebox/bitmapFont.htm), and more.
 
-### [Texture Packer](https://www.codeandweb.com/texturepacker)
+#### [Texture Packer](https://www.codeandweb.com/texturepacker)
 
 Texture Packer does one thing very well - it packs several sprites into one large image to help reduce load times for your game. It's easy to use and easy to integrate with HaxeFlixel. [This demo shows how to use a TexturePackerAtlas](http://haxeflixel.com/demos/TexturePackerAtlas/).
 
