@@ -41,6 +41,9 @@
 					<li>
 						<a href="https://github.com/HaxeFlixel/flixel/discussions">Forum</a>
 					</li>
+					<li>
+						<a href="#" id="theme-toggle" class="brand" style="color:$$getHexValue(::textColor::)" onclick="toggleTheme()" title="Toggle Dark Mode"><i class="fa fa-moon-o"></i></a>
+					</li>
 				</ul>
 			</div>
 		</div>
