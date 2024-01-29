@@ -11,7 +11,7 @@ Welcome to HaxeFlixel! To setup your Windows, Linux or Mac system to start makin
 
 After that, you have to choose an editor / IDE to work in. The most popular option is Visual Studio Code (VS Code) which has it's own pages here:
 
-- [Visual Studio Code](/documentation/visual-studio-code) (recommended)
+- [Visual Studio Code](/documentation/visual-studio-code)
 
 A more comprehensive list of options can be found on [haxe.org](https://haxe.org/documentation/introduction/editors-and-ides.html).
 
