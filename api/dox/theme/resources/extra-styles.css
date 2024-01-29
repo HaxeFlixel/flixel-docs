@@ -2,6 +2,14 @@
 
 /* nav */
 
+body:not(.dark-theme) {
+  background-color: #dfebe7;
+}
+
+body .dark-theme {
+  background-color: #111111;
+}
+
 nav a {
   font-family: 'Ubuntu', sans-serif;
   padding-top: 14px !important;
@@ -17,10 +25,8 @@ nav a {
   margin-left: 15px;
 }
 
-body {
-  background-image: url(https://haxeflixel.com/images/highlight-bg.png), url(https://haxeflixel.com//images/site-bg.png);
-  background-repeat: no-repeat, repeat;
-  background-position: center top, left top;
+.navbar #theme-toggle {
+  margin-left: 0px;
 }
 
 div.main-content > div {
@@ -32,6 +38,11 @@ div.main-content > div {
   padding: 16px;
   overflow: hidden;
   padding-top: 50px;
+}
+
+.dark-theme div.main-content > div {
+  background: #111111;
+  border-color: #080808;
 }
 
 .navbar{position:relative;z-index:1000;min-height:50px;margin-bottom:22px;border:1px solid transparent}.navbar:before,.navbar:after{content:" ";display:table;}
