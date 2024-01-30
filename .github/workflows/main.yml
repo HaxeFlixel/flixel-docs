@@ -11,6 +11,7 @@ jobs:
     runs-on: ubuntu-latest
     permissions:
       actions: write
+      contents: write
     steps:
     - run: gh workflow run main.yml --ref master --repo haxeflixel/haxeflixel.com
       env:
