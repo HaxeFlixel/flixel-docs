@@ -7,14 +7,6 @@ on:
   repository_dispatch:
 
 jobs:
-  trigger-site-repo-workflow:
-    runs-on: ubuntu-latest
-    permissions: write-all
-
-    steps:
-    - run: gh workflow run main.yml --ref master --repo haxeflixel/haxeflixel.com
-      env:
-        GH_TOKEN: ${{ github.token }}
   build:
     runs-on: ubuntu-latest
     steps:
