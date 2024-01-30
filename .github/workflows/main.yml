@@ -10,8 +10,7 @@ jobs:
   trigger-site-repo-workflow:
     runs-on: ubuntu-latest
     permissions:
-      actions: write
-      contents: write
+      actions: write&read
     steps:
     - run: gh workflow run main.yml --ref master --repo haxeflixel/haxeflixel.com
       env:
