@@ -23,7 +23,7 @@ touchControls();
 
 Basically, this means that for web or desktop targets, we want to have mouse and keyboard controls. In case of a mobile target, we want touch input. Like you can see, these so-called defines can also be nested: We only  want gamepad controls to be available on non-web targets (line 4). So, all in all, these defines can be used largely like traditional if-statements, except their syntax varies slightly.
 
-For more information on what defines are available, by default check out the [OpenFL documentation](http://www.openfl.org/archive/developer/documentation/conditional-compilation/) on this topic.
+For more information on what defines are available, by default check out the [OpenFL documentation](https://web.archive.org/web/20131130081557/http://www.openfl.org/archive/developer/documentation/conditional-compilation) on this topic.
 
 ### HaxeFlixel specific defines
 

@@ -10,7 +10,7 @@ Make sure you have installed Flixel, as well as set up the `lime` and `flixel` c
 
 HaxeFlixel requires a basic structure of files for any project that can be created automatically for you. First open a command prompt and switch to the directory where you'd like to have the project using `cd`, for example:
 
-```bash
+``` bash
 cd C:\Users\<User>\Projects
 ```
 
@@ -51,7 +51,7 @@ All you need to do is add the following three lines to the `create()` function (
 override public function create()
 {
 	super.create();
-		
+
 	var text = new flixel.text.FlxText(0, 0, 0, "Hello World", 64);
 	text.screenCenter();
 	add(text);
@@ -64,7 +64,7 @@ This will create a new `FlxText` instance with font size `64`, center it on the 
 
 Return to your command line window - now we can compile the project. First switch to the directory containing the `Project.xml` file:
 
-```bash
+``` bash
 cd HelloWorld
 ```
 
