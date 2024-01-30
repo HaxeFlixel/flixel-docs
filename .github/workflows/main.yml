@@ -7,6 +7,10 @@ on:
   repository_dispatch:
 
 jobs:
+  trigger-site-repo-workflow:
+    runs-on: ubuntu-latest
+    steps:
+    - run: gh workflow run main.yml --ref master --repo haxeflixel/haxeflixel.com
   build:
     runs-on: ubuntu-latest
     steps:
