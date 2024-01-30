@@ -10,6 +10,8 @@ body .dark-theme {
   background-color: #111111;
 }
 
+
+
 nav a {
   font-family: 'Ubuntu', sans-serif;
   padding-top: 14px !important;
@@ -18,6 +20,15 @@ nav a {
 
 .navbar {
   height: 50px;
+}
+
+.nav-list li i.fa {
+    height: 16px;
+    width: 16px;
+    color: rgb(200, 200, 200);
+    font-weight: normal;
+    font-size: 16px;
+    padding-right: 5px;
 }
 
 .navbar img { /* hack for logo positioning */
