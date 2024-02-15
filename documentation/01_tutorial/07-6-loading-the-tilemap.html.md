@@ -33,6 +33,8 @@ One of the great things about using Ogmo with HaxeFlixel is that there is alread
 	var map:FlxOgmo3Loader;
 	var walls:FlxTilemap;
 	```
+	(`import flixel.tile.FlxTilemap;`)
+	(`import flixel.addons.editors.ogmo.FlxOgmo3Loader;`)
 
 	We're basically just creating an object to hold our Ogmo map, and then another one to hold the `FlxTilemap` that we will generate from the Ogmo map.
 
@@ -83,6 +85,7 @@ One of the great things about using Ogmo with HaxeFlixel is that there is alread
 	```haxe
 	FlxG.collide(player, walls);
 	```
+	(`import flixel.FlxG;`)
 	
 	All this does is check for overlaps between our player and the walls tilemap each `update()` call. If there are any overlaps, the objects are automatically separated from each other.
 
