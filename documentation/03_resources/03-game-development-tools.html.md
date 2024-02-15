@@ -74,7 +74,7 @@ Texture Packer does one thing very well - it packs several sprites into one larg
 
 ## More Resources
 
-#### [ellisonleao/magictools](https://github.com/ellisonleao/magictools?tab=readme-ov-file)
+#### [ellisonleao/magictools](https://github.com/ellisonleao/magictools)
 
 🎮 📝 A Github list of Game Development resources to make magic happen.
 
