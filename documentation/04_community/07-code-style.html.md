@@ -1,7 +1,6 @@
-```
+---
 title: "Code Style"
-```
-
+---
 This page contains a few notes on HaxeFlixel's code style. Note that we use [haxe-formatter](https://github.com/HaxeCheckstyle/haxe-formatter) to enforce consistent whitespace usage, bracket placement etc, so this page only focuses on naming conventions and other good practices not covered by an auto-formatter.
 
 ## Functions

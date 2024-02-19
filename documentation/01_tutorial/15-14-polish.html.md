@@ -1,6 +1,6 @@
-```
+---
 title: "14 - Polish"
-```
+---
 
 In this section, you're going to learn a few simple tricks to add some polish and juice to your game. Some of those have already been added here and there, but we'll go through a few places now to talk about them.
 

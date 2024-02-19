@@ -1,7 +1,6 @@
-```
+---
 title: "Upgrade Guide 4.0.0"
-```
-
+---
 ## 4.4.0
 
 Breaking changes in 4.4.0 are limited to usage with OpenFL 8. OpenFL 3.6.1 (Legacy or Next) is still fully supported. The breaking changes when upgrading to OpenFL 8.0.0 and Lime 6.3.0 are as follows:

@@ -1,8 +1,7 @@
-```
+---
 title: "Community"
 rootDoc: true
-```
-
+---
 HaxeFlixel is a collaborative project from [contributors all over the world](https://github.com/HaxeFlixel/flixel/graphs/contributors).
 
 If you need help or just want to chat , HaxeFlixel has a...

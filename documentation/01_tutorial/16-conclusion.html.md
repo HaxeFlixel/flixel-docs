@@ -1,6 +1,6 @@
-```
+---
 title: "Conclusion"
-```
+---
 
 Now we have a pretty complete, working game! It's not too complex, but it should give you a full, well-rounded idea of how to make your own games in HaxeFlixel. I really hope you've enjoyed this tutorial, and take the time to play around with the code some more to try expanding the game even further. You could add more levels, add stairway objects to move between them, add more enemy types, and collectibles, and upgrades… the list goes on.
 

@@ -1,6 +1,6 @@
-```
+---
 title: "6 - Loading the Tilemap"
-```
+---
 
 One of the great things about using Ogmo with HaxeFlixel is that there is already a built-in class to load and use the maps. However, it's not in the 'standard' HaxeFlixel library - we have to install the flixel-addons library to get access to it.
 

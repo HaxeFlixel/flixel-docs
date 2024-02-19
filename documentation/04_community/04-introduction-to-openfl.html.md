@@ -1,7 +1,6 @@
-```
+---
 title: "Introduction to OpenFL"
-```
-
+---
 <img src="/images/openfl.jpg" width="100%" />
 
 The [Open Flash Library](http://www.openfl.org) (OpenFL) previously known as NME, is an innovative framework designed to provide fast, productive development for Windows, Mac, Linux, iOS, Android, Flash and HTML5 – all using the same source code.

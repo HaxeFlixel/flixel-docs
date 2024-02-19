@@ -1,6 +1,6 @@
-```
+---
 title: "Flixel Display List"
-```
+---
 The Flixel Display list is a specially designed structure for your game's sprites to be rendered.
 
 #### `FlxSprite` != `flash.display.Sprite`

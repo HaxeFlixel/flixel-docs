@@ -1,7 +1,6 @@
-```
+---
 title: HaxeFlixel Website
-```
-
+---
 This website is built using the Docpad system which compiles the files to a static site on a community sponsored host.
 Extensions and help with improving the website and our documentation are greatly appreciated.
 

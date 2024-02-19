@@ -1,7 +1,6 @@
-```
+---
 title: "Why a Haxe Version"
-```
-
+---
 The original ActionScript 3 version of [Flixel](http://flixel.org) has proven to be an effective codebase to make 2D games quickly and easily for the Adobe Flash and AIR runtimes. [Haxe](http://haxe.org) and the [Open Flash Library](https://github.com/openfl) provide significant enhancements and opportunities that ActionScript 3, AIR and Flash are limited by. [Haxe](http://haxe.org) and the [OpenFL](https://github.com/openfl) offers more efficient and open source native runtimes to your code base that ActionScript 3 and Adobe Flash/Air are not able to provide. HaxeFlixel still retains the same Flash Player target, but you gain a[ familiar, yet superior](http://www.openfl.org/archive/developer/documentation/actionscript-developers/) open source language [Haxe](http://haxe.org).
 
 #### Use of a superior open source, cross-compiled language

@@ -1,7 +1,6 @@
-```
+---
 title: "Compiler Conditionals"
-```
-
+---
 The Haxe compiler provides a robust solution for cross-platform development where you can use operators to define what targets receive your code. This functionality is invaluable for HaxeFlixel since we are targeting native mobile / desktop and web targets, all with different capabilities.
 
 [Conditional Compilation in the Haxe Manual](https://haxe.org/manual/lf-condition-compilation.html)

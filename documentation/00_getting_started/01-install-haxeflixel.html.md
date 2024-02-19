@@ -1,6 +1,6 @@
-```
+---
 title: "Install HaxeFlixel"
-```
+---
 
 To install the latest stable version of HaxeFlixel, open a command prompt and run the following [Haxelib](http://lib.haxe.org/) commands:
 
@@ -14,13 +14,13 @@ After the installation is complete, you can compile games to HTML5, Flash and Ne
 
 To easily install additional libraries (addons, ui, demos, tools, templates...) in a single step, just run:
 
-```bash
+``` bash
 haxelib run lime setup flixel
 ```
 
 ### Install the `lime` command
 
-```bash
+``` bash
 haxelib run lime setup
 ```
 

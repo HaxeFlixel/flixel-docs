@@ -1,6 +1,6 @@
-```
+---
 title: "Visual Studio Code"
-```
+---
 
 [![](../images/00_getting_started/vscode/vscode-plus-extensions.png)](https://marketplace.visualstudio.com/items?itemName=vshaxe.haxe-extension-pack)
 
