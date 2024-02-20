@@ -1,6 +1,36 @@
 ---
 title: "Game Development Tools"
+
 ---
+A concise list of tools useful to HaxeFlixel developers.This list is under construction. Suggest more, [here](https://github.com/HaxeFlixel/flixel/issues/2764).
+
+## External Flixel Libraries
+A list of repos and libraries made with the purpose of extending HaxeFlixel's capabilities. One day, these may be officially incorporated into HaxeFlixel, but for now they serve a niche demand on their own.
+
+#### [Zerolib-flixel](https://github.com/01010111/zerolib-flixel)
+A library of extensions, utilities, and other helpful classes for making games quickly in haxeflixel! There's also a framework agnostic version simply called [Zerolib](https://github.com/01010111/zerolib)
+
+#### [djFlixel](https://github.com/john32b/djFlixel)
+djFlixel is a small library with some helpful tools for HaxeFlixel, including a multi-page menu system, keyboard/gamepad helpers, and very fun effects.
+
+#### [FlxAnimate](https://github.com/Dot-Stuff/flxanimate)
+A repository made by [CheemsAndFriends](https://github.com/CheemsAndFriends) and [DotWith](https://github.com/DotWith) made for playing all spritesheet formats and the mysterious but interesting export called `Texture Atlas`
+
+#### [FlxGif](https://github.com/MAJigsaw77/flxgif)
+[Yagp's Gif Player](https://github.com/yanrishatum/yagp/) for HaxeFlixel.
+
+#### [HxCodec](https://github.com/polybiusproxy/hxCodec)
+A library which adds native video support for OpenFL and HaxeFlixel.
+
+#### [flixel-depth](https://github.com/01010111/flixel-depth)
+
+Flixel Depth is a fun 3D hack for making orthogonally 3D looking games using haxeflixel. It does so primarily by offsetting sprites according to the camera's current angle and scaling the primary game window down. This is NOT real 3D, you will still be making a 2D game, so expect a lot of edge cases!
+
+#### [depth-flixel (not to be confused with flixel-depth!)](https://github.com/AustinEast/depth-flixel)
+
+A library aimed at making Stacked Sprites easy with Haxeflixel!
+
+
 ## Graphics Editors
 
 #### [Gimp](http://www.gimp.org/)
@@ -25,39 +55,41 @@ Aseprite is a program designed for drawing pixel art. It has layers, animation t
 
 ## Sound Editors
 
-#### [Audacity](http://www.audacityteam.org/)
+#### [Audacity](https://www.audacityteam.org/)
 
 Audacity is free, open source, cross-platform audio software for multi-track recording and editing.
 
-#### [LMMS](http://lmms.sourceforge.net/)
+#### [LMMS](https://lmms.io/)
 
 LMMS is a free cross-platform software which allows you to produce music with your computer.
 
-#### [SFXR](http://www.drpetter.se/project_sfxr.html)
+#### [ChipTone](https://sfbgames.itch.io/chiptone)
 
-SFXR is a sound generator, widely used for creating sound effects for Ludum Dare games.
+An OpenFL based sound effects generator for video games, build by Tom Vian of SFBGames. Available on HTML5, Windows, and Mac!
 
-#### [BFXR](http://www.bfxr.net/)
-
-BFXR is an improved ActionScript 3 port of SFXR with more features. It has moved in the direction of increased complexity and range of expression.
-
-#### [LabChirp](http://labbed.net/software/labchirp/)
+#### [LabChirp](https://labbed.net/software/labchirp/)
 
 LabChirp is a program for creating sound effects.
 
 ## Map Editors
 
-#### [Tiled Map Editor](http://www.mapeditor.org/)
+#### [Tiled Map Editor](https://www.mapeditor.org/)
 
 Tiled is a general purpose tile map editor. It is meant to be used for editing maps of any tile-based game, be it an RPG, a platformer or a Breakout clone. [This demo shows how to load a Tiled map](http://haxeflixel.com/demos/TiledEditor/).
 
-#### [Ogmo Editor](http://www.ogmoeditor.com/)
+Source code: https://github.com/mapeditor/tiled
+
+#### [Ogmo Editor](https://ogmo-editor-3.github.io/)
 
 Ogmo Editor is a generic level editor for indie game developers who use Windows. It also happens to be free and open source. The editor is built to be reconfigurable, so you can set it up to work well for your game project. [This HaxeFlixel tutorial](http://haxeflixel.com/documentation/part-v-tiles-maps-and-collisions/) demonstrates how to create a simple top-down level with Ogmo.
+
+Source code: https://github.com/Ogmo-Editor-3/OgmoEditor3-CE
 
 #### [LDtk](https://ldtk.io/)
 
 LDtk is a level editor created by the lead game designer of [Dead Cells](https://store.steampowered.com/app/588650/Dead_Cells/). This editor has some extra features work nicely with Haxe and HaxeFlixel, and focuses on being easy to use. [This tutorial](https://goop.wtf/2021/06/05/loading-ldtk-maps-in-haxeflixel.html) shows you how to use LDtk tile maps with HaxeFlixel.
+
+Source code: https://github.com/deepnight/ldtk
 
 ## Asset Utilities
 
@@ -71,10 +103,18 @@ Texture Packer does one thing very well - it packs several sprites into one larg
 
 ## More Resources
 
-#### [Ludum Dare List](http://www.ludumdare.com/compo/tools/)
+#### [ellisonleao/magictools](https://github.com/ellisonleao/magictools)
 
-Ludum Dare hosts a great list of tools for general game development.
+🎮 📝 A Github list of Game Development resources to make magic happen.
 
-#### [PixelProspector](http://www.pixelprospector.com/indie-resources/)
+#### [Newgrounds Wiki: Creator Resources](https://www.newgrounds.com/wiki/creator-resources/)
 
-Huge list of resources for game dev. A must read for indie developers.
+Curated list of tools and software of all kind, useful for non-programming related things such as art, animation and music!
+
+#### [(Archive.org) Ludum Dare List](https://web.archive.org/web/20171030171759/http://ludumdare.com/compo/tools/)
+
+(Likely outdated) Ludum Dare hosts a great list of tools for general game development.
+
+#### [(Archive.org)PixelProspector](https://web.archive.org/web/20170527203734/http://www.pixelprospector.com/indie-resources/)
+
+(Likely outdated) Huge list of resources for game dev. A must read for indie developers.
