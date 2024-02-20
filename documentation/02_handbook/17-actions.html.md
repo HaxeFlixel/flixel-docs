@@ -1,8 +1,7 @@
-```
+---
 title: "Actions"
 apiPath: input/actions/index.html
-```
-
+---
 Players & designers care about *actions* (Mario *jumps*, Samus *shoots*, Captain 
 Falcon *turns*, *brakes*, and *accelerates*), whereas computers care about 
 *inputs* (The W key is `PRESSED`, the left mouse button was `JUST_RELEASED`, 

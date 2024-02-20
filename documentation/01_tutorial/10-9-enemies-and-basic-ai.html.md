@@ -1,6 +1,6 @@
-```
+---
 title: "9 - Enemies and Basic AI"
-```
+---
 
 What would a dungeon game be without enemies? Let's add some!
 

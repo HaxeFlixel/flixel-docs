@@ -1,7 +1,7 @@
-```
+---
 title: "Tutorial"
 rootDoc: true
-```
+---
 
 Welcome to HaxeFlixel! In this tutorial, you will learn how to create a complete game in HaxeFlixel from start to finish, and then some. Each step is broken into smaller chunks to help you get through even the most complicated and daunting steps.
 

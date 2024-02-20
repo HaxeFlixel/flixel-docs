@@ -1,7 +1,6 @@
-```
+---
 title: "Using Haxelib"
-```
-
+---
 Haxelib is a package manager and utility that comes with your Haxe install. Here are the most used commands, the full usage docs are [available here](https://lib.haxe.org/documentation/using-haxelib/).
 
 ### Installing a Library

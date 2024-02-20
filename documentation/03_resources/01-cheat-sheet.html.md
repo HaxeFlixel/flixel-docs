@@ -1,7 +1,6 @@
-```
+---
 title: "Cheat Sheet"
-```
-
+---
 ## [FlxSprite](http://haxeflixel.com/documentation/flxsprite) (Base)
 
 ```haxe

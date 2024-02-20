@@ -18,11 +18,11 @@ This is the main location for HaxeFlixel documentation. Pull requests from this 
 The main documentation is made up of `*.html.md` files in the `./documentation` folder. Each file and folder starts with a numerical prefix specifying the order listed on the [docpad website](https://github.com/HaxeFlixel/haxeflixel.com).
 
 Additional pages can be added using the same extension and using a header specifying the title as seen in the other pages. Eg:
-
-	```
+```
+	---
 	title: "Documentation Page"
-	```
-	
+	---
+```	
 	Use Regular GitHub flavoured markdown for the page.
 	Note `title:` above is case sensitive.
 

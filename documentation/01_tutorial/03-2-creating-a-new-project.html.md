@@ -1,6 +1,6 @@
-```
+---
 title: "2 - Creating a new project"
-```
+---
 
 Now we want to make sure that everything is installed properly - and we want to set up the framework for our game. So we're going to make a new project, open it with VSCode and test that it builds and runs.
 

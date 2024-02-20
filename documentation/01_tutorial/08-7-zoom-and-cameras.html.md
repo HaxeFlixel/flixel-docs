@@ -1,6 +1,6 @@
-```
+---
 title: "7 - Zoom and Cameras"
-```
+---
 
 When you run your game now, you'll notice that everything is really, really small. We're going to make it more visible by applying some zoom to our game so that we can get a better look at the action. This is a pretty quick change:
 

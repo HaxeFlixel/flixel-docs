@@ -1,8 +1,7 @@
-```
+---
 title: "Gamepads"
 apiPath: input/gamepad/index.html
-```
-
+---
 Gamepad input for HaxeFlixel is provided through the `FlxGamepad` class and is available through `FlxG.gamepads` and the `InputFrontEnd`.
 
 Since gamepads have a variety of manufacturers their keycodes provided to HaxeFlixel API differ from model to model. HaxeFlixel provides mappings that map buttons and sticks to common IDs for convenient use. Mappings are available for:

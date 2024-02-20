@@ -1,7 +1,6 @@
-```
+---
 title: "Game Development Tools"
-```
-
+---
 ## Graphics Editors
 
 #### [Gimp](http://www.gimp.org/)

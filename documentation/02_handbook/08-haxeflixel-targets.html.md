@@ -1,6 +1,6 @@
-```
+---
 title: "HaxeFlixel Targets"
-```
+---
 
 HaxeFlixel currently supports the following targets through OpenFL:
 

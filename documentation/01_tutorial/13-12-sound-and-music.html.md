@@ -1,6 +1,6 @@
-```
+---
 title: "12 - Sound and Music"
-```
+---
 
 Our game is really coming together now, but it's still missing something… there's no _sound_ yet!
 

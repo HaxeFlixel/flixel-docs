@@ -1,7 +1,6 @@
-```
+---
 title: "Code Contributions"
-```
-
+---
 Contributing code to HaxeFlixel is done all through the official git repositories on [GitHub](http://www.github.com/haxeflixel).
 
 ### Use the Dev Branches

@@ -1,6 +1,6 @@
-```
+---
 title: "13 - Multiple Platforms"
-```
+---
 
 One of the big advantages of using HaxeFlixel is the ability to build your games for multiple platforms. You can build a working HTML5, Windows, Linux, Mac, Android and iOS game - all from the same code! So far, we've been working with HTML5, and, for the most part, you don't have to do too much to get your game working on other platforms - if you test it under Windows right now, it should mostly work just fine (although, without music, which we'll discuss later). However, you might run into some issues if you try to build it for a mobile device - at the very least, you won't be able to play it without a keyboard. We'll focus on Windows and Android in this tutorial and add a few things to make them work better on those platforms.
 

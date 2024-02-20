@@ -1,7 +1,7 @@
-```
+---
 title: "Keyboard"
 apiPath: input/keyboard/FlxKeyboard.html
-```
+---
 
 Keyboard input for HaxeFlixel is provided through the `FlxKeyboard` class and is available through `FlxG.keys`.
 
