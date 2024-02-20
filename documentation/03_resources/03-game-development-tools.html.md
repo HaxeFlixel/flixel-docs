@@ -1,6 +1,35 @@
 ```
 title: "Game Development Tools"
 ```
+A concise list of tools useful to HaxeFlixel developers.This list is under construction. Suggest more, [here](https://github.com/HaxeFlixel/flixel/issues/2764).
+
+
+## External Flixel Libraries
+A list of repos and libraries made with the purpose of extending HaxeFlixel's capabilities. One day, these may be officially incorporated into HaxeFlixel, but for now they serve a niche demand on their own.
+
+#### [Zerolib-flixel](https://github.com/01010111/zerolib-flixel)
+A library of extensions, utilities, and other helpful classes for making games quickly in haxeflixel! There's also a framework agnostic version simply called [Zerolib](https://github.com/01010111/zerolib)
+
+#### [djFlixel](https://github.com/john32b/djFlixel)
+djFlixel is a small library with some helpful tools for HaxeFlixel, including a multi-page menu system, keyboard/gamepad helpers, and very fun effects.
+
+#### [FlxAnimate](https://github.com/Dot-Stuff/flxanimate)
+A repository made by [CheemsAndFriends](https://github.com/CheemsAndFriends) and [DotWith](https://github.com/DotWith) made for playing all spritesheet formats and the mysterious but interesting export called `Texture Atlas`
+
+#### [FlxGif](https://github.com/MAJigsaw77/flxgif)
+[Yagp's Gif Player](https://github.com/yanrishatum/yagp/) for HaxeFlixel.
+
+#### [HxCodec](https://github.com/polybiusproxy/hxCodec)
+A library which adds native video support for OpenFL and HaxeFlixel.
+
+#### [flixel-depth](https://github.com/01010111/flixel-depth)
+
+Flixel Depth is a fun 3D hack for making orthogonally 3D looking games using haxeflixel. It does so primarily by offsetting sprites according to the camera's current angle and scaling the primary game window down. This is NOT real 3D, you will still be making a 2D game, so expect a lot of edge cases!
+
+#### [depth-flixel (not to be confused with flixel-depth!)](https://github.com/AustinEast/depth-flixel)
+
+A library aimed at making Stacked Sprites easy with Haxeflixel!
+
 
 ## Graphics Editors
 
