@@ -1,7 +1,7 @@
-```
+---
 title: "FlxSave"
 apiPath: util/FlxSave.html
-```
+---
 
 ```haxe
 import flixel.util.FlxSave;

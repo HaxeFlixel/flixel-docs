@@ -1,7 +1,6 @@
-```
+---
 title: "Upgrade Guide 3.x"
-```
-
+---
 ## 3.3.0
 
 The minimum Haxe version for this release is 3.1.0.

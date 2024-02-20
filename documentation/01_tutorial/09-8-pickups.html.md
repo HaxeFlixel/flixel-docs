@@ -1,6 +1,6 @@
-```
+---
 title: "8 - Pickups"
-```
+---
 
 Now that we have our little guy running around our map, lets give him something to pick up. We'll add some simple coins that will add to the player's score when they are picked up.
 

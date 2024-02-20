@@ -1,7 +1,6 @@
-```
+---
 title: "Flixel Addons"
-```
-
+---
 The addons are a set of very useful, but nevertheless *optional* classes that not every game is going to need. That is why they are not quite important enough to be a part of HaxeFlixel's core.
 
 ## Installing flixel-addons

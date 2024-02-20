@@ -1,6 +1,6 @@
-```
+---
 title: "Mobile Targets"
-```
+---
 
 With the penetration of mobile devices in the world ignoring mobile targets for your games and applications is ignoring a huge audience.
 

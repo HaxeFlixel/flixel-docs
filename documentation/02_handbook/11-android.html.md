@@ -1,6 +1,6 @@
-```
+---
 title: "Android"
-```
+---
 
 <img src="/images/targets/android-logo.svg" width="160px" style="float:left; padding:10px" />
 

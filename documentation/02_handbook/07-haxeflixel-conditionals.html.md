@@ -1,6 +1,6 @@
-```
+---
 title: "HaxeFlixel Conditionals"
-```
+---
 
 ### What is "conditional compilation"?
 

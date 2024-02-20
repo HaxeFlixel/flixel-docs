@@ -1,8 +1,8 @@
-```
+---
 title: "Game Development Tools"
-```
-A concise list of tools useful to HaxeFlixel developers.This list is under construction. Suggest more, [here](https://github.com/HaxeFlixel/flixel/issues/2764).
 
+---
+A concise list of tools useful to HaxeFlixel developers.This list is under construction. Suggest more, [here](https://github.com/HaxeFlixel/flixel/issues/2764).
 
 ## External Flixel Libraries
 A list of repos and libraries made with the purpose of extending HaxeFlixel's capabilities. One day, these may be officially incorporated into HaxeFlixel, but for now they serve a niche demand on their own.

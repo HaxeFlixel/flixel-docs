@@ -1,6 +1,6 @@
-```
+---
 title: "1 - Setup"
-```
+---
 
 The first things we need to do is install all of the components we need to work with HaxeFlixel. For that, please follow our general [Getting Started](/documentation/getting-started/) guide. This will get you:
 

@@ -1,7 +1,6 @@
-```
+---
 title: "FAQ"
-```
-
+---
 #### Do I have to learn Flixel (AS3) before HaxeFlixel?
 No, you have to learn HaxeFlixel to use HaxeFlixel, although previous experience with the AS3 version will help.
 

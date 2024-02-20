@@ -1,6 +1,6 @@
-```
+---
 title: "The Power of HaxeFlixel"
-```
+---
 
 First, let me talk a bit about why you should use HaxeFlixel.
 

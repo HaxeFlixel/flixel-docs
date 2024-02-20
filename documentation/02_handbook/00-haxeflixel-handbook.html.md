@@ -1,7 +1,7 @@
-```
+---
 title: "HaxeFlixel Handbook"
 rootDoc: true
-```
+---
 
 Welcome to the HaxeFlixel handbook. These pages are intended to answer common questions and explain the main ideas and structures behind most HaxeFlixel games.
 As the types of games and use cases of HaxeFlixel are vast we appreciate developers making additions and improvements to this documentation through [GitHub](https://github.com/HaxeFlixel/flixel-docs).

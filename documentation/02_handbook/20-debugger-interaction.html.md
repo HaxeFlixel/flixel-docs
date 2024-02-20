@@ -1,7 +1,6 @@
-```
+---
 title: "Debugger - Interaction"
-```
-
+---
 The interaction tool (enabled by the ![](../images/02_handbook/debugger/icons/interactive.png) button in the debugger overlay) allows you to change game elements, e.g. move sprites, while the game is still running.
 
 It is highly recommended, however, that you pause the game using VCR's pause button ![](../images/02_handbook/debugger/icons/pause.png) before using the interaction tool. You can always resume the game by clicking VCR's play button ![](../images/02_handbook/debugger/icons/arrowRight.png) after you are done with the interaction. If the game is not paused during the interaction, objects affected by acceleration, for instance, will continue to move, making your work harder.

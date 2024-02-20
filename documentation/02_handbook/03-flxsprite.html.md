@@ -1,7 +1,7 @@
-```
+---
 title: "FlxSprite"
 apiPath: FlxSprite.html
-```
+---
 
 ```haxe
 import flixel.FlxSprite;

@@ -1,7 +1,7 @@
-```
+---
 title: "Getting Started"
 rootDoc: true
-```
+---
 
 Welcome to HaxeFlixel! To setup your Windows, Linux or Mac system to start making games, there are three steps:
 
