@@ -12,7 +12,7 @@ We have a dedicated [**Community Tutorials** page](https://haxeflixel.com/docume
 
 You can find the official HaxeFlixel "Dungeon Crawler" tutorial [here](https://haxeflixel.com/documentation/tutorial/).
 
-#### I found a bug, where to report?
+#### I found a bug, where do I report it?
 On the [official GitHub repository](https://github.com/HaxeFlixel/flixel/issues).
 
 #### My sounds are lagging!?
