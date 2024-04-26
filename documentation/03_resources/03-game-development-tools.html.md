@@ -53,6 +53,14 @@ Krita is a free digital painting and illustration application. Krita offers CMYK
 
 Aseprite is a program designed for drawing pixel art. It has layers, animation tools, tile map tools, blend modes, and many more useful features. It's not free, but it's a favorite for many developers.
 
+#### [Shoebox](https://renderhjs.net/shoebox/)
+
+ShoeBox is a free Adobe Air based app for Windows and Mac OSX with game and ui related tools. Each tool uses a drag and drop - or clipbord interaction for a quick workflow.
+
+#### [Free Texture Packer](https://free-tex-packer.com/)
+
+Free Texture Packer is an open source tool that allows you to pack multiple images into one atlas for you games or sites.
+
 ## Sound Editors
 
 #### [Audacity](https://www.audacityteam.org/)
