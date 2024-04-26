@@ -51,11 +51,15 @@ Krita is a free digital painting and illustration application. Krita offers CMYK
 
 #### [Aseprite](https://www.aseprite.org/)
 
-Aseprite is a program designed for drawing pixel art. It has layers, animation tools, tile map tools, blend modes, and many more useful features. It's not free, but it's a favorite for many developers.
+Aseprite is a program designed for drawing pixel art. It has layers, animation tools, tile map tools, blend modes, atlases, and many more useful features. It's not free, but it's a favorite for many developers.
 
 #### [Shoebox](https://renderhjs.net/shoebox/)
 
-ShoeBox is a free Adobe Air based app for Windows and Mac OSX with game and ui related tools. Each tool uses a drag and drop - or clipbord interaction for a quick workflow.
+ShoeBox is a free Adobe Air based app for Windows and Mac OS X with game and UI related tools. It has many utilities that make asset management easier, such as [sprite packing](http://renderhjs.net/shoebox/packSprites.htm), [sprite extraction](http://renderhjs.net/shoebox/extractSprites.htm), [texture ripping](http://renderhjs.net/shoebox/textureRipper.htm), [bitmap font creation](http://renderhjs.net/shoebox/bitmapFont.htm), and more.
+
+#### [Texture Packer](https://www.codeandweb.com/texturepacker)
+
+Texture Packer does one thing very well - it packs several sprites into one large image to help reduce load times for your game. It's easy to use and easy to integrate with HaxeFlixel. [This demo shows how to use a TexturePackerAtlas](http://haxeflixel.com/demos/TexturePackerAtlas/).
 
 #### [Free Texture Packer](https://free-tex-packer.com/)
 
@@ -98,16 +102,6 @@ Source code: https://github.com/Ogmo-Editor-3/OgmoEditor3-CE
 LDtk is a level editor created by the lead game designer of [Dead Cells](https://store.steampowered.com/app/588650/Dead_Cells/). This editor has some extra features work nicely with Haxe and HaxeFlixel, and focuses on being easy to use. [This tutorial](https://goop.wtf/2021/06/05/loading-ldtk-maps-in-haxeflixel.html) shows you how to use LDtk tile maps with HaxeFlixel.
 
 Source code: https://github.com/deepnight/ldtk
-
-## Asset Utilities
-
-#### [ShoeBox](http://renderhjs.net/shoebox/)
-
-ShoeBox is a free Adobe Air based app for Windows and Mac OS X with game and UI related tools. It has many utilities that make asset management easier, such as [sprite packing](http://renderhjs.net/shoebox/packSprites.htm), [sprite extraction](http://renderhjs.net/shoebox/extractSprites.htm), [texture ripping](http://renderhjs.net/shoebox/textureRipper.htm), [bitmap font creation](http://renderhjs.net/shoebox/bitmapFont.htm), and more.
-
-#### [Texture Packer](https://www.codeandweb.com/texturepacker)
-
-Texture Packer does one thing very well - it packs several sprites into one large image to help reduce load times for your game. It's easy to use and easy to integrate with HaxeFlixel. [This demo shows how to use a TexturePackerAtlas](http://haxeflixel.com/demos/TexturePackerAtlas/).
 
 ## More Resources
 
