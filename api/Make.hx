@@ -7,10 +7,12 @@ class Make {
 		for (arg in args) {
 			switch arg {
 				case "xml":
+					trace("haxe --cwd xml xml.hxml");
 					command("haxe --cwd xml xml.hxml");
 
 				case "pages":
 					Sys.setCwd("dox");
+					trace("npx haxe dox.hxml");
 					command("npx haxe dox.hxml");
 					Sys.setCwd("..");
 
