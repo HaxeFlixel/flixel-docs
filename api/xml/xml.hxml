@@ -1,1 +1,1 @@
--cmd haxelib run lime build html -xml
+-cmd haxelib run lime build html5 -xml
