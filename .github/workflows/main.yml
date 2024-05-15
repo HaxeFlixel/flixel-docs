@@ -19,7 +19,7 @@ jobs:
       with:
         haxe-version: current
         flixel-versions: release
-        target: html
+        target: html5
     - run: npm install
       working-directory: api/dox
     - run: haxe --cwd api --run Make xml pages
