@@ -49,9 +49,9 @@ class FlixelApi extends Api {
 			"bendmorris/spinehaxe/tree/master";
 		} else if (module.startsWith("openfl")) {
 			module = module.substr(module.indexOf("."));
-			"openfl/openfl/tree/master/src/openfl";
+			"openfl/openfl/tree/develop/src/openfl";
 		} else if (module.startsWith("lime")) {
-			"openfl/lime/tree/master/src";
+			"openfl/lime/tree/develop/src";
 		} else if (module.startsWith("hscript")) {
 			"HaxeFoundation/hscript/tree/master";
 		} else {
