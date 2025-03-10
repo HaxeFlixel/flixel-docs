@@ -27,6 +27,7 @@ First up, let's create a simple menu. Eventually, we'll want a fancy `MenuState`
 	```haxe
 	class MenuState extends FlxState
 	{
+ 	}
 	```
 
 	Right after the class declaration, we're going define a new variable. This is where you would define all the variables that you intend to use throughout a given class. We need to define a new `FlxButton` variable to use as our 'play' button. So, type:
