@@ -68,10 +68,11 @@ Return to your command line window - now we can compile the project. First switc
 cd HelloWorld
 ```
 
-You can then compile to HTML5, Neko and Flash out of the box with these commands:
+You can then compile to HTML5, Neko, HashLink and Flash out of the box with these commands:
 
 ``` bash
 lime test html5
+lime test hl
 lime test neko
 lime test flash
 ```
