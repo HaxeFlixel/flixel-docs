@@ -5,8 +5,6 @@ title: "Install HaxeFlixel"
 To install the latest stable version of HaxeFlixel, open a command prompt and run the following [Haxelib](http://lib.haxe.org/) commands:
 
 ``` bash
-haxelib install lime
-haxelib install openfl
 haxelib install flixel
 ```
 
