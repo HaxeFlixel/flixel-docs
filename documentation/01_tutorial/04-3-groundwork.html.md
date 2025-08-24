@@ -54,7 +54,7 @@ First up, let's create a simple menu. Eventually, we'll want a fancy `MenuState`
 	```haxe
 	function clickPlay()
 	{
-		FlxG.switchState(new PlayState());
+		FlxG.switchState(PlayState.new);
 	}
 	```
 	(`import flixel.FlxG;`)
