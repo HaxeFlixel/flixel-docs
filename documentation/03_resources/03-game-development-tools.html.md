@@ -130,6 +130,10 @@ Texture Packer does one thing very well - it packs several sprites into one larg
 
 Free Texture Packer is an open source tool that allows you to pack multiple images into one atlas for you games or sites.
 
+### [SpriteSheet.dev](https://spritesheet.dev)
+
+SpriteSheet.dev is a free browser tool that packs frames or a GIF into one atlas with Sparrow XML or TexturePacker JSON, and cuts existing sheets back into frames. Nothing is uploaded.
+
 ## Sound Editors
 
 ### [Audacity](https://www.audacityteam.org/)
