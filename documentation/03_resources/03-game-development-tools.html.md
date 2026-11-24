@@ -126,7 +126,7 @@ ShoeBox is a free Adobe Air based app for Windows and Mac OS X with game and UI 
 
 Texture Packer does one thing very well - it packs several sprites into one large image to help reduce load times for your game. It's easy to use and easy to integrate with HaxeFlixel. [This demo shows how to use a TexturePackerAtlas](http://haxeflixel.com/demos/TexturePackerAtlas/).
 
-### [Free Texture Packer](https://free-tex-packer.com/)
+### [Free Texture Packer](https://github.com/odrick/free-tex-packer)
 
 Free Texture Packer is an open source tool that allows you to pack multiple images into one atlas for you games or sites.
 
